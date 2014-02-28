@@ -1,4 +1,4 @@
 *.swp
-*.beam
 .DS_Store
 tmp
+php/phpunit.phar
