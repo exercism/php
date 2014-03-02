@@ -4,6 +4,16 @@
 
 Exercism exercises in PHP
 
+## Running Unit Test
+
+### All Assignments
+
+    % make test
+
+### Single Assignment
+
+    % make test-assignment ASSIGNMENT=wordy
+
 ## License
 
 The MIT License (MIT)
