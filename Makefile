@@ -1,5 +1,5 @@
 ASSIGNMENT ?= ""
-ASSIGNMENTS = $(shell find . -maxdepth 1 -mindepth 1 -type d | tr -d './' | sort)
+ASSIGNMENTS = $(shell find . -maxdepth 1 -mindepth 1 -type d -not -path '*/\.*' | tr -d './' | sort)
 
 # output directories
 TMPDIR ?= "/tmp"
@@ -10,7 +10,6 @@ FILEEXT := "php"
 EXAMPLE := "example.$(FILEEXT)"
 TSTFILE := "$(ASSIGNMENT)_test.$(FILEEXT)"
 
-# phpunit test lib
 phpunit.phar:
 	@wget https://phar.phpunit.de/phpunit.phar
 	@chmod +x phpunit.phar
