@@ -3,4 +3,4 @@ language: php
 php:
   - 5.5
 
-script: make --directory=php test
+script: make test
