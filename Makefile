@@ -1,5 +1,5 @@
 ASSIGNMENT ?= ""
-IGNOREDIRS := "node_modules"
+IGNOREDIRS := ".git|vendor"
 ASSIGNMENTS = $(shell find . -maxdepth 1 -mindepth 1 -type d -not -path '*/\.*' | tr -d './' | sort | grep -Ev $(IGNOREDIRS))
 
 # output directories
