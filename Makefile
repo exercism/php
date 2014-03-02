@@ -1,5 +1,6 @@
 ASSIGNMENT ?= ""
-ASSIGNMENTS = $(shell find . -maxdepth 1 -mindepth 1 -type d -not -path '*/\.*' | tr -d './' | sort)
+IGNOREDIRS := "node_modules"
+ASSIGNMENTS = $(shell find . -maxdepth 1 -mindepth 1 -type d -not -path '*/\.*' | tr -d './' | sort | grep -Ev $(IGNOREDIRS))
 
 # output directories
 TMPDIR ?= "/tmp"

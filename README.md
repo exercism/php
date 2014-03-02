@@ -4,7 +4,7 @@
 
 Exercism exercises in PHP
 
-## Running Unit Test
+## Running Unit Test Suite
 
 ### All Assignments
 
