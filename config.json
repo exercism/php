@@ -4,6 +4,10 @@
   "repository": "https://github.com/exercism/xphp",
   "active": false,
   "problems": [
+    "trinary",
+    "wordy"
+  ],
+  "deprecated": [
 
   ],
   "ignore": [
