@@ -3,4 +3,6 @@ language: php
 php:
   - 5.5
 
-script: make test
+script:
+  - make test
+  - ./bin/configlet-linux-amd64 .
