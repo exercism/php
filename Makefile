@@ -1,5 +1,5 @@
 ASSIGNMENT ?= ""
-IGNOREDIRS := ".git|vendor"
+IGNOREDIRS := ".git|vendor|bin"
 ASSIGNMENTS = $(shell find . -maxdepth 1 -mindepth 1 -type d -not -path '*/\.*' | tr -d './' | sort | grep -Ev $(IGNOREDIRS))
 
 # output directories
