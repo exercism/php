@@ -5,7 +5,8 @@
   "active": false,
   "problems": [
     "trinary",
-    "wordy"
+    "wordy",
+    "clock"
   ],
   "deprecated": [
 
