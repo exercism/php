@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit bootstrap="./vendor/autoload.php">
+    <testsuites>
+        <testsuite>
+            <directory>./</directory>
+            <exclude>./vendor</exclude>
+        </testsuite>
+    </testsuites>
+    <groups>
+        <exclude>
+            <group>skipped</group>
+        </exclude>
+    </groups>
+</phpunit>
