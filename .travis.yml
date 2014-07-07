@@ -5,4 +5,5 @@ php:
 
 script:
   - make test
+  - make style-check
   - ./bin/configlet-linux-amd64 .
