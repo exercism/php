@@ -4,15 +4,15 @@
   "repository": "https://github.com/exercism/xphp",
   "active": false,
   "problems": [
-    "trinary",
-    "wordy",
-    "clock"
+    "Trinary",
+    "Wordy",
+    "Clock"
   ],
   "deprecated": [
 
   ],
   "ignored": [
-
+    "vendor"
   ],
   "foregone": [
 
