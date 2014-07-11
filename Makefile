@@ -8,21 +8,34 @@ OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
 
 # language specific config (tweakable per language)
 FILEEXT := "php"
-EXAMPLE := "example.$(FILEEXT)"
-TSTFILE := "$(ASSIGNMENT)_test.$(FILEEXT)"
+EXAMPLE := "Example.$(FILEEXT)"
+TSTFILE := "$(ASSIGNMENT)Test.$(FILEEXT)"
 
 phpunit.phar:
-	@wget https://phar.phpunit.de/phpunit.phar
-	@chmod +x phpunit.phar
+	@wget http://phar.phpunit.de/phpunit.phar
 
 # single test
 test-assignment: phpunit.phar
 	@echo "running tests for: $(ASSIGNMENT)"
-	@cp $(ASSIGNMENT)/$(TSTFILE) $(OUTDIR)
-	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
-	@./phpunit.phar $(OUTDIR)/$(TSTFILE)
+	@echo "<?php namespace Exercism\$(ASSIGNMENT); ?>" >> $(OUTDIR)/$(TSTFILE)
+	@for class in $(shell ls $(ASSIGNMENT)/*.php | grep -v Test); do \
+		echo "<?php require_once '$(CURDIR)/$$class'; ?>" >> $(OUTDIR)/$(TSTFILE); \
+	done
+	@sed "/namespace Exercism/d" $(ASSIGNMENT)/*Test.$(FILEEXT) >> $(OUTDIR)/$(TSTFILE)
+	@php phpunit.phar --no-configuration $(OUTDIR)/$(TSTFILE)
 
 # all tests
 test:
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1; done
 
+phpcs.phar:
+	@wget https://github.com/squizlabs/PHP_CodeSniffer/releases/download/2.0.0a2/phpcs.phar
+
+# style check single test
+style-check-assignment: phpcs.phar
+	@echo "checking $(ASSIGNMENT) against PSR-2 code standards"
+	@php phpcs.phar --standard=PSR2 $(ASSIGNMENT)
+
+# style c heck all tests
+style-check:
+	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s style-check-assignment || exit 1; done
