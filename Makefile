@@ -12,7 +12,7 @@ EXAMPLE := "Example.$(FILEEXT)"
 TSTFILE := "$(ASSIGNMENT)Test.$(FILEEXT)"
 
 phpunit.phar:
-	@wget http://phar.phpunit.de/phpunit.phar
+	@wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
 
 # single test
 test-assignment: phpunit.phar
