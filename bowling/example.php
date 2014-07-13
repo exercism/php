@@ -1,5 +1,4 @@
 <?php
-namespace Exercism\Bowling;
 
 /**
  * Translated from original source:
