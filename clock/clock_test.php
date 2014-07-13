@@ -1,5 +1,6 @@
 <?php
-namespace Exercism\Clock;
+
+require "clock.php";
 
 class ClockTest extends \PHPUnit_Framework_TestCase
 {

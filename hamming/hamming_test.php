@@ -1,5 +1,6 @@
 <?php
-namespace Exercism\Hamming;
+
+require "hamming.php";
 
 class HammingComparatorTest extends \PHPUnit_Framework_TestCase
 {

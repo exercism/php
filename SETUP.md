@@ -1,29 +1,22 @@
 ## Making the Test Suite Pass
 
-First [get composer](https://getcomposer.org/download/) and fetch [PHPUnit](http://phpunit.de/):
+1. Get [PHPUnit].
 
-```bash
-$ curl -sS https://getcomposer.org/installer | php
-$ php composer.phar install
-```
+        % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
+        % chmod +x phpunit.phar
 
-Execute the tests with:
+2. Execute the tests for an assignment.
 
-```bash
-$ php vendor/bin/phpunit Trinary
-```
+        % phpunit.phar wordy/wordy_test.php
 
-All but the first test have been skipped.
+3. All but the first test have been skipped. For example:
 
-Once you get a test passing, you can unskip the next one by removing the `@group` annotation, e.g:
+        /** @group skipped */
+        public function testFoo() { ... }
 
-```php
-/** @group skipped */
-public function testFoo() { ... }
-```
+4. You can enable the next test by removing the `@group` annotation; for example, the code above, becomes:
 
-becomes:
+        public function testFoo() { ... }
 
-```php
-public function testFoo() { ... }
-```
+[PHPUnit]: http://phpunit.de
+

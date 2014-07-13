@@ -1,5 +1,4 @@
 <?php
-namespace Exercism\Clock;
 
 class Clock
 {

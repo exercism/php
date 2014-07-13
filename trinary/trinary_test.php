@@ -1,5 +1,6 @@
 <?php
-namespace Exercism\Trinary;
+
+require "trinary.php";
 
 class TrinaryTest extends \PHPUnit_Framework_TestCase
 {

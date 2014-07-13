@@ -1,5 +1,6 @@
 <?php
-namespace Exercism\Leap;
+
+require "leap.php";
 
 class YearTest extends \PHPUnit_Framework_TestCase
 {

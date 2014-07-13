@@ -1,5 +1,6 @@
 <?php
-namespace Exercism\Bowling;
+
+require "bowling.php";
 
 /**
  * Translated from original source:
