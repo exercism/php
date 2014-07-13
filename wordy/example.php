@@ -1,5 +1,4 @@
 <?php
-namespace Exercism\Wordy;
 
 class WordProblem
 {
@@ -47,7 +46,7 @@ class WordProblem
     public function answer()
     {
         if ($this->tooComplicated()) {
-            throw new ArgumentError("I don't understand the question");
+            throw new InvalidArgumentException("I don't understand the question");
         }
 
         return $this->evaluate();

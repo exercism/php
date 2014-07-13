@@ -1,5 +1,6 @@
 <?php
-namespace Exercism\Wordy;
+
+require "wordy.php";
 
 class WordProblemTest extends \PHPUnit_Framework_TestCase
 {
@@ -103,7 +104,7 @@ class WordProblemTest extends \PHPUnit_Framework_TestCase
     /** @group skipped */
     public function testTooAdvanced()
     {
-        $this->setExpectedException('Exercism\Wordy\ArgumentError');
+        $this->setExpectedException('InvalidArgumentException');
 
         $problem = new WordProblem('What is 53 cubed?');
         $problem->answer();
@@ -112,7 +113,7 @@ class WordProblemTest extends \PHPUnit_Framework_TestCase
     /** @group skipped */
     public function testIrrelevant()
     {
-        $this->setExpectedException('Exercism\Wordy\ArgumentError');
+        $this->setExpectedException('InvalidArgumentException');
 
         $problem = new WordProblem('Who is the president of the United States?');
         $problem->answer();

@@ -1,5 +1,4 @@
 <?php
-namespace Exercism\Hamming;
 
 class HammingComparator
 {

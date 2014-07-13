@@ -4,18 +4,18 @@
   "repository": "https://github.com/exercism/xphp",
   "active": false,
   "problems": [
-    "Trinary",
-    "Wordy",
-    "Clock",
-    "Hamming",
-    "Leap",
-    "Bowling"
+    "trinary",
+    "wordy",
+    "clock",
+    "hamming",
+    "leap",
+    "bowling"
   ],
   "deprecated": [
 
   ],
   "ignored": [
-    "vendor"
+
   ],
   "foregone": [
 
