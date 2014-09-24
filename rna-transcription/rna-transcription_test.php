@@ -1,6 +1,6 @@
 <?php
 
-require "complement.php";
+require "rna-transcription.php";
 
 class ComplementTest extends \PHPUnit_Framework_TestCase
 {
