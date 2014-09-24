@@ -5,6 +5,7 @@
   "active": false,
   "problems": [
     "trinary",
+    "gigasecond",
     "wordy",
     "clock",
     "hamming",
