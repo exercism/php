@@ -5,6 +5,7 @@
   "active": false,
   "problems": [
     "trinary",
+    "gigasecond",
     "rna-transcription",
     "wordy",
     "clock",
