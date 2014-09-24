@@ -9,27 +9,31 @@ class YearTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue((new Year(1996))->isLeap());
     }
 
-    /** @group skipped */
     public function testNonLeapYear()
     {
+        $this->markTestSkipped();
+
         $this->assertFalse((new Year(1997))->isLeap());
     }
 
-    /** @group skipped */
     public function testNonLeapEvenYear()
     {
+        $this->markTestSkipped();
+
         $this->assertFalse((new Year(1998))->isLeap());
     }
 
-    /** @group skipped */
     public function testCentury()
     {
+        $this->markTestSkipped();
+
         $this->assertFalse((new Year(1900))->isLeap());
     }
 
-    /** @group skipped */
     public function testFourthCentury()
     {
+        $this->markTestSkipped();
+
         $this->assertTrue((new Year(2400))->isLeap());
     }
 }

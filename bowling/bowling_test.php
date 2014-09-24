@@ -23,17 +23,19 @@ class GameTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(0, $this->game->score());
     }
 
-    /** @group skipped */
     public function testAllOnes()
     {
+        $this->markTestSkipped();
+
         $this->rollMany(20, 1);
 
         $this->assertEquals(20, $this->game->score());
     }
 
-    /** @group skipped */
     public function testOneSpare()
     {
+        $this->markTestSkipped();
+
         $this->rollSpare();
         $this->game->roll(3);
         $this->rollMany(17, 0);
@@ -41,9 +43,10 @@ class GameTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(16, $this->game->score());
     }
 
-    /** @group skipped */
     public function testOneStrike()
     {
+        $this->markTestSkipped();
+
         $this->rollStrike();
         $this->game->roll(3);
         $this->game->roll(4);
@@ -52,9 +55,10 @@ class GameTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(24, $this->game->score());
     }
 
-    /** @group skipped */
     public function testPerfectGame()
     {
+        $this->markTestSkipped();
+
         $this->rollMany(12, 10);
 
         $this->assertEquals(300, $this->game->score());

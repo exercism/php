@@ -11,12 +11,20 @@
 
 3. All but the first test have been skipped. For example:
 
-        /** @group skipped */
-        public function testFoo() { ... }
 
-4. You can enable the next test by removing the `@group` annotation; for example, the code above, becomes:
+        public function testFoo()
+        {
+            $this->markTestSkipped();
 
-        public function testFoo() { ... }
+            ...
+        }
+
+4. You can enable the next test by removing the `$this->markTestSkipped();` line; for example, the code above, becomes:
+
+        public function testFoo()
+        {
+            ...
+        }
 
 [PHPUnit]: http://phpunit.de
 
