@@ -5,6 +5,7 @@
   "active": false,
   "problems": [
     "trinary",
+    "rna-transcription",
     "wordy",
     "clock",
     "hamming",
