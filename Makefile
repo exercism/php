@@ -24,7 +24,7 @@ bin/phpcs.phar:
 # single test
 test-assignment: bin/phpunit.phar
 	@echo "running tests for: $(ASSIGNMENT)"
-	@cat $(ASSIGNMENT)/$(TSTFILE) | grep -v "markTestSkipped" > $(OUTDIR)/$(TSTFILE)
+	@cp $(ASSIGNMENT)/$(TSTFILE) $(OUTDIR)/$(TSTFILE)
 	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
 	@bin/phpunit.phar --no-configuration $(OUTDIR)/$(TSTFILE)
 

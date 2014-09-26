@@ -13,8 +13,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testPastTheHour()
     {
-        $this->markTestSkipped();
-
         $clock = new Clock(11, 9);
 
         $this->assertEquals('11:09', $clock->__toString());
@@ -22,8 +20,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testAddingAFewMinutes()
     {
-        $this->markTestSkipped();
-
         $clock = new Clock(10);
 
         $clock = $clock->add(3);
@@ -33,8 +29,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testAddingOverAnHour()
     {
-        $this->markTestSkipped();
-
         $clock = new Clock(10);
 
         $clock = $clock->add(61);
@@ -44,8 +38,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testWrapAroundAtMidnight()
     {
-        $this->markTestSkipped();
-
         $clock = new Clock(23, 30);
 
         $clock = $clock->add(60);
@@ -55,8 +47,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testSubtractMinutes()
     {
-        $this->markTestSkipped();
-
         $clock = new Clock(10);
 
         $clock = $clock->sub(90);
@@ -66,8 +56,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testWrapAroundBackwards()
     {
-        $this->markTestSkipped();
-
         $clock = new Clock(0, 30);
 
         $clock = $clock->sub(60);
@@ -77,8 +65,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testWrapAroundDay()
     {
-        $this->markTestSkipped();
-
         $clock = new Clock(5, 32);
 
         $clock = $clock->add(25 * 60);
@@ -88,8 +74,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testWrapAroundDayBackwards()
     {
-        $this->markTestSkipped();
-
         $clock = new Clock(5, 32);
 
         $clock = $clock->sub(25 * 60);
@@ -99,15 +83,11 @@ class ClockTest extends \PHPUnit_Framework_TestCase
 
     public function testEquivalentClocks()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals(new Clock(15, 37), new Clock(15, 37));
     }
 
     public function testInequivalentClocks()
     {
-        $this->markTestSkipped();
-
         $this->assertNotEquals(new Clock(01, 01), new Clock(18, 32));
     }
 }
