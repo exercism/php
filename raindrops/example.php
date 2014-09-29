@@ -31,6 +31,4 @@ class Raindrops
     {
         return (($num % 7) == 0);
     }
-
-
 }

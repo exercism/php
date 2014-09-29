@@ -22,7 +22,7 @@ class Robot
 
     protected function getPrefix()
     {
-        return implode('', array_rand($this->alphabet,2));
+        return implode('', array_rand($this->alphabet, 2));
     }
 
     protected function getSuffix()

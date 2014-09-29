@@ -37,5 +37,4 @@ class Squares
     {
         return $this->squareOfSums() - $this->sumOfSquares();
     }
-
 }
