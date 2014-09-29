@@ -4,14 +4,18 @@
   "repository": "https://github.com/exercism/xphp",
   "active": false,
   "problems": [
-    "trinary",
+    "hamming",
     "gigasecond",
     "rna-transcription",
-    "wordy",
-    "clock",
-    "hamming",
+    "raindrops",
+    "difference-of-squares",
+    "roman-numerals",
+    "robot-name",
     "leap",
-    "bowling"
+    "trinary",
+    "bowling",
+    "clock",
+    "wordy"
   ],
   "deprecated": [
 
