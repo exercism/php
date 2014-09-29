@@ -24,7 +24,7 @@ bin/phpcs.phar:
 # single test
 test-assignment: bin/phpunit.phar
 	@echo "running tests for: $(ASSIGNMENT)"
-	@cp $(ASSIGNMENT)/$(TSTFILE) $(OUTDIR)
+	@cp $(ASSIGNMENT)/$(TSTFILE) $(OUTDIR)/$(TSTFILE)
 	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
 	@bin/phpunit.phar --no-configuration $(OUTDIR)/$(TSTFILE)
 

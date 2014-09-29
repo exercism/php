@@ -11,7 +11,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('08:00', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testPastTheHour()
     {
         $clock = new Clock(11, 9);
@@ -19,7 +18,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('11:09', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testAddingAFewMinutes()
     {
         $clock = new Clock(10);
@@ -29,7 +27,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('10:03', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testAddingOverAnHour()
     {
         $clock = new Clock(10);
@@ -39,7 +36,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('11:01', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testWrapAroundAtMidnight()
     {
         $clock = new Clock(23, 30);
@@ -49,7 +45,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('00:30', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testSubtractMinutes()
     {
         $clock = new Clock(10);
@@ -59,7 +54,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('08:30', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testWrapAroundBackwards()
     {
         $clock = new Clock(0, 30);
@@ -69,7 +63,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('23:30', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testWrapAroundDay()
     {
         $clock = new Clock(5, 32);
@@ -79,7 +72,6 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('06:32', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testWrapAroundDayBackwards()
     {
         $clock = new Clock(5, 32);
@@ -89,13 +81,11 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('04:32', $clock->__toString());
     }
 
-    /** @group skipped */
     public function testEquivalentClocks()
     {
         $this->assertEquals(new Clock(15, 37), new Clock(15, 37));
     }
 
-    /** @group skipped */
     public function testInequivalentClocks()
     {
         $this->assertNotEquals(new Clock(01, 01), new Clock(18, 32));

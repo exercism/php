@@ -28,7 +28,6 @@ Exercism exercises in PHP
 
 - Follow the [PSR-2] coding style (xPHP uses a slightly [modified] version of [PSR-2]).
 - Follow the [contributing guide].
-- Add all but the first test to the group `skipped` with the [@group annotation], the provided phpunit.xml will exclude this group so the user can pass one test a time.
 
 ## License
 

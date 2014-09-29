@@ -5,9 +5,4 @@
             <directory>./</directory>
         </testsuite>
     </testsuites>
-    <groups>
-        <exclude>
-            <group>skipped</group>
-        </exclude>
-    </groups>
 </phpunit>
