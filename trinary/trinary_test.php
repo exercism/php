@@ -55,6 +55,6 @@ class TrinaryTest extends \PHPUnit_Framework_TestCase
     public function testInvalidTrinaryIsDecimal0()
     {
         $trinary = new Trinary('carrot');
-        $this->assertEquals(0, $trinary->toDecimal());
+        $this->assertSame(0, $trinary->toDecimal());
     }
 }
