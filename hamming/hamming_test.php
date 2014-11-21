@@ -29,16 +29,6 @@ class HammingComparatorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1, HammingComparator::distance('GGACG', 'GGTCG'));
     }
 
-    public function testIgnoresExtraLengthOnFirstStrandWhenLonger()
-    {
-        $this->assertEquals(1, HammingComparator::distance('AGAGACTTA', 'AAA'));
-    }
-
-    public function testIgnoresExtraLengthOnOtherStrandWhenLonger()
-    {
-        $this->assertEquals(2, HammingComparator::distance('AGG', 'AAAACTGACCCACCCCAGG'));
-    }
-
     public function testLargeHammingDistance()
     {
         $this->assertEquals(4, HammingComparator::distance('GATACA', 'GCATAA'));
