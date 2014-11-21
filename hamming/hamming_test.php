@@ -2,7 +2,7 @@
 
 require "hamming.php";
 
-class HammingComparatorTest extends \PHPUnit_Framework_TestCase
+class HammingComparatorTest extends PHPUnit_Framework_TestCase
 {
     public function testNoDifferenceBetweenIdenticalStrands()
     {
@@ -27,16 +27,6 @@ class HammingComparatorTest extends \PHPUnit_Framework_TestCase
     public function testSmallHammingDistanceInLongerStrand()
     {
         $this->assertEquals(1, HammingComparator::distance('GGACG', 'GGTCG'));
-    }
-
-    public function testIgnoresExtraLengthOnFirstStrandWhenLonger()
-    {
-        $this->assertEquals(1, HammingComparator::distance('AGAGACTTA', 'AAA'));
-    }
-
-    public function testIgnoresExtraLengthOnOtherStrandWhenLonger()
-    {
-        $this->assertEquals(2, HammingComparator::distance('AGG', 'AAAACTGACCCACCCCAGG'));
     }
 
     public function testLargeHammingDistance()
