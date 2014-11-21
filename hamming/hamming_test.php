@@ -2,7 +2,7 @@
 
 require "hamming.php";
 
-class HammingComparatorTest extends PHPUnit_Framework_TestCase
+class HammingComparatorTest extends \PHPUnit_Framework_TestCase
 {
     public function testNoDifferenceBetweenIdenticalStrands()
     {
