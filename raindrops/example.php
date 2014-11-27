@@ -1,34 +1,15 @@
 <?php
 
-class Raindrops
+function raindrops($num)
 {
-    public static function convert($num)
-    {
-        if (!self::pling($num) && !self::plang($num) && !self::plong($num)) {
-            return strval($num);
-        }
+    $sound =
+        function ($divisor) use ($num) {
+            return !($num % $divisor);
+        };
 
-        $ret = '';
+    $string = $sound(3) ? 'Pling' : '';
+    $string .= $sound(5) ? 'Plang' : '';
+    $string .= $sound(7) ? 'Plong' : '';
 
-        $ret .= self::pling($num) ? 'Pling' : '';
-        $ret .= self::plang($num) ? 'Plang' : '';
-        $ret .= self::plong($num) ? 'Plong' : '';
-
-        return $ret;
-    }
-
-    public static function pling($num)
-    {
-        return (($num % 3) == 0);
-    }
-
-    public static function plang($num)
-    {
-        return (($num % 5) == 0);
-    }
-
-    public static function plong($num)
-    {
-        return (($num % 7) == 0);
-    }
+    return $string ? $string : strval($num);
 }
