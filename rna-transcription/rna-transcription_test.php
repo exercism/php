@@ -4,53 +4,28 @@ require "rna-transcription.php";
 
 class ComplementTest extends \PHPUnit_Framework_TestCase
 {
-    public function testRNAComplementOfCytosineIsGuanine()
+    public function testTranscribesGuanineToCytosine()
     {
-        $this->assertSame(Complement::ofDna('C'), 'G');
+        $this->assertSame(toRna('C'), 'G');
     }
 
-    public function testRNAComplementOfGuanineIsCytosine()
+    public function testTranscribesCytosineToGuanine()
     {
-        $this->assertSame(Complement::ofDna('G'), 'C');
+        $this->assertSame(toRna('G'), 'C');
     }
 
-    public function testRNAComplementOfThymineIsAdenine()
+    public function testTranscribesThymineToAdenine()
     {
-        $this->assertSame(Complement::ofDna('T'), 'A');
+        $this->assertSame(toRna('T'), 'A');
     }
 
-    public function testRNAComplementOfAdenineIsUracil()
+    public function testTranscribesAdenineToUracil()
     {
-        $this->assertSame(Complement::ofDna('A'), 'U');
+        $this->assertSame(toRna('A'), 'U');
     }
 
-    public function testRNAComplement()
+    public function testTranscribesAllOccurencesOne()
     {
-        $this->assertSame(Complement::ofDna('ACGTGGTCTTAA'), 'UGCACCAGAAUU');
-    }
-
-    public function testDNAComplementOfCytosineIsGuanine()
-    {
-        $this->assertSame(Complement::ofRna('C'), 'G');
-    }
-
-    public function testDNAComplementOfGuanineIsCytosine()
-    {
-        $this->assertSame(Complement::ofRna('G'), 'C');
-    }
-
-    public function testDNAComplementOfUracilIsAdenine()
-    {
-        $this->assertSame(Complement::ofRna('U'), 'A');
-    }
-
-    public function testDNAComplementOfAdenineIsThymine()
-    {
-        $this->assertSame(Complement::ofRna('A'), 'T');
-    }
-
-    public function testDNAComplement()
-    {
-        $this->assertSame(Complement::ofRna('UGAACCCGACAUG'), 'ACTTGGGCTGTAC');
+        $this->assertSame(toRna('ACGTGGTCTTAA'), 'UGCACCAGAAUU');
     }
 }

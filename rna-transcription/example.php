@@ -1,14 +1,6 @@
 <?php
 
-class Complement
+function toRna($strand)
 {
-    public static function ofDna($strand)
-    {
-        return strtr($strand, 'CGTA', 'GCAU');
-    }
-
-    public static function ofRna($strand)
-    {
-        return strtr($strand, 'GCAU', 'CGTA');
-    }
+    return strtr($strand, 'CGTA', 'GCAU');
 }
