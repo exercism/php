@@ -5,7 +5,7 @@ require "gigasecond.php";
 class GigasecondTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function date_setup($date)
+    public function dateSetup($date)
     {
         $UTC = new DateTimeZone("UTC");
         $date = new DateTime($date, $UTC);
