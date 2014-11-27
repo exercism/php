@@ -1,40 +1,30 @@
 <?php
 
-class Squares
+function squareOfSums($max)
 {
-    protected $max = 1;
+    $sum = 0;
 
-    public function __construct($max)
-    {
-        $this->max = $max;
+    foreach (range(1, $max) as $i) {
+        $sum += $i;
     }
 
-    public function squareOfSums()
-    {
-        $sum = 0;
+    $sum = pow($sum, 2);
 
-        foreach (range(1, $this->max) as $i) {
-            $sum += $i;
-        }
+    return $sum;
+}
 
-        $sum = pow($sum, 2);
+function sumOfSquares($max)
+{
+    $sum = 0;
 
-        return $sum;
+    foreach (range(1, $max) as $i) {
+        $sum += pow($i, 2);
     }
 
-    public function sumOfSquares()
-    {
-        $sum = 0;
+    return $sum;
+}
 
-        foreach (range(1, $this->max) as $i) {
-            $sum += pow($i, 2);
-        }
-
-        return $sum;
-    }
-
-    public function difference()
-    {
-        return $this->squareOfSums() - $this->sumOfSquares();
-    }
+function difference($max)
+{
+    return squareOfSums($max) - sumOfSquares($max);
 }
