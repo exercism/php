@@ -1,8 +1,9 @@
 <?php
 
-class Roman
+
+function toRoman($number)
 {
-    protected static $mapping = [
+    $mapping = [
         1000 => 'M',
         900 => 'CM',
         500 => 'D',
@@ -18,17 +19,13 @@ class Roman
         1 => 'I'
     ];
 
-    public static function toRoman($num)
-    {
-        $ret = '';
+    $return = '';
 
-        foreach (self::$mapping as $arabic => $roman) {
-            while ($num >= $arabic) {
-                $ret .= $roman;
-                $num -= $arabic;
-            }
-        }
-
-        return $ret;
+    foreach ($mapping as $decimal => $roman) {
+            $quantity = (int) ($number / $decimal);
+            $return .= str_repeat($roman, $quantity);
+            $number -= $decimal * $quantity;
     }
+
+    return $return;
 }
