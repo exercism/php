@@ -6,55 +6,46 @@ class TrinaryTest extends \PHPUnit_Framework_TestCase
 {
     public function test1IsDecimal1()
     {
-        $trinary = new Trinary('1');
-        $this->assertEquals(1, $trinary->toDecimal());
+        $this->assertEquals(1, toDecimal('1'));
     }
 
     public function test2IsDecimal2()
     {
-        $trinary = new Trinary('2');
-        $this->assertEquals(2, $trinary->toDecimal());
+        $this->assertEquals(2, toDecimal('2'));
     }
 
     public function test10IsDecimal3()
     {
-        $trinary = new Trinary('10');
-        $this->assertEquals(3, $trinary->toDecimal());
+        $this->assertEquals(3, toDecimal('10'));
     }
 
     public function test11IsDecimal4()
     {
-        $trinary = new Trinary('11');
-        $this->assertEquals(4, $trinary->toDecimal());
+        $this->assertEquals(4, toDecimal('11'));
     }
 
     public function test100IsDecimal9()
     {
-        $trinary = new Trinary('100');
-        $this->assertEquals(9, $trinary->toDecimal());
+        $this->assertEquals(9, toDecimal('100'));
     }
 
     public function test112IsDecimal14()
     {
-        $trinary = new Trinary('112');
-        $this->assertEquals(14, $trinary->toDecimal());
+        $this->assertEquals(14, toDecimal('112'));
     }
 
     public function test222IsDecimal26()
     {
-        $trinary = new Trinary('222');
-        $this->assertEquals(26, $trinary->toDecimal());
+        $this->assertEquals(26, toDecimal('222'));
     }
 
     public function test1122000120IsDecimal32091()
     {
-        $trinary = new Trinary('1122000120');
-        $this->assertEquals(32091, $trinary->toDecimal());
+        $this->assertEquals(32091, toDecimal('1122000120'));
     }
 
     public function testInvalidTrinaryIsDecimal0()
     {
-        $trinary = new Trinary('carrot');
-        $this->assertSame(0, $trinary->toDecimal());
+        $this->assertSame(0, toDecimal('13201'));
     }
 }
