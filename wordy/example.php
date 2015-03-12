@@ -1,83 +1,52 @@
 <?php
 
-class WordProblem
+function calculate($question = "")
 {
-    private $BINARY_OPERATORS;
-    private $matches;
+    preg_match(
+        "/What is (-?\d+) (plus|minus|multiplied by|divided by) "
+        . "(-?\d+)(?: (plus|minus|multiplied by|divided by) (-?\d+))?\?/",
+        $question,
+        $matches
+    );
 
-    public function __construct($question = '')
-    {
-        $this->BINARY_OPERATORS = [
-            'plus' => function ($l, $r) {
-                return $l + $r;
-            },
-            'minus' => function ($l, $r) {
-                return $l - $r;
-            },
-            'multiplied by' => function ($l, $r) {
-                return $l * $r;
-            },
-            'divided by' => function ($l, $r) {
-                return $l / $r;
-            }
-        ];
-
-        $this->question = $question;
-
-        preg_match($this->pattern(), $this->question, $this->matches);
+    if (empty($matches[2])) {
+        throw new InvalidArgumentException();
     }
 
-    public function operators()
-    {
-        return array_keys($this->BINARY_OPERATORS);
+    switch ($matches[2]) {
+        case 'plus':
+            $number = $matches[1] + $matches[3];
+            break;
+        case 'minus':
+            $number = $matches[1] - $matches[3];
+            break;
+        case 'multiplied by':
+            $number = $matches[1] * $matches[3];
+            break;
+        case 'divided by':
+            $number = $matches[1] / $matches[3];
+            break;
+        default:
+            $number = 0;
     }
 
-    public function pattern()
-    {
-        $operations = sprintf(' (%s) ', join('|', $this->operators()));
-        return join('', ['/(?:what is ([-+]?[\d]+)', $operations, '([-+]?[\d]+)(?:', $operations, '([-+]?[\d]+))?)/i']);
-    }
+    if (isset($matches[4]) && isset($matches[5])) {
+        switch ($matches[4]) {
+            case 'plus':
+                $number += $matches[5];
+                break;
+            case 'minus':
+                $number -= $matches[5];
+                break;
+            case 'multiplied by':
+                $number *= $matches[5];
+                break;
+            case 'divided by':
+                $number /= $matches[5];
+                break;
 
-    public function tooComplicated()
-    {
-        return !count($this->matches);
-    }
-
-    public function answer()
-    {
-        if ($this->tooComplicated()) {
-            throw new InvalidArgumentException("I don't understand the question");
         }
-
-        return $this->evaluate();
     }
 
-    public function evaluate()
-    {
-        $out = 0;
-        $m = $this->matches;
-
-        if (!empty($m[1]) && !empty($m[2]) && !empty($m[3])) {
-            $out = $this->operate($m[2], $m[1], $m[3]);
-        }
-
-        if (!empty($m[4]) && !empty($m[5])) {
-            $out = $this->operate($m[4], $out, $m[5]);
-        }
-
-        return $out;
-    }
-
-    public function operate($operation, $l, $r)
-    {
-        $fn = function () {
-            return 0;
-        };
-
-        if (!empty($this->BINARY_OPERATORS[$operation])) {
-            $fn = $this->BINARY_OPERATORS[$operation];
-        }
-
-        return $fn((int)$l, (int)$r);
-    }
+    return $number;
 }
