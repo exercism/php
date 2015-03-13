@@ -1,28 +1,17 @@
 <?php
 
-class Trinary
+function toDecimal($ternaryString, $base = 3)
 {
-    const BASE = 3;
-
-    protected $digits;
-
-    public function __construct($decimal = '')
-    {
-        $this->digits = array_map('intval', array_reverse(str_split($decimal)));
+    if (!preg_match('/^[0-2]+$/', $ternaryString)) {
+        return 0;
     }
 
-    public function toDecimal()
-    {
-        list($decimal) = array_reduce($this->digits, [$this, 'accumulator'], [0, 0]);
-        return is_int($decimal) ? $decimal : 0;
+    $decimalNumber = 0;
+    $numbers = str_split($ternaryString);
+    $maxPower = count($numbers) - 1;
+    for ($i = 0; $i <= $maxPower; ++$i) {
+        $decimalNumber += $numbers[$maxPower-$i]*pow($base, $i);
     }
 
-    public function accumulator($decimal, $digit)
-    {
-        list($out, $index) = $decimal;
-
-        $out += $digit * pow(self::BASE, $index);
-
-        return [$out, ++$index];
-    }
+    return $decimalNumber;
 }
