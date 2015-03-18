@@ -2,7 +2,7 @@
   "slug": "php",
   "language": "PHP",
   "repository": "https://github.com/exercism/xphp",
-  "active": false,
+  "active": true,
   "problems": [
     "hamming",
     "gigasecond",
