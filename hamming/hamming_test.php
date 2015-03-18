@@ -39,4 +39,10 @@ class HammingComparatorTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(9, distance('GGACGGATTCTG', 'AGGACGGATTCT'));
     }
+
+    public function testExceptionThrownWhenStrandsAreDifferentLength()
+    {
+        $this->setExpectedException('InvalidArgumentException', 'DNA strands must be of equal length.');
+        distance('GGACG', 'AGGACGTGG');
+    }
 }
