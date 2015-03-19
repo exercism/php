@@ -6,26 +6,26 @@ class ComplementTest extends \PHPUnit_Framework_TestCase
 {
     public function testTranscribesGuanineToCytosine()
     {
-        $this->assertSame(toRna('C'), 'G');
+        $this->assertSame('G', toRna('C'));
     }
 
     public function testTranscribesCytosineToGuanine()
     {
-        $this->assertSame(toRna('G'), 'C');
+        $this->assertSame('C', toRna('G'));
     }
 
     public function testTranscribesThymineToAdenine()
     {
-        $this->assertSame(toRna('T'), 'A');
+        $this->assertSame('A', toRna('T'));
     }
 
     public function testTranscribesAdenineToUracil()
     {
-        $this->assertSame(toRna('A'), 'U');
+        $this->assertSame('U', toRna('A'));
     }
 
     public function testTranscribesAllOccurencesOne()
     {
-        $this->assertSame(toRna('ACGTGGTCTTAA'), 'UGCACCAGAAUU');
+        $this->assertSame('UGCACCAGAAUU', toRna('ACGTGGTCTTAA'));
     }
 }
