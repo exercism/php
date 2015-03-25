@@ -31,6 +31,7 @@ class ConnectTest extends \PHPUnit_Framework_TestCase
      */
     public function testOneByOneBoardBlack()
     {
+        $this->markTestSkipped();
         $lines = array("X");
         $this->assertEquals("black", resultFor($this->makeBoard($lines)));
     }
@@ -40,6 +41,7 @@ class ConnectTest extends \PHPUnit_Framework_TestCase
      */
     public function testOneByOneBoardWhite()
     {
+        $this->markTestSkipped();
         $lines = array("O");
         $this->assertEquals("white", resultFor($this->makeBoard($lines)));
     }
@@ -50,6 +52,7 @@ class ConnectTest extends \PHPUnit_Framework_TestCase
      */
     public function testConvultedPath()
     {
+        $this->markTestSkipped();
         $lines = array(
             ". X X . .",
             " X . X . X",
@@ -65,6 +68,7 @@ class ConnectTest extends \PHPUnit_Framework_TestCase
      */
     public function testRectangleWhiteWins()
     {
+        $this->markTestSkipped();
         $lines = array(
             ". O . .",
             " O X X X",
@@ -80,6 +84,7 @@ class ConnectTest extends \PHPUnit_Framework_TestCase
      */
     public function testRectangleBlackWins()
     {
+        $this->markTestSkipped();
         $lines = array(
             ". O . .",
             " O X X X",
@@ -96,6 +101,7 @@ class ConnectTest extends \PHPUnit_Framework_TestCase
      */
     public function testSpiralBlackWins()
     {
+        $this->markTestSkipped();
         $lines = array(
             "OXXXXXXXX",
             "OXOOOOOOO",
@@ -116,6 +122,7 @@ class ConnectTest extends \PHPUnit_Framework_TestCase
      */
     public function testSpiralNobodyWins()
     {
+        $this->markTestSkipped();
         $lines = array(
             "OXXXXXXXX",
             "OXOOOOOOO",
