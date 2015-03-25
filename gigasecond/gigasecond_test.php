@@ -22,6 +22,7 @@ class GigasecondTest extends \PHPUnit_Framework_TestCase
 
     public function test2()
     {
+        $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("1977-06-13");
         $gs = from($date);
 
@@ -30,6 +31,7 @@ class GigasecondTest extends \PHPUnit_Framework_TestCase
 
     public function test3()
     {
+        $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("1959-7-19");
         $gs = from($date);
 
@@ -38,6 +40,7 @@ class GigasecondTest extends \PHPUnit_Framework_TestCase
 
     public function test4()
     {
+        $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("2015-01-24 22:00:00");
         $gs = from($date);
 
@@ -46,6 +49,7 @@ class GigasecondTest extends \PHPUnit_Framework_TestCase
 
     public function test5()
     {
+        $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("2015-01-24 23:59:59");
         $gs = from($date);
 
