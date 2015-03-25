@@ -62,6 +62,6 @@ class GigasecondTest extends \PHPUnit_Framework_TestCase
         $your_birthday = GigasecondTest::dateSetup("your_birthday");
         $gs = from($your_birthday);
 
-        $this->assertSame($gs->format("Y-m-d H:i:s"), "2009-01-31 01:46:40");
+        $this->assertSame($gs->format("Y-m-d H:i:s"), "2046-10-03 01:46:39");
     }
 }

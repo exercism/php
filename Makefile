@@ -26,6 +26,8 @@ test-assignment: bin/phpunit.phar
 	@echo "running tests for: $(ASSIGNMENT)"
 	@cp $(ASSIGNMENT)/$(TSTFILE) $(OUTDIR)/$(TSTFILE)
 	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
+	@sed -i '/markTestSkipped/d' $(OUTDIR)/$(TSTFILE)
+	@sed -i 's/"your_birthday"/"2015-01-24 23:59:59"/' $(OUTDIR)/$(TSTFILE)
 	@bin/phpunit.phar --no-configuration $(OUTDIR)/$(TSTFILE)
 
 # all tests
