@@ -58,7 +58,7 @@ class GigasecondTest extends \PHPUnit_Framework_TestCase
 
     public function testYourself()
     {
-        $this->markTestSkipped();
+        $this->markTestSkipped("Skip");
         $your_birthday = GigasecondTest::dateSetup("your_birthday");
         $gs = from($your_birthday);
 
