@@ -2,3 +2,5 @@
 .DS_Store
 tmp
 *.phar
+bin/configlet
+bin/configlet.exe
