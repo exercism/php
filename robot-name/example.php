@@ -8,7 +8,7 @@ class Robot
 
     public function __construct()
     {
-        $this->alphabet = str_split('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+        $this->alphabet = array_flip(str_split('ABCDEFGHIJKLMNOPQRSTUVWXYZ'));
     }
 
     public function getName()
