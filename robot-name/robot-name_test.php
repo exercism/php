@@ -14,7 +14,7 @@ class RobotTest extends PHPUnit_Framework_TestCase
 
     public function testHasName()
     {
-        $this->assertRegExp('/\w{2}\d{3}/', $this->robot->getName());
+        $this->assertRegExp('/[a-z]{2}\d{3}/i', $this->robot->getName());
     }
 
     public function testNameSticks()
