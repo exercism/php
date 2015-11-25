@@ -26,3 +26,4 @@ To do this call
 ````$ composer global require phpunit/phpunit````
 
 If you are not using Composer package manager you can download the phpunit.phar file and add that to your PATH, or project directory as explained here: [PHPUnit](https://phpunit.de/manual/current/en/installation.html)
+
