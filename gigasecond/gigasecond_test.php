@@ -8,7 +8,7 @@ class GigasecondTest extends \PHPUnit_Framework_TestCase
     public function dateSetup($date)
     {
         $UTC = new DateTimeZone("UTC");
-        $date = new DateTimeImmutable($date, $UTC);
+        $date = new DateTime($date, $UTC);
         return $date;
     }
 
