@@ -1,4 +1,4 @@
-PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. Php provides benefits like :- 
+PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. Php provides benefits like :-
 * Reducing server traffic by validating user input in the browser before it is sent to the server.
 * Providing immediate feedback to the site visitors so that they don't have to reload pages just to get error messages on form validations.
 * Allowing richer user interfaces with content changes on mouse hover, drag and drop gestures, and animations.
