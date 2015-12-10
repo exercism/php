@@ -8,7 +8,7 @@ PHP is mainly focused on server-side scripting. You can do anything any other CG
 * Support a [wide range of databases.](http://php.net/manual/en/refs.database.php)
 * Use [object oriented programming.](http://php.net/manual/en/language.oop5.php)
 
-PHP has excellent documentation and more information can be found  [here](http://php.net/)
+PHP has excellent documentation and more information can be found [here.](http://php.net/)
 
 ##Why should you learn PHP?
 PHP is easy to get started with but also has advanced language features you will use as you grow as a developer.
