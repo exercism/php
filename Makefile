@@ -1,7 +1,7 @@
 # assignments
 ASSIGNMENT ?= ""
 IGNOREDIRS := "^(\.git|bin|docs|exercises)$$"
-ASSIGNMENTS = $(shell find . -maxdepth 1 -mindepth 1 -type d | awk -F/ '{print $$NF}' | sort | grep -Ev $(IGNOREDIRS))
+ASSIGNMENTS = $(shell find ./exercises -maxdepth 1 -mindepth 1 -type d | awk -F/ '{print $$NF}' | sort | grep -Ev $(IGNOREDIRS))
 
 # output directories
 TMPDIR ?= "/tmp"
@@ -24,8 +24,8 @@ bin/phpcs.phar:
 # single test
 test-assignment: bin/phpunit.phar
 	@echo "running tests for: $(ASSIGNMENT)"
-	@cat $(ASSIGNMENT)/$(TSTFILE) | sed '/markTestSkipped()/d' > $(OUTDIR)/$(TSTFILE)
-	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
+	@cat ./exercises/$(ASSIGNMENT)/$(TSTFILE) | sed '/markTestSkipped()/d' > $(OUTDIR)/$(TSTFILE)
+	@cp ./exercises/$(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
 	@bin/phpunit.phar --no-configuration $(OUTDIR)/$(TSTFILE)
 
 # all tests
@@ -35,7 +35,7 @@ test:
 # style check single test
 style-check-assignment: bin/phpcs.phar
 	@echo "checking $(ASSIGNMENT) against xPHP code standards"
-	@bin/phpcs.phar -sp --standard=phpcs-xphp.xml $(ASSIGNMENT)
+	@bin/phpcs.phar -sp --standard=phpcs-xphp.xml ./exercises/$(ASSIGNMENT)
 
 # style c heck all tests
 style-check:
