@@ -2,6 +2,9 @@
 
 class Clock
 {
+    /**
+     * @var int
+     */
     private $minutes;
 
     /**
@@ -10,33 +13,41 @@ class Clock
      */
     public function __construct($hour, $minutes = 0)
     {
-        $this->minutes = $hour * 60 + $minutes;
+        $totalMinutes = $this->calculateTotalMinutes($hour, $minutes);
+
+        $minutesWithoutFullDays = $this->ignoreWholeDays($totalMinutes);
+
+        $positiveTimeInMinutes = $this->ensurePositiveMinutes($minutesWithoutFullDays);
+
+        $this->minutes = $positiveTimeInMinutes;
     }
 
     /**
      * Returns a new Clock incremented by $minutes
      *
      * @param int $minutes
+     *
      * @return Clock
      */
     public function add($minutes)
     {
-        return $this->build($this->minutes + $minutes);
+        return new Clock(0, $this->minutes + $minutes);
     }
 
     /**
-     * Returns a new Clock deincremented by $minutes
+     * Returns a new Clock decremented by $minutes
      *
      * @param int $minutes
+     *
      * @return Clock
      */
     public function sub($minutes)
     {
-        return $this->build($this->minutes - $minutes);
+        return $this->add(-$minutes);
     }
 
     /**
-     * Returns the string representation of the receiver
+     * Returns the string representation of the clock in 24hr format
      *
      * @return string
      */
@@ -46,16 +57,33 @@ class Clock
     }
 
     /**
-     * @param $minutes
-     * @return Clock
+     * @param int $hour
+     * @param int $minutes
+     *
+     * @return int
      */
-    private function build($minutes)
+    private function calculateTotalMinutes($hour, $minutes)
     {
-        if ($minutes < 60) {
-            $minutes += 24 * 60;
-        }
+        return ($hour * 60) + $minutes;
+    }
 
-        $hour = floor($minutes / 60);
-        return new Clock($hour < 24 ? $hour : $hour - 24, $minutes % 60);
+    /**
+     * @param int $minutes
+     *
+     * @return int
+     */
+    private function ignoreWholeDays($minutes)
+    {
+        return $minutes % (24 * 60);
+    }
+
+    /**
+     * @param int $minutes
+     *
+     * @return int
+     */
+    private function ensurePositiveMinutes($minutes)
+    {
+        return ($minutes < 0) ? $minutes + 1440 : $minutes;
     }
 }
