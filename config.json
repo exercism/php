@@ -6,6 +6,7 @@
   "problems": [
     "hamming",
     "gigasecond",
+    "pangram",
     "rna-transcription",
     "raindrops",
     "isogram",
