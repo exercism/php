@@ -4,6 +4,7 @@
   "repository": "https://github.com/exercism/xphp",
   "active": true,
   "problems": [
+    "hello-world",
     "hamming",
     "gigasecond",
     "pangram",
