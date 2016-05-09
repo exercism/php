@@ -7,3 +7,4 @@ script:
 - make test
 - "./bin/fetch-configlet"
 - "./bin/configlet ."
+sudo: false
