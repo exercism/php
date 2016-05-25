@@ -64,13 +64,4 @@ class GigasecondTest extends \PHPUnit_Framework_TestCase
 
         $this->assertNotEquals($date, $gs);
     }
-
-    public function testYourself()
-    {
-        $this->markTestSkipped("Skip");
-        $your_birthday = GigasecondTest::dateSetup("your_birthday");
-        $gs = from($your_birthday);
-
-        $this->assertSame("2046-10-03 01:46:39", $gs->format("Y-m-d H:i:s"));
-    }
 }
