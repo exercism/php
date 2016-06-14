@@ -56,4 +56,10 @@ class IsogramTest extends PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $this->assertTrue(isIsogram('Emily Jung Schwartzkopf'));
     }
+
+    public function testDuplicateAccentedLetters()
+    {
+        $this->markTestSkipped();
+        $this->assertFalse(isIsogram('éléphant'));
+    }
 }
