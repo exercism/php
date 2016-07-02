@@ -24,7 +24,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(10);
 
-        $clock = $clock->add(3);
+        $clock->add(3);
 
         $this->assertEquals('10:03', $clock->__toString());
     }
@@ -34,7 +34,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(6, 41);
 
-        $clock = $clock->add(0);
+        $clock->add(0);
 
         $this->assertEquals('06:41', $clock->__toString());
     }
@@ -44,7 +44,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(10);
 
-        $clock = $clock->add(61);
+        $clock->add(61);
 
         $this->assertEquals('11:01', $clock->__toString());
     }
@@ -54,7 +54,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(0, 45);
 
-        $clock = $clock->add(160);
+        $clock->add(160);
 
         $this->assertEquals('03:25', $clock->__toString());
     }
@@ -64,7 +64,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(1, 1);
 
-        $clock = $clock->add(3500);
+        $clock->add(3500);
 
         $this->assertEquals('11:21', $clock->__toString());
     }
@@ -74,7 +74,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(23, 30);
 
-        $clock = $clock->add(60);
+        $clock->add(60);
 
         $this->assertEquals('00:30', $clock->__toString());
     }
@@ -84,7 +84,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(10);
 
-        $clock = $clock->sub(90);
+        $clock->sub(90);
 
         $this->assertEquals('08:30', $clock->__toString());
     }
@@ -94,7 +94,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(6, 15);
 
-        $clock = $clock->sub(160);
+        $clock->sub(160);
 
         $this->assertEquals('03:35', $clock->__toString());
     }
@@ -104,7 +104,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(6, 15);
 
-        $clock = $clock->add(-160);
+        $clock->add(-160);
 
         $this->assertEquals('03:35', $clock->__toString());
     }
@@ -114,7 +114,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(2, 20);
 
-        $clock = $clock->sub(3000);
+        $clock->sub(3000);
 
         $this->assertEquals('00:20', $clock->__toString());
     }
@@ -124,7 +124,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(0, 30);
 
-        $clock = $clock->sub(60);
+        $clock->sub(60);
 
         $this->assertEquals('23:30', $clock->__toString());
     }
@@ -134,7 +134,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(5, 32);
 
-        $clock = $clock->add(25 * 60);
+        $clock->add(25 * 60);
 
         $this->assertEquals('06:32', $clock->__toString());
     }
@@ -144,7 +144,7 @@ class ClockTest extends \PHPUnit_Framework_TestCase
         $this->markTestSkipped();
         $clock = new Clock(5, 32);
 
-        $clock = $clock->sub(25 * 60);
+        $clock->sub(25 * 60);
 
         $this->assertEquals('04:32', $clock->__toString());
     }
