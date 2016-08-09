@@ -33,6 +33,12 @@ class RaindropsTest extends PHPUnit_Framework_TestCase
         $this->assertSame("Pling", raindrops(6));
     }
 
+    public function test9()
+    {
+        $this->markTestSkipped();
+        $this->assertSame("Pling", raindrops(9));
+    }
+
     public function test10()
     {
         $this->markTestSkipped();
