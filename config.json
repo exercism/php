@@ -47,62 +47,62 @@
   },
   {
     "slug": "hamming",
-    "difficulty": 1,
+    "difficulty": 2,
     "topics": []
   },
   {
     "slug": "gigasecond",
-    "difficulty": 1,
+    "difficulty": 2,
     "topics": []
   },
   {
     "slug": "bob",
-    "difficulty": 1,
+    "difficulty": 4,
     "topics": []
   },
   {
     "slug": "pangram",
-    "difficulty": 1,
+    "difficulty": 4,
     "topics": []
   },
   {
     "slug": "rna-transcription",
-    "difficulty": 1,
+    "difficulty": 3,
     "topics": []
   },
   {
     "slug": "raindrops",
-    "difficulty": 1,
+    "difficulty": 6,
     "topics": []
   },
   {
     "slug": "isogram",
-    "difficulty": 1,
+    "difficulty": 4,
     "topics": []
   },
   {
     "slug": "difference-of-squares",
-    "difficulty": 1,
+    "difficulty": 2,
     "topics": []
   },
   {
     "slug": "largest-series-product",
-    "difficulty": 1,
+    "difficulty": 5,
     "topics": []
   },
   {
     "slug": "roman-numerals",
-    "difficulty": 1,
+    "difficulty": 4,
     "topics": []
   },
   {
     "slug": "pig-latin",
-    "difficulty": 1,
+    "difficulty": 4,
     "topics": []
   },
   {
     "slug": "robot-name",
-    "difficulty": 1,
+    "difficulty": 3,
     "topics": []
   },
   {
