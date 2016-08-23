@@ -38,5 +38,127 @@
   ],
   "foregone": [
 
-  ]
+  ],
+  "exercises": [
+  {
+    "slug": "hello-world",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "hamming",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "gigasecond",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "bob",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "pangram",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "rna-transcription",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "raindrops",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "isogram",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "difference-of-squares",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "largest-series-product",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "roman-numerals",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "pig-latin",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "robot-name",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "leap",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "word-count",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "anagram",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "trinary",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "bowling",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "clock",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "wordy",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "connect",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "minesweeper",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "change",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "phone-number",
+    "difficulty": 1,
+    "topics": []
+  },
+]
 }
