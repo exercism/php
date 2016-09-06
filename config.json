@@ -27,7 +27,8 @@
     "connect",
     "minesweeper",
     "change",
-    "phone-number"
+    "phone-number",
+    "beer-song"
   ],
   "deprecated": [
 
@@ -157,6 +158,11 @@
   },
   {
     "slug": "phone-number",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "beer-song",
     "difficulty": 1,
     "topics": []
   }
