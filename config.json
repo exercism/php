@@ -28,7 +28,8 @@
     "minesweeper",
     "change",
     "phone-number",
-    "beer-song"
+    "beer-song",
+    "atbash-cipher"
   ],
   "deprecated": [
 
@@ -163,6 +164,11 @@
   },
   {
     "slug": "beer-song",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "atbash-cipher",
     "difficulty": 1,
     "topics": []
   }
