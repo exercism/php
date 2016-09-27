@@ -70,7 +70,8 @@ class AccumulateTest extends PHPUnit_Framework_TestCase
         $digits = [1, 2, 3];
         $expected = [['a1', 'a2', 'a3'], ['b1', 'b2', 'b3'], ['c1', 'c2', 'c3']];
 
-        $this->assertEquals($expected,
+        $this->assertEquals(
+            $expected,
             accumulate($chars, function ($char) use ($digits) {
                 return accumulate($digits, function ($digit) use ($char) {
                     return $char.$digit;
