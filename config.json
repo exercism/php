@@ -30,7 +30,6 @@
     "phone-number",
     "beer-song",
     "atbash-cipher",
-    "binary",
     "accumulate"
   ],
   "deprecated": [
@@ -171,11 +170,6 @@
   },
   {
     "slug": "atbash-cipher",
-    "difficulty": 1,
-    "topics": []
-  },
-  {
-    "slug": "binary",
     "difficulty": 1,
     "topics": []
   },
