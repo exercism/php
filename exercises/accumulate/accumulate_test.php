@@ -2,11 +2,6 @@
 
 require_once 'accumulate.php';
 
-// These required for last three tests
-require_once 'test_stub_static.php';
-require_once 'test_stub_invoke.php';
-require_once 'test_stub_onject.php';
-
 class AccumulateTest extends PHPUnit_Framework_TestCase
 {
     public function testAccumulateEmpty()
@@ -51,7 +46,7 @@ class AccumulateTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(['Hello', 'World!'], accumulate(['olleH', '!dlroW'], $accumulator));
     }
 
-    public function testAccumulateContants()
+    public function testAccumulateConstants()
     {
         $this->markTestSkipped();
 
@@ -108,5 +103,29 @@ class AccumulateTest extends PHPUnit_Framework_TestCase
         $this->markTestSkipped();
 
         $this->assertEquals([true, false, false], accumulate(['Yes', 0, []], [new Is(), 'truthy']));
+    }
+}
+
+class Str
+{
+    public static function len($string)
+    {
+        return strlen($string);
+    }
+}
+
+class StrSpliter
+{
+    public function __invoke($value)
+    {
+        return str_split($value);
+    }
+}
+
+class Is
+{
+    public function truthy($value)
+    {
+        return $value ? true : false;
     }
 }
