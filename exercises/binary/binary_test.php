@@ -4,54 +4,54 @@ require_once 'binary.php';
 
 class BinaryTest extends \PHPUnit_Framework_TestCase
 {
-    public function test_binary_1_is_decimal_1()
+    public function testBinary1IsDecimal1()
     {
         $this->assertEquals(1, parse_binary('1'));
     }
 
-    public function test_binary_10_is_decimal_2()
+    public function testBinary10IsDecimal2()
     {
         $this->markTestSkipped();
 
         $this->assertEquals(2, parse_binary('10'));
     }
 
-    public function test_binary_11_is_decimal_3()
+    public function testBinary11IsDecimal3()
     {
         $this->markTestSkipped();
 
         $this->assertEquals(3, parse_binary('11'));
     }
 
-    public function test_binary_100_is_decimal_4()
+    public function testBinary100IsDecimal4()
     {
         $this->markTestSkipped();
 
         $this->assertEquals(4, parse_binary('100'));
     }
 
-    public function test_binary_1001_is_decimal_9()
+    public function testBinary1001IsDecimal9()
     {
         $this->markTestSkipped();
 
         $this->assertEquals(9, parse_binary('1001'));
     }
 
-    public function test_binary_11010_is_decimal_26()
+    public function testBinary11010IsDecimal26()
     {
         $this->markTestSkipped();
 
         $this->assertEquals(26, parse_binary('11010'));
     }
 
-    public function test_binary_10001101000_is_decimal_1128()
+    public function testBinary10001101000IsDecimal1128()
     {
         $this->markTestSkipped();
 
         $this->assertEquals(1128, parse_binary('10001101000'));
     }
 
-    public function test_id_dosnt_accept_2()
+    public function testItDosentAccept2()
     {
         $this->markTestSkipped();
 
@@ -59,7 +59,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
         parse_binary('2');
     }
 
-    public function test_id_dosnt_accept_5()
+    public function testItDosentAccept5()
     {
         $this->markTestSkipped();
 
@@ -67,7 +67,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
         parse_binary('2');
     }
 
-    public function test_id_dosnt_accept_9()
+    public function testItDosentAccept9()
     {
         $this->markTestSkipped();
 
@@ -75,7 +75,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
         parse_binary('9');
     }
 
-    public function test_id_dosnt_accept_134678()
+    public function testItDosentAccept134678()
     {
         $this->markTestSkipped();
 
@@ -83,7 +83,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
         parse_binary('134678');
     }
 
-    public function test_id_dosnt_accept_abc10z()
+    public function testItDosentAcceptabc10z()
     {
         $this->markTestSkipped();
 
@@ -91,7 +91,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
         parse_binary('abc10z');
     }
 
-    public function test_binary_011_with_leading_zero_is_decimal_3()
+    public function testBinary011WithLeadingZeroIsDecimal3()
     {
         $this->markTestSkipped();
 
