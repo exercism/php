@@ -29,7 +29,8 @@
     "change",
     "phone-number",
     "beer-song",
-    "atbash-cipher"
+    "atbash-cipher",
+    "binary"
   ],
   "deprecated": [
 
@@ -169,6 +170,11 @@
   },
   {
     "slug": "atbash-cipher",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "binary",
     "difficulty": 1,
     "topics": []
   }
