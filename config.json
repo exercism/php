@@ -30,6 +30,8 @@
     "phone-number",
     "beer-song",
     "atbash-cipher",
+    "binary",
+    "braket-push",
     "accumulate"
   ],
   "deprecated": [
@@ -170,6 +172,16 @@
   },
   {
     "slug": "atbash-cipher",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "bracket-push",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "binary",
     "difficulty": 1,
     "topics": []
   },
