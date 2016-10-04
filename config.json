@@ -31,7 +31,8 @@
     "beer-song",
     "atbash-cipher",
     "binary",
-    "braket-push"
+    "braket-push",
+    "accumulate"
   ],
   "deprecated": [
 
@@ -181,6 +182,11 @@
   },
   {
     "slug": "binary",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "accumulate",
     "difficulty": 1,
     "topics": []
   }
