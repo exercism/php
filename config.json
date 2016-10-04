@@ -32,7 +32,8 @@
     "atbash-cipher",
     "binary",
     "braket-push",
-    "accumulate"
+    "accumulate",
+    "variable-length-quantity"
   ],
   "deprecated": [
 
@@ -187,6 +188,11 @@
   },
   {
     "slug": "accumulate",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "variable-length-quantity",
     "difficulty": 1,
     "topics": []
   }
