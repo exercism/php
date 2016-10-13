@@ -33,7 +33,8 @@
     "binary",
     "braket-push",
     "accumulate",
-    "variable-length-quantity"
+    "variable-length-quantity",
+    "acronym"
   ],
   "deprecated": [
 
@@ -193,6 +194,11 @@
   },
   {
     "slug": "variable-length-quantity",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
+    "slug": "acronym",
     "difficulty": 1,
     "topics": []
   }
