@@ -5,134 +5,142 @@ class PigLatinTest extends PHPUnit_Framework_TestCase
 {
     public function testWordBeginningWithP()
     {
-        $this->assertEquals("igpay", PigLatin::translate("pig"));
+        $translator = new PigLatin();
+        $this->assertEquals("igpay", $translator->translate("pig"));
     }
 
     public function testWordBeginningWithK()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("oalakay", PigLatin::translate("koala"));
+        $translator = new PigLatin();
+        $this->assertEquals("oalakay", $translator->translate("koala"));
     }
 
     public function testWordBeginningWithY()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("ellowyay", PigLatin::translate("yellow"));
+        $translator = new PigLatin();
+        $this->assertEquals("ellowyay", $translator->translate("yellow"));
     }
 
     public function testWordBeginningWithX()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("enonxay", PigLatin::translate("xenon"));
+        $translator = new PigLatin();
+        $this->assertEquals("enonxay", $translator->translate("xenon"));
     }
 
     public function testWordBeginningWithA()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("appleay", PigLatin::translate("apple"));
+        $translator = new PigLatin();
+        $this->assertEquals("appleay", $translator->translate("apple"));
     }
 
     public function testWordBeginningWithE()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("earay", PigLatin::translate("ear"));
+        $translator = new PigLatin();
+        $this->assertEquals("earay", $translator->translate("ear"));
     }
 
     public function testWordBeginningWithI()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("iglooay", PigLatin::translate("igloo"));
+        $translator = new PigLatin();
+        $this->assertEquals("iglooay", $translator->translate("igloo"));
     }
 
     public function testWordBeginningWithO()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("objectay", PigLatin::translate("object"));
+        $translator = new PigLatin();
+        $this->assertEquals("objectay", $translator->translate("object"));
     }
 
     public function testWordBeginningWithU()
     {
         $this->markTestSkipped();
+        $translator = new PigLatin();
+        $this->assertEquals("underay", $translator->translate("under"));
+    }
 
-        $this->assertEquals("underay", PigLatin::translate("under"));
+    public function testWordBeginningVowelFollowedByQu()
+    {
+        $this->markTestSkipped();
+        $translator = new PigLatin();
+        $this->assertEquals("equalay", $translator->translate("equal"));
     }
 
 
     public function testWordBeginningWithQWithoutAFollowingU()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("atqay", PigLatin::translate("qat"));
+        $translator = new PigLatin();
+        $this->assertEquals("atqay", $translator->translate("qat"));
     }
 
 
     public function testWordBeginningWithCh()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("airchay", PigLatin::translate("chair"));
+        $translator = new PigLatin();
+        $this->assertEquals("airchay", $translator->translate("chair"));
     }
 
     public function testWordBeginningWithQu()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("eenquay", PigLatin::translate("queen"));
+        $translator = new PigLatin();
+        $this->assertEquals("eenquay", $translator->translate("queen"));
     }
 
     public function testWordBeginningWithQuAndAPrecedingConsonant()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("aresquay", PigLatin::translate("square"));
+        $translator = new PigLatin();
+        $this->assertEquals("aresquay", $translator->translate("square"));
     }
 
     public function testWordBeginningWithTh()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("erapythay", PigLatin::translate("therapy"));
+        $translator = new PigLatin();
+        $this->assertEquals("erapythay", $translator->translate("therapy"));
     }
 
     public function testWordBeginningWithThr()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("ushthray", PigLatin::translate("thrush"));
+        $translator = new PigLatin();
+        $this->assertEquals("ushthray", $translator->translate("thrush"));
     }
 
     public function testWordBeginningWithSch()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("oolschay", PigLatin::translate("school"));
+        $translator = new PigLatin();
+        $this->assertEquals("oolschay", $translator->translate("school"));
     }
 
     public function testWordBeginningWithYt()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("yttriaay", PigLatin::translate("yttria"));
+        $translator = new PigLatin();
+        $this->assertEquals("yttriaay", $translator->translate("yttria"));
     }
 
     public function testWordBeginningWithXr()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("xrayay", PigLatin::translate("xray"));
+        $translator = new PigLatin();
+        $this->assertEquals("xrayay", $translator->translate("xray"));
     }
 
     public function testAWholePhrase()
     {
         $this->markTestSkipped();
-
-        $this->assertEquals("ickquay astfay unray", PigLatin::translate("quick fast run"));
+        $translator = new PigLatin();
+        $this->assertEquals("ickquay astfay unray", $translator->translate("quick fast run"));
     }
 }
