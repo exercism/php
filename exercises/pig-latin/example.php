@@ -8,7 +8,7 @@
 function translate($str)
 {
     $words = explode(" ", $str);
-    $translatedWords = array_map(["self", 'translateWord'], $words);
+    $translatedWords = array_map('translateWord', $words);
     return implode(' ', $translatedWords);
 }
 
