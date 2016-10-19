@@ -30,4 +30,3 @@ function translateWord($str)
 
     return sprintf("%s%say", substr($str, 1), $str[0]);
 }
-
