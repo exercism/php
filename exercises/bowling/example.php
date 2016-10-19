@@ -6,19 +6,22 @@
  */
 class Game
 {
-    private $rolls = array();
-    private $currentRoll = 0;
+    private $rolls = [];
 
     public function roll($pins)
     {
-        $this->rolls[$this->currentRoll++] = $pins;
+        if ($pins < 0 || $pins > 10) {
+            throw new Exception('Pins must be between 0 and 10');
+        }
+        $this->rolls[] = $pins;
     }
 
     public function score()
     {
         $score = 0;
         $frameIndex = 0;
-        for ($frame = 0; $frame < 10; $frame++) {
+        foreach (range(1, 10) as $frame) {
+            $this->guardAgainstIncompleteGame($frameIndex);
             if ($this->isStrike($frameIndex)) {
                 $score += 10 + $this->strikeBonus($frameIndex);
                 $frameIndex++;
@@ -30,6 +33,7 @@ class Game
                 $frameIndex += 2;
             }
         }
+        $this->guardAgainstTooManyFrames($frameIndex);
 
         return $score;
     }
@@ -41,7 +45,16 @@ class Game
 
     private function strikeBonus($frameIndex)
     {
-        return $this->rolls[$frameIndex + 1] + $this->rolls[$frameIndex + 2];
+        if (!isset($this->rolls[$frameIndex + 1]) || !isset($this->rolls[$frameIndex + 2])) {
+            throw new Exception('Incomplete game');
+        }
+        $bonus1 = $this->rolls[$frameIndex + 1];
+        $bonus2 = $this->rolls[$frameIndex + 2];
+        $sum = $bonus1 + $bonus2;
+        if ($sum > 10 && $frameIndex = 10 && $bonus1 != 10) {
+            throw new Exception('Cannot score more than 10');
+        }
+        return $sum;
     }
 
     private function isSpare($frameIndex)
@@ -51,11 +64,41 @@ class Game
 
     private function spareBonus($frameIndex)
     {
+        if (!isset($this->rolls[$frameIndex + 2])) {
+            throw new Exception('Incomplete game');
+        }
         return $this->rolls[$frameIndex + 2];
     }
 
     private function sumOfBallsInFrame($frameIndex)
     {
-        return $this->rolls[$frameIndex] + $this->rolls[$frameIndex + 1];
+        $sum = $this->rolls[$frameIndex] + $this->rolls[$frameIndex + 1];
+        if ($sum > 10) {
+            throw new Exception('Cannot score more than ten in single frame');
+        }
+        return $sum;
+    }
+
+    private function guardAgainstIncompleteGame($frameIndex)
+    {
+        if (!isset($this->rolls[$frameIndex])) {
+            throw new Exception('Incomplete game');
+        }
+    }
+
+    private function guardAgainstTooManyFrames($frameIndex)
+    {
+        $rollsCount = count($this->rolls);
+        if ($this->isStrike($frameIndex - 1)) {
+            if ($rollsCount > $frameIndex + 2) {
+                throw new Exception('Too many frames in game');
+            }
+        } elseif ($this->isSpare($frameIndex - 2)) {
+            if ($rollsCount > $frameIndex + 1) {
+                throw new Exception('Too many frames in game');
+            }
+        } elseif ($rollsCount > $frameIndex) {
+            throw new Exception('Too many frames in game');
+        }
     }
 }
