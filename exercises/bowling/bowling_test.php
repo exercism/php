@@ -16,48 +16,271 @@ class GameTest extends \PHPUnit_Framework_TestCase
         $this->game = new Game();
     }
 
-    public function testGutterGame()
+    public function testShouldBeAbleToScoreAGameWithAllZeros()
     {
         $this->rollMany(20, 0);
 
         $this->assertEquals(0, $this->game->score());
     }
 
-    public function testAllOnes()
+    public function testShouldBeAbleToScoreAGameWithNoStrikesOrSpares()
     {
         $this->markTestSkipped();
-        $this->rollMany(20, 1);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
+        $this->game->roll(3);
+        $this->game->roll(6);
 
-        $this->assertEquals(20, $this->game->score());
+        $this->assertEquals(90, $this->game->score());
     }
 
-    public function testOneSpare()
+    public function testASpareFollowedByZerosIsWorthTenPoints()
     {
         $this->markTestSkipped();
-        $this->rollSpare();
+        $this->game->roll(6);
+        $this->game->roll(4);
+        $this->rollMany(18, 0);
+
+        $this->assertEquals(10, $this->game->score());
+    }
+
+    public function testPointsScoredInTheRollAfterASpareAreCountedTwice()
+    {
+        $this->markTestSkipped();
+        $this->game->roll(6);
+        $this->game->roll(4);
         $this->game->roll(3);
         $this->rollMany(17, 0);
 
         $this->assertEquals(16, $this->game->score());
     }
 
-    public function testOneStrike()
+    public function testConsecutiveSparesEachGetAOneRollBonus()
     {
         $this->markTestSkipped();
-        $this->rollStrike();
+        $this->game->roll(5);
+        $this->game->roll(5);
         $this->game->roll(3);
+        $this->game->roll(7);
         $this->game->roll(4);
-        $this->rollMany(16, 0);
+        $this->rollMany(15, 0);
 
-        $this->assertEquals(24, $this->game->score());
+        $this->assertEquals(31, $this->game->score());
     }
 
-    public function testPerfectGame()
+    public function testASpareInTheLastFrameGetsAOneRollBonusThatIsCountedOnce()
+    {
+        $this->markTestSkipped();
+        $this->rollMany(18, 0);
+        $this->game->roll(7);
+        $this->game->roll(3);
+        $this->game->roll(7);
+
+        $this->assertEquals(17, $this->game->score());
+    }
+
+    public function testAStrikeEarnsTenPointsInFrameWithASingleRoll()
+    {
+        $this->markTestSkipped();
+        $this->game->roll(10);
+        $this->rollMany(18, 0);
+
+        $this->assertEquals(10, $this->game->score());
+    }
+
+    public function testPointsScoredInTheTwoRollsAfterAStrikeAreCountedTwiceAsABonus()
+    {
+        $this->markTestSkipped();
+        $this->game->roll(10);
+        $this->game->roll(5);
+        $this->game->roll(3);
+        $this->rollMany(16, 0);
+
+        $this->assertEquals(26, $this->game->score());
+    }
+
+    public function testConsecutiveStrikesEachGetTheTwoRollBonus()
+    {
+        $this->markTestSkipped();
+        $this->game->roll(10);
+        $this->game->roll(10);
+        $this->game->roll(10);
+        $this->game->roll(5);
+        $this->game->roll(3);
+        $this->rollMany(12, 0);
+
+        $this->assertEquals(81, $this->game->score());
+    }
+
+    public function testAStrikeInTheLastFrameGetsATwoRollBonusThatIsCountedOnce()
+    {
+        $this->markTestSkipped();
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(7);
+        $this->game->roll(1);
+
+        $this->assertEquals(18, $this->game->score());
+    }
+
+    public function testRollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll()
+    {
+        $this->markTestSkipped();
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(10);
+        $this->game->roll(10);
+
+        $this->assertEquals(30, $this->game->score());
+    }
+
+    public function testAStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus()
+    {
+        $this->markTestSkipped();
+        $this->rollMany(18, 0);
+        $this->game->roll(7);
+        $this->game->roll(3);
+        $this->game->roll(10);
+
+        $this->assertEquals(20, $this->game->score());
+    }
+
+    public function testStrikesWithTheTwoRollBonusDoNotGetBonusRolls()
+    {
+        $this->markTestSkipped();
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(7);
+        $this->game->roll(3);
+
+        $this->assertEquals(20, $this->game->score());
+    }
+
+    public function testAllStrikesIsAPerfectGame()
     {
         $this->markTestSkipped();
         $this->rollMany(12, 10);
 
         $this->assertEquals(300, $this->game->score());
+    }
+
+    public function testRollsCanNotScoreNegativePoints()
+    {
+        $this->markTestSkipped();
+        $this->expectException(Exception::class);
+
+        $this->game->roll(-1);
+    }
+
+    public function testARollCanNotScoreMoreThan10Points()
+    {
+        $this->markTestSkipped();
+        $this->expectException(Exception::class);
+        $this->game->roll(11);
+        $this->rollMany(19, 0);
+
+        $this->game->score();
+    }
+
+    public function testTwoRollsInAFrameCanNotScoreMoreThan10Points()
+    {
+        $this->markTestSkipped();
+
+        $this->expectException(Exception::class);
+        $this->game->roll(5);
+        $this->game->roll(6);
+        $this->rollMany(18, 0);
+
+        $this->game->score();
+    }
+
+    public function testTwoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points()
+    {
+        $this->markTestSkipped();
+        $this->expectException(Exception::class);
+
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(5);
+        $this->game->roll(6);
+
+        $this->game->score();
+    }
+
+    public function testAnUnstartedGameCanNotBeScored()
+    {
+        $this->markTestSkipped();
+
+        $this->expectException(Exception::class);
+
+        $this->game->score();
+    }
+
+    public function testAnIncompleteGameCanNotBeScored()
+    {
+        $this->markTestSkipped();
+        $this->expectException(Exception::class);
+        $this->game->roll(0);
+        $this->game->roll(0);
+
+        $this->game->score();
+    }
+
+    public function testAGameWithMoreThanTenFramesCanNotBeScored()
+    {
+        $this->markTestSkipped();
+        $this->expectException(Exception::class);
+        $this->rollMany(21, 0);
+
+        $this->game->score();
+    }
+
+    public function testBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated()
+    {
+        $this->markTestSkipped();
+        $this->expectException(Exception::class);
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+
+        $this->game->score();
+    }
+
+    public function testBothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated()
+    {
+        $this->markTestSkipped();
+        $this->expectException(Exception::class);
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(10);
+
+        $this->game->score();
+    }
+
+    public function testBonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated()
+    {
+        $this->markTestSkipped();
+        $this->expectException(Exception::class);
+        $this->rollMany(18, 0);
+        $this->game->roll(7);
+        $this->game->roll(3);
+
+        $this->game->score();
     }
 
     private function rollStrike()
