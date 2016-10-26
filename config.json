@@ -168,6 +168,11 @@
     "slug": "acronym",
     "difficulty": 1,
     "topics": []
+  },
+  {
+    "slug": "nucleotide-count",
+    "difficulty": 1,
+    "topics": []
   }
 ]
 }
