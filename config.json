@@ -193,6 +193,11 @@
     "slug": "allergies",
     "difficulty": 3,
     "topics": []
+  },
+  {
+    "slug": "markdown",
+    "difficulty": 3,
+    "topics": ["refactoring"]
   }
   ]
 }
