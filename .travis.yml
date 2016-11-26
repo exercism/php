@@ -3,6 +3,7 @@ language: php
 php:
 - 7.0
 script:
+- make install
 - make style-check
 - make test
 - "./bin/fetch-configlet"
