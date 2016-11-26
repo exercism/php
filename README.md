@@ -4,6 +4,20 @@
 
 Exercism exercises in PHP
 
+## Install Dependencies
+
+### All dependencies
+
+	% make install
+
+### Only tests dependencies
+
+	% make install-test
+
+### Only style-check dependencies
+
+	% make install-style
+
 ## Running Unit Test Suite
 
 ### All Assignments
@@ -23,6 +37,11 @@ Exercism exercises in PHP
 ### Single Assignment
 
     % make style-check-assignment ASSIGNMENT=wordy
+
+## Help
+If you need command line help for run make commands
+
+	% make
 
 ## Contributing
 
