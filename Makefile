@@ -30,7 +30,7 @@ install-style: ## install style checker dependency: phpcs.phar
 	@wget --no-check-certificate https://phar.phpunit.de/phpunit.phar -O bin/phpcs.phar
 	chmod +x bin/phpcs.phar
 
-test-assignment: bin/phpunit.phar ## run single test using ASSGNMENT: test-assignment ASSIGNMENT=wordy
+test-assignment: bin/phpunit.phar ## run single test using ASSIGNMENTS: test-assignment ASSIGNMENT=wordy
 	@echo "running tests for: $(ASSIGNMENT)"
 	@cat ./exercises/$(ASSIGNMENT)/$(TSTFILE) | sed '/markTestSkipped()/d' > $(OUTDIR)/$(TSTFILE)
 	@cp ./exercises/$(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
@@ -39,7 +39,7 @@ test-assignment: bin/phpunit.phar ## run single test using ASSGNMENT: test-assig
 test: ## run all tests
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1; done
 
-style-check-assignment: bin/phpcs.phar ## run style check single test using ASSGNMENT: style-check-assignment ASSIGNMENT=wordy
+style-check-assignment: bin/phpcs.phar ## run style check single test using ASSIGNMENTS: style-check-assignment ASSIGNMENT=wordy
 	@echo "checking $(ASSIGNMENT) against xPHP code standards"
 	@bin/phpcs.phar -sp --standard=phpcs-xphp.xml ./exercises/$(ASSIGNMENT)
 
