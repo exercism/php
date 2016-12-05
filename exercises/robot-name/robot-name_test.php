@@ -48,4 +48,27 @@ class RobotTest extends PHPUnit_Framework_TestCase
 
         $this->assertRegExp('/\w{2}\d{3}/', $name2);
     }
+  
+    public function testNameArentRecycled()
+    {
+        $names = [];
+
+        for ($i = 0; $i < 10000; $i++) {
+            $name = $this->robot->getName();
+            $this->assertArrayNotHasKey($name, $names, sprintf('Name %s reissued after Reset.', $name));
+            $names[$name] = true;
+            $this->robot->reset();
+        }
+    }
+
+    public function testNameUniquenessManyRobots()
+    {
+        $names = [];
+
+        for ($i = 0; $i < 10000; $i++) {
+            $name = (new Robot())->getName();
+            $this->assertArrayNotHasKey($name, $names, sprintf('Name %s reissued after %d robots', $name, $i));
+            $names[$name] = true;
+        }
+    }
 }
