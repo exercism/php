@@ -122,7 +122,7 @@ class VariableLengthQuantityTest extends PHPUnit_Framework_TestCase
 
         $this->setExpectedException(OverflowException::class);
 
-        vlq_decode([0xff, 0xff, 0xff, 0xff, 0xff]);
+        vlq_decode([0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f]);
     }
 
     public function testChainedDecodeEncodeGivesOriginalBytes()
