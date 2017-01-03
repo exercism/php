@@ -307,6 +307,14 @@
     "slug": "markdown",
     "difficulty": 3,
     "topics": ["refactoring"]
+  },
+  {
+    "slug": "grains",
+    "difficulty": 3,
+    "topics": [
+      "Floating-point numbers",
+      "Algorithms"
+    ]
   }
   ]
 }
