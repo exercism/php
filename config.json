@@ -315,6 +315,13 @@
       "Floating-point numbers",
       "Algorithms"
     ]
+  },
+  {
+    "slug": "robot-simulator",
+    "difficulty": 3,
+    "topics": [
+      "OOP"
+    ]
   }
   ]
 }
