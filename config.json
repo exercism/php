@@ -322,6 +322,15 @@
     "topics": [
       "OOP"
     ]
+  },
+  {
+    "slug": "ocr-numbers",
+    "difficulty": 3,
+    "topics": [
+      "Strings",
+      "Algorithms",
+      "Transforming"
+    ]
   }
   ]
 }
