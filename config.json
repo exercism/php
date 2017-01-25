@@ -331,6 +331,13 @@
       "Algorithms",
       "Transforming"
     ]
+  },
+  {
+    "slug": "book-store",
+    "difficulty": 3,
+    "topics": [
+      "Algorithms"
+    ]
   }
   ]
 }
