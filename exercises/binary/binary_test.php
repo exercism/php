@@ -2,7 +2,7 @@
 
 require_once 'binary.php';
 
-class BinaryTest extends \PHPUnit_Framework_TestCase
+class BinaryTest extends PHPUnit\Framework\TestCase
 {
     public function testItParsesBinary0ToDecimal0()
     {
@@ -60,7 +60,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     {
         $this->markTestSkipped();
 
-        $this->setExpectedException(InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         parse_binary($value);
     }

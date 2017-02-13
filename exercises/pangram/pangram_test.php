@@ -2,7 +2,7 @@
 
 require "pangram.php";
 
-class PangramTest extends PHPUnit_Framework_TestCase
+class PangramTest extends PHPUnit\Framework\TestCase
 {
     public function testSentenceEmpty()
     {

@@ -2,7 +2,7 @@
 
 require_once "robot-name.php";
 
-class RobotTest extends PHPUnit_Framework_TestCase
+class RobotTest extends PHPUnit\Framework\TestCase
 {
     /** @var Robot $robot */
     protected $robot = null;

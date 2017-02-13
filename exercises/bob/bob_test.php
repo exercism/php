@@ -1,7 +1,7 @@
 <?php
 require_once "bob.php";
 
-class BobTest extends PHPUnit_Framework_TestCase
+class BobTest extends PHPUnit\Framework\TestCase
 {
 
     /**

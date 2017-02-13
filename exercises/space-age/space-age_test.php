@@ -2,7 +2,7 @@
 
 require "space-age.php";
 
-class SpaceAgeTester extends PHPUnit_Framework_TestCase
+class SpaceAgeTester extends PHPUnit\Framework\TestCase
 {
     const DELTA = 0.01;
 

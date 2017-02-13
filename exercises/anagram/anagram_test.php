@@ -2,7 +2,7 @@
 
 require "anagram.php";
 
-class AnagramTest extends PHPUnit_Framework_TestCase
+class AnagramTest extends PHPUnit\Framework\TestCase
 {
     public function testNoMatches()
     {

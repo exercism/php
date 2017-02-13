@@ -2,7 +2,7 @@
 
 require "triangle.php";
 
-class TriangleTest extends \PHPUnit_Framework_TestCase
+class TriangleTest extends PHPUnit\Framework\TestCase
 {
     public function testEquilateralTrianglesHaveEqualSides()
     {

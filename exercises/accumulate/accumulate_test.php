@@ -2,7 +2,7 @@
 
 require_once 'accumulate.php';
 
-class AccumulateTest extends PHPUnit_Framework_TestCase
+class AccumulateTest extends PHPUnit\Framework\TestCase
 {
     public function testAccumulateEmpty()
     {

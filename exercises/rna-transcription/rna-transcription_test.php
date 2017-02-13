@@ -2,7 +2,7 @@
 
 require "rna-transcription.php";
 
-class ComplementTest extends \PHPUnit_Framework_TestCase
+class ComplementTest extends PHPUnit\Framework\TestCase
 {
     public function testTranscribesGuanineToCytosine()
     {

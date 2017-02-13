@@ -2,7 +2,7 @@
 
 include_once 'robot-simulator.php';
 
-class RobotSimulatorTest extends PHPUnit_Framework_TestCase
+class RobotSimulatorTest extends PHPUnit\Framework\TestCase
 {
 
 

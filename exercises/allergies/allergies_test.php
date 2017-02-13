@@ -2,7 +2,7 @@
 
 require "allergies.php";
 
-class AllergiesTest extends \PHPUnit_Framework_TestCase
+class AllergiesTest extends PHPUnit\Framework\TestCase
 {
 
     /**

@@ -2,7 +2,7 @@
 
 require "atbash-cipher.php";
 
-class AtbashTest extends \PHPUnit_Framework_TestCase
+class AtbashTest extends PHPUnit\Framework\TestCase
 {
     public function testEncodeNo()
     {

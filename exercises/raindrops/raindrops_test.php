@@ -2,7 +2,7 @@
 
 require "raindrops.php";
 
-class RaindropsTest extends PHPUnit_Framework_TestCase
+class RaindropsTest extends PHPUnit\Framework\TestCase
 {
     public function test1()
     {

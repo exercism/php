@@ -2,7 +2,7 @@
 
 require "connect.php";
 
-class ConnectTest extends \PHPUnit_Framework_TestCase
+class ConnectTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Strip off the spaces which are only for readability.

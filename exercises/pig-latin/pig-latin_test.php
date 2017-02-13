@@ -1,7 +1,7 @@
 <?php
 require_once "pig-latin.php";
 
-class PigLatinTest extends PHPUnit_Framework_TestCase
+class PigLatinTest extends PHPUnit\Framework\TestCase
 {
     public function testWordBeginningWithP()
     {

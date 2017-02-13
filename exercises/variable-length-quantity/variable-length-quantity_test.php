@@ -2,7 +2,7 @@
 
 require_once 'variable-length-quantity.php';
 
-class VariableLengthQuantityTest extends PHPUnit_Framework_TestCase
+class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 {
     public function testItEncodesSingleBytes()
     {
@@ -111,7 +111,7 @@ class VariableLengthQuantityTest extends PHPUnit_Framework_TestCase
     {
         $this->markTestSkipped();
 
-        $this->setExpectedException(InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         vlq_decode([0xff]);
     }
@@ -120,7 +120,7 @@ class VariableLengthQuantityTest extends PHPUnit_Framework_TestCase
     {
         $this->markTestSkipped();
 
-        $this->setExpectedException(OverflowException::class);
+        $this->expectException(OverflowException::class);
 
         vlq_decode([0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f]);
     }

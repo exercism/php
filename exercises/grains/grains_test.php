@@ -2,7 +2,7 @@
 
 include_once 'grains.php';
 
-class GrainsTest extends PHPUnit_Framework_TestCase
+class GrainsTest extends PHPUnit\Framework\TestCase
 {
     /**
      * PHP integers greater than 2^31 (32-bit systems)

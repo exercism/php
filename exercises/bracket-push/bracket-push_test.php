@@ -2,7 +2,7 @@
 
 require_once "bracket-push.php";
 
-class BracketTest extends PHPUnit_Framework_TestCase
+class BracketTest extends PHPUnit\Framework\TestCase
 {
     public function testPairedSquareBrackets()
     {
