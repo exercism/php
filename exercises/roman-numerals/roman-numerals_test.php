@@ -2,7 +2,7 @@
 
 require_once "roman-numerals.php";
 
-class RomanTest extends PHPUnit_Framework_TestCase
+class RomanTest extends PHPUnit\Framework\TestCase
 {
     public function test1()
     {

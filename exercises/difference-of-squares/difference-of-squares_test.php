@@ -2,7 +2,7 @@
 
 require_once "difference-of-squares.php";
 
-class SquaresTest extends PHPUnit_Framework_TestCase
+class SquaresTest extends PHPUnit\Framework\TestCase
 {
     public function testSquareOfSumsTo5()
     {

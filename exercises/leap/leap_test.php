@@ -2,7 +2,7 @@
 
 require "leap.php";
 
-class YearTest extends \PHPUnit_Framework_TestCase
+class YearTest extends PHPUnit\Framework\TestCase
 {
     public function testLeapYear()
     {

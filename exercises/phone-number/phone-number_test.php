@@ -2,7 +2,7 @@
 
 require "phone-number.php";
 
-class PhoneNumberTest extends \PHPUnit_Framework_TestCase
+class PhoneNumberTest extends PHPUnit\Framework\TestCase
 {
     public function testCleansNumber()
     {

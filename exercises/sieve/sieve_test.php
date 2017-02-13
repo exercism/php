@@ -1,6 +1,6 @@
 <?php
 require "sieve.php";
-class SieveTest extends PHPUnit_Framework_TestCase
+class SieveTest extends PHPUnit\Framework\TestCase
 {
     public function testNoPrimesUnderTwo()
     {

@@ -2,7 +2,7 @@
 
 require "etl.php";
 
-class TransformTest extends PHPUnit_Framework_TestCase
+class TransformTest extends PHPUnit\Framework\TestCase
 {
     public function testTransformOneValue()
     {

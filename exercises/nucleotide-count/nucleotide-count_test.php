@@ -2,7 +2,7 @@
 
 require "nucleotide-count.php";
 
-class NucleotideCountTest extends \PHPUnit_Framework_TestCase
+class NucleotideCountTest extends PHPUnit\Framework\TestCase
 {
     public function testEmptyDNASequence()
     {

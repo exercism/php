@@ -2,7 +2,7 @@
 
 require "gigasecond.php";
 
-class GigasecondTest extends \PHPUnit_Framework_TestCase
+class GigasecondTest extends PHPUnit\Framework\TestCase
 {
 
     public function dateSetup($date)

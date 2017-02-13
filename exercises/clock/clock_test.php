@@ -2,7 +2,7 @@
 
 require "clock.php";
 
-class ClockTest extends \PHPUnit_Framework_TestCase
+class ClockTest extends PHPUnit\Framework\TestCase
 {
     public function testOnTheHour()
     {

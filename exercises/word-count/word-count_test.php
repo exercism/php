@@ -2,7 +2,7 @@
 
 require "word-count.php";
 
-class WordCountTest extends PHPUnit_Framework_TestCase
+class WordCountTest extends PHPUnit\Framework\TestCase
 {
     public function testCountOneWord()
     {

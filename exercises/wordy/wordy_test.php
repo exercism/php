@@ -2,7 +2,7 @@
 
 require "wordy.php";
 
-class WordProblemTest extends \PHPUnit_Framework_TestCase
+class WordProblemTest extends PHPUnit\Framework\TestCase
 {
     public function testAdd1()
     {
@@ -90,7 +90,7 @@ class WordProblemTest extends \PHPUnit_Framework_TestCase
     public function testTooAdvanced()
     {
         $this->markTestSkipped();
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         calculate('What is 53 cubed?');
     }
@@ -98,7 +98,7 @@ class WordProblemTest extends \PHPUnit_Framework_TestCase
     public function testIrrelevant()
     {
         $this->markTestSkipped();
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         calculate('Who is the president of the United States?');
     }

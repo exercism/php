@@ -2,7 +2,7 @@
 
 require_once 'acronym.php';
 
-class AcronymTest extends PHPUnit_Framework_TestCase
+class AcronymTest extends PHPUnit\Framework\TestCase
 {
     public function testBasicTitleCase()
     {

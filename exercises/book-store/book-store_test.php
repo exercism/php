@@ -9,7 +9,7 @@ include_once 'book-store.php';
  * any single book in a grouping.
  */
 
-class BookStoreTest extends PHPUnit_Framework_TestCase
+class BookStoreTest extends PHPUnit\Framework\TestCase
 {
 
     /**

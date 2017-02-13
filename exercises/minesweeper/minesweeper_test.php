@@ -2,7 +2,7 @@
 
 require 'minesweeper.php';
 
-class MinesweeperTest extends PHPUnit_Framework_TestCase
+class MinesweeperTest extends PHPUnit\Framework\TestCase
 {
     public function testAnEmptyBoard()
     {
@@ -22,7 +22,7 @@ class MinesweeperTest extends PHPUnit_Framework_TestCase
    |
 +--+
 ';
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         solve($incompleteBoard);
     }
@@ -35,7 +35,7 @@ class MinesweeperTest extends PHPUnit_Framework_TestCase
 |  |
 +--+
 ';
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         solve($incompleteBoard);
     }
@@ -48,7 +48,7 @@ class MinesweeperTest extends PHPUnit_Framework_TestCase
 |  |
 +--+
 ';
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         solve($incompleteBoard);
     }
@@ -61,7 +61,7 @@ class MinesweeperTest extends PHPUnit_Framework_TestCase
 | |
 +-+
 ';
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         solve($tinyBoard);
     }
@@ -76,7 +76,7 @@ class MinesweeperTest extends PHPUnit_Framework_TestCase
 +---+
 ';
 
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         solve($unequalBoard);
     }
@@ -92,7 +92,7 @@ class MinesweeperTest extends PHPUnit_Framework_TestCase
 +---+
 ';
 
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         solve($badBoard);
     }

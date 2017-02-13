@@ -2,7 +2,7 @@
 
 require "beer-song.php";
 
-class BeerSongTest extends \PHPUnit_Framework_TestCase
+class BeerSongTest extends PHPUnit\Framework\TestCase
 {
     public function testFirstVerse()
     {

@@ -6,7 +6,7 @@ require "bowling.php";
  * Translated from original source:
  * http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
  */
-class GameTest extends \PHPUnit_Framework_TestCase
+class GameTest extends PHPUnit\Framework\TestCase
 {
     /** @var Game */
     private $game;

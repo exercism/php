@@ -2,7 +2,7 @@
 
 require "isogram.php";
 
-class IsogramTest extends PHPUnit_Framework_TestCase
+class IsogramTest extends PHPUnit\Framework\TestCase
 {
     public function testIsogram()
     {

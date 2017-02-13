@@ -2,7 +2,7 @@
 
 require "trinary.php";
 
-class TrinaryTest extends \PHPUnit_Framework_TestCase
+class TrinaryTest extends PHPUnit\Framework\TestCase
 {
     public function test1IsDecimal1()
     {

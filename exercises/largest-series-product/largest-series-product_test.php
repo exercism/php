@@ -2,7 +2,7 @@
 
 include_once 'largest-series-product.php';
 
-class SeriesTest extends PHPUnit_Framework_TestCase
+class SeriesTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Since PHP can only support Integers between +/- 9223372036854775807

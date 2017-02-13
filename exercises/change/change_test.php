@@ -2,7 +2,7 @@
 
 require "change.php";
 
-class ChangeTest extends PHPUnit_Framework_TestCase
+class ChangeTest extends PHPUnit\Framework\TestCase
 {
     public function testSingleCoinChange()
     {
@@ -39,7 +39,7 @@ class ChangeTest extends PHPUnit_Framework_TestCase
     public function testForChangeSmallerThanAvailableCoins()
     {
         $this->markTestSkipped();
-        $this->setExpectedException('InvalidArgumentException', 'No coins small enough to make change');
+        $this->expectException('InvalidArgumentException', 'No coins small enough to make change');
         findFewestCoins(array(5, 10), 3);
     }
 
@@ -52,7 +52,7 @@ class ChangeTest extends PHPUnit_Framework_TestCase
     public function testChangeValueLessThanZero()
     {
         $this->markTestSkipped();
-        $this->setExpectedException('InvalidArgumentException', 'Cannot make change for negative value');
+        $this->expectException('InvalidArgumentException', 'Cannot make change for negative value');
         findFewestCoins(array(1, 2, 5), -5);
     }
 }

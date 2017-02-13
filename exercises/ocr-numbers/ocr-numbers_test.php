@@ -2,7 +2,7 @@
 
 include_once 'ocr-numbers.php';
 
-class OcrNumbersTest extends PHPUnit_Framework_TestCase
+class OcrNumbersTest extends PHPUnit\Framework\TestCase
 {
 
     /**
