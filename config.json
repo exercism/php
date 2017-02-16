@@ -340,13 +340,20 @@
     ]
   },
   {
+    "slug": "queen-attack",
+    "difficulty": 2,
+    "topics": [
+      "Integers",
+      "Mathematics"
+    ]
+  },
+  {
     "slug": "scrabble-score",
     "difficulty": 2,
     "topics": [
       "Strings",
       "Control-flow (loops)",
       "Integers"
-    ]
   }
   ]
 }
