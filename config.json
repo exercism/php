@@ -338,6 +338,14 @@
     "topics": [
       "Algorithms"
     ]
+  },
+  {
+    "slug": "queen-attack",
+    "difficulty": 2,
+    "topics": [
+      "Integers",
+      "Mathematics"
+    ]
   }
   ]
 }
