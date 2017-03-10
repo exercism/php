@@ -26,7 +26,9 @@ class School
 
         foreach ($tmp as $grade => $students) {
             asort($students) ;
-            foreach ($students as $student) $res [ $grade ][] = $student ;
+            foreach ($students as $student) {
+                $res [ $grade ][] = $student ;
+            }
         }
         return $res ;
     }
