@@ -38,7 +38,7 @@ class GradeSchoolTest extends PHPUnit\Framework\TestCase
             in_array("Claire", $students)
             && in_array("Marc", $students)
             && in_array("Virginie", $students)
-            );
+        );
     }
 
     public function testAddStudentInDifferentGrades()
