@@ -34,7 +34,9 @@ class GradeSchoolTest extends PHPUnit\Framework\TestCase
 
         $students = $this->school->grade(2) ;
         $this->assertEquals(count($students), 3);
-        $this->assertTrue(in_array("Claire", $students) && in_array("Marc", $students) && in_array("Virginie", $students));
+        $this->assertTrue(in_array("Claire", $students)
+                       && in_array("Marc", $students)
+                       && in_array("Virginie", $students));
     }
 
     public function testAddStudentInDifferentGrades()
