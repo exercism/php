@@ -22,7 +22,7 @@ class GradeSchoolTest extends TestCase
         $this->markTestSkipped();
 
         $this->school->add("Claire", 2);
-        $this-assertContains('Claire', $this->school->grade(2));
+        $this->assertContains('Claire', $this->school->grade(2));
     }
 
     public function testAddStudentsinSameGrade()
@@ -52,10 +52,10 @@ class GradeSchoolTest extends TestCase
         $this->school->add("Marc", 3);
         $this->school->add("Claire", 6);
 
-        $this-assertContains('Marc', $this->school->grade(3));
-        $this-assertContains('Claire', $this->school->grade(6));
-        $this-assertNotContains('Marc', $this->school->grade(6));
-        $this-assertNotContains('Claire', $this->school->grade(3));
+        $this->assertContains('Marc', $this->school->grade(3));
+        $this->assertContains('Claire', $this->school->grade(6));
+        $this->assertNotContains('Marc', $this->school->grade(6));
+        $this->assertNotContains('Claire', $this->school->grade(3));
     }
 
     public function testEmptyGrade()
