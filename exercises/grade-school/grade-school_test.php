@@ -3,7 +3,7 @@
 require "grade-school.php";
 use PHPUnit\Framework\TestCase;
 
-class GradeSchoolTest  extends TestCase
+class GradeSchoolTest extends TestCase
 {
     protected $school ;
 
