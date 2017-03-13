@@ -1,8 +1,9 @@
 <?php
 
 require "grade-school.php";
+use PHPUnit\Framework\TestCase;
 
-class GradeSchoolTest extends PHPUnit\Framework\TestCase
+class GradeSchoolTest  extends TestCase
 {
     protected $school ;
 
@@ -21,7 +22,7 @@ class GradeSchoolTest extends PHPUnit\Framework\TestCase
         $this->markTestSkipped();
 
         $this->school->add("Claire", 2);
-        $this->assertTrue(in_array("Claire", $this->school->grade(2)));
+        $this-assertContains('Claire', $this->school->grade(2));
     }
 
     public function testAddStudentsinSameGrade()
@@ -33,11 +34,14 @@ class GradeSchoolTest extends PHPUnit\Framework\TestCase
         $this->school->add("Claire", 2);
 
         $students = $this->school->grade(2) ;
-        $this->assertEquals(count($students), 3);
-        $this->assertTrue(
-            in_array("Claire", $students)
-            && in_array("Marc", $students)
-            && in_array("Virginie", $students)
+        $this->assertCount(3, $students);
+        $this->assertEquals(
+            ['Claire', 'Marc', 'Virginie'],
+            $students,
+            $message = '',
+            $delta = 0.0,
+            $maxDepth = 10,
+            $canonicalize = true
         );
     }
 
@@ -48,17 +52,17 @@ class GradeSchoolTest extends PHPUnit\Framework\TestCase
         $this->school->add("Marc", 3);
         $this->school->add("Claire", 6);
 
-        $this->assertTrue(in_array("Marc", $this->school->grade(3)));
-        $this->assertTrue(in_array("Claire", $this->school->grade(6)));
-        $this->assertFalse(in_array("Marc", $this->school->grade(6)));
-        $this->assertFalse(in_array("Claire", $this->school->grade(3)));
+        $this-assertContains('Marc', $this->school->grade(3));
+        $this-assertContains('Claire', $this->school->grade(6));
+        $this-assertNotContains('Marc', $this->school->grade(6));
+        $this-assertNotContains('Claire', $this->school->grade(3));
     }
 
     public function testEmptyGrade()
     {
         $this->markTestSkipped();
 
-        $this->assertTrue(empty($this->school->grade(1)));
+        $this->assertEmpty($this->school->grade(1));
     }
 
     public function testSortSchool()
@@ -70,9 +74,10 @@ class GradeSchoolTest extends PHPUnit\Framework\TestCase
         $this->school->add("Claire", 5);
         $this->school->add("Mehdi", 4);
 
-        $sortedStudents = array("4"=>array("Mehdi"),
-                              	"5"=>array("Claire", "Marc", "Virginie")
-                                ) ;
+        $sortedStudents = [
+            4 => ['Mehdi'],
+            5 => ['Claire', 'Marc', 'Virginie']
+        ];
         $schoolStudents = $this->school->studentsByGradeAlphabetical() ;
         $this->assertEquals($sortedStudents, $schoolStudents) ;
     }
