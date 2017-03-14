@@ -355,6 +355,13 @@
       "Control-flow (loops)",
       "Integers"
     ]
+  },
+  {
+    "slug": "grade-school",
+    "difficulty": 6,
+    "topics": [
+      "Arrays"
+    ]
   }
   ]
 }
