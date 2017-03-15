@@ -93,4 +93,3 @@ class LuhnValidatorTest extends PHPUnit\Framework\TestCase
         $this->assertTrue(isValid("091"));
     }
 }
-

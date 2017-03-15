@@ -4,7 +4,7 @@ function isValid($candidate)
 {
     $sanitizedCandidate = str_replace(" ", "", $candidate) ;
 
-    if (strlen($sanitizedCandidate) <= 1 || !ctype_digit($sanitizedCandidate)){
+    if (strlen($sanitizedCandidate) <= 1 || !ctype_digit($sanitizedCandidate)) {
         return false ;
     }
 
@@ -14,7 +14,7 @@ function isValid($candidate)
     for ($i = 1; $i < strlen($reversseCandidate); $i+=2) {
         $digit = 2 * intval($reversseCandidate{$i}) ;
 
-        if ($digit > 9){
+        if ($digit > 9) {
             $digit -= 9 ;
         }
 
@@ -24,4 +24,3 @@ function isValid($candidate)
 
     return $sum % 10 == 0 ;
 }
-
