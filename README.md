@@ -1,6 +1,6 @@
 # xPHP
 
-[![Build Status](https://travis-ci.org/exercism/xphp.png?branch=master)](https://travis-ci.org/exercism/xphp)
+[![Build Status](https://travis-ci.org/exercism/xphp.svg?branch=master)](https://travis-ci.org/exercism/xphp)
 
 Exercism exercises in PHP
 
