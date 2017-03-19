@@ -7,7 +7,7 @@ function getClassification($number)
     }
 
     $sum = 0 ;
-    for($i = 1 ; $i < $number ; $i++ ) {
+    for($i = 1; $i < $number; $i++) {
         if ($number % $i == 0) {
             $sum += $i ;
         }
