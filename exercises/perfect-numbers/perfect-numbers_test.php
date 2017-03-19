@@ -13,7 +13,7 @@ class PerfectNumbersTest extends PHPUnit\Framework\TestCase
     {
         $this->markTestSkipped();
 
-        $this->assertFalse("perfect",getClassification(28));
+        $this->assertEquals("perfect",getClassification(28));
     }
 
     public function testLargePerfectNumberIsClassifiedCorrectly()
@@ -69,7 +69,7 @@ class PerfectNumbersTest extends PHPUnit\Framework\TestCase
     {
         $this->markTestSkipped();
 
-        $this->assertEquals("deficient",getClassification(33550335));
+        $this->assertEquals("deficient",getClassification(33550337));
     }
 
     public function testThatOneIsCorrectlyClassifiedAsDeficient()
@@ -82,10 +82,18 @@ class PerfectNumbersTest extends PHPUnit\Framework\TestCase
     public function testThatNonNegativeIntegerIsRejected()
     {
         $this->markTestSkipped();
+
+        $this->expectException(InvalidArgumentException::class) ;
+
+        getClassification(0) ;
     }
 
     public function testThatNegativeIntegerIsRejected()
     {
         $this->markTestSkipped();
+
+        $this->expectException(InvalidArgumentException::class) ;
+
+        getClassification(-1) ;
     }
 }
