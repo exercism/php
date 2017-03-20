@@ -367,6 +367,11 @@
     "slug": "luhn",
     "difficulty": 4,
     "topics": []
+  },
+  {
+      "slug": "perfect-numbers",
+      "difficulty": 1,
+      "topics": []
   }
   ]
 }
