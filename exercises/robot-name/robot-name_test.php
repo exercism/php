@@ -61,6 +61,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    // This test is optional.
     public function testNameUniquenessManyRobots()
     {
         $names = [];
