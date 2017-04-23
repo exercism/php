@@ -5,7 +5,7 @@
 // It's been provided as a convenience to get you started writing code faster.
 //
 
-function helloWorld($name = null)
+function helloWorld()
 {
     //
     // YOUR CODE GOES HERE
