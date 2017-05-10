@@ -280,6 +280,11 @@
     ]
   },
   {
+    "slug": "simple-linked-list",
+    "difficulty": 1,
+    "topics": []
+  },
+  {
     "slug": "etl",
     "difficulty": 1,
     "topics": [
