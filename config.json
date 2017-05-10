@@ -372,6 +372,11 @@
       "slug": "perfect-numbers",
       "difficulty": 1,
       "topics": []
+  },
+  {
+      "slug": "sum-of-multiples",
+      "difficulty": 2,
+      "topics" : []
   }
   ]
 }
