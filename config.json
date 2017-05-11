@@ -374,9 +374,14 @@
       "topics": []
   },
   {
-      "slug": "sum-of-multiples",
-      "difficulty": 2,
-      "topics" : []
+    "slug": "sum-of-multiples",
+    "difficulty": 2,
+    "topics" : []
+  },
+  {
+    "slug": "pascals-triangle",
+    "difficulty": 3,
+    "topics" : []
   }
   ]
 }
