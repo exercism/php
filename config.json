@@ -382,6 +382,11 @@
     "slug": "pascals-triangle",
     "difficulty": 3,
     "topics" : []
+  },
+   {
+    "slug": "nth-prime",
+    "difficulty": 3,
+    "topics" : []
   }
   ]
 }
