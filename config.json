@@ -374,9 +374,24 @@
       "topics": []
   },
   {
-      "slug": "sum-of-multiples",
-      "difficulty": 2,
-      "topics" : []
+    "slug": "sum-of-multiples",
+    "difficulty": 2,
+    "topics" : []
+  },
+  {
+    "slug": "pascals-triangle",
+    "difficulty": 3,
+    "topics" : []
+  },
+   {
+    "slug": "nth-prime",
+    "difficulty": 3,
+    "topics" : []
+  },
+   {
+    "slug": "binary-search",
+    "difficulty": 3,
+    "topics" : []
   }
   ]
 }
