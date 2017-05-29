@@ -48,11 +48,6 @@ If you need command line help for run make commands
 - Follow the [PSR-2] coding style (xPHP uses a slightly [modified] version of [PSR-2]).
 - Follow the [contributing guide].
 
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Katrina Owen, _@kytrinyx.com
 
 
 [PSR-2]: http://www.php-fig.org/psr/psr-2
