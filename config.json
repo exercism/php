@@ -392,6 +392,11 @@
     "slug": "binary-search",
     "difficulty": 3,
     "topics" : []
+  },
+  {
+    "slug": "prime-factors",
+    "difficulty": 3,
+    "topics" : []
   }
   ]
 }
