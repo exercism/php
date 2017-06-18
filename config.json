@@ -1,7 +1,7 @@
 {
   "slug": "php",
   "language": "PHP",
-  "repository": "https://github.com/exercism/xphp",
+  "repository": "https://github.com/exercism/php",
   "active": true,
   "deprecated": [
 
