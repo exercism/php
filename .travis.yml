@@ -7,5 +7,5 @@ script:
 - make style-check
 - make test
 - "./bin/fetch-configlet"
-- "./bin/configlet ."
+- "./bin/configlet lint ."
 sudo: false
