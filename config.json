@@ -3,15 +3,15 @@
   "language": "PHP",
   "repository": "https://github.com/exercism/php",
   "active": true,
-  "deprecated": [
-
-  ],
   "foregone": [
 
   ],
   "exercises": [
     {
+      "uuid": "56116aa6-e3d1-4122-a394-a7e0f6ab6fea",
       "slug": "hello-world",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Text formatting",
@@ -19,7 +19,10 @@
       ]
     },
     {
+      "uuid": "48de430b-0d88-4af0-ab48-d00b840312bb",
       "slug": "hamming",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "Strings",
@@ -27,14 +30,20 @@
       ]
     },
     {
+      "uuid": "81aa4bc9-4936-46c2-bb2f-433246a86c5d",
       "slug": "gigasecond",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "Dates"
       ]
     },
     {
+      "uuid": "ae91650f-fe06-466a-a40a-6a24f5926fbe",
       "slug": "bob",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "Strings",
@@ -42,14 +51,20 @@
       ]
     },
     {
+      "uuid": "4f15fc17-f68e-43bc-9417-403dd6d03f4f",
       "slug": "pangram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "Strings"
       ]
     },
     {
+      "uuid": "81d96250-f2e4-4228-a8e9-254b6b8784ac",
       "slug": "rna-transcription",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "Strings",
@@ -57,7 +72,10 @@
       ]
     },
     {
+      "uuid": "0ad53d66-cbdc-4d9a-a083-d24af216d3d9",
       "slug": "raindrops",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 6,
       "topics": [
         "Text formatting",
@@ -65,7 +83,10 @@
       ]
     },
     {
+      "uuid": "435f0ec1-f53c-4fe4-b92b-43a582c2fa82",
       "slug": "isogram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "Strings",
@@ -73,14 +94,20 @@
       ]
     },
     {
+      "uuid": "238d86fe-6e29-43b0-9e27-a54caa773618",
       "slug": "difference-of-squares",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "Integers"
       ]
     },
     {
+      "uuid": "4fbeb249-dc1d-4282-8455-d1c06a7cb420",
       "slug": "largest-series-product",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "Strings",
@@ -89,7 +116,10 @@
       ]
     },
     {
+      "uuid": "210e1252-f92a-44b9-9916-8b27633fee0c",
       "slug": "roman-numerals",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "Control-flow (loops)",
@@ -97,7 +127,10 @@
       ]
     },
     {
+      "uuid": "07258892-c06f-4833-97f6-56ead8ca113d",
       "slug": "sieve",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Filtering",
@@ -105,7 +138,10 @@
       ]
     },
     {
+      "uuid": "af8f9ed1-1351-430b-a9dd-bdd2ba4e9a82",
       "slug": "pig-latin",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "Strings",
@@ -113,7 +149,10 @@
       ]
     },
     {
+      "uuid": "b24d5f98-8d62-4177-b0ae-306bbf0f918b",
       "slug": "robot-name",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "Randomness",
@@ -122,14 +161,20 @@
       ]
     },
     {
+      "uuid": "f2330729-2ddc-4a9b-b364-51f1197f69ff",
       "slug": "leap",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Integers"
       ]
     },
     {
+      "uuid": "6670ef4d-c838-4a9d-8de6-42f31555eec7",
       "slug": "word-count",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Strings",
@@ -138,7 +183,10 @@
       ]
     },
     {
+      "uuid": "d8485927-3aef-4e5a-a8b1-9b81c6c5aa26",
       "slug": "anagram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Strings",
@@ -146,14 +194,20 @@
       ]
     },
     {
+      "uuid": "ec96bb00-b61e-4881-af0d-445d07afeb6e",
       "slug": "trinary",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "54df08ec-4a04-40f3-b974-e59de425ec80",
       "slug": "bowling",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Algorithms",
@@ -161,7 +215,10 @@
       ]
     },
     {
+      "uuid": "682d4bab-ca03-4402-971b-ab2a09e55444",
       "slug": "clock",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Time",
@@ -169,7 +226,10 @@
       ]
     },
     {
+      "uuid": "85408bdd-3c22-4b5a-9c61-044ddfb0c3ac",
       "slug": "wordy",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Parsing",
@@ -178,14 +238,20 @@
       ]
     },
     {
+      "uuid": "774595ef-84e8-44f8-baaa-88bccf38d4d2",
       "slug": "connect",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "96e47e5b-ab4f-472d-b56f-9ddcb3994320",
       "slug": "minesweeper",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Parsing",
@@ -193,7 +259,10 @@
       ]
     },
     {
+      "uuid": "4f707562-2e46-475e-8e0b-1058416a7256",
       "slug": "change",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Integers",
@@ -201,7 +270,10 @@
       ]
     },
     {
+      "uuid": "d761002c-1a60-4be8-9593-a17981c3b06d",
       "slug": "phone-number",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Parsing",
@@ -209,7 +281,10 @@
       ]
     },
     {
+      "uuid": "edaafcf7-74cd-4d21-8b07-f357596bca37",
       "slug": "beer-song",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Text formatting",
@@ -217,7 +292,10 @@
       ]
     },
     {
+      "uuid": "79acfce3-fdce-45b4-9d87-bf5caf4825ab",
       "slug": "atbash-cipher",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Strings",
@@ -226,7 +304,10 @@
       ]
     },
     {
+      "uuid": "15ea518d-6c35-442a-9150-86da2d865703",
       "slug": "bracket-push",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Parsing",
@@ -234,14 +315,20 @@
       ]
     },
     {
+      "uuid": "8a355fd3-b627-49fe-a0b6-58818b9bd8ea",
       "slug": "binary",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "87edd481-d099-46b8-9137-22bf8f817e42",
       "slug": "accumulate",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Extension methods",
@@ -250,7 +337,10 @@
       ]
     },
     {
+      "uuid": "63e62154-1e3d-4a54-9489-1197741fcf1c",
       "slug": "variable-length-quantity",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Bitwise operations",
@@ -258,7 +348,10 @@
       ]
     },
     {
+      "uuid": "d2fe4844-1dfa-4959-840b-1f1818203d2f",
       "slug": "acronym",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Strings",
@@ -266,7 +359,10 @@
       ]
     },
     {
+      "uuid": "5b1c032e-4f8c-4161-a601-4a67550b710d",
       "slug": "nucleotide-count",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Dictionaries",
@@ -274,7 +370,10 @@
       ]
     },
     {
+      "uuid": "75763125-adb8-4ab3-9630-4e5a85c6ae35",
       "slug": "triangle",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Integers",
@@ -282,7 +381,10 @@
       ]
     },
     {
+      "uuid": "58463b64-9c22-4813-893d-38d11fc8d9a5",
       "slug": "etl",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Dictionaries",
@@ -291,14 +393,20 @@
       ]
     },
     {
+      "uuid": "334ba0ec-2c7b-4c92-ac43-e4777aa46d9c",
       "slug": "space-age",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "Floating-point numbers"
       ]
     },
     {
+      "uuid": "a1f27a8b-fd10-4479-85ae-48221eb30f9b",
       "slug": "allergies",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "Bitwise operations",
@@ -306,14 +414,20 @@
       ]
     },
     {
+      "uuid": "5022e334-9746-48ad-9e52-3887da35c06a",
       "slug": "markdown",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "refactoring"
       ]
     },
     {
+      "uuid": "3b001897-4052-4dab-84fd-b971a9946e0a",
       "slug": "grains",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "Floating-point numbers",
@@ -321,14 +435,20 @@
       ]
     },
     {
+      "uuid": "cc6c3b27-b719-454c-a743-7bc73bd47cf1",
       "slug": "robot-simulator",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "OOP"
       ]
     },
     {
+      "uuid": "a7a269a5-e99c-4fcf-b331-9a130e94f9e4",
       "slug": "ocr-numbers",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "Strings",
@@ -337,14 +457,20 @@
       ]
     },
     {
+      "uuid": "76313ca4-d2b1-45a0-becb-58b5524e98f8",
       "slug": "book-store",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "Algorithms"
       ]
     },
     {
+      "uuid": "94ceeb58-55c0-48b5-8a7c-d274f60b9010",
       "slug": "queen-attack",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "Integers",
@@ -352,7 +478,10 @@
       ]
     },
     {
+      "uuid": "3c5f3e65-c594-49c2-84e6-3bd3905d7ea3",
       "slug": "scrabble-score",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "Strings",
@@ -361,56 +490,80 @@
       ]
     },
     {
+      "uuid": "2d2974e2-2d5e-41d9-8dc3-951967631b37",
       "slug": "grade-school",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 6,
       "topics": [
         "Arrays"
       ]
     },
     {
+      "uuid": "1b034dc9-be9a-4434-bc78-57742f63107e",
       "slug": "luhn",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
 
       ]
     },
     {
+      "uuid": "08639413-1e95-45e5-a8e2-071f3bf590c4",
       "slug": "perfect-numbers",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "1b44cb35-28ba-416b-8f45-d168d300f9b4",
       "slug": "sum-of-multiples",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
 
       ]
     },
     {
+      "uuid": "a2c918c0-6caa-4c15-a622-e093f3bacba3",
       "slug": "pascals-triangle",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
 
       ]
     },
     {
+      "uuid": "29a3bb8c-298a-4976-8274-c69ec7a0058a",
       "slug": "nth-prime",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
 
       ]
     },
     {
+      "uuid": "44867ac1-6aad-439a-a861-9acd3b619f19",
       "slug": "binary-search",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
 
       ]
     },
     {
+      "uuid": "96de0479-9438-4c74-b57c-67c7073be262",
       "slug": "prime-factors",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
 
