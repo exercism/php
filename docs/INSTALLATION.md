@@ -12,7 +12,7 @@ Alternatively there are many pre-compiled versions available for [different oper
 
 or
 
-````$ apt-get php````
+````$ apt-get install php````
 
 depending on your repository manager.
 
