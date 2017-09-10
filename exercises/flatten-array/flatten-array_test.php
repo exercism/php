@@ -1,6 +1,6 @@
 <?php
 
-require 'flatten.php';
+require 'flatten-array.php';
 
 class FlattenArrayTest extends PHPUnit\Framework\TestCase
 {
