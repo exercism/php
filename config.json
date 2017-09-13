@@ -566,6 +566,14 @@
       "topics": [
 
       ]
+    },
+    {
+      "uuid": "9dede68f-6b48-4142-88fd-0cf2c9de7207",
+      "slug": "flatten-array",
+      "difficulty": 2,
+      "topics": [
+        "Arrays"
+      ]
     }
   ]
 }
