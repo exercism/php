@@ -1,6 +1,10 @@
 ## Recommended Learning Resources
 
-* [25 Resources to get you started with PHP from scratch](http://code.tutsplus.com/articles/25-resources-to-get-you-started-with-php-from-scratch--net-2223)
+* [PHP The Right Way](http://www.phptherightway.com/)
+* [PHP Best Practices](https://phpbestpractices.org/)
+* [Best practices for Modern PHP Development](https://www.airpair.com/php/posts/best-practices-for-modern-php-development)
+* [PHP Cheatsheets](http://phpcheatsheets.com/)
+* [PHP Security Cheatsheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
 
 ## Recommended References
 
