@@ -574,6 +574,20 @@
       "topics": [
         "Arrays"
       ]
+    },
+    {
+      "uuid": "94f22d74-e358-41cb-be64-8abc111ff95a",
+      "core" :  false,
+      "difficulty" : 1,
+      "slug" : "collatz-conjecture",
+      "topics": [
+        "Control-flow (loops)",
+        "Control-flow (conditionals)",
+        "Integers",
+        "Algorithms",
+        "Mathematics"
+      ],
+      "unlocked_by": "null"
     }
   ]
 }
