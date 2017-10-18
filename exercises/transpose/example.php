@@ -11,7 +11,7 @@ function transpose($text)
 {
     $result = [];
     if (!empty($text)) {
-        $lines = (strpos($text, '\n') !== false ? explode('\n', $text) : [$text]);
+        $lines = (strpos($text, "\n") !== false ? explode("\n", $text) : [$text]);
         foreach ($lines as $lineNumber => $line) {
             $characters = str_split($line);
             array_walk_recursive(
@@ -26,5 +26,5 @@ function transpose($text)
             );
         }
     }
-    return implode($result, '\n');
+    return implode($result, "\n");
 }
