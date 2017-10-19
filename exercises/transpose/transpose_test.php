@@ -6,112 +6,270 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 {
     public function testEmptyString()
     {
-        $input = "";
-        $expected = "";
+        $input = [""];
+        $expected = [""];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testTwoCharactersInARow()
     {
         $this->markTestSkipped();
-        $input = "A1";
-        $expected = "A\n1";
+        $input = [
+            "A1"
+        ];
+        $expected = [
+            "A",
+            "1"
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testTwoCharactersInAColumn()
     {
         $this->markTestSkipped();
-        $input = "A\n1";
-        $expected = "A1";
+        $input = [
+            "A",
+            "1"
+        ];
+        $expected = [
+            "A1"
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testSimple()
     {
         $this->markTestSkipped();
-        $input = "ABC\n123";
-        $expected = "A1\nB2\nC3";
+        $input = [
+            "ABC",
+            "123"
+        ];
+        $expected = [
+            "A1",
+            "B2",
+            "C3"
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testSingleLine()
     {
         $this->markTestSkipped();
-        $input = "Single line.";
-        $expected = "S\ni\nn\ng\nl\ne\n \nl\ni\nn\ne\n.";
+        $input = [
+            "Single line."
+        ];
+        $expected = [
+            "S",
+            "i",
+            "n",
+            "g",
+            "l",
+            "e",
+            " ",
+            "l",
+            "i",
+            "n",
+            "e",
+            ".",
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testFirstLineLongerThanSecondLine()
     {
         $this->markTestSkipped();
-        $input = "The fourth line.\nThe fifth line.";
-        $expected = "TT\nhh\nee\n  \nff\noi\nuf\nrt\nth\nh \n l\nli\nin\nne\ne.\n.";
+        $input = [
+            "The fourth line.",
+            "The fifth line."
+        ];
+        $expected = [
+            "TT",
+            "hh",
+            "ee",
+            "  ",
+            "ff",
+            "oi",
+            "uf",
+            "rt",
+            "th",
+            "h ",
+            " l",
+            "li",
+            "in",
+            "ne",
+            "e.",
+            "."
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testSecondLineLongerThanFirstLine()
     {
         $this->markTestSkipped();
-        $input = "The first line.\nThe second line.";
-        $expected = "TT\nhh\nee\n  \nfs\nie\nrc\nso\ntn\n d\nl \nil\nni\nen\n.e\n .";
+        $input = [
+            "The first line.",
+            "The second line."
+        ];
+        $expected = [
+            "TT",
+            "hh",
+            "ee",
+            "  ",
+            "fs",
+            "ie",
+            "rc",
+            "so",
+            "tn",
+            " d",
+            "l ",
+            "il",
+            "ni",
+            "en",
+            ".e",
+            " ."
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testSquare()
     {
         $this->markTestSkipped();
-        $input = "HEART\nEMBER\nABUSE\nRESIN\nTREND";
-        $expected = "HEART\nEMBER\nABUSE\nRESIN\nTREND";
+        $input = [
+            "HEART",
+            "EMBER",
+            "ABUSE",
+            "RESIN",
+            "TREND"
+        ];
+        $expected = [
+            "HEART",
+            "EMBER",
+            "ABUSE",
+            "RESIN",
+            "TREND"
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testRectangle()
     {
         $this->markTestSkipped();
-        $input = "FRACTURE\nOUTLINED\nBLOOMING\nSEPTETTE";
-        $expected = "FOBS\nRULE\nATOP\nCLOT\nTIME\nUNIT\nRENT\nEDGE";
+        $input = [
+            "FRACTURE",
+            "OUTLINED",
+            "BLOOMING",
+            "SEPTETTE"
+        ];
+        $expected = [
+            "FOBS",
+            "RULE",
+            "ATOP",
+            "CLOT",
+            "TIME",
+            "UNIT",
+            "RENT",
+            "EDGE"
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testTriangle()
     {
         $this->markTestSkipped();
-        $input = "T\nEE\nAAA\nSSSS\nEEEEE\nRRRRRR";
-        $expected = "TEASER\n EASER\n  ASER\n   SER\n    ER\n     R";
+        $input = [
+            "T",
+            "EE",
+            "AAA",
+            "SSSS",
+            "EEEEE",
+            "RRRRRR"
+        ];
+        $expected = [
+            "TEASER",
+            " EASER",
+            "  ASER",
+            "   SER",
+            "    ER",
+            "     R"
+        ];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testManyLines()
     {
         $this->markTestSkipped();
-        $input = "Chor. Two households, both alike in dignity,\nIn fair Verona, ";
-        $input .= "where we lay our scene,\nFrom ancient grudge break to new mutiny";
-        $input .= ",\nWhere civil blood makes civil hands unclean.\nFrom forth";
-        $input .= " the fatal loins of these two foes\nA pair of star-cross'd ";
-        $input .= "lovers take their life;\nWhose misadventur'd piteous overthrows";
-        $input .= "\nDoth with their death bury their parents' strife.\nThe fear";
-        $input .= "ful passage of their death-mark'd love,\nAnd the continuance";
-        $input .= " of their parents' rage,\nWhich, but their children's end, ";
-        $input .= "naught could remove,\nIs now the two hours' traffic of our ";
-        $input .= "stage;\nThe which if you with patient ears attend,\nWhat ";
-        $input .= "here shall miss, our toil shall strive to mend.";
+        $input = [
+            "Chor. Two households, both alike in dignity,",
+            "In fair Verona, where we lay our scene,",
+            "From ancient grudge break to new mutiny,",
+            "Where civil blood makes civil hands unclean.",
+            "From forth the fatal loins of these two foes",
+            "A pair of star-cross'd lovers take their life;",
+            "Whose misadventur'd piteous overthrows",
+            "Doth with their death bury their parents' strife.",
+            "The fearful passage of their death-mark'd love,",
+            "And the continuance of their parents' rage,",
+            "Which, but their children's end, naught could remove,",
+            "Is now the two hours' traffic of our stage;",
+            "The which if you with patient ears attend,",
+            "What here shall miss, our toil shall strive to mend."
+        ];
 
-        $expected = "CIFWFAWDTAWITW\nhnrhr hohnhshh\no oeopotedi ea\nrfmrmash";
-        $expected .= "  cn t\n.a e ie fthow \n ia fr weh,whh\nTrnco miae  ie\nw";
-        $expected .= " ciroitr btcr\noVivtfshfcuhhe\n eeih a uote  \nhrnl sdtln";
-        $expected .= "  is\noot ttvh tttfh\nun bhaeepihw a\nsaglernianeoyl\ne,ro";
-        $expected .= " -trsui ol\nh uofcu sarhu \nowddarrdan o m\nlhg to'egccuwi\n";
-        $expected .= "deemasdaeehris\nsr als t  ists\n,ebk 'phool'h,\n  reldi ffd";
-        $expected .= "   \nbweso tb  rtpo\noea ileutterau\nt kcnoorhhnatr\nhl ";
-        $expected .= "isvuyee'fi \n atv es iisfet\nayoior trr ino\nl  lfsoh  ecti";
-        $expected .= "\nion   vedpn  l\nkuehtteieadoe \nerwaharrar,fas\n   nekt te ";
-        $expected .= " rh\nismdsehphnnosa\nncuse ra-tau l\n et  tormsural\n";
-        $expected .= "dniuthwea'g t \niennwesnr hsts\ng,ycoitkrttet\nn,l rs'a anr";
-        $expected .= "\nief 'dgcgdi\ntaol  eoe,v\nyneisl,u;e\n,.sftol \n     ervdt";
-        $expected .= "\n     ;ie o\n       f,r \n       eem\n       .me\n          ";
-        $expected .= "on\n          vd\n          e.\n          ,";
+        $expected = [
+            "CIFWFAWDTAWITW",
+            "hnrhr hohnhshh",
+            "o oeopotedi ea",
+            "rfmrmash  cn t",
+            ".a e ie fthow ",
+            " ia fr weh,whh",
+            "Trnco miae  ie",
+            "w ciroitr btcr",
+            "oVivtfshfcuhhe",
+            " eeih a uote  ",
+            "hrnl sdtln  is",
+            "oot ttvh tttfh",
+            "un bhaeepihw a",
+            "saglernianeoyl",
+            "e,ro -trsui ol",
+            "h uofcu sarhu ",
+            "owddarrdan o m",
+            "lhg to'egccuwi",
+            "deemasdaeehris",
+            "sr als t  ists",
+            ",ebk 'phool'h,",
+            "  reldi ffd   ",
+            "bweso tb  rtpo",
+            "oea ileutterau",
+            "t kcnoorhhnatr",
+            "hl isvuyee'fi ",
+            " atv es iisfet",
+            "ayoior trr ino",
+            "l  lfsoh  ecti",
+            "ion   vedpn  l",
+            "kuehtteieadoe ",
+            "erwaharrar,fas",
+            "   nekt te  rh",
+            "ismdsehphnnosa",
+            "ncuse ra-tau l",
+            " et  tormsural",
+            "dniuthwea'g t ",
+            "iennwesnr hsts",
+            "g,ycoi tkrttet",
+            "n ,l r s'a anr",
+            "i  ef  'dgcgdi",
+            "t  aol   eoe,v",
+            "y  nei sl,u; e",
+            ",  .sf to l   ",
+            "     e rv d  t",
+            "     ; ie    o",
+            "       f, r   ",
+            "       e  e  m",
+            "       .  m  e",
+            "          o  n",
+            "          v  d",
+            "          e  .",
+            "          ,"
+        ];
 
         $this->assertEquals($expected, transpose($input));
     }

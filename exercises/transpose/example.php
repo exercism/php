@@ -9,22 +9,44 @@
  */
 function transpose($text)
 {
+    $findMaxLength = function ($lines) {
+        return array_reduce($lines, function ($max, $line) {
+            return max($max, strlen($line));
+        }, 0);
+    };
+
+    $pad = function ($lines, $length) {
+        return array_map(function ($line) use ($length) {
+            return str_pad($line, $length, ' ', STR_PAD_RIGHT);
+        }, $lines);
+    };
+
+    if ($text === ['']) {
+        return $text;
+    }
+
+    $maxLength = $findMaxLength($text);
+
+    $lines = $pad($text, $maxLength);
+
     $result = [];
-    if (!empty($text)) {
-        $lines = (strpos($text, "\n") !== false ? explode("\n", $text) : [$text]);
-        foreach ($lines as $lineNumber => $line) {
-            $characters = str_split($line);
-            array_walk_recursive(
-                $characters,
-                function ($character, $key) use (&$result, $lineNumber) {
-                    $defaultValue = str_pad($character, $lineNumber + 1, " ", STR_PAD_LEFT);
-                    if (isset($result[$key])) {
-                        $defaultValue = $result[$key] . $character;
-                    }
-                    $result[$key] = $defaultValue;
-                }
-            );
+
+    foreach ($lines as $lineNumber => $line) {
+        $characters = str_split($line);
+        foreach ($characters as $index => $character) {
+            if (isset($result[$index])) {
+                $result[$index] .= $character;
+            } else {
+                $result[$index] = $character;
+            }
         }
     }
-    return implode($result, "\n");
+
+    $trimLastLine = function ($lines) {
+        $lastLine = array_pop($lines);
+        array_push($lines, rtrim($lastLine));
+        return $lines;
+    };
+
+    return $trimLastLine($result);
 }
