@@ -603,6 +603,14 @@
         "text_formatting"
       ],
       "unlocked_by": "null"
+    },
+    {
+      "uuid": "94AA4B63-66BA-4EF4-8E27-36C146682F05",
+      "core" :  false,
+      "difficulty" : 1,
+      "slug" : "all-your-base",
+      "topics": [ ],
+      "unlocked_by": "null"
     }
   ]
 }
