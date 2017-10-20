@@ -603,6 +603,14 @@
         "text_formatting"
       ],
       "unlocked_by": "null"
+    },
+    {
+      "uuid": "57E13615-4C88-42E1-A4AE-C2DED7A6FDB2",
+      "core" :  false,
+      "difficulty" : 1,
+      "slug" : "meetup",
+      "topics": [ ],
+      "unlocked_by": "null"
     }
   ]
 }
