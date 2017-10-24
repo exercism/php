@@ -598,6 +598,14 @@
       "unlocked_by": "null"
     },
     {
+      "uuid": "C5D81BB4-7041-4EA9-B0ED-C3A17CF3E071",
+      "core" :  false,
+      "difficulty" : 1,
+      "slug" : "series",
+      "topics": [ ],
+      "unlocked_by": "null"
+    },
+    {
       "uuid": "cb413881-99b6-493f-bea2-89563dc173a6",
       "core" :  false,
       "difficulty" : 1,
@@ -610,6 +618,14 @@
         "strings",
         "text_formatting"
       ],
+      "unlocked_by": "null"
+    },
+    {
+      "uuid": "94AA4B63-66BA-4EF4-8E27-36C146682F05",
+      "core" :  false,
+      "difficulty" : 1,
+      "slug" : "all-your-base",
+      "topics": [ ],
       "unlocked_by": "null"
     }
   ]
