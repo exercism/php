@@ -590,6 +590,14 @@
       "unlocked_by": "null"
     },
     {
+      "uuid": "CDEAE0AF-7DBE-4D0E-ACD6-915998D273EA",
+      "core" :  false,
+      "difficulty" : 1,
+      "slug" : "crypto-square",
+      "topics": [ ],
+      "unlocked_by": "null"
+    },
+    {
       "uuid": "C5D81BB4-7041-4EA9-B0ED-C3A17CF3E071",
       "core" :  false,
       "difficulty" : 1,
