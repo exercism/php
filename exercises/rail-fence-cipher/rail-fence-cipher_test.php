@@ -40,9 +40,9 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test encode with two rails.
+     * Test decode with three rails.
      */
-    public function testDecodeWithTwoRails()
+    public function testDecodeWithThreeRails()
     {
         $this->markTestSkipped();
         $encryptedText  = "TEITELHDVLSNHDTISEIIEA";
@@ -51,7 +51,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(decode($encryptedText, $rails), $expected);
     }
     /**
-     * Test encode with three rails.
+     * Test decode with five rails.
      */
     public function testDecodeWithFiveRails()
     {
@@ -63,7 +63,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test encode with ending in the middle.
+     * Test decode with six rails.
      */
     public function testDecodeWithSixRails()
     {
