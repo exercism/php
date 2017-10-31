@@ -635,6 +635,19 @@
       "slug" : "all-your-base",
       "topics": [ ],
       "unlocked_by": "null"
+    },
+    {
+      "uuid": "9aa69058-1bce-4b65-bd26-7270698f97ea",
+      "slug": "rail-fence-cipher",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "algorithms",
+        "cryptography",
+        "text_formatting",
+        "lists"
+      ]
     }
   ]
 }
