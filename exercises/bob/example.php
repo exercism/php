@@ -12,7 +12,7 @@ class Bob
     {
         $str = $this->prepareText($str);
 
-        if (!$this->isSilence($str)) {
+        if ($this->isSilence($str)) {
             return "Fine. Be that way!";
         }
 
@@ -85,7 +85,7 @@ class Bob
      */
     private function isSilence($str)
     {
-        return !empty($str);
+        return empty($str);
     }
 
     /**
