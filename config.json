@@ -49,6 +49,18 @@
       ]
     },
     {
+      "uuid": "505e7bdb-e18d-45fd-9849-0bf33492efd9",
+      "slug": "run-length-encoding",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "algorithms",
+        "text_formatting"
+      ]
+    },
+    {
       "uuid": "4f15fc17-f68e-43bc-9417-403dd6d03f4f",
       "slug": "pangram",
       "core": false,
