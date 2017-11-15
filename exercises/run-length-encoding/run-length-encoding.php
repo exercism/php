@@ -5,19 +5,16 @@
 // convenience to get you started writing code faster.
 //
 
-class RunLengthEncoding {
+function encode($input)
+{
+    //
+    // YOUR CODE GOES HERE
+    //
+}
 
-    public function encode($input)
-    {
-        //
-        // YOUR CODE GOES HERE
-        //
-    }
-
-    public function decode($input)
-    {
-        //
-        // YOUR CODE GOES HERE
-        //
-    }
+function decode($input)
+{
+    //
+    // YOUR CODE GOES HERE
+    //
 }
