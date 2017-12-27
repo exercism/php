@@ -186,7 +186,7 @@ class BobTest extends PHPUnit\Framework\TestCase
 //    {
 //        $this->markTestSkipped();
 //
-//        $this->assertEquals("Fine. Be that way!", $this->bob->respondTo("\n\r \t\u000b\u00a0\u2002"));
+//        $this->assertEquals("Fine. Be that way!", $this->bob->respondTo("\n\r \t\u{000b}\u{00a0}\u{2002}"));
 //    }
 //
 //    public function testShoutingWithUmlauts()
