@@ -111,7 +111,7 @@ class RomanTest extends PHPUnit\Framework\TestCase
         $this->assertSame('MXXIV', toRoman(1024));
     }
 
-    public function test2014()
+    public function test1998()
     {
         $this->markTestSkipped();
         $this->assertSame('MCMXCVIII', toRoman(1998));
