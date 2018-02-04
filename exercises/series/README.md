@@ -19,3 +19,24 @@ whatever you get.
 
 Note that these series are only required to occupy *adjacent positions*
 in the input; the digits need not be *numerically consecutive*.
+
+## Making the Test Suite Pass
+
+1. Get [PHPUnit].
+
+        % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
+        % chmod +x phpunit.phar
+
+2. Execute the tests for an assignment.
+
+        % phpunit.phar wordy/wordy_test.php
+
+[PHPUnit]: http://phpunit.de
+
+
+## Source
+
+A subset of the Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
+
+## Submitting Incomplete Solutions
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.
