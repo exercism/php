@@ -1,7 +1,5 @@
 <?php
 
-use Exception;
-
 function slices($series, $size)
 {
     if ($size > strlen($series) || $size < 1) {
