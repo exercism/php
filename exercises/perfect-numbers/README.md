@@ -17,16 +17,22 @@ The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) d
 
 Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
 
-## Making the Test Suite Pass
 
-1. Get [PHPUnit].
+## Running the tests
+
+1. Go to the root of your PHP exercise directory, which is `<EXERCISM_WORKSPACE>/php`.
+   To find the Exercism workspace run
+
+        % exercism debug | grep Workspace
+
+1. Get [PHPUnit] if you don't have it already.
 
         % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
         % chmod +x phpunit.phar
 
-2. Execute the tests for an assignment.
+2. Execute the tests:
 
-        % phpunit.phar wordy/wordy_test.php
+        % ./phpunit.phar perfect-numbers/perfect-numbers_test.php
 
 [PHPUnit]: http://phpunit.de
 

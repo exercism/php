@@ -22,16 +22,22 @@ The case where the sum of the lengths of two sides _equals_ that of the
 third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 
-## Making the Test Suite Pass
 
-1. Get [PHPUnit].
+## Running the tests
+
+1. Go to the root of your PHP exercise directory, which is `<EXERCISM_WORKSPACE>/php`.
+   To find the Exercism workspace run
+
+        % exercism debug | grep Workspace
+
+1. Get [PHPUnit] if you don't have it already.
 
         % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
         % chmod +x phpunit.phar
 
-2. Execute the tests for an assignment.
+2. Execute the tests:
 
-        % phpunit.phar wordy/wordy_test.php
+        % ./phpunit.phar triangle/triangle_test.php
 
 [PHPUnit]: http://phpunit.de
 

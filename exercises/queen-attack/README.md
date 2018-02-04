@@ -26,16 +26,22 @@ You'd also be able to answer whether the queens can attack each other.
 In this case, that answer would be yes, they can, because both pieces
 share a diagonal.
 
-## Making the Test Suite Pass
 
-1. Get [PHPUnit].
+## Running the tests
+
+1. Go to the root of your PHP exercise directory, which is `<EXERCISM_WORKSPACE>/php`.
+   To find the Exercism workspace run
+
+        % exercism debug | grep Workspace
+
+1. Get [PHPUnit] if you don't have it already.
 
         % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
         % chmod +x phpunit.phar
 
-2. Execute the tests for an assignment.
+2. Execute the tests:
 
-        % phpunit.phar wordy/wordy_test.php
+        % ./phpunit.phar queen-attack/queen-attack_test.php
 
 [PHPUnit]: http://phpunit.de
 
