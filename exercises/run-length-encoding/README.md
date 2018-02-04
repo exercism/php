@@ -23,7 +23,7 @@ the letters A through Z (either lower or upper case) and whitespace. This way
 data to be encoded will never contain any numbers and numbers inside data to
 be decoded always represent the count for the following character.
 
-## Submitting Exercises
+## Making the Test Suite Pass
 
 1. Get [PHPUnit].
 
@@ -32,7 +32,10 @@ be decoded always represent the count for the following character.
 
 2. Execute the tests for an assignment.
 
-        % phpunit.phar run-length-encoding/run-length-encoding_test.php
+        % phpunit.phar wordy/wordy_test.php
+
+[PHPUnit]: http://phpunit.de
+
 
 ## Source
 
