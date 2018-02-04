@@ -34,16 +34,22 @@ A binary search halves the number of items to check with each iteration,
 so locating an item (or determining its absence) takes logarithmic time.
 A binary search is a dichotomic divide and conquer search algorithm.
 
-## Making the Test Suite Pass
 
-1. Get [PHPUnit].
+## Running the tests
+
+1. Go to the root of your PHP exercise directory, which is `<EXERCISM_WORKSPACE>/php`.
+   To find the Exercism workspace run
+
+        % exercism debug | grep Workspace
+
+1. Get [PHPUnit] if you don't have it already.
 
         % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
         % chmod +x phpunit.phar
 
-2. Execute the tests for an assignment.
+2. Execute the tests:
 
-        % phpunit.phar wordy/wordy_test.php
+        % ./phpunit.phar binary-search/binary-search_test.php
 
 [PHPUnit]: http://phpunit.de
 

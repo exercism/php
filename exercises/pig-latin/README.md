@@ -17,16 +17,22 @@ variants too.
 
 See <http://en.wikipedia.org/wiki/Pig_latin> for more details.
 
-## Making the Test Suite Pass
 
-1. Get [PHPUnit].
+## Running the tests
+
+1. Go to the root of your PHP exercise directory, which is `<EXERCISM_WORKSPACE>/php`.
+   To find the Exercism workspace run
+
+        % exercism debug | grep Workspace
+
+1. Get [PHPUnit] if you don't have it already.
 
         % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
         % chmod +x phpunit.phar
 
-2. Execute the tests for an assignment.
+2. Execute the tests:
 
-        % phpunit.phar wordy/wordy_test.php
+        % ./phpunit.phar pig-latin/pig-latin_test.php
 
 [PHPUnit]: http://phpunit.de
 

@@ -30,19 +30,24 @@ the representation passed to your code):
 the above example `O` has made a connection from left to right but nobody has
 won since `O` didn't connect top and bottom.
 
-## Making the Test Suite Pass
 
-1. Get [PHPUnit].
+## Running the tests
+
+1. Go to the root of your PHP exercise directory, which is `<EXERCISM_WORKSPACE>/php`.
+   To find the Exercism workspace run
+
+        % exercism debug | grep Workspace
+
+1. Get [PHPUnit] if you don't have it already.
 
         % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
         % chmod +x phpunit.phar
 
-2. Execute the tests for an assignment.
+2. Execute the tests:
 
-        % phpunit.phar wordy/wordy_test.php
+        % ./phpunit.phar connect/connect_test.php
 
 [PHPUnit]: http://phpunit.de
-
 
 
 ## Submitting Incomplete Solutions

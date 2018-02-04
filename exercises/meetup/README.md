@@ -26,16 +26,22 @@ Given examples of a meetup dates, each containing a month, day, year, and
 descriptor calculate the date of the actual meetup.  For example, if given
 "The first Monday of January 2017", the correct meetup date is 2017/1/2.
 
-## Making the Test Suite Pass
 
-1. Get [PHPUnit].
+## Running the tests
+
+1. Go to the root of your PHP exercise directory, which is `<EXERCISM_WORKSPACE>/php`.
+   To find the Exercism workspace run
+
+        % exercism debug | grep Workspace
+
+1. Get [PHPUnit] if you don't have it already.
 
         % wget --no-check-certificate https://phar.phpunit.de/phpunit.phar
         % chmod +x phpunit.phar
 
-2. Execute the tests for an assignment.
+2. Execute the tests:
 
-        % phpunit.phar wordy/wordy_test.php
+        % ./phpunit.phar meetup/meetup_test.php
 
 [PHPUnit]: http://phpunit.de
 
