@@ -1,6 +1,7 @@
-# xPHP
+# PHP
 
-[![Build Status](https://travis-ci.org/exercism/xphp.svg?branch=master)](https://travis-ci.org/exercism/xphp)
+[![Build Status](https://travis-ci.org/exercism/php.svg?branch=master)](https://travis-ci.org/exercism/php)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/68242198cd124a3ebcbdc291d0e0eda4)](https://www.codacy.com/app/borgogelli/php?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=borgogelli/php&amp;utm_campaign=Badge_Grade)
 
 Exercism exercises in PHP
 
@@ -45,7 +46,7 @@ If you need command line help for run make commands
 
 ## Contributing
 
-- Follow the [PSR-2] coding style (xPHP uses a slightly [modified] version of [PSR-2]).
+- Follow the [PSR-2] coding style (PHP uses a slightly [modified] version of [PSR-2]).
 - Follow the [contributing guide].
 
 
@@ -53,5 +54,5 @@ If you need command line help for run make commands
 [PSR-2]: http://www.php-fig.org/psr/psr-2
 [contributing guide]: https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data
 [@group annotation]: http://phpunit.de/manual/4.1/en/appendixes.annotations.html#appendixes.annotations.group
-[modified]: phpcs-xphp.xml
+[modified]: phpcs-php.xml
 
