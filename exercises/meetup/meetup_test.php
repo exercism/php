@@ -2,8 +2,6 @@
 
 require "meetup.php";
 
-use DateTime;
-
 class MeetupTest extends PHPUnit\Framework\TestCase
 {
     public function testMonteenthOfMay2013()
