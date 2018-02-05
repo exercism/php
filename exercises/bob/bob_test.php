@@ -72,7 +72,10 @@ class BobTest extends PHPUnit\Framework\TestCase
     {
         $this->markTestSkipped();
 
-        $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("WHAT THE HELL WERE YOU THINKING?"));
+        $this->assertEquals(
+            "Calm down, I know what I'm doing!",
+            $this->bob->respondTo("WHAT THE HELL WERE YOU THINKING?")
+        );
     }
 
     public function testShoutingNumbers()

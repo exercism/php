@@ -16,6 +16,10 @@ class Bob
             return "Fine. Be that way!";
         }
 
+        if ($this->isYelling($str) && $this->isQuestion($str)) {
+            return "Calm down, I know what I'm doing!";
+        }
+
         if ($this->isYelling($str)) {
             return "Whoa, chill out!";
         }
