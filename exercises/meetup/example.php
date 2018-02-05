@@ -1,7 +1,5 @@
 <?php
 
-use DateTime;
-
 function meetup_day($year, $month, $which, $weekday)
 {
     $monthName = (DateTime::createFromFormat("!m", $month))->format('F');

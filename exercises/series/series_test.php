@@ -1,6 +1,5 @@
 <?php
 require "series.php";
-use Exception;
 
 class SieveTest extends PHPUnit\Framework\TestCase
 {
