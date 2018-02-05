@@ -21,14 +21,13 @@ class Board
     public function __construct(array $lines)
     {
         $this->height = count($lines);
-        assert("$this->height > 0");
+
         $this->width = strlen($lines[0]);
-        assert("$this->width > 0");
+
         $this->fields = array_map(function ($line) {
             $row = array();
             for ($i = 0; $i < strlen($line); $i++) {
-                switch ($line[$i])
-                {
+                switch ($line[$i]) {
                     case "O":
                         array_push($row, WHITE);
                         break;
