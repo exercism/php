@@ -599,7 +599,7 @@
         "Algorithms",
         "Mathematics"
       ],
-      "unlocked_by": "null"
+      "unlocked_by": null
     },
     {
       "uuid": "CDEAE0AF-7DBE-4D0E-ACD6-915998D273EA",
@@ -607,7 +607,7 @@
       "difficulty" : 1,
       "slug" : "crypto-square",
       "topics": [ ],
-      "unlocked_by": "null"
+      "unlocked_by": null
     },
     {
       "uuid": "C5D81BB4-7041-4EA9-B0ED-C3A17CF3E071",
@@ -615,7 +615,7 @@
       "difficulty" : 1,
       "slug" : "series",
       "topics": [ ],
-      "unlocked_by": "null"
+      "unlocked_by": null
     },
     {
       "uuid": "cb413881-99b6-493f-bea2-89563dc173a6",
@@ -630,15 +630,15 @@
         "strings",
         "text_formatting"
       ],
-      "unlocked_by": "null"
+      "unlocked_by": null
     },
     {
       "uuid": "57E13615-4C88-42E1-A4AE-C2DED7A6FDB2",
       "core" :  false,
       "difficulty" : 1,
-      "slug" : "meetup",      
+      "slug" : "meetup",
       "topics": [ ],
-      "unlocked_by": "null"
+      "unlocked_by": null
     },
     {
       "uuid": "94AA4B63-66BA-4EF4-8E27-36C146682F05",
@@ -646,7 +646,7 @@
       "difficulty" : 1,
       "slug" : "all-your-base",
       "topics": [ ],
-      "unlocked_by": "null"
+      "unlocked_by": null
     },
     {
       "uuid": "9aa69058-1bce-4b65-bd26-7270698f97ea",
