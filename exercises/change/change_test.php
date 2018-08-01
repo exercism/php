@@ -36,27 +36,6 @@ class ChangeTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testForChangeSmallerThanAvailableCoins()
-    {
-        $this->markTestSkipped();
-        $this->expectException('InvalidArgumentException', 'No coins small enough to make change');
-        findFewestCoins(array(5, 10), 3);
-    }
-
-    public function testNoCoinsForZero()
-    {
-        $this->markTestSkipped();
-        $this->assertEquals(array(), findFewestCoins(array(1, 2, 5), 0));
-    }
-
-    public function testChangeValueLessThanZero()
-    {
-        $this->markTestSkipped();
-        $this->expectException('InvalidArgumentException', 'Cannot make change for negative value');
-        findFewestCoins(array(1, 2, 5), -5);
-    }
-  
-    # bonus point if it pass these tests
     public function testPossibleChangeWithoutUnitCoinsAvailable()
     {
         $this->markTestSkipped();
@@ -73,5 +52,33 @@ class ChangeTest extends PHPUnit\Framework\TestCase
             array(4, 4, 4, 5, 5, 5),
             findFewestCoins(array(4, 5), 27)
         );
+    }
+
+    public function testNoCoinsForZero()
+    {
+        $this->markTestSkipped();
+        $this->assertEquals(array(), findFewestCoins(array(1, 5, 10, 21, 25), 0));
+    }
+
+    public function testForChangeSmallerThanAvailableCoins()
+    {
+        $this->markTestSkipped();
+        $this->expectException('InvalidArgumentException', 'No coins small enough to make change');
+        findFewestCoins(array(5, 10), 3);
+    }
+
+    public function testErrorIfNoCombinationCanAddUpToTarget()
+    {
+        $this->markTestSkipped();
+        $this->expectException('InvalidArgumentException', 'No combination can add up to target');
+        findFewestCoins(array(5, 10), 94);
+
+    }
+
+    public function testChangeValueLessThanZero()
+    {
+        $this->markTestSkipped();
+        $this->expectException('InvalidArgumentException', 'Cannot make change for negative value');
+        findFewestCoins(array(1, 2, 5), -5);
     }
 }
