@@ -36,6 +36,30 @@ class ChangeTest extends PHPUnit\Framework\TestCase
         );
     }
 
+    public function testPossibleChangeWithoutUnitCoinsAvailable()
+    {
+        $this->markTestSkipped();
+        $this->assertEquals(
+            array(2, 2, 2, 5, 10),
+            findFewestCoins(array(2, 5, 10, 20, 50), 21)
+        );
+    }
+
+    public function testAnotherPossibleChangeWithoutUnitCoinsAvailable()
+    {
+        $this->markTestSkipped();
+        $this->assertEquals(
+            array(4, 4, 4, 5, 5, 5),
+            findFewestCoins(array(4, 5), 27)
+        );
+    }
+
+    public function testNoCoinsForZero()
+    {
+        $this->markTestSkipped();
+        $this->assertEquals(array(), findFewestCoins(array(1, 5, 10, 21, 25), 0));
+    }
+
     public function testForChangeSmallerThanAvailableCoins()
     {
         $this->markTestSkipped();
@@ -43,10 +67,12 @@ class ChangeTest extends PHPUnit\Framework\TestCase
         findFewestCoins(array(5, 10), 3);
     }
 
-    public function testNoCoinsForZero()
+    public function testErrorIfNoCombinationCanAddUpToTarget()
     {
         $this->markTestSkipped();
-        $this->assertEquals(array(), findFewestCoins(array(1, 2, 5), 0));
+        $this->expectException('InvalidArgumentException', 'No combination can add up to target');
+        findFewestCoins(array(5, 10), 94);
+
     }
 
     public function testChangeValueLessThanZero()
