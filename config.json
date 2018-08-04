@@ -109,7 +109,8 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
-        "integers"
+        "integers",
+        "math"
       ]
     },
     {
@@ -120,6 +121,7 @@
       "difficulty": 5,
       "topics": [
         "integers",
+        "math",
         "strings",
         "transforming"
       ]
@@ -143,7 +145,7 @@
       "difficulty": 1,
       "topics": [
         "filtering",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -208,7 +210,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "bowling",
@@ -325,7 +329,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "accumulate",
@@ -476,8 +482,7 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
-        "integers",
-        "mathematics"
+        "integers"
       ]
     },
     {
@@ -516,7 +521,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "sum-of-multiples",
@@ -524,7 +531,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 2,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "pascals-triangle",
@@ -532,7 +541,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 3,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "nth-prime",
@@ -540,7 +551,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 3,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "binary-search",
@@ -556,7 +569,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 3,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "flatten-array",
@@ -579,7 +594,7 @@
         "control_flow_conditionals",
         "control_flow_loops",
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -627,7 +642,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "rail-fence-cipher",
