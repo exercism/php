@@ -13,8 +13,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItEncodesDoubleBytes()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x81, 0x00], vlq_encode([0x80]));
         $this->assertEquals([0xc0, 0x00], vlq_encode([0x2000]));
         $this->assertEquals([0xff, 0x7f], vlq_encode([0x3fff]));
@@ -22,8 +20,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItEncodesTripleBytes()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x81, 0x80, 0x00], vlq_encode([0x4000]));
         $this->assertEquals([0xc0, 0x80, 0x00], vlq_encode([0x100000]));
         $this->assertEquals([0xff, 0xff, 0x7f], vlq_encode([0x1fffff]));
@@ -31,8 +27,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItEncodesQuadrupleBytes()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x81, 0x80, 0x80, 0x00], vlq_encode([0x200000]));
         $this->assertEquals([0xc0, 0x80, 0x80, 0x00], vlq_encode([0x8000000]));
         $this->assertEquals([0xff, 0xff, 0xff, 0x7f], vlq_encode([0xfffffff]));
@@ -40,8 +34,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItEncodesMultipleValues()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x00, 0x00], vlq_encode([0x00, 0x00]));
         $this->assertEquals([0x40, 0x7f], vlq_encode([0x40, 0x7f]));
         $this->assertEquals([0x81, 0x80, 0x00, 0xc8, 0xe8, 0x56], vlq_encode([0x4000, 0x123456]));
@@ -56,8 +48,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItDecodesFromSyngleBytes()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x00], vlq_decode([0x00]));
         $this->assertEquals([0x40], vlq_decode([0x40]));
         $this->assertEquals([0x7f], vlq_decode([0x7f]));
@@ -65,8 +55,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItDecodesDoubleBytes()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x80], vlq_decode([0x81, 0x00]));
         $this->assertEquals([0x2000], vlq_decode([0xc0, 0x00]));
         $this->assertEquals([0x3fff], vlq_decode([0xff, 0x7f]));
@@ -74,8 +62,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItDecodesTripleBytes()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x4000], vlq_decode([0x81, 0x80, 0x00]));
         $this->assertEquals([0x100000], vlq_decode([0xc0, 0x80, 0x00]));
         $this->assertEquals([0x1FFFFF], vlq_decode([0xff, 0xff, 0x7f]));
@@ -83,8 +69,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItDecodesQuadrupleBytes()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x200000], vlq_decode([0x81, 0x80, 0x80, 0x00]));
         $this->assertEquals([0x8000000], vlq_decode([0xc0, 0x80, 0x80, 0x00]));
         $this->assertEquals([0xFFFFFFF], vlq_decode([0xff, 0xff, 0xff, 0x7f]));
@@ -92,8 +76,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testItDecodesMultipleValues()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([0x00, 0x00], vlq_decode([0x00, 0x00]));
         $this->assertEquals([0x40, 0x7f], vlq_decode([0x40, 0x7f]));
         $this->assertEquals([0x4000, 0x123456], vlq_decode([0x81, 0x80, 0x00, 0xc8, 0xe8, 0x56]));
@@ -109,8 +91,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testIncompleteByteSequence()
     {
-        $this->markTestSkipped();
-
         $this->expectException(InvalidArgumentException::class);
 
         vlq_decode([0xff]);
@@ -118,8 +98,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testOverflow()
     {
-        $this->markTestSkipped();
-
         $this->expectException(OverflowException::class);
 
         vlq_decode([0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f]);
@@ -127,8 +105,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testChainedDecodeEncodeGivesOriginalBytes()
     {
-        $this->markTestSkipped();
-
         $bytes = [
             0xc0, 0x00, 0xc8, 0xe8, 0x56,
             0xff, 0xff, 0xff, 0x7f, 0x00,
@@ -140,8 +116,6 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 
     public function testChainedEncodeDecodeGivesOriginalIntegers()
     {
-        $this->markTestSkipped();
-
         $integers = [0x2000, 0x123456, 0x0fffffff, 0x00, 0x3fff, 0x4000];
 
         $this->assertEquals($integers, vlq_decode(vlq_encode($integers)));

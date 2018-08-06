@@ -35,7 +35,6 @@ class NamesRegistry
 
     private function __construct()
     {
-
     }
 
     /**

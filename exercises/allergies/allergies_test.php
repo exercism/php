@@ -20,7 +20,6 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
      */
     public function testAllergiesToOneAllergen($allergicTo)
     {
-        $this->markTestSkipped();
         $allergies = new Allergies($allergicTo->getScore());
 
         $this->assertTrue($allergies->isAllergicTo($allergicTo));
@@ -49,7 +48,6 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
 
     public function testAllergicToEggsInAdditionToOtherStuff()
     {
-        $this->markTestSkipped();
         $allergies = new Allergies(5);
 
         $this->assertTrue($allergies->isAllergicTo(new Allergen(Allergen::EGGS)));
@@ -58,7 +56,6 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
 
     public function testIsAllergicToLotsOfStuffs()
     {
-        $this->markTestSkipped();
         $allergies = new Allergies(248);
 
         $this->assertEquals([
@@ -72,7 +69,6 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
 
     public function testIsAllergicToEggsAndPeanuts()
     {
-        $this->markTestSkipped();
         $allergies = new Allergies(3);
 
         $this->assertEquals([
@@ -83,7 +79,6 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
 
     public function testIsAllergicToEgssAndShellfish()
     {
-        $this->markTestSkipped();
         $allergies = new Allergies(5);
 
         $this->assertEquals([
@@ -94,7 +89,6 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
 
     public function testIgnoreNonAllergenScorePart()
     {
-        $this->markTestSkipped();
         $allergies = new Allergies(509);
 
         $this->assertEquals([
@@ -113,7 +107,6 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
      */
     public function testIsAllergicToEverything($allergen)
     {
-        $this->markTestSkipped();
         $allergies = new Allergies(255);
 
         $this->assertTrue($allergies->isAllergicTo($allergen));

@@ -13,7 +13,6 @@ class TransformTest extends PHPUnit\Framework\TestCase
 
     public function testTransformMoreValues()
     {
-        $this->markTestSkipped();
         $old         = [ '1' => str_split('AEIOU') ];
         $expected    = [ 'a' => 1, 'e' => 1, 'i' => 1, 'o' => 1, 'u' => 1 ];
         $this->assertEquals($expected, transform($old));
@@ -21,7 +20,6 @@ class TransformTest extends PHPUnit\Framework\TestCase
 
     public function testTransformMoreKeys()
     {
-        $this->markTestSkipped();
         $old         = [ '1' => str_split('AE'), '2' => str_split('DG') ];
         $expected    = [ 'a' => 1, 'e' => 1, 'd' => 2, 'g' => 2 ];
         $this->assertEquals($expected, transform($old));
@@ -29,7 +27,6 @@ class TransformTest extends PHPUnit\Framework\TestCase
 
     public function testTransformFullDataset()
     {
-        $this->markTestSkipped();
         $old = [
             '1' => str_split('AEIOULNRST'),
             '2' => str_split('DG'),
