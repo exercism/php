@@ -15,8 +15,6 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 
     public function testAccumulateSquares()
     {
-        $this->markTestSkipped();
-
         $accumulator = function ($value) {
             return $value ** 2;
         };
@@ -26,8 +24,6 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 
     public function testAccumulateUpperCases()
     {
-        $this->markTestSkipped();
-
         $accumulator = function ($string) {
             return mb_strtoupper($string);
         };
@@ -37,8 +33,6 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 
     public function testAccumulateReversedStrings()
     {
-        $this->markTestSkipped();
-
         $accumulator = function ($string) {
             return strrev($string);
         };
@@ -48,8 +42,6 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 
     public function testAccumulateConstants()
     {
-        $this->markTestSkipped();
-
         $accumulator = function () {
             return 1;
         };
@@ -59,8 +51,6 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 
     public function testAccumulateWithinAccumulate()
     {
-        $this->markTestSkipped();
-
         $chars = ['a', 'b', 'c'];
         $digits = [1, 2, 3];
         $expected = [['a1', 'a2', 'a3'], ['b1', 'b2', 'b3'], ['c1', 'c2', 'c3']];
@@ -79,29 +69,21 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 
     public function testAccumulateUsingBuiltInFunction()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals(['Hello', 'World!'], accumulate([" Hello\t", "\t World!\n "], 'trim'));
     }
 
     public function testAccumulateUsingStaticMethod()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([5, 6], accumulate(['Hello', 'World!'], 'Str::len'));
     }
 
     public function testAccumulateUsingInvoke()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([['f', 'o', 'o']], accumulate(['foo'], new StrSpliter()));
     }
 
     public function testAccumulateUsingObjectAndArrayNotation()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals([true, false, false], accumulate(['Yes', 0, []], [new Is(), 'truthy']));
     }
 }

@@ -14,7 +14,6 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
 
     public function testVerse2()
     {
-        $this->markTestSkipped();
         $expected = "2 bottles of beer on the wall, 2 bottles of beer.\n" .
             "Take one down and pass it around, 1 bottle of beer on the wall.\n";
         $song = new BeerSong();
@@ -23,7 +22,6 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
 
     public function testVerse1()
     {
-        $this->markTestSkipped();
         $expected = "1 bottle of beer on the wall, 1 bottle of beer.\n" .
             "Take it down and pass it around, no more bottles of beer on the wall.\n";
         $song = new BeerSong();
@@ -32,7 +30,6 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
 
     public function testVerse0()
     {
-        $this->markTestSkipped();
         $expected = "No more bottles of beer on the wall, no more bottles of beer.\n" .
             "Go to the store and buy some more, 99 bottles of beer on the wall.";
         $song = new BeerSong();
@@ -41,7 +38,6 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
 
     public function testACoupleVerses()
     {
-        $this->markTestSkipped();
         $expected = "99 bottles of beer on the wall, 99 bottles of beer.\n" .
             "Take one down and pass it around, 98 bottles of beer on the wall.\n" .
             "\n" .
@@ -53,7 +49,6 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
 
     public function testAFewVerses()
     {
-        $this->markTestSkipped();
         $expected = "2 bottles of beer on the wall, 2 bottles of beer.\n" .
             "Take one down and pass it around, 1 bottle of beer on the wall.\n" .
             "\n" .
@@ -68,7 +63,6 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
 
     public function testWholeSong()
     {
-        $this->markTestSkipped();
         $expected = <<<SONG
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.

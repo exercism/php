@@ -20,7 +20,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueenHasPositiveRank()
     {
-        $this->markTestSkipped();
         placeQueen(-2, 2);
     }
 
@@ -32,7 +31,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueenHasRankOnBoard()
     {
-        $this->markTestSkipped();
         placeQueen(8, 4);
     }
 
@@ -44,7 +42,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueenHasPositiveFile()
     {
-        $this->markTestSkipped();
         placeQueen(2, -2);
     }
 
@@ -56,7 +53,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueenHasFileOnBoard()
     {
-        $this->markTestSkipped();
         placeQueen(4, 8);
     }
 
@@ -65,7 +61,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueensCanAttack()
     {
-        $this->markTestSkipped();
         $this->assertFalse(canAttack([2, 4], [6, 6]));
     }
 
@@ -74,7 +69,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueensCanAttackOnSameRank()
     {
-        $this->markTestSkipped();
         $this->assertTrue(canAttack([2, 4], [2, 6]));
     }
 
@@ -83,7 +77,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueensCanAttackOnSameFile()
     {
-        $this->markTestSkipped();
         $this->assertTrue(canAttack([4, 5], [2, 5]));
     }
 
@@ -92,7 +85,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueensCanAttackOnFirstDiagonal()
     {
-        $this->markTestSkipped();
         $this->assertTrue(canAttack([2, 2], [0, 4]));
     }
 
@@ -101,7 +93,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueensCanAttackOnSecondDiagonal()
     {
-        $this->markTestSkipped();
         $this->assertTrue(canAttack([2, 2], [3, 1]));
     }
 
@@ -110,7 +101,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueensCanAttackOnThirdDiagonal()
     {
-        $this->markTestSkipped();
         $this->assertTrue(canAttack([2, 2], [1, 1]));
     }
 
@@ -119,7 +109,6 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
      */
     public function testQueensCanAttackOnFourthDiagonal()
     {
-        $this->markTestSkipped();
         $this->assertTrue(canAttack([2, 2], [5, 5]));
     }
 }

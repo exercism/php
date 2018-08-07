@@ -13,7 +13,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testTwoCharactersInARow()
     {
-        $this->markTestSkipped();
         $input = [
             "A1"
         ];
@@ -26,7 +25,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testTwoCharactersInAColumn()
     {
-        $this->markTestSkipped();
         $input = [
             "A",
             "1"
@@ -39,7 +37,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testSimple()
     {
-        $this->markTestSkipped();
         $input = [
             "ABC",
             "123"
@@ -54,7 +51,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testSingleLine()
     {
-        $this->markTestSkipped();
         $input = [
             "Single line."
         ];
@@ -77,7 +73,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testFirstLineLongerThanSecondLine()
     {
-        $this->markTestSkipped();
         $input = [
             "The fourth line.",
             "The fifth line."
@@ -105,7 +100,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testSecondLineLongerThanFirstLine()
     {
-        $this->markTestSkipped();
         $input = [
             "The first line.",
             "The second line."
@@ -133,7 +127,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testSquare()
     {
-        $this->markTestSkipped();
         $input = [
             "HEART",
             "EMBER",
@@ -153,7 +146,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testRectangle()
     {
-        $this->markTestSkipped();
         $input = [
             "FRACTURE",
             "OUTLINED",
@@ -175,7 +167,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testTriangle()
     {
-        $this->markTestSkipped();
         $input = [
             "T",
             "EE",
@@ -197,7 +188,6 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 
     public function testManyLines()
     {
-        $this->markTestSkipped();
         $input = [
             "Chor. Two households, both alike in dignity,",
             "In fair Verona, where we lay our scene,",

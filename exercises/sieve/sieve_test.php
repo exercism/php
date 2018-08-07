@@ -8,22 +8,18 @@ class SieveTest extends PHPUnit\Framework\TestCase
     }
     public function testFindFirstPrime()
     {
-        $this->markTestSkipped();
         $this->assertEquals([2], sieve(2));
     }
     public function testFindPrimesUpTo10()
     {
-        $this->markTestSkipped();
         $this->assertEquals([2, 3, 5, 7], sieve(10));
     }
     public function testLimitIsPrime()
     {
-        $this->markTestSkipped();
         $this->assertEquals([2, 3, 5, 7, 11, 13], sieve(13));
     }
     public function testFindPrimesUpTo1000()
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             [
                 2,

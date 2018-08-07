@@ -13,7 +13,6 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     public function testSlicesOfTwo()
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             slices("97867564", 2),
             ["97", "78", "86", "67", "75", "56", "64"]
@@ -22,7 +21,6 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     public function testSlicesOfThree()
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             slices("97867564", 3),
             ["978", "786", "867", "675", "756", "564"]
@@ -31,7 +29,6 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     public function testSlicesOfFour()
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             slices("01234", 4),
             ["0123", "1234"]
@@ -40,7 +37,6 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     public function testSlicesOfFive()
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             slices("01234", 5),
             ["01234"]
@@ -49,14 +45,12 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     public function testOverlyLongSlice()
     {
-        $this->markTestSkipped();
         $this->expectException(Exception::class);
         slices("012", 4);
     }
 
     public function testOverlyShortSlice()
     {
-        $this->markTestSkipped();
         $this->expectException(Exception::class);
         slices("01234", 0);
     }

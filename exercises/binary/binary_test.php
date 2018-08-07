@@ -16,8 +16,6 @@ class BinaryTest extends PHPUnit\Framework\TestCase
 
     public function testItParsesDigits()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals(2, parse_binary('10'));
         $this->assertEquals(3, parse_binary('11'));
         $this->assertEquals(4, parse_binary('100'));
@@ -26,8 +24,6 @@ class BinaryTest extends PHPUnit\Framework\TestCase
 
     public function testItParsesHundreds()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals(128, parse_binary('10000000'));
         $this->assertEquals(315, parse_binary('100111011'));
         $this->assertEquals(800, parse_binary('1100100000'));
@@ -36,8 +32,6 @@ class BinaryTest extends PHPUnit\Framework\TestCase
 
     public function testItParsesMaxInt()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals(
             9223372036854775807,
             parse_binary('111111111111111111111111111111111111111111111111111111111111111')
@@ -46,8 +40,6 @@ class BinaryTest extends PHPUnit\Framework\TestCase
 
     public function testItParsesValuesWithLeadingZeros()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals(1, parse_binary('01'));
         $this->assertEquals(2, parse_binary('0010'));
         $this->assertEquals(3, parse_binary('00011'));
@@ -58,8 +50,6 @@ class BinaryTest extends PHPUnit\Framework\TestCase
      */
     public function testItOnlyAcceptsStringsContainingZerosAndOnes($value)
     {
-        $this->markTestSkipped();
-
         $this->expectException(InvalidArgumentException::class);
 
         parse_binary($value);

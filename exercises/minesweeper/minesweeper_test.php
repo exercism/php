@@ -16,7 +16,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testAnIncompleteSideBorderThrowsAnException()
     {
-        $this->markTestSkipped();
         $incompleteBoard = '
 +--+
    |
@@ -29,7 +28,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testAnIncompleteTopBorderThrowsAnException()
     {
-        $this->markTestSkipped();
         $incompleteBoard = '
 + -+
 |  |
@@ -42,7 +40,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testAMissingCornerThrowsAnException()
     {
-        $this->markTestSkipped();
         $incompleteBoard = '
 +--
 |  |
@@ -55,7 +52,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testABoardWithLessThan2SquaresThrowsAnException()
     {
-        $this->markTestSkipped();
         $tinyBoard = '
 +-+
 | |
@@ -68,7 +64,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testRowsOfSameLength($value = '')
     {
-        $this->markTestSkipped();
         $unequalBoard = '
 +---+
 |   |
@@ -83,7 +78,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testCanOnlyContainMines($value = '')
     {
-        $this->markTestSkipped();
         $badBoard = '
 +---+
 |  *|
@@ -99,7 +93,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testBoardWithOneMineToLeft()
     {
-        $this->markTestSkipped();
         $oneMine = '
 +--+
 |* |
@@ -117,7 +110,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testBoardWithOneMineToRight()
     {
-        $this->markTestSkipped();
         $oneMine = '
 +--+
 | *|
@@ -135,7 +127,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testBoardWithAMineToTopAndRight()
     {
-        $this->markTestSkipped();
         $twoMines = '
 +--+
 |* |
@@ -155,7 +146,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testBoardWithAMineToBottomAndLeftAndDiagonal()
     {
-        $this->markTestSkipped();
         $threeMines = '
 +--+
 |* |
@@ -175,7 +165,6 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
     public function testAComplicatedBoard()
     {
-        $this->markTestSkipped();
         $fourMines = '
 +-----+
 | * * |

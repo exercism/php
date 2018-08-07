@@ -23,7 +23,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testUppercaseSingleLetter()
     {
-        $this->markTestSkipped();
         $word = 'A';
         $this->assertEquals(1, score($word));
     }
@@ -33,7 +32,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testValuableSingleLetter()
     {
-        $this->markTestSkipped();
         $word = 'f';
         $this->assertEquals(4, score($word));
     }
@@ -43,7 +41,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testShortWord()
     {
-        $this->markTestSkipped();
         $word = 'at';
         $this->assertEquals(2, score($word));
     }
@@ -53,7 +50,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testShortValuableWord()
     {
-        $this->markTestSkipped();
         $word = 'zoo';
         $this->assertEquals(12, score($word));
     }
@@ -63,7 +59,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testMediumWord()
     {
-        $this->markTestSkipped();
         $word = 'street';
         $this->assertEquals(6, score($word));
     }
@@ -73,7 +68,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testMediumValuableWord()
     {
-        $this->markTestSkipped();
         $word = 'quirky';
         $this->assertEquals(22, score($word));
     }
@@ -83,7 +77,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testLongMixedCaseWord()
     {
-        $this->markTestSkipped();
         $word = 'OxyphenButazone';
         $this->assertEquals(41, score($word));
     }
@@ -93,7 +86,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testEnglishLikeWord()
     {
-        $this->markTestSkipped();
         $word = 'pinata';
         $this->assertEquals(8, score($word));
     }
@@ -103,7 +95,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testEmptyWordScore()
     {
-        $this->markTestSkipped();
         $word = '';
         $this->assertEquals(0, score($word));
     }
@@ -113,7 +104,6 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
      */
     public function testEntireAlphabetWord()
     {
-        $this->markTestSkipped();
         $word = 'abcdefghijklmnopqrstuvwxyz';
         $this->assertEquals(87, score($word));
     }
