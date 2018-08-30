@@ -1,6 +1,6 @@
 <?php
 
-function squareOfSums($max)
+function squareOfSum($max)
 {
     $sum = 0;
 
@@ -26,5 +26,5 @@ function sumOfSquares($max)
 
 function difference($max)
 {
-    return squareOfSums($max) - sumOfSquares($max);
+    return squareOfSum($max) - sumOfSquares($max);
 }
