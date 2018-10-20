@@ -49,6 +49,23 @@ style-check-assignment: bin/phpcs.phar ## run style check single test using ASSI
 	@echo "checking $(ASSIGNMENT) against PHP code standards"
 	@bin/phpcs.phar -sp --standard=phpcs-php.xml ./exercises/$(ASSIGNMENT)
 
+
 style-check: ## run style check all tests
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s style-check-assignment || exit 1; done
+
+docker-build: ## build a docker image
+	docker build -t exercism-php .
+
+docker-test-assignment: bin/phpunit.phar ## run single test using ASSIGNMENTS with docker: docker-test-assignment ASSIGNMENT=wordy
+	@docker run -v "$(PWD)":/app/ -it --rm --name exercism-php-app exercism-php make test-assignment ASSIGNMENT=$(ASSIGNMENT)
+
+docker-test: ## run all tests with docker
+	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s docker-test-assignment || exit 1; done
+
+docker-style-check-assignment: bin/phpcs.phar ## run style check single test using ASSIGNMENTS with docker: docker-style-check-assignment ASSIGNMENT=wordy
+	@docker run -v "$(PWD)":/app/ -it --rm --name exercism-php-app exercism-php make style-check ASSIGNMENT=$(ASSIGNMENT)
+
+docker-style-check: ## run style check all tests with docker
+	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s style-check || exit 1; done
+
 
