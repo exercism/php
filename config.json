@@ -658,6 +658,18 @@
         "lists",
         "text_formatting"
       ]
+    },
+    {
+      "slug": "affine-cipher",
+      "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "cryptography",
+        "math",
+        "strings"
+      ]
     }
   ]
 }
