@@ -670,6 +670,18 @@
         "math",
         "strings"
       ]
+    },
+    {
+      "slug": "diamond",
+      "uuid": "a7bc6837-59e4-46a1-89a2-a5aa44f5e66e",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "lists",
+        "loops",
+        "strings"
+      ]
     }
   ]
 }
