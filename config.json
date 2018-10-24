@@ -660,6 +660,18 @@
       ]
     },
     {
+      "slug": "affine-cipher",
+      "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "cryptography",
+        "math",
+        "strings"
+      ]
+    },
+    {
       "slug": "diamond",
       "uuid": "a7bc6837-59e4-46a1-89a2-a5aa44f5e66e",
       "core": false,
