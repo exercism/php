@@ -1,45 +1,45 @@
 <?php
 require "series.php";
 
-class SieveTest extends PHPUnit\Framework\TestCase
+class SeriesTest extends PHPUnit\Framework\TestCase
 {
     public function testSlicesOfOne()
     {
         $this->assertEquals(
-            slices("01234", 1),
-            ["0", "1", "2", "3", "4"]
+            ["0", "1", "2", "3", "4"],
+            slices("01234", 1)
         );
     }
 
     public function testSlicesOfTwo()
     {
         $this->assertEquals(
-            slices("97867564", 2),
-            ["97", "78", "86", "67", "75", "56", "64"]
+            ["97", "78", "86", "67", "75", "56", "64"],
+            slices("97867564", 2)
         );
     }
 
     public function testSlicesOfThree()
     {
         $this->assertEquals(
-            slices("97867564", 3),
-            ["978", "786", "867", "675", "756", "564"]
+            ["978", "786", "867", "675", "756", "564"],
+            slices("97867564", 3)
         );
     }
 
     public function testSlicesOfFour()
     {
         $this->assertEquals(
-            slices("01234", 4),
-            ["0123", "1234"]
+            ["0123", "1234"],
+            slices("01234", 4)
         );
     }
 
     public function testSlicesOfFive()
     {
         $this->assertEquals(
-            slices("01234", 5),
-            ["01234"]
+            ["01234"],
+            slices("01234", 5)
         );
     }
 
