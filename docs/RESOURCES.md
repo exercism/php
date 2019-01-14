@@ -4,7 +4,6 @@
 * [PHP Best Practices](https://phpbestpractices.org/)
 * [Best practices for Modern PHP Development](https://www.airpair.com/php/posts/best-practices-for-modern-php-development)
 * [PHP Cheatsheets](http://phpcheatsheets.com/)
-* [PHP Security Cheatsheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
 
 ## Recommended References
 
