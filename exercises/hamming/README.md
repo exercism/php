@@ -29,12 +29,16 @@ nucleotides are different from their equivalent in the other string.
 
 The Hamming distance between these two DNA strands is 7.
 
-# Implementation notes
+## Implementation notes
 
 The Hamming distance is only defined for sequences of equal length. This means
 that based on the definition, each language could deal with getting sequences
 of equal length differently.
 
+## Restrictions
+
+Don't solve this with the `gmp_hamdist` function!
+Solve this one yourself using other basic tools instead.
 
 ## Running the tests
 
