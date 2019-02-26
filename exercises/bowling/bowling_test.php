@@ -11,7 +11,7 @@ class GameTest extends PHPUnit\Framework\TestCase
     /** @var Game */
     private $game;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->game = new Game();
     }
