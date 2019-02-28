@@ -17,18 +17,22 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testInvalidWithLettersInPlaceOfNumbers()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $number = new PhoneNumber('123-abc-1234');
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testInvalidWhen9Digits()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $number = new PhoneNumber('123456789');
     }
 
@@ -45,26 +49,32 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testInvalidWhen11Digits()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $number = new PhoneNumber('21234567890');
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testInvalidWhen12DigitsAndFirstIs1()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $number = new PhoneNumber('112345678901');
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testInvalidWhen10DigitsWithExtraLetters()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $number = new PhoneNumber('1a2a3a4a5a6a7a8a9a0a');
     }
 
