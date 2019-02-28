@@ -31,13 +31,9 @@ class GradeSchoolTest extends TestCase
 
         $students = $this->school->grade(2) ;
         $this->assertCount(3, $students);
-        $this->assertEquals(
+        $this->assertEqualsCanonicalizing(
             ['Claire', 'Marc', 'Virginie'],
-            $students,
-            $message = '',
-            $delta = 0.0,
-            $maxDepth = 10,
-            $canonicalize = true
+            $students
         );
     }
 
