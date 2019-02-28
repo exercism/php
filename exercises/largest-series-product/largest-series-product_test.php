@@ -84,10 +84,12 @@ class SeriesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testRejectsSpanLongerThanStringLength()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $series = new Series(123);
         $series->largestProduct(4);
     }
@@ -124,28 +126,34 @@ class SeriesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testRejectsEmptyStringAndNonzeroSpan()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $series = new Series("");
         $series->largestProduct(1);
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testRejectsInvalidCharacterInDigits()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $series = new Series("1234a5");
         $series->largestProduct(2);
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testRejectsNegativeSpan()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $series = new Series("12345");
         $series->largestProduct(-1);
     }
