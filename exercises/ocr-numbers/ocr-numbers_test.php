@@ -47,10 +47,11 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
 
     /**
      * Input with a number of lines that is not a multiple of four raises an error
-     * @expectedException InvalidArgumentException
      */
     public function testErrorWrongNumberOfLines()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $input = [
             " _ ",
             "| |",
@@ -61,10 +62,11 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
 
     /**
      * Input with a number of columns that is not a multiple of three raises an error
-     * @expectedException InvalidArgumentException
      */
     public function testErrorWrongNumberOfColumns()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $input = [
             "    ",
             "   |",
