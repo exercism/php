@@ -7,6 +7,8 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
 
     /**
      * @dataProvider provideListOfAllergen
+     *
+     * @param Allergen $allergen
      */
     public function testNoAllergiesMeansNotAllergicToAnything($allergen)
     {
@@ -17,6 +19,8 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
 
     /**
      * @dataProvider provideListOfAllergen
+     *
+     * @param Allergen $allergicTo
      */
     public function testAllergiesToOneAllergen($allergicTo)
     {
@@ -26,7 +30,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         $otherAllergen = array_filter(Allergen::allergenList(), function ($allergen) use ($allergicTo) {
             return $allergen != $allergicTo;
         });
-        $self = $this;
+        $self          = $this;
         array_map(function ($allergen) use ($allergies, $self) {
             $self->assertFalse($allergies->isAllergicTo($allergen));
         }, $otherAllergen);
@@ -77,7 +81,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         ], $allergies->getList());
     }
 
-    public function testIsAllergicToEgssAndShellfish()
+    public function testIsAllergicToEggsAndShellfish()
     {
         $allergies = new Allergies(5);
 
