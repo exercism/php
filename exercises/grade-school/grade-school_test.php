@@ -23,7 +23,7 @@ class GradeSchoolTest extends TestCase
         $this->assertContains('Claire', $this->school->grade(2));
     }
 
-    public function testAddStudentsinSameGrade()
+    public function testAddStudentsInSameGrade()
     {
         $this->school->add("Marc", 2);
         $this->school->add("Virginie", 2);
