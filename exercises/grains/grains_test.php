@@ -52,26 +52,32 @@ class GrainsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testRejectsZero()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         square(0);
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testRejectsNegative()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         square(-1);
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     *
      */
     public function testRejectsGreaterThan64()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         square(65);
     }
 
