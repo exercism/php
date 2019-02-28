@@ -27,13 +27,17 @@ class CollatzConjecture extends PHPUnit\Framework\TestCase
 
     public function testZeroIsAnError()
     {
-        $this->expectException('InvalidArgumentException', 'Only positive numbers are allowed');
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Only positive numbers are allowed');
+
         steps(0);
     }
 
     public function testNegativeValueIsAnError()
     {
-        $this->expectException('InvalidArgumentException', 'Only positive numbers are allowed');
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Only positive numbers are allowed');
+
         steps(-1);
     }
 }
