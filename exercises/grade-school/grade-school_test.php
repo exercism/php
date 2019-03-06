@@ -57,6 +57,17 @@ class GradeSchoolTest extends TestCase
         $this->assertEmpty($this->school->grade(1));
     }
 
+    public function testNumberOfStudents()
+    {
+        $this->school->add("Marc", 1);
+        $this->school->add("Virginie", 2);
+        $this->school->add("Claire", 3);
+        $this->school->add("Mehdi", 3);
+        $this->school->add("Jane", 3);
+
+        $this->assertEquals(5, $this->school->numberOfStudents());
+    }
+
     public function testSortSchool()
     {
         $this->school->add("Marc", 5);
