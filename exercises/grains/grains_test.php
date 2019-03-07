@@ -51,9 +51,6 @@ class GrainsTest extends PHPUnit\Framework\TestCase
         $this->assertSame('9223372036854775808', square(64));
     }
 
-    /**
-     *
-     */
     public function testRejectsZero()
     {
         $this->expectException(InvalidArgumentException::class);
@@ -61,9 +58,6 @@ class GrainsTest extends PHPUnit\Framework\TestCase
         square(0);
     }
 
-    /**
-     *
-     */
     public function testRejectsNegative()
     {
         $this->expectException(InvalidArgumentException::class);
@@ -71,9 +65,6 @@ class GrainsTest extends PHPUnit\Framework\TestCase
         square(-1);
     }
 
-    /**
-     *
-     */
     public function testRejectsGreaterThan64()
     {
         $this->expectException(InvalidArgumentException::class);

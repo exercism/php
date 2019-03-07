@@ -137,10 +137,6 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(Robot::DIRECTION_NORTH, $robot->direction);
     }
 
-
-    /**
-     *
-     */
     public function testMalformedInstructions()
     {
         $this->expectException(InvalidArgumentException::class);
