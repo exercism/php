@@ -77,7 +77,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         ], $allergies->getList());
     }
 
-    public function testIsAllergicToEgssAndShellfish()
+    public function testIsAllergicToEggsAndShellfish()
     {
         $allergies = new Allergies(5);
 
