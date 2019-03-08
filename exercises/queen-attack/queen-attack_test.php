@@ -14,45 +14,45 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
 
     /**
      * Test the queen is placed on a positive rank.
-     *
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage The rank and file numbers must be positive.
      */
     public function testQueenHasPositiveRank()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The rank and file numbers must be positive.');
+
         placeQueen(-2, 2);
     }
 
     /**
      * Test the queen has a rank on the board.
-     *
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage The position must be on a standard size chess board.
      */
     public function testQueenHasRankOnBoard()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The position must be on a standard size chess board.');
+
         placeQueen(8, 4);
     }
 
     /**
      * Test the queen is placed on a positive file.
-     *
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage The rank and file numbers must be positive.
      */
     public function testQueenHasPositiveFile()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The rank and file numbers must be positive.');
+
         placeQueen(2, -2);
     }
 
     /**
      * Test the queen has a file on the board.
-     *
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage The position must be on a standard size chess board.
      */
     public function testQueenHasFileOnBoard()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The position must be on a standard size chess board.');
+
         placeQueen(4, 8);
     }
 
