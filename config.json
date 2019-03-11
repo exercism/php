@@ -48,18 +48,6 @@
       ]
     },
     {
-      "slug": "run-length-encoding",
-      "uuid": "0a453685-55c2-47e2-88b2-e26d1d8fbde9",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "algorithms",
-        "strings",
-        "text_formatting"
-      ]
-    },
-    {
       "slug": "pangram",
       "uuid": "4f15fc17-f68e-43bc-9417-403dd6d03f4f",
       "core": false,
@@ -100,6 +88,18 @@
       "topics": [
         "filtering",
         "strings"
+      ]
+    },
+    {
+      "slug": "run-length-encoding",
+      "uuid": "0a453685-55c2-47e2-88b2-e26d1d8fbde9",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "strings",
+        "text_formatting"
       ]
     },
     {
