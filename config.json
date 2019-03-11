@@ -37,6 +37,17 @@
       ]
     },
     {
+      "slug": "raindrops",
+      "uuid": "0ad53d66-cbdc-4d9a-a083-d24af216d3d9",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "filtering",
+        "text_formatting"
+      ]
+    },
+    {
       "slug": "bob",
       "uuid": "ae91650f-fe06-466a-a40a-6a24f5926fbe",
       "core": false,
@@ -78,17 +89,6 @@
       "topics": [
         "strings",
         "transforming"
-      ]
-    },
-    {
-      "slug": "raindrops",
-      "uuid": "0ad53d66-cbdc-4d9a-a083-d24af216d3d9",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 6,
-      "topics": [
-        "filtering",
-        "text_formatting"
       ]
     },
     {
