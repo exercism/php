@@ -5,11 +5,11 @@ use PHPUnit\Framework\TestCase;
 
 class GradeSchoolTest extends TestCase
 {
-    protected $school ;
+    protected $school;
 
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->school = new School() ;
+        $this->school = new School();
     }
 
     public function testNoStudent()
@@ -29,15 +29,11 @@ class GradeSchoolTest extends TestCase
         $this->school->add("Virginie", 2);
         $this->school->add("Claire", 2);
 
-        $students = $this->school->grade(2) ;
+        $students = $this->school->grade(2);
         $this->assertCount(3, $students);
-        $this->assertEquals(
+        $this->assertEqualsCanonicalizing(
             ['Claire', 'Marc', 'Virginie'],
-            $students,
-            $message = '',
-            $delta = 0.0,
-            $maxDepth = 10,
-            $canonicalize = true
+            $students
         );
     }
 
@@ -68,7 +64,7 @@ class GradeSchoolTest extends TestCase
             4 => ['Mehdi'],
             5 => ['Claire', 'Marc', 'Virginie']
         ];
-        $schoolStudents = $this->school->studentsByGradeAlphabetical() ;
-        $this->assertEquals($sortedStudents, $schoolStudents) ;
+        $schoolStudents = $this->school->studentsByGradeAlphabetical();
+        $this->assertEquals($sortedStudents, $schoolStudents);
     }
 }
