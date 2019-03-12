@@ -6,7 +6,8 @@ The best known English pangram is:
 > The quick brown fox jumps over the lazy dog.
 
 The alphabet used consists of ASCII letters `a` to `z`, inclusive, and is case
-insensitive. Input will not contain non-ASCII symbols.
+insensitive. Input may contain non-ASCII symbols, but it is only necessary to 
+check whether each letter in the English alphabet is present.
 
 
 ## Running the tests
