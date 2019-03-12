@@ -6,7 +6,7 @@
     {
       "slug": "hello-world",
       "uuid": "56116aa6-e3d1-4122-a394-a7e0f6ab6fea",
-      "core": false,
+      "core": true,
       "auto_approve": true,
       "unlocked_by": null,
       "difficulty": 1,
@@ -18,7 +18,7 @@
     {
       "slug": "hamming",
       "uuid": "48de430b-0d88-4af0-ab48-d00b840312bb",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
@@ -27,9 +27,20 @@
       ]
     },
     {
+      "slug": "raindrops",
+      "uuid": "0ad53d66-cbdc-4d9a-a083-d24af216d3d9",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "filtering",
+        "text_formatting"
+      ]
+    },
+    {
       "slug": "gigasecond",
       "uuid": "81aa4bc9-4936-46c2-bb2f-433246a86c5d",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
@@ -39,12 +50,101 @@
     {
       "slug": "bob",
       "uuid": "ae91650f-fe06-466a-a40a-6a24f5926fbe",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "control_flow_if_else_statements",
         "strings"
+      ]
+    },
+    {
+      "slug": "robot-name",
+      "uuid": "b24d5f98-8d62-4177-b0ae-306bbf0f918b",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "classes",
+        "randomness",
+        "strings"
+      ]
+    },
+    {
+      "slug": "rna-transcription",
+      "uuid": "81d96250-f2e4-4228-a8e9-254b6b8784ac",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "strings",
+        "transforming"
+      ]
+    },
+    {
+      "slug": "isogram",
+      "uuid": "435f0ec1-f53c-4fe4-b92b-43a582c2fa82",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "filtering",
+        "strings"
+      ]
+    },
+    {
+      "slug": "grade-school",
+      "uuid": "2d2974e2-2d5e-41d9-8dc3-951967631b37",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 6,
+      "topics": [
+        "arrays"
+      ]
+    },
+    {
+      "slug": "robot-simulator",
+      "uuid": "cc6c3b27-b719-454c-a743-7bc73bd47cf1",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "oop"
+      ]
+    },
+    {
+      "slug": "difference-of-squares",
+      "uuid": "238d86fe-6e29-43b0-9e27-a54caa773618",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "integers",
+        "math"
+      ]
+    },
+    {
+      "slug": "largest-series-product",
+      "uuid": "4fbeb249-dc1d-4282-8455-d1c06a7cb420",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "integers",
+        "math",
+        "strings",
+        "transforming"
+      ]
+    },
+    {
+      "slug": "clock",
+      "uuid": "682d4bab-ca03-4402-971b-ab2a09e55444",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "structural_equality",
+        "time"
       ]
     },
     {
@@ -67,63 +167,6 @@
       "difficulty": 4,
       "topics": [
         "strings"
-      ]
-    },
-    {
-      "slug": "rna-transcription",
-      "uuid": "81d96250-f2e4-4228-a8e9-254b6b8784ac",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "strings",
-        "transforming"
-      ]
-    },
-    {
-      "slug": "raindrops",
-      "uuid": "0ad53d66-cbdc-4d9a-a083-d24af216d3d9",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 6,
-      "topics": [
-        "filtering",
-        "text_formatting"
-      ]
-    },
-    {
-      "slug": "isogram",
-      "uuid": "435f0ec1-f53c-4fe4-b92b-43a582c2fa82",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 4,
-      "topics": [
-        "filtering",
-        "strings"
-      ]
-    },
-    {
-      "slug": "difference-of-squares",
-      "uuid": "238d86fe-6e29-43b0-9e27-a54caa773618",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "integers",
-        "math"
-      ]
-    },
-    {
-      "slug": "largest-series-product",
-      "uuid": "4fbeb249-dc1d-4282-8455-d1c06a7cb420",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 5,
-      "topics": [
-        "integers",
-        "math",
-        "strings",
-        "transforming"
       ]
     },
     {
@@ -157,18 +200,6 @@
       "topics": [
         "strings",
         "transforming"
-      ]
-    },
-    {
-      "slug": "robot-name",
-      "uuid": "b24d5f98-8d62-4177-b0ae-306bbf0f918b",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "classes",
-        "randomness",
-        "strings"
       ]
     },
     {
@@ -223,17 +254,6 @@
       "topics": [
         "algorithms",
         "control_flow_loops"
-      ]
-    },
-    {
-      "slug": "clock",
-      "uuid": "682d4bab-ca03-4402-971b-ab2a09e55444",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "structural_equality",
-        "time"
       ]
     },
     {
@@ -444,16 +464,6 @@
       ]
     },
     {
-      "slug": "robot-simulator",
-      "uuid": "cc6c3b27-b719-454c-a743-7bc73bd47cf1",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "oop"
-      ]
-    },
-    {
       "slug": "ocr-numbers",
       "uuid": "a7a269a5-e99c-4fcf-b331-9a130e94f9e4",
       "core": false,
@@ -495,16 +505,6 @@
         "control_flow_loops",
         "integers",
         "strings"
-      ]
-    },
-    {
-      "slug": "grade-school",
-      "uuid": "2d2974e2-2d5e-41d9-8dc3-951967631b37",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 6,
-      "topics": [
-        "arrays"
       ]
     },
     {
