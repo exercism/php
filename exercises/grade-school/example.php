@@ -4,11 +4,6 @@ class School
 {
     private $database = array() ;
 
-    public function numberOfStudents()
-    {
-        return (count($this->database, COUNT_RECURSIVE) - count($this->database)) ;
-    }
-
     public function add($student, $grade)
     {
         $this->database[$grade][] = $student ;
