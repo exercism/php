@@ -12,11 +12,6 @@ class GradeSchoolTest extends TestCase
         $this->school = new School();
     }
 
-    public function testNoStudent()
-    {
-        $this->assertEquals(0, $this->school->numberOfStudents());
-    }
-
     public function testAddStudent()
     {
         $this->school->add("Claire", 2);
