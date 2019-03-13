@@ -693,6 +693,16 @@
         "loops",
         "strings"
       ]
+    },
+    {
+      "slug": "two-fer",
+      "uuid": "fae78f5f-316b-44b7-aade-f61b3be990a7",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings"
+      ]
     }
   ]
 }
