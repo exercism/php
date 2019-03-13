@@ -60,6 +60,7 @@ class GradeSchoolTest extends TestCase
             5 => ['Claire', 'Marc', 'Virginie']
         ];
         $schoolStudents = $this->school->studentsByGradeAlphabetical();
-        $this->assertEquals($sortedStudents, $schoolStudents);
+
+        $this->assertTrue($sortedStudents === $schoolStudents);
     }
 }
