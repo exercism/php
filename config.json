@@ -648,7 +648,7 @@
     },
     {
       "slug": "palindrome-products",
-      "uuid": "abd68340-91b9-48c1-8567-79822bb2165c",
+      "uuid": "3201ddeb-9046-4801-a31a-28c292686e1e",
       "core": false,
       "unlocked_by": null,
       "difficulty": 6,
@@ -672,7 +672,7 @@
     },
     {
       "slug": "affine-cipher",
-      "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
+      "uuid": "4ef04018-7745-47ac-8b01-2d3d27055f4e",
       "core": false,
       "unlocked_by": null,
       "difficulty": 3,
@@ -684,7 +684,7 @@
     },
     {
       "slug": "diamond",
-      "uuid": "a7bc6837-59e4-46a1-89a2-a5aa44f5e66e",
+      "uuid": "64a8f560-0991-4897-812e-7c57a2617fde",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
