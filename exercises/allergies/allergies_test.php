@@ -58,40 +58,40 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
     {
         $allergies = new Allergies(248);
 
-        $this->assertEquals([
+        $this->assertEqualsCanonicalizing([
             new Allergen(Allergen::CATS),
             new Allergen(Allergen::CHOCOLATE),
             new Allergen(Allergen::POLLEN),
             new Allergen(Allergen::STRAWBERRIES),
             new Allergen(Allergen::TOMATOES),
-        ], $allergies->getList(), "\$canonicalize = true", $delta = 0.0, $maxDepth = 10, $canonicalize = true);
+        ], $allergies->getList());
     }
 
     public function testIsAllergicToEggsAndPeanuts()
     {
         $allergies = new Allergies(3);
 
-        $this->assertEquals([
+        $this->assertEqualsCanonicalizing([
             new Allergen(Allergen::EGGS),
             new Allergen(Allergen::PEANUTS),
-        ], $allergies->getList(), "\$canonicalize = true", $delta = 0.0, $maxDepth = 10, $canonicalize = true);
+        ], $allergies->getList());
     }
 
-    public function testIsAllergicToEgssAndShellfish()
+    public function testIsAllergicToEggsAndShellfish()
     {
         $allergies = new Allergies(5);
 
-        $this->assertEquals([
+        $this->assertEqualsCanonicalizing([
             new Allergen(Allergen::EGGS),
             new Allergen(Allergen::SHELLFISH),
-        ], $allergies->getList(), "\$canonicalize = true", $delta = 0.0, $maxDepth = 10, $canonicalize = true);
+        ], $allergies->getList());
     }
 
     public function testIgnoreNonAllergenScorePart()
     {
         $allergies = new Allergies(509);
 
-        $this->assertEquals([
+        $this->assertEqualsCanonicalizing([
             new Allergen(Allergen::CATS),
             new Allergen(Allergen::CHOCOLATE),
             new Allergen(Allergen::EGGS),
@@ -99,7 +99,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
             new Allergen(Allergen::SHELLFISH),
             new Allergen(Allergen::STRAWBERRIES),
             new Allergen(Allergen::TOMATOES),
-        ], $allergies->getList(), "\$canonicalize = true", $delta = 0.0, $maxDepth = 10, $canonicalize = true);
+        ], $allergies->getList());
     }
 
     /**

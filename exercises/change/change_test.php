@@ -55,20 +55,25 @@ class ChangeTest extends PHPUnit\Framework\TestCase
 
     public function testForChangeSmallerThanAvailableCoins()
     {
-        $this->expectException('InvalidArgumentException', 'No coins small enough to make change');
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('No coins small enough to make change');
+
         findFewestCoins(array(5, 10), 3);
     }
 
     public function testErrorIfNoCombinationCanAddUpToTarget()
     {
-        $this->expectException('InvalidArgumentException', 'No combination can add up to target');
-        findFewestCoins(array(5, 10), 94);
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('No combination can add up to target');
 
+        findFewestCoins(array(5, 10), 94);
     }
 
     public function testChangeValueLessThanZero()
     {
-        $this->expectException('InvalidArgumentException', 'Cannot make change for negative value');
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Cannot make change for negative value');
+
         findFewestCoins(array(1, 2, 5), -5);
     }
 }

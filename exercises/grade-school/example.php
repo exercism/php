@@ -2,34 +2,26 @@
 
 class School
 {
-    private $database = array() ;
+    private $students = [];
 
-    public function numberOfStudents()
+    public function add($name, $grade)
     {
-        return (count($this->database, COUNT_RECURSIVE) - count($this->database)) ;
-    }
-
-    public function add($student, $grade)
-    {
-        $this->database[$grade][] = $student ;
+        $this->students[$grade][] = $name;
     }
 
     public function grade($grade)
     {
-        return (array_key_exists($grade, $this->database) ? $this->database[$grade] : array()) ;
+        return (array_key_exists($grade, $this->students) ? $this->students[$grade] : []);
     }
 
     public function studentsByGradeAlphabetical()
     {
-        $tmp = $this->database ;
-        ksort($tmp) ;
+        ksort($this->students);
 
-        foreach ($tmp as $grade => $students) {
-            asort($students) ;
-            foreach ($students as $student) {
-                $res [ $grade ][] = $student ;
-            }
-        }
-        return $res ;
+        return array_map(function ($grade) {
+            sort($grade);
+
+            return $grade;
+        }, $this->students);
     }
 }
