@@ -137,12 +137,10 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(Robot::DIRECTION_NORTH, $robot->direction);
     }
 
-
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function testMalformedInstructions()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
         $robot->instructions('LARX');
     }

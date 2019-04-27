@@ -7,7 +7,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
     /** @var Robot $robot */
     protected $robot = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->robot = new Robot();
     }
@@ -45,7 +45,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
 
         $this->assertRegExp('/\w{2}\d{3}/', $name2);
     }
-  
+
     public function testNameArentRecycled()
     {
         $names = [];

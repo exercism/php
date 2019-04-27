@@ -8,7 +8,7 @@ function findFewestCoins(array $coins, int $total_change): array
         return []; # no coins
     }
     if ($total_change < 0) {
-        throw new InvalidArgumentException("Cannot find negative change values");
+        throw new InvalidArgumentException("Cannot make change for negative value");
     }
     if (min($coins) > $total_change) {
         throw new InvalidArgumentException('No coins small enough to make change');

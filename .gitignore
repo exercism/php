@@ -2,5 +2,6 @@
 .DS_Store
 tmp
 *.phar
+.phpunit.result.cache
 bin/configlet
 bin/configlet.exe
