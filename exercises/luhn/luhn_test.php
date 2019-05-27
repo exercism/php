@@ -68,4 +68,9 @@ class LuhnValidatorTest extends PHPUnit\Framework\TestCase
     {
         $this->assertTrue(isValid("091"));
     }
+
+    public function testThatStringContainingSymbolsWhichCouldBeZeroIsInvalid()
+    {
+        $this->assertFalse(isValid(" ABCDEF"));
+    }
 }
