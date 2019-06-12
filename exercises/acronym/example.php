@@ -15,6 +15,6 @@ function acronym($phrase)
     }
 
     return array_reduce($words[0], function ($acronym, $word) {
-        return $acronym.mb_strtoupper(mb_substr($word, 0, 1));
+        return $acronym . mb_strtoupper(mb_substr($word, 0, 1));
     });
 }

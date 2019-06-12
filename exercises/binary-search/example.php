@@ -5,7 +5,7 @@ function find($needle, $haystack)
     $left = 0;
     $right = count($haystack);
     while ($left <= $right) {
-        $middle = floor(($left+$right)/2);
+        $middle = floor(($left + $right) / 2);
         if (!isset($haystack[$middle])) {
             return -1;
         }

@@ -11,7 +11,7 @@ function isValid($candidate)
     $reversseCandidate = strrev($sanitizedCandidate) ;
     $sum = 0 ;
 
-    for ($i = 1; $i < strlen($reversseCandidate); $i+=2) {
+    for ($i = 1; $i < strlen($reversseCandidate); $i += 2) {
         $digit = 2 * intval($reversseCandidate{$i}) ;
 
         if ($digit > 9) {
@@ -19,7 +19,7 @@ function isValid($candidate)
         }
 
         $sum += $digit ;
-        $sum += intval($reversseCandidate{$i-1}) ;
+        $sum += intval($reversseCandidate{$i - 1}) ;
     }
 
     return $sum % 10 == 0 ;

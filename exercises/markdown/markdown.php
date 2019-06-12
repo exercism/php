@@ -35,7 +35,6 @@ function parseMarkdown($markdown)
                 } else {
                     $line = "<ul><li><p>" . trim($matches[1]) . "</p></li>";
                 }
-
             } else {
                 $isBold = false;
                 $isItalic = false;

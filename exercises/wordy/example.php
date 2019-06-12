@@ -44,7 +44,6 @@ function calculate($question = "")
             case 'divided by':
                 $number /= $matches[5];
                 break;
-
         }
     }
 

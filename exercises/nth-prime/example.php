@@ -13,7 +13,7 @@ function prime($count)
                 continue 2;
             }
         }
-        $primes[]=$i++;
+        $primes[] = $i++;
     }
     return end($primes);
 }
