@@ -2,8 +2,8 @@
 <ruleset name="xPHP">
   <description>Coding standard for xPHP</description>
 
-  <!-- Include all sniffs in the PSR2 standard except... -->
-  <rule ref="PSR2">
+  <!-- Include all sniffs in the PSR12 standard except... -->
+  <rule ref="PSR12">
     <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
     <exclude name="PSR1.Classes.ClassDeclaration.MultipleClasses"/>
     <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
