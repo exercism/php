@@ -10,7 +10,7 @@ function toDecimal($ternaryString, $base = 3)
     $numbers = str_split($ternaryString);
     $maxPower = count($numbers) - 1;
     for ($i = 0; $i <= $maxPower; ++$i) {
-        $decimalNumber += $numbers[$maxPower-$i]*pow($base, $i);
+        $decimalNumber += $numbers[$maxPower - $i] * pow($base, $i);
     }
 
     return $decimalNumber;

@@ -8,7 +8,7 @@ function encode($plainMessage, $rails)
             if (!isset($cipherMessage[$step])) {
                 $cipherMessage[$step] = '';
             }
-            if ($index % $position == $step || $index % $position == $position-$step) {
+            if ($index % $position == $step || $index % $position == $position - $step) {
                 $cipherMessage[$step] .= $plainMessage[$index];
             } else {
                 $cipherMessage[$step] .= ".";

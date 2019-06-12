@@ -45,7 +45,6 @@ class Series
         $this->validateSpan($span);
 
         return $this->largestSeriesProduct($span);
-
     }
 
     /**

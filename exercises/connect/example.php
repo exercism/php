@@ -55,12 +55,12 @@ class Board
     public function neighbours($c)
     {
         $coords = array(
-            array($c[0]+1, $c[1]),
-            array($c[0]-1, $c[1]),
-            array($c[0],   $c[1]+1),
-            array($c[0],   $c[1]-1),
-            array($c[0]-1, $c[1]+1),
-            array($c[0]+1, $c[1]-1)
+            array($c[0] + 1, $c[1]),
+            array($c[0] - 1, $c[1]),
+            array($c[0],   $c[1] + 1),
+            array($c[0],   $c[1] - 1),
+            array($c[0] - 1, $c[1] + 1),
+            array($c[0] + 1, $c[1] - 1)
         );
         $validCoord = function ($c) {
             return $c[0] >= 0 && $c[0] < $this->width && $c[1] >= 0 && $c[1] < $this->height;

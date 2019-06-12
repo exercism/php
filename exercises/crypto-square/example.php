@@ -16,14 +16,14 @@ function crypto_square($plaintext)
     $encrypted = "";
     $rowlist = [];
     for ($i = 0; $i < $rows; $i++) {
-        $rowlist[] = substr($normalized, $i*$cols, $cols);
+        $rowlist[] = substr($normalized, $i * $cols, $cols);
     }
 
     for ($i = 0; $i < $cols; $i++) {
         for ($j = 0; $j < count($rowlist); $j++) {
             $encrypted .= ($i < strlen($rowlist[$j])) ? $rowlist[$j][$i] : ' ';
         }
-        if ($i < $cols-1) {
+        if ($i < $cols - 1) {
             $encrypted .= ' ';
         }
     }
