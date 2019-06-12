@@ -59,7 +59,7 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
             $expected,
             accumulate($chars, function ($char) use ($digits) {
                 return accumulate($digits, function ($digit) use ($char) {
-                    return $char.$digit;
+                    return $char . $digit;
                 });
             })
         );
