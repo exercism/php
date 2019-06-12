@@ -12,20 +12,22 @@ FILEEXT := "php"
 EXAMPLE := "example.$(FILEEXT)"
 TSTFILE := "$(ASSIGNMENT)_test.$(FILEEXT)"
 
+PHPCSVERSION := "3.4.2"
+
 default:
 	wget --no-check-certificate https://phar.phpunit.de/phpunit-7.phar -O bin/phpunit.phar
 	chmod +x bin/phpunit.phar
-	@wget --no-check-certificate https://github.com/squizlabs/PHP_CodeSniffer/releases/download/2.0.0a2/phpcs.phar -O bin/phpcs.phar
+	@wget --no-check-certificate https://github.com/squizlabs/PHP_CodeSniffer/releases/download/$(PHPCSVERSION)/phpcs.phar -O bin/phpcs.phar
 	chmod +x bin/phpcs.phar
 
 help: ## Prints this help
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $, $}'
 
 install: ## install development dependencies
 	wget --no-check-certificate https://phar.phpunit.de/phpunit-7.phar -O bin/phpunit.phar
 	chmod +x bin/phpunit.phar
 
-	@wget --no-check-certificate https://github.com/squizlabs/PHP_CodeSniffer/releases/download/2.0.0a2/phpcs.phar -O bin/phpcs.phar
+	@wget --no-check-certificate https://github.com/squizlabs/PHP_CodeSniffer/releases/download/$(PHPCSVERSION)/phpcs.phar -O bin/phpcs.phar
 	chmod +x bin/phpcs.phar
 
 install-test: ## install test dependency: phpunit.phar 
