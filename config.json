@@ -703,6 +703,17 @@
       "topics": [
         "strings"
       ]
+    },
+    {
+      "slug": "armstrong-numbers",
+      "uuid": "9e7be7f8-ea50-4245-bde3-2207f0bcebdd",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "algorithms",
+        "math"
+      ]
     }
   ]
 }
