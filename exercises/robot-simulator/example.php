@@ -2,10 +2,10 @@
 
 class Robot
 {
-    const DIRECTION_NORTH = 'north';
-    const DIRECTION_EAST = 'east';
-    const DIRECTION_SOUTH = 'south';
-    const DIRECTION_WEST = 'west';
+    public const DIRECTION_NORTH = 'north';
+    public const DIRECTION_EAST = 'east';
+    public const DIRECTION_SOUTH = 'south';
+    public const DIRECTION_WEST = 'west';
 
     /**
      *
