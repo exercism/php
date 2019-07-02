@@ -25,7 +25,7 @@ class Board
         $this->width = strlen($lines[0]);
 
         $this->fields = array_map(function ($line) {
-            $row = array();
+            $row = [];
             for ($i = 0; $i < strlen($line); $i++) {
                 switch ($line[$i]) {
                     case "O":
@@ -54,14 +54,14 @@ class Board
 
     public function neighbours($c)
     {
-        $coords = array(
-            array($c[0] + 1, $c[1]),
-            array($c[0] - 1, $c[1]),
-            array($c[0],   $c[1] + 1),
-            array($c[0],   $c[1] - 1),
-            array($c[0] - 1, $c[1] + 1),
-            array($c[0] + 1, $c[1] - 1)
-        );
+        $coords = [
+            [$c[0] + 1, $c[1]],
+            [$c[0] - 1, $c[1]],
+            [$c[0],   $c[1] + 1],
+            [$c[0],   $c[1] - 1],
+            [$c[0] - 1, $c[1] + 1],
+            [$c[0] + 1, $c[1] - 1]
+        ];
         $validCoord = function ($c) {
             return $c[0] >= 0 && $c[0] < $this->width && $c[1] >= 0 && $c[1] < $this->height;
         };
@@ -79,18 +79,18 @@ class Board
 
     public function whiteStartCoords()
     {
-        $coords = array();
+        $coords = [];
         for ($i = 0; $i < $this->width; $i++) {
-            array_push($coords, array($i, 0));
+            array_push($coords, [$i, 0]);
         }
         return $coords;
     }
 
     public function blackStartCoords()
     {
-        $coords = array();
+        $coords = [];
         for ($i = 0; $i < $this->height; $i++) {
-            array_push($coords, array(0, $i));
+            array_push($coords, [0, $i]);
         }
         return $coords;
     }
