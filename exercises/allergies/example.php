@@ -26,7 +26,6 @@ class Allergies
 
 class Allergen
 {
-
     public const EGGS = 1;
     public const PEANUTS = 2;
     public const SHELLFISH = 4;
@@ -51,14 +50,14 @@ class Allergen
     public static function allergenList()
     {
         return [
-            new Allergen(Allergen::CATS),
-            new Allergen(Allergen::CHOCOLATE),
-            new Allergen(Allergen::EGGS),
-            new Allergen(Allergen::PEANUTS),
-            new Allergen(Allergen::POLLEN),
-            new Allergen(Allergen::SHELLFISH),
-            new Allergen(Allergen::STRAWBERRIES),
-            new Allergen(Allergen::TOMATOES),
+            new Allergen(self::CATS),
+            new Allergen(self::CHOCOLATE),
+            new Allergen(self::EGGS),
+            new Allergen(self::PEANUTS),
+            new Allergen(self::POLLEN),
+            new Allergen(self::SHELLFISH),
+            new Allergen(self::STRAWBERRIES),
+            new Allergen(self::TOMATOES),
         ];
     }
 }
