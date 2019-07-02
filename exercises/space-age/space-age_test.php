@@ -4,7 +4,7 @@ require "space-age.php";
 
 class SpaceAgeTester extends PHPUnit\Framework\TestCase
 {
-    const DELTA = 0.01;
+    public const DELTA = 0.01;
 
     public function testAgeInSeconds()
     {

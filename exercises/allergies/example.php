@@ -27,14 +27,14 @@ class Allergies
 class Allergen
 {
 
-    const EGGS = 1;
-    const PEANUTS = 2;
-    const SHELLFISH = 4;
-    const STRAWBERRIES = 8;
-    const TOMATOES = 16;
-    const CHOCOLATE = 32;
-    const POLLEN = 64;
-    const CATS = 128;
+    public const EGGS = 1;
+    public const PEANUTS = 2;
+    public const SHELLFISH = 4;
+    public const STRAWBERRIES = 8;
+    public const TOMATOES = 16;
+    public const CHOCOLATE = 32;
+    public const POLLEN = 64;
+    public const CATS = 128;
 
     private $score;
 

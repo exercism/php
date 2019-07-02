@@ -4,20 +4,20 @@ class SpaceAge
 {
     public $seconds;
 
-    const EARTH_YEAR_IN_SECONDS = 31557600;
-    const MERCURY_YEAR_IN_EY    = 0.2408467;
-    const VENUS_YEAR_IN_EY      = 0.61519726;
-    const MARS_YEAR_IN_EY       = 1.8808158;
-    const JUPITER_YEAR_IN_EY    = 11.862615;
-    const SATURN_YEAR_IN_EY     = 29.447498;
-    const URANUS_YEAR_IN_EY     = 84.016846;
-    const NEPTUNE_YEAR_IN_EY    = 164.79132;
+    public const EARTH_YEAR_IN_SECONDS = 31557600;
+    public const MERCURY_YEAR_IN_EY    = 0.2408467;
+    public const VENUS_YEAR_IN_EY      = 0.61519726;
+    public const MARS_YEAR_IN_EY       = 1.8808158;
+    public const JUPITER_YEAR_IN_EY    = 11.862615;
+    public const SATURN_YEAR_IN_EY     = 29.447498;
+    public const URANUS_YEAR_IN_EY     = 84.016846;
+    public const NEPTUNE_YEAR_IN_EY    = 164.79132;
 
     public function __construct($seconds)
     {
         $this->seconds = $seconds;
     }
-    
+
     public function seconds()
     {
         return $this->seconds;
