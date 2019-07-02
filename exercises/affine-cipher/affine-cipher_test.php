@@ -62,7 +62,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
 
     public function testEncodeWithANotCoprimeToM()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         encode('This is a test', 6, 17);
     }
 
@@ -117,7 +117,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
 
     public function testDecodeWithANotCoprimeToM()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         decode("Test", 13, 5);
     }
 }

@@ -94,28 +94,28 @@ class TriangleTest extends PHPUnit\Framework\TestCase
 
     public function testTrianglesWithNoSizeAreIllegal()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
 
         (new Triangle(0, 0, 0))->kind();
     }
 
     public function testTrianglesViolatingTriangleInequalityAreIllegal()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
 
         (new Triangle(1, 1, 3))->kind();
     }
 
     public function testTrianglesViolatingTriangleInequalityAreIllegal2()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
 
         (new Triangle(7, 3, 2))->kind();
     }
 
     public function testTrianglesViolatingTriangleInequalityAreIllegal3()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
 
         (new Triangle(1, 3, 1))->kind();
     }

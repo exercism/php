@@ -74,8 +74,8 @@ class OcrBlock
 
 class OcrSymbol
 {
-    const NUM_ROWS = 4;
-    const NUM_COLUMNS = 3;
+    public const NUM_ROWS = 4;
+    public const NUM_COLUMNS = 3;
 
     protected $map = [
         'x_x|x||_|xxx' => '0',

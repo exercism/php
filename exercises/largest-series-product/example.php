@@ -51,7 +51,7 @@ class Series
      * Make sure the span is valid
      *
      * @param int $span
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     private function validateSpan($span)
     {
@@ -102,7 +102,7 @@ class Series
      * Validate the given sequence
      *
      * @param $digits
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     private function validateSequence($digits)
     {
