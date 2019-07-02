@@ -5,7 +5,7 @@ class BobTest extends PHPUnit\Framework\TestCase
 {
 
     /**
-     * @var \Bob
+     * @var Bob
      */
     private $bob;
 

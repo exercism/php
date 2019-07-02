@@ -80,25 +80,25 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
 
     public function testEmptyResultForSmallestIfNoPalindromeInTheRange()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         smallest(1002, 1003);
     }
 
     public function testEmptyResultForLargestIfNoPalindromeInTheRange()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         largest(15, 15);
     }
 
     public function testErrorResultForSmallestIfMinIsMoreThanMax()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         smallest(10000, 1);
     }
 
     public function testErrorResultForLargestIfMinIsMoreThanMax()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         largest(2, 1);
     }
 }

@@ -36,7 +36,7 @@ function generateCipherbet($a, $b, $alphabet)
 function coprimeCheck($a)
 {
     if (gmp_intval(gmp_gcd($a, 26)) !== 1) {
-        throw new \Exception();
+        throw new Exception();
     }
 }
 
