@@ -20,7 +20,7 @@ function smallest($min, $max)
     validate($min, $max);
     $palindromes = generatePalindromeProducts($min, $max);
     if (empty($palindromes)) {
-        throw new \Exception();
+        throw new Exception();
     }
     $r = array_shift($palindromes);
     return [$r, factorize($r, range($min, $max))];
@@ -31,7 +31,7 @@ function largest($min, $max)
     validate($min, $max);
     $palindromes = generatePalindromeProducts($min, $max);
     if (empty($palindromes)) {
-        throw new \Exception();
+        throw new Exception();
     }
     $r = array_pop($palindromes);
     return [$r, factorize($r, range($min, $max))];
@@ -40,7 +40,7 @@ function largest($min, $max)
 function validate($min, $max)
 {
     if ($max <= $min) {
-        throw new \Exception();
+        throw new Exception();
     }
 }
 
