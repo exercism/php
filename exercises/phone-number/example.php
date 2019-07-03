@@ -41,15 +41,15 @@ class PhoneNumber
 
     protected function validate($number)
     {
-        if ($number != preg_replace('/[^0-9]+/', '', $number)) {
+        if ($number !== preg_replace('/[^0-9]+/', '', $number)) {
             throw new InvalidArgumentException();
         }
 
-        if (strlen($number) == 11) {
+        if (strlen($number) === 11) {
             $number = preg_replace('/^1/', '', $number);
         }
 
-        if (strlen($number) != 10) {
+        if (strlen($number) !== 10) {
             throw new InvalidArgumentException();
         }
 
