@@ -3,7 +3,7 @@
 function getClassification($number)
 {
     if ($number <= 0) {
-         throw new InvalidArgumentException("You must supply a natural number (positive integer)");
+        throw new InvalidArgumentException("You must supply a natural number (positive integer)");
     }
 
     $sum = 0 ;
