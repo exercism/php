@@ -1,6 +1,6 @@
 <?php
 
-require "two-fer.php";
+require 'two-fer.php';
 
 class TwoFerTest extends PHPUnit\Framework\TestCase
 {

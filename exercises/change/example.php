@@ -8,7 +8,7 @@ function findFewestCoins(array $coins, int $total_change): array
         return []; # no coins
     }
     if ($total_change < 0) {
-        throw new InvalidArgumentException("Cannot make change for negative value");
+        throw new InvalidArgumentException('Cannot make change for negative value');
     }
     if (min($coins) > $total_change) {
         throw new InvalidArgumentException('No coins small enough to make change');
@@ -37,7 +37,7 @@ function findFewestCoins(array $coins, int $total_change): array
 
     // no combination found
     if ($min_coins_required[$total_change] == INF) {
-        throw new InvalidArgumentException("No combination can add up to target");
+        throw new InvalidArgumentException('No combination can add up to target');
     }
 
     // init values

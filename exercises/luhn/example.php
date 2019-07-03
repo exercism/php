@@ -2,7 +2,7 @@
 
 function isValid($candidate)
 {
-    $sanitizedCandidate = str_replace(" ", "", $candidate) ;
+    $sanitizedCandidate = str_replace(' ', '', $candidate) ;
 
     if (strlen($sanitizedCandidate) <= 1 || !ctype_digit($sanitizedCandidate)) {
         return false ;

@@ -78,46 +78,46 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
     public function testDecodeASentence()
     {
         $this->assertEquals(
-            decode("qdwju nqcro muwhn odqun oppmd aunwd o", 19, 16),
-            "anobstacleisoftenasteppingstone"
+            decode('qdwju nqcro muwhn odqun oppmd aunwd o', 19, 16),
+          'anobstacleisoftenasteppingstone'
         );
     }
 
     public function testDecodeNumbers()
     {
         $this->assertEquals(
-            decode("odpoz ub123 odpoz ub", 25, 7),
-            "testing123testing"
+            decode('odpoz ub123 odpoz ub', 25, 7),
+          'testing123testing'
         );
     }
 
     public function testDecodeAllTheLetters()
     {
         $this->assertEquals(
-            decode("swxtj npvyk lruol iejdc blaxk swxmh qzglf", 17, 33),
-            "thequickbrownfoxjumpsoverthelazydog"
+            decode('swxtj npvyk lruol iejdc blaxk swxmh qzglf', 17, 33),
+          'thequickbrownfoxjumpsoverthelazydog'
         );
     }
 
     public function testDecodeWithNoSpacesInInput()
     {
         $this->assertEquals(
-            decode("swxtjnpvyklruoliejdcblaxkswxmhqzglf", 17, 33),
-            "thequickbrownfoxjumpsoverthelazydog"
+            decode('swxtjnpvyklruoliejdcblaxkswxmhqzglf', 17, 33),
+          'thequickbrownfoxjumpsoverthelazydog'
         );
     }
 
     public function testDecodeWithTooManySpaces()
     {
         $this->assertEquals(
-            decode("vszzm    cly   yd cg    qdp", 15, 16),
-            "jollygreengiant"
+            decode('vszzm    cly   yd cg    qdp', 15, 16),
+          'jollygreengiant'
         );
     }
 
     public function testDecodeWithANotCoprimeToM()
     {
         $this->expectException(Exception::class);
-        decode("Test", 13, 5);
+        decode('Test', 13, 5);
     }
 }

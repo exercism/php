@@ -11,7 +11,7 @@ function encode($plainMessage, $rails)
             if ($index % $position == $step || $index % $position == $position - $step) {
                 $cipherMessage[$step] .= $plainMessage[$index];
             } else {
-                $cipherMessage[$step] .= ".";
+                $cipherMessage[$step] .= '.';
             }
         }
     }

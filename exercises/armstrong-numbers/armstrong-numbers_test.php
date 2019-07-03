@@ -1,6 +1,6 @@
 <?php
 
-require "armstrong-numbers.php";
+require 'armstrong-numbers.php';
 
 class ArmstrongNumbersTest extends PHPUnit\Framework\TestCase
 {

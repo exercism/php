@@ -1,6 +1,6 @@
 <?php
 
-function calculate($question = "")
+function calculate($question = '')
 {
     preg_match(
         "/What is (-?\d+) (plus|minus|multiplied by|divided by) "

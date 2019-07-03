@@ -4,7 +4,7 @@ function encode($string)
 {
     $a_z = range('a', 'z');
     $z_a = range('z', 'a');
-    $string = preg_replace("/[^a-z0-9]+/", "", strtolower($string));
+    $string = preg_replace('/[^a-z0-9]+/', '', strtolower($string));
     $len = strlen($string);
 
     $count = 0;

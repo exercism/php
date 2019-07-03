@@ -1,6 +1,6 @@
 <?php
 
-require "palindrome-products.php";
+require 'palindrome-products.php';
 
 class PalindromeProductsTest extends PHPUnit\Framework\TestCase
 {

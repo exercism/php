@@ -28,10 +28,10 @@ class Board
             $row = [];
             for ($i = 0; $i < strlen($line); $i++) {
                 switch ($line[$i]) {
-                    case "O":
+                    case 'O':
                         array_push($row, WHITE);
                         break;
-                    case "X":
+                    case 'X':
                         array_push($row, BLACK);
                         break;
                     default:
@@ -101,25 +101,25 @@ class Board
     {
         print "\n";
         for ($y = 0; $y < $this->height; $y++) {
-            print str_repeat(" ", $y);
+            print str_repeat(' ', $y);
             for ($x = 0; $x < $this->width; $x++) {
                 $f = $this->fields[$y][$x];
                 if ($f & WHITE) {
                     if ($f & WHITE_CONNECT) {
-                        print "O";
+                        print 'O';
                     } else {
-                        print "o";
+                        print 'o';
                     }
                 } elseif ($f & BLACK) {
                     if ($f & BLACK_CONNECT) {
-                        print "X";
+                        print 'X';
                     } else {
-                        print "x";
+                        print 'x';
                     }
                 } else {
-                    print ".";
+                    print '.';
                 }
-                print " ";
+                print ' ';
             }
             print "\n";
         }
@@ -132,12 +132,12 @@ function resultFor(array $lines)
     // Order of checking black and white doesn't matter, only one can win.
     foreach ($board->blackStartCoords() as $c) {
         if (flood($board, $c, BLACK, BLACK_CONNECT)) {
-            return "black";
+            return 'black';
         }
     }
     foreach ($board->whiteStartCoords() as $c) {
         if (flood($board, $c, WHITE, WHITE_CONNECT)) {
-            return "white";
+            return 'white';
         }
     }
     return null;

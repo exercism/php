@@ -1,6 +1,6 @@
 <?php
 
-require "space-age.php";
+require 'space-age.php';
 
 class SpaceAgeTester extends PHPUnit\Framework\TestCase
 {

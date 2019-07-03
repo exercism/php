@@ -1,6 +1,6 @@
 <?php
 
-require "nucleotide-count.php";
+require 'nucleotide-count.php';
 
 class NucleotideCountTest extends PHPUnit\Framework\TestCase
 {

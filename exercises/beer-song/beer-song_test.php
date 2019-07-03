@@ -1,6 +1,6 @@
 <?php
 
-require "beer-song.php";
+require 'beer-song.php';
 
 class BeerSongTest extends PHPUnit\Framework\TestCase
 {
@@ -31,7 +31,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
     public function testVerse0()
     {
         $expected = "No more bottles of beer on the wall, no more bottles of beer.\n" .
-            "Go to the store and buy some more, 99 bottles of beer on the wall.";
+          'Go to the store and buy some more, 99 bottles of beer on the wall.';
         $song = new BeerSong();
         $this->assertEquals($expected, $song->verse(0));
     }
@@ -56,7 +56,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
             "Take it down and pass it around, no more bottles of beer on the wall.\n" .
             "\n" .
             "No more bottles of beer on the wall, no more bottles of beer.\n" .
-            "Go to the store and buy some more, 99 bottles of beer on the wall.";
+          'Go to the store and buy some more, 99 bottles of beer on the wall.';
         $song = new BeerSong();
         $this->assertEquals($expected, $song->verses(2, 0));
     }

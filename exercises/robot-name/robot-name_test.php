@@ -1,6 +1,6 @@
 <?php
 
-require_once "robot-name.php";
+require_once 'robot-name.php';
 
 class RobotTest extends PHPUnit\Framework\TestCase
 {

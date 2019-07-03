@@ -1,6 +1,6 @@
 <?php
 
-require "triangle.php";
+require 'triangle.php';
 
 class TriangleTest extends PHPUnit\Framework\TestCase
 {

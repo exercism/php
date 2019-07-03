@@ -1,6 +1,6 @@
 <?php
 
-require "collatz-conjecture.php";
+require 'collatz-conjecture.php';
 
 class CollatzConjecture extends PHPUnit\Framework\TestCase
 {

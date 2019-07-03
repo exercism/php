@@ -12,10 +12,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes0()
     {
         $input = [
-            " _ ",
-            "| |",
-            "|_|",
-            "   ",
+          ' _ ',
+          '| |',
+          '|_|',
+          '   ',
         ];
         $this->assertSame('0', recognize($input));
     }
@@ -23,10 +23,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes1()
     {
         $input = [
-            "   ",
-            "  |",
-            "  |",
-            "   ",
+          '   ',
+          '  |',
+          '  |',
+          '   ',
         ];
         $this->assertSame('1', recognize($input));
     }
@@ -37,10 +37,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testUnreadable()
     {
         $input = [
-            "   ",
-            "  _",
-            "  |",
-            "   ",
+          '   ',
+          '  _',
+          '  |',
+          '   ',
         ];
         $this->assertSame('?', recognize($input));
     }
@@ -53,9 +53,9 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->expectException(InvalidArgumentException::class);
 
         $input = [
-            " _ ",
-            "| |",
-            "   ",
+          ' _ ',
+          '| |',
+          '   ',
         ];
         recognize($input);
     }
@@ -68,10 +68,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->expectException(InvalidArgumentException::class);
 
         $input = [
-            "    ",
-            "   |",
-            "   |",
-            "    ",
+          '    ',
+          '   |',
+          '   |',
+          '    ',
         ];
         recognize($input);
     }
@@ -79,10 +79,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes110101100()
     {
         $input = [
-            "       _     _        _  _ ",
-            "  |  || |  || |  |  || || |",
-            "  |  ||_|  ||_|  |  ||_||_|",
-            "                           ",
+          '       _     _        _  _ ',
+          '  |  || |  || |  |  || || |',
+          '  |  ||_|  ||_|  |  ||_||_|',
+          '                           ',
         ];
         $this->assertSame('110101100', recognize($input));
     }
@@ -93,10 +93,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testGarbled()
     {
         $input = [
-            "       _     _           _ ",
-            "  |  || |  || |     || || |",
-            "  |  | _|  ||_|  |  ||_||_|",
-            "                           ",
+          '       _     _           _ ',
+          '  |  || |  || |     || || |',
+          '  |  | _|  ||_|  |  ||_||_|',
+          '                           ',
         ];
         $this->assertSame('11?10?1?0', recognize($input));
     }
@@ -104,10 +104,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes2()
     {
         $input = [
-            " _ ",
-            " _|",
-            "|_ ",
-            "   ",
+          ' _ ',
+          ' _|',
+          '|_ ',
+          '   ',
         ];
         $this->assertSame('2', recognize($input));
     }
@@ -115,10 +115,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes3()
     {
         $input = [
-            " _ ",
-            " _|",
-            " _|",
-            "   ",
+          ' _ ',
+          ' _|',
+          ' _|',
+          '   ',
         ];
         $this->assertSame('3', recognize($input));
     }
@@ -126,10 +126,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes4()
     {
         $input = [
-            "   ",
-            "|_|",
-            "  |",
-            "   ",
+          '   ',
+          '|_|',
+          '  |',
+          '   ',
         ];
         $this->assertSame('4', recognize($input));
     }
@@ -137,10 +137,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes5()
     {
         $input = [
-            " _ ",
-            "|_ ",
-            " _|",
-            "   ",
+          ' _ ',
+          '|_ ',
+          ' _|',
+          '   ',
         ];
         $this->assertSame('5', recognize($input));
     }
@@ -148,10 +148,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes6()
     {
         $input = [
-            " _ ",
-            "|_ ",
-            "|_|",
-            "   ",
+          ' _ ',
+          '|_ ',
+          '|_|',
+          '   ',
         ];
         $this->assertSame('6', recognize($input));
     }
@@ -159,10 +159,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes7()
     {
         $input = [
-            " _ ",
-            "  |",
-            "  |",
-            "   ",
+          ' _ ',
+          '  |',
+          '  |',
+          '   ',
         ];
         $this->assertSame('7', recognize($input));
     }
@@ -170,10 +170,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes8()
     {
         $input = [
-            " _ ",
-            "|_|",
-            "|_|",
-            "   ",
+          ' _ ',
+          '|_|',
+          '|_|',
+          '   ',
         ];
         $this->assertSame('8', recognize($input));
     }
@@ -181,10 +181,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizes9()
     {
         $input = [
-            " _ ",
-            "|_|",
-            " _|",
-            "   ",
+          ' _ ',
+          '|_|',
+          ' _|',
+          '   ',
         ];
         $this->assertSame('9', recognize($input));
     }
@@ -192,10 +192,10 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testRecognizesStringOfDecimalNumbers()
     {
         $input = [
-            "    _  _     _  _  _  _  _  _ ",
-            "  | _| _||_||_ |_   ||_||_|| |",
-            "  ||_  _|  | _||_|  ||_| _||_|",
-            "                              ",
+          '    _  _     _  _  _  _  _  _ ',
+          '  | _| _||_||_ |_   ||_||_|| |',
+          '  ||_  _|  | _||_|  ||_| _||_|',
+          '                              ',
         ];
         $this->assertSame('1234567890', recognize($input));
     }
@@ -206,18 +206,18 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     public function testLinesWithCommas()
     {
         $input = [
-            "    _  _ ",
-            "  | _| _|",
-            "  ||_  _|",
-            "         ",
-            "    _  _ ",
-            "|_||_ |_ ",
-            "  | _||_|",
-            "         ",
-            " _  _  _ ",
-            "  ||_||_|",
-            "  ||_| _|",
-            "         ",
+          '    _  _ ',
+          '  | _| _|',
+          '  ||_  _|',
+          '         ',
+          '    _  _ ',
+          '|_||_ |_ ',
+          '  | _||_|',
+          '         ',
+          ' _  _  _ ',
+          '  ||_||_|',
+          '  ||_| _|',
+          '         ',
         ];
         $this->assertSame('123,456,789', recognize($input));
     }

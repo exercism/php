@@ -1,6 +1,6 @@
 <?php
 
-require "bowling.php";
+require 'bowling.php';
 
 /**
  * Translated from original source:

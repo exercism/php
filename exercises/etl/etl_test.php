@@ -1,6 +1,6 @@
 <?php
 
-require "etl.php";
+require 'etl.php';
 
 class TransformTest extends PHPUnit\Framework\TestCase
 {

@@ -13,7 +13,7 @@ class Bob
         $str = $this->prepareText($str);
 
         if ($this->isSilence($str)) {
-            return "Fine. Be that way!";
+            return 'Fine. Be that way!';
         }
 
         if ($this->isYelling($str) && $this->isQuestion($str)) {
@@ -21,14 +21,14 @@ class Bob
         }
 
         if ($this->isYelling($str)) {
-            return "Whoa, chill out!";
+            return 'Whoa, chill out!';
         }
 
         if ($this->isQuestion($str)) {
-            return "Sure.";
+            return 'Sure.';
         }
 
-        return "Whatever.";
+        return 'Whatever.';
     }
 
 

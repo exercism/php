@@ -1,5 +1,5 @@
 <?php
-require "sum-of-multiples.php";
+require 'sum-of-multiples.php';
 
 class SumOfMultiplesTest extends PHPUnit\Framework\TestCase
 {

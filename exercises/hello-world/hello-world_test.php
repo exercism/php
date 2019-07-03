@@ -1,6 +1,6 @@
 <?php
 
-require "hello-world.php";
+require 'hello-world.php';
 
 class HelloWorldTest extends PHPUnit\Framework\TestCase
 {

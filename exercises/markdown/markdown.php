@@ -8,11 +8,11 @@ function parseMarkdown($markdown)
 
     foreach ($lines as &$line) {
         if (preg_match('/^######(.*)/', $line, $matches)) {
-            $line = "<h6>" . trim($matches[1]) . "</h6>";
+            $line = '<h6>' . trim($matches[1]) . '</h6>';
         } elseif (preg_match('/^##(.*)/', $line, $matches)) {
-            $line = "<h2>" . trim($matches[1]) . "</h2>";
+            $line = '<h2>' . trim($matches[1]) . '</h2>';
         } elseif (preg_match('/^#(.*)/', $line, $matches)) {
-            $line = "<h1>" . trim($matches[1]) . "</h1>";
+            $line = '<h1>' . trim($matches[1]) . '</h1>';
         }
 
         if (preg_match('/\*(.*)/', $line, $matches)) {
@@ -31,9 +31,9 @@ function parseMarkdown($markdown)
                 }
 
                 if ($isItalic || $isBold) {
-                    $line = "<ul><li>" . trim($matches[1]) . "</li>";
+                    $line = '<ul><li>' . trim($matches[1]) . '</li>';
                 } else {
-                    $line = "<ul><li><p>" . trim($matches[1]) . "</p></li>";
+                    $line = '<ul><li><p>' . trim($matches[1]) . '</p></li>';
                 }
             } else {
                 $isBold = false;
@@ -49,14 +49,14 @@ function parseMarkdown($markdown)
                 }
 
                 if ($isItalic || $isBold) {
-                    $line = "<li>" . trim($matches[1]) . "</li>";
+                    $line = '<li>' . trim($matches[1]) . '</li>';
                 } else {
-                    $line = "<li><p>" . trim($matches[1]) . "</p></li>";
+                    $line = '<li><p>' . trim($matches[1]) . '</p></li>';
                 }
             }
         } else {
             if ($isInList) {
-                $line = "</ul>" . $line;
+                $line = '</ul>' . $line;
                 $isInList = false;
             }
         }

@@ -1,6 +1,6 @@
 <?php
 
-require "all-your-base.php";
+require 'all-your-base.php';
 
 /**
  * These tests are adapted from the canonical data in the

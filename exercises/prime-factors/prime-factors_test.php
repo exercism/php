@@ -1,5 +1,5 @@
 <?php
-require_once "prime-factors.php";
+require_once 'prime-factors.php';
 
 class PrimeFactorsTest extends PHPUnit\Framework\TestCase
 {

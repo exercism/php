@@ -13,7 +13,7 @@ function crypto_square($plaintext)
         $rows = $rows - 1;
     }
 
-    $encrypted = "";
+    $encrypted = '';
     $rowlist = [];
     for ($i = 0; $i < $rows; $i++) {
         $rowlist[] = substr($normalized, $i * $cols, $cols);

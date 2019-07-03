@@ -1,24 +1,24 @@
 <?php
 
-require "transpose.php";
+require 'transpose.php';
 
 class TransposeTest extends PHPUnit\Framework\TestCase
 {
     public function testEmptyString()
     {
-        $input = [""];
-        $expected = [""];
+        $input = [''];
+        $expected = [''];
         $this->assertEquals($expected, transpose($input));
     }
 
     public function testTwoCharactersInARow()
     {
         $input = [
-            "A1"
+          'A1'
         ];
         $expected = [
-            "A",
-            "1"
+          'A',
+          '1'
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -26,11 +26,11 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testTwoCharactersInAColumn()
     {
         $input = [
-            "A",
-            "1"
+          'A',
+          '1'
         ];
         $expected = [
-            "A1"
+          'A1'
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -38,13 +38,13 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testSimple()
     {
         $input = [
-            "ABC",
-            "123"
+          'ABC',
+          '123'
         ];
         $expected = [
-            "A1",
-            "B2",
-            "C3"
+          'A1',
+          'B2',
+          'C3'
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -52,21 +52,21 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testSingleLine()
     {
         $input = [
-            "Single line."
+          'Single line.'
         ];
         $expected = [
-            "S",
-            "i",
-            "n",
-            "g",
-            "l",
-            "e",
-            " ",
-            "l",
-            "i",
-            "n",
-            "e",
-            ".",
+          'S',
+          'i',
+          'n',
+          'g',
+          'l',
+          'e',
+          ' ',
+          'l',
+          'i',
+          'n',
+          'e',
+          '.',
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -74,26 +74,26 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testFirstLineLongerThanSecondLine()
     {
         $input = [
-            "The fourth line.",
-            "The fifth line."
+          'The fourth line.',
+          'The fifth line.'
         ];
         $expected = [
-            "TT",
-            "hh",
-            "ee",
-            "  ",
-            "ff",
-            "oi",
-            "uf",
-            "rt",
-            "th",
-            "h ",
-            " l",
-            "li",
-            "in",
-            "ne",
-            "e.",
-            "."
+          'TT',
+          'hh',
+          'ee',
+          '  ',
+          'ff',
+          'oi',
+          'uf',
+          'rt',
+          'th',
+          'h ',
+          ' l',
+          'li',
+          'in',
+          'ne',
+          'e.',
+          '.'
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -101,26 +101,26 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testSecondLineLongerThanFirstLine()
     {
         $input = [
-            "The first line.",
-            "The second line."
+          'The first line.',
+          'The second line.'
         ];
         $expected = [
-            "TT",
-            "hh",
-            "ee",
-            "  ",
-            "fs",
-            "ie",
-            "rc",
-            "so",
-            "tn",
-            " d",
-            "l ",
-            "il",
-            "ni",
-            "en",
-            ".e",
-            " ."
+          'TT',
+          'hh',
+          'ee',
+          '  ',
+          'fs',
+          'ie',
+          'rc',
+          'so',
+          'tn',
+          ' d',
+          'l ',
+          'il',
+          'ni',
+          'en',
+          '.e',
+          ' .'
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -128,18 +128,18 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testSquare()
     {
         $input = [
-            "HEART",
-            "EMBER",
-            "ABUSE",
-            "RESIN",
-            "TREND"
+          'HEART',
+          'EMBER',
+          'ABUSE',
+          'RESIN',
+          'TREND'
         ];
         $expected = [
-            "HEART",
-            "EMBER",
-            "ABUSE",
-            "RESIN",
-            "TREND"
+          'HEART',
+          'EMBER',
+          'ABUSE',
+          'RESIN',
+          'TREND'
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -147,20 +147,20 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testRectangle()
     {
         $input = [
-            "FRACTURE",
-            "OUTLINED",
-            "BLOOMING",
-            "SEPTETTE"
+          'FRACTURE',
+          'OUTLINED',
+          'BLOOMING',
+          'SEPTETTE'
         ];
         $expected = [
-            "FOBS",
-            "RULE",
-            "ATOP",
-            "CLOT",
-            "TIME",
-            "UNIT",
-            "RENT",
-            "EDGE"
+          'FOBS',
+          'RULE',
+          'ATOP',
+          'CLOT',
+          'TIME',
+          'UNIT',
+          'RENT',
+          'EDGE'
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -168,20 +168,20 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testTriangle()
     {
         $input = [
-            "T",
-            "EE",
-            "AAA",
-            "SSSS",
-            "EEEEE",
-            "RRRRRR"
+          'T',
+          'EE',
+          'AAA',
+          'SSSS',
+          'EEEEE',
+          'RRRRRR'
         ];
         $expected = [
-            "TEASER",
-            " EASER",
-            "  ASER",
-            "   SER",
-            "    ER",
-            "     R"
+          'TEASER',
+          ' EASER',
+          '  ASER',
+          '   SER',
+          '    ER',
+          '     R'
         ];
         $this->assertEquals($expected, transpose($input));
     }
@@ -189,11 +189,11 @@ class TransposeTest extends PHPUnit\Framework\TestCase
     public function testManyLines()
     {
         $input = [
-            "Chor. Two households, both alike in dignity,",
-            "In fair Verona, where we lay our scene,",
-            "From ancient grudge break to new mutiny,",
-            "Where civil blood makes civil hands unclean.",
-            "From forth the fatal loins of these two foes",
+          'Chor. Two households, both alike in dignity,',
+          'In fair Verona, where we lay our scene,',
+          'From ancient grudge break to new mutiny,',
+          'Where civil blood makes civil hands unclean.',
+          'From forth the fatal loins of these two foes',
             "A pair of star-cross'd lovers take their life;",
             "Whose misadventur'd piteous overthrows",
             "Doth with their death bury their parents' strife.",
@@ -201,64 +201,64 @@ class TransposeTest extends PHPUnit\Framework\TestCase
             "And the continuance of their parents' rage,",
             "Which, but their children's end, naught could remove,",
             "Is now the two hours' traffic of our stage;",
-            "The which if you with patient ears attend,",
-            "What here shall miss, our toil shall strive to mend."
+          'The which if you with patient ears attend,',
+          'What here shall miss, our toil shall strive to mend.'
         ];
 
         $expected = [
-            "CIFWFAWDTAWITW",
-            "hnrhr hohnhshh",
-            "o oeopotedi ea",
-            "rfmrmash  cn t",
-            ".a e ie fthow ",
-            " ia fr weh,whh",
-            "Trnco miae  ie",
-            "w ciroitr btcr",
-            "oVivtfshfcuhhe",
-            " eeih a uote  ",
-            "hrnl sdtln  is",
-            "oot ttvh tttfh",
-            "un bhaeepihw a",
-            "saglernianeoyl",
-            "e,ro -trsui ol",
-            "h uofcu sarhu ",
-            "owddarrdan o m",
+          'CIFWFAWDTAWITW',
+          'hnrhr hohnhshh',
+          'o oeopotedi ea',
+          'rfmrmash  cn t',
+          '.a e ie fthow ',
+          ' ia fr weh,whh',
+          'Trnco miae  ie',
+          'w ciroitr btcr',
+          'oVivtfshfcuhhe',
+          ' eeih a uote  ',
+          'hrnl sdtln  is',
+          'oot ttvh tttfh',
+          'un bhaeepihw a',
+          'saglernianeoyl',
+          'e,ro -trsui ol',
+          'h uofcu sarhu ',
+          'owddarrdan o m',
             "lhg to'egccuwi",
-            "deemasdaeehris",
-            "sr als t  ists",
+          'deemasdaeehris',
+          'sr als t  ists',
             ",ebk 'phool'h,",
-            "  reldi ffd   ",
-            "bweso tb  rtpo",
-            "oea ileutterau",
-            "t kcnoorhhnatr",
+          '  reldi ffd   ',
+          'bweso tb  rtpo',
+          'oea ileutterau',
+          't kcnoorhhnatr',
             "hl isvuyee'fi ",
-            " atv es iisfet",
-            "ayoior trr ino",
-            "l  lfsoh  ecti",
-            "ion   vedpn  l",
-            "kuehtteieadoe ",
-            "erwaharrar,fas",
-            "   nekt te  rh",
-            "ismdsehphnnosa",
-            "ncuse ra-tau l",
-            " et  tormsural",
+          ' atv es iisfet',
+          'ayoior trr ino',
+          'l  lfsoh  ecti',
+          'ion   vedpn  l',
+          'kuehtteieadoe ',
+          'erwaharrar,fas',
+          '   nekt te  rh',
+          'ismdsehphnnosa',
+          'ncuse ra-tau l',
+          ' et  tormsural',
             "dniuthwea'g t ",
-            "iennwesnr hsts",
-            "g,ycoi tkrttet",
+          'iennwesnr hsts',
+          'g,ycoi tkrttet',
             "n ,l r s'a anr",
             "i  ef  'dgcgdi",
-            "t  aol   eoe,v",
-            "y  nei sl,u; e",
-            ",  .sf to l   ",
-            "     e rv d  t",
-            "     ; ie    o",
-            "       f, r   ",
-            "       e  e  m",
-            "       .  m  e",
-            "          o  n",
-            "          v  d",
-            "          e  .",
-            "          ,"
+          't  aol   eoe,v',
+          'y  nei sl,u; e',
+          ',  .sf to l   ',
+          '     e rv d  t',
+          '     ; ie    o',
+          '       f, r   ',
+          '       e  e  m',
+          '       .  m  e',
+          '          o  n',
+          '          v  d',
+          '          e  .',
+          '          ,'
         ];
 
         $this->assertEquals($expected, transpose($input));
