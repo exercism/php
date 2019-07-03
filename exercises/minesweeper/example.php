@@ -105,15 +105,15 @@ function applyBorders($grid)
     $width = count($grid[0]);
     $mid = array_map(function ($line) {
         array_unshift($line, '|');
-        array_push($line, '|');
+        $line[] = '|';
         return $line;
     }, $grid);
     $horizontalBorder = array_fill(0, $width, '-');
     array_unshift($horizontalBorder, '+');
-    array_push($horizontalBorder, '+');
+    $horizontalBorder[] = '+';
 
     array_unshift($mid, $horizontalBorder);
-    array_push($mid, $horizontalBorder);
+    $mid[] = $horizontalBorder;
 
     return array_map('join', $mid);
 }

@@ -44,7 +44,7 @@ function transpose($text)
 
     $trimLastLine = function ($lines) {
         $lastLine = array_pop($lines);
-        array_push($lines, rtrim($lastLine));
+        $lines[] = rtrim($lastLine);
         return $lines;
     };
 
