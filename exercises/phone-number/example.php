@@ -35,6 +35,13 @@ class PhoneNumber
             throw new InvalidArgumentException('Given number contains invalid characters.');
         }
 
+        $result = preg_match('/\(?[2-9][0-9]{2}\)?[-. ]?[2-9][0-9]{2}[-. ]?[0-9]{4}/', $number);
+        if (1 !== $result) {
+            throw new InvalidArgumentException(
+                'Given number has an invalid format.' . PHP_EOL . $number . PHP_EOL . $result
+            );
+        }
+
         if (strlen($number) === 11) {
             $number = preg_replace('/^1/', '', $number);
         }
