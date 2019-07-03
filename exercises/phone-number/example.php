@@ -4,42 +4,42 @@ class PhoneNumber
 {
     private $number;
 
-    public function __construct($number)
+    public function __construct(string $number)
     {
         $this->number = $this->clean($number);
     }
 
-    public function number()
+    public function number() : string
     {
         return $this->number;
     }
 
-    public function areaCode()
+    public function areaCode() : string
     {
         return substr($this->number, 0, 3);
     }
 
-    protected function prefix()
+    protected function prefix() : string
     {
         return substr($this->number, 3, 3);
     }
 
-    protected function lineNumber()
+    protected function lineNumber() : string
     {
         return substr($this->number, 6, 4);
     }
 
-    public function prettyPrint()
+    public function prettyPrint(): string
     {
         return '(' . $this->areaCode() . ') ' . $this->prefix() . '-' . $this->lineNumber();
     }
 
-    protected function clean($number)
+    protected function clean($number) : string
     {
         return $this->validate(preg_replace('/[^0-9a-z]+/i', '', $number));
     }
 
-    protected function validate($number)
+    protected function validate($number) : string
     {
         if ($number !== preg_replace('/[^0-9]+/', '', $number)) {
             throw new InvalidArgumentException('Given number contains invalid characters.');
