@@ -42,7 +42,7 @@ class PhoneNumber
     protected function validate($number)
     {
         if ($number !== preg_replace('/[^0-9]+/', '', $number)) {
-            throw new InvalidArgumentException();
+            throw new InvalidArgumentException('Given number contains invalid characters.');
         }
 
         if (strlen($number) === 11) {
@@ -50,7 +50,7 @@ class PhoneNumber
         }
 
         if (strlen($number) !== 10) {
-            throw new InvalidArgumentException();
+            throw new InvalidArgumentException('Given number has an invalid length.');
         }
 
         return $number;
