@@ -19,27 +19,17 @@ class PhoneNumber
         return substr($this->number, 0, 3);
     }
 
-    protected function prefix() : string
-    {
-        return substr($this->number, 3, 3);
-    }
-
-    protected function lineNumber() : string
-    {
-        return substr($this->number, 6, 4);
-    }
-
     public function prettyPrint(): string
     {
         return '(' . $this->areaCode() . ') ' . $this->prefix() . '-' . $this->lineNumber();
     }
 
-    protected function clean($number) : string
+    private function clean($number) : string
     {
         return $this->validate(preg_replace('/[^0-9a-z]+/i', '', $number));
     }
 
-    protected function validate($number) : string
+    private function validate($number) : string
     {
         if ($number !== preg_replace('/[^0-9]+/', '', $number)) {
             throw new InvalidArgumentException('Given number contains invalid characters.');
@@ -54,5 +44,15 @@ class PhoneNumber
         }
 
         return $number;
+    }
+
+    private function prefix() : string
+    {
+        return substr($this->number, 3, 3);
+    }
+
+    private function lineNumber() : string
+    {
+        return substr($this->number, 6, 4);
     }
 }
