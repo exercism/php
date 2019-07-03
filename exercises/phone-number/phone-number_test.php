@@ -20,14 +20,14 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $number = new PhoneNumber('123-abc-1234');
+        new PhoneNumber('123-abc-1234');
     }
 
     public function testInvalidWhen9Digits()
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $number = new PhoneNumber('123456789');
+        new PhoneNumber('123456789');
     }
 
     public function testValidWhen11DigitsAndFirstIs1()
@@ -46,21 +46,21 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $number = new PhoneNumber('21234567890');
+        new PhoneNumber('21234567890');
     }
 
     public function testInvalidWhen12DigitsAndFirstIs1()
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $number = new PhoneNumber('112345678901');
+        new PhoneNumber('112345678901');
     }
 
     public function testInvalidWhen10DigitsWithExtraLetters()
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $number = new PhoneNumber('1a2a3a4a5a6a7a8a9a0a');
+        new PhoneNumber('1a2a3a4a5a6a7a8a9a0a');
     }
 
     public function testAreaCode()
