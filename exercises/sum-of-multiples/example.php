@@ -7,7 +7,7 @@ function sumOfMultiples($number, $multiples)
         foreach ($multiples as $multiple) {
             $testNumber = $multiple * $i;
             if ($testNumber < $number) {
-                array_push($numbers, $testNumber);
+                $numbers[] = $testNumber;
             }
         }
     }

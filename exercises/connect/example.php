@@ -29,13 +29,13 @@ class Board
             for ($i = 0; $i < strlen($line); $i++) {
                 switch ($line[$i]) {
                     case "O":
-                        array_push($row, WHITE);
+                        $row[] = WHITE;
                         break;
                     case "X":
-                        array_push($row, BLACK);
+                        $row[] = BLACK;
                         break;
                     default:
-                        array_push($row, NOTHING);
+                        $row[] = NOTHING;
                 }
             }
             return $row;
@@ -81,7 +81,7 @@ class Board
     {
         $coords = [];
         for ($i = 0; $i < $this->width; $i++) {
-            array_push($coords, [$i, 0]);
+            $coords[] = [$i, 0];
         }
         return $coords;
     }
@@ -90,7 +90,7 @@ class Board
     {
         $coords = [];
         for ($i = 0; $i < $this->height; $i++) {
-            array_push($coords, [0, $i]);
+            $coords[] = [0, $i];
         }
         return $coords;
     }

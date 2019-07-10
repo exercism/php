@@ -45,7 +45,7 @@ function findFewestCoins(array $coins, int $total_change): array
     $array = [];
     // if conbination found then build the coins array
     while ($last_coin[$last_coin_value] != -1) {
-        array_push($array, $last_coin_value - $last_coin[$last_coin_value]);
+        $array[] = $last_coin_value - $last_coin[$last_coin_value];
         $last_coin_value = $last_coin[$last_coin_value];
     }
 

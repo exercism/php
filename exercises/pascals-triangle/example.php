@@ -10,7 +10,7 @@ function pascalsTriangleRows($rowCount)
         return $output;
     }
     foreach (range(0, $rowCount - 1) as $rowNum) {
-        array_push($output, pascalRow($rowNum));
+        $output[] = pascalRow($rowNum);
     }
     return $output;
 }
@@ -22,7 +22,7 @@ function pascalRow($n)
         return $line;
     }
     foreach (range(0, $n - 1) as $k) {
-        array_push($line, $line[$k] * ($n - $k) / ($k + 1));
+        $line[] = $line[$k] * ($n - $k) / ($k + 1);
     }
     return $line;
 }
