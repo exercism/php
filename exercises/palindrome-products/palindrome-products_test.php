@@ -4,7 +4,6 @@ require "palindrome-products.php";
 
 class PalindromeProductsTest extends PHPUnit\Framework\TestCase
 {
-
     public function testFindsTheSmallestPalindromeFromSingleDigitFactors()
     {
         [ $value, $factors ] = smallest(1, 9);
