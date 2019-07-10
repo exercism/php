@@ -7,8 +7,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
     public function dateSetup($date)
     {
         $UTC = new DateTimeZone("UTC");
-        $date = new DateTime($date, $UTC);
-        return $date;
+        return new DateTimeImmutable($date, $UTC);
     }
 
     public function testDate1()
