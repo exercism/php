@@ -4,7 +4,6 @@ require 'hamming.php';
 
 class HammingComparatorTest extends PHPUnit\Framework\TestCase
 {
-
     public function testNoDifferenceBetweenIdenticalStrands()
     {
         $this->assertEquals(0, distance('A', 'A'));

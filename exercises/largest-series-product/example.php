@@ -108,7 +108,7 @@ class Series
     {
         if (! empty($digits) && ! is_numeric($digits)) {
             throw new InvalidArgumentException(sprintf(
-                'Must supply a non-empty, numeric only sequence. [%] was given',
+                'Must supply a non-empty, numeric only sequence. [%s] was given',
                 $digits
             ));
         }

@@ -57,7 +57,7 @@ function sum($x, $y)
         return $value;
     }, $x, $y);
     if ($shift) {
-        array_push($result, $shift);
+        $result[] = $shift;
     }
     return $result;
 }

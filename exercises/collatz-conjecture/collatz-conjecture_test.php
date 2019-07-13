@@ -4,7 +4,6 @@ require 'collatz-conjecture.php';
 
 class CollatzConjecture extends PHPUnit\Framework\TestCase
 {
-
     public function testZeroStepsForOne()
     {
         $this->assertEquals(0, steps(1));

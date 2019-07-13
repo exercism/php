@@ -22,9 +22,9 @@ function toRoman($number)
     $return = '';
 
     foreach ($mapping as $decimal => $roman) {
-            $quantity = (int) ($number / $decimal);
-            $return .= str_repeat($roman, $quantity);
-            $number -= $decimal * $quantity;
+        $quantity = (int) ($number / $decimal);
+        $return .= str_repeat($roman, $quantity);
+        $number -= $decimal * $quantity;
     }
 
     return $return;

@@ -1,6 +1,6 @@
 <?php
 
-function from(DateTime $from)
+function from(DateTimeImmutable $from)
 {
     $interval = new DateInterval('PT1000000000S');
     $date = clone $from;

@@ -28,14 +28,14 @@ function brackets_match(string $input) : bool
             };
 
             if ($isOpeningBracket($char)) {
-                array_push($stack, $char);
+                $stack[] = $char;
             }
 
             if ($isClosingBracket($char)) {
                 if ($matchesLastOpenBracket($char, $stack)) {
                     array_pop($stack);
                 } else {
-                    array_push($stack, $char); // unopened bracket
+                    $stack[] = $char; // unopened bracket
                 }
             }
             return $stack;
