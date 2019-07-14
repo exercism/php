@@ -1,28 +1,60 @@
-PHP can be downloaded and built from source, available at [php.net/downloads.php](http://php.net/downloads.php)
+### Which version to chose?
 
-Alternatively there are many pre-compiled versions available for [different operating systems](http://php.net/manual/en/install.php):
+We encourage to use a stable PHP release with active support. Currently this is **PHP 7.2 and 7.3**. Details on current releases and their timelines can be found at [php.net/supported-versions](https://www.php.net/supported-versions.php).
 
-**Windows users**: There are pre-built stacks including [WAMP](http://www.wampserver.com/en/) - (windows, Apache, MySQL, PHP) and [XAMPP](https://www.apachefriends.org/index.html)
+### Install PHP
 
-**OS X users**: Normally comes with PHP installed, but there are other pre-built options available, including [MAMP](http://www.mamp.info/en/).
+PHP can be downloaded and built from source, available at [php.net/downloads.php](http://php.net/downloads.php) or[windows.php.net/download](https://windows.php.net/download).
 
-**Linux users**: Different distributions have different methods. You should be able to
+> Note: A web server such as nginx or Apache HTTP server is not required to complete the exercises.
 
-````$ yum install php````
+#### Linux
+
+Different distributions have different methods. You should be able to
+
+```bash
+$ yum install php
+```
 
 or
 
-````$ apt-get install php````
+```bash
+$ apt-get install php
+```
 
 depending on your repository manager.
 
+For further instructions, read the manual on [Installation on Unix systems](https://www.php.net/manual/en/install.unix.php).
 
-### Install PHPUnit:
+#### macOS
 
-To globally install PHPUnit testing framework, you can add it to your global composer file, which you can then add to your environment PATH.
+Normally macOS comes with PHP installed. There are other pre-built options available, including [MAMP](http://www.mamp.info/en/) an [php-osx.liip.ch](https://php-osx.liip.ch/).
 
-To do this call
+For further instructions, read the manual on [Installation on macOS](https://www.php.net/manual/en/install.macosx.php).
 
-````$ composer global require phpunit/phpunit````
+#### Windows
 
-If you are not using Composer package manager you can download the phpunit.phar file and add that to your PATH, or project directory as explained here: [PHPUnit](https://phpunit.de/manual/current/en/installation.html)
+Official PHP binaries for Windows can be downloaded from [windows.php.net/download](https://windows.php.net/download).
+
+There are pre-built stacks including [WAMP](http://www.wampserver.com/en/) - (Windows, Apache, MySQL, PHP) and [XAMPP](https://www.apachefriends.org/de/index.html).
+
+For further instructions, read the manual on [Installation on Windows systems](https://www.php.net/manual/en/install.windows.php).
+
+#### Other
+
+If you want to use a different OS, see instruction on [php.net/manual/en/install](https://www.php.net/manual/en/install.php).
+
+
+### Install PHPUnit
+
+#### Via Composer
+
+PHPUnit can be installed globally via [Composer](https://getcomposer.org), using the following command.
+
+```bash
+$ composer global require phpunit/phpunit
+```
+
+#### Manual installation
+
+If you are not using Composer package manager, follow the official [Installing PHPUnit instructions](https://phpunit.de/manual/6.5/en/installation.html).
