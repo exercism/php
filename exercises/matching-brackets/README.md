@@ -1,7 +1,8 @@
-# Bracket Push
+# Matching Brackets
 
-Given a string containing brackets `[]`, braces `{}` and parentheses `()`,
-verify that all the pairs are matched and nested correctly.
+Given a string containing brackets `[]`, braces `{}`, parentheses `()`,
+or any combination thereof, verify that any and all pairs are matched
+and nested correctly.
 
 
 ## Running the tests
@@ -18,7 +19,7 @@ verify that all the pairs are matched and nested correctly.
 
 2. Execute the tests:
 
-        % ./phpunit.phar bracket-push/bracket-push_test.php
+        % ./phpunit.phar matching-brackets/matching-brackets_test.php
 
 [PHPUnit]: http://phpunit.de
 

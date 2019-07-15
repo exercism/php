@@ -1,6 +1,6 @@
 <?php
 
-require_once "bracket-push.php";
+require_once "matching-brackets.php";
 
 class BracketTest extends PHPUnit\Framework\TestCase
 {

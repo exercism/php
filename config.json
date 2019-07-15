@@ -341,7 +341,7 @@
       ]
     },
     {
-      "slug": "bracket-push",
+      "slug": "matching-brackets",
       "uuid": "15ea518d-6c35-442a-9150-86da2d865703",
       "core": false,
       "unlocked_by": null,
