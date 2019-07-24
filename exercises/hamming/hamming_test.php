@@ -4,42 +4,42 @@ require "hamming.php";
 
 class HammingComparatorTest extends PHPUnit\Framework\TestCase
 {
-    public function testNoDifferenceBetweenIdenticalStrands()
+    public function testNoDifferenceBetweenIdenticalStrands(): void
     {
         $this->assertEquals(0, distance('A', 'A'));
     }
 
-    public function testCompleteHammingDistanceOfForSingleNucleotideStrand()
+    public function testCompleteHammingDistanceOfForSingleNucleotideStrand(): void
     {
         $this->assertEquals(1, distance('A', 'G'));
     }
 
-    public function testCompleteHammingDistanceForSmallStrand()
+    public function testCompleteHammingDistanceForSmallStrand(): void
     {
         $this->assertEquals(2, distance('AG', 'CT'));
     }
 
-    public function testSmallHammingDistance()
+    public function testSmallHammingDistance(): void
     {
         $this->assertEquals(1, distance('AT', 'CT'));
     }
 
-    public function testSmallHammingDistanceInLongerStrand()
+    public function testSmallHammingDistanceInLongerStrand(): void
     {
         $this->assertEquals(1, distance('GGACG', 'GGTCG'));
     }
 
-    public function testLargeHammingDistance()
+    public function testLargeHammingDistance(): void
     {
         $this->assertEquals(4, distance('GATACA', 'GCATAA'));
     }
 
-    public function testHammingDistanceInVeryLongStrand()
+    public function testHammingDistanceInVeryLongStrand(): void
     {
         $this->assertEquals(9, distance('GGACGGATTCTG', 'AGGACGGATTCT'));
     }
 
-    public function testExceptionThrownWhenStrandsAreDifferentLength()
+    public function testExceptionThrownWhenStrandsAreDifferentLength(): void
     {
         $this->expectException('InvalidArgumentException');
         $this->expectExceptionMessage('DNA strands must be of equal length.');

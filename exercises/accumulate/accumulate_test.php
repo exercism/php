@@ -4,7 +4,7 @@ require_once 'accumulate.php';
 
 class AccumulateTest extends PHPUnit\Framework\TestCase
 {
-    public function testAccumulateEmpty()
+    public function testAccumulateEmpty(): void
     {
         $accumulator = function ($value) {
             return $value ** 2;
@@ -13,7 +13,7 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
         $this->assertEquals([], accumulate([], $accumulator));
     }
 
-    public function testAccumulateSquares()
+    public function testAccumulateSquares(): void
     {
         $accumulator = function ($value) {
             return $value ** 2;
@@ -22,7 +22,7 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
         $this->assertEquals([1, 4, 9], accumulate([1, 2, 3], $accumulator));
     }
 
-    public function testAccumulateUpperCases()
+    public function testAccumulateUpperCases(): void
     {
         $accumulator = function ($string) {
             return mb_strtoupper($string);
@@ -31,7 +31,7 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(['HELLO', 'WORLD!'], accumulate(['Hello', 'World!'], $accumulator));
     }
 
-    public function testAccumulateReversedStrings()
+    public function testAccumulateReversedStrings(): void
     {
         $accumulator = function ($string) {
             return strrev($string);
@@ -40,7 +40,7 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(['Hello', 'World!'], accumulate(['olleH', '!dlroW'], $accumulator));
     }
 
-    public function testAccumulateConstants()
+    public function testAccumulateConstants(): void
     {
         $accumulator = function () {
             return 1;
@@ -49,7 +49,7 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
         $this->assertEquals([1, 1], accumulate(['Hello', 'World!'], $accumulator));
     }
 
-    public function testAccumulateWithinAccumulate()
+    public function testAccumulateWithinAccumulate(): void
     {
         $chars = ['a', 'b', 'c'];
         $digits = [1, 2, 3];
@@ -67,22 +67,22 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 
     // Additional points for making the following tests pass
 
-    public function testAccumulateUsingBuiltInFunction()
+    public function testAccumulateUsingBuiltInFunction(): void
     {
         $this->assertEquals(['Hello', 'World!'], accumulate([" Hello\t", "\t World!\n "], 'trim'));
     }
 
-    public function testAccumulateUsingStaticMethod()
+    public function testAccumulateUsingStaticMethod(): void
     {
         $this->assertEquals([5, 6], accumulate(['Hello', 'World!'], 'Str::len'));
     }
 
-    public function testAccumulateUsingInvoke()
+    public function testAccumulateUsingInvoke(): void
     {
         $this->assertEquals([['f', 'o', 'o']], accumulate(['foo'], new StrSpliter()));
     }
 
-    public function testAccumulateUsingObjectAndArrayNotation()
+    public function testAccumulateUsingObjectAndArrayNotation(): void
     {
         $this->assertEquals([true, false, false], accumulate(['Yes', 0, []], [new Is(), 'truthy']));
     }
@@ -90,7 +90,7 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 
 class Str
 {
-    public static function len($string)
+    public static function len($string): int
     {
         return strlen($string);
     }
@@ -106,7 +106,7 @@ class StrSpliter
 
 class Is
 {
-    public function truthy($value)
+    public function truthy($value): bool
     {
         return $value ? true : false;
     }

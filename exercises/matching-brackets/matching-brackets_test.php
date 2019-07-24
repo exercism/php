@@ -4,67 +4,67 @@ require_once "matching-brackets.php";
 
 class BracketTest extends PHPUnit\Framework\TestCase
 {
-    public function testPairedSquareBrackets()
+    public function testPairedSquareBrackets(): void
     {
         $this->assertTrue(brackets_match('[]'));
     }
 
-    public function testEmptyString()
+    public function testEmptyString(): void
     {
         $this->assertTrue(brackets_match(''));
     }
 
-    public function testUnpairedBrackets()
+    public function testUnpairedBrackets(): void
     {
         $this->assertFalse(brackets_match('[['));
     }
 
-    public function testWrongOrderedBrackets()
+    public function testWrongOrderedBrackets(): void
     {
         $this->assertFalse(brackets_match('}{'));
     }
 
-    public function testPairedWithWhitespace()
+    public function testPairedWithWhitespace(): void
     {
         $this->assertTrue(brackets_match('{ }'));
     }
 
-    public function testSimpleNestedBrackets()
+    public function testSimpleNestedBrackets(): void
     {
         $this->assertTrue(brackets_match('{[]}'));
     }
 
-    public function testSeveralPairedBrackets()
+    public function testSeveralPairedBrackets(): void
     {
         $this->assertTrue(brackets_match('{}[]'));
     }
 
-    public function testPairedAndNestedBrackets()
+    public function testPairedAndNestedBrackets(): void
     {
         $this->assertTrue(brackets_match('([{}({}[])])'));
     }
 
-    public function testUnopenedClosingBrackets()
+    public function testUnopenedClosingBrackets(): void
     {
         $this->assertFalse(brackets_match('{[)][]}'));
     }
 
-    public function testUnpairedAndNestedBrackets()
+    public function testUnpairedAndNestedBrackets(): void
     {
         $this->assertFalse(brackets_match('([{])'));
     }
 
-    public function testPairedAndWrongNestedBrackets()
+    public function testPairedAndWrongNestedBrackets(): void
     {
         $this->assertFalse(brackets_match('[({]})'));
     }
 
-    public function testMathExpression()
+    public function testMathExpression(): void
     {
         $this->assertTrue(brackets_match('(((185 + 223.85) * 15) - 543)/2'));
     }
 
-    public function testComplexLatexExpression()
+    public function testComplexLatexExpression(): void
     {
         $this->assertTrue(brackets_match(
             "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ "

@@ -21,7 +21,7 @@ class OcrBlock
      * Validate OCR block format: size, proportions
      * @throws InvalidArgumentException
      */
-    public function validate()
+    public function validate(): void
     {
         $numRows = count($this->ocr);
         $numColumns = strlen($this->ocr[0]);
@@ -45,7 +45,7 @@ class OcrBlock
      * explode them into symbols and recognize them.
      * @return string
      */
-    public function recognize()
+    public function recognize(): string
     {
         return implode(',', array_map(function ($x) {
             return implode('', array_map(function ($y) {
@@ -60,7 +60,7 @@ class OcrBlock
      * @param type $ocrFragment
      * @return type
      */
-    protected function explode($ocrFragment)
+    protected function explode($ocrFragment): \type
     {
         $exploded = array_map(function ($x) {
             return str_split($x, OcrSymbol::NUM_COLUMNS);
@@ -102,7 +102,7 @@ class OcrSymbol
      * Translate OCR to digit
      * @return string
      */
-    public function getDigit()
+    public function getDigit(): string
     {
         if ($this->digit === null) {
             $encoded = str_replace(' ', 'x', implode($this->ocr));

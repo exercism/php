@@ -4,32 +4,32 @@ require "pascals-triangle.php";
 
 class PascalsTriangleTest extends PHPUnit\Framework\TestCase
 {
-    public function testZeroRows()
+    public function testZeroRows(): void
     {
         $this->assertSame([], pascalsTriangleRows(0));
     }
 
-    public function testSingleRow()
+    public function testSingleRow(): void
     {
         $this->assertSame([[1]], pascalsTriangleRows(1));
     }
-    public function testTwoRows()
+    public function testTwoRows(): void
     {
         $this->assertSame([[1], [1, 1]], pascalsTriangleRows(2));
     }
-    public function testThreeRows()
+    public function testThreeRows(): void
     {
         $this->assertSame([[1], [1, 1], [1, 2, 1]], pascalsTriangleRows(3));
     }
-    public function testFourRows()
+    public function testFourRows(): void
     {
         $this->assertSame([[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]], pascalsTriangleRows(4));
     }
-    public function testNegativeRows()
+    public function testNegativeRows(): void
     {
         $this->assertEquals(-1, pascalsTriangleRows(-1));
     }
-    public function testNullNoRows()
+    public function testNullNoRows(): void
     {
         $this->assertEquals(-1, pascalsTriangleRows(null));
     }

@@ -7,7 +7,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
     /**
      * Test encode with two rails.
      */
-    public function testEncodeWithTwoRails()
+    public function testEncodeWithTwoRails(): void
     {
         $plainText  = "XOXOXOXOXOXOXOXOXO";
         $rails = 2;
@@ -17,7 +17,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
     /**
      * Test encode with three rails.
      */
-    public function testEncodeWithThreeRails()
+    public function testEncodeWithThreeRails(): void
     {
         $plainText  = "WEAREDISCOVEREDFLEEATONCE";
         $rails = 3;
@@ -28,7 +28,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
     /**
      * Test encode with ending in the middle.
      */
-    public function testEncodeWithEndingInTheMiddle()
+    public function testEncodeWithEndingInTheMiddle(): void
     {
         $plainText  = "EXERCISES";
         $rails = 4;
@@ -39,7 +39,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
     /**
      * Test decode with three rails.
      */
-    public function testDecodeWithThreeRails()
+    public function testDecodeWithThreeRails(): void
     {
         $encryptedText  = "TEITELHDVLSNHDTISEIIEA";
         $rails = 3;
@@ -49,7 +49,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
     /**
      * Test decode with five rails.
      */
-    public function testDecodeWithFiveRails()
+    public function testDecodeWithFiveRails(): void
     {
         $encryptedText  = "EIEXMSMESAORIWSCE";
         $rails = 5;
@@ -60,7 +60,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
     /**
      * Test decode with six rails.
      */
-    public function testDecodeWithSixRails()
+    public function testDecodeWithSixRails(): void
     {
         $encryptedText  = "133714114238148966225439541018335470986172518171757571896261";
         $rails = 6;

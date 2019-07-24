@@ -4,21 +4,21 @@ require "clock.php";
 
 class ClockTest extends PHPUnit\Framework\TestCase
 {
-    public function testOnTheHour()
+    public function testOnTheHour(): void
     {
         $clock = new Clock(8);
 
         $this->assertEquals('08:00', $clock->__toString());
     }
 
-    public function testPastTheHour()
+    public function testPastTheHour(): void
     {
         $clock = new Clock(11, 9);
 
         $this->assertEquals('11:09', $clock->__toString());
     }
 
-    public function testAddingAFewMinutes()
+    public function testAddingAFewMinutes(): void
     {
         $clock = new Clock(10);
 
@@ -27,7 +27,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('10:03', $clock->__toString());
     }
 
-    public function testAddingZeroMinutes()
+    public function testAddingZeroMinutes(): void
     {
         $clock = new Clock(6, 41);
 
@@ -36,7 +36,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('06:41', $clock->__toString());
     }
 
-    public function testAddingOverAnHour()
+    public function testAddingOverAnHour(): void
     {
         $clock = new Clock(10);
 
@@ -45,7 +45,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('11:01', $clock->__toString());
     }
 
-    public function testAddingMoreThanTwoHoursWithCarry()
+    public function testAddingMoreThanTwoHoursWithCarry(): void
     {
         $clock = new Clock(0, 45);
 
@@ -54,7 +54,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('03:25', $clock->__toString());
     }
 
-    public function testAddingMoreThanTwoDays()
+    public function testAddingMoreThanTwoDays(): void
     {
         $clock = new Clock(1, 1);
 
@@ -63,7 +63,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('11:21', $clock->__toString());
     }
 
-    public function testWrapAroundAtMidnight()
+    public function testWrapAroundAtMidnight(): void
     {
         $clock = new Clock(23, 30);
 
@@ -72,7 +72,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('00:30', $clock->__toString());
     }
 
-    public function testSubtractMinutes()
+    public function testSubtractMinutes(): void
     {
         $clock = new Clock(10);
 
@@ -81,7 +81,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('08:30', $clock->__toString());
     }
 
-    public function testSubtractMoreThanTwoHours()
+    public function testSubtractMoreThanTwoHours(): void
     {
         $clock = new Clock(6, 15);
 
@@ -90,7 +90,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('03:35', $clock->__toString());
     }
 
-    public function testSubtractMoreThanTwoHoursWithNegativeAdd()
+    public function testSubtractMoreThanTwoHoursWithNegativeAdd(): void
     {
         $clock = new Clock(6, 15);
 
@@ -99,7 +99,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('03:35', $clock->__toString());
     }
 
-    public function testSubtractMoreThanTwoDays()
+    public function testSubtractMoreThanTwoDays(): void
     {
         $clock = new Clock(2, 20);
 
@@ -108,7 +108,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('00:20', $clock->__toString());
     }
 
-    public function testWrapAroundBackwards()
+    public function testWrapAroundBackwards(): void
     {
         $clock = new Clock(0, 30);
 
@@ -117,7 +117,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('23:30', $clock->__toString());
     }
 
-    public function testWrapAroundDay()
+    public function testWrapAroundDay(): void
     {
         $clock = new Clock(5, 32);
 
@@ -126,7 +126,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('06:32', $clock->__toString());
     }
 
-    public function testWrapAroundDayBackwards()
+    public function testWrapAroundDayBackwards(): void
     {
         $clock = new Clock(5, 32);
 
@@ -135,72 +135,72 @@ class ClockTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('04:32', $clock->__toString());
     }
 
-    public function testEquivalentClocks()
+    public function testEquivalentClocks(): void
     {
         $this->assertEquals(new Clock(15, 37), new Clock(15, 37));
     }
 
-    public function testInequivalentClocks()
+    public function testInequivalentClocks(): void
     {
         $this->assertNotEquals(new Clock(01, 01), new Clock(18, 32));
     }
 
-    public function testEquivalentClocksWithHourOverflowBySeveralDays()
+    public function testEquivalentClocksWithHourOverflowBySeveralDays(): void
     {
         $this->assertEquals(new Clock(3, 11), new Clock(99, 11));
     }
 
-    public function testEquivalentClocksWithNegativeHour()
+    public function testEquivalentClocksWithNegativeHour(): void
     {
         $this->assertEquals(new Clock(22, 40), new Clock(-2, 40));
     }
 
-    public function testEquivalentClocksWithNegativeHourThatWraps()
+    public function testEquivalentClocksWithNegativeHourThatWraps(): void
     {
         $this->assertEquals(new Clock(17, 3), new Clock(-31, 3));
     }
 
-    public function testEquivalentClocksWithMinuteOverflowBySeveralDays()
+    public function testEquivalentClocksWithMinuteOverflowBySeveralDays(): void
     {
         $this->assertEquals(new Clock(2, 2), new Clock(2, 4322));
     }
 
-    public function testEquivalentClocksWithNegativeMinuteOverflow()
+    public function testEquivalentClocksWithNegativeMinuteOverflow(): void
     {
         $this->assertEquals(new Clock(2, 40), new Clock(3, -20));
     }
 
-    public function testEquivalentClocksWithNegativeHoursAndMinutes()
+    public function testEquivalentClocksWithNegativeHoursAndMinutes(): void
     {
         $this->assertEquals(new Clock(7, 32), new Clock(-12, -268));
     }
 
-    public function testHoursRollOver()
+    public function testHoursRollOver(): void
     {
         $this->assertEquals('04:00', (new Clock(100))->__toString());
     }
 
-    public function testMinutesRollOver()
+    public function testMinutesRollOver(): void
     {
         $this->assertEquals('04:43', (new Clock(0, 1723))->__toString());
     }
 
-    public function testHoursAndMinutesRollOver()
+    public function testHoursAndMinutesRollOver(): void
     {
         $this->assertEquals('00:00', (new Clock(72, 8640))->__toString());
     }
 
-    public function testNegativeHoursRollOver()
+    public function testNegativeHoursRollOver(): void
     {
         $this->assertEquals('05:00', (new Clock(-91))->__toString());
     }
 
-    public function testNegativeMinutesRollOver()
+    public function testNegativeMinutesRollOver(): void
     {
         $this->assertEquals('16:40', (new Clock(1, -4820))->__toString());
     }
 
-    public function testNegativeHoursAndMinutesRollOver()
+    public function testNegativeHoursAndMinutesRollOver(): void
     {
         $this->assertEquals('22:10', (new Clock(-121, -5810))->__toString());
     }

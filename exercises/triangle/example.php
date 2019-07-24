@@ -13,7 +13,7 @@ class Triangle
         $this->sideC = $sideC;
     }
 
-    public function kind()
+    public function kind(): string
     {
         if (0 == ($this->sideA + $this->sideB + $this->sideC)) {
             throw new Exception("These sides have no values.");
