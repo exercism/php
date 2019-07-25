@@ -57,10 +57,10 @@ class OcrBlock
 
     /**
      * Explode OCR fragment into OCR symbols
-     * @param type $ocrFragment
-     * @return type
+     * @param array $ocrFragment
+     * @return array
      */
-    protected function explode($ocrFragment): \type
+    protected function explode(array $ocrFragment): array
     {
         $exploded = array_map(function ($x) {
             return str_split($x, OcrSymbol::NUM_COLUMNS);
