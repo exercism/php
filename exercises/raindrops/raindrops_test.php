@@ -1,6 +1,6 @@
 <?php
 
-require "raindrops.php";
+require_once "raindrops.php";
 
 class RaindropsTest extends PHPUnit\Framework\TestCase
 {

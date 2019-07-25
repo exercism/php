@@ -1,6 +1,6 @@
 <?php
 
-require "luhn.php";
+require_once "luhn.php";
 
 class LuhnValidatorTest extends PHPUnit\Framework\TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-require "hamming.php";
+require_once "hamming.php";
 
 class HammingComparatorTest extends PHPUnit\Framework\TestCase
 {

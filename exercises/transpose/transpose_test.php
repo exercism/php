@@ -1,6 +1,6 @@
 <?php
 
-require "transpose.php";
+require_once "transpose.php";
 
 class TransposeTest extends PHPUnit\Framework\TestCase
 {

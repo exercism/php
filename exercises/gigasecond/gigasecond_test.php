@@ -1,6 +1,6 @@
 <?php
 
-require "gigasecond.php";
+require_once "gigasecond.php";
 
 class GigasecondTest extends PHPUnit\Framework\TestCase
 {

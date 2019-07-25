@@ -1,6 +1,6 @@
 <?php
 
-require "isogram.php";
+require_once "isogram.php";
 
 class IsogramTest extends PHPUnit\Framework\TestCase
 {

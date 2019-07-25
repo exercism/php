@@ -1,6 +1,6 @@
 <?php
 
-require "trinary.php";
+require_once "trinary.php";
 
 class TrinaryTest extends PHPUnit\Framework\TestCase
 {

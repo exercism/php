@@ -1,5 +1,5 @@
 <?php
-require "series.php";
+require_once "series.php";
 
 class SeriesTest extends PHPUnit\Framework\TestCase
 {

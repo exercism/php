@@ -1,6 +1,6 @@
 <?php
 
-require "queen-attack.php";
+require_once "queen-attack.php";
 
 class QueenAttackTest extends PHPUnit\Framework\TestCase
 {

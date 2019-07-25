@@ -1,6 +1,6 @@
 <?php
 
-require "perfect-numbers.php";
+require_once "perfect-numbers.php";
 
 class PerfectNumbersTest extends PHPUnit\Framework\TestCase
 {

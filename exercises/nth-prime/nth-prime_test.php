@@ -1,6 +1,6 @@
 <?php
 
-require 'nth-prime.php';
+require_once 'nth-prime.php';
 
 class NthPrimeTest extends PHPUnit\Framework\TestCase
 {

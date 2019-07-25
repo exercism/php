@@ -1,6 +1,6 @@
 <?php
 
-require "meetup.php";
+require_once "meetup.php";
 
 class MeetupTest extends PHPUnit\Framework\TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-require "grade-school.php";
+require_once "grade-school.php";
 use PHPUnit\Framework\TestCase;
 
 class GradeSchoolTest extends TestCase

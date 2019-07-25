@@ -1,5 +1,5 @@
 <?php
-require "sieve.php";
+require_once "sieve.php";
 class SieveTest extends PHPUnit\Framework\TestCase
 {
     public function testNoPrimesUnderTwo()

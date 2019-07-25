@@ -1,6 +1,6 @@
 <?php
 
-require "change.php";
+require_once "change.php";
 
 class ChangeTest extends PHPUnit\Framework\TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-require "anagram.php";
+require_once "anagram.php";
 
 class AnagramTest extends PHPUnit\Framework\TestCase
 {

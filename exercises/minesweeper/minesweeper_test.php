@@ -1,6 +1,6 @@
 <?php
 
-require 'minesweeper.php';
+require_once 'minesweeper.php';
 
 class MinesweeperTest extends PHPUnit\Framework\TestCase
 {

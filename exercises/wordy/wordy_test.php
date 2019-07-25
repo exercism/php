@@ -1,6 +1,6 @@
 <?php
 
-require "wordy.php";
+require_once "wordy.php";
 
 class WordProblemTest extends PHPUnit\Framework\TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-require "run-length-encoding.php";
+require_once "run-length-encoding.php";
 
 /**
  * Class RunLengthEncodingTest

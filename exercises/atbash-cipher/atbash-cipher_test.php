@@ -1,6 +1,6 @@
 <?php
 
-require "atbash-cipher.php";
+require_once "atbash-cipher.php";
 
 class AtbashTest extends PHPUnit\Framework\TestCase
 {

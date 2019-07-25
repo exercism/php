@@ -1,6 +1,6 @@
 <?php
 
-require "beer-song.php";
+require_once "beer-song.php";
 
 class BeerSongTest extends PHPUnit\Framework\TestCase
 {

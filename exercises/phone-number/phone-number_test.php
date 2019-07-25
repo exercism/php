@@ -1,6 +1,6 @@
 <?php
 
-require "phone-number.php";
+require_once "phone-number.php";
 
 class PhoneNumberTest extends PHPUnit\Framework\TestCase
 {

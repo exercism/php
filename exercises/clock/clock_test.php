@@ -1,6 +1,6 @@
 <?php
 
-require "clock.php";
+require_once "clock.php";
 
 class ClockTest extends PHPUnit\Framework\TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-require "rna-transcription.php";
+require_once "rna-transcription.php";
 
 class ComplementTest extends PHPUnit\Framework\TestCase
 {

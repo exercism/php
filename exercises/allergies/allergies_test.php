@@ -1,6 +1,6 @@
 <?php
 
-require "allergies.php";
+require_once "allergies.php";
 
 class AllergiesTest extends PHPUnit\Framework\TestCase
 {

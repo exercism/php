@@ -1,6 +1,6 @@
 <?php
 
-require "pascals-triangle.php";
+require_once "pascals-triangle.php";
 
 class PascalsTriangleTest extends PHPUnit\Framework\TestCase
 {
