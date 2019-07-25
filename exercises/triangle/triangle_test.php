@@ -1,9 +1,12 @@
 <?php
 
-require_once "triangle.php";
-
 class TriangleTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'triangle.php';
+    }
+
     public function testEquilateralTrianglesHaveEqualSides()
     {
         $this->assertEquals(

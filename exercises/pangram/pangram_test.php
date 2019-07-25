@@ -1,9 +1,12 @@
 <?php
 
-require_once "pangram.php";
-
 class PangramTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'pangram.php';
+    }
+
     public function testSentenceEmpty()
     {
         $this->assertFalse(isPangram(''));

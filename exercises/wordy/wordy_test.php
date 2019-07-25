@@ -1,9 +1,12 @@
 <?php
 
-require_once "wordy.php";
-
 class WordProblemTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'wordy.php';
+    }
+
     public function testAdd1()
     {
         $this->assertEquals(2, calculate('What is 1 plus 1?'));

@@ -1,8 +1,12 @@
 <?php
-require_once "sum-of-multiples.php";
 
 class SumOfMultiplesTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'sum-of-multiples.php';
+    }
+
     public function testSumToOne()
     {
         $this->assertEquals(0, sumOfMultiples(1, [3, 5]));

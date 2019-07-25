@@ -1,8 +1,12 @@
 <?php
-require_once "rail-fence-cipher.php";
 
 class RailFenceCipherTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'rail-fence-cipher.php';
+    }
+
 
     /**
      * Test encode with two rails.

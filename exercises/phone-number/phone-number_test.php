@@ -1,9 +1,12 @@
 <?php
 
-require_once "phone-number.php";
-
 class PhoneNumberTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'phone-number.php';
+    }
+
     public function testCleansNumber()
     {
         $number = new PhoneNumber('(123) 456-7890');

@@ -1,8 +1,12 @@
 <?php
-require_once "series.php";
 
 class SeriesTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'series.php';
+    }
+
     public function testSlicesOfOne()
     {
         $this->assertEquals(

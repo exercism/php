@@ -1,9 +1,12 @@
 <?php
 
-require_once "palindrome-products.php";
-
 class PalindromeProductsTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'palindrome-products.php';
+    }
+
     public function testFindsTheSmallestPalindromeFromSingleDigitFactors()
     {
         [ $value, $factors ] = smallest(1, 9);

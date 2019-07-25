@@ -1,9 +1,12 @@
 <?php
 
-require_once "clock.php";
-
 class ClockTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'clock.php';
+    }
+
     public function testOnTheHour()
     {
         $clock = new Clock(8);

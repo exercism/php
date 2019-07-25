@@ -1,8 +1,11 @@
 <?php
-require_once "bob.php";
 
 class BobTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'bob.php';
+    }
 
     /**
      * @var Bob

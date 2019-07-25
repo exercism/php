@@ -1,9 +1,12 @@
 <?php
 
-require_once "diamond.php";
-
 class DiamondTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'diamond.php';
+    }
+
     public function testDegenerateCaseWithASingleARow()
     {
         $this->assertEquals(diamond("A"), [ "A" ]);

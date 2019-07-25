@@ -1,9 +1,12 @@
 <?php
 
-require_once "transpose.php";
-
 class TransposeTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'transpose.php';
+    }
+
     public function testEmptyString()
     {
         $input = [""];

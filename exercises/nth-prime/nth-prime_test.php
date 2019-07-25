@@ -1,9 +1,12 @@
 <?php
 
-require_once 'nth-prime.php';
-
 class NthPrimeTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'nth-prime.php';
+    }
+
     public function testFirstPrime()
     {
         $this->assertEquals(2, prime(1));

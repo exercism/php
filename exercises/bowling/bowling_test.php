@@ -1,13 +1,16 @@
 <?php
 
-require_once "bowling.php";
-
 /**
  * Translated from original source:
  * http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
  */
 class GameTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'bowling.php';
+    }
+
     /** @var Game */
     private $game;
 

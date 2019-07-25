@@ -1,8 +1,12 @@
 <?php
-require_once "prime-factors.php";
 
 class PrimeFactorsTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'prime-factors.php';
+    }
+
     public function testNoFactors()
     {
         $this->assertSame([], factors(1));

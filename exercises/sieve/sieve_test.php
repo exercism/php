@@ -1,7 +1,12 @@
 <?php
-require_once "sieve.php";
+
 class SieveTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'sieve.php';
+    }
+
     public function testNoPrimesUnderTwo()
     {
         $this->assertEquals([], sieve(1));

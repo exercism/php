@@ -1,9 +1,12 @@
 <?php
 
-require_once "armstrong-numbers.php";
-
 class ArmstrongNumbersTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'armstrong-numbers.php';
+    }
+
     public function testZero()
     {
         $this->assertTrue(isArmstrongNumber(0));

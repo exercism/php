@@ -1,9 +1,12 @@
 <?php
 
-require_once "space-age.php";
-
 class SpaceAgeTester extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'space-age.php';
+    }
+
     public const DELTA = 0.01;
 
     public function testAgeInSeconds()

@@ -1,13 +1,16 @@
 <?php
 
-require_once "all-your-base.php";
-
 /**
  * These tests are adapted from the canonical data in the
  * `problem-specifications` repository.
  */
 class AllYourBaseTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'all-your-base.php';
+    }
+
     public function testSingleBitOneToDecimal()
     {
         $this->assertEquals(rebase(2, [1], 10), [1]);

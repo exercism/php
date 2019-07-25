@@ -1,9 +1,12 @@
 <?php
 
-require_once "etl.php";
-
 class TransformTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'etl.php';
+    }
+
     public function testTransformOneValue()
     {
         $old         = [ '1' => ['A'] ];

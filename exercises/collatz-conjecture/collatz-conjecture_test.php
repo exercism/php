@@ -1,9 +1,12 @@
 <?php
 
-require_once "collatz-conjecture.php";
-
 class CollatzConjecture extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'collatz-conjecture.php';
+    }
+
     public function testZeroStepsForOne()
     {
         $this->assertEquals(0, steps(1));

@@ -1,9 +1,12 @@
 <?php
 
-require_once 'acronym.php';
-
 class AcronymTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'acronym.php';
+    }
+
     public function testBasicTitleCase()
     {
         $this->assertEquals('PNG', acronym('Portable Network Graphics'));

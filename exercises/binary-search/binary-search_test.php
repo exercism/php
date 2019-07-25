@@ -1,9 +1,12 @@
 <?php
 
-require_once 'binary-search.php';
-
 class BinarySearchTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'binary-search.php';
+    }
+
     public function testItWorksWithOneElement()
     {
         $this->assertEquals(0, find(6, [6]));

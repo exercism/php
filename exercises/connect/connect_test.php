@@ -1,9 +1,12 @@
 <?php
 
-require_once "connect.php";
-
 class ConnectTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'connect.php';
+    }
+
     /**
      * Strip off the spaces which are only for readability.
      */
