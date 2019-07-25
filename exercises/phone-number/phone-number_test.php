@@ -4,80 +4,137 @@ require "phone-number.php";
 
 class PhoneNumberTest extends PHPUnit\Framework\TestCase
 {
-    public function testCleansNumber()
+    public function testCleansTheNumber(): void
     {
-        $number = new PhoneNumber('(123) 456-7890');
-        $this->assertEquals('1234567890', $number->number());
+        $number = new PhoneNumber('(223) 456-7890');
+        $this->assertEquals('2234567890', $number->number());
     }
 
-    public function testCleansNumberWithDots()
+    public function testCleansTheNumberWithDots(): void
     {
-        $number = new PhoneNumber('456.123.7890');
-        $this->assertEquals('4561237890', $number->number());
+        $number = new PhoneNumber('223.456.7890');
+        $this->assertEquals('2234567890', $number->number());
     }
 
-    public function testInvalidWithLettersInPlaceOfNumbers()
+    public function testCleansTheNumberWithMultipleSpaces(): void
+    {
+        $number = new PhoneNumber('223 456   7890   ');
+        $this->assertEquals('2234567890', $number->number());
+    }
+
+    public function testInvalidWhen9Digits(): void
     {
         $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('incorrect number of digits');
 
-        $number = new PhoneNumber('123-abc-1234');
+        new PhoneNumber('123456789');
     }
 
-    public function testInvalidWhen9Digits()
+    public function testInvalidWhen11DigitsDoesNotStartWithA1(): void
     {
         $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('11 digits must start with 1');
 
-        $number = new PhoneNumber('123456789');
+        new PhoneNumber('22234567890');
     }
 
-    public function testValidWhen11DigitsAndFirstIs1()
+    public function testValidWhen11DigitsAndStartingWith1(): void
     {
-        $number = new PhoneNumber('19876543210');
-        $this->assertEquals('9876543210', $number->number());
+        $number = new PhoneNumber('12234567890');
+        $this->assertEquals('2234567890', $number->number());
     }
 
-    public function testValidWhen10DigitsAndAreaCodeStartsWith1()
+    public function testValidWhen11DigitsAndStartingWith1EvenWithPunctuation(): void
     {
-        $number = new PhoneNumber('1234567890');
-        $this->assertEquals('1234567890', $number->number());
+        $number = new PhoneNumber('+1 (223) 456-7890');
+        $this->assertEquals('2234567890', $number->number());
     }
 
-    public function testInvalidWhen11Digits()
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        $number = new PhoneNumber('21234567890');
-    }
-
-    public function testInvalidWhen12DigitsAndFirstIs1()
+    public function testInvalidWhenMoreThan11Digits(): void
     {
         $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('more than 11 digits');
 
-        $number = new PhoneNumber('112345678901');
+        new PhoneNumber('321234567890');
     }
 
-    public function testInvalidWhen10DigitsWithExtraLetters()
+    public function testInvalidWithLetters(): void
     {
         $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('letters not permitted');
 
-        $number = new PhoneNumber('1a2a3a4a5a6a7a8a9a0a');
+        new PhoneNumber('123-abc-7890');
     }
 
-    public function testAreaCode()
+    public function testInvalidWithPunctuation(): void
     {
-        $number = new PhoneNumber('1234567890');
-        $this->assertEquals('123', $number->areaCode());
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('punctuations not permitted');
+
+        new PhoneNumber('123-@:!-7890');
     }
 
-    public function testPrettyPrint()
+    public function testInvalidIfAreaCodeStartsWith0(): void
     {
-        $number = new PhoneNumber('5551234567');
-        $this->assertEquals('(555) 123-4567', $number->prettyPrint());
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('area code cannot start with zero');
+
+        new PhoneNumber('(023) 456-7890');
     }
 
-    public function testPrettyPrintWithFullUsPhoneNumber()
+    public function testInvalidIfAreaCodeStartsWith1(): void
     {
-        $number = new PhoneNumber('11234567890');
-        $this->assertEquals('(123) 456-7890', $number->prettyPrint());
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('area code cannot start with one');
+
+        new PhoneNumber('(123) 456-7890');
+    }
+
+    public function testInvalidIfExchangeCodeStartsWith0(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('exchange code cannot start with zero');
+
+        new PhoneNumber('(223) 056-7890');
+    }
+
+    public function testInvalidIfExchangeCodeStartsWith1(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('exchange code cannot start with one');
+
+        new PhoneNumber('(223) 156-7890');
+    }
+
+    public function testInvalidIfAreaCodeStartsWith0OnValid11DigitNumber(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('area code cannot start with zero');
+
+        new PhoneNumber('1 (023) 456-7890');
+    }
+
+    public function testInvalidIfAreaCodeStartsWith1OnValid11DigitNumber(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('area code cannot start with one');
+
+        new PhoneNumber('1 (123) 456-7890');
+    }
+
+    public function testInvalidIfExchangeCodeStartsWith0OnValid11DigitNumber(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('exchange code cannot start with zero');
+
+        new PhoneNumber('1 (223) 056-7890');
+    }
+
+    public function testInvalidIfExchangeCodeStartsWith1OnValid11DigitNumber(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('exchange code cannot start with one');
+
+        new PhoneNumber('1 (223) 156-7890');
     }
 }
