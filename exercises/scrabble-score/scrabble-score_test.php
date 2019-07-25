@@ -12,7 +12,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test lowercase single letter word.
      */
-    public function testLowercaseSingleLetter(): void
+    public function testLowercaseSingleLetter() : void
     {
         $word = 'a';
         $this->assertEquals(1, score($word));
@@ -21,7 +21,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test uppercase single letter word.
      */
-    public function testUppercaseSingleLetter(): void
+    public function testUppercaseSingleLetter() : void
     {
         $word = 'A';
         $this->assertEquals(1, score($word));
@@ -30,7 +30,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test valuable single letter word.
      */
-    public function testValuableSingleLetter(): void
+    public function testValuableSingleLetter() : void
     {
         $word = 'f';
         $this->assertEquals(4, score($word));
@@ -39,7 +39,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test short word.
      */
-    public function testShortWord(): void
+    public function testShortWord() : void
     {
         $word = 'at';
         $this->assertEquals(2, score($word));
@@ -48,7 +48,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test short valuable word.
      */
-    public function testShortValuableWord(): void
+    public function testShortValuableWord() : void
     {
         $word = 'zoo';
         $this->assertEquals(12, score($word));
@@ -57,7 +57,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test medium word.
      */
-    public function testMediumWord(): void
+    public function testMediumWord() : void
     {
         $word = 'street';
         $this->assertEquals(6, score($word));
@@ -66,7 +66,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test medium valuable word.
      */
-    public function testMediumValuableWord(): void
+    public function testMediumValuableWord() : void
     {
         $word = 'quirky';
         $this->assertEquals(22, score($word));
@@ -75,7 +75,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test long mixed-case word.
      */
-    public function testLongMixedCaseWord(): void
+    public function testLongMixedCaseWord() : void
     {
         $word = 'OxyphenButazone';
         $this->assertEquals(41, score($word));
@@ -84,7 +84,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test english-like word.
      */
-    public function testEnglishLikeWord(): void
+    public function testEnglishLikeWord() : void
     {
         $word = 'pinata';
         $this->assertEquals(8, score($word));
@@ -93,7 +93,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /**
      * Test empty word score.
      */
-    public function testEmptyWordScore(): void
+    public function testEmptyWordScore() : void
     {
         $word = '';
         $this->assertEquals(0, score($word));
@@ -102,7 +102,7 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     /*
      * Test entire alphabet word.
      */
-    public function testEntireAlphabetWord(): void
+    public function testEntireAlphabetWord() : void
     {
         $word = 'abcdefghijklmnopqrstuvwxyz';
         $this->assertEquals(87, score($word));

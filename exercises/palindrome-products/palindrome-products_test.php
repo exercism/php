@@ -4,7 +4,7 @@ require "palindrome-products.php";
 
 class PalindromeProductsTest extends PHPUnit\Framework\TestCase
 {
-    public function testFindsTheSmallestPalindromeFromSingleDigitFactors(): void
+    public function testFindsTheSmallestPalindromeFromSingleDigitFactors() : void
     {
         [ $value, $factors ] = smallest(1, 9);
         $this->assertEquals($value, 1);
@@ -13,7 +13,7 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function testFindsTheLargestPalindromeFromSingleDigitFactors(): void
+    public function testFindsTheLargestPalindromeFromSingleDigitFactors() : void
     {
         [ $value, $factors ] = largest(1, 9);
         $this->assertEquals($value, 9);
@@ -23,7 +23,7 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function testFindTheSmallestPalindromeFromDoubleDigitFactors(): void
+    public function testFindTheSmallestPalindromeFromDoubleDigitFactors() : void
     {
         [ $value, $factors ] = smallest(10, 99);
         $this->assertEquals($value, 121);
@@ -32,7 +32,7 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function testFindTheLargestPalindromeFromDoubleDigitFactors(): void
+    public function testFindTheLargestPalindromeFromDoubleDigitFactors() : void
     {
         [ $value, $factors ] = largest(10, 99);
         $this->assertEquals($value, 9009);
@@ -41,7 +41,7 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function testFindSmallestPalindromeFromTripleDigitFactors(): void
+    public function testFindSmallestPalindromeFromTripleDigitFactors() : void
     {
         [ $value, $factors ] = smallest(100, 999);
         $this->assertEquals($value, 10201);
@@ -50,7 +50,7 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function testFindTheLargestPalindromeFromTripleDigitFactors(): void
+    public function testFindTheLargestPalindromeFromTripleDigitFactors() : void
     {
         [ $value, $factors ] = largest(100, 999);
         $this->assertEquals($value, 906609);
@@ -59,7 +59,7 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function testFindSmallestPalindromeFromFourDigitFactors(): void
+    public function testFindSmallestPalindromeFromFourDigitFactors() : void
     {
         [ $value, $factors ] = smallest(1000, 9999);
         $this->assertEquals($value, 1002001);
@@ -68,7 +68,7 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function testFindTheLargestPalindromeFromFourDigitFactors(): void
+    public function testFindTheLargestPalindromeFromFourDigitFactors() : void
     {
         [ $value, $factors ] = largest(1000, 9999);
         $this->assertEquals($value, 99000099);
@@ -77,25 +77,25 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function testEmptyResultForSmallestIfNoPalindromeInTheRange(): void
+    public function testEmptyResultForSmallestIfNoPalindromeInTheRange() : void
     {
         $this->expectException(Exception::class);
         smallest(1002, 1003);
     }
 
-    public function testEmptyResultForLargestIfNoPalindromeInTheRange(): void
+    public function testEmptyResultForLargestIfNoPalindromeInTheRange() : void
     {
         $this->expectException(Exception::class);
         largest(15, 15);
     }
 
-    public function testErrorResultForSmallestIfMinIsMoreThanMax(): void
+    public function testErrorResultForSmallestIfMinIsMoreThanMax() : void
     {
         $this->expectException(Exception::class);
         smallest(10000, 1);
     }
 
-    public function testErrorResultForLargestIfMinIsMoreThanMax(): void
+    public function testErrorResultForLargestIfMinIsMoreThanMax() : void
     {
         $this->expectException(Exception::class);
         largest(2, 1);

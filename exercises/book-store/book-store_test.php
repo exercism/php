@@ -16,7 +16,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * A basket containing only a single book.
      * Target grouping: [[1]]
      */
-    public function testSingleBook(): void
+    public function testSingleBook() : void
     {
         $basket = [1];
         $this->assertEquals(8.0, total($basket));
@@ -26,7 +26,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * A basket containing only two of the same book.
      * Target grouping: [[2], [2]]
      */
-    public function testTwoSame(): void
+    public function testTwoSame() : void
     {
         $basket = [2, 2];
         $this->assertEquals(16.0, total($basket));
@@ -36,7 +36,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * No charge to carry around an empty basket.
      * Target grouping: []
      */
-    public function testEmpty(): void
+    public function testEmpty() : void
     {
         $basket = [];
         $this->assertEquals(0.0, total($basket));
@@ -46,7 +46,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * A basket containing only two different books.
      * Target grouping: [[1, 2]]
      */
-    public function testTwoDifferent(): void
+    public function testTwoDifferent() : void
     {
         $basket = [1, 2];
         $this->assertEquals(15.2, total($basket));
@@ -56,7 +56,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * A basket of three different books.
      * Target grouping: [[1, 2, 3]]
      */
-    public function testThreeDifferent(): void
+    public function testThreeDifferent() : void
     {
         $basket = [1, 2, 3];
         $this->assertEquals(21.60, total($basket));
@@ -66,7 +66,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * A basket of four different books.
      * Target grouping: [[1, 2, 3, 4]]
      */
-    public function testFourDifferent(): void
+    public function testFourDifferent() : void
     {
         $basket = [1, 2, 3, 4];
         $this->assertEquals(25.60, total($basket));
@@ -76,7 +76,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * A basket of five different books.
      * Target grouping: [[1, 2, 3, 4, 5]]
      */
-    public function testFiveDifferent(): void
+    public function testFiveDifferent() : void
     {
         $basket = [1, 2, 3, 4, 5];
         $this->assertEquals(30.00, total($basket));
@@ -91,7 +91,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * discount.
      * Target grouping: [[1, 2, 3, 4], [1, 2, 3, 5]]
      */
-    public function testEight(): void
+    public function testEight() : void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 5];
         $this->assertEquals(51.20, total($basket));
@@ -103,7 +103,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * the last book.
      * Target grouping: [[1, 2, 3, 4, 5], [1, 2, 3, 4]],
      */
-    public function testFourPairsPlusOne(): void
+    public function testFourPairsPlusOne() : void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5];
         $this->assertEquals(55.60, total($basket));
@@ -114,7 +114,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * copies of each book in the series.
      * Target grouping: [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
      */
-    public function testFivePairs(): void
+    public function testFivePairs() : void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
         $this->assertEquals(60.00, total($basket));
@@ -126,7 +126,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * of the remaining four books in the series.
      * Target grouping: [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1]]
      */
-    public function testFivePairsPlusOne(): void
+    public function testFivePairsPlusOne() : void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1];
         $this->assertEquals(68.00, total($basket));
@@ -138,7 +138,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
      * each of the remaining three books in the series.
      * Target grouping: [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2]]
      */
-    public function testTwelve(): void
+    public function testTwelve() : void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2];
         $this->assertEquals(75.20, total($basket));

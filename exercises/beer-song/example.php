@@ -2,7 +2,7 @@
 
 class BeerSong
 {
-    public function verse($number): ?string
+    public function verse($number) : ?string
     {
         $decrement = $number - 1;
         switch ($number) {
@@ -21,7 +21,7 @@ class BeerSong
         }
     }
 
-    public function verses($start, $finish): string
+    public function verses($start, $finish) : string
     {
         $output = '';
         foreach (range($start, $finish) as $number) {
@@ -34,7 +34,7 @@ class BeerSong
         return $output;
     }
 
-    public function lyrics(): string
+    public function lyrics() : string
     {
         return $this->verses(99, 0);
     }

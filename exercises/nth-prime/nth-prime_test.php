@@ -4,23 +4,23 @@ require 'nth-prime.php';
 
 class NthPrimeTest extends PHPUnit\Framework\TestCase
 {
-    public function testFirstPrime(): void
+    public function testFirstPrime() : void
     {
         $this->assertEquals(2, prime(1));
     }
-    public function testSecondPrime(): void
+    public function testSecondPrime() : void
     {
         $this->assertEquals(3, prime(2));
     }
-    public function testSixthPrime(): void
+    public function testSixthPrime() : void
     {
         $this->assertEquals(13, prime(6));
     }
-    public function testBigPrime(): void
+    public function testBigPrime() : void
     {
         $this->assertEquals(104743, prime(10001));
     }
-    public function testZeroPrime(): void
+    public function testZeroPrime() : void
     {
         $this->assertEquals(false, prime(0));
     }

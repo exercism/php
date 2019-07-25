@@ -27,7 +27,7 @@ class PhoneNumber
         return substr($this->number, 6, 4);
     }
 
-    public function prettyPrint(): string
+    public function prettyPrint() : string
     {
         return '(' . $this->areaCode() . ') ' . $this->prefix() . '-' . $this->lineNumber();
     }

@@ -4,37 +4,37 @@ require "anagram.php";
 
 class AnagramTest extends PHPUnit\Framework\TestCase
 {
-    public function testNoMatches(): void
+    public function testNoMatches() : void
     {
         $this->assertEquals([], detectAnagrams('diaper', ['hello', 'world', 'zombies', 'pants']));
     }
 
-    public function testDetectsSimpleAnagram(): void
+    public function testDetectsSimpleAnagram() : void
     {
         $this->assertEquals(['tan'], detectAnagrams('ant', ['tan', 'stand', 'at']));
     }
 
-    public function testDoesNotDetectFalsePositives(): void
+    public function testDoesNotDetectFalsePositives() : void
     {
         $this->assertEquals([], detectAnagrams('galea', ['eagle']));
     }
 
-    public function testDetectsMultipleAnagrams(): void
+    public function testDetectsMultipleAnagrams() : void
     {
         $this->assertEquals(['stream', 'maters'], detectAnagrams('master', ['stream', 'pigeon', 'maters']));
     }
 
-    public function testDoesNotDetectAnagramSubsets(): void
+    public function testDoesNotDetectAnagramSubsets() : void
     {
         $this->assertEquals([], detectAnagrams('good', ['dog', 'goody']));
     }
 
-    public function testDetectsAnagram(): void
+    public function testDetectsAnagram() : void
     {
         $this->assertEquals(['inlets'], detectAnagrams('listen', ['enlists', 'google', 'inlets', 'banana']));
     }
 
-    public function testDetectsMultipleAnagrams2(): void
+    public function testDetectsMultipleAnagrams2() : void
     {
         $this->assertEquals(
             ['gallery', 'regally', 'largely'],
@@ -42,67 +42,67 @@ class AnagramTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testDoesNotDetectIdenticalWords(): void
+    public function testDoesNotDetectIdenticalWords() : void
     {
         $this->assertEquals(['cron'], detectAnagrams('corn', ['corn', 'dark', 'Corn', 'rank', 'CORN', 'cron', 'park']));
     }
 
-    public function testDoesNotDetectNonAnagramsWithIdenticalChecksum(): void
+    public function testDoesNotDetectNonAnagramsWithIdenticalChecksum() : void
     {
         $this->assertEquals([], detectAnagrams('mass', ['last']));
     }
 
-    public function testDetectsAnagramsCaseInsensitively(): void
+    public function testDetectsAnagramsCaseInsensitively() : void
     {
         $this->assertEquals(['Carthorse'], detectAnagrams('Orchestra', ['cashregister', 'Carthorse', 'radishes']));
     }
 
-    public function testDetectsAnagramsUsingCaseInsensitiveSubject(): void
+    public function testDetectsAnagramsUsingCaseInsensitiveSubject() : void
     {
         $this->assertEquals(['carthorse'], detectAnagrams('Orchestra', ['cashregister', 'carthorse', 'radishes']));
     }
 
-    public function testDetectsAnagramsUsingCaseInsensitvePossibleMatches(): void
+    public function testDetectsAnagramsUsingCaseInsensitvePossibleMatches() : void
     {
         $this->assertEquals(['Carthorse'], detectAnagrams('orchestra', ['cashregister', 'Carthorse', 'radishes']));
     }
 
-    public function testDoesNotDetectAWordAsItsOwnAnagram(): void
+    public function testDoesNotDetectAWordAsItsOwnAnagram() : void
     {
         $this->assertEquals([], detectAnagrams('banana', ['Banana']));
     }
 
-    public function testDoesNotDetectAAnagramIfTheOriginalWordIsRepeated(): void
+    public function testDoesNotDetectAAnagramIfTheOriginalWordIsRepeated() : void
     {
         $this->assertEquals([], detectAnagrams('go', ['go Go GO']));
     }
 
-    public function testAnagramsMustUseAllLettersExactlyOnce(): void
+    public function testAnagramsMustUseAllLettersExactlyOnce() : void
     {
         $this->assertEquals([], detectAnagrams('tapper', ['patter']));
     }
 
-    public function testEliminatesAnagramsWithTheSameChecksum(): void
+    public function testEliminatesAnagramsWithTheSameChecksum() : void
     {
         $this->assertEquals([], detectAnagrams('mass', ['last']));
     }
 
-    public function testDetectsUnicodeAnagrams(): void
+    public function testDetectsUnicodeAnagrams() : void
     {
         $this->assertEquals(['ΒΓΑ', 'γβα'], detectAnagrams('ΑΒΓ', ['ΒΓΑ', 'ΒΓΔ', 'γβα']));
     }
 
-    public function testEliminatesMisleadingUnicodeAnagrams(): void
+    public function testEliminatesMisleadingUnicodeAnagrams() : void
     {
         $this->assertEquals([], detectAnagrams('ΑΒΓ', ['ABΓ']));
     }
 
-    public function testCapitalWordIsNotOwnAnagram(): void
+    public function testCapitalWordIsNotOwnAnagram() : void
     {
         $this->assertEquals([], detectAnagrams('BANANA', ['Banana']));
     }
 
-    public function testAnagramsMustUseAllLettersExactlyOnce2(): void
+    public function testAnagramsMustUseAllLettersExactlyOnce2() : void
     {
         $this->assertEquals([], detectAnagrams('patter', ['tapper']));
     }

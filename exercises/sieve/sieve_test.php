@@ -2,23 +2,23 @@
 require "sieve.php";
 class SieveTest extends PHPUnit\Framework\TestCase
 {
-    public function testNoPrimesUnderTwo(): void
+    public function testNoPrimesUnderTwo() : void
     {
         $this->assertEquals([], sieve(1));
     }
-    public function testFindFirstPrime(): void
+    public function testFindFirstPrime() : void
     {
         $this->assertEquals([2], sieve(2));
     }
-    public function testFindPrimesUpTo10(): void
+    public function testFindPrimesUpTo10() : void
     {
         $this->assertEquals([2, 3, 5, 7], sieve(10));
     }
-    public function testLimitIsPrime(): void
+    public function testLimitIsPrime() : void
     {
         $this->assertEquals([2, 3, 5, 7, 11, 13], sieve(13));
     }
-    public function testFindPrimesUpTo1000(): void
+    public function testFindPrimesUpTo1000() : void
     {
         $this->assertEquals(
             [

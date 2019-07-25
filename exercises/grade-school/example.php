@@ -4,7 +4,7 @@ class School
 {
     private $students = [];
 
-    public function add($name, $grade): void
+    public function add($name, $grade) : void
     {
         $this->students[$grade][] = $name;
     }
@@ -14,7 +14,7 @@ class School
         return (array_key_exists($grade, $this->students) ? $this->students[$grade] : []);
     }
 
-    public function studentsByGradeAlphabetical(): array
+    public function studentsByGradeAlphabetical() : array
     {
         ksort($this->students);
 

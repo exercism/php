@@ -9,7 +9,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     /**
      * A robot is created with a position and a direction
      */
-    public function testCreate(): void
+    public function testCreate() : void
     {
         // Robots are created with a position and direction
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
@@ -26,7 +26,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     /**
      * Rotate the robot's direction 90 degrees clockwise
      */
-    public function testTurnRight(): void
+    public function testTurnRight() : void
     {
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
 
@@ -54,7 +54,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     /**
      * Rotate the robot's direction 90 degrees counterclockwise
      */
-    public function testTurnLeft(): void
+    public function testTurnLeft() : void
     {
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
 
@@ -83,7 +83,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     /**
      * Move the robot forward 1 space in the direction it is pointing
      */
-    public function testAdvance(): void
+    public function testAdvance() : void
     {
         // Increases the y coordinate by one when facing north
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
@@ -116,7 +116,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
      * the robot can follow a series of instructions
      * and end up with the correct position and direction
      */
-    public function testInstructions(): void
+    public function testInstructions() : void
     {
         // Instructions to move west and north
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
@@ -137,7 +137,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(Robot::DIRECTION_NORTH, $robot->direction);
     }
 
-    public function testMalformedInstructions(): void
+    public function testMalformedInstructions() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -149,7 +149,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     /**
      * Optional instructions chaining
      */
-    public function testInstructionsChaining(): void
+    public function testInstructionsChaining() : void
     {
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
         $robot->turnLeft()

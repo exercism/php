@@ -16,63 +16,63 @@ class GrainsTest extends PHPUnit\Framework\TestCase
      * Try to make the solution for virtually any board size.
      */
 
-    public function testInput1(): void
+    public function testInput1() : void
     {
         $this->assertSame('1', square(1));
     }
 
-    public function testInput2(): void
+    public function testInput2() : void
     {
         $this->assertSame('2', square(2));
     }
 
-    public function testInput3(): void
+    public function testInput3() : void
     {
         $this->assertSame('4', square(3));
     }
 
-    public function testInput4(): void
+    public function testInput4() : void
     {
         $this->assertSame('8', square(4));
     }
 
-    public function testInput16(): void
+    public function testInput16() : void
     {
         $this->assertSame('32768', square(16));
     }
 
-    public function testInput32(): void
+    public function testInput32() : void
     {
         $this->assertSame('2147483648', square(32));
     }
 
-    public function testInput64(): void
+    public function testInput64() : void
     {
         $this->assertSame('9223372036854775808', square(64));
     }
 
-    public function testRejectsZero(): void
+    public function testRejectsZero() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
         square(0);
     }
 
-    public function testRejectsNegative(): void
+    public function testRejectsNegative() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
         square(-1);
     }
 
-    public function testRejectsGreaterThan64(): void
+    public function testRejectsGreaterThan64() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
         square(65);
     }
 
-    public function testTotal(): void
+    public function testTotal() : void
     {
         $this->assertSame('18446744073709551615', total());
     }

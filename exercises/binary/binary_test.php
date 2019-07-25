@@ -4,17 +4,17 @@ require_once 'binary.php';
 
 class BinaryTest extends PHPUnit\Framework\TestCase
 {
-    public function testItParsesBinary0ToDecimal0(): void
+    public function testItParsesBinary0ToDecimal0() : void
     {
         $this->assertEquals(0, parse_binary('0'));
     }
 
-    public function testItParsesBinary1ToDecimal1(): void
+    public function testItParsesBinary1ToDecimal1() : void
     {
         $this->assertEquals(1, parse_binary('1'));
     }
 
-    public function testItParsesDigits(): void
+    public function testItParsesDigits() : void
     {
         $this->assertEquals(2, parse_binary('10'));
         $this->assertEquals(3, parse_binary('11'));
@@ -22,7 +22,7 @@ class BinaryTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(9, parse_binary('1001'));
     }
 
-    public function testItParsesHundreds(): void
+    public function testItParsesHundreds() : void
     {
         $this->assertEquals(128, parse_binary('10000000'));
         $this->assertEquals(315, parse_binary('100111011'));
@@ -30,7 +30,7 @@ class BinaryTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(999, parse_binary('1111100111'));
     }
 
-    public function testItParsesMaxInt(): void
+    public function testItParsesMaxInt() : void
     {
         $this->assertEquals(
             9223372036854775807,
@@ -38,7 +38,7 @@ class BinaryTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testItParsesValuesWithLeadingZeros(): void
+    public function testItParsesValuesWithLeadingZeros() : void
     {
         $this->assertEquals(1, parse_binary('01'));
         $this->assertEquals(2, parse_binary('0010'));
@@ -48,14 +48,14 @@ class BinaryTest extends PHPUnit\Framework\TestCase
     /**
      * @dataProvider invalidValues
      */
-    public function testItOnlyAcceptsStringsContainingZerosAndOnes($value): void
+    public function testItOnlyAcceptsStringsContainingZerosAndOnes($value) : void
     {
         $this->expectException(InvalidArgumentException::class);
 
         parse_binary($value);
     }
 
-    public function invalidValues(): array
+    public function invalidValues() : array
     {
         return [
             ['2'], ['12345'], ['a'], ['0abcdef'],

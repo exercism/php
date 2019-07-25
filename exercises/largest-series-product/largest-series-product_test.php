@@ -9,7 +9,7 @@ class SeriesTest extends PHPUnit\Framework\TestCase
      * We will deal with the series of digits as strings to avoid having them cast to floats.
      */
 
-    public function testCanFindTheLargestProductOf2WithNumbersInOrder(): void
+    public function testCanFindTheLargestProductOf2WithNumbersInOrder() : void
     {
         // The number starts with a 0, qualifying it to be an octal
         // So it needs to be a string so PHP doesn't complain
@@ -17,43 +17,43 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(72, $series->largestProduct(2));
     }
 
-    public function testCanFindTheLargestProductOf2(): void
+    public function testCanFindTheLargestProductOf2() : void
     {
         $series = new Series(576802143);
         $this->assertEquals(48, $series->largestProduct(2));
     }
 
-    public function testFindsTheLargestProductIfSpanEqualsLength(): void
+    public function testFindsTheLargestProductIfSpanEqualsLength() : void
     {
         $series = new Series(29);
         $this->assertEquals(18, $series->largestProduct(2));
     }
 
-    public function testCanFindTheLargestProductOf3WithNumbersInOrder(): void
+    public function testCanFindTheLargestProductOf3WithNumbersInOrder() : void
     {
         $series = new Series(123456789);
         $this->assertEquals(504, $series->largestProduct(3));
     }
 
-    public function testCanFindTheLargestProductOf3(): void
+    public function testCanFindTheLargestProductOf3() : void
     {
         $series = new Series(1027839564);
         $this->assertEquals(270, $series->largestProduct(3));
     }
 
-    public function testCanFindTheLargestProductOf5WithNumbersInOrder(): void
+    public function testCanFindTheLargestProductOf5WithNumbersInOrder() : void
     {
         $series = new Series("0123456789");
         $this->assertEquals(15120, $series->largestProduct(5));
     }
 
-    public function testCanGetTheLargestProductOfABigNumber(): void
+    public function testCanGetTheLargestProductOfABigNumber() : void
     {
         $series = new Series("73167176531330624919225119674426574742355349194934");
         $this->assertEquals(23520, $series->largestProduct(6));
     }
 
-    public function testCanGetTheLargestProductOfABigNumberProjectEuler(): void
+    public function testCanGetTheLargestProductOfABigNumberProjectEuler() : void
     {
         $digits = "731671765313306249192251196744265747423553491949349698352031277450632623957831801698480186947"
             . "8851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096"
@@ -71,19 +71,19 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(23514624000, $series->largestProduct(13));
     }
 
-    public function testReportsZeroIfTheOnlyDigitsAreZero(): void
+    public function testReportsZeroIfTheOnlyDigitsAreZero() : void
     {
         $series = new Series("0000");
         $this->assertEquals(0, $series->largestProduct(2));
     }
 
-    public function testReportsZeroIfAllSpansIncludeZero(): void
+    public function testReportsZeroIfAllSpansIncludeZero() : void
     {
         $series = new Series(99099);
         $this->assertEquals(0, $series->largestProduct(3));
     }
 
-    public function testRejectsSpanLongerThanStringLength(): void
+    public function testRejectsSpanLongerThanStringLength() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -106,7 +106,7 @@ class SeriesTest extends PHPUnit\Framework\TestCase
      * So LSP('123', 4) errors and LSP('', 0) does NOT
      *
      */
-    public function testReports1ForEmptyStringAndEmptyProduct0Span(): void
+    public function testReports1ForEmptyStringAndEmptyProduct0Span() : void
     {
         $series = new Series("");
         $this->assertEquals(1, $series->largestProduct(0));
@@ -116,13 +116,13 @@ class SeriesTest extends PHPUnit\Framework\TestCase
      * As above, there is one 0-character string in '123'.
      * So again no error. It's the empty product, 1.
      */
-    public function testReports1ForNonemptyStringAndEmptyProduct0Span(): void
+    public function testReports1ForNonemptyStringAndEmptyProduct0Span() : void
     {
         $series = new Series("123");
         $this->assertEquals(1, $series->largestProduct(0));
     }
 
-    public function testRejectsEmptyStringAndNonzeroSpan(): void
+    public function testRejectsEmptyStringAndNonzeroSpan() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -130,7 +130,7 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         $series->largestProduct(1);
     }
 
-    public function testRejectsInvalidCharacterInDigits(): void
+    public function testRejectsInvalidCharacterInDigits() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -138,7 +138,7 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         $series->largestProduct(2);
     }
 
-    public function testRejectsNegativeSpan(): void
+    public function testRejectsNegativeSpan() : void
     {
         $this->expectException(InvalidArgumentException::class);
 

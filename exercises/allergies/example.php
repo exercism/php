@@ -9,7 +9,7 @@ class Allergies
         $this->score = $score;
     }
 
-    public function getList(): array
+    public function getList() : array
     {
         $score = $this->score;
         return array_filter(Allergen::allergenList(), function ($allergen) use ($score) {
@@ -17,7 +17,7 @@ class Allergies
         });
     }
 
-    public function isAllergicTo(Allergen $allergen): bool
+    public function isAllergicTo(Allergen $allergen) : bool
     {
         return ($this->score & $allergen->getScore()) == $allergen->getScore();
     }
@@ -47,7 +47,7 @@ class Allergen
         return $this->score;
     }
 
-    public static function allergenList(): array
+    public static function allergenList() : array
     {
         return [
             new Allergen(self::CATS),

@@ -29,7 +29,7 @@ class Clock
      *
      * @return Clock
      */
-    public function add($minutes): \Clock
+    public function add($minutes) : \Clock
     {
         return new Clock(0, $this->minutes + $minutes);
     }
@@ -41,7 +41,7 @@ class Clock
      *
      * @return Clock
      */
-    public function sub($minutes): \Clock
+    public function sub($minutes) : \Clock
     {
         return $this->add(-$minutes);
     }
@@ -62,7 +62,7 @@ class Clock
      *
      * @return int
      */
-    private function calculateTotalMinutes($hour, $minutes): int
+    private function calculateTotalMinutes($hour, $minutes) : int
     {
         return ($hour * 60) + $minutes;
     }
@@ -72,7 +72,7 @@ class Clock
      *
      * @return int
      */
-    private function ignoreWholeDays($minutes): int
+    private function ignoreWholeDays($minutes) : int
     {
         return $minutes % (24 * 60);
     }
@@ -82,7 +82,7 @@ class Clock
      *
      * @return int
      */
-    private function ensurePositiveMinutes($minutes): int
+    private function ensurePositiveMinutes($minutes) : int
     {
         return ($minutes < 0) ? $minutes + 1440 : $minutes;
     }
