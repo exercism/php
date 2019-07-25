@@ -2,7 +2,7 @@
 
 class BeerSong
 {
-    public function verse($number) : ?string
+    public function verse($number) : string
     {
         $decrement = $number - 1;
         switch ($number) {
