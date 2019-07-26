@@ -1,9 +1,12 @@
 <?php
 
-require_once 'binary.php';
-
 class BinaryTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'binary.php';
+    }
+
     public function testItParsesBinary0ToDecimal0()
     {
         $this->assertEquals(0, parse_binary('0'));

@@ -1,9 +1,12 @@
 <?php
 
-require "rna-transcription.php";
-
 class ComplementTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'rna-transcription.php';
+    }
+
     public function testTranscribesGuanineToCytosine()
     {
         $this->assertSame('G', toRna('C'));

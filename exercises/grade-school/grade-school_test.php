@@ -1,10 +1,14 @@
 <?php
 
-require "grade-school.php";
 use PHPUnit\Framework\TestCase;
 
 class GradeSchoolTest extends TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'grade-school.php';
+    }
+
     protected $school;
 
     protected function setUp(): void

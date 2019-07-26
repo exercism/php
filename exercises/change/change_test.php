@@ -1,9 +1,12 @@
 <?php
 
-require "change.php";
-
 class ChangeTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'change.php';
+    }
+
     public function testSingleCoinChange()
     {
         $this->assertEquals([25], findFewestCoins([1, 5, 10, 25, 100], 25));

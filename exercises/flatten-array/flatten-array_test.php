@@ -1,9 +1,12 @@
 <?php
 
-require 'flatten-array.php';
-
 class FlattenArrayTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'flatten-array.php';
+    }
+
     public function testWithOutNesting()
     {
         $input = [0, 1, 2];

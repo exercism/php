@@ -1,9 +1,12 @@
 <?php
 
-require_once "crypto-square.php";
-
 class CryptoSquareTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'crypto-square.php';
+    }
+
     public function testEmptyPlaintextResultsInAnEmptyCiphertext()
     {
         $this->assertEquals("", crypto_square(""));

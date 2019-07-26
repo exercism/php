@@ -1,9 +1,12 @@
 <?php
 
-require_once "robot-name.php";
-
 class RobotTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'robot-name.php';
+    }
+
     /** @var Robot $robot */
     protected $robot = null;
 

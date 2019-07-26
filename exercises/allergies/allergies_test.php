@@ -1,9 +1,12 @@
 <?php
 
-require "allergies.php";
-
 class AllergiesTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'allergies.php';
+    }
+
 
     /**
      * @dataProvider provideListOfAllergen

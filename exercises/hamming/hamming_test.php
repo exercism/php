@@ -1,9 +1,12 @@
 <?php
 
-require "hamming.php";
-
 class HammingComparatorTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'hamming.php';
+    }
+
     public function testNoDifferenceBetweenIdenticalStrands()
     {
         $this->assertEquals(0, distance('A', 'A'));

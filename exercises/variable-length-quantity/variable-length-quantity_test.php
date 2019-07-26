@@ -1,9 +1,12 @@
 <?php
 
-require_once 'variable-length-quantity.php';
-
 class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'variable-length-quantity.php';
+    }
+
     public function testItEncodesSingleBytes()
     {
         $this->assertEquals([0x00], vlq_encode([0x00]));

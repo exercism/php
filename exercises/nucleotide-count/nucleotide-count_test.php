@@ -1,9 +1,12 @@
 <?php
 
-require "nucleotide-count.php";
-
 class NucleotideCountTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'nucleotide-count.php';
+    }
+
     public function testEmptyDNASequence()
     {
         $this->assertSame([

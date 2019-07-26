@@ -1,9 +1,12 @@
 <?php
 
-require "trinary.php";
-
 class TrinaryTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'trinary.php';
+    }
+
     public function test1IsDecimal1()
     {
         $this->assertEquals(1, toDecimal('1'));

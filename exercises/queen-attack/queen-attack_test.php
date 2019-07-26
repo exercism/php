@@ -1,9 +1,12 @@
 <?php
 
-require "queen-attack.php";
-
 class QueenAttackTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'queen-attack.php';
+    }
+
     /**
      * Test a queen is placed in a valid position.
      */

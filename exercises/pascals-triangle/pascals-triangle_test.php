@@ -1,9 +1,12 @@
 <?php
 
-require "pascals-triangle.php";
-
 class PascalsTriangleTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'pascals-triangle.php';
+    }
+
     public function testZeroRows()
     {
         $this->assertSame([], pascalsTriangleRows(0));

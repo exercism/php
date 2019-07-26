@@ -1,9 +1,12 @@
 <?php
 
-require "raindrops.php";
-
 class RaindropsTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'raindrops.php';
+    }
+
     public function test1()
     {
         $this->assertSame("1", raindrops(1));

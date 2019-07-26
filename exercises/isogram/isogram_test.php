@@ -1,9 +1,12 @@
 <?php
 
-require "isogram.php";
-
 class IsogramTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'isogram.php';
+    }
+
     public function testIsogram()
     {
         $this->assertTrue(isIsogram('duplicates'));

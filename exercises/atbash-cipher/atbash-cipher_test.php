@@ -1,9 +1,12 @@
 <?php
 
-require "atbash-cipher.php";
-
 class AtbashTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'atbash-cipher.php';
+    }
+
     public function testEncodeNo()
     {
         $this->assertEquals('ml', encode('no'));

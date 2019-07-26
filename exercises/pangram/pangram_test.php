@@ -1,9 +1,12 @@
 <?php
 
-require "pangram.php";
-
 class PangramTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'pangram.php';
+    }
+
     public function testSentenceEmpty()
     {
         $this->assertFalse(isPangram(''));
@@ -48,7 +51,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
     {
         $this->assertTrue(isPangram('Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.'));
     }
-  
+
     public function testMissingLetterReplacedWithUpperCaseCharacter()
     {
         $this->assertFalse(isPangram("Tthe quick brown fo jumps over the lazy dog"));

@@ -1,9 +1,12 @@
 <?php
 
-require "anagram.php";
-
 class AnagramTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'anagram.php';
+    }
+
     public function testNoMatches()
     {
         $this->assertEquals([], detectAnagrams('diaper', ['hello', 'world', 'zombies', 'pants']));

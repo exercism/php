@@ -1,9 +1,12 @@
 <?php
 
-require "luhn.php";
-
 class LuhnValidatorTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'luhn.php';
+    }
+
     public function testSingleDigitInvalid()
     {
         $this->assertFalse(isValid("1"));

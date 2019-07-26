@@ -1,9 +1,12 @@
 <?php
 
-require "meetup.php";
-
 class MeetupTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'meetup.php';
+    }
+
     public function testMonteenthOfMay2013()
     {
         $this->assertEquals(meetup_day(2013, 5, "teenth", "Monday"), new DateTimeImmutable("2013/5/13"));

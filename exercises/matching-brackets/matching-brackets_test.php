@@ -1,9 +1,12 @@
 <?php
 
-require_once "matching-brackets.php";
-
 class BracketTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'matching-brackets.php';
+    }
+
     public function testPairedSquareBrackets()
     {
         $this->assertTrue(brackets_match('[]'));

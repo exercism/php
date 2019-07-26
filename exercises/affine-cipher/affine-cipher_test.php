@@ -1,7 +1,5 @@
 <?php
 
-require_once 'affine-cipher.php';
-
 /**
  * The test are divided into two groups:
  *
@@ -10,6 +8,11 @@ require_once 'affine-cipher.php';
  */
 class AffineCipherTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'affine-cipher.php';
+    }
+
     /**
      * Tests for encoding English to ciphertext with keys.
      */

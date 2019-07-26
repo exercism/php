@@ -1,9 +1,12 @@
 <?php
 
-require_once 'accumulate.php';
-
 class AccumulateTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'accumulate.php';
+    }
+
     public function testAccumulateEmpty()
     {
         $accumulator = function ($value) {

@@ -1,9 +1,12 @@
 <?php
 
-require "beer-song.php";
-
 class BeerSongTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'beer-song.php';
+    }
+
     public function testFirstVerse()
     {
         $expected = "99 bottles of beer on the wall, 99 bottles of beer.\n" .

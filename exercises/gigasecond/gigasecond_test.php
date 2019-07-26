@@ -1,9 +1,12 @@
 <?php
 
-require "gigasecond.php";
-
 class GigasecondTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'gigasecond.php';
+    }
+
     public function dateSetup($date)
     {
         $UTC = new DateTimeZone("UTC");

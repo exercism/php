@@ -1,9 +1,12 @@
 <?php
 
-require "word-count.php";
-
 class WordCountTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'word-count.php';
+    }
+
     public function testCountOneWord()
     {
         $this->assertEquals(['word' => 1], wordCount('word'));

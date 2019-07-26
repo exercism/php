@@ -9,7 +9,7 @@ telephone numbers. Knowing someone's name allows one to quickly find
 their telephone number and address.
 
 If the list to be searched contains more than a few items (a dozen, say)
-a binary search will require far fewer comparisons than a linear search,
+a binary search will require_once far fewer comparisons than a linear search,
 but it imposes the requirement that the list be sorted.
 
 In computer science, a binary search or half-interval search algorithm

@@ -1,9 +1,12 @@
 <?php
 
-require "two-fer.php";
-
 class TwoFerTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'two-fer.php';
+    }
+
     public function testNoNameGiven()
     {
         $this->assertEquals('One for you, one for me.', twoFer());

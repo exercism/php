@@ -1,8 +1,12 @@
 <?php
-require_once "pig-latin.php";
 
 class PigLatinTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'pig-latin.php';
+    }
+
     public function testWordBeginningWithP()
     {
         $this->assertEquals("igpay", translate("pig"));

@@ -1,9 +1,12 @@
 <?php
 
-require_once "difference-of-squares.php";
-
 class SquaresTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'difference-of-squares.php';
+    }
+
     public function testSquareOfSumTo5()
     {
         $this->assertEquals(225, squareOfSum(5));

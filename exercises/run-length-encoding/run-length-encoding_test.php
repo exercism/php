@@ -1,12 +1,12 @@
 <?php
 
-require "run-length-encoding.php";
-
-/**
- * Class RunLengthEncodingTest
- */
 class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require 'run-length-encoding.php';
+    }
+
     public function testEncodeEmptyString()
     {
         $this->assertEquals('', encode(''));
