@@ -4,12 +4,10 @@ include_once 'robot-simulator.php';
 
 class RobotSimulatorTest extends PHPUnit\Framework\TestCase
 {
-
-
     /**
      * A robot is created with a position and a direction
      */
-    public function testCreate()
+    public function testCreate() : void
     {
         // Robots are created with a position and direction
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
@@ -22,11 +20,10 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(Robot::DIRECTION_SOUTH, $robot->direction);
     }
 
-
     /**
      * Rotate the robot's direction 90 degrees clockwise
      */
-    public function testTurnRight()
+    public function testTurnRight() : void
     {
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
 
@@ -54,7 +51,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     /**
      * Rotate the robot's direction 90 degrees counterclockwise
      */
-    public function testTurnLeft()
+    public function testTurnLeft() : void
     {
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
 
@@ -79,11 +76,10 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(Robot::DIRECTION_NORTH, $robot->direction);
     }
 
-
     /**
      * Move the robot forward 1 space in the direction it is pointing
      */
-    public function testAdvance()
+    public function testAdvance() : void
     {
         // Increases the y coordinate by one when facing north
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
@@ -110,13 +106,12 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(Robot::DIRECTION_WEST, $robot->direction);
     }
 
-
     /**
      * Where R = Turn Right, L = Turn Left and A = Advance,
      * the robot can follow a series of instructions
      * and end up with the correct position and direction
      */
-    public function testInstructions()
+    public function testInstructions() : void
     {
         // Instructions to move west and north
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
@@ -137,7 +132,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(Robot::DIRECTION_NORTH, $robot->direction);
     }
 
-    public function testMalformedInstructions()
+    public function testMalformedInstructions() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -145,11 +140,10 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         $robot->instructions('LARX');
     }
 
-
     /**
      * Optional instructions chaining
      */
-    public function testInstructionsChaining()
+    public function testInstructionsChaining() : void
     {
         $robot = new Robot([0, 0], Robot::DIRECTION_NORTH);
         $robot->turnLeft()

@@ -7,14 +7,14 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         require 'transpose.php';
     }
 
-    public function testEmptyString()
+    public function testEmptyString() : void
     {
         $input = [""];
         $expected = [""];
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testTwoCharactersInARow()
+    public function testTwoCharactersInARow() : void
     {
         $input = [
             "A1"
@@ -26,7 +26,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testTwoCharactersInAColumn()
+    public function testTwoCharactersInAColumn() : void
     {
         $input = [
             "A",
@@ -38,7 +38,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testSimple()
+    public function testSimple() : void
     {
         $input = [
             "ABC",
@@ -52,7 +52,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testSingleLine()
+    public function testSingleLine() : void
     {
         $input = [
             "Single line."
@@ -74,7 +74,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testFirstLineLongerThanSecondLine()
+    public function testFirstLineLongerThanSecondLine() : void
     {
         $input = [
             "The fourth line.",
@@ -101,7 +101,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testSecondLineLongerThanFirstLine()
+    public function testSecondLineLongerThanFirstLine() : void
     {
         $input = [
             "The first line.",
@@ -128,7 +128,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testSquare()
+    public function testSquare() : void
     {
         $input = [
             "HEART",
@@ -147,7 +147,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testRectangle()
+    public function testRectangle() : void
     {
         $input = [
             "FRACTURE",
@@ -168,7 +168,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testTriangle()
+    public function testTriangle() : void
     {
         $input = [
             "T",
@@ -189,7 +189,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
-    public function testManyLines()
+    public function testManyLines() : void
     {
         $input = [
             "Chor. Two households, both alike in dignity,",

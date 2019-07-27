@@ -7,7 +7,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         require 'triangle.php';
     }
 
-    public function testEquilateralTrianglesHaveEqualSides()
+    public function testEquilateralTrianglesHaveEqualSides() : void
     {
         $this->assertEquals(
             'equilateral',
@@ -15,7 +15,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testLargerEquilateralTrianglesHaveEqualSides()
+    public function testLargerEquilateralTrianglesHaveEqualSides() : void
     {
         $this->assertEquals(
             'equilateral',
@@ -23,7 +23,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testIsoscelesTriangleWhenLastTwoSidesAreEqual()
+    public function testIsoscelesTriangleWhenLastTwoSidesAreEqual() : void
     {
         $this->assertEquals(
             'isosceles',
@@ -31,7 +31,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testIsoscelesTriangleWhenFirstAndLastSidesAreEqual()
+    public function testIsoscelesTriangleWhenFirstAndLastSidesAreEqual() : void
     {
         $this->assertEquals(
             'isosceles',
@@ -39,7 +39,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testIsoscelesTriangleWhenFirstTwoSidesAreEqual()
+    public function testIsoscelesTriangleWhenFirstTwoSidesAreEqual() : void
     {
         $this->assertEquals(
             'isosceles',
@@ -47,7 +47,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testIsoscelesTrianglesWithUnequalSideLargerThanEqualSides()
+    public function testIsoscelesTrianglesWithUnequalSideLargerThanEqualSides() : void
     {
         $this->assertEquals(
             'isosceles',
@@ -55,7 +55,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testScaleneTrianglesHaveNoEqualSides()
+    public function testScaleneTrianglesHaveNoEqualSides() : void
     {
         $this->assertEquals(
             'scalene',
@@ -63,7 +63,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function test2aEqualsBPlusCLooksLikeEquilateralButIsNot()
+    public function test2aEqualsBPlusCLooksLikeEquilateralButIsNot() : void
     {
         $this->assertEquals(
             'scalene',
@@ -71,7 +71,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testScaleneTrianglesHaveNoEqualSidesAtLargerScale()
+    public function testScaleneTrianglesHaveNoEqualSidesAtLargerScale() : void
     {
         $this->assertEquals(
             'scalene',
@@ -79,7 +79,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testScaleneTrianglesHaveNoEqualSidesInDescendingOrder()
+    public function testScaleneTrianglesHaveNoEqualSidesInDescendingOrder() : void
     {
         $this->assertEquals(
             'scalene',
@@ -87,7 +87,7 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testVerySmallTrianglesAreLegal()
+    public function testVerySmallTrianglesAreLegal() : void
     {
         $this->assertEquals(
             'scalene',
@@ -95,28 +95,28 @@ class TriangleTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testTrianglesWithNoSizeAreIllegal()
+    public function testTrianglesWithNoSizeAreIllegal() : void
     {
         $this->expectException(Exception::class);
 
         (new Triangle(0, 0, 0))->kind();
     }
 
-    public function testTrianglesViolatingTriangleInequalityAreIllegal()
+    public function testTrianglesViolatingTriangleInequalityAreIllegal() : void
     {
         $this->expectException(Exception::class);
 
         (new Triangle(1, 1, 3))->kind();
     }
 
-    public function testTrianglesViolatingTriangleInequalityAreIllegal2()
+    public function testTrianglesViolatingTriangleInequalityAreIllegal2() : void
     {
         $this->expectException(Exception::class);
 
         (new Triangle(7, 3, 2))->kind();
     }
 
-    public function testTrianglesViolatingTriangleInequalityAreIllegal3()
+    public function testTrianglesViolatingTriangleInequalityAreIllegal3() : void
     {
         $this->expectException(Exception::class);
 

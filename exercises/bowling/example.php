@@ -8,7 +8,7 @@ class Game
 {
     private $rolls = [];
 
-    public function roll($pins)
+    public function roll($pins) : void
     {
         if ($pins < 0 || $pins > 10) {
             throw new Exception('Pins must be between 0 and 10');
@@ -38,7 +38,7 @@ class Game
         return $score;
     }
 
-    private function isStrike($frameIndex)
+    private function isStrike($frameIndex) : bool
     {
         return $this->rolls[$frameIndex] === 10;
     }
@@ -57,7 +57,7 @@ class Game
         return $sum;
     }
 
-    private function isSpare($frameIndex)
+    private function isSpare($frameIndex) : bool
     {
         return $this->rolls[$frameIndex] + $this->rolls[$frameIndex + 1] === 10;
     }
@@ -79,14 +79,14 @@ class Game
         return $sum;
     }
 
-    private function guardAgainstIncompleteGame($frameIndex)
+    private function guardAgainstIncompleteGame($frameIndex) : void
     {
         if (!isset($this->rolls[$frameIndex])) {
             throw new Exception('Incomplete game');
         }
     }
 
-    private function guardAgainstTooManyFrames($frameIndex)
+    private function guardAgainstTooManyFrames($frameIndex) : void
     {
         $rollsCount = count($this->rolls);
         if ($this->isStrike($frameIndex - 1)) {

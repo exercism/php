@@ -7,52 +7,52 @@ class IsogramTest extends PHPUnit\Framework\TestCase
         require 'isogram.php';
     }
 
-    public function testIsogram()
+    public function testIsogram() : void
     {
         $this->assertTrue(isIsogram('duplicates'));
     }
 
-    public function testNotIsogram()
+    public function testNotIsogram() : void
     {
         $this->assertFalse(isIsogram('eleven'));
     }
 
-    public function testMediumLongIsogram()
+    public function testMediumLongIsogram() : void
     {
         $this->assertTrue(isIsogram('subdermatoglyphic'));
     }
 
-    public function testCaseInsensitive()
+    public function testCaseInsensitive() : void
     {
         $this->assertFalse(isIsogram('Alphabet'));
     }
 
-    public function testIsogramWithHyphen()
+    public function testIsogramWithHyphen() : void
     {
         $this->assertTrue(isIsogram('thumbscrew-japingly'));
     }
 
-    public function testIgnoresMultipleHyphens()
+    public function testIgnoresMultipleHyphens() : void
     {
         $this->assertTrue(isIsogram('Hjelmqvist-Gryb-Zock-Pfund-Wax'));
     }
 
-    public function testWorksWithGermanLetters()
+    public function testWorksWithGermanLetters() : void
     {
         $this->assertTrue(isIsogram('Heizölrückstoßabdämpfung'));
     }
 
-    public function testIgnoresSpaces()
+    public function testIgnoresSpaces() : void
     {
         $this->assertFalse(isIsogram('the quick brown fox'));
     }
 
-    public function testIgnoresSpaces2()
+    public function testIgnoresSpaces2() : void
     {
         $this->assertTrue(isIsogram('Emily Jung Schwartzkopf'));
     }
 
-    public function testDuplicateAccentedLetters()
+    public function testDuplicateAccentedLetters() : void
     {
         $this->assertFalse(isIsogram('éléphant'));
     }

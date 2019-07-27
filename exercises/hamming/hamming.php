@@ -7,7 +7,7 @@ convenience to get you started writing code faster.
 Remove this comment before submitting your exercise.
 */
 
-function distance(string $strandA, string $strandB): int
+function distance(string $strandA, string $strandB) : int
 {
     //
     // YOUR CODE GOES HERE

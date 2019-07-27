@@ -7,7 +7,7 @@ class HelloWorldTest extends PHPUnit\Framework\TestCase
         require 'hello-world.php';
     }
 
-    public function testHelloWorld()
+    public function testHelloWorld() : void
     {
         $this->assertEquals('Hello, World!', helloWorld());
     }

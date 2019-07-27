@@ -7,69 +7,69 @@ class PerfectNumbersTest extends PHPUnit\Framework\TestCase
         require 'perfect-numbers.php';
     }
 
-    public function testSmallPerfectNumberIsClassifiedCorrectly()
+    public function testSmallPerfectNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("perfect", getClassification(6));
     }
 
-    public function testMediumPerfectNumberIsClassifiedCorrectly()
+    public function testMediumPerfectNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("perfect", getClassification(28));
     }
 
-    public function testLargePerfectNumberIsClassifiedCorrectly()
+    public function testLargePerfectNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("perfect", getClassification(33550336));
     }
 
-    public function testSmallAbundantNumberIsClassifiedCorrectly()
+    public function testSmallAbundantNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("abundant", getClassification(12));
     }
 
-    public function testMediumAbundantNumberIsClassifiedCorrectly()
+    public function testMediumAbundantNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("abundant", getClassification(30));
     }
 
-    public function testLargeAbundantNumberIsClassifiedCorrectly()
+    public function testLargeAbundantNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("abundant", getClassification(33550335));
     }
 
-    public function testSmallestPrimeDeficientNumberIsClassifiedCorrectly()
+    public function testSmallestPrimeDeficientNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("deficient", getClassification(2));
     }
 
-    public function testSmallestNonPrimeDeficientNumberIsClassifiedCorrectly()
+    public function testSmallestNonPrimeDeficientNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("deficient", getClassification(4));
     }
 
-    public function testMediumDeficientNumberIsClassifiedCorrectly()
+    public function testMediumDeficientNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("deficient", getClassification(32));
     }
 
-    public function testLargeDeficientNumberIsClassifiedCorrectly()
+    public function testLargeDeficientNumberIsClassifiedCorrectly() : void
     {
         $this->assertEquals("deficient", getClassification(33550337));
     }
 
-    public function testThatOneIsCorrectlyClassifiedAsDeficient()
+    public function testThatOneIsCorrectlyClassifiedAsDeficient() : void
     {
         $this->assertEquals("deficient", getClassification(1));
     }
 
-    public function testThatNonNegativeIntegerIsRejected()
+    public function testThatNonNegativeIntegerIsRejected() : void
     {
         $this->expectException(InvalidArgumentException::class) ;
 
         getClassification(0) ;
     }
 
-    public function testThatNegativeIntegerIsRejected()
+    public function testThatNegativeIntegerIsRejected() : void
     {
         $this->expectException(InvalidArgumentException::class) ;
 

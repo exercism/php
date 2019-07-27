@@ -13,7 +13,7 @@ class Robot
      *
      * @return string
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
@@ -21,7 +21,7 @@ class Robot
     /**
      * Reset name
      */
-    public function reset()
+    public function reset() : void
     {
         $this->name = NamesRegistry::connect()->getNewName();
     }
@@ -42,7 +42,7 @@ class NamesRegistry
      *
      * @return NamesRegistry
      */
-    public static function connect()
+    public static function connect() : \NamesRegistry
     {
         if (empty(self::$registry)) {
             self::$registry = new NamesRegistry();
@@ -63,7 +63,7 @@ class NamesRegistry
      *
      * @return string New Robot name     *
      */
-    public function getNewName()
+    public function getNewName() : string
     {
         do {
             shuffle(self::$letters);

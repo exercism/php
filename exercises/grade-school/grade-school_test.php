@@ -11,18 +11,18 @@ class GradeSchoolTest extends TestCase
 
     protected $school;
 
-    protected function setUp(): void
+    protected function setUp() : void
     {
         $this->school = new School();
     }
 
-    public function testAddStudent()
+    public function testAddStudent() : void
     {
         $this->school->add("Claire", 2);
         $this->assertContains('Claire', $this->school->grade(2));
     }
 
-    public function testAddStudentsInSameGrade()
+    public function testAddStudentsInSameGrade() : void
     {
         $this->school->add("Marc", 2);
         $this->school->add("Virginie", 2);
@@ -36,7 +36,7 @@ class GradeSchoolTest extends TestCase
         );
     }
 
-    public function testAddStudentInDifferentGrades()
+    public function testAddStudentInDifferentGrades() : void
     {
         $this->school->add("Marc", 3);
         $this->school->add("Claire", 6);
@@ -47,12 +47,12 @@ class GradeSchoolTest extends TestCase
         $this->assertNotContains('Claire', $this->school->grade(3));
     }
 
-    public function testEmptyGrade()
+    public function testEmptyGrade() : void
     {
         $this->assertEmpty($this->school->grade(1));
     }
 
-    public function testSortSchool()
+    public function testSortSchool() : void
     {
         $this->school->add("Marc", 5);
         $this->school->add("Virginie", 5);

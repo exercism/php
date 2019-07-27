@@ -4,12 +4,11 @@ include_once 'ocr-numbers.php';
 
 class OcrNumbersTest extends PHPUnit\Framework\TestCase
 {
-
     /**
      * Recognition result should be returned as a string
      */
 
-    public function testRecognizes0()
+    public function testRecognizes0() : void
     {
         $input = [
             " _ ",
@@ -20,7 +19,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('0', recognize($input));
     }
 
-    public function testRecognizes1()
+    public function testRecognizes1() : void
     {
         $input = [
             "   ",
@@ -34,7 +33,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     /**
      * Unreadable but correctly sized inputs return ?
      */
-    public function testUnreadable()
+    public function testUnreadable() : void
     {
         $input = [
             "   ",
@@ -48,7 +47,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     /**
      * Input with a number of lines that is not a multiple of four raises an error
      */
-    public function testErrorWrongNumberOfLines()
+    public function testErrorWrongNumberOfLines() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -63,7 +62,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     /**
      * Input with a number of columns that is not a multiple of three raises an error
      */
-    public function testErrorWrongNumberOfColumns()
+    public function testErrorWrongNumberOfColumns() : void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -76,7 +75,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         recognize($input);
     }
 
-    public function testRecognizes110101100()
+    public function testRecognizes110101100() : void
     {
         $input = [
             "       _     _        _  _ ",
@@ -90,7 +89,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     /**
      * Garbled numbers in a string are replaced with ?
      */
-    public function testGarbled()
+    public function testGarbled() : void
     {
         $input = [
             "       _     _           _ ",
@@ -101,7 +100,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('11?10?1?0', recognize($input));
     }
 
-    public function testRecognizes2()
+    public function testRecognizes2() : void
     {
         $input = [
             " _ ",
@@ -112,7 +111,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('2', recognize($input));
     }
 
-    public function testRecognizes3()
+    public function testRecognizes3() : void
     {
         $input = [
             " _ ",
@@ -123,7 +122,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('3', recognize($input));
     }
 
-    public function testRecognizes4()
+    public function testRecognizes4() : void
     {
         $input = [
             "   ",
@@ -134,7 +133,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('4', recognize($input));
     }
 
-    public function testRecognizes5()
+    public function testRecognizes5() : void
     {
         $input = [
             " _ ",
@@ -145,7 +144,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('5', recognize($input));
     }
 
-    public function testRecognizes6()
+    public function testRecognizes6() : void
     {
         $input = [
             " _ ",
@@ -156,7 +155,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('6', recognize($input));
     }
 
-    public function testRecognizes7()
+    public function testRecognizes7() : void
     {
         $input = [
             " _ ",
@@ -167,7 +166,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('7', recognize($input));
     }
 
-    public function testRecognizes8()
+    public function testRecognizes8() : void
     {
         $input = [
             " _ ",
@@ -178,7 +177,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('8', recognize($input));
     }
 
-    public function testRecognizes9()
+    public function testRecognizes9() : void
     {
         $input = [
             " _ ",
@@ -189,7 +188,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
         $this->assertSame('9', recognize($input));
     }
 
-    public function testRecognizesStringOfDecimalNumbers()
+    public function testRecognizesStringOfDecimalNumbers() : void
     {
         $input = [
             "    _  _     _  _  _  _  _  _ ",
@@ -203,7 +202,7 @@ class OcrNumbersTest extends PHPUnit\Framework\TestCase
     /**
      * Numbers separated by empty lines are recognized. Lines are joined by commas.
      */
-    public function testLinesWithCommas()
+    public function testLinesWithCommas() : void
     {
         $input = [
             "    _  _ ",

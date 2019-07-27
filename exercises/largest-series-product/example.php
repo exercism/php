@@ -2,7 +2,6 @@
 
 class Series
 {
-
     /**
      * The the digits to test
      *
@@ -36,7 +35,7 @@ class Series
      * @param int $span
      * @return int
      */
-    public function largestProduct($span)
+    public function largestProduct($span) : int
     {
         if (0 == $span) {
             return 1;
@@ -53,7 +52,7 @@ class Series
      * @param int $span
      * @throws InvalidArgumentException
      */
-    private function validateSpan($span)
+    private function validateSpan($span) : void
     {
         if ($span < 0) {
             throw new InvalidArgumentException(sprintf(
@@ -77,7 +76,7 @@ class Series
      * @param int $span
      * @return int
      */
-    private function largestSeriesProduct($span)
+    private function largestSeriesProduct($span) : int
     {
         $products = [];
         for ($start = 0; $start <= $this->sequenceLength - $span; $start++) {
@@ -86,14 +85,13 @@ class Series
         return max($products);
     }
 
-
     /**
      * Multiplies a numerical string section
      *
      * @param string $stringSection
      * @return int
      */
-    private function multiplyStringSection($stringSection)
+    private function multiplyStringSection($stringSection) : int
     {
         return array_product(str_split($stringSection));
     }
@@ -104,7 +102,7 @@ class Series
      * @param $digits
      * @throws InvalidArgumentException
      */
-    private function validateSequence($digits)
+    private function validateSequence($digits) : void
     {
         if (! empty($digits) && ! is_numeric($digits)) {
             throw new InvalidArgumentException(sprintf(

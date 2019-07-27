@@ -9,19 +9,17 @@ class OcrBlock
 {
     protected $ocr = [];
 
-
     public function __construct($ocr)
     {
         $this->ocr = $ocr;
         $this->validate();
     }
 
-
     /**
      * Validate OCR block format: size, proportions
      * @throws InvalidArgumentException
      */
-    public function validate()
+    public function validate() : void
     {
         $numRows = count($this->ocr);
         $numColumns = strlen($this->ocr[0]);
@@ -39,13 +37,12 @@ class OcrBlock
         }
     }
 
-
     /**
      * Recognize OCR block: split it into vertical fragments,
      * explode them into symbols and recognize them.
      * @return string
      */
-    public function recognize()
+    public function recognize() : string
     {
         return implode(',', array_map(function ($x) {
             return implode('', array_map(function ($y) {
@@ -54,13 +51,12 @@ class OcrBlock
         }, array_chunk($this->ocr, OcrSymbol::NUM_ROWS)));
     }
 
-
     /**
      * Explode OCR fragment into OCR symbols
-     * @param type $ocrFragment
-     * @return type
+     * @param array $ocrFragment
+     * @return array
      */
-    protected function explode($ocrFragment)
+    protected function explode($ocrFragment) : array
     {
         $exploded = array_map(function ($x) {
             return str_split($x, OcrSymbol::NUM_COLUMNS);
@@ -70,7 +66,6 @@ class OcrBlock
         }, $exploded[0], $exploded[1], $exploded[2], $exploded[3]);
     }
 }
-
 
 class OcrSymbol
 {
@@ -102,7 +97,7 @@ class OcrSymbol
      * Translate OCR to digit
      * @return string
      */
-    public function getDigit()
+    public function getDigit() : string
     {
         if ($this->digit === null) {
             $encoded = str_replace(' ', 'x', implode($this->ocr));

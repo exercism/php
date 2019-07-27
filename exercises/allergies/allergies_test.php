@@ -7,13 +7,12 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         require 'allergies.php';
     }
 
-
     /**
      * @dataProvider provideListOfAllergen
      *
      * @param Allergen $allergen
      */
-    public function testNoAllergiesMeansNotAllergicToAnything($allergen)
+    public function testNoAllergiesMeansNotAllergicToAnything($allergen) : void
     {
         $allergies = new Allergies(0);
 
@@ -25,7 +24,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
      *
      * @param Allergen $allergicTo
      */
-    public function testAllergiesToOneAllergen($allergicTo)
+    public function testAllergiesToOneAllergen($allergicTo) : void
     {
         $allergies = new Allergies($allergicTo->getScore());
 
@@ -39,7 +38,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         }, $otherAllergen);
     }
 
-    public function provideListOfAllergen()
+    public function provideListOfAllergen() : array
     {
         return [
             [new Allergen(Allergen::CATS), 'Only allergic to cats'],
@@ -53,15 +52,14 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testAllergicToEggsInAdditionToOtherStuff()
+    public function testAllergicToEggsInAdditionToOtherStuff() : void
     {
         $allergies = new Allergies(5);
 
         $this->assertTrue($allergies->isAllergicTo(new Allergen(Allergen::EGGS)));
     }
 
-
-    public function testIsAllergicToLotsOfStuffs()
+    public function testIsAllergicToLotsOfStuffs() : void
     {
         $allergies = new Allergies(248);
 
@@ -74,7 +72,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         ], $allergies->getList());
     }
 
-    public function testIsAllergicToEggsAndPeanuts()
+    public function testIsAllergicToEggsAndPeanuts() : void
     {
         $allergies = new Allergies(3);
 
@@ -84,7 +82,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         ], $allergies->getList());
     }
 
-    public function testIsAllergicToEggsAndShellfish()
+    public function testIsAllergicToEggsAndShellfish() : void
     {
         $allergies = new Allergies(5);
 
@@ -94,7 +92,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         ], $allergies->getList());
     }
 
-    public function testIgnoreNonAllergenScorePart()
+    public function testIgnoreNonAllergenScorePart() : void
     {
         $allergies = new Allergies(509);
 
@@ -112,7 +110,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
     /**
      * @dataProvider provideListOfAllergen
      */
-    public function testIsAllergicToEverything($allergen)
+    public function testIsAllergicToEverything($allergen) : void
     {
         $allergies = new Allergies(255);
 
