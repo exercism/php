@@ -4,7 +4,7 @@ class RomanTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'roman-numerals.php';
+        require_once 'roman-numerals.php';
     }
 
     public function test1() : void

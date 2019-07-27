@@ -4,7 +4,7 @@ class TwoFerTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'two-fer.php';
+        require_once 'two-fer.php';
     }
 
     public function testNoNameGiven() : void

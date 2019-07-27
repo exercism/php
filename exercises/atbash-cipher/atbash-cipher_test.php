@@ -4,7 +4,7 @@ class AtbashTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'atbash-cipher.php';
+        require_once 'atbash-cipher.php';
     }
 
     public function testEncodeNo() : void

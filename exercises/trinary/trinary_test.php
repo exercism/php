@@ -4,7 +4,7 @@ class TrinaryTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'trinary.php';
+        require_once 'trinary.php';
     }
 
     public function test1IsDecimal1() : void

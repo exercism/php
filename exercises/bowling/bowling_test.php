@@ -8,7 +8,7 @@ class GameTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'bowling.php';
+        require_once 'bowling.php';
     }
 
     /** @var Game */

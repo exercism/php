@@ -4,7 +4,7 @@ class BinaryTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'binary.php';
+        require_once 'binary.php';
     }
 
     public function testItParsesBinary0ToDecimal0() : void

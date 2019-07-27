@@ -4,7 +4,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'beer-song.php';
+        require_once 'beer-song.php';
     }
 
     public function testFirstVerse() : void

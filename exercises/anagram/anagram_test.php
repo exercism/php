@@ -4,7 +4,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'anagram.php';
+        require_once 'anagram.php';
     }
 
     public function testNoMatches() : void

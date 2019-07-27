@@ -4,7 +4,7 @@ class PalindromeProductsTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'palindrome-products.php';
+        require_once 'palindrome-products.php';
     }
 
     public function testFindsTheSmallestPalindromeFromSingleDigitFactors() : void

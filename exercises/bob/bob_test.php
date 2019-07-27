@@ -4,7 +4,7 @@ class BobTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'bob.php';
+        require_once 'bob.php';
     }
 
     /**

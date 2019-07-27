@@ -4,7 +4,7 @@ class ChangeTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'change.php';
+        require_once 'change.php';
     }
 
     public function testSingleCoinChange() : void

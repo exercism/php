@@ -4,7 +4,7 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'phone-number.php';
+        require_once 'phone-number.php';
     }
 
     public function testCleansTheNumber() : void

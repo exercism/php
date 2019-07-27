@@ -1,9 +1,12 @@
 <?php
 
-include_once 'grains.php';
-
 class GrainsTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require_once 'grains.php';
+    }
+
     /**
      * PHP integers greater than 2^31 (32-bit systems)
      * or 2^63 (64-bit) are casted to floats.

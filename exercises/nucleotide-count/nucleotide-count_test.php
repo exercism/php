@@ -4,7 +4,7 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'nucleotide-count.php';
+        require_once 'nucleotide-count.php';
     }
 
     public function testEmptyDNASequence() : void

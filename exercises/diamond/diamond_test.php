@@ -4,7 +4,7 @@ class DiamondTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'diamond.php';
+        require_once 'diamond.php';
     }
 
     public function testDegenerateCaseWithASingleARow() : void

@@ -4,7 +4,7 @@ class CollatzConjecture extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'collatz-conjecture.php';
+        require_once 'collatz-conjecture.php';
     }
 
     public function testZeroStepsForOne() : void

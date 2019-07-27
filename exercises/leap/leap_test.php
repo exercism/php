@@ -4,7 +4,7 @@ class YearTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'leap.php';
+        require_once 'leap.php';
     }
 
     public function testLeapYear() : void

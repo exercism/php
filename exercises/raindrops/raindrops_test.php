@@ -4,7 +4,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'raindrops.php';
+        require_once 'raindrops.php';
     }
 
     public function test1() : void

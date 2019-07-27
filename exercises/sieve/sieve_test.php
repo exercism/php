@@ -4,7 +4,7 @@ class SieveTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'sieve.php';
+        require_once 'sieve.php';
     }
 
     public function testNoPrimesUnderTwo() : void

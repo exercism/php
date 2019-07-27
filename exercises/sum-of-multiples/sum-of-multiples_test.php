@@ -4,7 +4,7 @@ class SumOfMultiplesTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'sum-of-multiples.php';
+        require_once 'sum-of-multiples.php';
     }
 
     public function testSumToOne() : void

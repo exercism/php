@@ -4,7 +4,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'run-length-encoding.php';
+        require_once 'run-length-encoding.php';
     }
 
     public function testEncodeEmptyString() : void

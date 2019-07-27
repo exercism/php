@@ -1,9 +1,12 @@
 <?php
 
-include_once 'ocr-numbers.php';
-
 class OcrNumbersTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require_once 'ocr-numbers.php';
+    }
+
     /**
      * Recognition result should be returned as a string
      */

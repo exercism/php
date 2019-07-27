@@ -4,7 +4,7 @@ class PascalsTriangleTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'pascals-triangle.php';
+        require_once 'pascals-triangle.php';
     }
 
     public function testZeroRows() : void

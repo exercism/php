@@ -4,7 +4,7 @@ class QueenAttackTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'queen-attack.php';
+        require_once 'queen-attack.php';
     }
 
     /**

@@ -4,7 +4,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'pangram.php';
+        require_once 'pangram.php';
     }
 
     public function testSentenceEmpty() : void

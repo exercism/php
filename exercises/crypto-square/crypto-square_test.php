@@ -4,7 +4,7 @@ class CryptoSquareTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'crypto-square.php';
+        require_once 'crypto-square.php';
     }
 
     public function testEmptyPlaintextResultsInAnEmptyCiphertext() : void

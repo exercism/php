@@ -4,7 +4,7 @@ class TransformTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'etl.php';
+        require_once 'etl.php';
     }
 
     public function testTransformOneValue() : void

@@ -4,7 +4,7 @@ class ArmstrongNumbersTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'armstrong-numbers.php';
+        require_once 'armstrong-numbers.php';
     }
 
     public function testZero() : void

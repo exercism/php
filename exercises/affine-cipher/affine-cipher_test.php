@@ -10,7 +10,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'affine-cipher.php';
+        require_once 'affine-cipher.php';
     }
 
     /**

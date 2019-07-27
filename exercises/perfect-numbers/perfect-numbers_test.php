@@ -4,7 +4,7 @@ class PerfectNumbersTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'perfect-numbers.php';
+        require_once 'perfect-numbers.php';
     }
 
     public function testSmallPerfectNumberIsClassifiedCorrectly() : void

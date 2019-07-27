@@ -4,7 +4,7 @@ class SpaceAgeTester extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'space-age.php';
+        require_once 'space-age.php';
     }
 
     public const DELTA = 0.01;

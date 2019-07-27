@@ -4,7 +4,7 @@ class PigLatinTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'pig-latin.php';
+        require_once 'pig-latin.php';
     }
 
     public function testWordBeginningWithP() : void

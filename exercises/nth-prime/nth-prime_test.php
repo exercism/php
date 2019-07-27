@@ -4,7 +4,7 @@ class NthPrimeTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'nth-prime.php';
+        require_once 'nth-prime.php';
     }
 
     public function testFirstPrime() : void

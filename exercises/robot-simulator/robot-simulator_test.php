@@ -1,9 +1,12 @@
 <?php
 
-include_once 'robot-simulator.php';
-
 class RobotSimulatorTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require_once 'robot-simulator.php';
+    }
+
     /**
      * A robot is created with a position and a direction
      */

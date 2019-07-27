@@ -4,7 +4,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'gigasecond.php';
+        require_once 'gigasecond.php';
     }
 
     public function dateSetup($date) : \DateTimeImmutable

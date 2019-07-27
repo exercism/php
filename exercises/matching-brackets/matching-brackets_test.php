@@ -4,7 +4,7 @@ class BracketTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'matching-brackets.php';
+        require_once 'matching-brackets.php';
     }
 
     public function testPairedSquareBrackets() : void

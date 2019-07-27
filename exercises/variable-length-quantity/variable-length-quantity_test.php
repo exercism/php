@@ -4,7 +4,7 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'variable-length-quantity.php';
+        require_once 'variable-length-quantity.php';
     }
 
     public function testItEncodesSingleBytes() : void

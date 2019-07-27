@@ -4,7 +4,7 @@ class ComplementTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'rna-transcription.php';
+        require_once 'rna-transcription.php';
     }
 
     public function testTranscribesGuanineToCytosine() : void

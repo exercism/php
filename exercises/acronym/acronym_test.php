@@ -4,7 +4,7 @@ class AcronymTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'acronym.php';
+        require_once 'acronym.php';
     }
 
     public function testBasicTitleCase() : void

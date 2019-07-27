@@ -4,7 +4,7 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'binary-search.php';
+        require_once 'binary-search.php';
     }
 
     public function testItWorksWithOneElement() : void

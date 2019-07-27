@@ -4,7 +4,7 @@ class WordCountTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'word-count.php';
+        require_once 'word-count.php';
     }
 
     public function testCountOneWord() : void

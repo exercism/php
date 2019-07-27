@@ -4,7 +4,7 @@ class AccumulateTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'accumulate.php';
+        require_once 'accumulate.php';
     }
 
     public function testAccumulateEmpty() : void

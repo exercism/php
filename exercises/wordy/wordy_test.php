@@ -4,7 +4,7 @@ class WordProblemTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'wordy.php';
+        require_once 'wordy.php';
     }
 
     public function testAdd1() : void

@@ -4,7 +4,7 @@ class MeetupTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'meetup.php';
+        require_once 'meetup.php';
     }
 
     public function testMonteenthOfMay2013() : void

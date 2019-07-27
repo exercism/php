@@ -4,7 +4,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'robot-name.php';
+        require_once 'robot-name.php';
     }
 
     /** @var Robot $robot */

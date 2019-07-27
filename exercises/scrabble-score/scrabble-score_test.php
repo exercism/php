@@ -1,14 +1,15 @@
-
-
 <?php
-
-include_once 'scrabble-score.php';
 
 /**
  * Calculate the value of scrabble score for a given word.
  */
 class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require_once 'scrabble-score.php';
+    }
+
     /**
      * Test lowercase single letter word.
      */

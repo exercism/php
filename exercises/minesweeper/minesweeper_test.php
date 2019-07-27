@@ -4,7 +4,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'minesweeper.php';
+        require_once 'minesweeper.php';
     }
 
     public function testAnEmptyBoard() : void

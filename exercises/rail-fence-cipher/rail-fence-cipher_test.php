@@ -4,7 +4,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'rail-fence-cipher.php';
+        require_once 'rail-fence-cipher.php';
     }
 
     /**

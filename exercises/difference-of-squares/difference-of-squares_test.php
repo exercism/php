@@ -4,7 +4,7 @@ class SquaresTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'difference-of-squares.php';
+        require_once 'difference-of-squares.php';
     }
 
     public function testSquareOfSumTo5() : void

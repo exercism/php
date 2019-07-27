@@ -4,7 +4,7 @@ class FlattenArrayTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'flatten-array.php';
+        require_once 'flatten-array.php';
     }
 
     public function testWithOutNesting() : void

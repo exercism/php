@@ -4,7 +4,7 @@ class TransposeTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'transpose.php';
+        require_once 'transpose.php';
     }
 
     public function testEmptyString() : void

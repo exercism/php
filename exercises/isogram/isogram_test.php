@@ -4,7 +4,7 @@ class IsogramTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'isogram.php';
+        require_once 'isogram.php';
     }
 
     public function testIsogram() : void

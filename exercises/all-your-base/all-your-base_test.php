@@ -8,7 +8,7 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'all-your-base.php';
+        require_once 'all-your-base.php';
     }
 
     public function testSingleBitOneToDecimal() : void

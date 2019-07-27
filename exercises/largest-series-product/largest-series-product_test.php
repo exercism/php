@@ -1,9 +1,12 @@
 <?php
 
-include_once 'largest-series-product.php';
-
 class SeriesTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require_once 'largest-series-product.php';
+    }
+
     /**
      * Since PHP can only support Integers between +/- 9223372036854775807
      * We will deal with the series of digits as strings to avoid having them cast to floats.

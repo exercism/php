@@ -4,7 +4,7 @@ class MarkdownTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'markdown.php';
+        require_once 'markdown.php';
     }
 
     public function testParsingParagraph() : void

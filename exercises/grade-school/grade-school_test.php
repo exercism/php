@@ -6,7 +6,7 @@ class GradeSchoolTest extends TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'grade-school.php';
+        require_once 'grade-school.php';
     }
 
     protected $school;

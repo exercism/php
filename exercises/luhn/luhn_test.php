@@ -4,7 +4,7 @@ class LuhnValidatorTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'luhn.php';
+        require_once 'luhn.php';
     }
 
     public function testSingleDigitInvalid() : void

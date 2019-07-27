@@ -1,7 +1,5 @@
 <?php
 
-include_once 'book-store.php';
-
 /**
  * Calculate lowest price for shopping basket only
  * containing books from a single series. There is no
@@ -11,6 +9,11 @@ include_once 'book-store.php';
 
 class BookStoreTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass() : void
+    {
+        require_once 'book-store.php';
+    }
+
     /**
      * A basket containing only a single book.
      * Target grouping: [[1]]
