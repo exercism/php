@@ -14,16 +14,16 @@ function sieve($number)
     }
     return array_values($candidates);
 }
-function _getNumbersFrom2To($number): array
+function _getNumbersFrom2To($number) : array
 {
     $candidates = range(2, $number);
     return $candidates;
 }
-function _areDifferent($multiple, $prime): bool
+function _areDifferent($multiple, $prime) : bool
 {
     return ($multiple != $prime);
 }
-function _areMultiples($multiple, $prime): bool
+function _areMultiples($multiple, $prime) : bool
 {
     return ($multiple % $prime == 0);
 }

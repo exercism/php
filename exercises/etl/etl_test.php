@@ -4,31 +4,31 @@ class TransformTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'etl.php';
+        require_once 'etl.php';
     }
 
-    public function testTransformOneValue()
+    public function testTransformOneValue() : void
     {
         $old         = [ '1' => ['A'] ];
         $expected    = [ 'a' => 1 ];
         $this->assertEquals($expected, transform($old));
     }
 
-    public function testTransformMoreValues()
+    public function testTransformMoreValues() : void
     {
         $old         = [ '1' => str_split('AEIOU') ];
         $expected    = [ 'a' => 1, 'e' => 1, 'i' => 1, 'o' => 1, 'u' => 1 ];
         $this->assertEquals($expected, transform($old));
     }
 
-    public function testTransformMoreKeys()
+    public function testTransformMoreKeys() : void
     {
         $old         = [ '1' => str_split('AE'), '2' => str_split('DG') ];
         $expected    = [ 'a' => 1, 'e' => 1, 'd' => 2, 'g' => 2 ];
         $this->assertEquals($expected, transform($old));
     }
 
-    public function testTransformFullDataset()
+    public function testTransformFullDataset() : void
     {
         $old = [
             '1' => str_split('AEIOULNRST'),

@@ -4,10 +4,10 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'nucleotide-count.php';
+        require_once 'nucleotide-count.php';
     }
 
-    public function testEmptyDNASequence()
+    public function testEmptyDNASequence() : void
     {
         $this->assertSame([
             'a' => 0,
@@ -17,7 +17,7 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
         ], nucleotideCount(''));
     }
 
-    public function testRepetitiveDNASequence()
+    public function testRepetitiveDNASequence() : void
     {
         $this->assertSame([
             'a' => 9,
@@ -27,7 +27,7 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
         ], nucleotideCount('AAAAAAAAA'));
     }
 
-    public function testDNASequence()
+    public function testDNASequence() : void
     {
         $this->assertSame([
             'a' => 20,

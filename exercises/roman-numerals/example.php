@@ -1,6 +1,5 @@
 <?php
 
-
 function toRoman($number)
 {
     $mapping = [

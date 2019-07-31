@@ -4,30 +4,30 @@ class RobotTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'robot-name.php';
+        require_once 'robot-name.php';
     }
 
     /** @var Robot $robot */
     protected $robot = null;
 
-    public function setUp(): void
+    public function setUp() : void
     {
         $this->robot = new Robot();
     }
 
-    public function testHasName()
+    public function testHasName() : void
     {
         $this->assertRegExp('/^[a-z]{2}\d{3}$/i', $this->robot->getName());
     }
 
-    public function testNameSticks()
+    public function testNameSticks() : void
     {
         $old = $this->robot->getName();
 
         $this->assertSame($this->robot->getName(), $old);
     }
 
-    public function testDifferentRobotsHaveDifferentNames()
+    public function testDifferentRobotsHaveDifferentNames() : void
     {
         $other_bot = new Robot();
 
@@ -36,7 +36,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
         unset($other_bot);
     }
 
-    public function testresetName()
+    public function testresetName() : void
     {
         $name1 = $this->robot->getName();
 
@@ -49,7 +49,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
         $this->assertRegExp('/\w{2}\d{3}/', $name2);
     }
 
-    public function testNameArentRecycled()
+    public function testNameArentRecycled() : void
     {
         $names = [];
 
@@ -62,7 +62,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
     }
 
     // This test is optional.
-    public function testNameUniquenessManyRobots()
+    public function testNameUniquenessManyRobots() : void
     {
         $names = [];
 

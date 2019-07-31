@@ -8,25 +8,25 @@ class GameTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'bowling.php';
+        require_once 'bowling.php';
     }
 
     /** @var Game */
     private $game;
 
-    public function setUp(): void
+    public function setUp() : void
     {
         $this->game = new Game();
     }
 
-    public function testShouldBeAbleToScoreAGameWithAllZeros()
+    public function testShouldBeAbleToScoreAGameWithAllZeros() : void
     {
         $this->rollMany(20, 0);
 
         $this->assertEquals(0, $this->game->score());
     }
 
-    public function testShouldBeAbleToScoreAGameWithNoStrikesOrSpares()
+    public function testShouldBeAbleToScoreAGameWithNoStrikesOrSpares() : void
     {
         $this->game->roll(3);
         $this->game->roll(6);
@@ -52,7 +52,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(90, $this->game->score());
     }
 
-    public function testASpareFollowedByZerosIsWorthTenPoints()
+    public function testASpareFollowedByZerosIsWorthTenPoints() : void
     {
         $this->game->roll(6);
         $this->game->roll(4);
@@ -61,7 +61,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(10, $this->game->score());
     }
 
-    public function testPointsScoredInTheRollAfterASpareAreCountedTwice()
+    public function testPointsScoredInTheRollAfterASpareAreCountedTwice() : void
     {
         $this->game->roll(6);
         $this->game->roll(4);
@@ -71,7 +71,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(16, $this->game->score());
     }
 
-    public function testConsecutiveSparesEachGetAOneRollBonus()
+    public function testConsecutiveSparesEachGetAOneRollBonus() : void
     {
         $this->game->roll(5);
         $this->game->roll(5);
@@ -83,7 +83,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(31, $this->game->score());
     }
 
-    public function testASpareInTheLastFrameGetsAOneRollBonusThatIsCountedOnce()
+    public function testASpareInTheLastFrameGetsAOneRollBonusThatIsCountedOnce() : void
     {
         $this->rollMany(18, 0);
         $this->game->roll(7);
@@ -93,7 +93,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(17, $this->game->score());
     }
 
-    public function testAStrikeEarnsTenPointsInFrameWithASingleRoll()
+    public function testAStrikeEarnsTenPointsInFrameWithASingleRoll() : void
     {
         $this->game->roll(10);
         $this->rollMany(18, 0);
@@ -101,7 +101,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(10, $this->game->score());
     }
 
-    public function testPointsScoredInTheTwoRollsAfterAStrikeAreCountedTwiceAsABonus()
+    public function testPointsScoredInTheTwoRollsAfterAStrikeAreCountedTwiceAsABonus() : void
     {
         $this->game->roll(10);
         $this->game->roll(5);
@@ -111,7 +111,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(26, $this->game->score());
     }
 
-    public function testConsecutiveStrikesEachGetTheTwoRollBonus()
+    public function testConsecutiveStrikesEachGetTheTwoRollBonus() : void
     {
         $this->game->roll(10);
         $this->game->roll(10);
@@ -123,7 +123,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(81, $this->game->score());
     }
 
-    public function testAStrikeInTheLastFrameGetsATwoRollBonusThatIsCountedOnce()
+    public function testAStrikeInTheLastFrameGetsATwoRollBonusThatIsCountedOnce() : void
     {
         $this->rollMany(18, 0);
         $this->game->roll(10);
@@ -133,7 +133,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(18, $this->game->score());
     }
 
-    public function testRollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll()
+    public function testRollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll() : void
     {
         $this->rollMany(18, 0);
         $this->game->roll(10);
@@ -143,7 +143,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(30, $this->game->score());
     }
 
-    public function testAStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus()
+    public function testAStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus() : void
     {
         $this->rollMany(18, 0);
         $this->game->roll(7);
@@ -153,7 +153,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(20, $this->game->score());
     }
 
-    public function testStrikesWithTheTwoRollBonusDoNotGetBonusRolls()
+    public function testStrikesWithTheTwoRollBonusDoNotGetBonusRolls() : void
     {
         $this->rollMany(18, 0);
         $this->game->roll(10);
@@ -163,21 +163,21 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(20, $this->game->score());
     }
 
-    public function testAllStrikesIsAPerfectGame()
+    public function testAllStrikesIsAPerfectGame() : void
     {
         $this->rollMany(12, 10);
 
         $this->assertEquals(300, $this->game->score());
     }
 
-    public function testRollsCanNotScoreNegativePoints()
+    public function testRollsCanNotScoreNegativePoints() : void
     {
         $this->expectException(Exception::class);
 
         $this->game->roll(-1);
     }
 
-    public function testARollCanNotScoreMoreThan10Points()
+    public function testARollCanNotScoreMoreThan10Points() : void
     {
         $this->expectException(Exception::class);
         $this->game->roll(11);
@@ -186,7 +186,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    public function testTwoRollsInAFrameCanNotScoreMoreThan10Points()
+    public function testTwoRollsInAFrameCanNotScoreMoreThan10Points() : void
     {
         $this->expectException(Exception::class);
         $this->game->roll(5);
@@ -196,7 +196,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    public function testTwoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points()
+    public function testTwoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() : void
     {
         $this->expectException(Exception::class);
 
@@ -208,14 +208,14 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    public function testAnUnstartedGameCanNotBeScored()
+    public function testAnUnstartedGameCanNotBeScored() : void
     {
         $this->expectException(Exception::class);
 
         $this->game->score();
     }
 
-    public function testAnIncompleteGameCanNotBeScored()
+    public function testAnIncompleteGameCanNotBeScored() : void
     {
         $this->expectException(Exception::class);
         $this->game->roll(0);
@@ -224,7 +224,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    public function testAGameWithMoreThanTenFramesCanNotBeScored()
+    public function testAGameWithMoreThanTenFramesCanNotBeScored() : void
     {
         $this->expectException(Exception::class);
         $this->rollMany(21, 0);
@@ -232,7 +232,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    public function testBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated()
+    public function testBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() : void
     {
         $this->expectException(Exception::class);
         $this->rollMany(18, 0);
@@ -241,7 +241,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    public function testBothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated()
+    public function testBothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() : void
     {
         $this->expectException(Exception::class);
         $this->rollMany(18, 0);
@@ -251,7 +251,7 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    public function testBonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated()
+    public function testBonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() : void
     {
         $this->expectException(Exception::class);
         $this->rollMany(18, 0);
@@ -261,17 +261,17 @@ class GameTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    private function rollStrike()
+    private function rollStrike() : void
     {
         $this->game->roll(10);
     }
 
-    private function rollSpare()
+    private function rollSpare() : void
     {
         $this->rollMany(2, 5);
     }
 
-    private function rollMany($n, $pins)
+    private function rollMany($n, $pins) : void
     {
         for ($i = 0; $i < $n; $i++) {
             $this->game->roll($pins);

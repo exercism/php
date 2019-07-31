@@ -1,6 +1,5 @@
 <?php
 
-
 function encode($text, $a, $b)
 {
     $alphabet = range('a', 'z');

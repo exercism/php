@@ -4,30 +4,30 @@ class ComplementTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'rna-transcription.php';
+        require_once 'rna-transcription.php';
     }
 
-    public function testTranscribesGuanineToCytosine()
+    public function testTranscribesGuanineToCytosine() : void
     {
         $this->assertSame('G', toRna('C'));
     }
 
-    public function testTranscribesCytosineToGuanine()
+    public function testTranscribesCytosineToGuanine() : void
     {
         $this->assertSame('C', toRna('G'));
     }
 
-    public function testTranscribesThymineToAdenine()
+    public function testTranscribesThymineToAdenine() : void
     {
         $this->assertSame('A', toRna('T'));
     }
 
-    public function testTranscribesAdenineToUracil()
+    public function testTranscribesAdenineToUracil() : void
     {
         $this->assertSame('U', toRna('A'));
     }
 
-    public function testTranscribesAllOccurencesOne()
+    public function testTranscribesAllOccurencesOne() : void
     {
         $this->assertSame('UGCACCAGAAUU', toRna('ACGTGGTCTTAA'));
     }

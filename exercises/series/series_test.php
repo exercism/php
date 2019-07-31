@@ -4,10 +4,10 @@ class SeriesTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require 'series.php';
+        require_once 'series.php';
     }
 
-    public function testSlicesOfOne()
+    public function testSlicesOfOne() : void
     {
         $this->assertEquals(
             ["0", "1", "2", "3", "4"],
@@ -15,7 +15,7 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSlicesOfTwo()
+    public function testSlicesOfTwo() : void
     {
         $this->assertEquals(
             ["97", "78", "86", "67", "75", "56", "64"],
@@ -23,7 +23,7 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSlicesOfThree()
+    public function testSlicesOfThree() : void
     {
         $this->assertEquals(
             ["978", "786", "867", "675", "756", "564"],
@@ -31,7 +31,7 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSlicesOfFour()
+    public function testSlicesOfFour() : void
     {
         $this->assertEquals(
             ["0123", "1234"],
@@ -39,7 +39,7 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testSlicesOfFive()
+    public function testSlicesOfFive() : void
     {
         $this->assertEquals(
             ["01234"],
@@ -47,13 +47,13 @@ class SeriesTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testOverlyLongSlice()
+    public function testOverlyLongSlice() : void
     {
         $this->expectException(Exception::class);
         slices("012", 4);
     }
 
-    public function testOverlyShortSlice()
+    public function testOverlyShortSlice() : void
     {
         $this->expectException(Exception::class);
         slices("01234", 0);
