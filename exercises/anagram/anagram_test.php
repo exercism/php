@@ -92,11 +92,13 @@ class AnagramTest extends PHPUnit\Framework\TestCase
 
     public function testDetectsUnicodeAnagrams() : void
     {
+        $this->markTestSkipped('This requires `mbstring` to be installed and thus is optional.');
         $this->assertEquals(['ΒΓΑ', 'γβα'], detectAnagrams('ΑΒΓ', ['ΒΓΑ', 'ΒΓΔ', 'γβα']));
     }
 
     public function testEliminatesMisleadingUnicodeAnagrams() : void
     {
+        $this->markTestSkipped('This requires `mbstring` to be installed and thus is optional.');
         $this->assertEquals([], detectAnagrams('ΑΒΓ', ['ABΓ']));
     }
 
