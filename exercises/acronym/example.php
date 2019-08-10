@@ -1,5 +1,7 @@
 <?php
 
+namespace Exercism\Acronym;
+
 /**
  * Abbreviates a phrase.
  *
