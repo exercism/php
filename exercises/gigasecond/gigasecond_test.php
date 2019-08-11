@@ -60,7 +60,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
 
     public function testYourself() : void
     {
-        // Replace the string "your_birthday" with your birthday's datestring
+        // Replace the string "your_birthday" with your birthday's date string
 
         $this->markTestSkipped('Skip');
         $your_birthday = $this->dateSetup('your_birthday');
