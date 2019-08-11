@@ -33,7 +33,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
 
     public function testForDateOnlySpecificationOfTimeThree() : void
     {
-        $date = $this->dateSetup("1959-7-19");
+        $date = $this->dateSetup("1959-07-19");
         $gs = from($date);
 
         $this->assertSame("1991-03-27 01:46:40", $gs->format("Y-m-d H:i:s"));
