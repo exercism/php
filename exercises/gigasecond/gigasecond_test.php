@@ -7,13 +7,13 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         require_once 'gigasecond.php';
     }
 
-    public function dateSetup($date) : \DateTimeImmutable
+    public function dateSetup($date) : DateTimeImmutable
     {
         $UTC = new DateTimeZone("UTC");
         return new DateTimeImmutable($date, $UTC);
     }
 
-    public function testDate1() : void
+    public function testForDateOnlySpecificationOfTime() : void
     {
         $date = $this->dateSetup("2011-04-25");
         $gs = from($date);
@@ -22,7 +22,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
     }
 
-    public function testDate2() : void
+    public function testForDateOnlySpecificationOfTimeTwo() : void
     {
         $date = $this->dateSetup("1977-06-13");
         $gs = from($date);
@@ -31,7 +31,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
     }
 
-    public function testPreUnixEpoch() : void
+    public function testForDateOnlySpecificationOfTimeThree() : void
     {
         $date = $this->dateSetup("1959-7-19");
         $gs = from($date);
@@ -40,7 +40,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
     }
 
-    public function testDateWithTime1() : void
+    public function testFullTimeSpecified() : void
     {
         $date = $this->dateSetup("2015-01-24 22:00:00");
         $gs = from($date);
@@ -49,7 +49,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
     }
 
-    public function testDateWithTime2() : void
+    public function testFullTimeWithDayRollOver() : void
     {
         $date = $this->dateSetup("2015-01-24 23:59:59");
         $gs = from($date);
