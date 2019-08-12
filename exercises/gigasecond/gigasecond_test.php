@@ -2,18 +2,18 @@
 
 class GigasecondTest extends PHPUnit\Framework\TestCase
 {
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass() : void
     {
         require_once 'gigasecond.php';
     }
 
-    public function dateSetup($date): DateTimeImmutable
+    public function dateSetup($date) : DateTimeImmutable
     {
         $UTC = new DateTimeZone('UTC');
         return new DateTimeImmutable($date, $UTC);
     }
 
-    public function testForDateOnlySpecificationOfTime(): void
+    public function testForDateOnlySpecificationOfTime() : void
     {
         $date = $this->dateSetup('2011-04-25');
         $gs = from($date);
@@ -22,7 +22,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
     }
 
-    public function testForDateOnlySpecificationOfTimeTwo(): void
+    public function testForDateOnlySpecificationOfTimeTwo() : void
     {
         $date = $this->dateSetup('1977-06-13');
         $gs = from($date);
@@ -31,7 +31,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
     }
 
-    public function testForDateOnlySpecificationOfTimeThree(): void
+    public function testForDateOnlySpecificationOfTimeThree() : void
     {
         $date = $this->dateSetup('1959-07-19');
         $gs = from($date);
@@ -40,7 +40,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
     }
 
-    public function testFullTimeSpecified(): void
+    public function testFullTimeSpecified() : void
     {
         $date = $this->dateSetup('2015-01-24 22:00:00');
         $gs = from($date);
@@ -49,7 +49,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
     }
 
-    public function testFullTimeWithDayRollOver(): void
+    public function testFullTimeWithDayRollOver() : void
     {
         $date = $this->dateSetup('2015-01-24 23:59:59');
         $gs = from($date);
