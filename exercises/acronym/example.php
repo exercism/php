@@ -8,7 +8,7 @@ namespace Exercism\Acronym;
  * @param string $phrase
  * @return string
  */
-function acronym($phrase)
+function acronym(string $phrase): string
 {
     $matches = preg_match_all('/\p{Lu}+\p{Ll}*|\p{Ll}+/u', $phrase, $words);
 

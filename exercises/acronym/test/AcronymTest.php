@@ -30,18 +30,8 @@ class AcronymTest extends TestCase
             'camelCase'        => ['HTML', 'HyperText Markup Language'],
             'all-caps words'   => ['PHP', 'PHP: Hypertext Preprocessor'],
             'hyphenated'       => ['CMOS', 'Complementary metal-oxide semiconductor'],
+            'unicode'          => ['СПЧ', 'Специализированная процессорная часть'],
+            'empty'            => ['', 'Word'],
         ];
-    }
-
-    // Additional points for making the following tests pass
-    public function testOneWordIsNotAbbreviated() : void
-    {
-        $this->assertEmpty(acronym('Word'));
-    }
-
-    public function testUnicode() : void
-    {
-        $phrase = 'Специализированная процессорная часть';
-        $this->assertEquals('СПЧ', acronym($phrase));
     }
 }
