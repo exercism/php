@@ -13,48 +13,48 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         return new DateTimeImmutable($date, $UTC);
     }
 
-    public function testForDateOnlySpecificationOfTime() : void
+    public function inputAndExpectedDates(): array
     {
-        $date = $this->dateSetup('2011-04-25');
-        $gs = from($date);
-
-        $this->assertSame('2043-01-01 01:46:40', $gs->format('Y-m-d H:i:s'));
-        $this->assertInstanceOf(DateTimeImmutable::class, $gs);
+        return [
+            ['2011-04-25', '2043-01-01 01:46:40'],
+            ['1977-06-13', '2009-02-19 01:46:40'],
+            ['1959-07-19', '1991-03-27 01:46:40'],
+            ['2015-01-24 22:00:00', '2046-10-02 23:46:40'],
+            ['2015-01-24 23:59:59', '2046-10-03 01:46:39'],
+        ];
     }
 
-    public function testForDateOnlySpecificationOfTimeTwo() : void
+    public function inputDates(): array
     {
-        $date = $this->dateSetup('1977-06-13');
-        $gs = from($date);
-
-        $this->assertSame('2009-02-19 01:46:40', $gs->format('Y-m-d H:i:s'));
-        $this->assertInstanceOf(DateTimeImmutable::class, $gs);
+        return [
+            ['2011-04-25'],
+            ['1977-06-13'],
+            ['1959-07-19'],
+            ['2015-01-24 22:00:00'],
+            ['2015-01-24 23:59:59'],
+        ];
     }
 
-    public function testForDateOnlySpecificationOfTimeThree() : void
+    /**
+     * @dataProvider inputAndExpectedDates
+     * @param string $inputDate
+     * @param string $expected
+     */
+    public function testFrom(string $inputDate, string $expected): void
     {
-        $date = $this->dateSetup('1959-07-19');
+        $date = $this->dateSetup($inputDate);
         $gs = from($date);
 
-        $this->assertSame('1991-03-27 01:46:40', $gs->format('Y-m-d H:i:s'));
-        $this->assertInstanceOf(DateTimeImmutable::class, $gs);
+        $this->assertSame($expected, $gs->format('Y-m-d H:i:s'));
     }
 
-    public function testFullTimeSpecified() : void
+    /**
+     * @dataProvider inputDates
+     * @param string $inputDate
+     */
+    public function testFromReturnType(string $inputDate): void
     {
-        $date = $this->dateSetup('2015-01-24 22:00:00');
-        $gs = from($date);
-
-        $this->assertSame('2046-10-02 23:46:40', $gs->format('Y-m-d H:i:s'));
-        $this->assertInstanceOf(DateTimeImmutable::class, $gs);
-    }
-
-    public function testFullTimeWithDayRollOver() : void
-    {
-        $date = $this->dateSetup('2015-01-24 23:59:59');
-        $gs = from($date);
-
-        $this->assertSame('2046-10-03 01:46:39', $gs->format('Y-m-d H:i:s'));
-        $this->assertInstanceOf(DateTimeImmutable::class, $gs);
+        $date = $this->dateSetup($inputDate);
+        $this->assertInstanceOf(DateTimeImmutable::class, from($date));
     }
 }
