@@ -1,10 +1,18 @@
 <?php
 
-class RobotSimulatorTest extends PHPUnit\Framework\TestCase
+declare(strict_types=1);
+
+namespace ExercismTest\RobotSimulator;
+
+use PHPUnit\Framework\TestCase;
+use Exercism\RobotSimulator\Robot;
+use InvalidArgumentException;
+
+class RobotTest extends TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require_once 'robot-simulator.php';
+        require_once __DIR__ . '/../src/Robot.php';
     }
 
     /**

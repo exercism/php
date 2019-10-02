@@ -1,5 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
+namespace Exercism\RobotSimulator;
+
+use InvalidArgumentException;
+
 class Robot
 {
     public const DIRECTION_NORTH = 'north';
@@ -7,16 +13,10 @@ class Robot
     public const DIRECTION_SOUTH = 'south';
     public const DIRECTION_WEST = 'west';
 
-    /**
-     *
-     * @var int[]
-     */
+    /** @var int[] */
     protected $position;
 
-    /**
-     *
-     * @var string
-     */
+    /** @var string */
     protected $direction;
 
     public function __construct(array $position, string $direction)
@@ -41,9 +41,9 @@ class Robot
      * Turn the Robot clockwise
      * @return Robot
      */
-    public function turnRight() : \Robot
+    public function turnRight() : self
     {
-        $this->direction = self::listDirectionsClockwize()[$this->direction];
+        $this->direction = self::listDirectionsClockwise()[$this->direction];
         return $this;
     }
 
@@ -51,9 +51,9 @@ class Robot
      * Turn the Robot counterclockwise
      * @return Robot
      */
-    public function turnLeft() : \Robot
+    public function turnLeft() : self
     {
-        $this->direction = self::listDirectionsCounterClockwize()[$this->direction];
+        $this->direction = self::listDirectionsCounterClockwise()[$this->direction];
         return $this;
     }
 
@@ -61,7 +61,7 @@ class Robot
      * Advance the Robot one step forward
      * @return Robot
      */
-    public function advance() : \Robot
+    public function advance() : self
     {
         switch ($this->direction) {
             case self::DIRECTION_NORTH:
@@ -85,14 +85,16 @@ class Robot
 
     /**
      * Move the Robot according to instructions: R = Turn Right, L = Turn Left and A = Advance
+     * @param $instructions
+     * @return $this
      */
-    public function instructions($instructions)
+    public function instructions($instructions) : self
     {
         if (!preg_match('/^[LAR]+$/', $instructions)) {
             throw new InvalidArgumentException('Malformed instructions');
         }
 
-        foreach ($this->mapInsructionsToActions($instructions) as $action) {
+        foreach ($this->mapInstructionsToActions($instructions) as $action) {
             $this->$action();
         }
         return $this;
@@ -102,7 +104,7 @@ class Robot
      * List all possible clockwise turn combinations
      * @return array
      */
-    public static function listDirectionsClockwize() : array
+    public static function listDirectionsClockwise() : array
     {
         return [
             self::DIRECTION_NORTH => self::DIRECTION_EAST,
@@ -116,9 +118,9 @@ class Robot
      * List all possible counterclockwise turn combinations
      * @return array
      */
-    public static function listDirectionsCounterClockwize() : array
+    public static function listDirectionsCounterClockwise() : array
     {
-        return array_flip(self::listDirectionsClockwize());
+        return array_flip(self::listDirectionsClockwise());
     }
 
     /**
@@ -126,9 +128,9 @@ class Robot
      * @param string $stringInstructions
      * @return string[]
      */
-    protected function mapInsructionsToActions($stringInstructions) : array
+    protected function mapInstructionsToActions($stringInstructions) : array
     {
-        return array_map(function ($x) {
+        return array_map(static function ($x) {
             return [
                 'L' => 'turnLeft',
                 'R' => 'turnRight',
