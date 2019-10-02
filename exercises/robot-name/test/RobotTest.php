@@ -1,10 +1,15 @@
 <?php
 
-class RobotTest extends PHPUnit\Framework\TestCase
+namespace ExercismTest\RobotName;
+
+use PHPUnit\Framework\TestCase;
+use Exercism\RobotName\Robot;
+
+class RobotTest extends TestCase
 {
     public static function setUpBeforeClass() : void
     {
-        require_once 'robot-name.php';
+        require_once __DIR__ . '/../src/Robot.php';
     }
 
     /** @var Robot $robot */
@@ -36,7 +41,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
         unset($other_bot);
     }
 
-    public function testresetName() : void
+    public function testResetName() : void
     {
         $name1 = $this->robot->getName();
 

@@ -1,31 +1,8 @@
 <?php
-class Robot
-{
-    private $name;
 
-    public function __construct()
-    {
-        $this->reset();
-    }
+declare(strict_types=1);
 
-    /**
-     * Get Robot name
-     *
-     * @return string
-     */
-    public function getName() : string
-    {
-        return $this->name;
-    }
-
-    /**
-     * Reset name
-     */
-    public function reset() : void
-    {
-        $this->name = NamesRegistry::connect()->getNewName();
-    }
-}
+namespace Exercism\RobotName;
 
 class NamesRegistry
 {
@@ -42,10 +19,10 @@ class NamesRegistry
      *
      * @return NamesRegistry
      */
-    public static function connect() : \NamesRegistry
+    public static function connect() : self
     {
         if (empty(self::$registry)) {
-            self::$registry = new NamesRegistry();
+            self::$registry = new self();
             self::$letters = range('A', 'Z');
         }
         return self::$registry;
@@ -55,10 +32,10 @@ class NamesRegistry
      * Get new unique robot name
      *
      * @todo Names rotation not implemented. Task requires all robots
-     * to have unique names even if there are obsolete names.
+     *       to have unique names even if there are obsolete names.
      * @todo If there are plans to use Robot::reset() more than at least 200-300k times,
-     * it should be better to generate the full list of possible names at __construct
-     * and randomly reduce it on demand.
+     *       it should be better to generate the full list of possible names at __construct
+     *       and randomly reduce it on demand.
      * @todo No fallback in case of over 676000 names.
      *
      * @return string New Robot name     *
