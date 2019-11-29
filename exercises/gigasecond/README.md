@@ -1,6 +1,6 @@
 # Gigasecond
 
-Calculate the moment when someone has lived for 10^9 seconds.
+You must add a gigasecond to the informed date.
 
 A gigasecond is 10^9 (1,000,000,000) seconds.
 
