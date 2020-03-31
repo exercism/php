@@ -9,7 +9,7 @@ OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
 # language specific config (tweakable per language)
 FILEEXT := "php"
 EXAMPLE := "example.$(FILEEXT)"
-TSTFILE := "$(ASSIGNMENT)_test.$(FILEEXT)"
+TSTFILE := "$(ASSIGNMENT)Test.$(FILEEXT)"
 
 
 help: ## Prints this help
