@@ -24,7 +24,7 @@ install-test: ## install test dependency: phpunit.phar
 	chmod +x bin/phpunit.phar
 
 install-style: ## install style checker dependency: phpcs.phar
-	curl -Lo bin/phpcs.phar https://github.com/squizlabs/PHP_CodeSniffer/releases/download/2.0.0a2/phpcs.phar
+	curl -Lo bin/phpcs.phar https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
 	chmod +x bin/phpcs.phar
 
 test-assignment: bin/phpunit.phar ## run single test using ASSIGNMENTS: test-assignment ASSIGNMENT=wordy
