@@ -20,7 +20,7 @@ install: ## install development dependencies
 	$(MAKE) install-style
 
 install-test: ## install test dependency: phpunit.phar
-	curl -Lo ./bin/phpunit.phar https://phar.phpunit.de/phpunit.phar
+	curl -Lo ./bin/phpunit.phar https://phar.phpunit.de/phpunit-8.phar
 	chmod +x bin/phpunit.phar
 
 install-style: ## install style checker dependency: phpcs.phar
