@@ -4,7 +4,7 @@ We encourage to use a stable PHP release with active support. Currently this is 
 
 ### Install PHP
 
-PHP can be downloaded and built from source, available at [php.net/downloads.php](http://php.net/downloads.php) or[windows.php.net/download](https://windows.php.net/download).
+PHP can be downloaded and built from source, available at [php.net/downloads.php](http://php.net/downloads.php) or [windows.php.net/download](https://windows.php.net/download).
 
 > Note: A web server such as nginx or Apache HTTP server is not required to complete the exercises.
 
