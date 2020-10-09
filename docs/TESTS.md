@@ -1,5 +1,5 @@
 Execute the tests with:
 
-```
-$ phpunit filename.php
+```shell
+> phpunit file_to_test.php
 ```

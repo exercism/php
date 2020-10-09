@@ -1,6 +1,6 @@
 ### Which version to chose?
 
-We encourage to use a stable PHP release with active support. Currently this is **PHP 7.2 and 7.3**. Details on current releases and their timelines can be found at [php.net/supported-versions](https://www.php.net/supported-versions.php).
+We encourage to use a stable PHP release with active support. Currently this is **PHP 7.3 and 7.4**. Details on current releases and their timelines can be found at [php.net/supported-versions](https://www.php.net/supported-versions.php).
 
 ### Install PHP
 
@@ -28,7 +28,7 @@ For further instructions, read the manual on [Installation on Unix systems](http
 
 #### macOS
 
-Normally macOS comes with PHP installed. There are other pre-built options available, including [MAMP](http://www.mamp.info/en/) an [php-osx.liip.ch](https://php-osx.liip.ch/).
+Normally macOS comes with PHP installed, but it is often an outdated version. There are other pre-built options available, including [MAMP](http://www.mamp.info/en/) and [php-osx.liip.ch](https://php-osx.liip.ch/).
 
 For further instructions, read the manual on [Installation on macOS](https://www.php.net/manual/en/install.macosx.php).
 
@@ -44,17 +44,16 @@ For further instructions, read the manual on [Installation on Windows systems](h
 
 If you want to use a different OS, see instruction on [php.net/manual/en/install](https://www.php.net/manual/en/install.php).
 
-
 ### Install PHPUnit
 
 #### Via Composer
 
-PHPUnit can be installed globally via [Composer](https://getcomposer.org), using the following command.
+PHPUnit version 8 can be installed globally via [Composer](https://getcomposer.org), using the following command.
 
 ```bash
-$ composer global require phpunit/phpunit
+> composer global require phpunit/phpunit ^8
 ```
 
 #### Manual installation
 
-If you are not using Composer package manager, follow the official [Installing PHPUnit instructions](https://phpunit.de/manual/6.5/en/installation.html).
+If you are not using Composer package manager, follow the official [Installing PHPUnit instructions](https://phpunit.readthedocs.io/en/8.5/installation.html).
