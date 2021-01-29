@@ -15,6 +15,7 @@
     "indent_size": 4
   },
   "exercises": {
+    "concept": [],
     "practice": [
       {
         "slug": "hello-world",
