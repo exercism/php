@@ -1,5 +1,6 @@
 {
   "language": "PHP",
+  "slug": "php",
   "active": true,
   "status": {
     "concept_exercises": false,
