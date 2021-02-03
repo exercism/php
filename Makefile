@@ -43,7 +43,7 @@ test: ## run all tests
 
 style-check-assignment: bin/phpcs.phar ## run style check single test using ASSIGNMENTS: style-check-assignment ASSIGNMENT=wordy
 	@echo "checking $(ASSIGNMENT) against PHP code standards"
-	@bin/phpcs.phar -sp --standard=phpcs-php.xml ./exercises/$(ASSIGNMENT)
+	@bin/phpcs.phar -sp --standard=phpcs-php.xml ./exercises/practice/$(ASSIGNMENT)
 
 style-check: ## run style check all tests
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s style-check-assignment || exit 1; done
