@@ -2,6 +2,8 @@
 ASSIGNMENT ?= ""
 ASSIGNMENTS = $(shell find ./exercises/practice -maxdepth 1 -mindepth 1 -type d | awk -F/ '{print $$NF}' | sort )
 
+
+
 # output directories
 TMPDIR ?= "/tmp"
 OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
@@ -20,6 +22,7 @@ install: ## install development dependencies
 	$(MAKE) install-style
 
 install-test: ## install test dependency: phpunit-8.phar, phpunit-9.phar
+	mkdir -p ./bin
 	curl -Lo ./bin/phpunit-8.phar https://phar.phpunit.de/phpunit-8.phar
 	chmod +x bin/phpunit-8.phar
 	curl -Lo ./bin/phpunit-9.phar https://phar.phpunit.de/phpunit-9.phar
