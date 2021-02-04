@@ -731,6 +731,51 @@
     ]
   },
   "concepts": [],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "title": "Evolving",
+      "content": "PHP is consistently being updated and improved.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "Web Focused",
+      "content": "PHP was designed specifically with web development in mind.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "Flexible",
+      "content": "PHP is well suited scripting language for multiple platforms.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "Forgiving",
+      "content": "PHP allows your code to continue to execute, while still providing robust error reporting.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "Practical",
+      "content": "The classic syntax and well featured standard library make rapid development easy.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "Documented",
+      "content": "PHP is well documented by the official PHP.net website and it's helpful community.",
+      "icon": "features-generic"
+    }
+  ],
+  "tags": [
+    "paradigm/imperative",
+    "paradigm/object_oriented",
+    "paradigm/procedural",
+    "typing/dynamic",
+    "typing/weak",
+    "execution_mode/interpreted",
+    "platform/windows",
+    "platform/mac",
+    "platform/linux",
+    "runtime/language_specific",
+    "used_for/backends",
+    "used_for/cross_platform_development",
+    "used_for/scripts"
+  ]
 }
