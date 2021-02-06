@@ -21,7 +21,7 @@ function main {
     fi
   done
 
-  return 1
+  return $has_failures
 }
 
 function test {
