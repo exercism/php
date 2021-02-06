@@ -2,11 +2,22 @@
 
 set -euo pipefail
 
+tmpdir="/tmp"
+file_ext="php"
+
 function main {
   all_exercise_dirs=$(find ./exercises -maxdepth 2 -mindepth 2 -type d | awk -F/ '{print $NF}' | sort)
   for exercise_dir in $all_exercise_dirs; do
     exercise=$(basename "${exercise_dir}")
-    echo "${exercise}"
+    echo "running tests for: ${exercise}"
+
+    example_file="example.${file_ext}"
+    test_file="${exercise}_test.${file_ext}"
+    outdir=$(mktemp -d "${tmpdir}/${exercise}.XXXXXXXXXX")
+
+    cat "${exercise}/${test_file}" | sed '/markTestSkipped()/d' > "${outdir}/${test_file}"
+    cp "${exercise_dir}/${example_file}" "${outdir}/${exercise}.${file_ext}"
+    eval "${PHPUNIT_BIN}" --no-configuration "${outdir}/${test_file}"
   done
 
   return 0
