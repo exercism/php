@@ -33,11 +33,13 @@ jobs:
           extensions: gmp
 
       - name: Install dependencies
+        shell: bash
         run: |
           curl -Lo ./bin/phpunit-8.phar https://phar.phpunit.de/phpunit-8.phar
           chmod +x bin/phpunit-8.phar
 
       - name: Test exercises
+        shell: bash
         env:
           PHPUNIT_BIN: 'bin/phpunit-8.phar'
         run: bin/test.sh
