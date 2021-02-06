@@ -34,7 +34,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          mkdir -p ./bin
           curl -Lo ./bin/phpunit-8.phar https://phar.phpunit.de/phpunit-8.phar
           chmod +x bin/phpunit-8.phar
 

@@ -3,7 +3,7 @@
 set -euo pipefail
 
 function main {
-  all_exercise_dirs=$(find ./exercises -maxdepth 2 -mindepth 2 -type d | awk -F/ '{print $$NF}' | sort)
+  all_exercise_dirs=$(find ./exercises -maxdepth 2 -mindepth 2 -type d | awk -F/ '{print $NF}' | sort)
   for exercise_dir in $all_exercise_dirs; do
     exercise=$(basename "${exercise_dir}")
     echo "${exercise}"
