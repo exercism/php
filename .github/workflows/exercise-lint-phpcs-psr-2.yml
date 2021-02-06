@@ -45,7 +45,7 @@ jobs:
           chmod +x bin/phpcs.phar
 
       - name: Lint exercises
-        run: bin/lint.sh
-        with:
+        env:
           PHPCS_BIN: 'bin/phpcs.phar'
           PHPCS_RULES: 'phpcs-php.xml'
+        run: bin/lint.sh
