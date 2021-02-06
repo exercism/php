@@ -44,7 +44,7 @@ jobs:
           curl -Lo ./bin/phpunit-9.phar https://phar.phpunit.de/phpunit-9.phar
           chmod +x bin/phpunit-9.phar
 
-      - name: Test exercises
-        run: bin/test.sh
-        with:
+      - name: Test exercises\
+        env:
           PHPUNIT_BIN: 'bin/phpunit-9.phar'
+        run: bin/test.sh
