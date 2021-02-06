@@ -1,4 +1,4 @@
-name: Exercise tests
+name: Exercise tests with PHPUnit 8
 
 on:
   workflow_dispatch:
@@ -15,14 +15,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-version: [7.3, 7.4]
+        php-version: [7.4, 8.0]
         os: [ubuntu-latest, windows-latest, macOS-latest]
-
-        exclude:
-          - php-version: 7.3
-            os: windows-latest
-          - php-version: 7.3
-            os: macOS-latest
 
     steps:
       - name: Set git line endings
@@ -39,10 +33,13 @@ jobs:
           extensions: gmp
 
       - name: Install dependencies
-        run: make install
-
-      - name: Lint
-        run: make style-check
+        shell: bash
+        run: |
+          curl -Lo ./bin/phpunit-8.phar https://phar.phpunit.de/phpunit-8.phar
+          chmod +x bin/phpunit-8.phar
 
       - name: Test exercises
-        run: make test
+        shell: bash
+        env:
+          PHPUNIT_BIN: 'bin/phpunit-8.phar'
+        run: bin/test.sh
