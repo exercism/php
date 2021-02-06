@@ -1,4 +1,4 @@
-name: Exercise tests
+name: Exercise tests with PHPUnit 8
 
 on:
   workflow_dispatch:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-version: [7.3, 7.4]
+        php-version: [7.3, 7.4, 8.0]
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
         exclude:
@@ -39,10 +39,12 @@ jobs:
           extensions: gmp
 
       - name: Install dependencies
-        run: make install
-
-      - name: Lint
-        run: make style-check
+        run: |
+          mkdir -p ./bin
+          curl -Lo ./bin/phpunit-9.phar https://phar.phpunit.de/phpunit-9.phar
+          chmod +x bin/phpunit-9.phar
 
       - name: Test exercises
-        run: make test
+        run: bin/test.sh
+        with:
+          PHPUNIT_BIN: 'bin/phpunit-9.phar'
