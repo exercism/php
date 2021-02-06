@@ -1,23 +1,34 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -uo pipefail
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
 
 tmpdir="/tmp"
 file_ext="php"
 
 function main {
+  has_failures=0
+
   all_exercise_dirs=$(find ./exercises -maxdepth 2 -mindepth 2 -type d | sort)
   for exercise_dir in $all_exercise_dirs; do
-    test "${exercise_dir}" || true
+    test "${exercise_dir}"
+    if [[ $? -ne 0 ]]; then
+      has_failures=1
+    fi
   done
 
-  return 0
+  return 1
 }
 
 function test {
   exercise_dir="${1}"
   exercise=$(basename "${exercise_dir}")
-  echo "running tests for: ${exercise}"
+  echo ""
+  echo -e "Running tests for: ${YELLOW}${exercise}${NC}"
 
   example_file="example.${file_ext}"
   test_file="${exercise}_test.${file_ext}"
@@ -50,4 +61,12 @@ for dep in "${deps[@]}"; do
   installed "${dep}" || die "Missing '${dep}'"
 done
 
-main "$@"; exit
+main "$@"
+
+if [[ $? -ne 0 ]]; then
+  echo ""
+  echo -e "Some tests ${RED}failed${NC}. See log."
+  exit 1
+fi
+
+exit
