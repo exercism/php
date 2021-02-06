@@ -45,6 +45,6 @@ jobs:
           chmod +x bin/phpunit-8.phar
 
       - name: Test exercises
-        run: bin/test.sh
-        with:
+        env:
           PHPUNIT_BIN: 'bin/phpunit-8.phar'
+        run: bin/test.sh
