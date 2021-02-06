@@ -28,14 +28,30 @@ Exercism exercises in PHP
 
 ## Running Unit Test Suite
 
+### PHPUnit 8
+
 ```shell
-> ./bin/test.sh
+> PHPUNIT_BIN="./bin/phpunit-8.phar" ./bin/test.sh
+```
+
+### PHPUnit 9
+
+```shell
+> PHPUNIT_BIN="./bin/phpunit-9.phar" ./bin/test.sh
 ```
 
 ## Running Style Checker
 
+### PSR-2 rules
+
 ```shell
-> ./bin/lint.sh
+> PHPCS_BIN="./bin/phpcs.phar" PHPCS_RULES="./phpcs-php.xml" ./bin/lint.sh
+```
+
+### PSR-12 rules
+
+```shell
+> PHPCS_BIN="./bin/phpcs.phar" PHPCS_RULES="./phpcs-php-psr12.xml" ./bin/lint.sh
 ```
 
 ## Contributing
