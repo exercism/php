@@ -15,7 +15,7 @@ function main {
     test_file="${exercise}_test.${file_ext}"
     outdir=$(mktemp -d "${tmpdir}/${exercise}.XXXXXXXXXX")
 
-    cat "${exercise}/${test_file}" | sed '/markTestSkipped()/d' > "${outdir}/${test_file}"
+    cat "${exercise_dir}/${test_file}" | sed '/markTestSkipped()/d' > "${outdir}/${test_file}"
     cp "${exercise_dir}/${example_file}" "${outdir}/${exercise}.${file_ext}"
     eval "${PHPUNIT_BIN}" --no-configuration "${outdir}/${test_file}"
   done

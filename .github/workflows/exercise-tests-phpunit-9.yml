@@ -1,4 +1,4 @@
-name: Exercise tests with PHPUnit 8
+name: Exercise tests with PHPUnit 9
 
 on:
   workflow_dispatch:
