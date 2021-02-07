@@ -1,6 +1,6 @@
 <?php
 
-function isArmstrongNumber(int $number) : bool
+function isArmstrongNumber(int $number): bool
 {
     $total = 0;
     $numberArray = str_split(strval($number));

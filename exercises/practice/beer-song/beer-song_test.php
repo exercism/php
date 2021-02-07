@@ -2,12 +2,12 @@
 
 class BeerSongTest extends PHPUnit\Framework\TestCase
 {
-    public static function setUpBeforeClass() : void
+    public static function setUpBeforeClass(): void
     {
         require_once 'beer-song.php';
     }
 
-    public function testFirstVerse() : void
+    public function testFirstVerse(): void
     {
         $expected = "99 bottles of beer on the wall, 99 bottles of beer.\n" .
             "Take one down and pass it around, 98 bottles of beer on the wall.\n";
@@ -15,7 +15,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $song->verse(99));
     }
 
-    public function testVerse2() : void
+    public function testVerse2(): void
     {
         $expected = "2 bottles of beer on the wall, 2 bottles of beer.\n" .
             "Take one down and pass it around, 1 bottle of beer on the wall.\n";
@@ -23,7 +23,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $song->verse(2));
     }
 
-    public function testVerse1() : void
+    public function testVerse1(): void
     {
         $expected = "1 bottle of beer on the wall, 1 bottle of beer.\n" .
             "Take it down and pass it around, no more bottles of beer on the wall.\n";
@@ -31,7 +31,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $song->verse(1));
     }
 
-    public function testVerse0() : void
+    public function testVerse0(): void
     {
         $expected = "No more bottles of beer on the wall, no more bottles of beer.\n" .
             "Go to the store and buy some more, 99 bottles of beer on the wall.";
@@ -39,7 +39,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $song->verse(0));
     }
 
-    public function testACoupleVerses() : void
+    public function testACoupleVerses(): void
     {
         $expected = "99 bottles of beer on the wall, 99 bottles of beer.\n" .
             "Take one down and pass it around, 98 bottles of beer on the wall.\n" .
@@ -50,7 +50,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $song->verses(99, 98));
     }
 
-    public function testAFewVerses() : void
+    public function testAFewVerses(): void
     {
         $expected = "2 bottles of beer on the wall, 2 bottles of beer.\n" .
             "Take one down and pass it around, 1 bottle of beer on the wall.\n" .
@@ -64,7 +64,7 @@ class BeerSongTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $song->verses(2, 0));
     }
 
-    public function testWholeSong() : void
+    public function testWholeSong(): void
     {
         $expected = <<<SONG
 99 bottles of beer on the wall, 99 bottles of beer.

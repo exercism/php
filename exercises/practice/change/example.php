@@ -1,7 +1,7 @@
 <?php
 
 // adapted from the python example
-function findFewestCoins(array $coins, int $total_change) : array
+function findFewestCoins(array $coins, int $total_change): array
 {
     // Some checks
     if ($total_change == 0) {

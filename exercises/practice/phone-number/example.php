@@ -9,27 +9,27 @@ class PhoneNumber
         $this->number = $this->clean($number);
     }
 
-    public function number() : string
+    public function number(): string
     {
         return $this->number;
     }
 
-    public function areaCode() : string
+    public function areaCode(): string
     {
         return substr($this->number, 0, 3);
     }
 
-    public function prettyPrint() : string
+    public function prettyPrint(): string
     {
         return '(' . $this->areaCode() . ') ' . $this->prefix() . '-' . $this->lineNumber();
     }
 
-    private function clean(string $number) : string
+    private function clean(string $number): string
     {
         return $this->validate(preg_replace('/[^0-9a-z@:!]+/i', '', $number));
     }
 
-    private function validate(string $number) : string
+    private function validate(string $number): string
     {
         if (strlen($number) === 11 && $number[0] !== '1') {
             throw new InvalidArgumentException('11 digits must start with 1');
@@ -74,12 +74,12 @@ class PhoneNumber
         return $number;
     }
 
-    private function prefix() : string
+    private function prefix(): string
     {
         return substr($this->number, 3, 3);
     }
 
-    private function lineNumber() : string
+    private function lineNumber(): string
     {
         return substr($this->number, 6, 4);
     }

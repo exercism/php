@@ -47,20 +47,20 @@ class Board
         return $this->fields[$c[1]][$c[0]];
     }
 
-    public function update($c, $flag) : void
+    public function update($c, $flag): void
     {
         $this->fields[$c[1]][$c[0]] |= $flag;
     }
 
-    public function neighbours($c) : array
+    public function neighbours($c): array
     {
         $coords = [
             [$c[0] + 1, $c[1]],
             [$c[0] - 1, $c[1]],
-            [$c[0],   $c[1] + 1],
-            [$c[0],   $c[1] - 1],
+            [$c[0], $c[1] + 1],
+            [$c[0], $c[1] - 1],
             [$c[0] - 1, $c[1] + 1],
-            [$c[0] + 1, $c[1] - 1]
+            [$c[0] + 1, $c[1] - 1],
         ];
         $validCoord = function ($c) {
             return $c[0] >= 0 && $c[0] < $this->width && $c[1] >= 0 && $c[1] < $this->height;
@@ -68,7 +68,7 @@ class Board
         return array_filter($coords, $validCoord);
     }
 
-    public function isGoalEdge($c, $color) : ?bool
+    public function isGoalEdge($c, $color): ?bool
     {
         if ($color === WHITE) {
             return $c[1] === $this->height - 1;
@@ -77,7 +77,7 @@ class Board
         }
     }
 
-    public function whiteStartCoords() : array
+    public function whiteStartCoords(): array
     {
         $coords = [];
         for ($i = 0; $i < $this->width; $i++) {
@@ -86,7 +86,7 @@ class Board
         return $coords;
     }
 
-    public function blackStartCoords() : array
+    public function blackStartCoords(): array
     {
         $coords = [];
         for ($i = 0; $i < $this->height; $i++) {
@@ -97,7 +97,7 @@ class Board
 
     // Prints the board, occasionally useful for debugging.
     // Capital letters indicate a connect flag has been set.
-    public function dump() : void
+    public function dump(): void
     {
         print "\n";
         for ($y = 0; $y < $this->height; $y++) {

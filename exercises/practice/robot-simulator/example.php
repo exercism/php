@@ -41,7 +41,7 @@ class Robot
      * Turn the Robot clockwise
      * @return Robot
      */
-    public function turnRight() : \Robot
+    public function turnRight(): \Robot
     {
         $this->direction = self::listDirectionsClockwize()[$this->direction];
         return $this;
@@ -51,7 +51,7 @@ class Robot
      * Turn the Robot counterclockwise
      * @return Robot
      */
-    public function turnLeft() : \Robot
+    public function turnLeft(): \Robot
     {
         $this->direction = self::listDirectionsCounterClockwize()[$this->direction];
         return $this;
@@ -61,7 +61,7 @@ class Robot
      * Advance the Robot one step forward
      * @return Robot
      */
-    public function advance() : \Robot
+    public function advance(): \Robot
     {
         switch ($this->direction) {
             case self::DIRECTION_NORTH:
@@ -102,7 +102,7 @@ class Robot
      * List all possible clockwise turn combinations
      * @return array
      */
-    public static function listDirectionsClockwize() : array
+    public static function listDirectionsClockwize(): array
     {
         return [
             self::DIRECTION_NORTH => self::DIRECTION_EAST,
@@ -116,7 +116,7 @@ class Robot
      * List all possible counterclockwise turn combinations
      * @return array
      */
-    public static function listDirectionsCounterClockwize() : array
+    public static function listDirectionsCounterClockwize(): array
     {
         return array_flip(self::listDirectionsClockwize());
     }
@@ -126,7 +126,7 @@ class Robot
      * @param string $stringInstructions
      * @return string[]
      */
-    protected function mapInsructionsToActions($stringInstructions) : array
+    protected function mapInsructionsToActions($stringInstructions): array
     {
         return array_map(function ($x) {
             return [

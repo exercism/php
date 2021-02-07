@@ -36,7 +36,8 @@ function canAttack($whiteQueen, $blackQueen)
     placeQueen($whiteQueen[0], $whiteQueen[1]);
     placeQueen($blackQueen[0], $blackQueen[1]);
 
-    if (onRankOrFile($whiteQueen[0], $blackQueen[0]) ||
+    if (
+        onRankOrFile($whiteQueen[0], $blackQueen[0]) ||
         onRankOrFile($whiteQueen[1], $blackQueen[1]) ||
         onDiagonal($whiteQueen[0], $whiteQueen[1], $blackQueen[0], $blackQueen[1])
     ) {

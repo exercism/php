@@ -8,7 +8,7 @@
  */
 class AffineCipherTest extends PHPUnit\Framework\TestCase
 {
-    public static function setUpBeforeClass() : void
+    public static function setUpBeforeClass(): void
     {
         require_once 'affine-cipher.php';
     }
@@ -17,32 +17,32 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
      * Tests for encoding English to ciphertext with keys.
      */
 
-    public function testEncodeYes() : void
+    public function testEncodeYes(): void
     {
         $this->assertEquals('xbt', encode('yes', 5, 7));
     }
 
-    public function testEncodeNo() : void
+    public function testEncodeNo(): void
     {
         $this->assertEquals('fu', encode('no', 15, 18));
     }
 
-    public function testEncodeOMG() : void
+    public function testEncodeOMG(): void
     {
         $this->assertEquals('lvz', encode('OMG', 21, 3));
     }
 
-    public function testEncodeOMGWithSpaces() : void
+    public function testEncodeOMGWithSpaces(): void
     {
         $this->assertEquals('hjp', encode('O M G', 25, 47));
     }
 
-    public function testEncodemindblowingly() : void
+    public function testEncodemindblowingly(): void
     {
         $this->assertEquals('rzcwa gnxzc dgt', encode('mindblowingly', 11, 15));
     }
 
-    public function testEncodenumbers() : void
+    public function testEncodenumbers(): void
     {
         $this->assertEquals(
             'jqgjc rw123 jqgjc rw',
@@ -50,12 +50,12 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testEncodeDeepThought() : void
+    public function testEncodeDeepThought(): void
     {
         $this->assertEquals('iynia fdqfb ifje', encode('Truth is fiction.', 5, 17));
     }
 
-    public function testEncodeAllTheLetters() : void
+    public function testEncodeAllTheLetters(): void
     {
         $this->assertEquals(
             'swxtj npvyk lruol iejdc blaxk swxmh qzglf',
@@ -63,7 +63,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testEncodeWithANotCoprimeToM() : void
+    public function testEncodeWithANotCoprimeToM(): void
     {
         $this->expectException(Exception::class);
         encode('This is a test', 6, 17);
@@ -73,12 +73,12 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
      * Test decoding from ciphertext to English with keys
      */
 
-    public function testDecodeExercism() : void
+    public function testDecodeExercism(): void
     {
         $this->assertEquals('exercism', decode('tytgn fjr', 3, 7));
     }
 
-    public function testDecodeASentence() : void
+    public function testDecodeASentence(): void
     {
         $this->assertEquals(
             decode("qdwju nqcro muwhn odqun oppmd aunwd o", 19, 16),
@@ -86,7 +86,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testDecodeNumbers() : void
+    public function testDecodeNumbers(): void
     {
         $this->assertEquals(
             decode("odpoz ub123 odpoz ub", 25, 7),
@@ -94,7 +94,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testDecodeAllTheLetters() : void
+    public function testDecodeAllTheLetters(): void
     {
         $this->assertEquals(
             decode("swxtj npvyk lruol iejdc blaxk swxmh qzglf", 17, 33),
@@ -102,7 +102,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testDecodeWithNoSpacesInInput() : void
+    public function testDecodeWithNoSpacesInInput(): void
     {
         $this->assertEquals(
             decode("swxtjnpvyklruoliejdcblaxkswxmhqzglf", 17, 33),
@@ -110,7 +110,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testDecodeWithTooManySpaces() : void
+    public function testDecodeWithTooManySpaces(): void
     {
         $this->assertEquals(
             decode("vszzm    cly   yd cg    qdp", 15, 16),
@@ -118,7 +118,7 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function testDecodeWithANotCoprimeToM() : void
+    public function testDecodeWithANotCoprimeToM(): void
     {
         $this->expectException(Exception::class);
         decode("Test", 13, 5);

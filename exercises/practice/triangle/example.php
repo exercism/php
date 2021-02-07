@@ -13,7 +13,7 @@ class Triangle
         $this->sideC = $sideC;
     }
 
-    public function kind() : string
+    public function kind(): string
     {
         if (0 == ($this->sideA + $this->sideB + $this->sideC)) {
             throw new Exception("These sides have no values.");
@@ -25,13 +25,15 @@ class Triangle
             throw new Exception("This violates the triangle inequality");
         }
 
-        if ($this->sideA == $this->sideB &&
+        if (
+            $this->sideA == $this->sideB &&
             $this->sideA == $this->sideC
         ) {
             return 'equilateral';
         }
 
-        if ($this->sideB == $this->sideC ||
+        if (
+            $this->sideB == $this->sideC ||
             $this->sideA == $this->sideC ||
             $this->sideA == $this->sideB
         ) {

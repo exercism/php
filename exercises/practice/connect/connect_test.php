@@ -2,7 +2,7 @@
 
 class ConnectTest extends PHPUnit\Framework\TestCase
 {
-    public static function setUpBeforeClass() : void
+    public static function setUpBeforeClass(): void
     {
         require_once 'connect.php';
     }
@@ -10,21 +10,21 @@ class ConnectTest extends PHPUnit\Framework\TestCase
     /**
      * Strip off the spaces which are only for readability.
      */
-    private function makeBoard($lines) : array
+    private function makeBoard($lines): array
     {
         return array_map(function ($line) {
             return str_replace(" ", "", $line);
         }, $lines);
     }
 
-    public function testEmptyBoardHasNoWinner() : void
+    public function testEmptyBoardHasNoWinner(): void
     {
         $lines = [
             ". . . . .",
             " . . . . .",
             "  . . . . .",
             "   . . . . .",
-            "    . . . . ."
+            "    . . . . .",
         ];
         $this->assertEquals(null, resultFor($this->makeBoard($lines)));
     }
@@ -32,7 +32,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
     /**
      * @depends testEmptyBoardHasNoWinner
      */
-    public function testOneByOneBoardBlack() : void
+    public function testOneByOneBoardBlack(): void
     {
         $lines = ["X"];
         $this->assertEquals("black", resultFor($this->makeBoard($lines)));
@@ -41,7 +41,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
     /**
      * @depends testEmptyBoardHasNoWinner
      */
-    public function testOneByOneBoardWhite() : void
+    public function testOneByOneBoardWhite(): void
     {
         $lines = ["O"];
         $this->assertEquals("white", resultFor($this->makeBoard($lines)));
@@ -51,14 +51,14 @@ class ConnectTest extends PHPUnit\Framework\TestCase
      * @depends testOneByOneBoardBlack
      * @depends testOneByOneBoardWhite
      */
-    public function testConvultedPath() : void
+    public function testConvultedPath(): void
     {
         $lines = [
             ". X X . .",
             " X . X . X",
             "  . X . X .",
             "   . X X . .",
-            "    O O O O O"
+            "    O O O O O",
         ];
         $this->assertEquals("black", resultFor($this->makeBoard($lines)));
     }
@@ -66,14 +66,14 @@ class ConnectTest extends PHPUnit\Framework\TestCase
     /**
      * @depends testConvultedPath
      */
-    public function testRectangleWhiteWins() : void
+    public function testRectangleWhiteWins(): void
     {
         $lines = [
             ". O . .",
             " O X X X",
             "  O O O .",
             "   X X O X",
-            "    . O X ."
+            "    . O X .",
         ];
         $this->assertEquals("white", resultFor($this->makeBoard($lines)));
     }
@@ -81,14 +81,14 @@ class ConnectTest extends PHPUnit\Framework\TestCase
     /**
      * @depends testConvultedPath
      */
-    public function testRectangleBlackWins() : void
+    public function testRectangleBlackWins(): void
     {
         $lines = [
             ". O . .",
             " O X X X",
             "  O X O .",
             "   X X O X",
-            "    . O X ."
+            "    . O X .",
         ];
         $this->assertEquals("black", resultFor($this->makeBoard($lines)));
     }
@@ -97,7 +97,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
      * @depends testRectangleWhiteWins
      * @depends testRectangleBlackWins
      */
-    public function testSpiralBlackWins() : void
+    public function testSpiralBlackWins(): void
     {
         $lines = [
             "OXXXXXXXX",
@@ -108,7 +108,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "OXOOOXOXO",
             "OXXXXXOXO",
             "OOOOOOOXO",
-            "XXXXXXXXO"
+            "XXXXXXXXO",
         ];
         $this->assertEquals("black", resultFor($this->makeBoard($lines)));
     }
@@ -117,7 +117,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
      * @depends testRectangleWhiteWins
      * @depends testRectangleBlackWins
      */
-    public function testSpiralNobodyWins() : void
+    public function testSpiralNobodyWins(): void
     {
         $lines = [
             "OXXXXXXXX",
@@ -128,7 +128,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "OXOOOXOXO",
             "OXXXXXOXO",
             "OOOOOOOXO",
-            "XXXXXXXXO"
+            "XXXXXXXXO",
         ];
         $this->assertEquals(null, resultFor($this->makeBoard($lines)));
     }
@@ -137,14 +137,14 @@ class ConnectTest extends PHPUnit\Framework\TestCase
      * @depends testSpiralBlackWins
      * @depends testSpiralNobodyWins
      */
-    public function testIllegalDiagonalNobodyWins() : void
+    public function testIllegalDiagonalNobodyWins(): void
     {
         $lines = [
             "X O . .",
             " O X X X",
             "  O X O .",
             "   . O X .",
-            "    X X O O"
+            "    X X O O",
         ];
 
         $this->assertEquals(null, resultFor($this->makeBoard($lines)));
