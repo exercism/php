@@ -2,12 +2,12 @@
 
 class GigasecondTest extends PHPUnit\Framework\TestCase
 {
-    public static function setUpBeforeClass() : void
+    public static function setUpBeforeClass(): void
     {
         require_once 'gigasecond.php';
     }
 
-    public function dateSetup($date) : DateTimeImmutable
+    public function dateSetup($date): DateTimeImmutable
     {
         $UTC = new DateTimeZone('UTC');
         return new DateTimeImmutable($date, $UTC);

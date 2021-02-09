@@ -1,12 +1,12 @@
 <?php
 
-function brackets_match(string $input) : bool
+function brackets_match(string $input): bool
 {
     $characters = str_split($input);
 
     $bracketsStack = array_reduce(
         $characters,
-        function (array $stack, string $char) : array {
+        function (array $stack, string $char): array {
             $isOpeningBracket = function ($char) {
                 return in_array($char, ['[', '{', '(']);
             };

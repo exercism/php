@@ -41,7 +41,7 @@ function vlq_decode(array $bytes)
 
         $integer <<= 7;
         $integer |= 0x7f & $byte;
-        
+
         if (($byte & 0x80) === 0) {
             $result[] = $integer;
             $integer = 0;

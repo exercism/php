@@ -8,7 +8,7 @@ class Bob
      * @param string $str
      * @return string
      */
-    public function respondTo($str) : string
+    public function respondTo($str): string
     {
         $str = $this->prepareText($str);
 
@@ -37,7 +37,7 @@ class Bob
      * @param string $str
      * @return bool
      */
-    private function isAllCapitals($str) : bool
+    private function isAllCapitals($str): bool
     {
         return strtoupper($str) == $str;
     }
@@ -51,7 +51,7 @@ class Bob
      * @param string $str
      * @return int
      */
-    private function containsCharacters($str) : int
+    private function containsCharacters($str): int
     {
         return preg_match('/\p{L}/', $str);
     }
@@ -62,7 +62,7 @@ class Bob
      * @param $str
      * @return bool
      */
-    private function isYelling($str) : bool
+    private function isYelling($str): bool
     {
         return $this->containsCharacters($str) && $this->isAllCapitals($str);
     }
@@ -75,7 +75,7 @@ class Bob
      * @param string $str
      * @return int
      */
-    private function isQuestion($str) : int
+    private function isQuestion($str): int
     {
         return preg_match('/\?$/', $str);
     }
@@ -86,7 +86,7 @@ class Bob
      * @param string $str
      * @return bool
      */
-    private function isSilence($str) : bool
+    private function isSilence($str): bool
     {
         return empty($str);
     }
@@ -97,7 +97,7 @@ class Bob
      * @param string $str
      * @return string
      */
-    private function prepareText($str) : string
+    private function prepareText($str): string
     {
         return trim($str);
     }

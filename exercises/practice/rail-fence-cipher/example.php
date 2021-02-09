@@ -1,4 +1,5 @@
 <?php
+
 function encode($plainMessage, $rails)
 {
     $cipherMessage = [];

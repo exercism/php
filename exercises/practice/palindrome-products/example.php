@@ -53,7 +53,8 @@ function factorize($n, $factorRange)
 {
     $factors = [];
     foreach ($factorRange as $x) {
-        if ($n % $x === 0
+        if (
+            $n % $x === 0
             && in_array($n / $x, $factorRange)
             && !in_array([$n / $x, $x], $factors)
         ) {

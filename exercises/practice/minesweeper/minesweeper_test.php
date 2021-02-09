@@ -2,12 +2,12 @@
 
 class MinesweeperTest extends PHPUnit\Framework\TestCase
 {
-    public static function setUpBeforeClass() : void
+    public static function setUpBeforeClass(): void
     {
         require_once 'minesweeper.php';
     }
 
-    public function testAnEmptyBoard() : void
+    public function testAnEmptyBoard(): void
     {
         $emptyBoard = '
 +--+
@@ -17,7 +17,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         $this->assertSame($emptyBoard, solve($emptyBoard));
     }
 
-    public function testAnIncompleteSideBorderThrowsAnException() : void
+    public function testAnIncompleteSideBorderThrowsAnException(): void
     {
         $incompleteBoard = '
 +--+
@@ -29,7 +29,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         solve($incompleteBoard);
     }
 
-    public function testAnIncompleteTopBorderThrowsAnException() : void
+    public function testAnIncompleteTopBorderThrowsAnException(): void
     {
         $incompleteBoard = '
 + -+
@@ -41,7 +41,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         solve($incompleteBoard);
     }
 
-    public function testAMissingCornerThrowsAnException() : void
+    public function testAMissingCornerThrowsAnException(): void
     {
         $incompleteBoard = '
 +--
@@ -53,7 +53,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         solve($incompleteBoard);
     }
 
-    public function testABoardWithLessThan2SquaresThrowsAnException() : void
+    public function testABoardWithLessThan2SquaresThrowsAnException(): void
     {
         $tinyBoard = '
 +-+
@@ -65,7 +65,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         solve($tinyBoard);
     }
 
-    public function testRowsOfSameLength($value = '') : void
+    public function testRowsOfSameLength($value = ''): void
     {
         $unequalBoard = '
 +---+
@@ -79,7 +79,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         solve($unequalBoard);
     }
 
-    public function testCanOnlyContainMines($value = '') : void
+    public function testCanOnlyContainMines($value = ''): void
     {
         $badBoard = '
 +---+
@@ -94,7 +94,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         solve($badBoard);
     }
 
-    public function testBoardWithOneMineToLeft() : void
+    public function testBoardWithOneMineToLeft(): void
     {
         $oneMine = '
 +--+
@@ -111,7 +111,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, solve($oneMine));
     }
 
-    public function testBoardWithOneMineToRight() : void
+    public function testBoardWithOneMineToRight(): void
     {
         $oneMine = '
 +--+
@@ -128,7 +128,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, solve($oneMine));
     }
 
-    public function testBoardWithAMineToTopAndRight() : void
+    public function testBoardWithAMineToTopAndRight(): void
     {
         $twoMines = '
 +--+
@@ -147,7 +147,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, solve($twoMines));
     }
 
-    public function testBoardWithAMineToBottomAndLeftAndDiagonal() : void
+    public function testBoardWithAMineToBottomAndLeftAndDiagonal(): void
     {
         $threeMines = '
 +--+
@@ -166,7 +166,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, solve($threeMines));
     }
 
-    public function testAComplicatedBoard() : void
+    public function testAComplicatedBoard(): void
     {
         $fourMines = '
 +-----+

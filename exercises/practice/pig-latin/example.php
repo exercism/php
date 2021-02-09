@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Translates a string into Pig Latin
  *

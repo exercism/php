@@ -1,4 +1,5 @@
 <?php
+
 function prime($count)
 {
     if ($count < 1) {

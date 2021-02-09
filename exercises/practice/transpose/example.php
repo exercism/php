@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Transpose multi line text into Rows become columns and columns become rows.
  * Eg: http://en.wikipedia.org/wiki/Transpose

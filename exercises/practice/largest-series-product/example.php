@@ -35,7 +35,7 @@ class Series
      * @param int $span
      * @return int
      */
-    public function largestProduct($span) : int
+    public function largestProduct($span): int
     {
         if (0 == $span) {
             return 1;
@@ -52,7 +52,7 @@ class Series
      * @param int $span
      * @throws InvalidArgumentException
      */
-    private function validateSpan($span) : void
+    private function validateSpan($span): void
     {
         if ($span < 0) {
             throw new InvalidArgumentException(sprintf(
@@ -76,7 +76,7 @@ class Series
      * @param int $span
      * @return int
      */
-    private function largestSeriesProduct($span) : int
+    private function largestSeriesProduct($span): int
     {
         $products = [];
         for ($start = 0; $start <= $this->sequenceLength - $span; $start++) {
@@ -91,7 +91,7 @@ class Series
      * @param string $stringSection
      * @return int
      */
-    private function multiplyStringSection($stringSection) : int
+    private function multiplyStringSection($stringSection): int
     {
         return array_product(str_split($stringSection));
     }
@@ -102,9 +102,9 @@ class Series
      * @param $digits
      * @throws InvalidArgumentException
      */
-    private function validateSequence($digits) : void
+    private function validateSequence($digits): void
     {
-        if (! empty($digits) && ! is_numeric($digits)) {
+        if (!empty($digits) && !is_numeric($digits)) {
             throw new InvalidArgumentException(sprintf(
                 "Must supply a non-empty, numeric only sequence. [%s] was given",
                 $digits
