@@ -1,3 +1,5 @@
+# About
+
 PHP is a server-side language suited towards web development. The acronym is recursive, standing for _PHP: Hypertext Preprocessor_.
 
 Considerably more versatile than CGI scripting, PHP is often used to add interactivity to plain HTML and bolster web frameworks.
