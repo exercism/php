@@ -1,3 +1,5 @@
+# Installation
+
 ### Which version to chose?
 
 We encourage to use a stable PHP release with active support. Currently this is **PHP 7.3 and 7.4**. Details on current releases and their timelines can be found at [php.net/supported-versions](https://www.php.net/supported-versions.php).

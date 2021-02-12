@@ -1,3 +1,5 @@
+# Tests
+
 Execute the tests with:
 
 ```shell
