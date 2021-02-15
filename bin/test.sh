@@ -35,7 +35,7 @@ function test {
   outdir=$(mktemp -d "${tmpdir}/${exercise}.XXXXXXXXXX")
 
   cat "${exercise_dir}/${test_file}" | sed '/markTestSkipped()/d' > "${outdir}/${test_file}"
-  cp "${exercise_dir}/${example_file}" "${outdir}/${exercise}.${file_ext}"
+  cp "${exercise_dir}/.meta/${example_file}" "${outdir}/${exercise}.${file_ext}"
   eval "${PHPUNIT_BIN}" --no-configuration "${outdir}/${test_file}"
 }
 
