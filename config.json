@@ -16,16 +16,16 @@
   },
   "files": {
     "solution": [
-      "path/to/%{kebab_slug}.ext"
+      "%{pascal_slug}.php"
     ],
     "test": [
-      "path/to/%{kebab_slug}.ext"
+      "%{pascal_slug}Test.php"
     ],
     "example": [
-      "path/to/%{kebab_slug}.ext"
+      ".meta/example.php"
     ],
     "exemplar": [
-      "path/to/%{kebab_slug}.ext"
+      ".meta/exemplar.php"
     ]
   },
   "exercises": {
