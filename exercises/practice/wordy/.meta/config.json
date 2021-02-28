@@ -1,0 +1,12 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [],
+    "test": [],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "source": "Inspired by one of the generated questions in the Extreme Startup game.",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}

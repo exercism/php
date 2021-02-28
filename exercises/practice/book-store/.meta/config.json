@@ -1,0 +1,12 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [],
+    "test": [],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "source": "Inspired by the harry potter kata from Cyber-Dojo.",
+  "source_url": "http://cyber-dojo.org"
+}

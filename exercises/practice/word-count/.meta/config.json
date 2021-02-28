@@ -1,0 +1,11 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [],
+    "test": [],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

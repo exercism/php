@@ -1,0 +1,45 @@
+name: Exercise tests with PHPUnit 9
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  test:
+    name: PHP ${{ matrix.php-version }} - ${{ matrix.os }} - ${{ github.event_name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: [7.4, 8.0]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+      - name: Set git line endings
+        if: ${{ matrix.os == 'windows-latest' }}
+        run: |
+          git config --system core.autocrlf false
+          git config --system core.eol lf
+
+      - uses: actions/checkout@v2
+
+      - uses: shivammathur/setup-php@46fc8a2fd7cba50512858026dc8f0947c8a7a0e8
+        with:
+          version: ${{ matrix.php-version }}
+          extensions: gmp
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          curl -Lo ./bin/phpunit-9.phar https://phar.phpunit.de/phpunit-9.phar
+          chmod +x bin/phpunit-9.phar
+
+      - name: Test exercises\
+        shell: bash
+        env:
+          PHPUNIT_BIN: 'bin/phpunit-9.phar'
+        run: bin/test.sh

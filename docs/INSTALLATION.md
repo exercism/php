@@ -1,14 +1,16 @@
-### Which version to chose?
+# Installation
+
+## Which version to chose?
 
 We encourage to use a stable PHP release with active support. Currently this is **PHP 7.3 and 7.4**. Details on current releases and their timelines can be found at [php.net/supported-versions](https://www.php.net/supported-versions.php).
 
-### Install PHP
+## Install PHP
 
 PHP can be downloaded and built from source, available at [php.net/downloads.php](http://php.net/downloads.php) or [windows.php.net/download](https://windows.php.net/download).
 
 > Note: A web server such as nginx or Apache HTTP server is not required to complete the exercises.
 
-#### Linux
+### Linux
 
 Different distributions have different methods. You should be able to
 
@@ -26,13 +28,13 @@ depending on your repository manager.
 
 For further instructions, read the manual on [Installation on Unix systems](https://www.php.net/manual/en/install.unix.php).
 
-#### macOS
+### macOS
 
 Normally macOS comes with PHP installed, but it is often an outdated version. There are other pre-built options available, including [MAMP](http://www.mamp.info/en/) and [php-osx.liip.ch](https://php-osx.liip.ch/).
 
 For further instructions, read the manual on [Installation on macOS](https://www.php.net/manual/en/install.macosx.php).
 
-#### Windows
+### Windows
 
 Official PHP binaries for Windows can be downloaded from [windows.php.net/download](https://windows.php.net/download).
 
@@ -40,7 +42,7 @@ There are pre-built stacks including [WAMP](http://www.wampserver.com/en/) - (Wi
 
 For further instructions, read the manual on [Installation on Windows systems](https://www.php.net/manual/en/install.windows.php).
 
-#### Other
+### Other
 
 If you want to use a different OS, see instruction on [php.net/manual/en/install](https://www.php.net/manual/en/install.php).
 

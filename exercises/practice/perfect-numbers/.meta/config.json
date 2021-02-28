@@ -1,0 +1,12 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [],
+    "test": [],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "source": "Taken from Chapter 2 of Functional Thinking by Neal Ford.",
+  "source_url": "http://shop.oreilly.com/product/0636920029687.do"
+}
