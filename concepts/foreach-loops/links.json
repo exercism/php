@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/control-structures.foreach.php",
+    "description": "PHP Manual: Foreach loop"
+  },
+  {
+    "url": "https://tutorials.supunkavinda.blog/php/loops#for-each",
+    "description": "PHP Tutorial: Foreach loop"
+  },
+  {
+    "url": "https://www.w3schools.com/php/php_looping_foreach.asp",
+    "description": "w3schools.com: Foreach loop"
+  },
+  {
+    "url": "https://www.tutorialspoint.com/php/php_loop_types.htm",
+    "description": "Tutorialspoint: Loop types"
+  }
+]
