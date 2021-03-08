@@ -1,6 +1,6 @@
 # PHP
 
-[![Configlet Status](https://github.com/exercism/php/workflows/Configlet%20CI/badge.svg)]
+![Configlet Status](https://github.com/exercism/php/workflows/Configlet%20CI/badge.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/68242198cd124a3ebcbdc291d0e0eda4)](https://www.codacy.com/app/borgogelli/php?utm_source=github.com&utm_medium=referral&utm_content=borgogelli/php&utm_campaign=Badge_Grade)
 
 Exercism exercises in PHP
