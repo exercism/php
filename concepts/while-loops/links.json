@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/control-structures.while.php",
+    "description": "PHP manual: While loop"
+  },
+  {
+    "url": "https://www.php.net/manual/en/control-structures.do.while.php",
+    "description": "PHP manual: Do-While loop"
+  },
+  {
+    "url": "https://www.w3schools.com/php/php_looping_while.asp",
+    "description": "w3schools.com: While loop"
+  },
+  {
+    "url": "https://www.w3schools.com/php/php_looping_do_while.asp",
+    "description": "w3schools.com: Do-While loop"
+  },
+  {
+    "url": "https://tutorials.supunkavinda.blog/php/loops#while",
+    "description": "PHP Tutorial: While loop"
+  },
+  {
+    "url": "https://tutorials.supunkavinda.blog/php/loops#do-while",
+    "description": "PHP Tutorial: Do-While loop"
+  },
+  {
+    "url": "https://www.tutorialspoint.com/php/php_loop_types.htm",
+    "description": "Tutorialspoint: Loop types"
+  }
+]
