@@ -22,5 +22,5 @@ function ordinalNumber(int $number): string
         }
     }
 
-    return $number.$ending;
+    return $number . $ending;
 }
