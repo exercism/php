@@ -32,12 +32,28 @@ class OrdinalNumberTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('4th', OrdinalNumber(4));
     }
 
-    public function testOthers(): void
+    public function testTenth(): void
     {
         $this->assertEquals('10th', OrdinalNumber(10));
+    }
+
+    public function testEleventh(): void
+    {
         $this->assertEquals('11th', OrdinalNumber(11));
+    }
+
+    public function testTwelfth(): void
+    {
         $this->assertEquals('12th', OrdinalNumber(12));
+    }
+
+    public function testThirteenth(): void
+    {
         $this->assertEquals('13th', OrdinalNumber(13));
-        $this->assertEquals('14th', OrdinalNumber(14));
+    }
+
+    public function testRandomNumber(): void
+    {
+        $this->assertEquals('62nd', OrdinalNumber(62));
     }
 }
