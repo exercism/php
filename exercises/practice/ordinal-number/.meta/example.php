@@ -1,6 +1,6 @@
 <?php
 
-function ordinalNumber(int $number): string
+function toOrdinal(int $number): string
 {
     if (0 === $number) {
         return '0';

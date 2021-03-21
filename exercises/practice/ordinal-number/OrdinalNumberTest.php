@@ -7,53 +7,53 @@ class OrdinalNumberTest extends PHPUnit\Framework\TestCase
         require_once 'OrdinalNumber.php';
     }
 
-    public function tesZero(): void
+    public function testZero(): void
     {
-        $this->assertEquals('0', OrdinalNumber(0));
+        $this->assertEquals('0', toOrdinal(0));
     }
 
     public function testFirst(): void
     {
-        $this->assertEquals('1st', OrdinalNumber(1));
+        $this->assertEquals('1st', toOrdinal(1));
     }
 
     public function testSecond(): void
     {
-        $this->assertEquals('2nd', OrdinalNumber(2));
+        $this->assertEquals('2nd', toOrdinal(2));
     }
 
     public function testThird(): void
     {
-        $this->assertEquals('3rd', OrdinalNumber(3));
+        $this->assertEquals('3rd', toOrdinal(3));
     }
 
     public function testFourth(): void
     {
-        $this->assertEquals('4th', OrdinalNumber(4));
+        $this->assertEquals('4th', toOrdinal(4));
     }
 
     public function testTenth(): void
     {
-        $this->assertEquals('10th', OrdinalNumber(10));
+        $this->assertEquals('10th', toOrdinal(10));
     }
 
     public function testEleventh(): void
     {
-        $this->assertEquals('11th', OrdinalNumber(11));
+        $this->assertEquals('11th', toOrdinal(11));
     }
 
     public function testTwelfth(): void
     {
-        $this->assertEquals('12th', OrdinalNumber(12));
+        $this->assertEquals('12th', toOrdinal(12));
     }
 
     public function testThirteenth(): void
     {
-        $this->assertEquals('13th', OrdinalNumber(13));
+        $this->assertEquals('13th', toOrdinal(13));
     }
 
     public function testRandomNumber(): void
     {
-        $this->assertEquals('62nd', OrdinalNumber(62));
+        $this->assertEquals('62nd', toOrdinal(62));
     }
 }
