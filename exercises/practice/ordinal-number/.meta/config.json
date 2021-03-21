@@ -1,0 +1,27 @@
+{
+  "authors": [
+    {
+      "github_username": "codedge",
+      "exercism_username": "codedge"
+    }
+  ],
+  "contributors": [
+    {
+      "github_username": "neenjaw",
+      "exercism_username": "neenjaw"
+    }
+  ],
+  "files": {
+    "solution": [
+      "OrdinalNumber.php"
+    ],
+    "test": [
+      "OrdinalNumberTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "source": "",
+  "source_url": "https://en.wikipedia.org/wiki/Ordinal_numeral"
+}
