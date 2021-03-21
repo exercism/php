@@ -1,8 +1,23 @@
 {
-  "authors": [],
+  "authors": [
+    {
+      "github_username": "codedge",
+      "exercism_username": "codedge"
+    }
+  ],
+  "contributors": [
+    {
+      "github_username": "neenjaw",
+      "exercism_username": "neenjaw"
+    }
+  ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "OrdinalNumber.php"
+    ],
+    "test": [
+      "OrdinalNumberTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]
