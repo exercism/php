@@ -1,15 +1,9 @@
 {
   "authors": [
-    {
-      "github_username": "codedge",
-      "exercism_username": "codedge"
-    }
+    "codedge"
   ],
   "contributors": [
-    {
-      "github_username": "neenjaw",
-      "exercism_username": "neenjaw"
-    }
+    "neenjaw"
   ],
   "files": {
     "solution": [
