@@ -1,6 +1,13 @@
 {
   "blurb": "Detect palindrome products in a given range.",
-  "authors": [],
+  "authors": [
+    "camilopayan"
+  ],
+  "contributors": [
+    "arueckauer",
+    "neenjaw",
+    "yisraeldov"
+  ],
   "files": {
     "solution": [
       "PalindromeProducts.php"

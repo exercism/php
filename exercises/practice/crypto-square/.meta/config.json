@@ -1,6 +1,16 @@
 {
   "blurb": "Implement the classic method for composing secret messages called a square code.",
-  "authors": [],
+  "authors": [
+    "camilopayan"
+  ],
+  "contributors": [
+    "arueckauer",
+    "dstockto",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "yisraeldov"
+  ],
   "files": {
     "solution": [
       "CryptoSquare.php"

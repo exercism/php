@@ -1,6 +1,16 @@
 {
   "blurb": "Determine if a sentence is a pangram.",
-  "authors": [],
+  "authors": [
+    "ecrmnn"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane",
+    "rossbearman"
+  ],
   "files": {
     "solution": [
       "Pangram.php"

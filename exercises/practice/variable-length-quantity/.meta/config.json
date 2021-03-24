@@ -1,6 +1,16 @@
 {
   "blurb": "Implement variable length quantity encoding and decoding.",
-  "authors": [],
+  "authors": [
+    "pmatseykanets"
+  ],
+  "contributors": [
+    "arueckauer",
+    "Hrumpa",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "VariableLengthQuantity.php"

@@ -1,6 +1,16 @@
 {
   "blurb": "Score a bowling game",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "DerTee",
+    "dkinzer",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "Bowling.php"

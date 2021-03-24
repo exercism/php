@@ -1,6 +1,16 @@
 {
   "blurb": "Convert a number to a string, the content of which depends on the number's factors.",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "kenden",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "Raindrops.php"

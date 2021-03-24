@@ -1,6 +1,17 @@
 {
   "blurb": "Implement a clock that handles times without dates.",
-  "authors": [],
+  "authors": [
+    "jrdnull"
+  ],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "Clock.php"

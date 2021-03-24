@@ -1,6 +1,16 @@
 {
   "blurb": "Given an age in seconds, calculate how old someone is in terms of a given planet's solar years.",
-  "authors": [],
+  "authors": [
+    "camilopayan"
+  ],
+  "contributors": [
+    "arueckauer",
+    "G-Rath",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "SpaceAge.php"

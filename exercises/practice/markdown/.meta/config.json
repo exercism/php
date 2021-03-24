@@ -1,6 +1,14 @@
 {
   "blurb": "Refactor a Markdown parser",
-  "authors": [],
+  "authors": [
+    "petemcfarlane"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kytrinyx",
+    "neenjaw",
+    "yisraeldov"
+  ],
   "files": {
     "solution": [
       "Markdown.php"

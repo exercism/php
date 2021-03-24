@@ -1,6 +1,15 @@
 {
   "blurb": "Given a year, report if it is a leap year.",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "Leap.php"

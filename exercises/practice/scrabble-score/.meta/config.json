@@ -1,6 +1,15 @@
 {
   "blurb": "Given a word, compute the Scrabble score for that word.",
-  "authors": [],
+  "authors": [
+    "MichaelBunker"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "ScrabbleScore.php"

@@ -1,6 +1,15 @@
 {
   "blurb": "Implement encoding and decoding for the rail fence cipher.",
-  "authors": [],
+  "authors": [
+    "kk-r"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "yisraeldov"
+  ],
   "files": {
     "solution": [
       "RailFenceCipher.php"

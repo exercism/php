@@ -1,6 +1,16 @@
 {
   "blurb": "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",
-  "authors": [],
+  "authors": [
+    "brettsantore"
+  ],
+  "contributors": [
+    "arueckauer",
+    "DerTee",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "Bob.php"

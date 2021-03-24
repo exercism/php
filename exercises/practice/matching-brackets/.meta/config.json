@@ -1,6 +1,15 @@
 {
   "blurb": "Make sure the brackets and braces all match.",
-  "authors": [],
+  "authors": [
+    "petemcfarlane"
+  ],
+  "contributors": [
+    "amscotti",
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw"
+  ],
   "files": {
     "solution": [
       "MatchingBrackets.php"

@@ -1,6 +1,15 @@
 {
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
-  "authors": [],
+  "authors": [
+    "duffn"
+  ],
+  "contributors": [
+    "arueckauer",
+    "joseph-walker",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "HelloWorld.php"

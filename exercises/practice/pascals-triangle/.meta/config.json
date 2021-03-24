@@ -1,6 +1,16 @@
 {
   "blurb": "Compute Pascal's triangle up to a given number of rows.",
-  "authors": [],
+  "authors": [
+    "arthurchipdean"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane",
+    "yisraeldov"
+  ],
   "files": {
     "solution": [
       "PascalsTriangle.php"

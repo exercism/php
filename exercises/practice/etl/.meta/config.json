@@ -1,6 +1,15 @@
 {
   "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
-  "authors": [],
+  "authors": [
+    "camilopayan"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "Etl.php"

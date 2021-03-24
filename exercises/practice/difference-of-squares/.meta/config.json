@@ -1,6 +1,16 @@
 {
   "blurb": "Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "neenjaw",
+    "petemcfarlane",
+    "Scientifica96"
+  ],
   "files": {
     "solution": [
       "DifferenceOfSquares.php"

@@ -1,6 +1,15 @@
 {
   "blurb": "Calculate the number of steps to reach 1 using the Collatz conjecture",
-  "authors": [],
+  "authors": [
+    "kk-r"
+  ],
+  "contributors": [
+    "arueckauer",
+    "G-Rath",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw"
+  ],
   "files": {
     "solution": [
       "CollatzConjecture.php"

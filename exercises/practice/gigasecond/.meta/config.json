@@ -1,6 +1,21 @@
 {
   "blurb": "Given a moment, determine the moment that would be after a gigasecond has passed.",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "Dog",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "MatheusNaldi",
+    "neenjaw",
+    "petemcfarlane",
+    "peteraba",
+    "TFarla",
+    "tstirrat15",
+    "zembrowski"
+  ],
   "files": {
     "solution": [
       "Gigasecond.php"

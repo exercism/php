@@ -1,6 +1,16 @@
 {
   "blurb": "Implement a program that translates from English to Pig Latin",
-  "authors": [],
+  "authors": [
+    "brettsantore"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane",
+    "woylie"
+  ],
   "files": {
     "solution": [
       "PigLatin.php"

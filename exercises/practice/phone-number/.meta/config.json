@@ -1,6 +1,16 @@
 {
   "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",
-  "authors": [],
+  "authors": [
+    "nhoag"
+  ],
+  "contributors": [
+    "arueckauer",
+    "G-Rath",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "PhoneNumber.php"

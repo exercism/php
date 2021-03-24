@@ -1,6 +1,15 @@
 {
   "blurb": "Determine if a word or phrase is an isogram.",
-  "authors": [],
+  "authors": [
+    "ecrmnn"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "Isogram.php"

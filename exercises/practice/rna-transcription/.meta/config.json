@@ -1,6 +1,15 @@
 {
   "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "RnaTranscription.php"

@@ -1,6 +1,15 @@
 {
   "blurb": "Write a robot simulator.",
-  "authors": [],
+  "authors": [
+    "Hrumpa"
+  ],
+  "contributors": [
+    "arueckauer",
+    "G-Rath",
+    "kytrinyx",
+    "neenjaw",
+    "petemcfarlane"
+  ],
   "files": {
     "solution": [
       "RobotSimulator.php"

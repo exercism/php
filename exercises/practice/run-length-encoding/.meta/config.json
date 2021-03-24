@@ -1,6 +1,13 @@
 {
   "blurb": "Implement run-length encoding and decoding.",
-  "authors": [],
+  "authors": [
+    "Leprechaunz"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kytrinyx",
+    "neenjaw"
+  ],
   "files": {
     "solution": [
       "RunLengthEncoding.php"

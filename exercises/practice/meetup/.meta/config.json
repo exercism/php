@@ -1,6 +1,14 @@
 {
   "blurb": "Calculate the date of meetups.",
-  "authors": [],
+  "authors": [
+    "camilopayan"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw"
+  ],
   "files": {
     "solution": [
       "Meetup.php"

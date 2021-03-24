@@ -1,6 +1,19 @@
 {
   "blurb": "Compute the result for a game of Hex / Polygon",
-  "authors": [],
+  "authors": [
+    "pminten"
+  ],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "karptonite",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "neenjaw",
+    "petemcfarlane",
+    "yisraeldov"
+  ],
   "files": {
     "solution": [
       "Connect.php"

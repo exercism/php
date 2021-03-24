@@ -1,6 +1,12 @@
 {
   "blurb": "Determine if a number is an Armstrong number",
-  "authors": [],
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "arueckauer",
+    "neenjaw"
+  ],
   "files": {
     "solution": [
       "ArmstrongNumbers.php"
