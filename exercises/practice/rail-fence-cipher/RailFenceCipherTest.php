@@ -15,7 +15,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
         $plainText = "XOXOXOXOXOXOXOXOXO";
         $rails = 2;
         $expected = "XXXXXXXXXOOOOOOOOO";
-        $this->assertEquals(encode($plainText, $rails), $expected);
+        $this->assertEquals($expected, encode($plainText, $rails));
     }
     /**
      * Test encode with three rails.
@@ -25,7 +25,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
         $plainText = "WEAREDISCOVEREDFLEEATONCE";
         $rails = 3;
         $expected = "WECRLTEERDSOEEFEAOCAIVDEN";
-        $this->assertEquals(encode($plainText, $rails), $expected);
+        $this->assertEquals($expected, encode($plainText, $rails));
     }
 
     /**
@@ -36,7 +36,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
         $plainText = "EXERCISES";
         $rails = 4;
         $expected = "ESXIEECSR";
-        $this->assertEquals(encode($plainText, $rails), $expected);
+        $this->assertEquals($expected, encode($plainText, $rails));
     }
 
     /**
@@ -47,7 +47,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
         $encryptedText = "TEITELHDVLSNHDTISEIIEA";
         $rails = 3;
         $expected = "THEDEVILISINTHEDETAILS";
-        $this->assertEquals(decode($encryptedText, $rails), $expected);
+        $this->assertEquals($expected, decode($encryptedText, $rails));
     }
     /**
      * Test decode with five rails.
@@ -57,7 +57,7 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
         $encryptedText = "EIEXMSMESAORIWSCE";
         $rails = 5;
         $expected = "EXERCISMISAWESOME";
-        $this->assertEquals(decode($encryptedText, $rails), $expected);
+        $this->assertEquals($expected, decode($encryptedText, $rails));
     }
 
     /**
@@ -68,6 +68,6 @@ class RailFenceCipherTest extends PHPUnit\Framework\TestCase
         $encryptedText = "133714114238148966225439541018335470986172518171757571896261";
         $rails = 6;
         $expected = "112358132134558914423337761098715972584418167651094617711286";
-        $this->assertEquals(decode($encryptedText, $rails), $expected);
+        $this->assertEquals($expected, decode($encryptedText, $rails));
     }
 }
