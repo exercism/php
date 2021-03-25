@@ -51,5 +51,4 @@ class SpaceAge
     {
         \BadMethodCallException("Implement the neptune method");
     }
-
 }
