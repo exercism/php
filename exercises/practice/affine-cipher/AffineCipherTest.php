@@ -81,40 +81,40 @@ class AffineCipherTest extends PHPUnit\Framework\TestCase
     public function testDecodeASentence(): void
     {
         $this->assertEquals(
-            decode("qdwju nqcro muwhn odqun oppmd aunwd o", 19, 16),
-            "anobstacleisoftenasteppingstone"
+            "anobstacleisoftenasteppingstone",
+            decode("qdwju nqcro muwhn odqun oppmd aunwd o", 19, 16)
         );
     }
 
     public function testDecodeNumbers(): void
     {
         $this->assertEquals(
-            decode("odpoz ub123 odpoz ub", 25, 7),
-            "testing123testing"
+            "testing123testing",
+            decode("odpoz ub123 odpoz ub", 25, 7)
         );
     }
 
     public function testDecodeAllTheLetters(): void
     {
         $this->assertEquals(
-            decode("swxtj npvyk lruol iejdc blaxk swxmh qzglf", 17, 33),
-            "thequickbrownfoxjumpsoverthelazydog"
+            "thequickbrownfoxjumpsoverthelazydog",
+            decode("swxtj npvyk lruol iejdc blaxk swxmh qzglf", 17, 33)
         );
     }
 
     public function testDecodeWithNoSpacesInInput(): void
     {
         $this->assertEquals(
-            decode("swxtjnpvyklruoliejdcblaxkswxmhqzglf", 17, 33),
-            "thequickbrownfoxjumpsoverthelazydog"
+            "thequickbrownfoxjumpsoverthelazydog",
+            decode("swxtjnpvyklruoliejdcblaxkswxmhqzglf", 17, 33)
         );
     }
 
     public function testDecodeWithTooManySpaces(): void
     {
         $this->assertEquals(
-            decode("vszzm    cly   yd cg    qdp", 15, 16),
-            "jollygreengiant"
+            "jollygreengiant",
+            decode("vszzm    cly   yd cg    qdp", 15, 16)
         );
     }
 
