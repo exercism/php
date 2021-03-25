@@ -1,20 +1,11 @@
 <?php
 
-//
-// This is only a SKELETON file for the "Run Length Encoding" exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-function encode($input)
+function encode(string $input): string
 {
-    //
-    // YOUR CODE GOES HERE
-    //
+    \BadFunctionCallException("Implement the encode function");
 }
 
-function decode($input)
+function decode(string $input): string
 {
-    //
-    // YOUR CODE GOES HERE
-    //
+    \BadFunctionCallException("Implement the decode function");
 }

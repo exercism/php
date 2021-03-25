@@ -9,4 +9,3 @@ function decode(string $cipherMessage, int $rails): string
 {
     \BadFunctionCallException("Implement the decode function");
 }
-
