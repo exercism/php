@@ -2,5 +2,5 @@
 
 function isPangram(string $string): bool
 {
-    \BadFunctionCallException("Implement the isPangram function");
+    throw new \BadFunctionCallException("Implement the isPangram function");
 }

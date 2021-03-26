@@ -2,5 +2,5 @@
 
 function toDecimal(string $number): int
 {
-    \BadFunctionCallException("Implement the toDecimal function");
+    throw new \BadFunctionCallException("Implement the toDecimal function");
 }

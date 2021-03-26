@@ -4,11 +4,11 @@ class Game
 {
     public function score(): int
     {
-        \BadMethodCallException("Implement the score function");
+        throw new \BadMethodCallException("Implement the score function");
     }
 
     public function roll(int $pins): void
     {
-        \BadMethodCallException("Implement the roll function");
+        throw new \BadMethodCallException("Implement the roll function");
     }
 }

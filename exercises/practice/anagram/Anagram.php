@@ -2,5 +2,5 @@
 
 function detectAnagrams(string $word, array $anagrams): array
 {
-    \BadFunctionCallException("Implement the detectAnagrams function");
+    throw new \BadFunctionCallException("Implement the detectAnagrams function");
 }

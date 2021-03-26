@@ -2,5 +2,5 @@
 
 function isogram(string $word): bool
 {
-    \BadFunctionCallException("Implement the isogram function");
+    throw new \BadFunctionCallException("Implement the isogram function");
 }

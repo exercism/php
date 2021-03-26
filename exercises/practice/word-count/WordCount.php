@@ -2,5 +2,5 @@
 
 function wordCount(string $words): array
 {
-    \BadFunctionCallException("Implement the wordCount function");
+    throw new \BadFunctionCallException("Implement the wordCount function");
 }

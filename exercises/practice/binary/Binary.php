@@ -2,5 +2,5 @@
 
 function parse_binary(string $binary): int
 {
-    \BadFunctionCallException("Implement the parse_binary function");
+    throw new \BadFunctionCallException("Implement the parse_binary function");
 }

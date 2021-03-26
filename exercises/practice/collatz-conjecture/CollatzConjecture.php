@@ -2,5 +2,5 @@
 
 function steps(int $number): int
 {
-    \BadFunctionCallException("Implement the steps function");
+    throw new \BadFunctionCallException("Implement the steps function");
 }

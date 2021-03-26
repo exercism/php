@@ -2,5 +2,5 @@
 
 function toRna(string $dna): string
 {
-    \BadFunctionCallException("Implement the toRna function");
+    throw new \BadFunctionCallException("Implement the toRna function");
 }

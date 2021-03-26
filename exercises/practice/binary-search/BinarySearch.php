@@ -2,5 +2,5 @@
 
 function find(int $needle, array $haystack): int
 {
-    \BadFunctionCallException("Implement the find function");
+    throw new \BadFunctionCallException("Implement the find function");
 }

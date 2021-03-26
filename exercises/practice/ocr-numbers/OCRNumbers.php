@@ -2,5 +2,5 @@
 
 function recognize(array $input): string
 {
-    \BadFunctionCallException("Implement the recognize function");
+    throw new \BadFunctionCallException("Implement the recognize function");
 }

@@ -2,5 +2,5 @@
 
 function acronym(string $text): string
 {
-    \BadFunctionCallException("Implement the acronym function");
+    throw new \BadFunctionCallException("Implement the acronym function");
 }

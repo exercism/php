@@ -2,5 +2,5 @@
 
 function score(string $word): int
 {
-    \BadFunctionCallException("Implement the score function");
+    throw new \BadFunctionCallException("Implement the score function");
 }

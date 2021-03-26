@@ -2,5 +2,5 @@
 
 function sumOfMultiples(int $number, array $multiples): int
 {
-    \BadFunctionCallException("Implement the sumOfMultiples function");
+    throw new \BadFunctionCallException("Implement the sumOfMultiples function");
 }

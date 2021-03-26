@@ -2,5 +2,5 @@
 
 function twoFer(string $name): string
 {
-    \BadFunctionCallException("Implement the twoFer function");
+    throw new \BadFunctionCallException("Implement the twoFer function");
 }

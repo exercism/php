@@ -2,5 +2,5 @@
 
 function flatten(array $input): array
 {
-    \BadFunctionCallException("Implement the flatten function");
+    throw new \BadFunctionCallException("Implement the flatten function");
 }

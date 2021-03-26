@@ -2,5 +2,5 @@
 
 function resultFor(array $lines)
 {
-    \BadFunctionCallException("Implement the resultFor method");
+    throw new \BadFunctionCallException("Implement the resultFor method");
 }

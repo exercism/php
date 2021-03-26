@@ -2,10 +2,10 @@
 
 function smallest(int $min, int $max): array
 {
-    \BadFunctionCallException("Implement the smallest function");
+    throw new \BadFunctionCallException("Implement the smallest function");
 }
 
 function largest(int $min, int $max): array
 {
-    \BadFunctionCallException("Implement the largest function");
+    throw new \BadFunctionCallException("Implement the largest function");
 }

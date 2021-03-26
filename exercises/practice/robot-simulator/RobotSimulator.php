@@ -16,21 +16,21 @@ class Robot
 
     public function __construct(array $position, string $direction)
     {
-        \BadMethodCallException("Implement the __construct method");
+        throw new \BadMethodCallException("Implement the __construct method");
     }
 
     public function turnRight(): self
     {
-        \BadMethodCallException("Implement the turnRight method");
+        throw new \BadMethodCallException("Implement the turnRight method");
     }
 
     public function turnLeft(): self
     {
-        \BadMethodCallException("Implement the turnLeft method");
+        throw new \BadMethodCallException("Implement the turnLeft method");
     }
 
     public function advance(): self
     {
-        \BadMethodCallException("Implement the advance method");
+        throw new \BadMethodCallException("Implement the advance method");
     }
 }

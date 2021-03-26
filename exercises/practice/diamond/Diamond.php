@@ -2,5 +2,5 @@
 
 function diamond(string $letter): array
 {
-    \BadFunctionCallException("Implement the diamond function");
+    throw new \BadFunctionCallException("Implement the diamond function");
 }

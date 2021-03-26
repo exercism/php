@@ -4,6 +4,6 @@ class Series
 {
     public function largestProduct(int $span): int
     {
-        \BadMethodCallException("Implement the largestProduct method");
+        throw new \BadMethodCallException("Implement the largestProduct method");
     }
 }

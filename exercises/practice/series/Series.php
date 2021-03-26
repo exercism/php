@@ -2,5 +2,5 @@
 
 function slices(string $digits, int $series): array
 {
-    \BadFunctionCallException("Implement the slices function");
+    throw new \BadFunctionCallException("Implement the slices function");
 }

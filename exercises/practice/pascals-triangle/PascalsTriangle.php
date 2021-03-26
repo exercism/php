@@ -2,5 +2,5 @@
 
 function pascalsTriangleRows(int $rowCount)
 {
-    \BadFunctionCallException("Implement the pascalsTriangleRows function");
+    throw new \BadFunctionCallException("Implement the pascalsTriangleRows function");
 }

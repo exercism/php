@@ -2,15 +2,15 @@
 
 function squareOfSum(int $max): int
 {
-    \BadFunctionCallException("Implement the squareOfSum function");
+    throw new \BadFunctionCallException("Implement the squareOfSum function");
 }
 
 function sumOfSquares(int $max): int
 {
-    \BadFunctionCallException("Implement the sumOfSquares function");
+    throw new \BadFunctionCallException("Implement the sumOfSquares function");
 }
 
 function difference(int $max): int
 {
-    \BadFunctionCallException("Implement the difference function");
+    throw new \BadFunctionCallException("Implement the difference function");
 }

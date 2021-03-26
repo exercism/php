@@ -2,5 +2,5 @@
 
 function transpose(array $input): array
 {
-    \BadFunctionCallException("Implement the transpose function");
+    throw new \BadFunctionCallException("Implement the transpose function");
 }

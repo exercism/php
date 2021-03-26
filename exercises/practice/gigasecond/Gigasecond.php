@@ -2,5 +2,5 @@
 
 function from(DateTimeImmutable $date): DateTimeImmutable
 {
-    \BadFunctionCallException("Implement the from function");
+    throw new \BadFunctionCallException("Implement the from function");
 }

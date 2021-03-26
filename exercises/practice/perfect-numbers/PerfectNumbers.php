@@ -2,5 +2,5 @@
 
 function getClassification(int $number): string
 {
-    \BadFunctionCallException("Implement the getClassification function");
+    throw new \BadFunctionCallException("Implement the getClassification function");
 }

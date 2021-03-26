@@ -2,5 +2,5 @@
 
 function isValid(string $number): bool
 {
-    \BadFunctionCallException("Implement the isValid function");
+    throw new \BadFunctionCallException("Implement the isValid function");
 }

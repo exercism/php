@@ -2,5 +2,5 @@
 
 function nucleotideCount(string $input): array
 {
-    \BadFunctionCallException("Implement the nucleotideCount function");
+    throw new \BadFunctionCallException("Implement the nucleotideCount function");
 }

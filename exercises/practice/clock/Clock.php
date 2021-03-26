@@ -4,6 +4,6 @@ class Clock
 {
     public function __toString(): string
     {
-        \BadMethodCallException("Implement the __toString function");
+        throw new \BadMethodCallException("Implement the __toString function");
     }
 }

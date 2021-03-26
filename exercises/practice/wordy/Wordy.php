@@ -2,5 +2,5 @@
 
 function calculate(string $input): int
 {
-    \BadFunctionCallException("Implement the calculate function");
+    throw new \BadFunctionCallException("Implement the calculate function");
 }

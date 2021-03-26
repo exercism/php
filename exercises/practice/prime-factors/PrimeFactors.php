@@ -2,5 +2,5 @@
 
 function factors(int $number): array
 {
-    \BadFunctionCallException("Implement the factors function");
+    throw new \BadFunctionCallException("Implement the factors function");
 }

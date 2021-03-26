@@ -2,5 +2,5 @@
 
 function raindrops(int $number): string
 {
-    \BadFunctionCallException("Implement the raindrops function");
+    throw new \BadFunctionCallException("Implement the raindrops function");
 }

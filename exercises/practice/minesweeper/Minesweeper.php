@@ -2,5 +2,5 @@
 
 function solve(string $minesweeperBoard): string
 {
-    \BadFunctionCallException("Implement the solve function");
+    throw new \BadFunctionCallException("Implement the solve function");
 }

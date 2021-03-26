@@ -2,5 +2,5 @@
 
 function translate(string $text): string
 {
-    \BadFunctionCallException("Implement the translate function");
+    throw new \BadFunctionCallException("Implement the translate function");
 }

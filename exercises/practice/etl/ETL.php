@@ -2,5 +2,5 @@
 
 function transform(array $input): array
 {
-    \BadFunctionCallException("Implement the transform function");
+    throw new \BadFunctionCallException("Implement the transform function");
 }

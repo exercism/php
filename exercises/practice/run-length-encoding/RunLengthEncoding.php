@@ -2,10 +2,10 @@
 
 function encode(string $input): string
 {
-    \BadFunctionCallException("Implement the encode function");
+    throw new \BadFunctionCallException("Implement the encode function");
 }
 
 function decode(string $input): string
 {
-    \BadFunctionCallException("Implement the decode function");
+    throw new \BadFunctionCallException("Implement the decode function");
 }

@@ -2,5 +2,5 @@
 
 function total(array $items): float
 {
-    \BadFunctionCallException("Implement the total function");
+    throw new \BadFunctionCallException("Implement the total function");
 }
