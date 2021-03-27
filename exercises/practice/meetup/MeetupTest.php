@@ -9,82 +9,82 @@ class MeetupTest extends PHPUnit\Framework\TestCase
 
     public function testMonteenthOfMay2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 5, "teenth", "Monday"), new DateTimeImmutable("2013/5/13"));
+        $this->assertEquals(new DateTimeImmutable("2013/5/13"), meetup_day(2013, 5, "teenth", "Monday"));
     }
 
     public function testMonteenthOfAugust2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 8, "teenth", "Monday"), new DateTimeImmutable("2013/8/19"));
+        $this->assertEquals(new DateTimeImmutable("2013/8/19"), meetup_day(2013, 8, "teenth", "Monday"));
     }
 
     public function testMonteenthOfSeptember2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 9, "teenth", "Monday"), new DateTimeImmutable("2013/9/16"));
+        $this->assertEquals(new DateTimeImmutable("2013/9/16"), meetup_day(2013, 9, "teenth", "Monday"));
     }
 
     public function testTuesteenthOfMarch2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 3, "teenth", "Tuesday"), new DateTimeImmutable("2013/3/19"));
+        $this->assertEquals(new DateTimeImmutable("2013/3/19"), meetup_day(2013, 3, "teenth", "Tuesday"));
     }
 
     public function testTuesteenthOfApril2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 4, "teenth", "Tuesday"), new DateTimeImmutable("2013/4/16"));
+        $this->assertEquals(new DateTimeImmutable("2013/4/16"), meetup_day(2013, 4, "teenth", "Tuesday"));
     }
 
     public function testTuesteenthOfAugust2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 8, "teenth", "Tuesday"), new DateTimeImmutable("2013/8/13"));
+        $this->assertEquals(new DateTimeImmutable("2013/8/13"), meetup_day(2013, 8, "teenth", "Tuesday"));
     }
 
     public function testWednesteenthOfJanuary2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 1, "teenth", "Wednesday"), new DateTimeImmutable("2013/1/16"));
+        $this->assertEquals(new DateTimeImmutable("2013/1/16"), meetup_day(2013, 1, "teenth", "Wednesday"));
     }
 
     public function testWednesteenthOfFebruary2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 2, "teenth", "Wednesday"), new DateTimeImmutable("2013/2/13"));
+        $this->assertEquals(new DateTimeImmutable("2013/2/13"), meetup_day(2013, 2, "teenth", "Wednesday"));
     }
 
     public function testWednesteenthOfJune2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 6, "teenth", "Wednesday"), new DateTimeImmutable("2013/6/19"));
+        $this->assertEquals(new DateTimeImmutable("2013/6/19"), meetup_day(2013, 6, "teenth", "Wednesday"));
     }
 
     public function testThursteenthOfMay2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 5, "teenth", "Thursday"), new DateTimeImmutable("2013/5/16"));
+        $this->assertEquals(new DateTimeImmutable("2013/5/16"), meetup_day(2013, 5, "teenth", "Thursday"));
     }
 
     public function testThursteenthOfJune2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 6, "teenth", "Thursday"), new DateTimeImmutable("2013/6/13"));
+        $this->assertEquals(new DateTimeImmutable("2013/6/13"), meetup_day(2013, 6, "teenth", "Thursday"));
     }
 
     public function testThursteenthOfSeptember2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 9, "teenth", "Thursday"), new DateTimeImmutable("2013/9/19"));
+        $this->assertEquals(new DateTimeImmutable("2013/9/19"), meetup_day(2013, 9, "teenth", "Thursday"));
     }
 
     public function testFriteenthOfApril2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 4, "teenth", "Friday"), new DateTimeImmutable("2013/4/19"));
+        $this->assertEquals(new DateTimeImmutable("2013/4/19"), meetup_day(2013, 4, "teenth", "Friday"));
     }
 
     public function testFriteenthOfAugust2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 8, "teenth", "Friday"), new DateTimeImmutable("2013/8/16"));
+        $this->assertEquals(new DateTimeImmutable("2013/8/16"), meetup_day(2013, 8, "teenth", "Friday"));
     }
 
     public function testFriteenthOfSeptember2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 9, "teenth", "Friday"), new DateTimeImmutable("2013/9/13"));
+        $this->assertEquals(new DateTimeImmutable("2013/9/13"), meetup_day(2013, 9, "teenth", "Friday"));
     }
 
     public function testSaturteenthOfFebruary2013(): void
     {
-        $this->assertEquals(meetup_day(2013, 2, "teenth", "Saturday"), new DateTimeImmutable("2013/2/16"));
+        $this->assertEquals(new DateTimeImmutable("2013/2/16"), meetup_day(2013, 2, "teenth", "Saturday"));
     }
 
     public function testSaturteenthOfApril2013(): void

@@ -1,6 +1,6 @@
 <?php
 
-function accumulate(array $input, callable $accumulator)
+function accumulate(array $input, callable $accumulator): array
 {
-    // YOUR CODE GOES HERE
+    throw new \BadFunctionCallException("Implement the accumulate function");
 }

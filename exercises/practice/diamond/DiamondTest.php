@@ -9,39 +9,38 @@ class DiamondTest extends PHPUnit\Framework\TestCase
 
     public function testDegenerateCaseWithASingleARow(): void
     {
-        $this->assertEquals(diamond("A"), ["A"]);
+        $this->assertEquals(["A"], diamond("A"));
     }
 
     public function testDegenerateCaseWithNoRowContaining3DistinctGroupsOfSpaces(): void
     {
         $this->assertEquals(
-            diamond("B"),
             [
                 " A ",
                 "B B",
                 " A ",
-            ]
+            ],
+            diamond("B")
         );
     }
 
     public function testSmallestNonDegenerateCaseWithOddDiamondSideLength(): void
     {
         $this->assertEquals(
-            diamond("C"),
             [
                 "  A  ",
                 " B B ",
                 "C   C",
                 " B B ",
                 "  A  ",
-            ]
+            ],
+            diamond("C")
         );
     }
 
     public function testSmallestNonDegenerateCaseWithEvenDiamondSideLength(): void
     {
         $this->assertEquals(
-            diamond("D"),
             [
                 "   A   ",
                 "  B B  ",
@@ -50,14 +49,14 @@ class DiamondTest extends PHPUnit\Framework\TestCase
                 " C   C ",
                 "  B B  ",
                 "   A   ",
-            ]
+            ],
+            diamond("D")
         );
     }
 
     public function testLargestPossibleDiamond(): void
     {
         $this->assertEquals(
-            diamond("Z"),
             [
                 "                         A                         ",
                 "                        B B                        ",
@@ -110,7 +109,8 @@ class DiamondTest extends PHPUnit\Framework\TestCase
                 "                       C   C                       ",
                 "                        B B                        ",
                 "                         A                         ",
-            ]
+            ],
+            diamond("Z")
         );
     }
 }
