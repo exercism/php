@@ -2,8 +2,12 @@
   "blurb": "Implement a binary search algorithm.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "BinarySearch.php"
+    ],
+    "test": [
+      "BinarySearchTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

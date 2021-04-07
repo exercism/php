@@ -2,8 +2,12 @@
   "blurb": "Use the Sieve of Eratosthenes to find all the primes from 2 up to a given number.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Sieve.php"
+    ],
+    "test": [
+      "SieveTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

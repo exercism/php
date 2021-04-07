@@ -2,8 +2,12 @@
   "blurb": "Implement encoding and decoding for the rail fence cipher.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "RailFenceCipher.php"
+    ],
+    "test": [
+      "RailFenceCipherTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

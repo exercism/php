@@ -2,8 +2,12 @@
   "blurb": "Take input text and output it transposed.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Transpose.php"
+    ],
+    "test": [
+      "TransposeTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

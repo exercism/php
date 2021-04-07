@@ -2,8 +2,12 @@
   "blurb": "Given a word, compute the Scrabble score for that word.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "ScrabbleScore.php"
+    ],
+    "test": [
+      "ScrabbleScoreTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

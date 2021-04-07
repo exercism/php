@@ -2,8 +2,12 @@
   "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "RomanNumerals.php"
+    ],
+    "test": [
+      "RomanNumeralsTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

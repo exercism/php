@@ -2,8 +2,12 @@
   "blurb": "Implement a program that translates from English to Pig Latin",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "PigLatin.php"
+    ],
+    "test": [
+      "PigLatinTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

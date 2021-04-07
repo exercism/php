@@ -2,8 +2,12 @@
   "blurb": "Correctly determine change to be given using the least number of coins",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Change.php"
+    ],
+    "test": [
+      "ChangeTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

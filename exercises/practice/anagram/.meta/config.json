@@ -2,8 +2,12 @@
   "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Anagram.php"
+    ],
+    "test": [
+      "AnagramTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

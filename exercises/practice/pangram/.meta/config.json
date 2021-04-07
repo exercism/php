@@ -2,8 +2,12 @@
   "blurb": "Determine if a sentence is a pangram.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Pangram.php"
+    ],
+    "test": [
+      "PangramTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

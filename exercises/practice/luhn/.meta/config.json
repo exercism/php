@@ -2,8 +2,12 @@
   "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Luhn.php"
+    ],
+    "test": [
+      "LuhnTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

@@ -2,8 +2,12 @@
   "blurb": "Implement run-length encoding and decoding.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "RunLengthEncoding.php"
+    ],
+    "test": [
+      "RunLengthEncodingTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

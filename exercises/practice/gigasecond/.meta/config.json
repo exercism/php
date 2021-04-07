@@ -2,8 +2,12 @@
   "blurb": "Given a moment, determine the moment that would be after a gigasecond has passed.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Gigasecond.php"
+    ],
+    "test": [
+      "GigasecondTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

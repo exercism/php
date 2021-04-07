@@ -2,8 +2,12 @@
   "blurb": "Implement variable length quantity encoding and decoding.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "VariableLengthQuantity.php"
+    ],
+    "test": [
+      "VariableLengthQuantityTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

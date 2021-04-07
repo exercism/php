@@ -2,8 +2,12 @@
   "blurb": "Calculate the date of meetups.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Meetup.php"
+    ],
+    "test": [
+      "MeetupTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

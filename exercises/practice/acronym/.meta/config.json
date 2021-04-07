@@ -2,8 +2,12 @@
   "blurb": "Convert a long phrase to its acronym",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Acronym.php"
+    ],
+    "test": [
+      "AcronymTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

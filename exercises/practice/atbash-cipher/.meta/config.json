@@ -2,8 +2,12 @@
   "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "AtbashCipher.php"
+    ],
+    "test": [
+      "AtbashCipherTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

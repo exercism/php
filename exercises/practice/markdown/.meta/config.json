@@ -2,8 +2,12 @@
   "blurb": "Refactor a Markdown parser",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Markdown.php"
+    ],
+    "test": [
+      "MarkdownTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

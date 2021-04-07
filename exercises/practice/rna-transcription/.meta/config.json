@@ -2,8 +2,12 @@
   "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "RnaTranscription.php"
+    ],
+    "test": [
+      "RnaTranscriptionTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

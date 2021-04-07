@@ -2,8 +2,12 @@
   "blurb": "Determine if a word or phrase is an isogram.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Isogram.php"
+    ],
+    "test": [
+      "IsogramTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

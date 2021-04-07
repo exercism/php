@@ -2,8 +2,12 @@
   "blurb": "Make sure the brackets and braces all match.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "MatchingBrackets.php"
+    ],
+    "test": [
+      "MatchingBracketsTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

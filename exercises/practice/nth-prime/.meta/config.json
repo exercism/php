@@ -2,8 +2,12 @@
   "blurb": "Given a number n, determine what the nth prime is.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "NthPrime.php"
+    ],
+    "test": [
+      "NthPrimeTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

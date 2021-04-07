@@ -2,8 +2,12 @@
   "blurb": "Given a year, report if it is a leap year.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Leap.php"
+    ],
+    "test": [
+      "LeapTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

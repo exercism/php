@@ -2,8 +2,12 @@
   "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Allergies.php"
+    ],
+    "test": [
+      "AllergiesTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]
