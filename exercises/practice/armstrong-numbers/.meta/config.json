@@ -2,8 +2,12 @@
   "blurb": "Determine if a number is an Armstrong number",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "ArmstrongNumbers.php"
+    ],
+    "test": [
+      "ArmstrongNumbersTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

@@ -2,8 +2,12 @@
   "blurb": "Compute Pascal's triangle up to a given number of rows.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "PascalsTriangle.php"
+    ],
+    "test": [
+      "PascalsTriangleTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

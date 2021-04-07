@@ -2,8 +2,12 @@
   "blurb": "Write a robot simulator.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "RobotSimulator.php"
+    ],
+    "test": [
+      "RobotSimulatorTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

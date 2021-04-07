@@ -2,8 +2,12 @@
   "blurb": "Compute the prime factors of a given natural number.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "PrimeFactors.php"
+    ],
+    "test": [
+      "PrimeFactorsTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

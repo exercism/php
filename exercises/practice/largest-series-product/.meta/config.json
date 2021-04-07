@@ -2,8 +2,12 @@
   "blurb": "Given a string of digits, calculate the largest product for a contiguous substring of digits of length n.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "LargestSeriesProduct.php"
+    ],
+    "test": [
+      "LargestSeriesProductTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

@@ -2,8 +2,12 @@
   "blurb": "Manage robot factory settings.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "RobotName.php"
+    ],
+    "test": [
+      "RobotNameTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

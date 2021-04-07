@@ -2,8 +2,12 @@
   "blurb": "Detect palindrome products in a given range.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "PalindromeProducts.php"
+    ],
+    "test": [
+      "PalindromeProductsTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

@@ -2,8 +2,12 @@
   "blurb": "Convert a trinary number, represented as a string (e.g. '102012'), to its decimal equivalent using first principles.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Trinary.php"
+    ],
+    "test": [
+      "TrinaryTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

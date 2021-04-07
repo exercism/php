@@ -2,8 +2,12 @@
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "HelloWorld.php"
+    ],
+    "test": [
+      "HelloWorldTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

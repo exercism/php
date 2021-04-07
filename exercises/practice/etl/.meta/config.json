@@ -2,8 +2,12 @@
   "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Etl.php"
+    ],
+    "test": [
+      "EtlTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

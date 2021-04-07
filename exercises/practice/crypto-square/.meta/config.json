@@ -2,8 +2,12 @@
   "blurb": "Implement the classic method for composing secret messages called a square code.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "CryptoSquare.php"
+    ],
+    "test": [
+      "CryptoSquareTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

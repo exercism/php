@@ -2,8 +2,12 @@
   "blurb": "Parse and evaluate simple math word problems returning the answer as an integer.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Wordy.php"
+    ],
+    "test": [
+      "WordyTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

@@ -2,8 +2,12 @@
   "blurb": "Implement a clock that handles times without dates.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Clock.php"
+    ],
+    "test": [
+      "ClockTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

@@ -2,8 +2,12 @@
   "blurb": "Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "BeerSong.php"
+    ],
+    "test": [
+      "BeerSongTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

@@ -2,8 +2,12 @@
   "blurb": "Score a bowling game",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Bowling.php"
+    ],
+    "test": [
+      "BowlingTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]

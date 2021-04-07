@@ -2,8 +2,12 @@
   "blurb": "Calculate the Hamming difference between two DNA strands.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "Hamming.php"
+    ],
+    "test": [
+      "HammingTest.php"
+    ],
     "example": [
       ".meta/example.php"
     ]
