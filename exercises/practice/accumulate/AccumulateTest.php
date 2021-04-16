@@ -111,6 +111,6 @@ class Is
 {
     public function truthy($value): bool
     {
-        return $value ? true : false;
+        return (bool) $value;
     }
 }
