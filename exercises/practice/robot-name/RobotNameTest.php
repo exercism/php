@@ -36,7 +36,7 @@ class RobotNameTest extends PHPUnit\Framework\TestCase
         unset($other_bot);
     }
 
-    public function testresetName(): void
+    public function testResetName(): void
     {
         $name1 = $this->robot->getName();
 

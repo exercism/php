@@ -27,7 +27,7 @@ class RNATranscriptionTest extends PHPUnit\Framework\TestCase
         $this->assertSame('U', toRna('A'));
     }
 
-    public function testTranscribesAllOccurencesOne(): void
+    public function testTranscribesAllOccurrencesOne(): void
     {
         $this->assertSame('UGCACCAGAAUU', toRna('ACGTGGTCTTAA'));
     }

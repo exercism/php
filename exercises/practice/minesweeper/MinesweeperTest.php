@@ -65,7 +65,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         solve($tinyBoard);
     }
 
-    public function testRowsOfSameLength($value = ''): void
+    public function testRowsOfSameLength(): void
     {
         $unequalBoard = '
 +---+
@@ -79,7 +79,7 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         solve($unequalBoard);
     }
 
-    public function testCanOnlyContainMines($value = ''): void
+    public function testCanOnlyContainMines(): void
     {
         $badBoard = '
 +---+

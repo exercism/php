@@ -7,9 +7,7 @@ class BobTest extends PHPUnit\Framework\TestCase
         require_once 'Bob.php';
     }
 
-    /**
-     * @var Bob
-     */
+    /** @var Bob */
     private $bob;
 
     public function setUp(): void
