@@ -61,6 +61,7 @@ class SumOfMultiplesTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals(4950, sumOfMultiples(100, [1]));
     }
+
     public function testMultiplesOfEmptyList(): void
     {
         $this->assertEquals(0, sumOfMultiples(1000, [0]));
