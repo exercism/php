@@ -1,39 +1,41 @@
 <?php
 
-function generatePalindromeProducts($min, $max)
+function generatePalindromeProducts($range)
 {
     $palindromes = [];
-    foreach (range($min, $max) as $x) {
-        foreach (range($min, $max) as $y) {
+    foreach ($range as $x) {
+        foreach (range($x, array_reverse($range)[0]) as $y) {
             $n = $x * $y;
             if (isPalindrome($n)) {
                 $palindromes[] = $n;
+                if (count($palindromes) > 2) {
+                    ($range[0] > $range[1]) ? rsort($palindromes) : sort($palindromes);
+                    return array_shift($palindromes);
+                }
             }
         }
     }
-    sort($palindromes);
-    return $palindromes;
+
+    return null;
 }
 
 function smallest($min, $max)
 {
     validate($min, $max);
-    $palindromes = generatePalindromeProducts($min, $max);
-    if (empty($palindromes)) {
+    $r = generatePalindromeProducts(range($min, $max));
+    if (empty($r)) {
         throw new Exception();
     }
-    $r = array_shift($palindromes);
     return [$r, factorize($r, range($min, $max))];
 }
 
 function largest($min, $max)
 {
     validate($min, $max);
-    $palindromes = generatePalindromeProducts($min, $max);
-    if (empty($palindromes)) {
+    $r = generatePalindromeProducts(range($max, $min));
+    if (empty($r)) {
         throw new Exception();
     }
-    $r = array_pop($palindromes);
     return [$r, factorize($r, range($min, $max))];
 }
 
