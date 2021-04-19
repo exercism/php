@@ -1,65 +1,70 @@
 <?php
 
-function generatePalindromeProducts($min, $max)
+function generatePalindromeProduct(array $range): ?int
 {
     $palindromes = [];
-    foreach (range($min, $max) as $x) {
-        foreach (range($min, $max) as $y) {
-            $n = $x * $y;
-            if (isPalindrome($n)) {
-                $palindromes[] = $n;
+
+    foreach ($range as $x) {
+        foreach (range($x, array_reverse($range)[0]) as $y) {
+            $product = $x * $y;
+            if (isPalindrome($product)) {
+                $palindromes[] = $product;
+                if (count($palindromes) > 2) {
+                    ($range[0] > $range[1]) ? rsort($palindromes) : sort($palindromes);
+                    return array_shift($palindromes);
+                }
             }
         }
     }
-    sort($palindromes);
-    return $palindromes;
+
+    return null;
 }
 
-function smallest($min, $max)
+function smallest(int $min, int $max): array
 {
     validate($min, $max);
-    $palindromes = generatePalindromeProducts($min, $max);
-    if (empty($palindromes)) {
+    $product = generatePalindromeProduct(range($min, $max));
+    if ($product === null) {
         throw new Exception();
     }
-    $r = array_shift($palindromes);
-    return [$r, factorize($r, range($min, $max))];
+    return [$product, factorize($product, range($min, $max))];
 }
 
-function largest($min, $max)
+function largest(int $min, int $max): array
 {
     validate($min, $max);
-    $palindromes = generatePalindromeProducts($min, $max);
-    if (empty($palindromes)) {
+    $product = generatePalindromeProduct(range($max, $min));
+    if ($product === null) {
         throw new Exception();
     }
-    $r = array_pop($palindromes);
-    return [$r, factorize($r, range($min, $max))];
+    return [$product, factorize($product, range($min, $max))];
 }
 
-function validate($min, $max)
+function validate(int $min, int $max): void
 {
     if ($max <= $min) {
         throw new Exception();
     }
 }
 
-function isPalindrome($n)
+function isPalindrome(int $number): bool
 {
-    return "$n" === strrev("$n");
+    return "$number" === strrev("$number");
 }
 
-function factorize($n, $factorRange)
+function factorize(int $number, array $range): array
 {
     $factors = [];
-    foreach ($factorRange as $x) {
+
+    foreach ($range as $x) {
         if (
-            $n % $x === 0
-            && in_array($n / $x, $factorRange)
-            && !in_array([$n / $x, $x], $factors)
+            $number % $x === 0
+            && in_array($number / $x, $range)
+            && !in_array([$number / $x, $x], $factors)
         ) {
-            $factors[] = [$x, $n / $x];
+            $factors[] = [$x, $number / $x];
         }
     }
+
     return $factors;
 }
