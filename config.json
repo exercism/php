@@ -213,7 +213,7 @@
       {
         "slug": "all-your-base",
         "name": "All Your Base",
-        "uuid": "94AA4B63-66BA-4EF4-8E27-36C146682F05",
+        "uuid": "b71a6079-f7e8-431d-bc1e-dff72918f9dc",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
@@ -332,7 +332,7 @@
       {
         "slug": "crypto-square",
         "name": "Crypto Square",
-        "uuid": "CDEAE0AF-7DBE-4D0E-ACD6-915998D273EA",
+        "uuid": "14aa815d-8073-4a71-841e-9bfdba4b0b1a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
@@ -390,7 +390,7 @@
       {
         "slug": "meetup",
         "name": "Meetup",
-        "uuid": "57E13615-4C88-42E1-A4AE-C2DED7A6FDB2",
+        "uuid": "be7caa7e-ca50-499d-afb3-7da48b3397e2",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
@@ -460,7 +460,7 @@
       {
         "slug": "series",
         "name": "Series",
-        "uuid": "C5D81BB4-7041-4EA9-B0ED-C3A17CF3E071",
+        "uuid": "75718f1b-1f54-438d-a388-1c2faacafd32",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
