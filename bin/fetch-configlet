@@ -2,8 +2,7 @@
 
 # This file is a copy of the
 # https://github.com/exercism/configlet/blob/main/scripts/fetch-configlet file.
-# Please submit bugfixes/improvements to the above file to ensure that all tracks
-# benefit from the changes.
+# Please submit bugfixes/improvements to the above file to ensure that all tracks benefit from the changes.
 
 set -eo pipefail
 
@@ -50,10 +49,10 @@ get_download_url() {
     cut -d'"' -f4
 }
 
-main () {
+main() {
   if [[ -d ./bin ]]; then
     output_dir="./bin"
-  elif [[ $PWD = */bin ]]; then
+  elif [[ $PWD == */bin ]]; then
     output_dir="$PWD"
   else
     echo "Error: no ./bin directory found. This script should be ran from a repo root." >&2
