@@ -1,10 +1,10 @@
 <?php
 
-class RNATranscriptionTest extends PHPUnit\Framework\TestCase
+class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void
     {
-        require_once 'RNATranscription.php';
+        require_once 'RnaTranscription.php';
     }
 
     public function testTranscribesGuanineToCytosine(): void

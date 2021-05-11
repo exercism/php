@@ -1,10 +1,10 @@
 <?php
 
-class ETLTest extends PHPUnit\Framework\TestCase
+class EtlTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void
     {
-        require_once 'ETL.php';
+        require_once 'Etl.php';
     }
 
     public function testTransformOneValue(): void
