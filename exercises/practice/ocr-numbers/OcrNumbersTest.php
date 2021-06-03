@@ -1,10 +1,10 @@
 <?php
 
-class OCRNumbersTest extends PHPUnit\Framework\TestCase
+class OcrNumbersTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void
     {
-        require_once 'OCRNumbers.php';
+        require_once 'OcrNumbers.php';
     }
 
     /**

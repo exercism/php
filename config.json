@@ -13,6 +13,7 @@
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4,
+    "ace_editor_language": "php",
     "highlightjs_language": "php"
   },
   "test_runner": {
