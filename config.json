@@ -4,7 +4,7 @@
   "active": true,
   "status": {
     "concept_exercises": false,
-    "test_runner": false,
+    "test_runner": true,
     "representer": false,
     "analyzer": false
   },
@@ -15,6 +15,9 @@
     "indent_size": 4,
     "ace_editor_language": "php",
     "highlightjs_language": "php"
+  },
+  "test_runner": {
+    "average_run_time": 2.0
   },
   "files": {
     "solution": [
