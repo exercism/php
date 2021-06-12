@@ -8,7 +8,7 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "PHP is a scripting language designed for web development, but also used as a general-purpose programming language. It's one of the most popular programming languages for web development and provides object-oriented capabilities.",
+  "blurb": "PHP is a general purpose scripting language designed primarily for web development. It is one of the most popular programming languages for web development, and supports multiple programming paradigms.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
@@ -819,7 +819,7 @@
   "key_features": [
     {
       "title": "Evolving",
-      "content": "PHP is consistently being updated and improved.",
+      "content": "PHP is constantly being updated and improved.",
       "icon": ""
     },
     {
@@ -829,22 +829,22 @@
     },
     {
       "title": "Flexible",
-      "content": "PHP is well suited scripting language for multiple platforms.",
-      "icon": ""
-    },
-    {
-      "title": "Forgiving",
-      "content": "PHP allows your code to continue to execute, while still providing robust error reporting.",
+      "content": "As a general purpose scripting language, PHP can be used for almost any task.",
       "icon": ""
     },
     {
       "title": "Practical",
-      "content": "The classic syntax and well featured standard library make rapid development easy.",
+      "content": "PHP's simple syntax, gradual typing, and robust standard library make rapid development a breeze.",
       "icon": ""
     },
     {
-      "title": "Documented",
-      "content": "PHP is well documented by the official PHP.net website and it's helpful community.",
+      "title": "Well Documented",
+      "content": "PHP is well documented by the official PHP.net website, which includes helpful community commentary.",
+      "icon": ""
+    },
+    {
+      "title": "Cross-platform",
+      "content": "Write once, run anywhere PHP is supported.",
       "icon": ""
     }
   ],
@@ -853,7 +853,6 @@
     "paradigm/object_oriented",
     "paradigm/procedural",
     "typing/dynamic",
-    "typing/weak",
     "execution_mode/interpreted",
     "platform/windows",
     "platform/mac",
@@ -861,6 +860,8 @@
     "runtime/language_specific",
     "used_for/backends",
     "used_for/cross_platform_development",
-    "used_for/scripts"
+    "used_for/frontends",
+    "used_for/scripts",
+    "used_for/web_development"
   ]
 }
