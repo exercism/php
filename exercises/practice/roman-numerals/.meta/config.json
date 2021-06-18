@@ -1,16 +1,20 @@
 {
   "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "Dog",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "petemcfarlane",
+    "zembrowski"
+  ],
   "files": {
-    "solution": [
-      "RomanNumerals.php"
-    ],
-    "test": [
-      "RomanNumeralsTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["RomanNumerals.php"],
+    "test": ["RomanNumeralsTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "The Roman Numeral Kata",
   "source_url": "http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals"

@@ -1,16 +1,23 @@
 {
   "blurb": "Manage robot factory settings.",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "DerTee",
+    "dkinzer",
+    "Dog",
+    "Hrumpa",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "masters3d",
+    "petemcfarlane",
+    "schorsch3000"
+  ],
   "files": {
-    "solution": [
-      "RobotName.php"
-    ],
-    "test": [
-      "RobotNameTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["RobotName.php"],
+    "test": ["RobotNameTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "A debugging session with Paul Blackwell at gSchool."
 }

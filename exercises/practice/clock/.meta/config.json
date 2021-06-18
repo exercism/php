@@ -1,16 +1,18 @@
 {
   "blurb": "Implement a clock that handles times without dates.",
-  "authors": [],
+  "authors": ["jrdnull"],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "petemcfarlane"
+  ],
   "files": {
-    "solution": [
-      "Clock.php"
-    ],
-    "test": [
-      "ClockTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Clock.php"],
+    "test": ["ClockTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Pairing session with Erin Drummond",
   "source_url": "https://twitter.com/ebdrummond"

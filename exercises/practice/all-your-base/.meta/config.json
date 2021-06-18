@@ -1,6 +1,15 @@
 {
   "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base.",
-  "authors": [],
+  "authors": [
+    "camilopayan"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "mk-mxp",
+    "neenjaw"
+  ],
   "files": {
     "solution": [
       "AllYourBase.php"

@@ -1,16 +1,17 @@
 {
   "blurb": "Convert a long phrase to its acronym",
-  "authors": [],
+  "authors": ["pmatseykanets"],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "petemcfarlane",
+    "yisraeldov"
+  ],
   "files": {
-    "solution": [
-      "Acronym.php"
-    ],
-    "test": [
-      "AcronymTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Acronym.php"],
+    "test": ["AcronymTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Julien Vanier",
   "source_url": "https://github.com/monkbroc"

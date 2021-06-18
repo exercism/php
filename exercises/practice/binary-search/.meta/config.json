@@ -1,16 +1,17 @@
 {
   "blurb": "Implement a binary search algorithm.",
-  "authors": [],
+  "authors": ["arthurchipdean"],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "petemcfarlane",
+    "yisraeldov"
+  ],
   "files": {
-    "solution": [
-      "BinarySearch.php"
-    ],
-    "test": [
-      "BinarySearchTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["BinarySearch.php"],
+    "test": ["BinarySearchTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"

@@ -1,16 +1,20 @@
 {
   "blurb": "Convert a trinary number, represented as a string (e.g. '102012'), to its decimal equivalent using first principles.",
   "authors": [],
+  "contributors": [
+    "arueckauer",
+    "dkinzer",
+    "kunicmarko20",
+    "kytrinyx",
+    "lafent",
+    "LucasThompson",
+    "petemcfarlane",
+    "yisraeldov"
+  ],
   "files": {
-    "solution": [
-      "Trinary.php"
-    ],
-    "test": [
-      "TrinaryTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Trinary.php"],
+    "test": ["TrinaryTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "All of Computer Science",
   "source_url": "http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-"

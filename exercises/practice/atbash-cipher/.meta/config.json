@@ -1,16 +1,11 @@
 {
   "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
-  "authors": [],
+  "authors": ["nhoag"],
+  "contributors": ["arueckauer", "kunicmarko20", "kytrinyx", "petemcfarlane"],
   "files": {
-    "solution": [
-      "AtbashCipher.php"
-    ],
-    "test": [
-      "AtbashCipherTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["AtbashCipher.php"],
+    "test": ["AtbashCipherTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Atbash"

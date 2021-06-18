@@ -1,16 +1,17 @@
 {
   "blurb": "Implement the classic method for composing secret messages called a square code.",
-  "authors": [],
+  "authors": ["camilopayan"],
+  "contributors": [
+    "arueckauer",
+    "dstockto",
+    "kunicmarko20",
+    "kytrinyx",
+    "yisraeldov"
+  ],
   "files": {
-    "solution": [
-      "CryptoSquare.php"
-    ],
-    "test": [
-      "CryptoSquareTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["CryptoSquare.php"],
+    "test": ["CryptoSquareTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "J Dalbey's Programming Practice problems",
   "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
