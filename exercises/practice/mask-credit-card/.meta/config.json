@@ -1,27 +1,12 @@
 {
-  "authors": [
-    {
-      "github_username": "codedge",
-      "exercism_username": "codedge"
-    }
-  ],
-  "contributors": [
-    {
-      "github_username": "neenjaw",
-      "exercism_username": "neenjaw"
-    }
-  ],
+  "authors": ["codedge"],
+  "contributors": ["neenjaw"],
   "files": {
-    "solution": [
-      "MaskCreditCard.php"
-    ],
-    "test": [
-      "MaskCreditCardTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["MaskCreditCard.php"],
+    "test": ["MaskCreditCardTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "",
-  "source_url": ""
+  "source_url": "",
+  "blurb": "TODO: blurb for credit card"
 }
