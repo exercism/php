@@ -9,6 +9,7 @@ class GradeSchoolTest extends TestCase
         require_once 'GradeSchool.php';
     }
 
+    /** @var School */
     protected $school;
 
     protected function setUp(): void
@@ -18,15 +19,15 @@ class GradeSchoolTest extends TestCase
 
     public function testAddStudent(): void
     {
-        $this->school->add("Claire", 2);
+        $this->school->add('Claire', 2);
         $this->assertContains('Claire', $this->school->grade(2));
     }
 
     public function testAddStudentsInSameGrade(): void
     {
-        $this->school->add("Marc", 2);
-        $this->school->add("Virginie", 2);
-        $this->school->add("Claire", 2);
+        $this->school->add('Marc', 2);
+        $this->school->add('Virginie', 2);
+        $this->school->add('Claire', 2);
 
         $students = $this->school->grade(2);
         $this->assertCount(3, $students);
@@ -38,8 +39,8 @@ class GradeSchoolTest extends TestCase
 
     public function testAddStudentInDifferentGrades(): void
     {
-        $this->school->add("Marc", 3);
-        $this->school->add("Claire", 6);
+        $this->school->add('Marc', 3);
+        $this->school->add('Claire', 6);
 
         $this->assertContains('Marc', $this->school->grade(3));
         $this->assertContains('Claire', $this->school->grade(6));
@@ -54,10 +55,10 @@ class GradeSchoolTest extends TestCase
 
     public function testSortSchool(): void
     {
-        $this->school->add("Marc", 5);
-        $this->school->add("Virginie", 5);
-        $this->school->add("Claire", 5);
-        $this->school->add("Mehdi", 4);
+        $this->school->add('Marc', 5);
+        $this->school->add('Mehdi', 4);
+        $this->school->add('Virginie', 5);
+        $this->school->add('Claire', 5);
 
         $sortedStudents = [
             4 => ['Mehdi'],
@@ -65,6 +66,22 @@ class GradeSchoolTest extends TestCase
         ];
         $schoolStudents = $this->school->studentsByGradeAlphabetical();
 
-        $this->assertTrue($sortedStudents === $schoolStudents);
+        $this->assertSame($sortedStudents, $schoolStudents);
+    }
+
+    public function testSortSchoolByKey(): void
+    {
+        $this->school->add('Marc', 4);
+        $this->school->add('Mehdi', 4);
+        $this->school->add('Virginie', 4);
+        $this->school->add('Claire', 5);
+
+        $sortedStudents = [
+            4 => ['Marc', 'Mehdi', 'Virginie'],
+            5 => ['Claire']
+        ];
+        $schoolStudents = $this->school->studentsByGradeAlphabetical();
+
+        $this->assertSame($sortedStudents, $schoolStudents);
     }
 }
