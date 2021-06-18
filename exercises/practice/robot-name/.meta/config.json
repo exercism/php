@@ -11,20 +11,13 @@
     "kytrinyx",
     "lafent",
     "masters3d",
-    "neenjaw",
     "petemcfarlane",
     "schorsch3000"
   ],
   "files": {
-    "solution": [
-      "RobotName.php"
-    ],
-    "test": [
-      "RobotNameTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["RobotName.php"],
+    "test": ["RobotNameTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "A debugging session with Paul Blackwell at gSchool."
 }

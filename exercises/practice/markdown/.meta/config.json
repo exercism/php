@@ -1,23 +1,10 @@
 {
   "blurb": "Refactor a Markdown parser",
-  "authors": [
-    "petemcfarlane"
-  ],
-  "contributors": [
-    "arueckauer",
-    "kytrinyx",
-    "neenjaw",
-    "yisraeldov"
-  ],
+  "authors": ["petemcfarlane"],
+  "contributors": ["arueckauer", "kytrinyx", "yisraeldov"],
   "files": {
-    "solution": [
-      "Markdown.php"
-    ],
-    "test": [
-      "MarkdownTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Markdown.php"],
+    "test": ["MarkdownTest.php"],
+    "example": [".meta/example.php"]
   }
 }

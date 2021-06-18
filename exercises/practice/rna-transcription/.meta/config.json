@@ -7,19 +7,12 @@
     "kunicmarko20",
     "kytrinyx",
     "lafent",
-    "neenjaw",
     "petemcfarlane"
   ],
   "files": {
-    "solution": [
-      "RnaTranscription.php"
-    ],
-    "test": [
-      "RnaTranscriptionTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["RnaTranscription.php"],
+    "test": ["RnaTranscriptionTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Hyperphysics",
   "source_url": "http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"

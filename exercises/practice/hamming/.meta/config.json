@@ -10,20 +10,13 @@
     "kytrinyx",
     "lafent",
     "marvinrabe",
-    "neenjaw",
     "petemcfarlane",
     "rossbearman"
   ],
   "files": {
-    "solution": [
-      "Hamming.php"
-    ],
-    "test": [
-      "HammingTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Hamming.php"],
+    "test": ["HammingTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "The Calculating Point Mutations problem at Rosalind",
   "source_url": "http://rosalind.info/problems/hamm/"

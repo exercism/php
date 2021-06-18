@@ -1,25 +1,11 @@
 {
   "blurb": "Write a robot simulator.",
-  "authors": [
-    "Hrumpa"
-  ],
-  "contributors": [
-    "arueckauer",
-    "G-Rath",
-    "kytrinyx",
-    "neenjaw",
-    "petemcfarlane"
-  ],
+  "authors": ["Hrumpa"],
+  "contributors": ["arueckauer", "G-Rath", "kytrinyx", "petemcfarlane"],
   "files": {
-    "solution": [
-      "RobotSimulator.php"
-    ],
-    "test": [
-      "RobotSimulatorTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["RobotSimulator.php"],
+    "test": ["RobotSimulatorTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Inspired by an interview question at a famous company.",
   "source_url": ""

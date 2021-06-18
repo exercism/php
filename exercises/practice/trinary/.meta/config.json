@@ -8,20 +8,13 @@
     "kytrinyx",
     "lafent",
     "LucasThompson",
-    "neenjaw",
     "petemcfarlane",
     "yisraeldov"
   ],
   "files": {
-    "solution": [
-      "Trinary.php"
-    ],
-    "test": [
-      "TrinaryTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Trinary.php"],
+    "test": ["TrinaryTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "All of Computer Science",
   "source_url": "http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-"

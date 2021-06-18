@@ -1,8 +1,6 @@
 {
   "blurb": "Compute the result for a game of Hex / Polygon",
-  "authors": [
-    "pminten"
-  ],
+  "authors": ["pminten"],
   "contributors": [
     "arueckauer",
     "dkinzer",
@@ -10,19 +8,12 @@
     "kunicmarko20",
     "kytrinyx",
     "lafent",
-    "neenjaw",
     "petemcfarlane",
     "yisraeldov"
   ],
   "files": {
-    "solution": [
-      "Connect.php"
-    ],
-    "test": [
-      "ConnectTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Connect.php"],
+    "test": ["ConnectTest.php"],
+    "example": [".meta/example.php"]
   }
 }

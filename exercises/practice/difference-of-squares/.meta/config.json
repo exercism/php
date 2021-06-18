@@ -7,20 +7,13 @@
     "kunicmarko20",
     "kytrinyx",
     "lafent",
-    "neenjaw",
     "petemcfarlane",
     "Scientifica96"
   ],
   "files": {
-    "solution": [
-      "DifferenceOfSquares.php"
-    ],
-    "test": [
-      "DifferenceOfSquaresTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["DifferenceOfSquares.php"],
+    "test": ["DifferenceOfSquaresTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Problem 6 at Project Euler",
   "source_url": "http://projecteuler.net/problem=6"

@@ -1,26 +1,17 @@
 {
   "blurb": "Determine if a sentence is a pangram.",
-  "authors": [
-    "ecrmnn"
-  ],
+  "authors": ["ecrmnn"],
   "contributors": [
     "arueckauer",
     "kunicmarko20",
     "kytrinyx",
-    "neenjaw",
     "petemcfarlane",
     "rossbearman"
   ],
   "files": {
-    "solution": [
-      "Pangram.php"
-    ],
-    "test": [
-      "PangramTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Pangram.php"],
+    "test": ["PangramTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Pangram"

@@ -1,25 +1,11 @@
 {
   "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
-  "authors": [
-    "ecrmnn"
-  ],
-  "contributors": [
-    "arueckauer",
-    "kunicmarko20",
-    "kytrinyx",
-    "neenjaw",
-    "petemcfarlane"
-  ],
+  "authors": ["ecrmnn"],
+  "contributors": ["arueckauer", "kunicmarko20", "kytrinyx", "petemcfarlane"],
   "files": {
-    "solution": [
-      "WordCount.php"
-    ],
-    "test": [
-      "WordCountTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["WordCount.php"],
+    "test": ["WordCountTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
 }

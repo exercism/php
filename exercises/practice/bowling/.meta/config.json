@@ -8,19 +8,12 @@
     "kunicmarko20",
     "kytrinyx",
     "lafent",
-    "neenjaw",
     "petemcfarlane"
   ],
   "files": {
-    "solution": [
-      "Bowling.php"
-    ],
-    "test": [
-      "BowlingTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Bowling.php"],
+    "test": ["BowlingTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "The Bowling Game Kata at but UncleBob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"

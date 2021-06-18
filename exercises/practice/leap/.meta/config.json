@@ -7,19 +7,12 @@
     "kunicmarko20",
     "kytrinyx",
     "lafent",
-    "neenjaw",
     "petemcfarlane"
   ],
   "files": {
-    "solution": [
-      "Leap.php"
-    ],
-    "test": [
-      "LeapTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Leap.php"],
+    "test": ["LeapTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "JavaRanch Cattle Drive, exercise 3",
   "source_url": "http://www.javaranch.com/leap.jsp"

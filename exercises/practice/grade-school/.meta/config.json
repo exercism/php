@@ -7,20 +7,13 @@
     "G-Rath",
     "kunicmarko20",
     "kytrinyx",
-    "neenjaw",
     "petemcfarlane",
     "rossbearman"
   ],
   "files": {
-    "solution": [
-      "GradeSchool.php"
-    ],
-    "test": [
-      "GradeSchoolTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["GradeSchool.php"],
+    "test": ["GradeSchoolTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "A pairing session with Phil Battos at gSchool",
   "source_url": "http://gschool.it"

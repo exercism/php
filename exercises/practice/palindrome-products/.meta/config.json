@@ -1,23 +1,11 @@
 {
   "blurb": "Detect palindrome products in a given range.",
-  "authors": [
-    "camilopayan"
-  ],
-  "contributors": [
-    "arueckauer",
-    "neenjaw",
-    "yisraeldov"
-  ],
+  "authors": ["camilopayan"],
+  "contributors": ["arueckauer", "yisraeldov"],
   "files": {
-    "solution": [
-      "PalindromeProducts.php"
-    ],
-    "test": [
-      "PalindromeProductsTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["PalindromeProducts.php"],
+    "test": ["PalindromeProductsTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Problem 4 at Project Euler",
   "source_url": "http://projecteuler.net/problem=4"

@@ -1,25 +1,11 @@
 {
   "blurb": "Use the Sieve of Eratosthenes to find all the primes from 2 up to a given number.",
-  "authors": [
-    "jeslopcru"
-  ],
-  "contributors": [
-    "arueckauer",
-    "kunicmarko20",
-    "kytrinyx",
-    "neenjaw",
-    "petemcfarlane"
-  ],
+  "authors": ["jeslopcru"],
+  "contributors": ["arueckauer", "kunicmarko20", "kytrinyx", "petemcfarlane"],
   "files": {
-    "solution": [
-      "Sieve.php"
-    ],
-    "test": [
-      "SieveTest.php"
-    ],
-    "example": [
-      ".meta/example.php"
-    ]
+    "solution": ["Sieve.php"],
+    "test": ["SieveTest.php"],
+    "example": [".meta/example.php"]
   },
   "source": "Sieve of Eratosthenes at Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"
