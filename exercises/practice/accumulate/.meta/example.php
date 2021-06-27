@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Given the input array and operation returns an array
  * containing the result of applying that operation

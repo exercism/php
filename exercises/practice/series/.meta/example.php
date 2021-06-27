@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function slices($series, $size)
 {
     if ($size > strlen($series) || $size < 1) {

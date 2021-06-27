@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function squareOfSum(int $max): int
 {
     throw new \BadFunctionCallException("Implement the squareOfSum function");

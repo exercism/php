@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function brackets_match(string $input): bool
 {
     $characters = str_split($input);

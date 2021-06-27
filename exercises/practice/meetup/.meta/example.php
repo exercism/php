@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function meetup_day($year, $month, $which, $weekday)
 {
     $monthName = DateTimeImmutable::createFromFormat("!m", $month)->format('F');

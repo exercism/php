@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // adapted from the python example
 function findFewestCoins(array $coins, int $total_change): array
 {

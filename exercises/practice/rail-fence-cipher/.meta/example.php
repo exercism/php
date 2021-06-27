@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function encode($plainMessage, $rails)
 {
     $cipherMessage = [];
@@ -24,7 +26,7 @@ function decode($cipherMessage, $rails)
     $position = ($rails * 2) - 2;
     $textLength = strlen($cipherMessage);
 
-    $minLength = floor($textLength / $position);
+    $minLength = (int) floor($textLength / $position);
     $balance = $textLength % $position;
     $lengths = [];
     $strings = [];

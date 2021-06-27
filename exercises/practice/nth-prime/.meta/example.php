@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function prime($count)
 {
     if ($count < 1) {

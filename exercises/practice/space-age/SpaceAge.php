@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class SpaceAge
 {
     public function __construct(int $seconds)

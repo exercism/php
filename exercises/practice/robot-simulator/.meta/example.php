@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Robot
 {
     public const DIRECTION_NORTH = 'north';

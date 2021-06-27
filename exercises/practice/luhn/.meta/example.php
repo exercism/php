@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function isValid($candidate)
 {
     $sanitizedCandidate = str_replace(" ", "", $candidate) ;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function squareOfSum($max)
 {
     $sum = 0;

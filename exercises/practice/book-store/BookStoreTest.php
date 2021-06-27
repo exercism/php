@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Calculate lowest price for shopping basket only
  * containing books from a single series. There is no

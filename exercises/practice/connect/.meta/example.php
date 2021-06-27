@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 const NOTHING = 0;
 const WHITE = 1;
 const BLACK = 2;

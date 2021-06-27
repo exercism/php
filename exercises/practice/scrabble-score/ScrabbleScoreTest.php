@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Calculate the value of scrabble score for a given word.
  */

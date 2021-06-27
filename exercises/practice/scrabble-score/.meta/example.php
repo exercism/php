@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function score($word)
 {
     if (strlen($word) === 0 || $word === ' ') {

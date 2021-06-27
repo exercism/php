@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Allergies
 {
     public function __construct(int $score)

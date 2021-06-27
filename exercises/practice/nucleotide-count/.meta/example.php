@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function nucleotideCount($dna)
 {
     $nucleotides = [];

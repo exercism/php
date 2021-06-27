@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function isPangram($string)
 {
     $string = str_replace(['-', ' '], '', mb_strtolower($string));

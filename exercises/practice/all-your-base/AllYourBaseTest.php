@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * These tests are adapted from the canonical data in the
  * `problem-specifications` repository.

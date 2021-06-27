@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function isIsogram($string)
 {
     $string = str_replace(['-', ' '], '', mb_strtolower($string));

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function encode($string)
 {
     $a_z = range('a', 'z');

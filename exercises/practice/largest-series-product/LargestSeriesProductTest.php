@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void
@@ -22,25 +24,25 @@ class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
 
     public function testCanFindTheLargestProductOf2(): void
     {
-        $series = new Series(576802143);
+        $series = new Series("576802143");
         $this->assertEquals(48, $series->largestProduct(2));
     }
 
     public function testFindsTheLargestProductIfSpanEqualsLength(): void
     {
-        $series = new Series(29);
+        $series = new Series("29");
         $this->assertEquals(18, $series->largestProduct(2));
     }
 
     public function testCanFindTheLargestProductOf3WithNumbersInOrder(): void
     {
-        $series = new Series(123456789);
+        $series = new Series("123456789");
         $this->assertEquals(504, $series->largestProduct(3));
     }
 
     public function testCanFindTheLargestProductOf3(): void
     {
-        $series = new Series(1027839564);
+        $series = new Series("1027839564");
         $this->assertEquals(270, $series->largestProduct(3));
     }
 
@@ -82,7 +84,7 @@ class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
 
     public function testReportsZeroIfAllSpansIncludeZero(): void
     {
-        $series = new Series(99099);
+        $series = new Series("99099");
         $this->assertEquals(0, $series->largestProduct(3));
     }
 
@@ -90,7 +92,7 @@ class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $series = new Series(123);
+        $series = new Series("123");
         $series->largestProduct(4);
     }
 

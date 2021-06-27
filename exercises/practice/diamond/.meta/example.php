@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function diamond($limit)
 {
     $alphabet = range('A', $limit);

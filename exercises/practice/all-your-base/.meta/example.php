@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function rebase(int $fromBase, array $digits, int $toBase)
 {
     if (empty($digits) || $digits[0] == 0 || $fromBase <= 1 || $toBase <= 1) {

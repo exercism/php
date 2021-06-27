@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Clock
 {
     public function __toString(): string

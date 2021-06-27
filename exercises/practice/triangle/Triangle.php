@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Triangle
 {
     public function __construct(int $a, int $b, int $c)

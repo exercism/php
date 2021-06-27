@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class PhoneNumber
 {
     public function number(): string

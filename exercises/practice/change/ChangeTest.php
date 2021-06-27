@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class ChangeTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void

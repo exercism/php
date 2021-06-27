@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function toDecimal($ternaryString, $base = 3)
 {
     if (!preg_match('/^[0-2]+$/', $ternaryString)) {

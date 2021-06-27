@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function pascalsTriangleRows($rowCount)
 {
     if ($rowCount < 0 || $rowCount === null) {

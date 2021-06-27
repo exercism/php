@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function steps($number)
 {
     $stepCount = 0;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function crypto_square($plaintext)
 {
     $normalized = preg_replace('/\W*/', '', strtolower($plaintext));

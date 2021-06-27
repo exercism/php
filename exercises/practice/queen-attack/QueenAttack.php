@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function placeQueen(int $xCoordinate, int $yCoordinate): bool
 {
     throw new \BadFunctionCallException("Implement the placeQueen function");

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function isArmstrongNumber(int $number): bool
 {
     $total = 0;

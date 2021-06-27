@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class School
 {
     public function add(string $name, int $grade): void
