@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function maskify(string $cc): string
 {
     // Do no mask if cc less than 6 or empty string
