@@ -5,3 +5,6 @@ tmp
 .phpunit.result.cache
 bin/configlet
 bin/configlet.exe
+
+/vendor/
+composer.lock

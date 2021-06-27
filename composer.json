@@ -1,0 +1,6 @@
+{
+    "name": "exercism/php",
+    "require-dev": {
+        "slevomat/coding-standard": "^7.0"
+    }
+}
