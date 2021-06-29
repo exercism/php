@@ -1,0 +1,16 @@
+{
+  "name": "exercism/php",
+  "autoload": {
+    "Exercism\\": "src",
+    "Exercism\\Exercises\\": "exercises"
+  },
+  "require-dev": {
+    "php": "^7.4|^8.0",
+    "slevomat/coding-standard": "^7.0",
+    "squizlabs/php_codesniffer": "^3.6"
+  },
+  "scripts": {
+    "lint:check": "./vendor/bin/phpcs --standard=phpcs-php.xml ./exercises",
+    "lint:fix": "./vendor/bin/phpcbf --standard=phpcs-php.xml ./exercises"
+  }
+}

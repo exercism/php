@@ -8,4 +8,11 @@
     <exclude name="PSR1.Classes.ClassDeclaration.MultipleClasses" />
     <exclude name="PSR1.Files.SideEffects.FoundWithSymbols" />
   </rule>
+  <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/TypeHints/DeclareStrictTypesSniff.php">
+    <properties>
+      <property name="newlinesCountBetweenOpenTagAndDeclare" type="int" value="1" />
+      <property name="spacesCountAroundEqualsSign" type="int" value="0" />
+    </properties>
+  </rule>
+  <rule ref="src/Sniffs/ExplainStrictTypesSniff.php"/>
 </ruleset>

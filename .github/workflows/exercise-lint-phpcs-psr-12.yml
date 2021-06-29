@@ -29,8 +29,9 @@ jobs:
 
       - uses: shivammathur/setup-php@46fc8a2fd7cba50512858026dc8f0947c8a7a0e8
         with:
-          version: ${{ matrix.php-version }}
+          php-version: ${{ matrix.php-version }}
           extensions: gmp
+          tools: composer
 
       - name: Install dependencies
         shell: bash
@@ -38,9 +39,9 @@ jobs:
           curl -Lo bin/phpcs.phar https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
           chmod +x bin/phpcs.phar
 
+      - name: Install composer packages
+        run: composer install
+
       - name: Lint exercises
         shell: bash
-        env:
-          PHPCS_BIN: 'bin/phpcs.phar'
-          PHPCS_RULES: 'phpcs-php.xml'
-        run: bin/lint.sh
+        run: composer lint:check
