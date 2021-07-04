@@ -1,13 +1,37 @@
 <?php
 
+/*
+ * By adding type hints and enabling strict type checking, code can become
+ * easier to read, self-documenting and reduce the number of potential bugs.
+ * By default, type declarations are non-strict, which means they will attempt
+ * to change the original type to match the type specified by the
+ * type-declaration.
+ *
+ * In other words, if you pass a string to a function requiring a float,
+ * it will attempt to convert the string value to a float.
+ *
+ * To enable strict mode, a single declare directive must be placed at the top
+ * of the file.
+ * This means that the strictness of typing is configured on a per-file basis.
+ * This directive not only affects the type declarations of parameters, but also
+ * a function's return type.
+ *
+ * For more info review the Concept on strict type checking in the PHP track
+ * <link>.
+ *
+ * To disable strict typing, comment out the directive below.
+ */
+
+declare(strict_types=1);
+
 class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
 {
-    public static function setUpBeforeClass() : void
+    public static function setUpBeforeClass(): void
     {
-        require_once 'scale-generator.php';
+        require_once 'ScaleGenerator.php';
     }
 
-    public function testNamingScale() : void
+    public function testNamingScale(): void
     {
         $chromatic = new Scale('c', "chromatic");
         $expected = 'C chromatic';
@@ -15,7 +39,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testChromaticScale() : void
+    public function testChromaticScale(): void
     {
         $chromatic = new Scale('C', "chromatic");
         $expected = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
@@ -23,7 +47,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testAnotherChromaticScale() : void
+    public function testAnotherChromaticScale(): void
     {
         $chromatic = new Scale("F", "chromatic");
         $expected = ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"];
@@ -31,7 +55,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testNamingMajorScale() : void
+    public function testNamingMajorScale(): void
     {
         $major = new Scale('G', "major", 'MMmMMMm');
         $expected = 'G major';
@@ -39,7 +63,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testMajorScale() : void
+    public function testMajorScale(): void
     {
         $major = new Scale('C', "major", 'MMmMMMm');
         $expected = ["C", "D", "E", "F", "G", "A", "B"];
@@ -47,7 +71,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testAnotherMajorScale() : void
+    public function testAnotherMajorScale(): void
     {
         $major = new Scale('G', "major", 'MMmMMMm');
         $expected = ["G", "A", "B", "C", "D", "E", "F#"];
@@ -55,7 +79,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testMinorScale() : void
+    public function testMinorScale(): void
     {
         $minor = new Scale('f#', "minor", 'MmMMmMM');
         $expected = ["F#", "G#", "A", "B", "C#", "D", "E"];
@@ -63,7 +87,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testAnotherMinorScale() : void
+    public function testAnotherMinorScale(): void
     {
         $minor = new Scale('bb', "minor", 'MmMMmMM');
         $expected = ["Bb", "C", "Db", "Eb", "F", "Gb", "Ab"];
@@ -71,7 +95,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testDorianMode() : void
+    public function testDorianMode(): void
     {
         $dorian = new Scale('d', "dorian", 'MmMMMmM');
         $expected = ["D", "E", "F", "G", "A", "B", "C"];
@@ -79,7 +103,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testMixolydianMode() : void
+    public function testMixolydianMode(): void
     {
         $mixolydian = new Scale('Eb', "mixolydian", 'MMmMMmM');
         $expected = ["Eb", "F", "G", "Ab", "Bb", "C", "Db"];
@@ -87,7 +111,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testLydianMode() : void
+    public function testLydianMode(): void
     {
         $lydian = new Scale('a', "lydian", 'MMMmMMm');
         $expected = ["A", "B", "C#", "D#", "E", "F#", "G#"];
@@ -95,7 +119,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testPhrygianMode() : void
+    public function testPhrygianMode(): void
     {
         $phrygian = new Scale('e', "phrygian", 'mMMMmMM');
         $expected = ["E", "F", "G", "A", "B", "C", "D"];
@@ -103,7 +127,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testLocrianMode() : void
+    public function testLocrianMode(): void
     {
         $locrian = new Scale('g', "locrian", 'mMMmMMM');
         $expected = ["G", "Ab", "Bb", "C", "Db", "Eb", "F"];
@@ -111,7 +135,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testHarmonicMinor() : void
+    public function testHarmonicMinor(): void
     {
         $harmonicMinor = new Scale('d', "harmonic_minor", 'MmMMmAm');
         $expected = ["D", "E", "F", "G", "A", "Bb", "Db"];
@@ -119,7 +143,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testOctatonic() : void
+    public function testOctatonic(): void
     {
         $octatonic = new Scale('C', "octatonic", 'MmMmMmMm');
         $expected = ["C", "D", "D#", "F", "F#", "G#", "A", "B"];
@@ -127,7 +151,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testHexatonic() : void
+    public function testHexatonic(): void
     {
         $hexatonic = new Scale('Db', "hexatonic", 'MMMMMM');
         $expected = ["Db", "Eb", "F", "G", "A", "B"];
@@ -135,7 +159,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testPentatonic() : void
+    public function testPentatonic(): void
     {
         $pentatonic = new Scale('A', "pentatonic", 'MMAMA');
         $expected = ["A", "B", "C#", "E", "F#"];
@@ -143,7 +167,7 @@ class ScaleGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testEnigmatic() : void
+    public function testEnigmatic(): void
     {
         $enigmatic = new Scale('G', "enigma", 'mAMMMmM');
         $expected = ["G", "G#", "B", "C#", "D#", "F", "F#"];
