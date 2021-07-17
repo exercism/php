@@ -1,0 +1,10 @@
+{
+  "blurb": "Write a function that returns the earned points in a single toss of a Darts game",
+  "authors": ["MichaelBunker"],
+  "contributors": [],
+  "files": {
+    "solution": ["Darts.php"],
+    "test": ["DartsTest.php"],
+    "example": [".meta/example.php"]
+  }
+}
