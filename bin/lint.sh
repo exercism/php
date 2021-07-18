@@ -12,6 +12,10 @@ function main {
 
   all_exercise_dirs=$(find ./exercises -maxdepth 2 -mindepth 2 -type d | sort)
   for exercise_dir in $all_exercise_dirs; do
+    if [[ "${exercise_dir}" == *"hello-world"* ]]; then
+      continue
+    fi
+
     lint "${exercise_dir}"
     if [[ $? -ne 0 ]]; then
       has_failures=1
