@@ -802,6 +802,19 @@
         ]
       },
       {
+        "slug": "poker",
+        "name": "Poker",
+        "uuid": "e8669c8e-bfdd-4207-baf6-23c2e4b12d13",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": [
+          "games",
+          "parsing",
+          "sorting"
+        ]
+      },
+      {
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "3201ddeb-9046-4801-a31a-28c292686e1e",
