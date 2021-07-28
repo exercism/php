@@ -50,7 +50,10 @@
       },
       {
         "slug": "resistor-color",
+        "name": "Resistor Color",
         "uuid": "53be6837-c224-45f1-bff3-d7f74d6285ce",
+        "practices": [],
+        "prerequisites": [],
         "core": true,
         "unlocked_by": null,
         "difficulty": 1,
