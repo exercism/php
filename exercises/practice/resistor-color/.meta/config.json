@@ -1,0 +1,10 @@
+{
+  "blurb": "Convert a resistor band's color to its numeric representation",
+  "authors": ["camilopayan"],
+  "contributors": ["MichaelBunker"],
+  "files": {
+    "solution": ["ResistorColor.php"],
+    "test": ["ResistorColorTest.php"],
+    "example": [".meta/example.php"]
+  }
+}
