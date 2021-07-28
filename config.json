@@ -833,32 +833,32 @@
     {
       "title": "Evolving",
       "content": "PHP is constantly being updated and improved.",
-      "icon": ""
+      "icon": "evolving"
     },
     {
       "title": "Web Focused",
       "content": "PHP was designed specifically with web development in mind.",
-      "icon": ""
+      "icon": "web"
     },
     {
       "title": "Flexible",
       "content": "As a general purpose scripting language, PHP can be used for almost any task.",
-      "icon": ""
+      "icon": "extensible"
     },
     {
       "title": "Practical",
       "content": "PHP's simple syntax, gradual typing, and robust standard library make rapid development a breeze.",
-      "icon": ""
+      "icon": "productive"
     },
     {
       "title": "Well Documented",
       "content": "PHP is well documented by the official PHP.net website, which includes helpful community commentary.",
-      "icon": ""
+      "icon": "documentation"
     },
     {
       "title": "Cross-platform",
       "content": "Write once, run anywhere PHP is supported.",
-      "icon": ""
+      "icon": "cross-platform"
     }
   ],
   "tags": [
