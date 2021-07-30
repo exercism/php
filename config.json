@@ -51,7 +51,7 @@
       {
         "slug": "resistor-color",
         "name": "Resistor Color",
-        "uuid": "53be6837-c224-45f1-bff3-d7f74d6285ce",
+        "uuid": "141733c5-6d35-4320-a248-54f6a16f1f85",
         "practices": [],
         "prerequisites": [],
         "core": true,
@@ -88,7 +88,7 @@
       {
         "slug": "simple-cipher",
         "name": "Simple Cipher",
-        "uuid": "62d60b42-93bc-4de9-90d1-1ca18a847812",
+        "uuid": "054a332f-f6db-46eb-b86c-2c95829c9ed2",
         "core": true,
         "practices": [],
         "prerequisites": [],
