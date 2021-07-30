@@ -73,8 +73,11 @@
       },
       {
         "slug": "simple-cipher",
+        "name": "Simple Cipher",
         "uuid": "62d60b42-93bc-4de9-90d1-1ca18a847812",
         "core": true,
+        "practices": [],
+        "prerequisites": [],
         "unlocked_by": null,
         "difficulty": 6,
         "topics": [
