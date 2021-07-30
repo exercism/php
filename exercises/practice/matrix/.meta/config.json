@@ -1,0 +1,10 @@
+{
+  "blurb": "Given a string representing a matrix of numbers, return the rows and columns of that matrix.",
+  "authors": ["MichaelBunker"],
+  "contributors": [],
+  "files": {
+    "solution": ["Matrix.php"],
+    "test": ["MatrixTest.php"],
+    "example": [".meta/example.php"]
+  }
+}
