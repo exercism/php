@@ -800,6 +800,18 @@
         ]
       },
       {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "99f94460-fc85-488e-b547-1d235fa84e74",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "games",
+          "randomness"
+        ]
+      },
+      {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "4f15fc17-f68e-43bc-9417-403dd6d03f4f",
