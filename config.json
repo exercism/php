@@ -812,6 +812,19 @@
         ]
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "6d66ec15-b31d-4383-932d-45bc28db0647",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "strings",
+          "matrices",
+          "transforming"
+        ]
+      },
+      {
         "slug": "prime-factors",
         "name": "Prime Factors",
         "uuid": "96de0479-9438-4c74-b57c-67c7073be262",
