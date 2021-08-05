@@ -128,6 +128,19 @@
         ]
       },
       {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "723b1abd-24e3-4a0d-a34d-20b7b76c9f59",
+        "practices": [],
+        "prerequisites": [],
+        "core": false,
+        "unlocked_by": "pangram",
+        "difficulty": 2,
+        "topics": [
+          "arrays"
+        ]
+      },
+      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "ae91650f-fe06-466a-a40a-6a24f5926fbe",

@@ -1,0 +1,10 @@
+{
+  "blurb": "Manage a player's High Score list",
+  "authors": ["camilopayan"],
+  "contributors": ["MichaelBunker"],
+  "files": {
+    "solution": ["HighScores.php"],
+    "test": ["HighScoresTest.php"],
+    "example": [".meta/example.php"]
+  }
+}
