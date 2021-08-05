@@ -86,6 +86,18 @@
         ]
       },
       {
+        "slug": "tournament",
+        "name": "Tournament",
+        "uuid": "e0572cf4-5481-4da4-bf9b-0e921cb81627",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "parsing",
+          "strings"
+        ]
+      },
+      {
         "slug": "simple-cipher",
         "name": "Simple Cipher",
         "uuid": "054a332f-f6db-46eb-b86c-2c95829c9ed2",

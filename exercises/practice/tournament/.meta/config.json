@@ -1,0 +1,10 @@
+{
+  "blurb": "Tally the results of a small football competition.",
+  "authors": ["MichaelBunker"],
+  "contributors": [],
+  "files": {
+    "solution": ["Tournament.php"],
+    "test": ["TournamentTest.php"],
+    "example": [".meta/example.php"]
+  }
+}
