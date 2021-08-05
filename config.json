@@ -897,6 +897,18 @@
         ]
       },
       {
+        "slug": "linked-list",
+        "name": "Linked List",
+        "uuid": "e5f10431-8312-4d6c-abfa-332cd7beea42",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": [
+          "classes",
+          "lists"
+        ]
+      },
+      {
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "3201ddeb-9046-4801-a31a-28c292686e1e",
