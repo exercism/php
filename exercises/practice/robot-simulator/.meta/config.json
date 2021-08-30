@@ -7,6 +7,5 @@
     "test": ["RobotSimulatorTest.php"],
     "example": [".meta/example.php"]
   },
-  "source": "Inspired by an interview question at a famous company.",
-  "source_url": ""
+  "source": "Inspired by an interview question at a famous company."
 }

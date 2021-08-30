@@ -6,7 +6,5 @@
     "test": ["MaskCreditCardTest.php"],
     "example": [".meta/example.php"]
   },
-  "source": "",
-  "source_url": "",
   "blurb": "TODO: blurb for credit card"
 }
