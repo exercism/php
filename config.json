@@ -931,6 +931,60 @@
           "algorithms",
           "math"
         ]
+      },
+      {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "9875a830-b544-4060-9df1-7b7c1f1576f6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "wip",
+        "topics": [
+          "conditionals",
+          "math",
+          "geometry"
+        ]
+      },
+      {
+        "slug": "mask-credit-card",
+        "name": "Mask Credit Card",
+        "uuid": "8ea0a659-df50-4575-b6a4-2a0e8d29738a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "wip",
+        "topics": [
+          "regex",
+          "strings",
+          "conditionals"
+        ]
+      },
+      {
+        "slug": "ordinal-number",
+        "name": "Ordinal Number",
+        "uuid": "48f2ed50-6169-4dd2-832f-6c41d016be64",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "wip",
+        "topics": [
+          "strings",
+          "conditionals"
+        ]
+      },
+      {
+        "slug": "scale-generator",
+        "name": "Scale Generator",
+        "uuid": "8f4545ce-85de-4064-b78c-2177325721b1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "status": "wip",
+        "topics": [
+          "conditionals",
+          "strings"
+        ]
       }
     ]
   },
