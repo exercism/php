@@ -2,6 +2,7 @@
   "blurb": "Write a function that returns the earned points in a single toss of a Darts game",
   "authors": ["MichaelBunker"],
   "contributors": [],
+  "status": "wip",
   "files": {
     "solution": ["Darts.php"],
     "test": ["DartsTest.php"],

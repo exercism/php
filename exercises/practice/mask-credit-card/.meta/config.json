@@ -1,6 +1,7 @@
 {
   "authors": ["codedge"],
   "contributors": ["neenjaw"],
+  "status": "wip",
   "files": {
     "solution": ["MaskCreditCard.php"],
     "test": ["MaskCreditCardTest.php"],

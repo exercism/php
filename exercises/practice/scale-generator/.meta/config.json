@@ -2,6 +2,7 @@
   "blurb": "Generate musical scales, given a starting note and a set of intervals. ",
   "authors": ["camilopayan"],
   "contributors": ["0x647262"],
+  "status": "wip",
   "files": {
     "solution": ["ScaleGenerator.php"],
     "test": ["ScaleGeneratorTest.php"],
