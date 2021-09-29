@@ -26,13 +26,13 @@ declare(strict_types=1);
 
 class Tournament
 {
-    private string $header  = 'Team                           | MP |  W |  D |  L |  P\n';
-    private string $teamRow = '%s                               |  %d |  %d |  %d |  %d |  %d\n';
+    private string $header  = "Team                           | MP |  W |  D |  L |  P\n";
+    private string $teamRow = "%s                               |  %d |  %d |  %d |  %d |  %d\n";
 
     public function tally(string $scores): string
     {
         if (!$scores) {
-            return rtrim($this->header, '\n');
+            return rtrim($this->header, "\n");
         }
 
         $teamTotals = $this->calculateTournamentTotals($scores);
@@ -44,18 +44,15 @@ class Tournament
 
         $output = $this->formatResults($teamTotals);
 
-        return rtrim($output, '\n');
+        return rtrim($output, "\n");
     }
 
     private function calculateTournamentTotals(string $scores): array
     {
         $teamTotals = [];
 
-        foreach (explode('\n', $scores) as $match) {
-            $gameInfo = explode(';', $match);
-            $homeTeam = $gameInfo[0];
-            $awayTeam = $gameInfo[1];
-            $result   = $gameInfo[2];
+        foreach (explode("\n", $scores) as $match) {
+            [$homeTeam, $awayTeam, $result] = explode(';', $match);
 
             $teamTotals[$homeTeam] ??= $this->createTeamResult($homeTeam);
             $teamTotals[$awayTeam] ??= $this->createTeamResult($awayTeam);
