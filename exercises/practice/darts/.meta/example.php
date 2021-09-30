@@ -33,7 +33,7 @@ class Darts
         $this->score = $this->calculateScore($xAxis, $yAxis);
     }
 
-    private function calculateScore(float $xAxis, float $yAxis) : int
+    private function calculateScore(float $xAxis, float $yAxis): int
     {
         $location = $xAxis ** 2 + $yAxis ** 2;
 
