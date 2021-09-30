@@ -15,4 +15,5 @@
     </properties>
   </rule>
   <rule ref="src/Sniffs/ExplainStrictTypesSniff.php"/>
+  <rule ref="LaminasCodingStandard"/>
 </ruleset>
