@@ -35,7 +35,7 @@ class Darts
 
     private function calculateScore(float $xAxis, float $yAxis): int
     {
-        $location = pow($xAxis, 2) + pow($yAxis, 2);
+        $location = $xAxis ** 2 + $yAxis ** 2;
 
         if ($location > 100) {
             return 0;
@@ -46,10 +46,7 @@ class Darts
         if ($location > 1) {
             return 5;
         }
-        if ($location <= 1) {
-            return 10;
-        }
 
-        return 0;
+        return 10;
     }
 }

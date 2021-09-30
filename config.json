@@ -939,7 +939,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
-        "status": "wip",
         "topics": [
           "conditionals",
           "math",
