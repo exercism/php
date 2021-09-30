@@ -31,12 +31,12 @@ class Scale
     private const FLAT_CHROMATIC_SCALE = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb","B"];
     private const FLAT_KEYS = ["F", "Bb", "Eb", "Ab", "Db", "Gb", "d", "g", "c", "f", "bb", "eb"];
 
-    public $tonic;
-    public $scaleName;
-    public $pattern;
-    public $chromaticScale;
-    public $name;
-    public $pitches;
+    public string $tonic;
+    public string  $scaleName;
+    public ?string $pattern;
+    public array  $chromaticScale;
+    public string $name;
+    public array  $pitches;
 
     public function __construct(string $tonic, string $scaleName, string $pattern = null)
     {
@@ -44,7 +44,7 @@ class Scale
         $this->scaleName = $scaleName;
         $this->pattern = $pattern;
         $this->chromaticScale = in_array($tonic, self::FLAT_KEYS) ? self::FLAT_CHROMATIC_SCALE : self::CHROMATIC_SCALE;
-        $this->name = "{$this->tonic} {$this->scaleName}";
+        $this->name = "$this->tonic $this->scaleName";
         $this->pitches = $this->pitches();
     }
 
@@ -69,7 +69,7 @@ class Scale
 
     private function reorderChromaticScale(): array
     {
-        if ($this->tonic == 'C') {
+        if ($this->tonic === 'C') {
             return $this->chromaticScale;
         }
         $index = array_search($this->tonic, $this->chromaticScale);
