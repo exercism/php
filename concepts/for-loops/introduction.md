@@ -3,7 +3,7 @@
 `for` loops are the most complex type of loop in PHP. They behave like `for` loops in `C`, `Java`, and `JavaScript`. It's basic form is:
 
 ```php
-for (expr1, expr2, expr3) {
+for (expr1; expr2; expr3) {
   // statements
 }
 ```
