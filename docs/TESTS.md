@@ -9,5 +9,5 @@ Execute the tests with:
 For example, to run the tests for the Hello World exercise, you would run: 
 
 ```
-$ phpunit hello-world_test.php
+$ phpunit HellowWorldTest.php
 ```

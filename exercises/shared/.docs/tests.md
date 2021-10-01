@@ -17,7 +17,7 @@
 
    For example, to run the tests for the Hello World exercise, you would run:
 
-       ➜ ./phpunit hello-world_test.php
+       ➜ ./phpunit HelloWorldTest.php
 
 [PHPUnit]: http://phpunit.de
 
