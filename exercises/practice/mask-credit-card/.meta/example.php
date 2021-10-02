@@ -43,14 +43,14 @@ function maskify(string $cc): string
         }
 
         // All non digits
-        preg_match('/[^0-9]/', $item, $matches);
+        preg_match('/\D/', $item, $matches);
 
         if (count($matches) > 0) {
             $masked[] = $item;
             continue;
         }
 
-        array_push($masked, '#');
+        $masked[] = '#';
     }
 
     return implode('', $masked);

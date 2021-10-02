@@ -952,7 +952,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
-        "status": "wip",
         "topics": [
           "regex",
           "strings",
