@@ -32,11 +32,11 @@ class Scale
     private const FLAT_KEYS = ["F", "Bb", "Eb", "Ab", "Db", "Gb", "d", "g", "c", "f", "bb", "eb"];
 
     public string $tonic;
-    public string  $scaleName;
+    public string $scaleName;
     public ?string $pattern;
-    public array  $chromaticScale;
+    public array $chromaticScale;
     public string $name;
-    public array  $pitches;
+    public array $pitches;
 
     public function __construct(string $tonic, string $scaleName, string $pattern = null)
     {
