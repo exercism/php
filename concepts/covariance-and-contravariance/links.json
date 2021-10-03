@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/language.oop5.variance.php",
+    "description": "PHP Manual on Covariance and Contravariance"
+  },
+  {
+    "url": "https://www.php.net/manual/en/language.types.declarations.php#language.types.declarations.union",
+    "description": "Union Type Declarations"
+  }
+]
