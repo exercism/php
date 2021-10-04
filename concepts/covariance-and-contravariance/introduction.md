@@ -1,68 +1,44 @@
+# Introduction
 
+The concepts of covariance and contravariance in PHP are important as PHP enforces these rules are followed when extending classes or interfaces.
 
-## Covariance and Contravariance
+Covariance preserves the relationship between two types, while contravariance reverses that relationship. In short it means that when extending classes and overriding functions, you may allow more or less specific types for your method's parameters, and you may return fewer or more specific types from the method.
 
-When utilizing union types you must be aware of the concepts of covariance and contravariance. These are explained in the [documentation](https://www.php.net/manual/en/language.oop5.variance.php) but these examples may help.
+## Examples
 
-Suppose we have a Calculator class utilizing a function like the above example:
+Consider the following class:
 
 ```php
-class Calculator
+class Calculator 
 {
-    public function add(int|float $x, int|float $y): int|float
+    public function add(int $x, int $y): int 
     {
         return $x + $y;
     }
 }
 ```
 
-If you were to extend the class, you are allowed to change the parameter types and return types, but only according to the following rules.
-
-First, parameter types may be "wider", meaning they can accept more types than the base class. For example, this is allowed:
+If we extend the class, we can allow more parameter types than originally declared, but we cannot return anything other than the original return types.
 
 ```php
-class StringCalc extends Foo
+class Floatulator extends Calculator
 {
-    public function add(float|int|string $x, float|int|string $y): int|float
-    {
-        if (!is_numeric($x) || !is_numeric($y)) {
-            throw new \InvalidArgumentException('$x and $y must be numeric');
-        }
-        return $x + $y;
-    }
-}
-```
-
-We could substitue `StringCalc` in place of an original `Calculator` and everything would still work. The caller would still be able to send in the `float` or `int` it originally could, and the return type would still be the expected `int` or `float`.
-
-Similarly, you can narrow the return type, meaning make it more specific by removing types from the union. This example takes advantage of this rule:
-
-```php
-class IntCalc extends Calculator
-{
-    public function add(float|int $x, float|int $y) : int
+    // This is valid
+    public function add(int|float $x, int|float $y): int 
     {
         return (int)($x + $y);
     }
 }
 ```
 
-Since the `IntCalc` still accepts `int` and `float` it can still substitute for an original `Calculator` with no problems.
-
-To read more about what is and isn't allowed, you can refer to the [Liskov Substitution Principal (LSP)](https://en.wikipedia.org/wiki/Liskov_substitution_principle).
-
-For an example of what would not be allowed, take a look at `InvalidCalc` below:
+The following extended class is not valid because returning additional or wider types are not allowed:
 
 ```php
-class InvalidCalc extends Calculator
+class BrokenCalculator extends Calculator 
 {
-    public function add(int $x, int $y) : int|float|string
-    {
-        // Declaration must be compatible with Calculator->add(x: float|int, y: float|int)
-
-        // Return type declaration must be compatible with Calculator->add(x: float|int, y: float|int) : float|int
+    // This is invalid and will not compile
+    public function add(int|float $x, int|float $y): int|float{
+        return $x + $y;
     }
 }
 ```
-
-The `InvalidCalc` class will not compile and has two probems. By reducing what is allowed as a parameter, `InvalidCalc` could not stand in for the original `Calculator` because it no longer accepts `float`. Additionally, it now could return a `string` which is also not within the allowed return types of the original class. 
