@@ -33,7 +33,7 @@ $reverse = -$forward; // -65
 
 ## Addition (+) and Subtraction (-)
 
-The addition and subtraction operators should be familiar. The addition operator will add the two values on either side of it while the subtraction operator will subtract the right value from the left value.
+The addition operator will add the two values on either side of it while the subtraction operator will subtract the right value from the left value.
 
 ```php
 $apples = 5;
@@ -45,7 +45,7 @@ $yourApples = $yourApples + 2; 2
 
 ## Division (/)
 
-The division operator gives the result of dividing the left value by the right value. If the right value is 0, it will throw a `DivisionByZeroError`. 
+The division operator gives the result of dividing the left value by the right value. If the right value is 0, it will cause a `DivisionByZeroError` error. 
 
 ```php
 $slicesOfPizza = 8;
@@ -79,7 +79,7 @@ if ($isOdd === 1) {
 
 ## Exponentiation (**)
 
-The exponentiation operator is used to raise the left value to the power of the right value. Prior to PHP 5.6 (read old enough that you don't need to worry), you could use the `pow` function to perform the same thing. 
+The exponentiation operator is used to raise the left value to the power of the right value. Prior to PHP 5.6 you would need to use the `pow` function to perform the same thing. 
 
 ```php
 $sideLength = 13;
@@ -99,8 +99,10 @@ PHP follows the standard order of operations for math. This means that rather th
 
 * parentheses
 * exponentiation
-* multiplication / division
-* addition / subtraction
+* multiplication, division
+* addition, subtraction
+
+Multiplication and division are at the same level of precedence as each other. Similarly, addition and subtraction are at the same level of precence.
 
 This means the value below would be 17 instead of 10, since multiplication has a higher precedence than addition:
 
