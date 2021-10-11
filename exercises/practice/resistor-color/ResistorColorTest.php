@@ -46,19 +46,4 @@ class ResistorColorTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(colorCode("white"), 9);
     }
 
-    public function testColors(): void
-    {
-        $this->assertEquals(COLORS, [
-            "black",
-            "brown",
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "blue",
-            "violet",
-            "grey",
-            "white"
-        ]);
-    }
 }
