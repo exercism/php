@@ -30,7 +30,29 @@ For further instructions, read the manual on [Installation on Unix systems](http
 
 ### macOS
 
-Normally macOS comes with PHP installed, but it is often an outdated version. There are other pre-built options available, including [MAMP](http://www.mamp.info/en/) and [php-osx.liip.ch](https://php-osx.liip.ch/). Installing PHP through [HomeBrew](https://brew.sh/) is also a good option.
+Normally macOS comes with PHP installed, but it is often an outdated version. We recommended installing php through [HomeBrew](https://brew.sh/). Install HomeBrew by copy pasting the command found [here](https://brew.sh/) under ‘Install Homebrew’ in your terminal.
+
+To confirm its installation try the following command, it should output Homebrew 3.2.x at the time of this writing.
+```bash
+$ brew --version 
+```
+
+Install php via homebrew
+```bash
+$ brew install php 
+```
+
+This should display the now installed version of php, which is php 8.0.x as of this writing.
+```bash
+$ php -v
+```
+
+You should now be able to run .php files from the terminal via
+
+```bash
+$ php hello-world.php
+$ Hello World
+```
 
 For further instructions, read the manual on [Installation on macOS](https://www.php.net/manual/en/install.macosx.php).
 
