@@ -69,7 +69,7 @@ For further instructions, read the manual on [Installation on Windows systems](h
 If you want to use a different OS, see instruction on [php.net/manual/en/install](https://www.php.net/manual/en/install.php).
 
 ### Install Composer
-Install [Composer](https://getcomposer.org) [here](https://getcomposer.org/doc/00-intro.md#installation-windows) following your devices OS installation instructions. If on a Mac, OSX we recommend installing it globally. 
+Install [Composer](https://getcomposer.org) [here](https://getcomposer.org/doc/00-intro.md) following your devices OS installation instructions. We recommend installing it globally for ease of use. 
 
 ### Install PHPUnit
 
