@@ -39,7 +39,7 @@ $ brew --version
 
 Install php via homebrew
 ```bash
-$ brew install php 
+$ brew install php@8.0
 ```
 
 This should display the now installed version of php, which is php 8.0.x as of this writing.
