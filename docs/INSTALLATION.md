@@ -47,13 +47,6 @@ This should display the now installed version of php, which is php 8.0.x as of t
 $ php -v
 ```
 
-You should now be able to run .php files from the terminal via
-
-```bash
-$ php hello-world.php
-$ Hello World
-```
-
 For further instructions, read the manual on [Installation on macOS](https://www.php.net/manual/en/install.macosx.php).
 
 ### Windows
