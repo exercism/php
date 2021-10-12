@@ -30,7 +30,22 @@ For further instructions, read the manual on [Installation on Unix systems](http
 
 ### macOS
 
-Normally macOS comes with PHP installed, but it is often an outdated version. There are other pre-built options available, including [MAMP](http://www.mamp.info/en/) and [php-osx.liip.ch](https://php-osx.liip.ch/). Installing PHP through [HomeBrew](https://brew.sh/) is also a good option.
+While PHP is often bundled with macOS, it is often outdated. We recommended installing php through [Homebrew](https://brew.sh/). You can install Homebrew following the instructions [here](https://brew.sh/#install).
+
+To confirm its installation try the following command, it should output Homebrew `3.2.x` at the time of this writing.
+```bash
+$ brew --version 
+```
+
+Install php via homebrew
+```bash
+$ brew install php@8.0
+```
+
+This should display the now installed version of php, at least version `8.0.x`.
+```bash
+$ php -v
+```
 
 For further instructions, read the manual on [Installation on macOS](https://www.php.net/manual/en/install.macosx.php).
 
@@ -45,6 +60,9 @@ For further instructions, read the manual on [Installation on Windows systems](h
 ### Other
 
 If you want to use a different OS, see instruction on [php.net/manual/en/install](https://www.php.net/manual/en/install.php).
+
+### Install Composer
+Install [Composer](https://getcomposer.org) [here](https://getcomposer.org/doc/00-intro.md) following your devices OS installation instructions. We recommend installing it globally for ease of use. 
 
 ### Install PHPUnit
 
