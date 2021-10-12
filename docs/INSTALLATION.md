@@ -30,7 +30,7 @@ For further instructions, read the manual on [Installation on Unix systems](http
 
 ### macOS
 
-Normally macOS comes with PHP installed, but it is often an outdated version. We recommended installing php through [HomeBrew](https://brew.sh/). Install HomeBrew by copy pasting the command found [here](https://brew.sh/) under ‘Install Homebrew’ in your terminal.
+While PHP is often bundled with macOS, it is often outdated. We recommended installing php through [Homebrew](https://brew.sh/). You can install Homebrew following the instructions [here](https://brew.sh/#install).
 
 To confirm its installation try the following command, it should output Homebrew 3.2.x at the time of this writing.
 ```bash
