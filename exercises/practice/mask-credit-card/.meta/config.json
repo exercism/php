@@ -6,5 +6,5 @@
     "test": ["MaskCreditCardTest.php"],
     "example": [".meta/example.php"]
   },
-  "blurb": "TODO: blurb for credit card"
+  "blurb": "Create a function to mask digits of a credit card number."
 }
