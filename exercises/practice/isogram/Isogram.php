@@ -24,7 +24,7 @@
 
 declare(strict_types=1);
 
-function isogram(string $word): bool
+function isIsogram(string $word): bool
 {
     throw new \BadFunctionCallException("Implement the isogram function");
 }
