@@ -4,6 +4,11 @@
     "Exercism\\": "src",
     "Exercism\\Exercises\\": "exercises"
   },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
   "require-dev": {
     "php": "^7.4|^8.0",
     "slevomat/coding-standard": "^7.0",
