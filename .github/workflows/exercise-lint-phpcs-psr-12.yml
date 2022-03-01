@@ -25,7 +25,7 @@ jobs:
           git config --system core.autocrlf false
           git config --system core.eol lf
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: shivammathur/setup-php@15b20027cf4e61cb21f2582a8f125cafb1c0492e
         with:
