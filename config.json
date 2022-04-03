@@ -34,7 +34,9 @@
     ]
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+
+    ],
     "practice": [
       {
         "slug": "hello-world",
@@ -984,7 +986,98 @@
       }
     ]
   },
-  "concepts": [],
+  "concepts": [
+    {
+      "name": "Variable Scope",
+      "slug": "variable-scope",
+      "uuid": "b385e071-a070-4f82-b62f-d1547101e1ce",
+      "concepts": [
+        "variable scope"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Variables",
+      "slug": "variables",
+      "uuid": "4a2cb36c-3ddb-4d20-a1eb-26ce87e9d113",
+      "concepts": [
+        "variables"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "User Defined Functions",
+      "slug": "user-defined-functions",
+      "uuid": "14e8b5f1-d3ba-45b8-96b4-eb1323e9c118",
+      "concepts": [
+        "user defined functions"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "While Loops",
+      "slug": "while-loops",
+      "uuid": "fef85d86-e656-415f-8404-f9ea5d694168",
+      "concepts": [
+        "while loops"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "For Loops",
+      "slug": "for-loops",
+      "uuid": "5ff6eb04-a58a-447e-8f93-a2ff70685794",
+      "concepts": [
+        "for loops"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Foreach Loops",
+      "slug": "foreach-loops",
+      "uuid": "acf8c294-447b-4c83-b70f-6d70780de086",
+      "concepts": [
+        "foreach loops"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Union Types",
+      "slug": "union-types",
+      "uuid": "08f37770-10a0-404f-81be-8d53cb2853f1",
+      "concepts": [
+        "union types"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Variable Functions",
+      "slug": "variable-functions",
+      "uuid": "c5aee4cc-d374-4297-83a3-6b03f4ebbe39",
+      "concepts": [
+        "variable functions"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Type Juggling",
+      "slug": "type-juggling",
+      "uuid": "8bd412b8-964b-4585-8f6a-8d171efe971f",
+      "concepts": [
+        "type juggling"
+      ],
+      "prerequisites": [],
+      "status": "beta"
+    }
+  ],
   "key_features": [
     {
       "title": "Evolving",
