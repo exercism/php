@@ -47,7 +47,7 @@ class Matrix
 
     private function parseRows(string $matrix): void
     {
-        foreach (explode('\n', $matrix) as $stringRow) {
+        foreach (explode("\n", $matrix) as $stringRow) {
             $this->rows[] = array_map(fn(string $value) => (int) $value, explode(' ', $stringRow));
         }
     }
