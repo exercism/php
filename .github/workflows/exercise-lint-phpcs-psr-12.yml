@@ -27,7 +27,7 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - uses: shivammathur/setup-php@b75c104ca87c371bbc71be81a4e5dd5a5d298241
+      - uses: shivammathur/setup-php@448bd61c6fe9db2113173467e4c22b87ddc2971a
         with:
           php-version: ${{ matrix.php-version }}
           extensions: gmp
