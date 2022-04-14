@@ -164,7 +164,7 @@ class Poker
         }
 
         if ($this->isEqualHandRanks($ranksByFreq, [2,2,1])) {
-            return new Score(200 + $cardsByRank[0] + $cardsByRank[1], $cardsByRank[2]);
+            return new Score(200 + 2*$cardsByRank[0] + $cardsByRank[1], $cardsByRank[2]);
         }
 
         if ($this->isEqualHandRanks($ranksByFreq, [2,1,1,1])) {
