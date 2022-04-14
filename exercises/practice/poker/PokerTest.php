@@ -79,6 +79,22 @@ class PokerTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(['2S,4H,6C,4D,JD'], $game->bestHands);
     }
 
+    public function testTwoPairsThatAddToTheSameValue()
+    {
+        $hands = ['6S,6H,3S,3H,AS', '7H,7S,2H,2S,AC'];
+        $game = new Poker($hands);
+
+        $this->assertEquals(['7H,7S,2H,2S,AC'], $game->bestHands);
+    }
+
+    public function testTwoPairsWhereLowerHandHasHigherTotal()
+    {
+        $hands = ["5C,2S,5S,4H,4C", "6S,2S,6H,7C,2C"];
+        $game = new Poker($hands);
+
+        $this->assertEquals(["6S,2S,6H,7C,2C"], $game->bestHands);
+    }
+
     public function testTwoPairBeatsOnePair(): void
     {
         $hands = ['2S,8H,6S,8D,JH', '4S,5H,4C,8C,5C'];
