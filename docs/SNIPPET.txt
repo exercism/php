@@ -1,6 +1,0 @@
-<?php
-
-function helloWorld(string $name = 'World'): string
-{
-    return "Hello, $name!";
-}
