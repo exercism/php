@@ -26,7 +26,7 @@ declare(strict_types=1);
 
 /**
  * Translated from original source:
- * http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
+ * https://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
  */
 class BowlingTest extends PHPUnit\Framework\TestCase
 {
