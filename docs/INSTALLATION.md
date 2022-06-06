@@ -6,7 +6,7 @@ We encourage to use a stable PHP release with active support. Currently this is 
 
 ## Install PHP
 
-PHP can be downloaded and built from source, available at [php.net/downloads.php](http://php.net/downloads.php) or [windows.php.net/download](https://windows.php.net/download).
+PHP can be downloaded and built from source, available at [php.net/downloads.php](https://php.net/downloads.php) or [windows.php.net/download](https://windows.php.net/download).
 
 > Note: A web server such as nginx or Apache HTTP server is not required to complete the exercises.
 
@@ -53,7 +53,7 @@ For further instructions, read the manual on [Installation on macOS](https://www
 
 Official PHP binaries for Windows can be downloaded from [windows.php.net/download](https://windows.php.net/download).
 
-There are pre-built stacks including [WAMP](http://www.wampserver.com/en/) - (Windows, Apache, MySQL, PHP) and [XAMPP](https://www.apachefriends.org/de/index.html).
+There are pre-built stacks including [WAMP](https://www.wampserver.com/en/) - (Windows, Apache, MySQL, PHP) and [XAMPP](https://www.apachefriends.org/de/index.html).
 
 For further instructions, read the manual on [Installation on Windows systems](https://www.php.net/manual/en/install.windows.php).
 

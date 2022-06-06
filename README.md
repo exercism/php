@@ -47,7 +47,7 @@ Exercism exercises in PHP
 - Follow the [contributing guide].
 - CI is run on all pull requests, it must pass the required checks for merge.
 
-[psr-12]: http://www.php-fig.org/psr/psr-12
+[psr-12]: https://www.php-fig.org/psr/psr-12
 [contributing guide]: https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data
-[@group annotation]: http://phpunit.de/manual/4.1/en/appendixes.annotations.html#appendixes.annotations.group
+[@group annotation]: https://phpunit.de/manual/4.1/en/appendixes.annotations.html#appendixes.annotations.group
 [modified]: phpcs-php.xml

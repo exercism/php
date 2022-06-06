@@ -70,7 +70,7 @@ class Bob
      * Test is the string contains characters
      *
      * The RegEx matches a single character belonging to the "letter" category
-     * @link http://www.regular-expressions.info/unicode.html
+     * @link https://www.regular-expressions.info/unicode.html
      *
      * @param string $str
      * @return int

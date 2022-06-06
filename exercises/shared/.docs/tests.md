@@ -19,5 +19,5 @@
 
        ➜ ./phpunit HelloWorldTest.php
 
-[PHPUnit]: http://phpunit.de
+[PHPUnit]: https://phpunit.de
 
