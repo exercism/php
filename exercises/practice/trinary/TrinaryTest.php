@@ -75,4 +75,9 @@ class TrinaryTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame(0, toDecimal('13201'));
     }
+    
+    public function test311IsDecimal0(): void
+    {
+        $this->assertSame(0, toDecimal('311'));
+    }
 }
