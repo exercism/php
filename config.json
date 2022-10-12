@@ -156,7 +156,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "81d96250-f2e4-4228-a8e9-254b6b8784ac",
         "practices": [],
         "prerequisites": [],
@@ -202,7 +202,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference Of Squares",
+        "name": "Difference of Squares",
         "uuid": "238d86fe-6e29-43b0-9e27-a54caa773618",
         "practices": [],
         "prerequisites": [],
@@ -236,7 +236,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "0a453685-55c2-47e2-88b2-e26d1d8fbde9",
         "practices": [],
         "prerequisites": [],
@@ -429,7 +429,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "58463b64-9c22-4813-893d-38d11fc8d9a5",
         "practices": [],
         "prerequisites": [],
@@ -714,7 +714,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "1b44cb35-28ba-416b-8f45-d168d300f9b4",
         "practices": [],
         "prerequisites": [],
@@ -804,7 +804,7 @@
       },
       {
         "slug": "ocr-numbers",
-        "name": "Ocr Numbers",
+        "name": "OCR Numbers",
         "uuid": "a7a269a5-e99c-4fcf-b331-9a130e94f9e4",
         "practices": [],
         "prerequisites": [],
@@ -817,7 +817,7 @@
       },
       {
         "slug": "pascals-triangle",
-        "name": "Pascals Triangle",
+        "name": "Pascal's Triangle",
         "uuid": "a2c918c0-6caa-4c15-a622-e093f3bacba3",
         "practices": [],
         "prerequisites": [],
