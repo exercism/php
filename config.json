@@ -1076,6 +1076,14 @@
       ],
       "prerequisites": [],
       "status": "beta"
+    },
+    {
+      "name": "Ternary Operator",
+      "slug": "ternary-operator",
+      "uuid": "7c88c634-4ca9-4e4b-ab3f-6155b4ca9800",
+      "concepts": ["ternary operator"],
+      "prerequisites": [],
+      "status": "beta"
     }
   ],
   "key_features": [
