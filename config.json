@@ -1076,6 +1076,14 @@
       ],
       "prerequisites": [],
       "status": "beta"
+    },
+    {
+      "name": "Switch Statement",
+      "slug": "switch-statement",
+      "uuid": "347636c1-c4f1-4057-9d06-541c96ac475b",
+      "concepts": ["switch statement"],
+      "prerequisites": [],
+      "status": "beta"
     }
   ],
   "key_features": [
