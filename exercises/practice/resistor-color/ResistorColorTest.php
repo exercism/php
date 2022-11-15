@@ -33,7 +33,7 @@ class ResistorColorTest extends PHPUnit\Framework\TestCase
 
     public function testColors(): void
     {
-        $this->assertEquals(COLORS, [
+        $this->assertEquals([
             "black",
             "brown",
             "red",
@@ -44,21 +44,21 @@ class ResistorColorTest extends PHPUnit\Framework\TestCase
             "violet",
             "grey",
             "white"
-        ]);
+        ], COLORS);
     }
 
     public function testBlackColorCode(): void
     {
-        $this->assertEquals(colorCode("black"), 0);
+        $this->assertEquals(0, colorCode("black"));
     }
 
     public function testOrangeColorCode(): void
     {
-        $this->assertEquals(colorCode("orange"), 3);
+        $this->assertEquals(3, colorCode("orange"));
     }
 
     public function testWhiteColorCode(): void
     {
-        $this->assertEquals(colorCode("white"), 9);
+        $this->assertEquals(9, colorCode("white"));
     }
 }
