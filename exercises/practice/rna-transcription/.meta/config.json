@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
   "authors": [],
   "contributors": [
     "arueckauer",
@@ -10,10 +9,17 @@
     "petemcfarlane"
   ],
   "files": {
-    "solution": ["RnaTranscription.php"],
-    "test": ["RnaTranscriptionTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "RnaTranscription.php"
+    ],
+    "test": [
+      "RnaTranscriptionTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
   "source": "Hyperphysics",
   "source_url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
 }

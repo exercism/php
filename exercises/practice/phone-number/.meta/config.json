@@ -1,6 +1,7 @@
 {
-  "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",
-  "authors": ["nhoag"],
+  "authors": [
+    "nhoag"
+  ],
   "contributors": [
     "arueckauer",
     "G-Rath",
@@ -9,10 +10,17 @@
     "petemcfarlane"
   ],
   "files": {
-    "solution": ["PhoneNumber.php"],
-    "test": ["PhoneNumberTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "PhoneNumber.php"
+    ],
+    "test": [
+      "PhoneNumberTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",
   "source": "Event Manager by JumpstartLab",
   "source_url": "https://tutorials.jumpstartlab.com/projects/eventmanager.html"
 }

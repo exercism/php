@@ -1,10 +1,17 @@
 {
-  "blurb": "Reverse a string",
-  "authors": ["MichaelBunker"],
-  "contributors": [],
+  "authors": [
+    "MichaelBunker"
+  ],
   "files": {
-    "solution": ["ReverseString.php"],
-    "test": ["ReverseStringTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "ReverseString.php"
+    ],
+    "test": [
+      "ReverseStringTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Reverse a string"
 }

@@ -1,12 +1,25 @@
 {
-  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
-  "authors": ["camilopayan"],
-  "contributors": ["arueckauer", "kunicmarko20", "kytrinyx", "petemcfarlane"],
+  "authors": [
+    "camilopayan"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "petemcfarlane"
+  ],
   "files": {
-    "solution": ["Etl.php"],
-    "test": ["EtlTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "Etl.php"
+    ],
+    "test": [
+      "EtlTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
   "source": "The Jumpstart Lab team",
   "source_url": "https://jumpstartlab.com"
 }

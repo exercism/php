@@ -1,10 +1,20 @@
 {
-  "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher",
-  "authors": ["camilopayan"],
-  "contributors": ["MichaelBunker"],
+  "authors": [
+    "camilopayan"
+  ],
+  "contributors": [
+    "MichaelBunker"
+  ],
   "files": {
-    "solution": ["SimpleCipher.php"],
-    "test": ["SimpleCipherTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "SimpleCipher.php"
+    ],
+    "test": [
+      "SimpleCipherTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher"
 }

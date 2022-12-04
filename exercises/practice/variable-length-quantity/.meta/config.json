@@ -1,6 +1,7 @@
 {
-  "blurb": "Implement variable length quantity encoding and decoding.",
-  "authors": ["pmatseykanets"],
+  "authors": [
+    "pmatseykanets"
+  ],
   "contributors": [
     "arueckauer",
     "Hrumpa",
@@ -9,10 +10,17 @@
     "petemcfarlane"
   ],
   "files": {
-    "solution": ["VariableLengthQuantity.php"],
-    "test": ["VariableLengthQuantityTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "VariableLengthQuantity.php"
+    ],
+    "test": [
+      "VariableLengthQuantityTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Implement variable length quantity encoding and decoding.",
   "source": "A poor Splice developer having to implement MIDI encoding/decoding.",
   "source_url": "https://splice.com"
 }

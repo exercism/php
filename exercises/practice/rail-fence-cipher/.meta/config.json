@@ -1,12 +1,25 @@
 {
-  "blurb": "Implement encoding and decoding for the rail fence cipher.",
-  "authors": ["kk-r"],
-  "contributors": ["arueckauer", "kunicmarko20", "kytrinyx", "yisraeldov"],
+  "authors": [
+    "kk-r"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "yisraeldov"
+  ],
   "files": {
-    "solution": ["RailFenceCipher.php"],
-    "test": ["RailFenceCipherTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "RailFenceCipher.php"
+    ],
+    "test": [
+      "RailFenceCipherTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Implement encoding and decoding for the rail fence cipher.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Transposition_cipher#Rail_Fence_cipher"
 }

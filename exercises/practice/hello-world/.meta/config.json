@@ -1,12 +1,25 @@
 {
-  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
-  "authors": ["duffn"],
-  "contributors": ["arueckauer", "joseph-walker", "kytrinyx", "petemcfarlane"],
+  "authors": [
+    "duffn"
+  ],
+  "contributors": [
+    "arueckauer",
+    "joseph-walker",
+    "kytrinyx",
+    "petemcfarlane"
+  ],
   "files": {
-    "solution": ["HelloWorld.php"],
-    "test": ["HelloWorldTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "HelloWorld.php"
+    ],
+    "test": [
+      "HelloWorldTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
   "source": "This is an exercise to introduce users to using Exercism",
   "source_url": "https://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
 }

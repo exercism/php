@@ -1,12 +1,25 @@
 {
-  "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
-  "authors": ["ecrmnn"],
-  "contributors": ["arueckauer", "kunicmarko20", "kytrinyx", "petemcfarlane"],
+  "authors": [
+    "ecrmnn"
+  ],
+  "contributors": [
+    "arueckauer",
+    "kunicmarko20",
+    "kytrinyx",
+    "petemcfarlane"
+  ],
   "files": {
-    "solution": ["Anagram.php"],
-    "test": ["AnagramTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "Anagram.php"
+    ],
+    "test": [
+      "AnagramTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
   "source": "Inspired by the Extreme Startup game",
   "source_url": "https://github.com/rchatley/extreme_startup"
 }

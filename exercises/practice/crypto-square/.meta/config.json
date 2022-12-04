@@ -1,6 +1,7 @@
 {
-  "blurb": "Implement the classic method for composing secret messages called a square code.",
-  "authors": ["camilopayan"],
+  "authors": [
+    "camilopayan"
+  ],
   "contributors": [
     "arueckauer",
     "dstockto",
@@ -9,10 +10,17 @@
     "yisraeldov"
   ],
   "files": {
-    "solution": ["CryptoSquare.php"],
-    "test": ["CryptoSquareTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "CryptoSquare.php"
+    ],
+    "test": [
+      "CryptoSquareTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Implement the classic method for composing secret messages called a square code.",
   "source": "J Dalbey's Programming Practice problems",
   "source_url": "https://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
 }

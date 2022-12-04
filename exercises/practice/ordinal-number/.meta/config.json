@@ -1,5 +1,4 @@
 {
-  "blurb": "Convert numbers to ordinal numerals.",
   "authors": [
     "codedge"
   ],
@@ -17,5 +16,6 @@
       ".meta/example.php"
     ]
   },
+  "blurb": "Convert numbers to ordinal numerals.",
   "source_url": "https://en.wikipedia.org/wiki/Ordinal_numeral"
 }
