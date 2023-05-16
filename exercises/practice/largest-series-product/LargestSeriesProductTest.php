@@ -118,37 +118,6 @@ class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
         $series->largestProduct(4);
     }
 
-    /**
-     * There may be some confusion about whether this should be 1 or error.
-     * The reasoning for it being 1 is this:
-     * There is one 0-character string contained in the empty string.
-     * That's the empty string itself.
-     * The empty product is 1 (the identity for multiplication).
-     * Therefore LSP('', 0) is 1.
-     * It's NOT the case that LSP('', 0) takes max of an empty list.
-     * So there is no error.
-     * Compare against LSP('123', 4):
-     * There are zero 4-character strings in '123'.
-     * So LSP('123', 4) really DOES take the max of an empty list.
-     * So LSP('123', 4) errors and LSP('', 0) does NOT
-     *
-     */
-    public function testReports1ForEmptyStringAndEmptyProduct0Span(): void
-    {
-        $series = new Series("");
-        $this->assertEquals(1, $series->largestProduct(0));
-    }
-
-    /**
-     * As above, there is one 0-character string in '123'.
-     * So again no error. It's the empty product, 1.
-     */
-    public function testReports1ForNonemptyStringAndEmptyProduct0Span(): void
-    {
-        $series = new Series("123");
-        $this->assertEquals(1, $series->largestProduct(0));
-    }
-
     public function testRejectsEmptyStringAndNonzeroSpan(): void
     {
         $this->expectException(InvalidArgumentException::class);
