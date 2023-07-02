@@ -25,8 +25,6 @@ Code, functions, and classes may all be present in a single file, but usually cl
 
 ```php
 <?php
-```php
-<?php
 // index.php
 
 $sum = add(1, 2);
@@ -39,7 +37,8 @@ $sum = add(1, 2);
 class Calculator {
     // ...
 
-    function add(int $x, int $y): int {
+    function add($x, $y)
+    {
         return $x + $y;
     }
 }
