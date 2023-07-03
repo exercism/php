@@ -13,9 +13,17 @@ file_ext="php"
 function main {
   has_failures=0
 
-  all_exercise_dirs=$(find ./exercises -maxdepth 2 -mindepth 2 -type d | sort)
-  for exercise_dir in $all_exercise_dirs; do
-    test "${exercise_dir}"
+  all_practice_exercise_dirs=$(find ./exercises/practice -maxdepth 1 -mindepth 1 -type d | sort)
+  for exercise_dir in $all_practice_exercise_dirs; do
+    test "${exercise_dir}" "example"
+    if [[ $? -ne 0 ]]; then
+      has_failures=1
+    fi
+  done
+
+  all_concept_exercise_dirs=$(find ./exercises/concept -maxdepth 1 -mindepth 1 -type d | sort)
+  for exercise_dir in $all_practice_exercise_dirs; do
+    test "${exercise_dir}" "exemplar"
     if [[ $? -ne 0 ]]; then
       has_failures=1
     fi
@@ -30,7 +38,8 @@ function test {
   echo ""
   echo -e "Running tests for: ${YELLOW}${exercise}${NC}"
 
-  example_file="example.${file_ext}"
+  example_file_name="${2}"
+  example_file="${example_file_name}.${file_ext}"
   test_file_path=$(find "${exercise_dir}" -type f -name "*Test.${file_ext}")
   test_file=$(basename ${test_file_path})
   exercise_file="${test_file%Test.*}"
