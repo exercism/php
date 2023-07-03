@@ -22,7 +22,7 @@ function main {
   done
 
   all_concept_exercise_dirs=$(find ./exercises/concept -maxdepth 1 -mindepth 1 -type d | sort)
-  for exercise_dir in $all_practice_exercise_dirs; do
+  for exercise_dir in $all_concept_exercise_dirs; do
     test "${exercise_dir}" "exemplar"
     if [[ $? -ne 0 ]]; then
       has_failures=1
