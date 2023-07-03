@@ -1005,7 +1005,23 @@
       "name": "Type Declaration",
       "slug": "type-declaration",
       "uuid": "875ae802-5ff3-4e6b-8f2c-e22ef25665c8",
-      "concepts": ["type-declaration"],
+      "concepts": ["type declaration"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Readonly Classes and Properties",
+      "slug": "readonly-properties",
+      "uuid": "33f03ad3-6900-4b50-be32-5e60256b617c",
+      "concepts": ["readonly properties"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Constructor Promotion",
+      "slug": "constructor-promotion",
+      "uuid": "c4e1ca80-795a-479d-8f10-ef214870a836",
+      "concepts": ["constructor promotion"],
       "prerequisites": [],
       "status": "beta"
     }
