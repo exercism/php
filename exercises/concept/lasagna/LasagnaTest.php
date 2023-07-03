@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class LasagnaTest extends PHPUnit\Framework\TestCase
 {
     public function testExpectedCookTime(): void

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Lasagna
 {
     public function expectedCookTime()
@@ -27,4 +29,3 @@ class Lasagna
         return 'Ding!';
     }
 }
-
