@@ -12,9 +12,11 @@ Variable names must start with a dollar `$` sign.
 $count = 1 // Asssigned an integer value of 1
 $count = 2 // Re-assigned a new value to the variable
 
-$count = false // You may assign any type to a variable
+$count = false // You may assign any value type
 
-$message = "Success!" // Strings can be created by enclosing the character within single `'` or double `"` quotes.
+// Strings can be created by enclosing the characters
+// within single `'` quotes or double `"` quotes.
+$message = "Success!"
 ```
 
 ## Code organization
@@ -63,3 +65,4 @@ Single line comments start with `//`, and a block of text can be wrapped with `/
   Multi-line comment
 */
 ```
+
