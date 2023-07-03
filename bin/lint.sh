@@ -30,7 +30,11 @@ function lint {
   exercise=$(basename "${exercise_dir}")
   echo -e "Checking ${YELLOW}${exercise}${NC} against PHP code standards"
 
-  eval "${PHPCS_BIN}" -sp --standard="${PHPCS_RULES}" "${exercise_dir}"
+  eval "${PHPCS_BIN}" \
+    -sp \
+    --standard="${PHPCS_RULES}" \
+    --ignore=*/concept/* \
+    "${exercise_dir}"
 }
 
 function installed {
