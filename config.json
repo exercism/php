@@ -1000,6 +1000,14 @@
       "concepts": ["integers"],
       "prerequisites": [],
       "status": "beta"
+    },
+    {
+      "name": "Type Declaration",
+      "slug": "type-declaration",
+      "uuid": "875ae802-5ff3-4e6b-8f2c-e22ef25665c8",
+      "concepts": ["type-declaration"],
+      "prerequisites": [],
+      "status": "beta"
     }
   ],
   "key_features": [
