@@ -54,25 +54,25 @@ jo -p \
   blurb="Learn about ____" >> "${base_dir}/${config_json}"
 
 cat <<- PHP_STUB >> "${base_dir}/${solution_file}"
-  <?php
+<?php
 
-  class ${new_classname}
-  {
-      public function stub()
-      {
-          throw new \BadFunctionCallException("Implement the function");
-      }
-  }
+class ${new_classname}
+{
+    public function stub()
+    {
+        throw new \BadFunctionCallException("Implement the function");
+    }
+}
 PHP_STUB
 
 cat <<- PHP_STUB >> "${base_dir}/${test_file}"
-  <?php
+<?php
 
-  class ${new_classname}Test extends PHPUnit\Framework\TestCase
-  {
-      public function testStub()
-      {
-          throw new \BadFunctionCallException("Implement the function");
-      }
-  }
+class ${new_classname}Test extends PHPUnit\Framework\TestCase
+{
+    public function testStub()
+    {
+        throw new \BadFunctionCallException("Implement the function");
+    }
+}
 PHP_STUB

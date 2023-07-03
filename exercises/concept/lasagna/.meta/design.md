@@ -1,0 +1,42 @@
+# Design
+
+## Learning objectives
+
+- Know what a variable is.
+- Know how to define a variable.
+- Know how to update a variable.
+- Know that variable type is dynamic.
+- Know how to define a multi-line function.
+- Know how to return a value from a function (implicit return).
+- Know how to call a function.
+- Know that functions must be defined in classes.
+- Know about the `def` access modifier.
+- Know how to define an integer.
+- Know how to define a string.
+- Know how to use mathematical operators on integers.
+- Know how to define single-line comments.
+
+## Out of scope
+
+- Naming rules for identifiers.
+- Generic values.
+- Memory and performance characteristics.
+- Function overloads.
+- Anonymous functions.
+- Default arguments.
+- Organizing functions in namespaces.
+- `@moduledoc` and `@doc` multi-line comments
+
+## Concepts
+
+- `basics`: know what a variable is; know how to define a variable; know how to update a variable; know how to use type inference for variables; know how to define a function; know how to return a value from a function; know how to call a function; know that functions must be defined in modules; know how to define an integer; know how to define a string; know how to use mathematical operators on integers; know how to define single-line comments.
+
+## Prerequisites
+
+There are no prerequisites.
+
+## Analyzer
+
+This exercise could benefit from the following rules added a future analyzer:
+
+- rules to assert that functions are reused rather than recreated for overlapping use cases.
