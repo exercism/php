@@ -33,7 +33,6 @@ function lint {
   eval "${PHPCS_BIN}" \
     -sp \
     --standard="${PHPCS_RULES}" \
-    --ignore=*/concept/* \
     "${exercise_dir}"
 }
 
