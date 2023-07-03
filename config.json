@@ -3,7 +3,7 @@
   "slug": "php",
   "active": true,
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": true,
     "representer": false,
     "analyzer": false
@@ -26,7 +26,16 @@
     "exemplar": [".meta/exemplar.php"]
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "uuid": "5d76f1a2-f80b-4a82-8176-b52230974dab",
+        "slug": "lasagna",
+        "name": "Lucian's Luscious Lasagna",
+        "prerequisites": [],
+        "concepts": ["basic-syntax"],
+        "status": "wip"
+      }
+    ],
     "practice": [
       {
         "slug": "hello-world",
