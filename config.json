@@ -850,6 +850,14 @@
       "status": "beta"
     },
     {
+      "name": "Ternary Operator",
+      "slug": "ternary-operator",
+      "uuid": "7c88c634-4ca9-4e4b-ab3f-6155b4ca9800",
+      "concepts": ["ternary operator"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
       "name": "Switch Statement",
       "slug": "switch-statement",
       "uuid": "347636c1-c4f1-4057-9d06-541c96ac475b",
@@ -858,10 +866,162 @@
       "status": "beta"
     },
     {
-      "name": "Ternary Operator",
-      "slug": "ternary-operator",
-      "uuid": "7c88c634-4ca9-4e4b-ab3f-6155b4ca9800",
-      "concepts": ["ternary operator"],
+      "name": "Covariance and Contravariance",
+      "slug": "covariance-and-contravariance",
+      "uuid": "7aa7d0ec-fbcb-48b9-8b06-f4768f6837ce",
+      "concepts": ["covariance and contravariance"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Break and Continue",
+      "slug": "break-continue-keywords",
+      "uuid": "b3156f10-7e24-485a-a91c-a6fb2596329c",
+      "concepts": ["break and continue keywords"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Arrays",
+      "slug": "arrays",
+      "uuid": "6839a4c1-be51-4ebf-8468-2abcaf7000e7",
+      "concepts": ["arrays"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Null",
+      "slug": "null-values",
+      "uuid": "ed4c9916-e8ae-473c-b6f2-29c93357faf7",
+      "concepts": ["null values"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Basics",
+      "slug": "basic-syntax",
+      "uuid": "1cf9fb39-5520-4c93-ba7a-7162586e2955",
+      "concepts": ["basic syntax"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Classes",
+      "slug": "class-basics",
+      "uuid": "add364bc-b86f-4a21-813f-85337967568f",
+      "concepts": ["class basics"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Booleans",
+      "slug": "booleans",
+      "uuid": "3fc6c727-1ea8-4ded-a692-9e38f18d640f",
+      "concepts": ["booleans"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Static Classes",
+      "slug": "class-static-keyword",
+      "uuid": "7fc3c058-0ff9-4711-beef-c84238b524b2",
+      "concepts": ["class static keyword"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Arithmetic Operators",
+      "slug": "arithmetic-operators",
+      "uuid": "0e9342fc-df4b-412f-a9fe-ffb87ac560f9",
+      "concepts": ["arithmetic-operators"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Match Expressions",
+      "slug": "match-expression",
+      "uuid": "070693e8-5924-432f-b92c-cf5945765a70",
+      "concepts": ["match expression"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Strings",
+      "slug": "strings",
+      "uuid": "e3a91d37-415c-47bf-a7d9-6e4b7162550f",
+      "concepts": ["strings"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Floating Point Numbers",
+      "slug": "floating-point-numbers",
+      "uuid": "2fcfb736-b8cd-488e-bfc5-52ad5d5ad410",
+      "concepts": ["floating point numbers"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Comparison Operators",
+      "slug": "comparison-operators",
+      "uuid": "5a798688-6c91-4200-85bb-d3879ab18d89",
+      "concepts": ["comparison operators"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "If, Else, Elseif",
+      "slug": "if-control-structures",
+      "uuid": "00c98194-8b3c-4d5f-893f-59fbb7180cde",
+      "concepts": ["if control structures"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Anonymous Functions and Closures",
+      "slug": "anonymous-functions-closures",
+      "uuid": "7d752e27-6122-4e30-988f-dfade07d3d51",
+      "concepts": ["anonymous functions closures"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Class Visibility",
+      "slug": "class-visibility",
+      "uuid": "08280a01-aafd-49b9-b524-e0f972ecd4cf",
+      "concepts": ["class visibility"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Integers",
+      "slug": "integers",
+      "uuid": "cf2ec98b-27cb-43a2-9909-83fa797aed83",
+      "concepts": ["integers"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Type Declaration",
+      "slug": "type-declaration",
+      "uuid": "875ae802-5ff3-4e6b-8f2c-e22ef25665c8",
+      "concepts": ["type declaration"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Readonly Classes and Properties",
+      "slug": "readonly-properties",
+      "uuid": "33f03ad3-6900-4b50-be32-5e60256b617c",
+      "concepts": ["readonly properties"],
+      "prerequisites": [],
+      "status": "beta"
+    },
+    {
+      "name": "Constructor Promotion",
+      "slug": "constructor-promotion",
+      "uuid": "c4e1ca80-795a-479d-8f10-ef214870a836",
+      "concepts": ["constructor promotion"],
       "prerequisites": [],
       "status": "beta"
     }

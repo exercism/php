@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/control-structures.if.php",
+    "description": "PHP: Control Structures: if"
+  },
+  {
+    "url": "https://www.php.net/manual/en/control-structures.else.php",
+    "description": "PHP: Control Structures: else"
+  },
+  {
+    "url": "https://www.php.net/manual/en/control-structures.elseif.php",
+    "description": "PHP: Control Structures: elseif"
+  },
+  {
+    "url": "https://www.php.net/manual/en/language.types.boolean.php#language.types.boolean.casting",
+    "description": "PHP: Types: Boolean: Converting to boolean"
+  }
+]

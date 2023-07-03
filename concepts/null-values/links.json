@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/language.types.null.php",
+    "description": "PHP: Types: NULL"
+  },
+  {
+    "url": "https://stitcher.io/blog/php-8-nullsafe-operator",
+    "description": "Stitcher: Null-safe operator"
+  },
+  {
+    "url": "https://stitcher.io/blog/shorthand-comparisons-in-php#null-coalescing-operator",
+    "description": "Stitcher: Null-coalescing operator"
+  }
+]

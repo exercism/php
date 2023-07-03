@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/functions.anonymous.php",
+    "description": "Anonymous functions in PHP"
+  },
+  {
+    "url": "https://www.php.net/manual/en/functions.arrow.php",
+    "description": "Arrow functions in PHP"
+  },
+  {
+    "url": "https://www.php.net/manual/en/language.references.pass.php",
+    "description": "Passing values by reference in PHP"
+  }
+]

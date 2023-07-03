@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/language.types.declarations.php",
+    "description": "PHP: Types: Type Declarations"
+  },
+  {
+    "url": "https://www.php.net/manual/en/language.types.mixed.php",
+    "description": "PHP: Types: Mixed"
+  },
+  {
+    "url": "https://www.php.net/manual/en/language.types.void.php",
+    "description": "PHP: Types: Void"
+  }
+]
