@@ -43,7 +43,7 @@ touch "${base_dir}/${design_doc}"
 touch "${base_dir}/${exemplar_file}"
 
 jo -p \
-  author=$(jo -a "${author}") \
+  authors=$(jo -a "${author}") \
   contributors=$(jo -a < /dev/null) \
   files=$(jo \
     solution=$(jo -a "${solution_file}") \
