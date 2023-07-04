@@ -61,7 +61,7 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
      * @testdox creates a set of initials, wrapped in a heart
      * @task_id 4
      */
-    public function testCreatesInitials()
+    public function testPair()
     {
         $sweetheart = new HighSchoolSweetheart();
         $expected = <<<EXPECTED_HEART
