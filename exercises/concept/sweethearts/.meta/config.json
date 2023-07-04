@@ -1,19 +1,24 @@
 {
-   "authors": [
-      "neenjaw"
-   ],
-   "contributors": [],
-   "files": {
-      "solution": [
-         "HighSchoolSweetheart.php"
-      ],
-      "test": [
-         "HighSchoolSweetheartTest.php"
-      ],
-      "exemplar": [
-         ".meta/exemplar.php"
-      ]
-   },
-   "language_version": ">=8.1",
-   "blurb": "Learn about love and strings!"
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "HighSchoolSweetheart.php"
+    ],
+    "test": [
+      "HighSchoolSweetheartTest.php"
+    ],
+    "exemplar": [
+      ".meta/exemplar.php"
+    ]
+  },
+  "language_version": ">=8.1",
+  "blurb": "Learn about love and strings!",
+  "icon": "high-school-sweethearts",
+  "forked_from": [
+    "elixir/high-school-sweetheart"
+  ]
 }
+
