@@ -1,0 +1,30 @@
+name: Configlet Generate
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  configlet-generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+
+      - name: Fetch configlet
+        uses: exercism/github-actions/configlet-ci@main
+        # GITHUB_TOKEN is not set when we run the fetch script, because we're in
+        # a composite action. Set GH_TOKEN so that `gh release download` can
+        # make authenticated requests (it fails otherwise).
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Generete templated docs
+        run: configlet generate
+
+      - name: Commit generated code
+        uses: stefanzweifel/git-auto-commit-action@v4

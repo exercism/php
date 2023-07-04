@@ -70,9 +70,16 @@ cat <<- PHP_STUB >> "${base_dir}/${test_file}"
 
 class ${new_classname}Test extends PHPUnit\Framework\TestCase
 {
+    /**
+     * @testdox some test stub
+     * @test_id 1
+     */
     public function testStub()
     {
-        throw new \BadFunctionCallException("Implement the function");
+        \$class = new ${new_classname}();
+        \$actual = \$class->method();
+        \$expected = null;
+        \$this->assertEquals(\$expected, \$actual);
     }
 }
 PHP_STUB
