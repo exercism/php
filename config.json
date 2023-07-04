@@ -34,6 +34,14 @@
         "prerequisites": [],
         "concepts": ["basic-syntax"],
         "status": "wip"
+      },
+      {
+        "uuid": "d6b00994-36b1-4d2c-9a7f-d55f3cbdf4de",
+        "slug": "sweethearts",
+        "name": "Highschool Sweetheats",
+        "prerequisites": ["basic-syntax"],
+        "concepts": ["strings"],
+        "status": "wip"
       }
     ],
     "practice": [
