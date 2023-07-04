@@ -1,6 +1,8 @@
-# Basics
+# Introduction
 
-## Values and Variables
+## Basics
+
+### Values and Variables
 
 PHP is a general-purpose dynamically-typed programming language.
 Value types are only checked while the program is running.
@@ -19,7 +21,7 @@ $count = false // You may assign any value type
 $message = "Success!"
 ```
 
-## Code organization
+### Code organization
 
 PHP code files are text files that start with `<?php`.
 If the file contains only php code, there is no closing `?>` tag.
@@ -46,13 +48,13 @@ class Calculator {
 }
 ```
 
-## Naming conventions
+### Naming conventions
 
 Classnames should all be `PascalCase`.
 Depending on the style standard; variables, functions, method names may be either `camelCase` or `snake_case`.
 Names may contain letters `a-zA-Z`, numbers `0-9`, and underscores `_` but they cannot start with a number.
 
-## Comments
+### Comments
 
 Single line comments start with `//`, and a block of text can be wrapped with `/*` and  `*/` to become a comment.
 
