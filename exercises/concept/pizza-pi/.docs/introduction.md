@@ -51,6 +51,22 @@ Using floating point numbers to represent dollars and cents can lead to rounding
 $result = 0.1 + 0.2; // => 0.30000000000000004
 ```
 
-arithmetic-operators}
+## Arithmetic Operators
+
+PHP provides a number of operators for performing arithmetic operations. PHP follows the standard mathematical order of operations for its arithmetic operators. The operators that are provided by PHP are:
+
+* Identity (+)
+* Negation (-)
+* Addition (+)
+* Subtraction (-)
+* Multiplication (*)
+* Division (/)
+* Modulo (%)
+* Exponentiation (**)
+
+```php
+$moles = +'10';
+$aLotOfMoles = 6.022 * 10**23 * $moles;
+```
 
 [syntax]: https://www.php.net/manual/en/language.types.integer.php#language.types.integer.syntax
