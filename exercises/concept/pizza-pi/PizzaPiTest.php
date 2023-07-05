@@ -9,7 +9,7 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox determine how much dough is required
-     * @test_id 1
+     * @task_id 1
      */
     public function testCalculateDoughRequirement()
     {
@@ -21,7 +21,7 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox determine how many cans of sauce are required
-     * @test_id 2
+     * @task_id 2
      */
     public function testCalculateSauceRequirement()
     {
@@ -33,7 +33,7 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox determine how pizzas a cube of cheese can cover
-     * @test_id 3
+     * @task_id 3
      */
     public function testCalculateCheeseCoverage()
     {
@@ -45,7 +45,7 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox determine number of pieces remaining when evenly dividing
-     * @test_id 4
+     * @task_id 4
      */
     public function testCalculateLeftOverSlicesWithoutLeftOver()
     {
@@ -57,7 +57,7 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox determine number of pieces remaining when not evenly dividing
-     * @test_id 4
+     * @task_id 4
      */
     public function testCalculateLeftOverSlicesWithLeftOver()
     {
