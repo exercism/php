@@ -8,7 +8,7 @@
     "description": "PHP: Reference: String Functions"
   },
   {
-    "url": "https://www.php.net/manual/en/ref.mbstring.php"
+    "url": "https://www.php.net/manual/en/ref.mbstring.php",
     "description": "PHP: Reference: Multibyte String Functions"
   }
 ]
