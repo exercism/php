@@ -51,7 +51,9 @@ jo -p \
     exemplar=$(jo -a "${exemplar_file}")
   ) \
   language_version=">=8.1" \
-  blurb="Learn about ____" >> "${base_dir}/${config_json}"
+  blurb="Learn about ____" \
+  icon="" \
+  forked_from=$(jo -a "track/exercise") >> "${base_dir}/${config_json}"
 
 cat <<- PHP_STUB >> "${base_dir}/${solution_file}"
 <?php
