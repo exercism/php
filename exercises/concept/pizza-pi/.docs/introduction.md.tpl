@@ -4,4 +4,4 @@
 
 %{concept:floating-point-numbers}
 
-%{arithmetic-operators}
+%{concept:arithmetic-operators}
