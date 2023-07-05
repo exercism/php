@@ -42,6 +42,18 @@
         "prerequisites": ["basic-syntax"],
         "concepts": ["strings"],
         "status": "wip"
+      },
+      {
+        "uuid": "7acdb4ef-6589-4e93-b374-65bb5f06fd29",
+        "slug": "pizza-pi",
+        "name": "Pizza Pi",
+        "prerequisites": ["basic-syntax"],
+        "concepts": [
+          "integers",
+          "floating-point-numbers",
+          "arithmetic-operators"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
