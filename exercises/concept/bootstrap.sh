@@ -72,9 +72,14 @@ cat <<- PHP_STUB >> "${base_dir}/${test_file}"
 
 class ${new_classname}Test extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass(): void
+    {
+        require_once '${new_classname}.php';
+    }
+
     /**
      * @testdox some test stub
-     * @test_id 1
+     * @task_id 1
      */
     public function testStub()
     {

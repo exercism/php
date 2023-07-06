@@ -1,0 +1,23 @@
+{
+   "authors": [
+      "neenjaw"
+   ],
+   "contributors": [],
+   "files": {
+      "solution": [
+         "AnnalynsInfiltration.php"
+      ],
+      "test": [
+         "AnnalynsInfiltrationTest.php"
+      ],
+      "exemplar": [
+         ".meta/exemplar.php"
+      ]
+   },
+   "language_version": ">=8.1",
+   "blurb": "Learn about role playing games and boolean values!",
+   "icon": ,
+   "forked_from": [
+      "fshapr/annalyns-infiltration"
+   ]
+}
