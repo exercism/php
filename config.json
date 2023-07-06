@@ -33,7 +33,7 @@
         "name": "Lucian's Luscious Lasagna",
         "prerequisites": [],
         "concepts": ["basic-syntax"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "uuid": "d6b00994-36b1-4d2c-9a7f-d55f3cbdf4de",
@@ -52,6 +52,16 @@
           "integers",
           "floating-point-numbers",
           "arithmetic-operators"
+        ],
+        "status": "wip"
+      },
+      {
+        "uuid": "18c47e7b-fb34-4d00-b693-a3a5917e5f15",
+        "slug": "annalyns-infiltration",
+        "name": "Annalyns Infiltration",
+        "prerequisites": ["basic-syntax"],
+        "concepts": [
+          "booleans"
         ],
         "status": "wip"
       }
