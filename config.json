@@ -74,6 +74,17 @@
           "class-basics"
         ],
         "status": "wip"
+      },
+      {
+        "uuid": "e83a77a5-d3b0-481c-87c1-e9d1f3684b79",
+        "slug": "language-list",
+        "name": "Language List",
+        "prerequisites": ["strings"],
+        "concepts": [
+          "arrays",
+          "variable-length-functions"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
@@ -972,6 +983,11 @@
       "name": "Constructor Promotion",
       "slug": "constructor-promotion",
       "uuid": "c4e1ca80-795a-479d-8f10-ef214870a836"
+    },
+    {
+      "name": "Variable-Length Arguments",
+      "slug": "variable-length-arguments",
+      "uuid": "6156d33f-49f0-4b28-9091-cd44c5cdb3c8"
     }
   ],
   "key_features": [
