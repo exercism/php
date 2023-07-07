@@ -42,7 +42,7 @@ These properties may be referenced internally or externally.
 
 class Car
 {
-    string $color
+    public $color
 
     function __construct(string $color)
     {
@@ -59,16 +59,4 @@ $a_car = new Car("red");
 $a_car->color; // => "red" by accesing the property
 $a_car->getColor(); // => "red" by invoking the intance method
 ```
-
-Two intances are considered strictly unequal because they reference different instances.
-
-```php
-<?php
-
-$car_one = new Car("red");
-$car_two = new Car("red");
-
-$car_one === $car_two // => false
-```
-
 

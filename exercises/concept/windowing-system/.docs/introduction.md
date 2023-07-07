@@ -1,4 +1,6 @@
-# Classes
+# Introduction
+
+## Classes
 
 Classes are a unit of code organization in PHP.
 Code represents the behavior of an item or the behavior of a process can be grouped together as a class.
@@ -59,5 +61,3 @@ $a_car = new Car("red");
 $a_car->color; // => "red" by accesing the property
 $a_car->getColor(); // => "red" by invoking the intance method
 ```
-
-

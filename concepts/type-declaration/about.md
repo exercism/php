@@ -1,29 +1,39 @@
 # Type Declaration
 
-Type declarations in PHP provide type assertions at run time for function arugments, return values and class properties.
-On functions, a `void` return type can be added to indicate that no value is returned from the function.
-Declared types also serve as run time assertions that functions are returning a reasonably typed response.
+PHP is a _dynamically typed_ language, meaning that a variable may contain any type of information.
+PHP does allow for _optional_ strong type declaration for class properties, function arguments and function return values.
+Strong type declarations in PHP provide type assertions at run time, however, PHP will attempt to coerce scalar types to match the declaration if possible.
+The coercion behaviour may be disabled using the `strict_types` declaration at the top of the file.
 
 ```php
 <?php
+declare(strict_types=1);
+```
+
+Additionally functions may return a `void` return type to indicate that no value is to be returned from the function.
+
+```php
+<?php
+declare(strict_types=1);
 
 class Driver
 {
-    private int $serial_number;
+    string $serial_number;
 
-    public function setSerialNumber(int $number): void
+    function setSerialNumber(string $number): void
     {
         $this->serial_number = $number;
     }
 
-    public function getSerialNumber(): int
+    function getSerialNumber(): string
     {
         return $this->serial_number; 
     }
 }
 
-$driver = new Driver();
-$driver->setSerialNumber("Version 1b"); // This will throw a TypeError
+$driver = new Driver(); 
+$driver->setSerialNumber(1234);
+// => This will throw a TypeError with strict_types=1
 ```
 
 ## Type Unions
@@ -35,7 +45,7 @@ If a function argument, return value or class property can be more than one type
 
 class IdentityCard
 {
-    private int|null $id = null;
+    private int|float $id = 0;
 
     public function assign(int|float $id): void
     {
