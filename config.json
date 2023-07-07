@@ -64,6 +64,16 @@
           "booleans"
         ],
         "status": "wip"
+      },
+      {
+        "uuid": "6f285fd2-4f55-4b65-9797-992ddd5e8a1d",
+        "slug": "windowing-system",
+        "name": "Windowing System",
+        "prerequisites": ["integers"],
+        "concepts": [
+          "class-basics"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
