@@ -1,6 +1,6 @@
 # Introduction
 
-## Arrays## Arrays
+## Arrays
 
 Arrays in PHP are ordered maps.
 A map is a data structure that associates a key to a value.
