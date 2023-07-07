@@ -1,0 +1,22 @@
+{
+   "authors": [
+      "neenjaw"
+   ],
+   "contributors": [],
+   "files": {
+      "solution": [
+         "LanguageList.php"
+      ],
+      "test": [
+         "LanguageListTest.php"
+      ],
+      "exemplar": [
+         ".meta/exemplar.php"
+      ]
+   },
+   "language_version": ">=8.1",
+   "blurb": "Learn about functions and arrays!",
+   "forked_from": [
+     "clojure/tracks-on-tracks-on-tracks"
+   ]
+}
