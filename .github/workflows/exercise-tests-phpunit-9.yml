@@ -35,6 +35,7 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: |
+          sudo apt-get install jq
           curl -Lo ./bin/phpunit-9.phar https://phar.phpunit.de/phpunit-9.phar
           chmod +x bin/phpunit-9.phar
 

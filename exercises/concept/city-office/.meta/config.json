@@ -1,0 +1,25 @@
+{
+   "authors": [
+      "neenjaw"
+   ],
+   "contributors": [],
+   "files": {:
+      "solution": [
+         "Address.php",
+         "Form.php"
+      ],
+      "test": [
+         "CityOfficeTest.php",
+
+      ],
+      "exemplar": [
+         ".meta/exemplar/Address.php",
+         ".meta/exemplar/Form.php"
+      ]
+   },
+   "language_version": ">=8.1",
+   "blurb": "Learn about type declarations and form validation!",
+   "forked_from": [
+      "elixir/city-office"
+   ]
+}
