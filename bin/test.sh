@@ -51,7 +51,7 @@ function test {
   # Remove mark skipped declarations
   cat "${exercise_dir}/${test_file}" | sed '/markTestSkipped()/d' > "${outdir}/${test_file}"
 
-  # is the example/exemplar directory exists, overlay contents on solution
+  # If the example/exemplar directory exists, overlay contents on solution
   if [[ -d "${exercise_dir}/.meta/${example_file_name}" ]]; then
     cp -r "${exercise_dir}/.meta/${example_file_name}/." "${outdir}"
   else
