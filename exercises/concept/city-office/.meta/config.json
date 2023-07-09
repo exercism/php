@@ -9,8 +9,7 @@
          "Form.php"
       ],
       "test": [
-         "CityOfficeTest.php",
-
+         "CityOfficeTest.php"
       ],
       "exemplar": [
          ".meta/exemplar/Address.php",
