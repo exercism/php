@@ -85,6 +85,19 @@
           "variable-length-functions"
         ],
         "status": "wip"
+      },
+      {
+        "uuid": "4441e914-2f05-4856-b457-70a4968c5dbb",
+        "slug": "city-office",
+        "name": "City Office",
+        "prerequisites": [
+          "class-basics",
+          "arrays"
+        ],
+        "concepts": [
+          "type-declarations"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
