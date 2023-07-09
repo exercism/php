@@ -3,7 +3,7 @@
       "neenjaw"
    ],
    "contributors": [],
-   "files": {:
+   "files": {
       "solution": [
          "Address.php",
          "Form.php"
