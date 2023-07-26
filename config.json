@@ -41,7 +41,7 @@
         "name": "Highschool Sweetheats",
         "prerequisites": ["basic-syntax"],
         "concepts": ["strings"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "uuid": "7acdb4ef-6589-4e93-b374-65bb5f06fd29",
@@ -53,7 +53,7 @@
           "floating-point-numbers",
           "arithmetic-operators"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "uuid": "18c47e7b-fb34-4d00-b693-a3a5917e5f15",
@@ -63,7 +63,7 @@
         "concepts": [
           "booleans"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "uuid": "6f285fd2-4f55-4b65-9797-992ddd5e8a1d",
@@ -73,7 +73,7 @@
         "concepts": [
           "class-basics"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "uuid": "e83a77a5-d3b0-481c-87c1-e9d1f3684b79",
@@ -82,9 +82,9 @@
         "prerequisites": ["strings"],
         "concepts": [
           "arrays",
-          "variable-length-functions"
+          "variable-length-arguments"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "uuid": "4441e914-2f05-4856-b457-70a4968c5dbb",
@@ -97,7 +97,7 @@
         "concepts": [
           "type-declaration"
         ],
-        "status": "wip"
+        "status": "beta"
       }
     ],
     "practice": [
