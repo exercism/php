@@ -82,7 +82,7 @@
         "prerequisites": ["strings"],
         "concepts": [
           "arrays",
-          "variable-length-functions"
+          "variable-length-arguments"
         ],
         "status": "beta"
       },
