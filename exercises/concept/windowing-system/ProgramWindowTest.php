@@ -86,21 +86,8 @@ class ProgramWindowTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox assert ProgramWindow::move fucntion exists
-     * @task_id 3
-     */
-    public function testProgramWindowMove()
-    {
-        $window = new ProgramWindow();
-        $position = new Position(40, 235);
-        $window->move($position);
-        $this->assertEquals(40, $window->y);
-        $this->assertEquals(235, $window->x);
-    }
-
-    /**
      * @testdox assert Position class exists, with constructor, properties
-     * @task_id 4
+     * @task_id 3
      */
     public function testSizeHasConstructorSettingInitialValues()
     {
@@ -110,8 +97,8 @@ class ProgramWindowTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox assert ProgramWindow::resize fucntion exists
-     * @task_id 4
+     * @testdox assert ProgramWindow::resize function exists
+     * @task_id 3
      */
     public function testProgramWindowResize()
     {
@@ -120,6 +107,19 @@ class ProgramWindowTest extends PHPUnit\Framework\TestCase
         $window->resize($size);
         $this->assertEquals(430, $window->height);
         $this->assertEquals(2135, $window->width);
+    }
+
+    /**
+     * @testdox assert ProgramWindow::move function exists
+     * @task_id 4
+     */
+    public function testProgramWindowMove()
+    {
+        $window = new ProgramWindow();
+        $position = new Position(40, 235);
+        $window->move($position);
+        $this->assertEquals(40, $window->y);
+        $this->assertEquals(235, $window->x);
     }
 
     private function assertHasProperty(

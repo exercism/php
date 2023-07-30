@@ -4,8 +4,7 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void
     {
-        //require_once 'LanguageList.php';
-        require_once __DIR__."/.meta/exemplar.php";
+        require_once 'LanguageList.php';
     }
 
     /**
