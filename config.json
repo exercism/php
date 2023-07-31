@@ -5,7 +5,7 @@
   "status": {
     "concept_exercises": true,
     "test_runner": true,
-    "representer": false,
+    "representer": true,
     "analyzer": false
   },
   "blurb": "PHP is a general purpose scripting language designed primarily for web development. It is one of the most popular programming languages for web development, and supports multiple programming paradigms.",
