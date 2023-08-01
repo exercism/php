@@ -10,7 +10,7 @@ Will you help Lilly throw the proportionally perfect pizza party?
 ## 1. A Dough Ratio
 
 Lilly is a fan of thin, crispy pizzas with a thinner crust.
-The dough needed for the middle is a minimum 200g, but every person it serves requires another 45g of dough.
+The dough needed for the middle is a minimum 200g, but every person it serves requires another 20g of dough.
 
 `grams = pizzas * ((persons * 20) + 200)`
 
