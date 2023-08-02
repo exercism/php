@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.readonly-properties",
+    "description": "PHP: Classes and Objects: Properties: Readonly Properties"
+  },
+  {
+    "url": "https://php.watch/versions/8.1/readonly",
+    "description": "PHP.Watch: PHP 8.1: Readonly Properties"
+  },
+  {
+    "url": "https://stitcher.io/blog/php-81-readonly-properties",
+    "description": "Stitcher: PHP 8.1: Readonly Properties"
+  },
+  {
+    "url": "https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly",
+    "description": "PHP: Classes and Objects: The Basics: Readonly Classes"
+  },
+  {
+    "url": "https://stitcher.io/blog/readonly-classes-in-php-82",
+    "description": "Stitcher: Readonly classes in PHP 8.2"
+  }
+]

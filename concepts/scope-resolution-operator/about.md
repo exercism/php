@@ -1,4 +1,4 @@
-# Scope Resolution Operator
+# https://www.php.net/manual/en/language.basic-syntax.phptags.php"Scope Resolution Operator
 
 The scope resolution operator (`::`) allows us to reference a class to access its name constants, static properties, or static methods.
 

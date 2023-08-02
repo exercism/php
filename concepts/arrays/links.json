@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/language.types.array.php",
+    "description": "PHP: Arrays"
+  },
+  {
+    "url": "https://www.php.net/manual/en/ref.array.php",
+    "description": "PHP: Array Functions"
+  },
+  {
+    "url": "https://www.php.net/manual/en/function.explode",
+    "description": "PHP: String Functions: explode"
+  }
+]

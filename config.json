@@ -3,9 +3,9 @@
   "slug": "php",
   "active": true,
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": true,
-    "representer": false,
+    "representer": true,
     "analyzer": false
   },
   "blurb": "PHP is a general purpose scripting language designed primarily for web development. It is one of the most popular programming languages for web development, and supports multiple programming paradigms.",
@@ -17,7 +17,7 @@
     "highlightjs_language": "php"
   },
   "test_runner": {
-    "average_run_time": 2.0
+    "average_run_time": 2
   },
   "files": {
     "solution": ["%{pascal_slug}.php"],
@@ -26,7 +26,80 @@
     "exemplar": [".meta/exemplar.php"]
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "uuid": "5d76f1a2-f80b-4a82-8176-b52230974dab",
+        "slug": "lasagna",
+        "name": "Lucian's Luscious Lasagna",
+        "prerequisites": [],
+        "concepts": ["basic-syntax"],
+        "status": "beta"
+      },
+      {
+        "uuid": "d6b00994-36b1-4d2c-9a7f-d55f3cbdf4de",
+        "slug": "sweethearts",
+        "name": "Highschool Sweetheats",
+        "prerequisites": ["basic-syntax"],
+        "concepts": ["strings"],
+        "status": "beta"
+      },
+      {
+        "uuid": "7acdb4ef-6589-4e93-b374-65bb5f06fd29",
+        "slug": "pizza-pi",
+        "name": "Pizza Pi",
+        "prerequisites": ["basic-syntax"],
+        "concepts": [
+          "integers",
+          "floating-point-numbers",
+          "arithmetic-operators"
+        ],
+        "status": "beta"
+      },
+      {
+        "uuid": "18c47e7b-fb34-4d00-b693-a3a5917e5f15",
+        "slug": "annalyns-infiltration",
+        "name": "Annalyns Infiltration",
+        "prerequisites": ["basic-syntax"],
+        "concepts": [
+          "booleans"
+        ],
+        "status": "beta"
+      },
+      {
+        "uuid": "6f285fd2-4f55-4b65-9797-992ddd5e8a1d",
+        "slug": "windowing-system",
+        "name": "Windowing System",
+        "prerequisites": ["integers"],
+        "concepts": [
+          "class-basics"
+        ],
+        "status": "beta"
+      },
+      {
+        "uuid": "e83a77a5-d3b0-481c-87c1-e9d1f3684b79",
+        "slug": "language-list",
+        "name": "Language List",
+        "prerequisites": ["strings"],
+        "concepts": [
+          "arrays",
+          "variable-length-arguments"
+        ],
+        "status": "beta"
+      },
+      {
+        "uuid": "4441e914-2f05-4856-b457-70a4968c5dbb",
+        "slug": "city-office",
+        "name": "City Office",
+        "prerequisites": [
+          "class-basics",
+          "arrays"
+        ],
+        "concepts": [
+          "type-declaration"
+        ],
+        "status": "beta"
+      }
+    ],
     "practice": [
       {
         "slug": "hello-world",
@@ -772,98 +845,162 @@
     {
       "name": "Variable Scope",
       "slug": "variable-scope",
-      "uuid": "b385e071-a070-4f82-b62f-d1547101e1ce",
-      "concepts": ["variable scope"],
-      "prerequisites": [],
-      "status": "beta"
-    },
-    {
-      "name": "Variables",
-      "slug": "variables",
-      "uuid": "4a2cb36c-3ddb-4d20-a1eb-26ce87e9d113",
-      "concepts": ["variables"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "b385e071-a070-4f82-b62f-d1547101e1ce"
     },
     {
       "name": "User Defined Functions",
       "slug": "user-defined-functions",
-      "uuid": "14e8b5f1-d3ba-45b8-96b4-eb1323e9c118",
-      "concepts": ["user defined functions"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "14e8b5f1-d3ba-45b8-96b4-eb1323e9c118"
     },
     {
       "name": "While Loops",
       "slug": "while-loops",
-      "uuid": "fef85d86-e656-415f-8404-f9ea5d694168",
-      "concepts": ["while loops"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "fef85d86-e656-415f-8404-f9ea5d694168"
     },
     {
       "name": "For Loops",
       "slug": "for-loops",
-      "uuid": "5ff6eb04-a58a-447e-8f93-a2ff70685794",
-      "concepts": ["for loops"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "5ff6eb04-a58a-447e-8f93-a2ff70685794"
     },
     {
       "name": "Foreach Loops",
       "slug": "foreach-loops",
-      "uuid": "acf8c294-447b-4c83-b70f-6d70780de086",
-      "concepts": ["foreach loops"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "acf8c294-447b-4c83-b70f-6d70780de086"
     },
     {
       "name": "Union Types",
       "slug": "union-types",
-      "uuid": "08f37770-10a0-404f-81be-8d53cb2853f1",
-      "concepts": ["union types"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "08f37770-10a0-404f-81be-8d53cb2853f1"
     },
     {
       "name": "Variable Functions",
       "slug": "variable-functions",
-      "uuid": "c5aee4cc-d374-4297-83a3-6b03f4ebbe39",
-      "concepts": ["variable functions"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "c5aee4cc-d374-4297-83a3-6b03f4ebbe39"
     },
     {
       "name": "Type Juggling",
       "slug": "type-juggling",
-      "uuid": "8bd412b8-964b-4585-8f6a-8d171efe971f",
-      "concepts": ["type juggling"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "8bd412b8-964b-4585-8f6a-8d171efe971f"
     },
     {
       "name": "Scope Resolution Operator",
       "slug": "scope-resolution-operator",
-      "uuid": "a6174532-190a-4d90-b7e3-e61a1b53e92e",
-      "concepts": ["scope resolution operator"],
-      "prerequisites": [],
-      "status": "beta"
-    },
-    {
-      "name": "Switch Statement",
-      "slug": "switch-statement",
-      "uuid": "347636c1-c4f1-4057-9d06-541c96ac475b",
-      "concepts": ["switch statement"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "a6174532-190a-4d90-b7e3-e61a1b53e92e"
     },
     {
       "name": "Ternary Operator",
       "slug": "ternary-operator",
-      "uuid": "7c88c634-4ca9-4e4b-ab3f-6155b4ca9800",
-      "concepts": ["ternary operator"],
-      "prerequisites": [],
-      "status": "beta"
+      "uuid": "7c88c634-4ca9-4e4b-ab3f-6155b4ca9800"
+    },
+    {
+      "name": "Switch Statement",
+      "slug": "switch-statement",
+      "uuid": "347636c1-c4f1-4057-9d06-541c96ac475b"
+    },
+    {
+      "name": "Covariance and Contravariance",
+      "slug": "covariance-and-contravariance",
+      "uuid": "7aa7d0ec-fbcb-48b9-8b06-f4768f6837ce"
+    },
+    {
+      "name": "Break and Continue",
+      "slug": "break-continue-keywords",
+      "uuid": "b3156f10-7e24-485a-a91c-a6fb2596329c"
+    },
+    {
+      "name": "Arrays",
+      "slug": "arrays",
+      "uuid": "6839a4c1-be51-4ebf-8468-2abcaf7000e7"
+    },
+    {
+      "name": "Null",
+      "slug": "null-values",
+      "uuid": "ed4c9916-e8ae-473c-b6f2-29c93357faf7"
+    },
+    {
+      "name": "Basics",
+      "slug": "basic-syntax",
+      "uuid": "1cf9fb39-5520-4c93-ba7a-7162586e2955"
+    },
+    {
+      "name": "Classes",
+      "slug": "class-basics",
+      "uuid": "add364bc-b86f-4a21-813f-85337967568f"
+    },
+    {
+      "name": "Booleans",
+      "slug": "booleans",
+      "uuid": "3fc6c727-1ea8-4ded-a692-9e38f18d640f"
+    },
+    {
+      "name": "Static Classes",
+      "slug": "class-static-keyword",
+      "uuid": "7fc3c058-0ff9-4711-beef-c84238b524b2"
+    },
+    {
+      "name": "Arithmetic Operators",
+      "slug": "arithmetic-operators",
+      "uuid": "0e9342fc-df4b-412f-a9fe-ffb87ac560f9"
+    },
+    {
+      "name": "Match Expressions",
+      "slug": "match-expression",
+      "uuid": "070693e8-5924-432f-b92c-cf5945765a70"
+    },
+    {
+      "name": "Strings",
+      "slug": "strings",
+      "uuid": "e3a91d37-415c-47bf-a7d9-6e4b7162550f"
+    },
+    {
+      "name": "Floating Point Numbers",
+      "slug": "floating-point-numbers",
+      "uuid": "2fcfb736-b8cd-488e-bfc5-52ad5d5ad410"
+    },
+    {
+      "name": "Comparison Operators",
+      "slug": "comparison-operators",
+      "uuid": "5a798688-6c91-4200-85bb-d3879ab18d89"
+    },
+    {
+      "name": "If, Else, Elseif",
+      "slug": "if-control-structures",
+      "uuid": "00c98194-8b3c-4d5f-893f-59fbb7180cde"
+    },
+    {
+      "name": "Anonymous Functions and Closures",
+      "slug": "anonymous-functions-closures",
+      "uuid": "7d752e27-6122-4e30-988f-dfade07d3d51"
+    },
+    {
+      "name": "Class Visibility",
+      "slug": "class-visibility",
+      "uuid": "08280a01-aafd-49b9-b524-e0f972ecd4cf"
+    },
+    {
+      "name": "Integers",
+      "slug": "integers",
+      "uuid": "cf2ec98b-27cb-43a2-9909-83fa797aed83"
+    },
+    {
+      "name": "Type Declaration",
+      "slug": "type-declaration",
+      "uuid": "875ae802-5ff3-4e6b-8f2c-e22ef25665c8"
+    },
+    {
+      "name": "Readonly Classes and Properties",
+      "slug": "readonly-properties",
+      "uuid": "33f03ad3-6900-4b50-be32-5e60256b617c"
+    },
+    {
+      "name": "Constructor Promotion",
+      "slug": "constructor-promotion",
+      "uuid": "c4e1ca80-795a-479d-8f10-ef214870a836"
+    },
+    {
+      "name": "Variable-Length Arguments",
+      "slug": "variable-length-arguments",
+      "uuid": "6156d33f-49f0-4b28-9091-cd44c5cdb3c8"
     }
   ],
   "key_features": [

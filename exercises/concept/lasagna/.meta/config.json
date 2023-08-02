@@ -1,0 +1,19 @@
+{
+   "authors": [
+      "neenjaw"
+   ],
+   "contributors": [],
+   "files": {
+      "solution": [
+         "Lasagna.php"
+      ],
+      "test": [
+         "LasagnaTest.php"
+      ],
+      "exemplar": [
+         ".meta/exemplar.php"
+      ]
+   },
+   "language_version": ">=8.1",
+   "blurb": "Learn about the basics of PHP syntax!"
+}

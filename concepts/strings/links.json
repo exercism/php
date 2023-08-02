@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc",
+    "description": "PHP: Types: Strings"
+  },
+  {
+    "url": "https://www.php.net/manual/en/ref.strings.php",
+    "description": "PHP: Reference: String Functions"
+  },
+  {
+    "url": "https://www.php.net/manual/en/ref.mbstring.php",
+    "description": "PHP: Reference: Multibyte String Functions"
+  }
+]

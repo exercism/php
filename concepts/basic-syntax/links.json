@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.php.net/manual/en/intro-whatis.php",
+    "description": "What is PHP?"
+  },
+  {
+    "url": "https://www.php.net/manual/en/language.basic-syntax.phptags.php",
+    "description": "PHP Basics: PHP tags"
+  },
+  {
+    "url": "https://www.php.net/manual/en/language.variables.basics.php",
+    "description": "PHP Basics: Variables"
+  }
+]
