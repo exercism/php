@@ -1,6 +1,7 @@
 {
-  "blurb": "Compute the result for a game of Hex / Polygon",
-  "authors": ["pminten"],
+  "authors": [
+    "pminten"
+  ],
   "contributors": [
     "arueckauer",
     "dkinzer",
@@ -12,8 +13,15 @@
     "yisraeldov"
   ],
   "files": {
-    "solution": ["Connect.php"],
-    "test": ["ConnectTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "Connect.php"
+    ],
+    "test": [
+      "ConnectTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Compute the result for a game of Hex / Polygon"
 }

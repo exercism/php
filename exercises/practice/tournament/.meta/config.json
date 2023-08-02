@@ -1,10 +1,20 @@
 {
-  "blurb": "Tally the results of a small football competition.",
-  "authors": ["MichaelBunker"],
-  "contributors": ["dstockto"],
+  "authors": [
+    "MichaelBunker"
+  ],
+  "contributors": [
+    "dstockto"
+  ],
   "files": {
-    "solution": ["Tournament.php"],
-    "test": ["TournamentTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "Tournament.php"
+    ],
+    "test": [
+      "TournamentTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Tally the results of a small football competition."
 }

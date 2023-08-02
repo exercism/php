@@ -1,10 +1,17 @@
 {
-  "blurb": "Randomly generate Dungeons & Dragons characters.",
-  "authors": ["MichaelBunker"],
-  "contributors": [],
+  "authors": [
+    "MichaelBunker"
+  ],
   "files": {
-    "solution": ["DndCharacter.php"],
-    "test": ["DndCharacterTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "DndCharacter.php"
+    ],
+    "test": [
+      "DndCharacterTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Randomly generate Dungeons & Dragons characters."
 }

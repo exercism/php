@@ -1,23 +1,21 @@
 {
-   "authors": [
-      "neenjaw"
-   ],
-   "contributors": [],
-   "files": {
-      "solution": [
-         "PizzaPi.php"
-      ],
-      "test": [
-         "PizzaPiTest.php"
-      ],
-      "exemplar": [
-         ".meta/exemplar.php"
-      ]
-   },
-   "language_version": ">=8.1",
-   "blurb": "Learn about integers, floating point numbers and pizza!",
-   "icon": "lasagna",
-   "forked_from": [
-      "common-lisp/pizza-pi"
-   ]
+  "authors": [
+    "neenjaw"
+  ],
+  "files": {
+    "solution": [
+      "PizzaPi.php"
+    ],
+    "test": [
+      "PizzaPiTest.php"
+    ],
+    "exemplar": [
+      ".meta/exemplar.php"
+    ]
+  },
+  "forked_from": [
+    "common-lisp/pizza-pi"
+  ],
+  "icon": "lasagna",
+  "blurb": "Learn about integers, floating point numbers and pizza!"
 }

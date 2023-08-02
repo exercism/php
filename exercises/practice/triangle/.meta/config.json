@@ -1,6 +1,7 @@
 {
-  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
-  "authors": ["camilopayan"],
+  "authors": [
+    "camilopayan"
+  ],
   "contributors": [
     "arueckauer",
     "G-Rath",
@@ -9,10 +10,17 @@
     "petemcfarlane"
   ],
   "files": {
-    "solution": ["Triangle.php"],
-    "test": ["TriangleTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "Triangle.php"
+    ],
+    "test": [
+      "TriangleTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
   "source": "The Ruby Koans triangle project, parts 1 & 2",
   "source_url": "https://rubykoans.com"
 }

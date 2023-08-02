@@ -1,5 +1,4 @@
 {
-  "blurb": "Score a bowling game",
   "authors": [],
   "contributors": [
     "arueckauer",
@@ -11,10 +10,17 @@
     "petemcfarlane"
   ],
   "files": {
-    "solution": ["Bowling.php"],
-    "test": ["BowlingTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "Bowling.php"
+    ],
+    "test": [
+      "BowlingTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Score a bowling game",
   "source": "The Bowling Game Kata at but UncleBob",
   "source_url": "https://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
 }

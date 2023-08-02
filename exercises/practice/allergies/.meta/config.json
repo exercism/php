@@ -1,6 +1,7 @@
 {
-  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
-  "authors": ["mikeSimonson"],
+  "authors": [
+    "mikeSimonson"
+  ],
   "contributors": [
     "arueckauer",
     "DerTee",
@@ -10,10 +11,17 @@
     "petemcfarlane"
   ],
   "files": {
-    "solution": ["Allergies.php"],
-    "test": ["AllergiesTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "Allergies.php"
+    ],
+    "test": [
+      "AllergiesTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
   "source": "Jumpstart Lab Warm-up",
   "source_url": "https://jumpstartlab.com"
 }

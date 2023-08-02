@@ -1,5 +1,4 @@
 {
-  "blurb": "Manage robot factory settings.",
   "authors": [],
   "contributors": [
     "arueckauer",
@@ -15,9 +14,16 @@
     "schorsch3000"
   ],
   "files": {
-    "solution": ["RobotName.php"],
-    "test": ["RobotNameTest.php"],
-    "example": [".meta/example.php"]
+    "solution": [
+      "RobotName.php"
+    ],
+    "test": [
+      "RobotNameTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
   },
+  "blurb": "Manage robot factory settings.",
   "source": "A debugging session with Paul Blackwell at gSchool."
 }
