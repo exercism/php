@@ -43,11 +43,11 @@ Exercism exercises in PHP
 
 ## Contributing
 
+- Read the documentation at [Exercism][docs].
 - Follow the [PSR-12] coding style (PHP uses a slightly [modified] version of [PSR-12]).
-- Follow the [contributing guide].
 - CI is run on all pull requests, it must pass the required checks for merge.
 
 [psr-12]: https://www.php-fig.org/psr/psr-12
-[contributing guide]: https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data
+[docs]: https://exercism.org/docs
 [@group annotation]: https://phpunit.de/manual/4.1/en/appendixes.annotations.html#appendixes.annotations.group
 [modified]: phpcs-php.xml
