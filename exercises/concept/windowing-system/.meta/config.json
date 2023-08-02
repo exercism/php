@@ -1,24 +1,22 @@
 {
-   "authors": [
-      "neenjaw"
-   ],
-   "contributors": [],
-   "files": {
-      "solution": [
-         "ProgramWindow.php",
-         "Size.php",
-         "Position.php"
-      ],
-      "test": [
-         "ProgramWindowTest.php"
-      ],
-      "exemplar": [
-         ".meta/exemplar.php"
-      ]
-   },
-   "language_version": ">=8.1",
-   "blurb": "Learn about classes by developing a windowing system!",
-   "forked_from": [
-      "javascript/windowing-system"
-   ]
+  "authors": [
+    "neenjaw"
+  ],
+  "files": {
+    "solution": [
+      "ProgramWindow.php",
+      "Size.php",
+      "Position.php"
+    ],
+    "test": [
+      "ProgramWindowTest.php"
+    ],
+    "exemplar": [
+      ".meta/exemplar.php"
+    ]
+  },
+  "forked_from": [
+    "javascript/windowing-system"
+  ],
+  "blurb": "Learn about classes by developing a windowing system!"
 }
