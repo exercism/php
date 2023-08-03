@@ -838,6 +838,14 @@
         "prerequisites": [],
         "difficulty": 4,
         "topics": ["conditionals", "strings"]
+      },
+      {
+        "slug": "bank-account",
+        "name": "Bank Account",
+        "uuid": "d85c328b-0778-46f6-bd50-d14417fa8347",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       }
     ]
   },
