@@ -1,0 +1,10 @@
+{
+  "blurb": "Output the lyrics to 'The Twelve Days of Christmas'.",
+  "authors": ["MichaelBunker"],
+  "contributors": [],
+  "files": {
+    "solution": ["TwelveDays.php"],
+    "test": ["TwelveDaysTest.php"],
+    "example": [".meta/example.php"]
+  }
+}
