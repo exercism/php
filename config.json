@@ -233,6 +233,14 @@
         "topics": ["classes", "randomness", "strings"]
       },
       {
+        "slug": "twelve-days",
+        "name": "Twelve Days",
+        "uuid": "c5b122ab-6f8e-476b-8b55-84670edc93b5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "238d86fe-6e29-43b0-9e27-a54caa773618",
