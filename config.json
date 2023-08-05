@@ -127,8 +127,7 @@
         "prerequisites": [],
         "core": true,
         "unlocked_by": null,
-        "difficulty": 1,
-        "topics": ["arrays", "strings"]
+        "difficulty": 1
       },
       {
         "slug": "hamming",
@@ -138,6 +137,14 @@
         "prerequisites": [],
         "difficulty": 2,
         "topics": ["filtering", "strings"]
+      },
+      {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "1e72df07-c456-4501-a274-4b0e2b245167",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       },
       {
         "slug": "gigasecond",

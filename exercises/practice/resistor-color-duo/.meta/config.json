@@ -1,0 +1,10 @@
+{
+  "blurb": "Convert color codes, as used on resistors, to a numeric value.",
+  "authors": ["MichaelBunker"],
+  "contributors": [],
+  "files": {
+    "solution": ["ResistorColorDuo.php"],
+    "test": ["ResistorColorDuoTest.php"],
+    "example": [".meta/example.php"]
+  }
+}

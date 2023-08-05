@@ -24,12 +24,24 @@
 
 declare(strict_types=1);
 
-function getAllColors(): array
+class ResistorColorDuo
 {
-    throw new \BadMethodCallException("Implement the getAllColors function");
-}
+    public function getAllColors(): array
+    {
+        return ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"];
+    }
 
-function colorCode(string $color): int
-{
-    throw new \BadMethodCallException("Implement the colorCode function");
+    /**
+     * @param string[] $colors
+     */
+    public function getColorsValue(array $colors): int
+    {
+        $allColors = $this->getAllColors();
+
+        if (count($colors) === 1) {
+            return array_search(current($colors), $allColors);
+        }
+
+        return array_search($colors[0], $allColors) * 10 + array_search($colors[1], $allColors);
+    }
 }
