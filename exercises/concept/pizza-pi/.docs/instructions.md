@@ -32,7 +32,7 @@ $pizza_pi->calculateDoughRequirement(4, 8);
 ## 2. A Splash of Sauce
 
 Lilly is meticulous when applying her sauce, but the size of her pizzas can be inconsistent.
-From her experince, she knows that it takes 125mL of sauce per pizza.
+From her experience, she knows that it takes 125mL of sauce per pizza.
 Lilly needs a function that calculates how many cans of sauce to buy.
 
 `cans of sauce = pizzas * sauce per pizza / sauce can volume`

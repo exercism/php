@@ -2,7 +2,7 @@
 
 ## Type Declaration
 
-Type declarations in PHP provide type assertions at run time for function arugments, return values and class properties.
+Type declarations in PHP provide type assertions at run time for function arguments, return values and class properties.
 On functions, a `void` return type can be added to indicate that no value is returned from the function.
 Declared types also serve as run time assertions that functions are returning a reasonably typed response.
 
