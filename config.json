@@ -232,6 +232,14 @@
         "topics": ["filtering", "strings"]
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "eb3ef767-fb22-4f5a-96aa-e1f680644dd9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "b24d5f98-8d62-4177-b0ae-306bbf0f918b",
