@@ -623,6 +623,14 @@
         "topics": ["integers"]
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein Translation",
+        "uuid": "f5ae2594-7e6d-4722-b6fe-df179a71aada",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "0ad53d66-cbdc-4d9a-a083-d24af216d3d9",
