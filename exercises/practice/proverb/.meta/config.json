@@ -1,0 +1,10 @@
+{
+  "blurb": "For want of a horseshoe nail, a kingdom was lost, or so the saying goes. Output the full text of this proverbial rhyme.",
+  "authors": ["MichaelBunker"],
+  "contributors": [],
+  "files": {
+    "solution": ["Proverb.php"],
+    "test": ["ProverbTest.php"],
+    "example": [".meta/example.php"]
+  }
+}

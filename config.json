@@ -140,6 +140,14 @@
         "topics": ["filtering", "strings"]
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "75519a64-8237-49e5-927f-c5974816258e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "81aa4bc9-4936-46c2-bb2f-433246a86c5d",
