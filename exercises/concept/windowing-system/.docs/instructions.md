@@ -41,7 +41,7 @@ $window->height; // => null
 ## 2. Define the initial values for the program window
 
 Define a constructor function for `ProgramWindow`.
-It should not take any arguments, but during the contructor execution set the default values for its properties.
+It should not take any arguments, but during the constructor execution set the default values for its properties.
 It should set the initial `x` and `y` values to `0`.
 It should set the initial `width` and `height` to an `800x600` screen size.
 

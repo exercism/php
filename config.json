@@ -147,6 +147,14 @@
         "difficulty": 1
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "75519a64-8237-49e5-927f-c5974816258e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "81aa4bc9-4936-46c2-bb2f-433246a86c5d",
@@ -622,6 +630,14 @@
         "topics": ["integers"]
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein Translation",
+        "uuid": "f5ae2594-7e6d-4722-b6fe-df179a71aada",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "0ad53d66-cbdc-4d9a-a083-d24af216d3d9",
@@ -845,6 +861,14 @@
         "prerequisites": [],
         "difficulty": 4,
         "topics": ["conditionals", "strings"]
+      },
+      {
+        "slug": "bank-account",
+        "name": "Bank Account",
+        "uuid": "d85c328b-0778-46f6-bd50-d14417fa8347",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       }
     ]
   },

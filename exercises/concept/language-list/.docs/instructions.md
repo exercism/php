@@ -57,7 +57,7 @@ $language_list = prune_language_list($language_list);
 
 ## 5. Define a function to get the first item in the list
 
-Define the `first/1` function that takes 1 argument (a _language list_).
+Define the `current_language` function that takes 1 argument (a _language list_).
 It should return the first language in the list.
 Assume the list will always have at least one item.
 
@@ -80,6 +80,6 @@ It should return the number of languages in the list.
 
 $language_list = $language_list("PHP", "Prolog", "Wren");
 // => ["PHP", "Prolog", "Wren"]
-language_list_count($language_list);
+language_list_length($language_list);
 // => 2
 ```

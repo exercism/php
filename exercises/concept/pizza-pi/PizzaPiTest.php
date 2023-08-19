@@ -32,7 +32,7 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox determine how pizzas a cube of cheese can cover
+     * @testdox determine how many pizzas a cube of cheese can cover
      * @task_id 3
      */
     public function testCalculateCheeseCoverage()
