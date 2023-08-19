@@ -51,7 +51,7 @@ $is_prisoner_awake = false;
 
 $infiltration = new AnnalynsInfiltration()
 $infiltration->canSpy($is_knight_awake, $is_archer_awake, $is_prisoner_awake);
-// => false
+// => true
 ```
 
 ## 3. Check if the 'Signal Prisoner' action is possible
@@ -67,7 +67,7 @@ $is_prisoner_awake = true;
 
 $infiltration = new AnnalynsInfiltration()
 $infiltration->canSignal($is_archer_awake, $is_prisoner_awake);
-// => false
+// => true
 ```
 
 ## 4. Check if the 'Free Prisoner' action is possible
