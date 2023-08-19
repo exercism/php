@@ -24,12 +24,10 @@
 
 declare(strict_types=1);
 
-function getAllColors(): array
+class ResistorColorDuo
 {
-    throw new \BadMethodCallException("Implement the getAllColors function");
-}
-
-function colorCode(string $color): int
-{
-    throw new \BadMethodCallException("Implement the colorCode function");
+    public function getColorsValue(array $colors): int
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
 }
