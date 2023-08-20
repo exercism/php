@@ -24,9 +24,9 @@
 
 declare(strict_types=1);
 
-class TwelveDays
+class Alphametics
 {
-    public function recite(int $start, int $end): string
+    public function solve(string $puzzle): ?array
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }

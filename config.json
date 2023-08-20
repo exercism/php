@@ -885,6 +885,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
+      },
+      {
+        "slug": "alphametics",
+        "name": "Alphametics",
+        "uuid": "49d212c6-6fa3-4e7b-95d9-595613630566",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },
