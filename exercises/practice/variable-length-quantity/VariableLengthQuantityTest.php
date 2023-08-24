@@ -73,7 +73,7 @@ class VariableLengthQuantityTest extends PHPUnit\Framework\TestCase
         ));
     }
 
-    public function testItDecodesFromSyngleBytes(): void
+    public function testItDecodesFromSingleBytes(): void
     {
         $this->assertEquals([0x00], vlq_decode([0x00]));
         $this->assertEquals([0x40], vlq_decode([0x40]));
