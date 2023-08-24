@@ -114,7 +114,7 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox the count of the lanugages in the language list
+     * @testdox the count of the languages in the language list
      * @task_id 6
      */
     public function testLanguageListCount()
