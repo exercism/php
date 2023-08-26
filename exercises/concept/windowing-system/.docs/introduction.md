@@ -58,6 +58,6 @@ class Car
 }
 
 $a_car = new Car("red");
-$a_car->color; // => "red" by accesing the property
+$a_car->color; // => "red" by accessing the property
 $a_car->getColor(); // => "red" by invoking the instance method
 ```
