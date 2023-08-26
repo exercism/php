@@ -42,7 +42,7 @@ $d = 1_234.567; // as of PHP 7.4.0
 
 ### Common pitfalls
 
-Not all numbers and artithmetic operations can be performed with floating point numbers.
+Not all numbers and arithmetic operations can be performed with floating point numbers.
 Using floating point numbers to represent dollars and cents can lead to rounding errors.
 
 ```php

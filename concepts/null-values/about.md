@@ -19,7 +19,7 @@ null === false; // => false
 
 ## Working with null values
 
-In PHP, null values can be a common cause of error as they are often returned in place of an error state or to reprepresent nothing.
+In PHP, null values can be a common cause of error as they are often returned in place of an error state or to represent nothing.
 Preventing errors from arising often requires "null-checking" to assert the value is not null before operating on it.
 
 ```php

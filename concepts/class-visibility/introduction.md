@@ -2,7 +2,7 @@
 
 When using classes to organize code, the visibility of properties, methods, and constants can encourage proper abstractions and responsibilities.
 The visibility of properties, methods, and constants is defined by the usage of the `public`, `private`, or `protected` keywords at the time they are declared.
-Visibility is always in refernce to an external usage of the class property, method, or constant.
+Visibility is always in reference to an external usage of the class property, method, or constant.
 That is, if a property is declared `public`, it is observable and usable to external calls.
 Private properties, methods, and constants are not observable or usable to external calls.
 

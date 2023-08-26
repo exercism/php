@@ -24,7 +24,7 @@ $expanded = "The answer to life, the universe, and everything is $answer";
 ## Character Encoding Support
 
 Historically, string functions in PHP only supported ASCII characters and did not support modern Unicode encodings.
-ASCII characters are each 1 byte, wheras Unicode characters may be 1-4 bytes in length.
+ASCII characters are each 1 byte, whereas Unicode characters may be 1-4 bytes in length.
 If needing to manipulate Unicode strings safely, refer to the [multibyte versions][multi-byte-fns] of the historic functions.
 
 ```php

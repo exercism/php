@@ -31,7 +31,7 @@ $language_list = language_list("PHP", "Haskell", "Java", "C++", "Rust")
 
 ## 3. Define a function to add a language to the list
 
-Define the `add_to_language_list` function that takes 2 arguments, an array of languages, and the new lanugage.
+Define the `add_to_language_list` function that takes 2 arguments, an array of languages, and the new language.
 
 ```php
 <?php

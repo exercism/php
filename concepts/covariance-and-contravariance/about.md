@@ -31,7 +31,7 @@ class StringCalc extends Foo
 }
 ```
 
-We could substitue `StringCalc` in place of an original `Calculator` and everything would still work. The caller would still be able to send in the `float` or `int` it originally could, and the return type would still be the expected `int` or `float`.
+We could substitute `StringCalc` in place of an original `Calculator` and everything would still work. The caller would still be able to send in the `float` or `int` it originally could, and the return type would still be the expected `int` or `float`.
 
 Similarly, you can narrow the return type, meaning make it more specific by removing types from the union. This example takes advantage of this rule:
 
@@ -63,4 +63,4 @@ class InvalidCalc extends Calculator
 }
 ```
 
-The `InvalidCalc` class will not compile and has two probems. By reducing what is allowed as a parameter, `InvalidCalc` could not stand in for the original `Calculator` because it no longer accepts `float`. Additionally, it now could return a `string` which is also not within the allowed return types of the original class. 
+The `InvalidCalc` class will not compile and has two problems. By reducing what is allowed as a parameter, `InvalidCalc` could not stand in for the original `Calculator` because it no longer accepts `float`. Additionally, it now could return a `string` which is also not within the allowed return types of the original class. 
