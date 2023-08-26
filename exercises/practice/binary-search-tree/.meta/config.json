@@ -1,0 +1,10 @@
+{
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "authors": ["MichaelBunker"],
+  "contributors": [],
+  "files": {
+    "solution": ["BinarySearchTree.php"],
+    "test": ["BinarySearchTreeTest.php"],
+    "example": [".meta/example.php"]
+  }
+}
