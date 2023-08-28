@@ -895,6 +895,14 @@
         "difficulty": 5
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "7b51a6cf-e8d1-4942-9e0a-fa65b56a3821",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "binary-search-tree",
         "name": "Binary Search Tree",
         "uuid": "e13c2b59-75c1-4415-a439-b548721ebdbc",

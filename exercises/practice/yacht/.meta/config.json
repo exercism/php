@@ -1,0 +1,10 @@
+{
+  "blurb": "Score a single throw of dice in the game Yacht.",
+  "authors": ["MichaelBunker"],
+  "contributors": [],
+  "files": {
+    "solution": ["Yacht.php"],
+    "test": ["YachtTest.php"],
+    "example": [".meta/example.php"]
+  }
+}
