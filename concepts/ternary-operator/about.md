@@ -40,7 +40,7 @@ The obvious benefit of using a ternary operator is brevity, such that it is shor
   }
 
   $needExactAnswer = false;
-  $estimatedAnswer = 40
+  $estimatedAnswer = 40;
   $answer = $needExactAnswer ? expensiveCalculation() : $estimatedAnswer;
   ```
 

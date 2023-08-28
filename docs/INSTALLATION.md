@@ -2,7 +2,7 @@
 
 ## Which version to chose?
 
-We encourage to use a stable PHP release with active support. Currently this is **PHP 7.3, 7.4 and 8.0**. Details on current releases and their timelines can be found at [php.net/supported-versions](https://www.php.net/supported-versions.php). PHP 7.3 is only supported until December 2021, so PHP 7.4 or 8.0 are preferred. Version 8.1 will be available in late November 2021.
+We encourage to use a stable PHP release with active support. Currently this is **PHP 8.0, 8.1 and 8.2**. Details on current releases and their timelines can be found at [php.net/supported-versions](https://www.php.net/supported-versions.php).
 
 ## Install PHP
 
@@ -30,19 +30,19 @@ For further instructions, read the manual on [Installation on Unix systems](http
 
 ### macOS
 
-While PHP is often bundled with macOS, it is often outdated. We recommended installing php through [Homebrew](https://brew.sh/). You can install Homebrew following the instructions [here](https://brew.sh/#install).
+While PHP is often bundled with macOS, it is often outdated. We recommended installing PHP through [Homebrew](https://brew.sh/). You can install Homebrew following the instructions [here](https://brew.sh/#install).
 
 To confirm its installation try the following command, it should output Homebrew `3.2.x` at the time of this writing.
 ```bash
 $ brew --version 
 ```
 
-Install php via homebrew
+Install PHP via homebrew
 ```bash
 $ brew install php@8.0
 ```
 
-This should display the now installed version of php, at least version `8.0.x`.
+This should display the now installed version of PHP, at least version `8.0.x`.
 ```bash
 $ php -v
 ```
@@ -74,7 +74,7 @@ PHPUnit version 9 can be installed globally via [Composer](https://getcomposer.o
 > composer global require phpunit/phpunit ^9
 ```
 
-It you are using PHP 8+ make sure you install at version 9.5 or later.
+If you are using PHP 8+ make sure you install at version 9.5 or later.
 
 #### Manual installation
 

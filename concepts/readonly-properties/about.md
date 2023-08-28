@@ -10,8 +10,8 @@ The property is allowed to be assigned once, but any attempt to re-assign or mod
 class Block
 {
     public function __construct(
-        public readonly int $length;
-        public readonly int $width;
+        public readonly int $length,
+        public readonly int $width,
     ) {
     }
 }
@@ -26,8 +26,8 @@ Additionally it prevents the addition of dynamic properties.
 readonly class Block
 {
     public function __construct(
-        public int $length;
-        public int $width;
+        public int $length,
+        public int $width,
     ) {
     }
 }
