@@ -9,12 +9,12 @@ Functions that are assigned to a class are called `methods` by convention.
 
 class Door
 {
-    function lock()
+    public function lock()
     {
         // ...
     }
 
-    function unlock()
+    public function unlock()
     {
         // ...
     }
@@ -42,14 +42,14 @@ These properties may be referenced internally or externally.
 
 class Car
 {
-    public $color
+    public string $color;
 
-    function __construct($color)
+    public function __construct(string $color)
     {
         $this->color = $color;
     }
 
-    function getColor(): string
+    public function getColor(): string
     {
         return $this->color;
     }

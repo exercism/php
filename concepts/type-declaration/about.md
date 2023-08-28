@@ -18,14 +18,14 @@ declare(strict_types=1);
 
 class Driver
 {
-    string $serial_number;
+    public string $serial_number;
 
-    function setSerialNumber(string $number): void
+    public function setSerialNumber(string $number): void
     {
         $this->serial_number = $number;
     }
 
-    function getSerialNumber(): string
+    public function getSerialNumber(): string
     {
         return $this->serial_number; 
     }
