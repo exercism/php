@@ -57,6 +57,11 @@ There are pre-built stacks including [WAMP](https://www.wampserver.com/en/) - (W
 
 For further instructions, read the manual on [Installation on Windows systems](https://www.php.net/manual/en/install.windows.php).
 
+### Docker
+
+If you prefer containerized solutions, you can download [official PHP image from Docker Hub](https://hub.docker.com/_/php).
+You will also need [Docker](https://docs.docker.com/engine/install/).
+
 ### Other
 
 If you want to use a different OS, see instruction on [php.net/manual/en/install](https://www.php.net/manual/en/install.php).
