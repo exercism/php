@@ -21,4 +21,4 @@ foreach (iterable as &$value) {
 unset($value);
 ```
 
-However, `$value` persists after the `foreach` block so it is **strongly** recommended to break the reference using `unset($value)` after the block.
+However, `$value` persists after the `foreach` block so it is **strongly** recommended to use key access instead of a reference or to break the reference using `unset($value)` after the block.
