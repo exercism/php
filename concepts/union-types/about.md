@@ -11,7 +11,7 @@ function add(int|float $a, int|float $b): int|float
 
 ## Nuances
 
-- `null` cannot be used as a standalone type, but types may be declared _nullable_ by either using `?Type` or `Type1|Type2|null`.
-- `false` cannot be used as a standalone type, and is included for historical reasons, as many legacy functions may return `false` when an error is encountered.
+- `null` cannot be used as a standalone type, but types may be declared _nullable_ by either using `?Type` or `Type1|Type2|null`. As of [PHP 8.2](https://www.php.net/manual/en/language.types.declarations.php), null can be used as a standalone type.
+- `false` cannot be used as a standalone type, and is included for historical reasons, as many legacy functions may return `false` when an error is encountered. As of [PHP 8.2](https://www.php.net/manual/en/language.types.declarations.php) false can be used as a standalone type.
 - declared duplicate or redundant types will result in a compile-time error.
 - `void` cannot be used as part of a union type declaration.
