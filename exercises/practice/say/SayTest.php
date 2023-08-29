@@ -117,7 +117,8 @@ class SayTest extends PHPUnit\Framework\TestCase
     public function testABigNumber(): void
     {
         $this->assertEquals(
-            'nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three',
+            'nine hundred eighty-seven billion six hundred fifty-four million '
+            . 'three hundred twenty-one thousand one hundred twenty-three',
             say(987_654_321_123),
         );
     }
