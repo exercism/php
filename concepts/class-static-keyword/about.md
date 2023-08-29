@@ -8,9 +8,9 @@ Using the `static` and `self` keywords, properties and methods may exist in refe
 
 class Book
 {
-    private static $genre = 'Adventure';
+    static $genre = 'Adventure';
 
-    public static function getGenre()
+    static function getGenre()
     {
         return self::$genre;
     }
@@ -30,9 +30,9 @@ Static class methods can only call other static class properties or class method
 
 class Book
 {
-    public string $name = 'Treasure Island';
+    $name = 'Treasure Island';
 
-    public static function getName()
+    static function getName()
     {
         // This static method cannot access the instance variable
         return $this->name;
