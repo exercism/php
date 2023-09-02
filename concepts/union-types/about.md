@@ -11,7 +11,6 @@ function add(int|float $a, int|float $b): int|float
 
 ## Nuances
 
-- `null` cannot be used as a standalone type, but types may be declared _nullable_ by either using `?Type` or `Type1|Type2|null`.
-- `false` cannot be used as a standalone type, and is included for historical reasons, as many legacy functions may return `false` when an error is encountered.
+- `null` types may be declared _nullable_ by either using `?Type` or `Type1|Type2|null`.
 - declared duplicate or redundant types will result in a compile-time error.
 - `void` cannot be used as part of a union type declaration.

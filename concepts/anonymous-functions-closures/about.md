@@ -36,7 +36,7 @@ PHP also has a shorter function syntax called `arrow functions`. They are requir
 fn(arguments) => expression
 ```
 
-In this function style, you do not need to use `use`. It will automatically closed over and capture any values in the parent scope. The expression in these arrow functions is automatically returned without needing to use the `return` keyword. That would allow us to rewrite the `onlyOdds` function above like so:
+In this function style, you do not need to use `use`. It will automatically close over and capture any values in the parent scope. The expression in these arrow functions is automatically returned without needing to use the `return` keyword. That would allow us to rewrite the `onlyOdds` function above like so:
 
 ```php
 function onlyOdds(array $numbers): array
@@ -64,7 +64,7 @@ function positiveAverage(array $numbers): float
     $count = 0;
     return array_walk(
       $numbers, 
-      function($num) use (&$count, %$toal) {
+      function($num) use (&$count, &$total) {
           $total += abs($num);
           $count++;
       }

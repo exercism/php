@@ -12,13 +12,3 @@ foreach (iterable as $key => $value) {
 }
 ```
 
-When iterating arrays, it is possible to modify the original array by preceding the `$value` with `&`:
-
-```php
-foreach (iterable as &$value) {
-  // statements
-}
-unset($value);
-```
-
-However, `$value` persists after the `foreach` block so it is **strongly** recommended to break the reference using `unset($value)` after the block.

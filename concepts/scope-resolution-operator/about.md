@@ -80,7 +80,7 @@ class AnotherClass extends MyClass
 // (new AnotherClass())->getMaximum() => 10
 ```
 
-Most commonly in object oriented programming `parent` is used to call the call the parent constructor when an object is being instantiated:
+Most commonly in object oriented programming `parent` is used to call the parent constructor when an object is being instantiated:
 
 ```php
 class ChildClass extends ParentClass
