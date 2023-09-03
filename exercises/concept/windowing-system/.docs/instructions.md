@@ -65,13 +65,13 @@ Additionally `ProgramWindow` requires a resize function, which receives the `Siz
 <?php 
 
 $window = new ProgramWindow();
-$size = new Size(1080, 764);
+$size = new Size(764, 1080);
 $window->resize($size)
 
-$winodw->width;
-// => 1080
 $window->height;
 // => 764
+$window->width;
+// => 1080
 ```
 
 ## 4. Define a function to move the window
@@ -87,8 +87,8 @@ $window = new ProgramWindow();
 $position = new Position(80, 313);
 $window->move($position)
 
-$winodw->x;
-// => 313
 $window->y;
 // => 80
+$window->x;
+// => 313
 ```
