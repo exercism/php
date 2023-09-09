@@ -24,7 +24,7 @@ The method should take in a string, representing words, and return an array of l
 ## 4. Document the type when checking if a value will fit into a form
 
 Add parameter types and a return type to the `checkLength` method in the `Form` class.
-The method should take in a string work, and an integer maximum length, and return a true or false value.
+The method should take in a string word, and an integer maximum length, and return a true or false value.
 
 ## 5. Document the type when formatting an address in the form
 
