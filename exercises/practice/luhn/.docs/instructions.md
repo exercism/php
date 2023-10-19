@@ -12,9 +12,9 @@ The task is to check if a given string is valid.
 Validating a Number
 ------
 
-Strings of length 1 or less are not valid. Spaces are allowed in the input,
-but they should be stripped before checking. All other non-digit characters
-are disallowed.
+- Strings of length 1 or less are not valid.
+- Spaces are allowed in the input, but they should be stripped before checking.
+- All other non-digit characters are NOT allowed and should be rejected without checking.
 
 ## Example 1: valid credit card number
 
