@@ -65,7 +65,7 @@ $totalCost = $tires * $priceOfTire; // 1000
 
 ## Modulo (%)
 
-The modulo operator returns the remainder when the left value is divided by the right value. This operator very useful for determining if a number evenly divides into another, determining if a value is even or odd and a lot more.
+The modulo operator returns the remainder when the left value is divided by the right value. This operator is very useful for determining if a number evenly divides into another, determining if a value is even or odd, and a lot more.
 
 ```php
 $value = 3;
@@ -79,7 +79,7 @@ if ($isOdd === 1) {
 
 ## Exponentiation (**)
 
-The exponentiation operator is used to raise the left value to the power of the right value. Prior to PHP 5.6 you would need to use the `pow` function to perform the same thing. 
+The exponentiation operator is used to raise the left value to the power of the right value. Prior to PHP 5.6, you would need to use the `pow` function to perform the same thing. 
 
 ```php
 $sideLength = 13;
@@ -95,16 +95,16 @@ $side = $squareArea ** .5; // 12
 
 ## Order of Operations
 
-PHP follows the standard order of operations for math. This means that rather that performing operations left to right, each operator has a precedence and the operations are resolved according to their precedence. The order of oeprations is:
+PHP follows the standard order of operations for math. This means that rather than performing operations left to right, each operator has a precedence and the operations are resolved according to their precedence. The order of operations is:
 
 * parentheses
 * exponentiation
 * multiplication, division
 * addition, subtraction
 
-Multiplication and division are at the same level of precedence as each other. Similarly, addition and subtraction are at the same level of precence.
+Multiplication and division are at the same level of precedence as each other. Similarly, addition and subtraction are at the same level of precedence.
 
-This means the value below would be 17 instead of 10, since multiplication has a higher precedence than addition:
+This means the value below would be 17 instead of 10, since multiplication has higher precedence than addition:
 
 ```php
 $value = 2 + 3 * 5;
