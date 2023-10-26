@@ -66,7 +66,7 @@ Assume the list will always have at least one item.
 
 $language_list = language_list("PHP", "Prolog");
 // => ["PHP", "Prolog"]
-$fisrt = current_language($language_list);
+$first = current_language($language_list);
 // => "PHP"
 ```
 
