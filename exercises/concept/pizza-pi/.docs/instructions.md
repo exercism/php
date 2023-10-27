@@ -56,9 +56,9 @@ Lilly calculated an equation to determine how many pizzas can  of some diameter 
 
 Create a function that:
 * Takes a side-length dimension of a cheese cube
-* Takes the desired thickness of the cheese layer331
+* Takes the desired thickness of the cheese layer
 * Takes the diameter of the pizza
-* And returns the number of pizzas that can be made while rounding down.331
+* And returns the number of pizzas that can be made while rounding down.
 
 For example, given a 25x25x25cm cheese cube, 0.5cm thick cheese layer and pizzas 30cm in diameter:
 
