@@ -29,7 +29,7 @@ jobs:
 
       - uses: shivammathur/setup-php@81cd5ae0920b34eef300e1775313071038a53429
         with:
-          version: ${{ matrix.php-version }}
+          php-version: ${{ matrix.php-version }}
           extensions: gmp
 
       - name: Install dependencies
