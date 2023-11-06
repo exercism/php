@@ -28,6 +28,16 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * @testdox getting the first letter removes whitespace from the name
+     * @task_id 1
+     */
+    public function testFirstLetterRemovesWhitespace()
+    {
+        $sweetheart = new HighSchoolSweetheart();
+        $this->assertEquals('J', $sweetheart->firstLetter(' Jane'));
+    }
+
+    /**
      * @testdox gets the first letter and appends a dot
      * @task_id 2
      */
