@@ -16,11 +16,11 @@ jobs:
       fail-fast: false
       matrix:
         php-version: [8.0, 8.1, 8.2]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-22.04, windows-2022, macOS-latest]
 
     steps:
       - name: Set git line endings
-        if: ${{ matrix.os == 'windows-latest' }}
+        if: ${{ matrix.os == 'windows-2022' }}
         run: |
           git config --system core.autocrlf false
           git config --system core.eol lf
