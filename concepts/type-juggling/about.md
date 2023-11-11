@@ -1,6 +1,7 @@
 # Type Juggling
 
-Type juggling may also be known as type coercion. Type juggling is when two values of different types are coerced to the same type to perform an operation.
+Type juggling may also be known as type coercion.
+Type juggling is when two values of different types are coerced to the same type to perform an operation.
 
 ```php
 $baskets = 5 // int
@@ -9,9 +10,11 @@ $baskets * $apples_per_basket
 # => 15 // int
 ```
 
-This implicitly converts the `string` to an `int` to execute the `*` operation. The decision, which type to coerce, is made by PHP according to the rules of the operation and these rules vary largely.
+This implicitly converts the `string` to an `int` to execute the `*` operation.
+The decision, which type to coerce, is made by PHP according to the rules of the operation and these rules vary largely.
 
-Type juggling **does not change** the type of the value stored in a variable. Only the value processed by the operation is converted.
+Type juggling **does not change** the type of the value stored in a variable.
+Only the value processed by the operation is converted.
 
 ```php
 $apples_per_basket = "3" // string
@@ -28,7 +31,8 @@ strlen(12321);
 
 ## Turn off type juggling
 
-Type juggling happens by default. We can stop PHP from coercing and force it to check types strictly:
+Type juggling happens by default.
+We can stop PHP from coercing and force it to check types strictly:
 
 ```php
 <?php
@@ -48,9 +52,11 @@ $my_number = (int) $apples_per_basket // cast string to int
 # => 3 // int
 ```
 
-This will forcibly convert the value to the type specified in the brackets `(...)`. Allowed types for manual type casting are: `bool`, `int`, `float`, `string`, `array`, `object`.
+This will forcibly convert the value to the type specified in the brackets `(...)`.
+Allowed types for manual type casting are: `bool`, `int`, `float`, `string`, `array`, `object`.
 
-Type casting **does not change** the type of the value stored in a variable. Only the value processed by the operation is converted.
+Type casting **does not change** the type of the value stored in a variable.
+Only the value processed by the operation is converted.
 
 ```php
 $apples_per_basket = "3" // string
@@ -86,7 +92,8 @@ Relying on casting, either explicitly or implicitly, may produce errors in a lar
 
 ## Explicit type casting to `array` and `object`
 
-Values can be cast to `array` and `object` types as well. If a value, which is not an array or an object is cast to an `array`, it is converted to a single item present in an array:
+Values can be cast to `array` and `object` types as well.
+If a value, which is not an array or an object is cast to an `array`, it is converted to a single item present in an array:
 
 ```php
 $day_of_the_week = 'Monday';
