@@ -39,7 +39,7 @@ $my_number = (int) $apples_per_basket // cast string to int
 # $apples_per_basket => "3" // string
 ```
 
-If you want to change the type of a value stored in a variable, store the type casted result into it:
+To change the type of a value stored in a variable, we store the type casted result into it:
 
 ```php
 $apples_per_basket = "3" // string
