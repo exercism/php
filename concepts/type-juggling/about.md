@@ -28,7 +28,7 @@ strlen(12321);
 
 ## Turn off type juggling
 
-Type juggling happens by default. As for type declarations on variables and parameters, which we learned about before, we can stop PHP from coercing and force it to check types strictly:
+Type juggling happens by default. We can stop PHP from coercing and force it to check types strictly:
 
 ```php
 <?php
