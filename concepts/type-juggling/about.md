@@ -9,6 +9,16 @@ $baskets * $apples_per_basket
 # => 15 // int
 ```
 
+This implicitly converts the `string` to an `int` to execute the `*` operation. The decision, which type to coerce, is made by PHP according to the rules of the operation and these rules vary largely.
+
+Type juggling **does not change** the type of the value stored in a variable. Only the value processed by the operation is converted.
+
+```php
+$apples_per_basket = "3" // string
+5 * $apples_per_basket
+# $apples_per_basket => "3" // string
+```
+
 ## Type Casting
 
 Rather than relying on implicit coercion, we can explicitly force a value to be evaluated as a certain type using `C`-style type casting:
@@ -20,6 +30,22 @@ $my_number = (int) $apples_per_basket // cast string to int
 ```
 
 This will forcibly convert the value to the type specified in the brackets `(...)`. Allowed types for manual type casting are: `bool`, `int`, `float`, `string`, `array`, `object`.
+
+Type casting **does not change** the type of the value stored in a variable. Only the value processed by the operation is converted.
+
+```php
+$apples_per_basket = "3" // string
+$my_number = (int) $apples_per_basket // cast string to int
+# $apples_per_basket => "3" // string
+```
+
+If you want to change the type of a value stored in a variable, store the type casted result into it:
+
+```php
+$apples_per_basket = "3" // string
+$apples_per_basket = (int) $apples_per_basket // cast string to int
+# => 3 // int
+```
 
 ## Loss of information
 
