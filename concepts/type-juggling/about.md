@@ -19,6 +19,13 @@ $apples_per_basket = "3" // string
 # $apples_per_basket => "3" // string
 ```
 
+Type coercion also happens when calling functions and methods:
+
+```php
+strlen(12321);
+# => 5
+```
+
 ## Type Casting
 
 Rather than relying on implicit coercion, we can explicitly force a value to be evaluated as a certain type using `C`-style type casting:
