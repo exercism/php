@@ -6,7 +6,7 @@ Type juggling may also be known as type coercion. Type juggling is when two valu
 $baskets = 5 // int
 $apples_per_basket = "3" // string
 $baskets * $apples_per_basket
-# => 15
+# => 15 // int
 ```
 
 ## Type Casting
