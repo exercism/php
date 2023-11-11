@@ -14,9 +14,9 @@ $baskets * $apples_per_basket
 Rather than relying on implicit coercion, we can explicitly force a value to be evaluated as a certain type using `C`-style type casting:
 
 ```php
-$my_number = "3"
-(int) 3
-# => 3
+$apples_per_basket = "3" // string
+$my_number = (int) $apples_per_basket // cast string to int
+# => 3 // int
 ```
 
 This will forcibly convert the value to the type specified in the brackets `(...)`. Allowed types for manual type casting are: `bool`, `int`, `float`, `string`, `array`, `object`.
