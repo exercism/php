@@ -74,7 +74,7 @@ $day_of_the_week = 'Monday';
 (array) $day_of_the_week
 // => array(1) {
 //      [0]=>
-//        string(1) "Monday"
+//        string(6) "Monday"
 //    }
 ```
 
