@@ -29,19 +29,6 @@ strlen(12321);
 # => 5
 ```
 
-## Turn off type juggling
-
-Type juggling happens by default.
-We can stop PHP from coercing and force it to check types strictly:
-
-```php
-<?php
-
-declare(strict_types=1);
-
-strlen(12345); // => TypeError
-```
-
 ## Type Casting
 
 Rather than relying on implicit coercion, we can explicitly force a value to be evaluated as a certain type using `C`-style type casting:
