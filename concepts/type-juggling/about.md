@@ -10,7 +10,7 @@ $baskets * $apples_per_basket
 # => 15 // int
 ```
 
-This implicitly converts the `string` to an `int` to execute the `*` operation.
+When the expression is evaluated, the string value is implicitly converted to an `int` to match the expectation of the `*` operator.
 The decision, which type to coerce, is made by PHP according to the rules of the operation and these rules vary largely.
 
 Type coercion also happens when calling functions and methods:
@@ -30,8 +30,8 @@ $my_number = (int) $apples_per_basket // cast string to int
 # => 3 // int
 ```
 
-This will forcibly convert the value to the type specified in the brackets `(...)`.
-Allowed types for manual type casting are: `bool`, `int`, `float`, `string`, `array`, `object`.
+This will convert the value to the type specified in the brackets `(...)`.
+All primitive types can be used as the target type: `bool`, `int`, `float`, `string`, `array`, `object`.
 
 ## Temporary conversion only
 
