@@ -17,6 +17,8 @@ The functions should be simple so that the exercise can appear early in the conc
 
 ## Prerequisites
 
+- `arithmetic-operators`
+- `arrays`
 - `integers`
 - `strings`
 - `type-declaration`

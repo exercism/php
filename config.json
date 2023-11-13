@@ -103,6 +103,7 @@
         "slug": "lucky-numbers",
         "name": "Lucky Numbers",
         "prerequisites": [
+          "arithmetic-operators",
           "arrays",
           "integers",
           "strings",
