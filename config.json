@@ -13,7 +13,6 @@
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4,
-    "ace_editor_language": "php",
     "highlightjs_language": "php"
   },
   "test_runner": {
@@ -96,6 +95,22 @@
         ],
         "concepts": [
           "type-declaration"
+        ],
+        "status": "beta"
+      },
+      {
+        "uuid": "23de47c6-d020-448f-860c-cf15ffd4db17",
+        "slug": "lucky-numbers",
+        "name": "Lucky Numbers",
+        "prerequisites": [
+          "arithmetic-operators",
+          "arrays",
+          "integers",
+          "strings",
+          "type-declaration"
+        ],
+        "concepts": [
+          "type-juggling"
         ],
         "status": "beta"
       }

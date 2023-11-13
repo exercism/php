@@ -1,0 +1,22 @@
+{
+   "authors": [
+      "mk-mxp"
+   ],
+   "contributors": [],
+   "files": {
+      "solution": [
+         "LuckyNumbers.php"
+      ],
+      "test": [
+         "LuckyNumbersTest.php"
+      ],
+      "exemplar": [
+         ".meta/exemplar.php"
+      ]
+   },
+   "language_version": ">=8.1",
+   "blurb": "Practice type juggling while helping your friend Kojo with his website www.fun-with-numbers.com.",
+   "forked_from": [
+      "javascript/lucky-numbers"
+   ]
+}
