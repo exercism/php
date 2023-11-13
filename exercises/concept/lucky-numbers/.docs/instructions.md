@@ -61,7 +61,7 @@ Here is some more information on how the value of an input field is provided.
 
 - If the user types something into a field, the associated value is always a string even if the user only typed in numbers.
 - If the user types something but deletes it again, the variable will be an empty string.
-- Before the user even started typing, the variable can be `null`.
+- Before the user even started typing, the variable will be an empty string.
 
 Write a function `validate` that accepts the user input as a parameter.
 If the user did not provide any input, `validate` should return `'Required field'`.
