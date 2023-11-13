@@ -82,4 +82,4 @@ $lucky_numbers->validate('abc');
 // => 'Must be a whole number larger than 0'
 ```
 
-[php-type-cast-int]: https://www.php.net/manual/de/language.types.integer.php#language.types.integer.casting.from-string
+[php-type-cast-int]: https://www.php.net/manual/en/language.types.integer.php#language.types.integer.casting.from-string
