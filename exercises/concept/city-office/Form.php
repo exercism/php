@@ -9,7 +9,7 @@ class Form
 
     function letters($word)
     {
-        return explode("", $word);
+        return mb_str_split($word);
     }
 
     function checkLength($word, $max_length)
