@@ -2,23 +2,23 @@
 
 class Form
 {
-    function blanks(int $length): string
+    public function blanks(int $length): string
     {
         return str_repeat(" ", $length);
     }
 
-    function letters(string $word): array
+    public function letters(string $word): array
     {
         return mb_str_split($word);
     }
 
-    function checkLength(string $word, int $max_length): bool
+    public function checkLength(string $word, int $max_length): bool
     {
         $difference = mb_strlen($word) - $max_length;
         return $difference <= 0;
     }
 
-    function formatAddress(Address $address): string
+    public function formatAddress(Address $address): string
     {
         $formatted_street = mb_strtoupper($address->street);
         $formatted_postal_code = mb_strtoupper($address->postal_code);
