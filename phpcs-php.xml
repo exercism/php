@@ -6,6 +6,21 @@
 >
   <description>Coding standard for Exercism PHP exercises</description>
 
+  <!-- Expect all files are UTF-8 -->
+  <arg name="encoding" value="utf-8" />
+
+  <!-- No warnings (ignore them) -->
+  <arg value="n" />
+
+  <!-- Show sniffs (it's easy to find solutions knowing the code) -->
+  <arg value="s" />
+
+  <!-- A TAB is 4 chars wide (does not replace them, for calculation only!) -->
+  <arg name="tab-width" value="4" />
+
+  <!-- Run on 10 files in parallel -->
+  <arg name="parallel" value="10" />
+
   <file>exercises</file>
   <file>src</file>
 
@@ -16,6 +31,10 @@
     <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
     <exclude name="PSR1.Classes.ClassDeclaration.MultipleClasses" />
     <exclude name="PSR1.Files.SideEffects.FoundWithSymbols" />
+  </rule>
+  <rule ref="Squiz.Scope.MethodScope.Missing">
+    <exclude-pattern>*/concept/city-office/*</exclude-pattern>
+    <exclude-pattern>*/concept/windowing-system/*</exclude-pattern>
   </rule>
   <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/TypeHints/DeclareStrictTypesSniff.php">
     <exclude-pattern>*/exemplar\.php</exclude-pattern>

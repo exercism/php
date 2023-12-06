@@ -7,7 +7,7 @@ class ProgramWindow
     public $height;
     public $width;
 
-    public function __construct()
+    function __construct()
     {
         $this->y = 0;
         $this->x = 0;
@@ -15,13 +15,13 @@ class ProgramWindow
         $this->width = 800;
     }
 
-    public function move(Position $position)
+    function move(Position $position)
     {
         $this->y = $position->y;
         $this->x = $position->x;
     }
 
-    public function resize(Size $size)
+    function resize(Size $size)
     {
         $this->height = $size->height;
         $this->width = $size->width;
@@ -33,7 +33,7 @@ class Position
     public $y;
     public $x;
 
-    public function __construct($y, $x)
+    function __construct($y, $x)
     {
         $this->y = $y;
         $this->x = $x;
@@ -45,7 +45,7 @@ class Size
     public $height;
     public $width;
 
-    public function __construct($height, $width)
+    function __construct($height, $width)
     {
         $this->height = $height;
         $this->width = $width;
