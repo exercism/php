@@ -1,53 +1,60 @@
 # Exercism PHP Track
 
-![Configlet Status](https://github.com/exercism/php/workflows/Configlet%20CI/badge.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/68242198cd124a3ebcbdc291d0e0eda4)](https://www.codacy.com/app/borgogelli/php?utm_source=github.com&utm_medium=referral&utm_content=borgogelli/php&utm_campaign=Badge_Grade)
-
 Exercism exercises in PHP
+
+Follow these instructions, if you want to contribute to the track.
+You must have a BASH shell to run the tooling locally.
+
+If you only want to solve the exercises, go to the [track docs][track-docs] and choose your installation option there.
 
 ## Install Dependencies
 
-### All dependencies
+You must have installed `composer` as a global tool as recommended in the [PHP track installation docs][composer-installation-docs].
 
 ```shell
-> ./bin/install.sh
+bin/fetch-configlet
+composer install
 ```
 
-### Only tests dependencies
+You now have all tools required to contribute.
 
-```shell
-> ./bin/install-phpunit-9.sh
-```
+## Running Exercism resources management
 
-### Only style-check dependencies
-
-```shell
-> ./bin/install-phpcs.sh
-```
+`bin/configlet` is a tool to manage exercism resources in this track.
+See [Building Exercism docs][configlet-docs].
 
 ## Running Unit Test Suite
 
-### PHPUnit 9
+We use PHPUnit 9.6.x and a shell loop injecting `exemplar.php` as the solution for testing:
 
 ```shell
-> PHPUNIT_BIN="./bin/phpunit-9.phar" ./bin/test.sh
+composer test:run
 ```
 
 ## Running Style Checker
 
-### PSR-12 rules
+We apply PSR-12 rules with minor tweaks and some exceptions:
 
 ```shell
-> PHPCS_BIN="./bin/phpcs.phar" PHPCS_RULES="./phpcs-php.xml" ./bin/lint.sh
+composer lint:check
+```
+
+To auto-fix the coding styles:
+
+```shell
+composer lint:fix
 ```
 
 ## Contributing
 
 - Read the documentation at [Exercism][docs].
-- Follow the [PSR-12] coding style (PHP uses a slightly [modified] version of [PSR-12]).
+- Follow the [PSR-12] coding style (Exercisms PHP track uses a slightly [modified] version of [PSR-12]).
 - CI is run on all pull requests, it must pass the required checks for merge.
+- CI is running all tests on PHP 8.0 to PHP 8.2
 
-[psr-12]: https://www.php-fig.org/psr/psr-12
+[composer-installation-docs]: https://exercism.org/docs/tracks/php/installation#h-install-composer
+[configlet-docs]: https://exercism.org/docs/building/configlet
 [docs]: https://exercism.org/docs
-[@group annotation]: https://phpunit.de/manual/4.1/en/appendixes.annotations.html#appendixes.annotations.group
 [modified]: phpcs-php.xml
+[psr-12]: https://www.php-fig.org/psr/psr-12
+[track-docs]: https://exercism.org/docs/tracks/php/installation
