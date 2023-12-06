@@ -33,7 +33,7 @@ composer test:run
 
 ## Running Style Checker
 
-We apply PSR-12 rules with minor tweaks and some exceptions:
+We use a slightly [modified] version of [PSR-12] and some exceptions:
 
 ```shell
 composer lint:check
