@@ -16,8 +16,8 @@
     "squizlabs/php_codesniffer": "^3.8"
   },
   "scripts": {
-    "lint:check": "phpcs --standard=phpcs-php.xml",
-    "lint:fix": "phpcbf --standard=phpcs-php.xml",
+    "lint:check": "phpcs -v",
+    "lint:fix": "phpcbf",
     "tests:run": "PHPUNIT_BIN='phpunit' bin/test.sh"
   }
 }
