@@ -48,7 +48,7 @@ class Calculator {
 
 ## Naming conventions
 
-Classnames should all be `PascalCase`.
+Class names should all be `PascalCase`.
 Depending on the style standard; variables, functions, method names may be either `camelCase` or `snake_case`.
 Names may contain letters `a-zA-Z`, numbers `0-9`, and underscores `_` but they cannot start with a number.
 
