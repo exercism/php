@@ -42,6 +42,7 @@
     <exclude-pattern>*/hello-world/*</exclude-pattern>
     <properties>
       <property name="linesCountBeforeDeclare" value="1" />
+      <property name="linesCountAfterDeclare" value="1" />
       <property name="spacesCountAroundEqualsSign" value="0" />
     </properties>
   </rule>
