@@ -11,8 +11,8 @@
   },
   "require-dev": {
     "php": "^7.4|^8.0",
-    "slevomat/coding-standard": "^8.5",
-    "squizlabs/php_codesniffer": "^3.6"
+    "slevomat/coding-standard": "^8.14.1",
+    "squizlabs/php_codesniffer": "^3.8"
   },
   "scripts": {
     "lint:check": "./vendor/bin/phpcs --ignore=*/hello-world/*,*/concept/* --standard=phpcs-php.xml ./exercises",

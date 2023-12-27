@@ -10,7 +10,7 @@
   </rule>
   <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/TypeHints/DeclareStrictTypesSniff.php">
     <properties>
-      <property name="newlinesCountBetweenOpenTagAndDeclare" type="int" value="1" />
+      <property name="linesCountBeforeDeclare" type="int" value="1" />
       <property name="spacesCountAroundEqualsSign" type="int" value="0" />
     </properties>
   </rule>
