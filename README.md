@@ -55,6 +55,6 @@ composer lint:fix
 [composer-installation-docs]: https://exercism.org/docs/tracks/php/installation#h-install-composer
 [configlet-docs]: https://exercism.org/docs/building/configlet
 [docs]: https://exercism.org/docs
-[modified]: phpcs-php.xml
+[modified]: phpcs.xml
 [psr-12]: https://www.php-fig.org/psr/psr-12
 [track-docs]: https://exercism.org/docs/tracks/php/installation
