@@ -5,31 +5,21 @@ on:
   push:
     branches:
       - main
-      - master
   pull_request:
 
 jobs:
   test:
-    name: PHP ${{ matrix.php-version }} - ${{ matrix.os }} - ${{ github.event_name }}
-    runs-on: ${{ matrix.os }}
+    name: PHPCS Linting - ${{ github.event_name }}
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
-      matrix:
-        php-version: [8.0, 8.1, 8.2]
-        os: [ubuntu-22.04, windows-2022, macOS-latest]
 
     steps:
-      - name: Set git line endings
-        if: ${{ matrix.os == 'windows-2022' }}
-        run: |
-          git config --system core.autocrlf false
-          git config --system core.eol lf
-
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - uses: shivammathur/setup-php@e6f75134d35752277f093989e72e140eaa222f35
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: '8.2'
           extensions: gmp
           tools: composer
 
