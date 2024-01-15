@@ -10,7 +10,7 @@ Define the `Lasagna::expectedCookTime` function that does not take any arguments
 
 ```php
 <?php
-$timer = new Lasagna();:
+$timer = new Lasagna();
 $timer->expectedCookTime()
 // => 40
 ```
