@@ -22,7 +22,7 @@
 
 ## 4. Put the initials inside of the heart
 
-- There is a special syntax for [expading variables][string-variables] inside of a string.
+- There is a special syntax for [expanding variables][string-variables] inside of a string.
 - There is a special syntax for writing [multiline strings][heredoc-syntax] without needing to escape newlines.
 
 [string-type-documentation]: https://www.php.net/manual/en/language.types.string.php
