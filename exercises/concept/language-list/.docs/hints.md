@@ -7,7 +7,7 @@
 
 ## 1. Define a function to return an empty language list
 
-- Review the [language referece][ref-arrays]
+- Review the [language reference][ref-arrays]
 - You can return an empty array
 
 ## 2. Modify function to create a list from any number of languages
