@@ -3,11 +3,12 @@
 ## General
 
 - Revisit the [Objects Concept][concept-class-basics] if needed to fresh up on the basics.
+- Carefully read the instructions for the parameter positioning of `x`, `y`, `width`, and `height`. These are easily confused.
 
 ## 1. Define a ProgramWindow class
 
 - Remember to use [class syntax][php-class] for this task.
-- Define [properties][php-properties] by adding them to class declaration.
+- Define [properties][php-properties] by adding them to the class declaration.
 
 ## 2. Define a constructor function for the ProgramWindow class
 
