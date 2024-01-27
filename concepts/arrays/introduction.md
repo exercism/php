@@ -15,7 +15,7 @@ $no_keys == $integer_keys // => equal returns true
 $no_keys === $integer_keys // => strictly equal returns true
 ```
 
-A values are of `mixed` type, and each value in an array is not required to be of the same type.
+All values are of `mixed` type, and each value in an array is not required to be of the same type.
 
 ## Using Arrays
 
@@ -29,4 +29,3 @@ $prime_numbers[5] = 13; // replace 12 with 13
 
 $prime_numbers[] = 17; // array now contains [1, 3, 5, 7, 11, 13, 17]
 ```
-
