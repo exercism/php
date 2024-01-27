@@ -78,8 +78,8 @@ It should return the number of languages in the list.
 ```php
 <?php
 
-$language_list = $language_list("PHP", "Prolog", "Wren");
+$language_list = language_list("PHP", "Prolog", "Wren");
 // => ["PHP", "Prolog", "Wren"]
 language_list_length($language_list);
-// => 2
+// => 3
 ```
