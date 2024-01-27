@@ -49,7 +49,7 @@ class Car
         $this->color = $color;
     }
 
-    function getColor(): string
+    function getColor()
     {
         return $this->color;
     }
