@@ -17,7 +17,7 @@
 ## 3. Define a function to add a language to the list
 
 - Create a new function to perform the operation
-- Re-use an [existing function][ref-array-functions] or use the [insert syntax][squre-bracket-syntax]
+- Re-use an [existing function][ref-array-functions] or use the [insert syntax][square-bracket-syntax]
 
 ## 4. Define a function to remove an item from the language list
 
