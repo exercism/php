@@ -38,6 +38,7 @@ The student shall mostly understand what has been predefined using these other c
 - Other arithmetic operators than `-`, `+` and `*`.
 - Type juggling, namely arithmetic operators `-`, `+` and `*` with strings.
 - Naming rules for identifiers.
+- Defining constants for magic numbers.
 - Memory and performance characteristics.
 - Type declarations.
 - Strict types.
