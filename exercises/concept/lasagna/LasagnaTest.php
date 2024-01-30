@@ -22,7 +22,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Returns cooking time in minutes is as stated in the cook book
+     * @testdox Returns cooking time in minutes as stated in the cook book
      * @task_id 1
      */
     public function testExpectedCookTime(): void
@@ -52,7 +52,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Returns how many minutes you spent preparing the lasagna
+     * @testdox Returns how many minutes you spent preparing the lasagna with 7 layers
      * @task_id 3
      */
     public function testTotalPreparationTime(): void
@@ -62,7 +62,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Returns how many minutes in total you've worked on cooking the lasagna
+     * @testdox Returns the total minutes you have worked on the lasagna with 4 layers that is 13 minutes in the oven
      * @task_id 4
      */
     public function testTotalElapsedTime(): void
@@ -72,7 +72,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Returns message indicating that the lasagna is ready to eat
+     * @testdox Returns the message indicating that the lasagna is ready to eat
      * @task_id 5
      */
     public function testAlarm(): void
