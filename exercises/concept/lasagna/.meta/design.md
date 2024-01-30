@@ -55,7 +55,7 @@ The concepts this exercise unlocks are:
 - `booleans`:
   - Know what a Boolean value is.
   - Know how to define a Boolean value.
-  - Know how to use Boolean values in Boolean operations.
+  - Know how to use Boolean values in logical operations.
 - `floating-point-numbers`:
   - Know what a Floating point number is.
   - Know how to define a Floating point number.
