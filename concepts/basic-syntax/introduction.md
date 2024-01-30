@@ -1,6 +1,6 @@
 # Basics
 
-For more on these topics revisit the [concept page][exercism-concept].
+For more detailed information about these topics visit the [concept page][exercism-concept].
 
 ## General syntax
 
@@ -29,6 +29,10 @@ Variable names must start with a dollar `$` sign and follow the [naming conventi
 
 ```php
 $count = 1; // Assign value of 1
+
+// Strings can be created by enclosing the characters
+// within single `'` quotes or double `"` quotes.
+$message = "Success!";
 ```
 
 ## Functions and Methods

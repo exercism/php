@@ -33,8 +33,8 @@ Variable names must start with a dollar `$` sign.
 To dig deeper into variables, see [PHP variable docs][php-variables].
 
 ```php
-$count = 1; // Assigned an integer value of 1
-$count = 2; // Re-assigned a new value to the variable
+$count = 1; // Assign an integer value of 1
+$count = 2; // Re-assign a new value to the variable
 
 $count = false; // You may assign any value type
 
