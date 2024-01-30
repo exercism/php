@@ -26,7 +26,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     public function testRemainingCookTime(): void
     {
         $lasagna = new Lasagna();
-        $this->assertEquals(20, $lasagna->remainingCookTime(20));
+        $this->assertEquals(20, $lasagna->remainingCookTime(elapsed_minutes: 20));
     }
 
     /**
@@ -36,7 +36,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     public function testAnotherRemainingCookTime(): void
     {
         $lasagna = new Lasagna();
-        $this->assertEquals(10, $lasagna->remainingCookTime(30));
+        $this->assertEquals(10, $lasagna->remainingCookTime(elapsed_minutes: 30));
     }
 
     /**
@@ -46,7 +46,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     public function testTotalPreparationTime(): void
     {
         $lasagna = new Lasagna();
-        $this->assertEquals(14, $lasagna->totalPreparationTime(7));
+        $this->assertEquals(14, $lasagna->totalPreparationTime(layers_to_prep: 7));
     }
 
     /**
@@ -56,7 +56,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     public function testTotalElapsedTime(): void
     {
         $lasagna = new Lasagna();
-        $this->assertEquals(21, $lasagna->totalElapsedTime(4, 13));
+        $this->assertEquals(21, $lasagna->totalElapsedTime(layers_to_prep: 4, elapsed_minutes: 13));
     }
 
     /**
