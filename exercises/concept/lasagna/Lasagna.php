@@ -1,16 +1,29 @@
 <?php
 
-declare(strict_types=1);
-
 class Lasagna
 {
-    // Please define the 'expectedCookTime()' function
+    public function expectedCookTime()
+    {
+        // Implement the expectedCookTime method
+    }
 
-    // Please define the 'remainingCookTime($elapsed_minutes)' function
+    public function remainingCookTime($elapsed_minutes)
+    {
+        // Implement the remainingCookTime method
+    }
 
-    // Please define the 'totalPreparationTime($layers_to_prep)' function
+    public function totalPreparationTime($layers_to_prep)
+    {
+        // Implement the totalPreparationTime method
+    }
 
-    // Please define the 'totalElapsedTime($layers_to_prep, $elapsed_minutes)' function
+    public function totalElapsedTime($layers_to_prep, $elapsed_minutes)
+    {
+        // Implement the totalElapsedTime method
+    }
 
-    // Please define the 'alarm()' function
+    public function alarm()
+    {
+        // Implement the alarm method
+    }
 }
