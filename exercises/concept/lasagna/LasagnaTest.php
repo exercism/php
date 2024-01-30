@@ -2,6 +2,18 @@
 
 declare(strict_types=1);
 
+/**
+ * We use `assertEquals()` here for its loose type checking. We don't care if
+ * the student returns numeric strings or integers in this exercise.
+ *
+ * - Please use `assertSame()` whenever possible. Note reasons for exceptions.
+ * - Use calls with named arguments only when the exercise supplies method stubs with argument names.
+ *   These can help students to understand things, but can also be in the way of defining argument names
+ *   the students wants (e.g. in their native language).
+ * - Add @testdox with a useful test title, e.g. the task heading from `instructions.md`.
+ *   The online editor shows that to students.
+ * - Add fail messages to assertions where helpful to tell students more than @testdox says.
+ */
 class LasagnaTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void
