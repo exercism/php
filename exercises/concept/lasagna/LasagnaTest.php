@@ -9,42 +9,60 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
         require_once 'Lasagna.php';
     }
 
-    /** @task_id 1 */
+    /**
+     * @testdox Returns cooking time in minutes is as stated in the cook book
+     * @task_id 1
+     */
     public function testExpectedCookTime(): void
     {
         $lasagna = new Lasagna();
         $this->assertEquals(40, $lasagna->expectedCookTime());
     }
 
-    /** @task_id 2 */
+    /**
+     * @testdox Returns how many minutes more the lasagna must be in the oven when it is 20 minutes in the oven already
+     * @task_id 2
+     */
     public function testRemainingCookTime(): void
     {
         $lasagna = new Lasagna();
         $this->assertEquals(20, $lasagna->remainingCookTime(20));
     }
 
-    /** @task_id 2 */
+    /**
+     * @testdox Returns how many minutes more the lasagna must be in the oven when it is 30 minutes in the oven already
+     * @task_id 2
+     */
     public function testAnotherRemainingCookTime(): void
     {
         $lasagna = new Lasagna();
         $this->assertEquals(10, $lasagna->remainingCookTime(30));
     }
 
-    /** @task_id 3 */
+    /**
+     * @testdox Returns how many minutes you spent preparing the lasagna
+     * @task_id 3
+     */
     public function testTotalPreparationTime(): void
     {
         $lasagna = new Lasagna();
         $this->assertEquals(14, $lasagna->totalPreparationTime(7));
     }
 
-    /** @task_id 4 */
+    /**
+     * @testdox Returns how many minutes in total you've worked on cooking the lasagna
+     * @task_id 4
+     */
     public function testTotalElapsedTime(): void
     {
         $lasagna = new Lasagna();
         $this->assertEquals(21, $lasagna->totalElapsedTime(4, 13));
     }
 
-    /** @task_id 5 */
+    /**
+     * @testdox Returns message indicating that the lasagna is ready to eat
+     * @task_id 5
+     */
     public function testAlarm(): void
     {
         $lasagna = new Lasagna();
