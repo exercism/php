@@ -26,7 +26,7 @@ The student shall mostly understand what has been predefined using these other c
 - Know how to use `$this` in a method.
 - Know how to define an integer value.
 - Know how to define a string literal.
-- Know how to use `+` and `*` on integers.
+- Know how to use `-`, `+` and `*` on integers.
 
 ## Out of scope
 
@@ -35,8 +35,8 @@ The student shall mostly understand what has been predefined using these other c
 - Defining classes or methods by the student.
 - Assigning values to variables.
 - Other value types than integer and string.
-- Other arithmetic operators than `+` and `*`.
-- Type juggling, namely arithmetic operators `+` and `*` with strings.
+- Other arithmetic operators than `-`, `+` and `*`.
+- Type juggling, namely arithmetic operators `-`, `+` and `*` with strings.
 - Naming rules for identifiers.
 - Memory and performance characteristics.
 - Type declarations.
