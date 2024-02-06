@@ -10,19 +10,19 @@ Exercism exercises in PHP
 ### All dependencies
 
 ```shell
-> ./bin/install.sh
+./bin/install.sh
 ```
 
 ### Only tests dependencies
 
 ```shell
-> ./bin/install-phpunit-9.sh
+./bin/install-phpunit-9.sh
 ```
 
 ### Only style-check dependencies
 
 ```shell
-> ./bin/install-phpcs.sh
+./bin/install-phpcs.sh
 ```
 
 ## Running Unit Test Suite
@@ -30,7 +30,7 @@ Exercism exercises in PHP
 ### PHPUnit 9
 
 ```shell
-> PHPUNIT_BIN="./bin/phpunit-9.phar" ./bin/test.sh
+PHPUNIT_BIN="./bin/phpunit-9.phar" ./bin/test.sh
 ```
 
 ## Running Style Checker
@@ -38,7 +38,7 @@ Exercism exercises in PHP
 ### PSR-12 rules
 
 ```shell
-> PHPCS_BIN="./bin/phpcs.phar" PHPCS_RULES="./phpcs-php.xml" ./bin/lint.sh
+PHPCS_BIN="./bin/phpcs.phar" PHPCS_RULES="./phpcs-php.xml" ./bin/lint.sh
 ```
 
 ## Contributing
