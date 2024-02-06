@@ -41,17 +41,27 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
         ], nucleotideCount(''));
     }
 
+    public function testDNASequenceSingleNucleotide(): void
+    {
+        $this->assertSame([
+            'a' => 0,
+            'c' => 0,
+            't' => 0,
+            'g' => 1,
+        ], nucleotideCount('G'));
+    }
+
     public function testRepetitiveDNASequence(): void
     {
         $this->assertSame([
-            'a' => 9,
+            'a' => 0,
             'c' => 0,
             't' => 0,
-            'g' => 0,
-        ], nucleotideCount('AAAAAAAAA'));
+            'g' => 7,
+        ], nucleotideCount('GGGGGGG'));
     }
 
-    public function testDNASequence(): void
+    public function testDNASequenceWithMultipleNucleotides(): void
     {
         $this->assertSame([
             'a' => 20,
@@ -59,5 +69,11 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
             't' => 21,
             'g' => 17,
         ], nucleotideCount('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'));
+    }
+
+    public function testDNASequenceWithInvalidNucleotides(): void
+    {
+        $this->expectException(Exception::class);
+        nucleotideCount('AGXXACT');
     }
 }
