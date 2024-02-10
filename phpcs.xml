@@ -37,7 +37,7 @@
     <exclude-pattern>*/concept/windowing-system/*</exclude-pattern>
   </rule>
   <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/TypeHints/DeclareStrictTypesSniff.php">
-    <exclude-pattern>*/exemplar\.php</exclude-pattern>
+    <exclude-pattern>*/.meta/*\.php</exclude-pattern>
     <exclude-pattern>*/concept/*</exclude-pattern>
     <exclude-pattern>*/hello-world/*</exclude-pattern>
     <properties>
@@ -48,7 +48,7 @@
   </rule>
   <rule ref="src/Sniffs/ExplainStrictTypesSniff.php">
     <exclude-pattern>*/*Test\.php</exclude-pattern>
-    <exclude-pattern>*/exemplar\.php</exclude-pattern>
+    <exclude-pattern>*/.meta/*\.php</exclude-pattern>
     <exclude-pattern>src/*</exclude-pattern>
   </rule>
 </ruleset>
