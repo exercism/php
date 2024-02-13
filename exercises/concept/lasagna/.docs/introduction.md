@@ -48,6 +48,15 @@ class Calculator {
 }
 ```
 
+To call a method from another method of the same class, you need to use the `$this` variable:
+
+```php
+    function subtract($x, $y)
+    {
+        return $this->add($x, -$y);
+    }
+```
+
 ### Naming conventions
 
 Classnames should all be `PascalCase`.
