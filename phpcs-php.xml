@@ -2,6 +2,8 @@
 <ruleset name="xPHP">
   <description>Coding standard for xPHP</description>
 
+  <arg value="n" />
+
   <!-- Include all sniffs in the PSR12 standard except... -->
   <rule ref="PSR12">
     <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />

@@ -26,12 +26,12 @@ declare(strict_types=1);
 
 class ListOps
 {
-    public static function append(array $list1, array $list2): array
+    public function append(array $list1, array $list2): array
     {
         throw new \BadMethodCallException("Implement the append function");
     }
 
-    public static function concat(array $list1, array ...$listn): array
+    public function concat(array $list1, array ...$listn): array
     {
         throw new \BadMethodCallException("Implement the concat function");
     }
@@ -39,12 +39,12 @@ class ListOps
     /**
      * @param callable(mixed $el): bool $predicate
      */
-    public static function filter(callable $predicate, array $list): array
+    public function filter(callable $predicate, array $list): array
     {
         throw new \BadMethodCallException("Implement the filter function");
     }
 
-    public static function length(array $list): int
+    public function length(array $list): int
     {
         throw new \BadMethodCallException("Implement the length function");
     }
@@ -52,7 +52,7 @@ class ListOps
     /**
      * @param callable(mixed $el): mixed $function
      */
-    public static function map(callable $function, array $list): array
+    public function map(callable $function, array $list): array
     {
         throw new \BadMethodCallException("Implement the map function");
     }
@@ -60,7 +60,7 @@ class ListOps
     /**
      * @param callable(mixed $acc, mixed $el): mixed $function
      */
-    public static function foldl(callable $function, array $list, $accumulator)
+    public function foldl(callable $function, array $list, $accumulator)
     {
         throw new \BadMethodCallException("Implement the foldl function");
     }
@@ -68,12 +68,12 @@ class ListOps
     /**
      * @param callable(mixed $acc, mixed $el): mixed $function
      */
-    public static function foldr(callable $function, array $list, $accumulator)
+    public function foldr(callable $function, array $list, $accumulator)
     {
         throw new \BadMethodCallException("Implement the foldr function");
     }
 
-    public static function reverse(array $list): array
+    public function reverse(array $list): array
     {
         throw new \BadMethodCallException("Implement the reverse function");
     }

@@ -26,7 +26,7 @@ declare(strict_types=1);
 
 class ListOps
 {
-    public static function append(array $list1, array $list2): array
+    public function append(array $list1, array $list2): array
     {
         foreach ($list2 as $el) {
             $list1[] = $el;
@@ -34,7 +34,7 @@ class ListOps
         return $list1;
     }
 
-    public static function concat(array $list1, array ...$listn): array
+    public function concat(array $list1, array ...$listn): array
     {
         foreach ($listn as $list) {
             $list1 = self::append($list1, $list);
@@ -42,7 +42,7 @@ class ListOps
         return $list1;
     }
 
-    public static function filter(callable $predicate, array $list): array
+    public function filter(callable $predicate, array $list): array
     {
         $result = [];
         foreach ($list as $el) {
@@ -53,7 +53,7 @@ class ListOps
         return $result;
     }
 
-    public static function length(array $list): int
+    public function length(array $list): int
     {
         $count = 0;
         foreach ($list as $_el) {
@@ -62,7 +62,7 @@ class ListOps
         return $count;
     }
 
-    public static function map(callable $function, array $list): array
+    public function map(callable $function, array $list): array
     {
         $result = [];
         foreach ($list as $el) {
@@ -71,7 +71,7 @@ class ListOps
         return $result;
     }
 
-    public static function foldl(callable $function, array $list, $accumulator)
+    public function foldl(callable $function, array $list, $accumulator)
     {
         foreach ($list as $el) {
             $accumulator = $function($accumulator, $el);
@@ -79,7 +79,7 @@ class ListOps
         return $accumulator;
     }
 
-    public static function foldr(callable $function, array $list, $accumulator)
+    public function foldr(callable $function, array $list, $accumulator)
     {
         while (self::length($list) > 0) {
             $el = array_pop($list);
@@ -88,7 +88,7 @@ class ListOps
         return $accumulator;
     }
 
-    public static function reverse(array $list): array
+    public function reverse(array $list): array
     {
         $result = [];
         while (self::length($list) > 0) {
