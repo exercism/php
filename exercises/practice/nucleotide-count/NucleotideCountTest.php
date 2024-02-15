@@ -31,6 +31,9 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
         require_once 'NucleotideCount.php';
     }
 
+    /**
+     * uuid: 3e5c30a8-87e2-4845-a815-a49671ade970
+     */
     public function testEmptyDNASequence(): void
     {
         $this->assertSame([
@@ -41,17 +44,36 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
         ], nucleotideCount(''));
     }
 
+    /**
+     * uuid: a0ea42a6-06d9-4ac6-828c-7ccaccf98fec
+     */
+    public function testDNASequenceSingleNucleotide(): void
+    {
+        $this->assertSame([
+            'a' => 0,
+            'c' => 0,
+            't' => 0,
+            'g' => 1,
+        ], nucleotideCount('G'));
+    }
+
+    /**
+     * uuid: eca0d565-ed8c-43e7-9033-6cefbf5115b5
+     */
     public function testRepetitiveDNASequence(): void
     {
         $this->assertSame([
-            'a' => 9,
+            'a' => 0,
             'c' => 0,
             't' => 0,
-            'g' => 0,
-        ], nucleotideCount('AAAAAAAAA'));
+            'g' => 7,
+        ], nucleotideCount('GGGGGGG'));
     }
 
-    public function testDNASequence(): void
+    /**
+     * uuid: 40a45eac-c83f-4740-901a-20b22d15a39f
+     */
+    public function testDNASequenceWithMultipleNucleotides(): void
     {
         $this->assertSame([
             'a' => 20,
@@ -59,5 +81,14 @@ class NucleotideCountTest extends PHPUnit\Framework\TestCase
             't' => 21,
             'g' => 17,
         ], nucleotideCount('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'));
+    }
+
+    /**
+     * uuid: b4c47851-ee9e-4b0a-be70-a86e343bd851
+     */
+    public function testDNASequenceWithInvalidNucleotides(): void
+    {
+        $this->expectException(Exception::class);
+        nucleotideCount('AGXXACT');
     }
 }
