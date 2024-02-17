@@ -15,6 +15,9 @@ See [PHP tag docs][php-tag] to learn more about the PHP tag.
 // No closing tag required at the end
 ```
 
+For easier reading, all code examples omit the PHP opening tag `<?php`.
+But we have it in all PHP exercises, so you don't have to add it yourself.
+
 All statements, like assignments or function calls, must end with a `;` for instruction separation.
 Omitting `;` (like in JavaScript) is not allowed and results in syntax errors.
 Learn more about [instruction separation][php-semicolon] from the PHP documentation.

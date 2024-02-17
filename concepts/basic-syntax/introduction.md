@@ -14,6 +14,8 @@ $message = "Success!"; // Statement correctly ends with `;`
 $message = "I fail." // PHP Parse error: syntax error, [...]
 ```
 
+For easier reading, all code examples omit the PHP opening tag `<?php`.
+
 ## Comments
 
 Single line comments start with `//`.
