@@ -937,6 +937,11 @@
   },
   "concepts": [
     {
+      "name": "Basics",
+      "slug": "basic-syntax",
+      "uuid": "1cf9fb39-5520-4c93-ba7a-7162586e2955"
+    },
+    {
       "name": "Variable Scope",
       "slug": "variable-scope",
       "uuid": "b385e071-a070-4f82-b62f-d1547101e1ce"
@@ -1010,11 +1015,6 @@
       "name": "Null",
       "slug": "null-values",
       "uuid": "ed4c9916-e8ae-473c-b6f2-29c93357faf7"
-    },
-    {
-      "name": "Basics",
-      "slug": "basic-syntax",
-      "uuid": "1cf9fb39-5520-4c93-ba7a-7162586e2955"
     },
     {
       "name": "Classes",

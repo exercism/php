@@ -1,68 +1,81 @@
 # Basics
 
-## Values and Variables
+For more detailed information about these topics visit the [concept page][exercism-concept].
 
-PHP is a general-purpose dynamically-typed programming language.
-Value types are only checked while the program is running.
-Using the assignment `=` operator, any value type may be assigned to any variable name.
-Variable names must start with a dollar `$` sign.
+## General syntax
+
+The PHP opening tag `<?php` marks the start of PHP code.
+All statements must end with a `;` for instruction separation.
 
 ```php
 <?php
-$count = 1 // Assigned an integer value of 1
-$count = 2 // Re-assigned a new value to the variable
 
-$count = false // You may assign any value type
+$message = "Success!"; // Statement correctly ends with `;`
+$message = "I fail." // PHP Parse error: syntax error, [...]
+```
+
+For easier reading, all code examples omit the PHP opening tag `<?php`.
+
+## Comments
+
+Single line comments start with `//`.
+
+```php
+// Single line comment
+```
+
+## Values and Variables
+
+Using the assignment `=` operator, a value may be assigned to a variable.
+Variable names must start with a dollar `$` sign and follow the [naming conventions][exercism-concept-naming-conventions].
+
+```php
+$count = 1; // Assign value of 1
 
 // Strings can be created by enclosing the characters
 // within single `'` quotes or double `"` quotes.
-$message = "Success!"
+$message = "Success!";
 ```
 
-## Code organization
+## Functions and Methods
 
-PHP code files are text files that start with `<?php`.
-If the file contains only php code, there is no closing `?>` tag.
-Code, functions, and classes may all be present in a single file, but usually classes are in their own file with a filename which matches the class.
+Values and variables can be passed to functions.
+Function arguments become new variables to hold values passed in.
+Functions may return any value using the keyword `return`.
+
+```php
+function window_height($height)
+{
+    return $height + 10;
+}
+
+window_height(100);
+// => 110
+```
+
+Functions inside classes and their instances are called methods.
+To call a method, the name is preceeded by the instance and `->`.
+Methods have access to the special variable `$this`, which refers to the current instance.
 
 ```php
 <?php
-// index.php
-
-$sum = add(1, 2);
-```
-
-```php
-<?php
-// Calculator.php
 
 class Calculator {
-    // ...
+    public function sub($x, $y)
+    {
+        return $this->add($x, -$y); // Calls the method add() of the current instance
+    }
 
-    function add($x, $y)
+    public function add($x, $y)
     {
         return $x + $y;
     }
 }
+
+$calculator = new Calculator(); // Creates a new instance of Calculator class
+$calculator->sub(3, 1); // Calls the method sub() of the instance stored in $calculator
+// => 2
 ```
 
-## Naming conventions
-
-Classnames should all be `PascalCase`.
-Depending on the style standard; variables, functions, method names may be either `camelCase` or `snake_case`.
-Names may contain letters `a-zA-Z`, numbers `0-9`, and underscores `_` but they cannot start with a number.
-
-## Comments
-
-Single line comments start with `//`, and a block of text can be wrapped with `/*` and  `*/` to become a comment.
-
-```php
-<?php
-
-// Single line comment
-
-/*
-  Multi-line comment
-*/
-```
-
+[exercism-concept]: /tracks/php/concepts/basic-syntax
+[exercism-concept-naming-conventions]: /tracks/php/concepts/basic-syntax#h-naming-conventions
