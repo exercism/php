@@ -7,9 +7,9 @@ declare(strict_types=1);
  * the student returns numeric strings or integers in this exercise.
  *
  * - Please use `assertSame()` whenever possible. Add a comment when it is not possible.
- * - Use calls with named arguments only when the exercise supplies method stubs with argument names.
- *   These can help students to understand things, but can also be in the way of defining argument names
- *   the students want (e.g. in their native language).
+ * - Do not use calls with named arguments.
+ *   Use them only when the exercise requires named arguments (e.g. because the exercise is about named arguments).
+ *   Named arguments are in the way of defining argument names the students want (e.g. in their native language).
  * - Add @testdox with a useful test title, e.g. the task heading from `instructions.md`.
  *   The online editor shows that to students.
  * - Add fail messages to assertions where helpful to tell students more than @testdox says.
@@ -38,7 +38,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     public function testRemainingCookTime(): void
     {
         $lasagna = new Lasagna();
-        $this->assertEquals(20, $lasagna->remainingCookTime(elapsed_minutes: 20));
+        $this->assertEquals(20, $lasagna->remainingCookTime(20));
     }
 
     /**
@@ -48,7 +48,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     public function testAnotherRemainingCookTime(): void
     {
         $lasagna = new Lasagna();
-        $this->assertEquals(10, $lasagna->remainingCookTime(elapsed_minutes: 30));
+        $this->assertEquals(10, $lasagna->remainingCookTime(30));
     }
 
     /**
@@ -58,7 +58,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     public function testTotalPreparationTime(): void
     {
         $lasagna = new Lasagna();
-        $this->assertEquals(14, $lasagna->totalPreparationTime(layers_to_prep: 7));
+        $this->assertEquals(14, $lasagna->totalPreparationTime(7));
     }
 
     /**
@@ -68,7 +68,7 @@ class LasagnaTest extends PHPUnit\Framework\TestCase
     public function testTotalElapsedTime(): void
     {
         $lasagna = new Lasagna();
-        $this->assertEquals(21, $lasagna->totalElapsedTime(layers_to_prep: 4, elapsed_minutes: 13));
+        $this->assertEquals(21, $lasagna->totalElapsedTime(4, 13));
     }
 
     /**
