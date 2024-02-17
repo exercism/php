@@ -37,7 +37,7 @@ class ListOps
     }
 
     /**
-     * @param callable(mixed $el): bool $predicate
+     * @param callable(mixed $item): bool $predicate
      */
     public function filter(callable $predicate, array $list): array
     {
@@ -50,7 +50,7 @@ class ListOps
     }
 
     /**
-     * @param callable(mixed $el): mixed $function
+     * @param callable(mixed $item): mixed $function
      */
     public function map(callable $function, array $list): array
     {
@@ -58,7 +58,7 @@ class ListOps
     }
 
     /**
-     * @param callable(mixed $acc, mixed $el): mixed $function
+     * @param callable(mixed $accumulator, mixed $item): mixed $function
      */
     public function foldl(callable $function, array $list, $accumulator)
     {
@@ -66,7 +66,7 @@ class ListOps
     }
 
     /**
-     * @param callable(mixed $acc, mixed $el): mixed $function
+     * @param callable(mixed $accumulator, mixed $item): mixed $function
      */
     public function foldr(callable $function, array $list, $accumulator)
     {
