@@ -43,12 +43,21 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox append entries to a list and return the new list -> empty list to list
+     * @testdox append entries to a list and return the new list -> list to empty list
      */
     public function testAppendNonEmptyListToEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals([1, 2, 3, 4], $listOps->append([1, 2, 3, 4], []));
+    }
+
+    /**
+     * @testdox append entries to a list and return the new list -> empty list to list
+     */
+    public function testAppendEmptyListToNonEmptyList()
+    {
+        $listOps = new ListOps();
+        $this->assertEquals([1, 2, 3, 4], $listOps->append([], [1, 2, 3, 4]));
     }
 
     /**
@@ -61,7 +70,7 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox concat lists and lists of lists into new list -> empty list
+     * @testdox concatenate a list of lists -> empty list
      */
     public function testConcatEmptyLists()
     {
@@ -70,12 +79,21 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox concat lists and lists of lists into new list -> list of lists
+     * @testdox concatenate a list of lists -> list of lists
      */
     public function testConcatLists()
     {
         $listOps = new ListOps();
         $this->assertEquals([1, 2, 3, 4, 5, 6], $listOps->concat([1, 2], [3], [], [4, 5, 6]));
+    }
+
+    /**
+     * @testdox concatenate a list of lists -> list of nested lists
+     */
+    public function testConcatNestedLists()
+    {
+        $listOps = new ListOps();
+        $this->assertEquals([[1], [2], [3], [], [4, 5, 6]], $listOps->concat([[1], [2]], [[3]], [[]], [[4, 5, 6]]));
     }
 
     /**
