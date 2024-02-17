@@ -52,16 +52,17 @@ Literal values and values stored in variables can be passed to functions.
 New variables are created when defining function arguments to hold values passed in.
 
 ```php
-window_width(100); // Pass the literal value 100 to the function
-
-$newWidth = 100;
-window_width($newWidth); // Pass the value stored in $newWidth to the function
-
+// Declare the window_width function
 function window_width($width)
 {
     echo $width; // Access the value passed into the function as $width
     // ...
 }
+
+window_width(100); // Call the function with the literal value 100
+
+$newWidth = 100;
+window_width($newWidth); // Call the function with the value stored in $newWidth
 ```
 
 Functions may return values using the keyword `return`.
