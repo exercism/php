@@ -4,7 +4,7 @@
 
 PHP is an interpreted language, meaning it executes the code you write directly.
 PHP code files are text files that contain a PHP opening tag `<?php` to mark the start of PHP code.
-If the file contains only PHP code, there is no closing tag `?>` to mark the end of PHP code.
+If the file contains only PHP code, it is possible to omit the closing tag `?>` which is used to mark the end of PHP code.
 See [PHP tag docs][php-tag] to learn more about the PHP tag.
 
 ```php
