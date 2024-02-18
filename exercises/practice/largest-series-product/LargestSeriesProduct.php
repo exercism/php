@@ -27,7 +27,7 @@ declare(strict_types=1);
 class Series
 {
     public function __construct(string $input)
-	{
+    {
         throw new \BadMethodCallException("Implement the constructor method");
     }
 
