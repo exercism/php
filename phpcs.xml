@@ -18,13 +18,11 @@
   <!-- A TAB is 4 chars wide (does not replace them, for calculation only!) -->
   <arg name="tab-width" value="4" />
 
-  <!-- Run on 10 files in parallel -->
-  <arg name="parallel" value="10" />
+  <!-- Run on 60 files in parallel -->
+  <arg name="parallel" value="60" />
 
   <file>exercises</file>
   <file>src</file>
-
-  <arg value="n" />
 
   <!-- Include all sniffs in the PSR12 standard except... -->
   <rule ref="PSR12">
