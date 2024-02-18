@@ -13,7 +13,7 @@
     "php": "^7.4|^8.0",
     "phpunit/phpunit": "^9.6",
     "slevomat/coding-standard": "^8.14.1",
-    "squizlabs/php_codesniffer": "^3.8"
+    "squizlabs/php_codesniffer": "^3.9"
   },
   "scripts": {
     "lint:check": "phpcs",
