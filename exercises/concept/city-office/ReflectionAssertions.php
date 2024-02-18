@@ -45,7 +45,8 @@ trait ReflectionAssertions
         if (is_null($parameter)) {
             $this->fail(
                 "Method '$parameter_name' missing parameter $parameter_index"
-                . " named '$parameter_name'");
+                . " named '$parameter_name'"
+            );
         }
 
         if ($parameter->getName() !== $parameter_name) {

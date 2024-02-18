@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<ruleset
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd"
+  name="Exercism PHP Coding Standard"
+>
+  <description>Coding standard for Exercism PHP exercises</description>
+
+  <!-- Expect all files are UTF-8 -->
+  <arg name="encoding" value="utf-8" />
+
+  <!-- No warnings (ignore them) -->
+  <arg value="n" />
+
+  <!-- Show sniffs (it's easy to find solutions knowing the code) -->
+  <arg value="s" />
+
+  <!-- A TAB is 4 chars wide (does not replace them, for calculation only!) -->
+  <arg name="tab-width" value="4" />
+
+  <!-- Run on 60 files in parallel -->
+  <arg name="parallel" value="60" />
+
+  <file>exercises</file>
+  <file>src</file>
+
+  <!-- Include all sniffs in the PSR12 standard except... -->
+  <rule ref="PSR12">
+    <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+    <exclude name="PSR1.Classes.ClassDeclaration.MultipleClasses" />
+    <exclude name="PSR1.Files.SideEffects.FoundWithSymbols" />
+  </rule>
+  <rule ref="Squiz.Scope.MethodScope.Missing">
+    <exclude-pattern>*/concept/city-office/*</exclude-pattern>
+    <exclude-pattern>*/concept/windowing-system/*</exclude-pattern>
+  </rule>
+  <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/TypeHints/DeclareStrictTypesSniff.php">
+    <exclude-pattern>*/.meta/*\.php</exclude-pattern>
+    <exclude-pattern>*/concept/*</exclude-pattern>
+    <exclude-pattern>*/hello-world/*</exclude-pattern>
+    <properties>
+      <property name="linesCountBeforeDeclare" value="1" />
+      <property name="linesCountAfterDeclare" value="1" />
+      <property name="spacesCountAroundEqualsSign" value="0" />
+    </properties>
+  </rule>
+  <rule ref="src/Sniffs/ExplainStrictTypesSniff.php">
+    <exclude-pattern>*/*Test\.php</exclude-pattern>
+    <exclude-pattern>*/.meta/*\.php</exclude-pattern>
+    <exclude-pattern>src/*</exclude-pattern>
+  </rule>
+</ruleset>

@@ -1,53 +1,61 @@
 # Exercism PHP Track
 
-![Configlet Status](https://github.com/exercism/php/workflows/Configlet%20CI/badge.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/68242198cd124a3ebcbdc291d0e0eda4)](https://www.codacy.com/app/borgogelli/php?utm_source=github.com&utm_medium=referral&utm_content=borgogelli/php&utm_campaign=Badge_Grade)
-
 Exercism exercises in PHP
+
+Follow these instructions to contribute to the PHP track.
+To solve the exercises, head to the [PHP track][exercism-track-home] and check the [documentation][exercism-track-installation].
 
 ## Install Dependencies
 
-### All dependencies
+The following system dependencies are required:
+
+- `composer`, as recommended in the [PHP track installation docs][exercism-track-installation-composer].
+- [`bash` shell][gnu-bash]
+
+Run the following commands to get started with this project:
 
 ```shell
-> ./bin/install.sh
+bin/fetch-configlet # The official tool for managing Exercism language track repositories
+composer install # Required dependencies to develop this track
 ```
 
-### Only tests dependencies
+## Running Exercism resources management
 
-```shell
-> ./bin/install-phpunit-9.sh
-```
-
-### Only style-check dependencies
-
-```shell
-> ./bin/install-phpcs.sh
-```
+`bin/configlet` is a tool to manage exercism resources in this track.
+See [Building Exercism docs][exercism-configlet].
 
 ## Running Unit Test Suite
 
-### PHPUnit 9
+The tests are run with PHPUnit. A shell loop injecting `exemplar.php` is provided to ease testing.
+
+Execute the following command to run the tests:
 
 ```shell
-> PHPUNIT_BIN="./bin/phpunit-9.phar" ./bin/test.sh
+composer test:run
 ```
 
 ## Running Style Checker
 
-### PSR-12 rules
+This project use a slightly [modified][local-file-phpcs-config] version of [PSR-12].
+Use the following commands to apply code style:
 
 ```shell
-> PHPCS_BIN="./bin/phpcs.phar" PHPCS_RULES="./phpcs-php.xml" ./bin/lint.sh
+composer lint:check # Checks the files against the code style rules
+composer lint:fix # Automatically fix codestyle issues
 ```
 
 ## Contributing
 
-- Read the documentation at [Exercism][docs].
-- Follow the [PSR-12] coding style (PHP uses a slightly [modified] version of [PSR-12]).
+- Read the documentation at [Exercism][exercism-docs].
+- Follow the [PSR-12] coding style (Exercisms PHP track uses a slightly [modified][local-file-phpcs-config] version of [PSR-12]).
 - CI is run on all pull requests, it must pass the required checks for merge.
+- CI is running all tests on PHP 8.0 to PHP 8.2
 
+[exercism-configlet]: https://exercism.org/docs/building/configlet
+[exercism-docs]: https://exercism.org/docs
+[exercism-track-home]: https://exercism.org/docs/tracks/php
+[exercism-track-installation]: https://exercism.org/docs/tracks/php/installation
+[exercism-track-installation-composer]: https://exercism.org/docs/tracks/php/installation#h-install-composer
+[gnu-bash]: https://www.gnu.org/software/bash/
+[local-file-phpcs-config]: phpcs.xml
 [psr-12]: https://www.php-fig.org/psr/psr-12
-[docs]: https://exercism.org/docs
-[@group annotation]: https://phpunit.de/manual/4.1/en/appendixes.annotations.html#appendixes.annotations.group
-[modified]: phpcs-php.xml

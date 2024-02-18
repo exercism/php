@@ -17,11 +17,13 @@ class LuckyNumbers
 
     public function validate(string $input): string
     {
-        if ($input === '')
+        if ($input === '') {
             return 'Required field';
+        }
 
-        if ((int) $input <= 0)
+        if ((int) $input <= 0) {
             return 'Must be a whole number larger than 0';
+        }
 
         return '';
     }
