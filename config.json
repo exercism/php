@@ -891,7 +891,8 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
-        "topics": ["conditionals", "strings"]
+        "topics": ["conditionals", "strings"],
+        "status": "deprecated"
       },
       {
         "slug": "bank-account",
