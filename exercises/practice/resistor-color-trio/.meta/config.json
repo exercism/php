@@ -1,10 +1,17 @@
 {
-  "blurb": "Convert color codes, as used on resistors, to a human-readable label.",
-  "authors": ["MichaelBunker"],
-  "contributors": [],
+  "authors": [
+    "MichaelBunker"
+  ],
   "files": {
-    "solution": ["ResistorColorTrio.php"],
-    "test": ["ResistorColorTrioTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "ResistorColorTrio.php"
+    ],
+    "test": [
+      "ResistorColorTrioTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Convert color codes, as used on resistors, to a human-readable label."
 }

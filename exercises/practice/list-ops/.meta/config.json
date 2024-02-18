@@ -1,5 +1,7 @@
 {
-  "authors": ["homersimpsons"],
+  "authors": [
+    "homersimpsons"
+  ],
   "files": {
     "solution": [
       "ListOps.php"
