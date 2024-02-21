@@ -92,14 +92,14 @@ class ZebraPuzzle
             return [[]];
         }
 
-        foreach ($array as $index => $Value) {
+        foreach ($array as $index => $value) {
             $rest = $this->permuteValues(array_merge(array_slice($array, 0, $index), array_slice($array, $index + 1)));
 
             if (empty($rest)) {
-                $result[] = [$Value];
+                $result[] = [$value];
             } else {
                 foreach ($rest as $r) {
-                    $result[] = array_merge([$Value], $r);
+                    $result[] = array_merge([$value], $r);
                 }
             }
         }
