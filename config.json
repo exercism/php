@@ -1157,6 +1157,14 @@
         "difficulty": 6
       },
       {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "a8d52588-a7af-4543-867b-17f9728df77e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "zebra-puzzle",
         "name": "Zebra Puzzle",
         "uuid": "8a87919b-3bd0-4fc8-9774-daecd148de42",
