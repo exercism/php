@@ -1,5 +1,7 @@
 {
-  "authors": ["tomasnorre"],
+  "authors": [
+    "tomasnorre"
+  ],
   "files": {
     "solution": [
       "CircularBuffer.php"
