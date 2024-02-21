@@ -28,10 +28,6 @@ class BufferFullError extends Exception
 {
 }
 
-class BufferEmptyError extends Exception
-{
-}
-
 class CircularBuffer
 {
     private int $capacity;
@@ -47,13 +43,10 @@ class CircularBuffer
         $this->writePosition = 0;
     }
 
-    /**
-     * @throws BufferEmptyError
-     */
     public function read()
     {
         if ($this->isEmpty()) {
-            throw new BufferEmptyError();
+            return null;
         }
         $value = $this->buffer[$this->readPosition];
         $this->buffer[$this->readPosition] = null;
@@ -74,7 +67,6 @@ class CircularBuffer
     }
 
     /**
-     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function forceWrite($item): void
