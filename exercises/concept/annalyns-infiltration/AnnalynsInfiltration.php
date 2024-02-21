@@ -15,14 +15,14 @@ class AnnalynsInfiltration
         throw new \BadFunctionCallException("Implement the function");
     }
 
-    public function canSignalPrisoner(
+    public function canSignal(
         $is_archer_awake,
         $is_prisoner_awake
     ) {
         throw new \BadFunctionCallException("Implement the function");
     }
 
-    public function canFreePrisoner(
+    public function canLiberate(
         $is_knight_awake,
         $is_archer_awake,
         $is_prisoner_awake,
