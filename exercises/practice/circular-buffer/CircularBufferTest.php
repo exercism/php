@@ -10,15 +10,18 @@ class CircularBufferTest extends TestCase
 {
     /**
      * uuid: 28268ed4-4ff3-45f3-820e-895b44d53dfa
+     * @throws BufferEmptyError
      */
     public function testReadingEmptyBufferShouldFail(): void
     {
         $buffer = new CircularBuffer(1);
-        $this->assertNull($buffer->read());
+        $this->expectException(BufferEmptyError::class);
+        $buffer->read();
     }
 
     /**
      * uuid: 2e6db04a-58a1-425d-ade8-ac30b5f318f3
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testCanReadAnItemJustWritten(): void
@@ -30,6 +33,7 @@ class CircularBufferTest extends TestCase
 
     /**
      * uuid: 90741fe8-a448-45ce-be2b-de009a24c144
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testEachItemMayOnlyBeReadOnce(): void
@@ -37,11 +41,13 @@ class CircularBufferTest extends TestCase
         $buffer = new CircularBuffer(1);
         $buffer->write('1');
         $this->assertSame('1', $buffer->read());
-        $this->assertNull($buffer->read());
+        $this->expectException(BufferEmptyError::class);
+        $buffer->read();
     }
 
     /**
      * uuid: be0e62d5-da9c-47a8-b037-5db21827baa7
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testItemsAreReadInTheOrderTheyAreWritten(): void
@@ -67,6 +73,7 @@ class CircularBufferTest extends TestCase
 
     /**
      * uuid: 547d192c-bbf0-4369-b8fa-fc37e71f2393
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testAReadFreesUpCapacityForAnotherWrite(): void
@@ -80,6 +87,7 @@ class CircularBufferTest extends TestCase
 
     /**
      * uuid: 04a56659-3a81-4113-816b-6ecb659b4471
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testReadPositionIsMaintainedEvenAcrossMultipleWrites(): void
@@ -102,11 +110,13 @@ class CircularBufferTest extends TestCase
         $buffer = new CircularBuffer(1);
         $buffer->write('1');
         $buffer->clear();
-        $this->assertNull($buffer->read());
+        $this->expectException(BufferEmptyError::class);
+        $buffer->read();
     }
 
     /**
      * uuid: 45f3ae89-3470-49f3-b50e-362e4b330a59
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testClearFreesUpCapacityForAnotherWrite(): void
@@ -120,6 +130,7 @@ class CircularBufferTest extends TestCase
 
     /**
      * uuid: e1ac5170-a026-4725-bfbe-0cf332eddecd
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testClearDoesNothingOnEmptyBuffer(): void
@@ -132,6 +143,7 @@ class CircularBufferTest extends TestCase
 
     /**
      * uuid: 9c2d4f26-3ec7-453f-a895-7e7ff8ae7b5b
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testForceWriteActsLikeWriteOnNonFullBuffer(): void
@@ -145,6 +157,7 @@ class CircularBufferTest extends TestCase
 
     /**
      * uuid: 880f916b-5039-475c-bd5c-83463c36a147
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testForceWriteReplacesTheOldestItemOnFullBuffer(): void
@@ -159,6 +172,7 @@ class CircularBufferTest extends TestCase
 
     /**
      * uuid: bfecab5b-aca1-4fab-a2b0-cd4af2b053c3
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testForceWriteReplacesTheOldestItemRemainingInBufferFollowingARead(): void
@@ -177,6 +191,7 @@ class CircularBufferTest extends TestCase
 
     /**
      * uuid: 9cebe63a-c405-437b-8b62-e3fdc1ecec5a
+     * @throws BufferEmptyError
      * @throws BufferFullError
      */
     public function testInitialClearDoesNotAffectWrappingAround(): void
@@ -189,6 +204,7 @@ class CircularBufferTest extends TestCase
         $buffer->forceWrite('4');
         $this->assertSame('3', $buffer->read());
         $this->assertSame('4', $buffer->read());
-        $this->assertNull($buffer->read());
+        $this->expectException(BufferEmptyError::class);
+        $buffer->read();
     }
 }
