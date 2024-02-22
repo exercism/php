@@ -26,6 +26,11 @@ declare(strict_types=1);
 
 class KindergartenGarden
 {
+    public function __construct(string $diagram)
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+
     public function plants(string $student): array
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
