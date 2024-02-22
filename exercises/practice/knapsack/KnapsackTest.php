@@ -17,7 +17,7 @@ class KnapsackTest extends TestCase
     }
 
     /**
-     * uuid: a4d7d2f0-ad8a-460c-86f3-88ba709d41a7
+     * uuid: 3993a824-c20e-493d-b3c9-ee8a7753ee59
      */
     public function testNoItems(): void
     {
