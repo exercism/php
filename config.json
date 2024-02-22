@@ -1173,6 +1173,14 @@
         "difficulty": 7
       },
       {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "79cdfd22-2c85-46af-ac00-719ac89bd5a9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "3f077d57-472a-469a-885d-ebc6aaccd3d7",
