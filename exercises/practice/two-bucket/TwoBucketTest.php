@@ -21,9 +21,9 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
         $result = $twoBucket->solve();
 
-        $this->assertEquals(4, $result['moves']);
-        $this->assertEquals('one', $result['goalBucket']);
-        $this->assertEquals(5, $result['otherBucket']);
+        $this->assertEquals(4, $result->moves);
+        $this->assertEquals('one', $result->goalBucket);
+        $this->assertEquals(5, $result->otherBucket);
     }
 
     /**
@@ -38,9 +38,9 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
         $result = $twoBucket->solve();
 
-        $this->assertEquals(8, $result['moves']);
-        $this->assertEquals('two', $result['goalBucket']);
-        $this->assertEquals(3, $result['otherBucket']);
+        $this->assertEquals(8, $result->moves);
+        $this->assertEquals('two', $result->goalBucket);
+        $this->assertEquals(3, $result->otherBucket);
     }
 
     /**
@@ -55,9 +55,9 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
         $result = $twoBucket->solve();
 
-        $this->assertEquals(14, $result['moves']);
-        $this->assertEquals('one', $result['goalBucket']);
-        $this->assertEquals(11, $result['otherBucket']);
+        $this->assertEquals(14, $result->moves);
+        $this->assertEquals('one', $result->goalBucket);
+        $this->assertEquals(11, $result->otherBucket);
     }
 
     /**
@@ -72,9 +72,9 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
         $result = $twoBucket->solve();
 
-        $this->assertEquals(18, $result['moves']);
-        $this->assertEquals('two', $result['goalBucket']);
-        $this->assertEquals(7, $result['otherBucket']);
+        $this->assertEquals(18, $result->moves);
+        $this->assertEquals('two', $result->goalBucket);
+        $this->assertEquals(7, $result->otherBucket);
     }
 
     /**
@@ -85,9 +85,9 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $twoBucket = new TwoBucket(1, 3, 3, 'two');
         $result = $twoBucket->solve();
 
-        $this->assertEquals(1, $result['moves']);
-        $this->assertEquals('two', $result['goalBucket']);
-        $this->assertEquals(0, $result['otherBucket']);
+        $this->assertEquals(1, $result->moves);
+        $this->assertEquals('two', $result->goalBucket);
+        $this->assertEquals(0, $result->otherBucket);
     }
 
     /**
@@ -98,9 +98,9 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $twoBucket = new TwoBucket(2, 3, 3, 'one');
         $result = $twoBucket->solve();
 
-        $this->assertEquals(2, $result['moves']);
-        $this->assertEquals('two', $result['goalBucket']);
-        $this->assertEquals(2, $result['otherBucket']);
+        $this->assertEquals(2, $result->moves);
+        $this->assertEquals('two', $result->goalBucket);
+        $this->assertEquals(2, $result->otherBucket);
     }
 
     /**
@@ -123,9 +123,9 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $twoBucket = new TwoBucket(6, 15, 9, 'one');
         $result = $twoBucket->solve();
 
-        $this->assertEquals(10, $result['moves']);
-        $this->assertEquals('two', $result['goalBucket']);
-        $this->assertEquals(0, $result['otherBucket']);
+        $this->assertEquals(10, $result->moves);
+        $this->assertEquals('two', $result->goalBucket);
+        $this->assertEquals(0, $result->otherBucket);
     }
 
     /**
@@ -140,9 +140,9 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
         $result = $twoBucket->solve();
 
-        $this->assertEquals(10, $result['moves']);
-        $this->assertEquals('two', $result['goalBucket']);
-        $this->assertEquals(0, $result['otherBucket']);
+        $this->assertEquals(10, $result->moves);
+        $this->assertEquals('two', $result->goalBucket);
+        $this->assertEquals(0, $result->otherBucket);
     }
 
     /**

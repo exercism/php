@@ -31,15 +31,7 @@ class TwoBucket
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function solve(): array
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-}
-
-class Bucket
-{
-    public function __construct(string $name, int $size)
+    public function solve(): self
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }

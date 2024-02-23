@@ -6,6 +6,9 @@ class TwoBucket
 {
     private int $goal;
     private array $buckets;
+    public int $moves;
+    public string $goalBucket;
+    public int $otherBucket;
 
     public function __construct(int $sizeBucketOne, int $sizeBucketTwo, int $goal, string $startBucket)
     {
@@ -19,7 +22,7 @@ class TwoBucket
         $this->validate();
     }
 
-    public function solve(): array
+    public function solve(): self
     {
         $this->first()->empty();
         $this->second()->empty();
@@ -35,19 +38,17 @@ class TwoBucket
 
         while (true) {
             if ($this->first()->getAmount() === $this->goal) {
-                return [
-                    'moves' => $moves,
-                    'goalBucket' => $this->first()->getName(),
-                    'otherBucket' => $this->second()->getAmount(),
-                ];
+                $this->moves = $moves;
+                $this->goalBucket = $this->first()->getName();
+                $this->otherBucket = $this->second()->getAmount();
+                return $this;
             }
 
             if ($this->second()->getAmount() === $this->goal) {
-                return [
-                    'moves' => $moves,
-                    'goalBucket' => $this->second()->getName(),
-                    'otherBucket' => $this->first()->getAmount(),
-                ];
+                $this->moves = $moves;
+                $this->goalBucket = $this->second()->getName();
+                $this->otherBucket = $this->first()->getAmount();
+                return $this;
             }
 
             if ($this->first()->isEmpty()) {
