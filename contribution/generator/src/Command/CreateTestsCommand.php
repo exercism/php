@@ -11,7 +11,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\PrettyPrinter;
-
+use Symfony\Component\Console\Input\InputArgument;
 
 #[AsCommand(
     name: 'app:create-tests',
@@ -24,13 +24,18 @@ class CreateTestsCommand extends Command
         parent::__construct();
     }
 
+    protected function configure(): void
+    {
+        $this->addArgument('exercise', InputArgument::REQUIRED, 'Exercise slug');
+    }
+
     /**
      * @throws \JsonException
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
-        $io->success('Generating Tests - Started');
+        $io->writeln('Generating tests for ' . $input->getArgument('exercise'));
 
         // $this->createTests();
 
