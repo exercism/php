@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "tomasnorre"
+  ],
+  "files": {
+    "solution": [
+      "FoodChain.php"
+    ],
+    "test": [
+      "FoodChainTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly"
+}
