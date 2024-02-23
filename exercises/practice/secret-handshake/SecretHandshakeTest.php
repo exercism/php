@@ -29,7 +29,7 @@ class SecretHandshakeTest extends PHPUnit\Framework\TestCase
      */
     public function testDoubleBlinkForTen(): void
     {
-        $this->assertEquals(['double blink'], $this->secretHandshake->commands(2));
+        $this->assertEquals(['double blink'], $this->secretHandshake->commands(0b0_0010));
     }
 
     /**
