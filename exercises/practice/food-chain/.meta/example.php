@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 class FoodChain
 {
-    private static array $verse = [
+    private const VERSE = [
         ["", ""],
         ["fly", "I don't know why she swallowed the fly. Perhaps she'll die."],
         ["spider", "It wriggled and jiggled and tickled inside her."],
@@ -16,20 +16,20 @@ class FoodChain
         ["horse", "She's dead, of course!"],
     ];
 
-    public static function verse(int $verseNumber): array
+    public function verse(int $verseNumber): array
     {
         $result = [];
 
-        $result[] = sprintf("I know an old lady who swallowed a %s.", self::$verse[$verseNumber][0]);
-        $result[] = self::$verse[$verseNumber][1];
+        $result[] = sprintf("I know an old lady who swallowed a %s.", self::VERSE[$verseNumber][0]);
+        $result[] = self::VERSE[$verseNumber][1];
         if ($verseNumber === 1 || $verseNumber === 8) {
             return $result;
         }
         for (; $verseNumber > 1; $verseNumber--) {
             $text = sprintf(
                 "She swallowed the %s to catch the %s%s",
-                self::$verse[$verseNumber][0],
-                self::$verse[$verseNumber - 1][0],
+                self::VERSE[$verseNumber][0],
+                self::VERSE[$verseNumber - 1][0],
                 $verseNumber !== 3 ? "." : ""
             );
             if ($verseNumber === 3) {
@@ -37,26 +37,26 @@ class FoodChain
             }
             $result[] = $text;
         }
-        $result[] = self::$verse[$verseNumber][1];
+        $result[] = self::VERSE[$verseNumber][1];
         return $result;
     }
 
-    public static function verses(int $start, int $end): array
+    public function verses(int $start, int $end): array
     {
         if ($start < 1 || $start > $end || $end > 8) {
-            return self::verse(0);
+            return $this->verse(0);
         }
         $s = self::verse($start);
         while ($start < $end) {
             $start++;
             $s[] = "";
-            $s = array_merge($s, self::verse($start));
+            $s = array_merge($s, $this->verse($start));
         }
         return $s;
     }
 
-    public static function song(): array
+    public function song(): array
     {
-        return self::verses(1, 8);
+        return $this->verses(1, 8);
     }
 }
