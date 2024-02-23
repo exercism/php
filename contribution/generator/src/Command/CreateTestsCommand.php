@@ -32,7 +32,7 @@ class CreateTestsCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->success('Generating Tests - Started');
 
-        $this->createTests();
+        // $this->createTests();
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
