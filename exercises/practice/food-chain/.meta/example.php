@@ -44,9 +44,9 @@ class FoodChain
     public function verses(int $start, int $end): array
     {
         if ($start < 1 || $start > $end || $end > 8) {
-            return $this->verse(0);
+            return $this->verse(1);
         }
-        $s = self::verse($start);
+        $s = $this->verse($start);
         while ($start < $end) {
             $start++;
             $s[] = "";
