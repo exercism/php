@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "tomasnorre"
+  ],
   "files": {
     "solution": [
       "FoodChain.php"
