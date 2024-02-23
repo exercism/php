@@ -19,8 +19,12 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class CreateTestsCommand extends Command
 {
+    private BuilderFactory $builderFactory;
+
     public function __construct()
     {
+        $this->builderFactory = new BuilderFactory();
+
         parent::__construct();
     }
 
@@ -51,17 +55,16 @@ class CreateTestsCommand extends Command
         $jsonData = file_get_contents(__DIR__ . "/canonical-data.json");
         $data = json_decode($jsonData, true, 512, JSON_THROW_ON_ERROR);
 
-        $factory = new BuilderFactory();
-        $classBuilder = $factory->class($this->generateClassName($data['exercise']) . "Test")->makeFinal()->extend('\PHPUnit\Framework\TestCase');
+        $classBuilder = $this->builderFactory->class($this->generateClassName($data['exercise']) . "Test")->makeFinal()->extend('\PHPUnit\Framework\TestCase');
 
         // Include Setup Method
         $methodSetup = 'setUpBeforeClass';
-        $method = $factory->method($methodSetup)
+        $method = $this->builderFactory->method($methodSetup)
             ->makePublic()
             ->makeStatic()
             ->setReturnType('void')
             ->addStmt(
-                $factory->funcCall(
+                $this->builderFactory->funcCall(
                     "require_once",
                     [$this->generateClassName($data['exercise']) . ".php"]
                 ),
@@ -78,24 +81,24 @@ class CreateTestsCommand extends Command
 
             $exceptionClassName = new Node\Name\FullyQualified('Exception');
             if (isset($case['expected']['error'])) {
-                $method = $factory->method($methodName)
+                $method = $this->builderFactory->method($methodName)
                     ->makePublic()
                     ->setReturnType('void')
                     ->addStmt(
-                        $factory->funcCall('$this->expectException',
+                        $this->builderFactory->funcCall('$this->expectException',
                         [new Node\Arg(new Node\Expr\ClassConstFetch($exceptionClassName, 'class'))]
                         )
                     )
-                    ->addStmt($factory->funcCall($case['property'], [$case['input']['strand']]))
+                    ->addStmt($this->builderFactory->funcCall($case['property'], [$case['input']['strand']]))
                     ->setDocComment("/**\n * uuid: $uuid\n */");
             } else {
-                $method = $factory->method($methodName)
+                $method = $this->builderFactory->method($methodName)
                     ->makePublic()
                     ->setReturnType('void')
                     ->addStmt(
-                        $factory->funcCall('$this->assertEquals', [
+                        $this->builderFactory->funcCall('$this->assertEquals', [
                             $case['expected'],
-                            $factory->funcCall($case['property'], [$case['input']['strand']])
+                            $this->builderFactory->funcCall($case['property'], [$case['input']['strand']])
                         ])
                     )
                     ->setDocComment("/**\n * uuid: $uuid\n */");
