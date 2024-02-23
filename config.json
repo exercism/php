@@ -1189,6 +1189,14 @@
         "difficulty": 6
       },
       {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "9fa82e62-1dd3-45c4-ae33-6c854a7b92b5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "2fd3d924-477d-4113-96a5-c9687776da49",
