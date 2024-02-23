@@ -37,7 +37,7 @@ class SecretHandshakeTest extends PHPUnit\Framework\TestCase
      */
     public function testCloseYourEyesForHundred(): void
     {
-        $this->assertEquals(['close your eyes'], $this->secretHandshake->commands(4));
+        $this->assertEquals(['close your eyes'], $this->secretHandshake->commands(0b100));
     }
 
     /**
@@ -61,7 +61,7 @@ class SecretHandshakeTest extends PHPUnit\Framework\TestCase
      */
     public function testReverseTwoActions(): void
     {
-        $this->assertEquals(['double blink', 'wink'], $this->secretHandshake->commands(19));
+        $this->assertEquals(['double blink', 'wink'], $this->secretHandshake->commands(0b10011));
     }
 
     /**
@@ -107,6 +107,6 @@ class SecretHandshakeTest extends PHPUnit\Framework\TestCase
      */
     public function testDoNothingForZero(): void
     {
-        $this->assertEquals([], $this->secretHandshake->commands(0));
+        $this->assertEquals([], $this->secretHandshake->commands(0b0));
     }
 }
