@@ -1181,6 +1181,14 @@
         "difficulty": 5
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "c0721b15-5bfb-4a2e-92d3-b2e32c096810",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "3f077d57-472a-469a-885d-ebc6aaccd3d7",
