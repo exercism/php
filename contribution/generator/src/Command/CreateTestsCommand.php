@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Command;
 
 use PhpParser\BuilderFactory;
@@ -21,10 +23,16 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class CreateTestsCommand extends Command
 {
     private BuilderFactory $builderFactory;
+    private string $trackRoot;
+    private string $pathToConfiglet = '';
     private string $exerciseSlug;
 
     public function __construct()
     {
+        // TODO: Make this $PWD (being injected by DI) and check for $PWD === track root
+        $this->trackRoot = '../..';
+        $this->pathToConfiglet = $this->trackRoot . '/bin/configlet';
+
         $this->builderFactory = new BuilderFactory();
 
         parent::__construct();
@@ -41,13 +49,7 @@ class CreateTestsCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->exerciseSlug = $input->getArgument('exercise');
-
-        // TODO: Make this relative to $PWD === track root
-        $pathToConfiglet = '../../bin/configlet';
-        if (!(is_executable($pathToConfiglet) && is_file($pathToConfiglet)))
-            throw new RuntimeException(
-                'configlet not found. Fetch configlet and create exercise with configlet first!'
-            );
+        $this->ensureConfigletCanBeUsed();
 
         // TODO: Make this relative to $PWD === track root
         $pathToPracticeExercise = '../../exercises/practice/' . $this->exerciseSlug;
@@ -72,6 +74,21 @@ class CreateTestsCommand extends Command
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
+    }
+
+    private function ensureConfigletCanBeUsed(): void
+    {
+        if (
+            !(
+                is_executable($this->pathToConfiglet)
+                && is_file($this->pathToConfiglet)
+            )
+        ) {
+            throw new RuntimeException(
+                'configlet not found. Run the generator from track root.'
+                . ' Fetch configlet and create exercise with configlet first!'
+            );
+        }
     }
 
     private function pathToCachedCanonicalData(): string
