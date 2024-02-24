@@ -30,10 +30,10 @@ class CreateTestsCommand extends Command
 
     private string $exerciseSlug;
 
-    public function __construct()
-    {
-        // TODO: Make this $PWD (being injected by DI) and check for $PWD === track root
-        $this->trackRoot = '../..';
+    public function __construct(
+        private string $projectDir,
+    ) {
+        $this->trackRoot = realpath($projectDir . '/../..');
         $this->pathToConfiglet = $this->trackRoot . '/bin/configlet';
         $this->pathToPracticeExercises = $this->trackRoot . '/exercises/practice/';
 
@@ -60,6 +60,7 @@ class CreateTestsCommand extends Command
         $this->ensurePathToCanonicalDataCanBeUsed();
 
         $io = new SymfonyStyle($input, $output);
+        $io->writeln('Project dir: ' . $this->projectDir);
         $io->writeln('Generating tests for ' . $this->exerciseSlug . ' in ' . $this->pathToPracticeExercise);
         $io->writeln('Constructed path to canonical data: ' . $this->pathToCanonicalData);
 
