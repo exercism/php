@@ -31,18 +31,8 @@ class TwoBucket
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function solve(): Solution
+    public function solve()
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-}
-
-class Solution
-{
-    public function __construct(
-        public int $numberOfActions,
-        public string $nameOfBucketWithDesiredLiters,
-        public int $litersLeftInOtherBucket,
-    ) {
     }
 }
