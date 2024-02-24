@@ -1,14 +1,33 @@
 <?php
 
+/*
+ * By adding type hints and enabling strict type checking, code can become
+ * easier to read, self-documenting and reduce the number of potential bugs.
+ * By default, type declarations are non-strict, which means they will attempt
+ * to change the original type to match the type specified by the
+ * type-declaration.
+ *
+ * In other words, if you pass a string to a function requiring a float,
+ * it will attempt to convert the string value to a float.
+ *
+ * To enable strict mode, a single declare directive must be placed at the top
+ * of the file.
+ * This means that the strictness of typing is configured on a per-file basis.
+ * This directive not only affects the type declarations of parameters, but also
+ * a function's return type.
+ *
+ * For more info review the Concept on strict type checking in the PHP track
+ * <link>.
+ *
+ * To disable strict typing, comment out the directive below.
+ */
+
 declare(strict_types=1);
 
 class TwoBucket
 {
     private int $goal;
     private array $buckets;
-    public int $moves;
-    public string $goalBucket;
-    public int $otherBucket;
 
     public function __construct(int $sizeBucketOne, int $sizeBucketTwo, int $goal, string $startBucket)
     {
@@ -22,7 +41,7 @@ class TwoBucket
         $this->validate();
     }
 
-    public function solve(): self
+    public function solve(): Solution
     {
         $this->first()->empty();
         $this->second()->empty();
@@ -38,17 +57,19 @@ class TwoBucket
 
         while (true) {
             if ($this->first()->getAmount() === $this->goal) {
-                $this->moves = $moves;
-                $this->goalBucket = $this->first()->getName();
-                $this->otherBucket = $this->second()->getAmount();
-                return $this;
+                return new Solution(
+                    $moves,
+                    $this->first()->getName(),
+                    $this->second()->getAmount()
+                );
             }
 
             if ($this->second()->getAmount() === $this->goal) {
-                $this->moves = $moves;
-                $this->goalBucket = $this->second()->getName();
-                $this->otherBucket = $this->first()->getAmount();
-                return $this;
+                return new Solution(
+                    $moves,
+                    $this->second()->getName(),
+                    $this->first()->getAmount()
+                );
             }
 
             if ($this->first()->isEmpty()) {
@@ -87,6 +108,16 @@ class TwoBucket
     private function greatestCommonDivisor($a, $b)
     {
         return $b === 0 ? $a : $this->greatestCommonDivisor($b, $a % $b);
+    }
+}
+
+class Solution
+{
+    public function __construct(
+        public int $numberOfActions,
+        public string $nameOfBucketWithDesiredLiters,
+        public int $litersLeftInOtherBucket,
+    ) {
     }
 }
 
