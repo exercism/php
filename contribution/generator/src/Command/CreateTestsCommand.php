@@ -47,8 +47,16 @@ class CreateTestsCommand extends Command
                 'configlet not found. Fetch configlet and create exercise with configlet first!'
             );
 
+        // TODO: Make this relative to $PWD === track root
+        $pathToPracticeExercise = '../../exercises/practice/' . $this->exerciseSlug;
+        if (!(is_writable($pathToPracticeExercise) && is_dir($pathToPracticeExercise)))
+            throw new RuntimeException(
+                'Cannot write to exercise directory. Create exercise with configlet first or check access rights!'
+            );
+
+
         $io = new SymfonyStyle($input, $output);
-        $io->writeln('Generating tests for ' . $input->getArgument('exercise'));
+        $io->writeln('Generating tests for ' . $this->exerciseSlug . ' in ' . $pathToPracticeExercise);
 
         // $this->createTests();
 
