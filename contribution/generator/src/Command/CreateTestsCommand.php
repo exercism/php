@@ -25,6 +25,8 @@ class CreateTestsCommand extends Command
     private BuilderFactory $builderFactory;
     private string $trackRoot;
     private string $pathToConfiglet = '';
+    private string $pathToPracticeExercises = '';
+    private string $pathToPracticeExercise = '';
     private string $exerciseSlug;
 
     public function __construct()
@@ -32,6 +34,7 @@ class CreateTestsCommand extends Command
         // TODO: Make this $PWD (being injected by DI) and check for $PWD === track root
         $this->trackRoot = '../..';
         $this->pathToConfiglet = $this->trackRoot . '/bin/configlet';
+        $this->pathToPracticeExercises = $this->trackRoot . '/exercises/practice/';
 
         $this->builderFactory = new BuilderFactory();
 
@@ -49,18 +52,14 @@ class CreateTestsCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->exerciseSlug = $input->getArgument('exercise');
+        $this->pathToPracticeExercise =
+            $this->pathToPracticeExercises . $this->exerciseSlug;
+
         $this->ensureConfigletCanBeUsed();
-
-        // TODO: Make this relative to $PWD === track root
-        $pathToPracticeExercise = '../../exercises/practice/' . $this->exerciseSlug;
-        if (!(is_writable($pathToPracticeExercise) && is_dir($pathToPracticeExercise)))
-            throw new RuntimeException(
-                'Cannot write to exercise directory. Create exercise with configlet first or check access rights!'
-            );
-
+        $this->ensurePracticeExerciseCanBeUsed();
 
         $io = new SymfonyStyle($input, $output);
-        $io->writeln('Generating tests for ' . $this->exerciseSlug . ' in ' . $pathToPracticeExercise);
+        $io->writeln('Generating tests for ' . $this->exerciseSlug . ' in ' . $this->pathToPracticeExercise);
 
         $pathToCanonicalData = $this->pathToCachedCanonicalData();
         $io->writeln('Constructed path to canonical data: ' . $pathToCanonicalData);
@@ -74,6 +73,21 @@ class CreateTestsCommand extends Command
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
+    }
+
+    private function ensurePracticeExerciseCanBeUsed(): void
+    {
+        if (
+            !(
+                is_writable($this->pathToPracticeExercise)
+                && is_dir($this->pathToPracticeExercise)
+            )
+        ) {
+            throw new RuntimeException(
+                'Cannot write to exercise directory. Create exercise with'
+                . ' configlet first or check access rights!'
+            );
+        }
     }
 
     private function ensureConfigletCanBeUsed(): void
