@@ -22,7 +22,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class CreateTestsCommand extends Command
 {
-    private BuilderFactory $builderFactory;
     private string $trackRoot;
     private string $pathToConfiglet = '';
     private string $pathToPracticeExercises = '';
@@ -37,8 +36,6 @@ class CreateTestsCommand extends Command
         $this->trackRoot = '../..';
         $this->pathToConfiglet = $this->trackRoot . '/bin/configlet';
         $this->pathToPracticeExercises = $this->trackRoot . '/exercises/practice/';
-
-        $this->builderFactory = new BuilderFactory();
 
         parent::__construct();
     }
@@ -141,11 +138,17 @@ class CreateTestsCommand extends Command
         );
     }
 
+    // TODO: Move to own class
+
+    private BuilderFactory $builderFactory;
+
     /**
      * @throws \JsonException
      */
     private function createTests(): void
     {
+        $this->builderFactory = new BuilderFactory();
+
         $jsonData = file_get_contents(__DIR__ . "/canonical-data.json");
         $data = json_decode($jsonData, true, 512, JSON_THROW_ON_ERROR);
 
