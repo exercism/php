@@ -38,6 +38,15 @@ class CreateTestsCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $this->exerciseSlug = $input->getArgument('exercise');
+
+        // TODO: Make this relative to $PWD === track root
+        $pathToConfiglet = '../../bin/configlet';
+        if (!(is_executable($pathToConfiglet) && is_file($pathToConfiglet)))
+            throw new RuntimeException(
+                'configlet not found. Fetch configlet and create exercise with configlet first!'
+            );
+
         $io = new SymfonyStyle($input, $output);
         $io->writeln('Generating tests for ' . $input->getArgument('exercise'));
 
