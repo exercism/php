@@ -27,6 +27,8 @@ class CreateTestsCommand extends Command
     private string $pathToConfiglet = '';
     private string $pathToPracticeExercises = '';
     private string $pathToPracticeExercise = '';
+    private string $pathToCanonicalData = '';
+
     private string $exerciseSlug;
 
     public function __construct()
@@ -47,7 +49,7 @@ class CreateTestsCommand extends Command
     }
 
     /**
-     * @throws \JsonException
+     * @throws RuntimeException
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
@@ -57,22 +59,31 @@ class CreateTestsCommand extends Command
 
         $this->ensureConfigletCanBeUsed();
         $this->ensurePracticeExerciseCanBeUsed();
+        $this->pathToCachedCanonicalDataFromConfiglet();
+        $this->ensurePathToCanonicalDataCanBeUsed();
 
         $io = new SymfonyStyle($input, $output);
         $io->writeln('Generating tests for ' . $this->exerciseSlug . ' in ' . $this->pathToPracticeExercise);
-
-        $pathToCanonicalData = $this->pathToCachedCanonicalData();
-        $io->writeln('Constructed path to canonical data: ' . $pathToCanonicalData);
-
-        if (!(is_readable($pathToCanonicalData) && is_file($pathToCanonicalData)))
-            throw new RuntimeException(
-                'Cannot read "configlet" provided cached canonical data from '
-                . $pathToCanonicalData
-                .'. Check exercise slug or access rights!'
-            );
+        $io->writeln('Constructed path to canonical data: ' . $this->pathToCanonicalData);
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
+    }
+
+    private function ensurePathToCanonicalDataCanBeUsed(): void
+    {
+        if (
+            !(
+                is_readable($this->pathToCanonicalData)
+                && is_file($this->pathToCanonicalData)
+            )
+        ) {
+            throw new RuntimeException(
+                'Cannot read "configlet" provided cached canonical data from '
+                . $this->pathToCanonicalData
+                .'. Check exercise slug or access rights!'
+            );
+        }
     }
 
     private function ensurePracticeExerciseCanBeUsed(): void
@@ -105,18 +116,29 @@ class CreateTestsCommand extends Command
         }
     }
 
-    private function pathToCachedCanonicalData(): string
+    private function pathToCachedCanonicalDataFromConfiglet(): void
     {
-        // TODO: Make this relative to $PWD === track root
-        $command = 'bash -c \'set -eo pipefail; ../../bin/configlet -v d -t ../.. info -o | head -1 | cut -d " " -f 5\'';
-        $resultCode = 1;
-        $configletCache = \exec(command: $command, result_code: $resultCode);
-        if ($configletCache === false || $resultCode !== Command::SUCCESS)
-            throw new RuntimeException(
-                '"configlet" could not provide cached canonical data. Create exercise with configlet first!'
-            );
+        $command = 'bash -c \'set -eo pipefail; '
+            . $this->pathToConfiglet
+            . ' -v d -t '
+            . $this->trackRoot
+            . ' info -o | head -1 | cut -d " " -f 5\''
+            ;
+        $resultCode = Command::FAILURE;
 
-        return \sprintf('%1$s/exercises/%2$s/canonical-data.json', $configletCache, $this->exerciseSlug);
+        $configletCache = \exec(command: $command, result_code: $resultCode);
+        if ($configletCache === false || $resultCode !== Command::SUCCESS) {
+            throw new RuntimeException(
+                '"configlet" could not provide cached canonical data.'
+                . ' Create exercise with configlet first!'
+            );
+        }
+
+        $this->pathToCanonicalData = \sprintf(
+            '%1$s/exercises/%2$s/canonical-data.json',
+            $configletCache,
+            $this->exerciseSlug
+        );
     }
 
     /**
