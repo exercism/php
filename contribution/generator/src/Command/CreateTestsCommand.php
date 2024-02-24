@@ -6,6 +6,7 @@ use PhpParser\BuilderFactory;
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\PrettyPrinter;
+use RuntimeException;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -20,6 +21,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class CreateTestsCommand extends Command
 {
     private BuilderFactory $builderFactory;
+    private string $exerciseSlug;
 
     public function __construct()
     {
@@ -58,10 +60,32 @@ class CreateTestsCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->writeln('Generating tests for ' . $this->exerciseSlug . ' in ' . $pathToPracticeExercise);
 
-        // $this->createTests();
+        $pathToCanonicalData = $this->pathToCachedCanonicalData();
+        $io->writeln('Constructed path to canonical data: ' . $pathToCanonicalData);
+
+        if (!(is_readable($pathToCanonicalData) && is_file($pathToCanonicalData)))
+            throw new RuntimeException(
+                'Cannot read "configlet" provided cached canonical data from '
+                . $pathToCanonicalData
+                .'. Check exercise slug or access rights!'
+            );
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
+    }
+
+    private function pathToCachedCanonicalData(): string
+    {
+        // TODO: Make this relative to $PWD === track root
+        $command = 'bash -c \'set -eo pipefail; ../../bin/configlet -v d -t ../.. info -o | head -1 | cut -d " " -f 5\'';
+        $resultCode = 1;
+        $configletCache = \exec(command: $command, result_code: $resultCode);
+        if ($configletCache === false || $resultCode !== Command::SUCCESS)
+            throw new RuntimeException(
+                '"configlet" could not provide cached canonical data. Create exercise with configlet first!'
+            );
+
+        return \sprintf('%1$s/exercises/%2$s/canonical-data.json', $configletCache, $this->exerciseSlug);
     }
 
     /**
