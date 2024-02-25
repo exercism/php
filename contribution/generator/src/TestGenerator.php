@@ -54,6 +54,12 @@ class TestGenerator
                 ->makePublic()
                 ->setReturnType('void')
                 ->setDocComment("/**\n * uuid: {$case->uuid}\n * @testdox {$description}\n */")
+                ->addStmt(
+                    $this->builderFactory->funcCall(
+                        '$this->markTestIncomplete',
+                        [ 'This test has not been implemented yet.' ],
+                    )
+                )
                 ;
             // if (isset($case->expected->error)) {
             //     $method->addStmt(
