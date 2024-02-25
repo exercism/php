@@ -23,7 +23,7 @@ class TestGenerator
 
         $class = $this->builderFactory->class(
             $exerciseClass . "Test"
-        )->makeFinal()->extend(TestCase::class);
+        )->makeFinal()->extend('TestCase');
         $class->setDocComment(
             "/**\n * " . implode("\n * ", $canonicalData->comments) . "\n */"
         );
@@ -76,6 +76,7 @@ class TestGenerator
         }
 
         $namespace = new Namespace_(new Node\Name('Tests'));
+        $namespace->stmts[] = $this->builderFactory->use(TestCase::class)->getNode();
         $namespace->stmts[] = $class->getNode();
 
         $printer = new PrettyPrinter\Standard();
