@@ -1236,6 +1236,9 @@
         "prerequisites": [],
         "difficulty": 5
       }
+    ],
+    "foregone": [
+      "parallel-letter-frequency"
     ]
   },
   "concepts": [
