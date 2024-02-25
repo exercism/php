@@ -51,8 +51,7 @@ class CreateTestsCommand extends Command
             $exercise->pathToExercise()
                 . '/'
                 . $this->inPascalCase($exerciseSlug)
-                . 'Test.php'
-                ,
+                . 'Test.php',
             $testGenerator->createTestsFor(
                 $exercise->canonicalData(),
                 $this->inPascalCase($exerciseSlug)

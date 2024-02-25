@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace App\TrackData\CanonicalData;
 
-class TestCase {
+class TestCase
+{
     public function __construct(
         public string $uuid,
         public string $description,

@@ -9,7 +9,8 @@ use App\TrackData\CanonicalData\TestCase;
 use App\TrackData\Exercise;
 use RuntimeException;
 
-class PracticeExercise implements Exercise {
+class PracticeExercise implements Exercise
+{
     private string $pathToConfiglet = '';
     private string $pathToPracticeExercises = '';
     private string $pathToExercise = '';
@@ -134,7 +135,7 @@ class PracticeExercise implements Exercise {
             throw new RuntimeException(
                 'Cannot read "configlet" provided cached canonical data from '
                 . $this->pathToCanonicalData
-                .'. Check exercise slug or access rights!'
+                . '. Check exercise slug or access rights!'
             );
         }
     }
