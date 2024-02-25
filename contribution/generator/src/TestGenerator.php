@@ -20,7 +20,7 @@ class TestGenerator
     ): string {
         $this->builderFactory = new BuilderFactory();
 
-        $classBuilder = $this->builderFactory->class(
+        $class = $this->builderFactory->class(
             $exerciseClass . "Test"
         )->makeFinal()->extend('\PHPUnit\Framework\TestCase');
 
@@ -37,7 +37,7 @@ class TestGenerator
                 ),
             );
 
-        $classBuilder->addStmt($method);
+        $class->addStmt($method);
 
         foreach ($canonicalData->testCases as $case) {
             // Generate a method for each test case
@@ -69,13 +69,11 @@ class TestGenerator
             //     );
             // }
 
-            $classBuilder->addStmt($method);
+            $class->addStmt($method);
         }
 
-        $class = $classBuilder->getNode();
-
         $namespace = new Namespace_(new Node\Name('Tests'));
-        $namespace->stmts[] = $class;
+        $namespace->stmts[] = $class->getNode();
 
         $printer = new PrettyPrinter\Standard();
 
