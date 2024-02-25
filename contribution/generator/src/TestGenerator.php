@@ -9,6 +9,7 @@ use PhpParser\BuilderFactory;
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\PrettyPrinter;
+use PHPUnit\Framework\TestCase;
 
 class TestGenerator
 {
@@ -22,7 +23,7 @@ class TestGenerator
 
         $class = $this->builderFactory->class(
             $exerciseClass . "Test"
-        )->makeFinal()->extend('\PHPUnit\Framework\TestCase');
+        )->makeFinal()->extend(TestCase::class);
 
         // Include Setup Method
         $methodSetup = 'setUpBeforeClass';
