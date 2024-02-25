@@ -47,6 +47,7 @@ class CreateTestsCommand extends Command
         $io->writeln('Generating tests for ' . $exerciseSlug . ' in ' . $exercise->pathToExercise());
 
         \file_put_contents(
+            // TODO: Make '$exercise->pathToTestFile()'
             $exercise->pathToExercise()
                 . '/'
                 . $this->inPascalCase($exerciseSlug)
@@ -57,6 +58,8 @@ class CreateTestsCommand extends Command
                 $this->inPascalCase($exerciseSlug)
             ),
         );
+        // TODO: Make '$exercise->pathToStudentsFile()'
+        // TODO: Make '$testGenerator->studentsFileFor()'
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
