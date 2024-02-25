@@ -46,6 +46,8 @@ class CreateTestsCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->writeln('Generating tests for ' . $exerciseSlug . ' in ' . $exercise->pathToExercise());
 
+        \file_put_contents($exercise->pathToExercise() . '/' . $testGenerator->slugInPascalCase() . 'Test.php', $testGenerator->createTestsFor($exercise->canonicalData()));
+
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
     }

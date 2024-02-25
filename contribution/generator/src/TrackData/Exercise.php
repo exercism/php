@@ -16,4 +16,7 @@ interface Exercise {
 
     /** The location of this exercises files in the track tree */
     public function pathToExercise(): string;
+
+    /** The content of the canonical data from the problem specification */
+    public function canonicalData(): CanonicalData;
 }

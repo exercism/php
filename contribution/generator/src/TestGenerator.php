@@ -19,9 +19,6 @@ class TestGenerator
     ) {
     }
 
-    /**
-     * @throws \JsonException
-     */
     public function createTestsFor(CanonicalData $canonicalData): string
     {
         $this->builderFactory = new BuilderFactory();
@@ -52,30 +49,29 @@ class TestGenerator
             $methodName = 'test' . str_replace(' ', '', ucwords($methodName));
             $uuid = $case->uuid;
 
-            $exceptionClassName = new Node\Name\FullyQualified('Exception');
-            if (isset($case->expected->error)) {
-                $method = $this->builderFactory->method($methodName)
-                    ->makePublic()
-                    ->setReturnType('void')
-                    ->addStmt(
-                        $this->builderFactory->funcCall('$this->expectException',
-                        [new Node\Arg(new Node\Expr\ClassConstFetch($exceptionClassName, 'class'))]
-                        )
-                    )
-                    ->addStmt($this->builderFactory->funcCall($case->property, [$case->input->strand ?? 'unknown']))
-                    ->setDocComment("/**\n * uuid: $uuid\n */");
-            } else {
-                $method = $this->builderFactory->method($methodName)
-                    ->makePublic()
-                    ->setReturnType('void')
-                    ->addStmt(
-                        $this->builderFactory->funcCall('$this->assertEquals', [
-                            $case->expected,
-                            $this->builderFactory->funcCall($case->property, [$case->input->strand ?? 'unknown'])
-                        ])
-                    )
-                    ->setDocComment("/**\n * uuid: $uuid\n */");
-            }
+            // $exceptionClassName = new Node\Name\FullyQualified('Exception');
+            $method = $this->builderFactory->method($methodName)
+                ->makePublic()
+                ->setReturnType('void')
+                ->setDocComment("/**\n * uuid: $uuid\n */")
+                ;
+            // if (isset($case->expected->error)) {
+            //     $method->addStmt(
+            //         $this->builderFactory->funcCall('$this->expectException',
+            //         [new Node\Arg(new Node\Expr\ClassConstFetch($exceptionClassName, 'class'))]
+            //         )
+            //     )
+            //     ->addStmt($this->builderFactory->funcCall($case->property, [$case->input->strand ?? 'unknown']))
+            //     ;
+            // } else {
+            //     $method->addStmt(
+            //         $this->builderFactory->funcCall('$this->assertEquals', [
+            //             $case->expected,
+            //             $this->builderFactory->funcCall($case->property, [$case->input->strand ?? 'unknown'])
+            //         ])
+            //     );
+            // }
+
             $classBuilder->addStmt($method);
         }
 
