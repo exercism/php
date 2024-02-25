@@ -26,12 +26,7 @@ declare(strict_types=1);
 
 class TwoBucket
 {
-    public function __construct(int $sizeBucketOne, int $sizeBucketTwo, int $goal, string $startBucket)
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function solve()
+    public function solve(int $sizeBucketOne, int $sizeBucketTwo, int $goal, string $startBucket)
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }

@@ -29,7 +29,7 @@ class TwoBucket
     private int $goal;
     private array $buckets;
 
-    public function __construct(int $sizeBucketOne, int $sizeBucketTwo, int $goal, string $startBucket)
+    public function solve(int $sizeBucketOne, int $sizeBucketTwo, int $goal, string $startBucket): Solution
     {
         $this->goal = $goal;
         $this->buckets = [new Bucket('one', $sizeBucketOne), new Bucket('two', $sizeBucketTwo)];
@@ -39,10 +39,6 @@ class TwoBucket
         }
 
         $this->validate();
-    }
-
-    public function solve(): Solution
-    {
         $this->first()->empty();
         $this->second()->empty();
         $moves = 0;

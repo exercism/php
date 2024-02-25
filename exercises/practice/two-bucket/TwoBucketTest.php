@@ -4,9 +4,16 @@ declare(strict_types=1);
 
 class TwoBucketTest extends PHPUnit\Framework\TestCase
 {
+    private TwoBucket $twoBucket;
+
     public static function setUpBeforeClass(): void
     {
         require_once 'TwoBucket.php';
+    }
+
+    protected function setUp(): void
+    {
+        $this->twoBucket = new TwoBucket();
     }
 
     /**
@@ -18,8 +25,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $buckTwo = 5;
         $goal = 1;
         $starterBuck = 'one';
-        $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
-        $solution = $twoBucket->solve();
+        $solution = $this->twoBucket->solve($buckOne, $buckTwo, $goal, $starterBuck);
 
         $this->assertEquals(4, $solution->numberOfActions);
         $this->assertEquals('one', $solution->nameOfBucketWithDesiredLiters);
@@ -35,8 +41,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $buckTwo = 5;
         $goal = 1;
         $starterBuck = 'two';
-        $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
-        $solution = $twoBucket->solve();
+        $solution = $this->twoBucket->solve($buckOne, $buckTwo, $goal, $starterBuck);
 
         $this->assertEquals(8, $solution->numberOfActions);
         $this->assertEquals('two', $solution->nameOfBucketWithDesiredLiters);
@@ -52,8 +57,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $buckTwo = 11;
         $goal = 2;
         $starterBuck = 'one';
-        $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
-        $solution = $twoBucket->solve();
+        $solution = $this->twoBucket->solve($buckOne, $buckTwo, $goal, $starterBuck);
 
         $this->assertEquals(14, $solution->numberOfActions);
         $this->assertEquals('one', $solution->nameOfBucketWithDesiredLiters);
@@ -69,8 +73,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $buckTwo = 11;
         $goal = 2;
         $starterBuck = 'two';
-        $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
-        $solution = $twoBucket->solve();
+        $solution = $this->twoBucket->solve($buckOne, $buckTwo, $goal, $starterBuck);
 
         $this->assertEquals(18, $solution->numberOfActions);
         $this->assertEquals('two', $solution->nameOfBucketWithDesiredLiters);
@@ -82,8 +85,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
      */
     public function testMeasureOneStepUsingBucketOneOfSize1AndBucketTwoOfSize3StartWithBucketTwo(): void
     {
-        $twoBucket = new TwoBucket(1, 3, 3, 'two');
-        $solution = $twoBucket->solve();
+        $solution = $this->twoBucket->solve(1, 3, 3, 'two');
 
         $this->assertEquals(1, $solution->numberOfActions);
         $this->assertEquals('two', $solution->nameOfBucketWithDesiredLiters);
@@ -95,8 +97,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
      */
     public function testMeasureUsingBucketOneOfSize2AndBucketTwoOfSize3StartWithBucketOneAndEndWithBucketTwo(): void
     {
-        $twoBucket = new TwoBucket(2, 3, 3, 'one');
-        $solution = $twoBucket->solve();
+        $solution = $this->twoBucket->solve(2, 3, 3, 'one');
 
         $this->assertEquals(2, $solution->numberOfActions);
         $this->assertEquals('two', $solution->nameOfBucketWithDesiredLiters);
@@ -111,8 +112,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $buckOne = 6;
         $buckTwo = 15;
         $this->expectException(Exception::class);
-        $twoBucket = new TwoBucket($buckOne, $buckTwo, 5, 'one');
-        $twoBucket->solve();
+
+        $this->twoBucket->solve($buckOne, $buckTwo, 5, 'one');
     }
 
     /**
@@ -120,8 +121,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
      */
     public function testReachabilityNotPossibleToReachGoalStartWithBucketOneAndEndWithBucketTwo(): void
     {
-        $twoBucket = new TwoBucket(6, 15, 9, 'one');
-        $solution = $twoBucket->solve();
+        $solution = $this->twoBucket->solve(6, 15, 9, 'one');
 
         $this->assertEquals(10, $solution->numberOfActions);
         $this->assertEquals('two', $solution->nameOfBucketWithDesiredLiters);
@@ -137,8 +137,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
         $buckTwo = 15;
         $goal = 9;
         $starterBuck = 'one';
-        $twoBucket = new TwoBucket($buckOne, $buckTwo, $goal, $starterBuck);
-        $solution = $twoBucket->solve();
+        $solution = $this->twoBucket->solve($buckOne, $buckTwo, $goal, $starterBuck);
 
         $this->assertEquals(10, $solution->numberOfActions);
         $this->assertEquals('two', $solution->nameOfBucketWithDesiredLiters);
@@ -151,7 +150,6 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
     public function testGoalLargerThanBothBucketsIsImpossible(): void
     {
         $this->expectException(Exception::class);
-        $twoBucket = new TwoBucket(5, 7, 8, 'one');
-        $twoBucket->solve();
+        $this->twoBucket->solve(5, 7, 8, 'one');
     }
 }
