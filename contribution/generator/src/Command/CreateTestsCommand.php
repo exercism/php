@@ -41,14 +41,29 @@ class CreateTestsCommand extends Command
             $this->trackRoot,
             $exerciseSlug,
         );
-        $testGenerator = new TestGenerator($exerciseSlug);
+        $testGenerator = new TestGenerator();
 
         $io = new SymfonyStyle($input, $output);
         $io->writeln('Generating tests for ' . $exerciseSlug . ' in ' . $exercise->pathToExercise());
 
-        \file_put_contents($exercise->pathToExercise() . '/' . $testGenerator->slugInPascalCase() . 'Test.php', $testGenerator->createTestsFor($exercise->canonicalData()));
+        \file_put_contents(
+            $exercise->pathToExercise()
+                . '/'
+                . $this->inPascalCase($exerciseSlug)
+                . 'Test.php'
+                ,
+            $testGenerator->createTestsFor(
+                $exercise->canonicalData(),
+                $this->inPascalCase($exerciseSlug)
+            ),
+        );
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
+    }
+
+    private function inPascalCase(string $text): string
+    {
+        return \str_replace(" ", "", \ucwords(\str_replace("-", " ", $text)));
     }
 }

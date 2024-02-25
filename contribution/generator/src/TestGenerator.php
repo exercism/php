@@ -14,17 +14,14 @@ class TestGenerator
 {
     private BuilderFactory $builderFactory;
 
-    public function __construct(
-        private string $exerciseSlug,
-    ) {
-    }
-
-    public function createTestsFor(CanonicalData $canonicalData): string
-    {
+    public function createTestsFor(
+        CanonicalData $canonicalData,
+        string $exerciseClass
+    ): string {
         $this->builderFactory = new BuilderFactory();
 
         $classBuilder = $this->builderFactory->class(
-            $this->slugInPascalCase() . "Test"
+            $exerciseClass . "Test"
         )->makeFinal()->extend('\PHPUnit\Framework\TestCase');
 
         // Include Setup Method
@@ -36,7 +33,7 @@ class TestGenerator
             ->addStmt(
                 $this->builderFactory->funcCall(
                     "require_once",
-                    [$this->slugInPascalCase() . ".php"]
+                    [$exerciseClass . ".php"]
                 ),
             );
 
@@ -83,12 +80,5 @@ class TestGenerator
         $printer = new PrettyPrinter\Standard();
 
         return $printer->prettyPrintFile([$namespace]) . PHP_EOL;
-    }
-
-    public function slugInPascalCase(): string
-    {
-        $name = str_replace("-", " ", $this->exerciseSlug);
-        $name = ucwords($name);
-        return str_replace(" ", "", $name);
     }
 }
