@@ -45,7 +45,7 @@ class TestGenerator
 
         foreach ($canonicalData->testCases as $case) {
             // Generate a method for each test case
-            $description = $case->description;
+            $description = \ucfirst($case->description);
             $methodName = ucfirst(str_replace('-', ' ', $description));
             $methodName = 'test' . str_replace(' ', '', ucwords($methodName));
 
@@ -53,7 +53,7 @@ class TestGenerator
             $method = $this->builderFactory->method($methodName)
                 ->makePublic()
                 ->setReturnType('void')
-                ->setDocComment("/**\n * uuid: $case->uuid\n */")
+                ->setDocComment("/**\n * uuid: {$case->uuid}\n * @testdox {$description}\n */")
                 ;
             // if (isset($case->expected->error)) {
             //     $method->addStmt(
