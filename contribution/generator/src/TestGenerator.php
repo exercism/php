@@ -24,6 +24,9 @@ class TestGenerator
         $class = $this->builderFactory->class(
             $exerciseClass . "Test"
         )->makeFinal()->extend(TestCase::class);
+        $class->setDocComment(
+            "/**\n * " . implode("\n * ", $canonicalData->comments) . "\n */"
+        );
 
         // Include Setup Method
         $methodSetup = 'setUpBeforeClass';
@@ -45,13 +48,12 @@ class TestGenerator
             $description = $case->description;
             $methodName = ucfirst(str_replace('-', ' ', $description));
             $methodName = 'test' . str_replace(' ', '', ucwords($methodName));
-            $uuid = $case->uuid;
 
             // $exceptionClassName = new Node\Name\FullyQualified('Exception');
             $method = $this->builderFactory->method($methodName)
                 ->makePublic()
                 ->setReturnType('void')
-                ->setDocComment("/**\n * uuid: $uuid\n */")
+                ->setDocComment("/**\n * uuid: $case->uuid\n */")
                 ;
             // if (isset($case->expected->error)) {
             //     $method->addStmt(
