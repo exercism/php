@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "tomasnorre"
+  ],
+  "files": {
+    "solution": [
+      "Strain.php"
+    ],
+    "test": [
+      "StrainTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Implement the `keep` and `discard` operation on collections.",
+  "source": "Conversation with James Edward Gray II",
+  "source_url": "http://graysoftinc.com/"
+}
