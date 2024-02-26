@@ -1141,6 +1141,14 @@
         "difficulty": 3
       },
       {
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "uuid": "f7309216-0ba7-4990-acd7-4a47eca949fb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "say",
         "name": "Say",
         "uuid": "56873c13-5efd-462f-810f-1884d0c776a4",
