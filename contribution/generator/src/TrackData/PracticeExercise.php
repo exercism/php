@@ -101,6 +101,20 @@ class PracticeExercise implements Exercise
 
     private function pathToCachedCanonicalDataFromConfiglet(): void
     {
+        /*
+        When running configlet with detailed output (-v d) and a command that
+        requires problem specification data (e.g. info), it prints the location
+        of the cache as the first line. To avoid an HTTP call, use the offline
+        mode (-o).
+
+        Pipe the output through 'head' to get the first line only, then 'cut'
+        the 5th field to get the path only.
+
+        configlet may fail when there is no cached data (offline mode), which
+        tells us, that the exercise hasn't been generated before (the cache is
+        required for that, too). So BASH must use `-eo pipefail` to get the
+        failure code back.
+        */
         $command = 'bash -c \'set -eo pipefail; '
             . $this->pathToConfiglet
             . ' -v d -t '
