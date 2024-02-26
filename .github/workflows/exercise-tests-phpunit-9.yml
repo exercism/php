@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         php-version: [8.0, 8.1, 8.2]
-        os: [ubuntu-22.04, windows-2022, macOS-latest]
+        os: [ubuntu-22.04, windows-2022, 'macOS-12:664173ba02188c19a49cd941cdd13af57d57bd90']
 
     steps:
       - name: Set git line endings
