@@ -1022,6 +1022,14 @@
         ]
       },
       {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "a5323160-bb75-4dd7-8800-789a83cd7008",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "poker",
         "name": "Poker",
         "uuid": "e8669c8e-bfdd-4207-baf6-23c2e4b12d13",
