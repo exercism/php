@@ -8,7 +8,10 @@ use App\TrackData\CanonicalData\TestCase;
 
 class CanonicalData
 {
-    /** @param TestCase[] $testCases */
+    /**
+     * @param TestCase[] $testCases
+     * @param string[] $comments
+     */
     public function __construct(
         public string $exercise,
         public array $testCases = [],
