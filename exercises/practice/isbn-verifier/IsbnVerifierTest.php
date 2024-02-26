@@ -160,6 +160,9 @@ class IsbnVerifierTest extends PHPUnit\Framework\TestCase
         $this->assertFalse($this->isbnVerifier->isValid('3598P215088'));
     }
 
+    /**
+     * uuid: fb5e48d8-7c03-4bfb-a088-b101df16fdc3
+     */
     public function testInputIsTooLongButContainsAValidIsbn(): void
     {
         $this->assertFalse($this->isbnVerifier->isValid('98245726788'));
