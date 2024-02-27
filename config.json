@@ -1097,6 +1097,14 @@
         ]
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "76a067bc-5bc3-47de-a539-69eb6c80473a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "8f4545ce-85de-4064-b78c-2177325721b1",
