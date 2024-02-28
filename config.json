@@ -998,6 +998,14 @@
         ]
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "8872a713-cb44-4769-a67b-85bbd944a726",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "af8f9ed1-1351-430b-a9dd-bdd2ba4e9a82",
