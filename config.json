@@ -998,6 +998,14 @@
         ]
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "8872a713-cb44-4769-a67b-85bbd944a726",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "af8f9ed1-1351-430b-a9dd-bdd2ba4e9a82",
@@ -1020,6 +1028,14 @@
           "control_flow_loops",
           "transforming"
         ]
+      },
+      {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "a5323160-bb75-4dd7-8800-789a83cd7008",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "poker",
@@ -1147,6 +1163,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
+      },
+      {
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "uuid": "f7309216-0ba7-4990-acd7-4a47eca949fb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "say",
