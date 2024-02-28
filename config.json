@@ -1149,6 +1149,14 @@
         "difficulty": 5
       },
       {
+        "slug": "micro-blog",
+        "name": "Micro Blog",
+        "uuid": "203ba680-cdbd-494d-a1b6-af426bc84e59",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "7b51a6cf-e8d1-4942-9e0a-fa65b56a3821",
