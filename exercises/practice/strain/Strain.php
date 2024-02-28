@@ -26,12 +26,12 @@ declare(strict_types=1);
 
 class Strain
 {
-    public function keep(array $list, closure $predicate): array
+    public function keep(array $list, callable $predicate): array
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function discard(array $list, closure $predicate): array
+    public function discard(array $list, callable $predicate): array
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
