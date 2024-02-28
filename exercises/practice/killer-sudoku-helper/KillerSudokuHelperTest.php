@@ -158,6 +158,4 @@ class KillerSudokuHelperTest extends PHPUnit\Framework\TestCase
         ];
         $this->assertEquals($expected, $this->killerSudokuHelper->combinations(10, 2, [1, 4]));
     }
-
-
 }
