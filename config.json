@@ -1245,6 +1245,14 @@
         "difficulty": 6
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "64ea517d-88ec-46db-b723-004681255580",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "9fa82e62-1dd3-45c4-ae33-6c854a7b92b5",
