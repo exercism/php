@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "tomasnorre"
+  ],
+  "files": {
+    "solution": [
+      "MicroBlog.php"
+    ],
+    "test": [
+      "MicroBlogTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Given an input string, truncate it to 5 characters."
+}
