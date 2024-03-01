@@ -26,7 +26,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "X  ",
             "X  "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -39,7 +39,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             " X ",
             " X "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -52,7 +52,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "  X",
             "  X"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -65,7 +65,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "OX ",
             "O  "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -78,7 +78,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             " OX",
             " O "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -91,7 +91,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             " XO",
             "  O"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -104,7 +104,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "XOO",
             "O  "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -117,7 +117,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "XXX",
             " O "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -130,7 +130,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "O X",
             "XXX"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -143,7 +143,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "XXO",
             "XX "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -156,7 +156,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "OOO",
             "X  "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -169,7 +169,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             " XX",
             "OOO"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -182,7 +182,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             " X ",
             "  X"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -195,7 +195,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "OX ",
             "X  "
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -208,7 +208,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "OOX",
             "X O"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -221,7 +221,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             " OX",
             "OXX"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -234,7 +234,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "XOO",
             "XOO"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -247,7 +247,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "OXO",
             "XOX"
         ];
-        $this->assertEquals('win', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Win, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -260,7 +260,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "XXO",
             "OXO"
         ];
-        $this->assertEquals('draw', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Draw, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -273,7 +273,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "OXX",
             "XOO"
         ];
-        $this->assertEquals('draw', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Draw, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -286,7 +286,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             "X  ",
             "   "
         ];
-        $this->assertEquals('ongoing', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Ongoing, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -299,7 +299,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             " X ",
             "   "
         ];
-        $this->assertEquals('ongoing', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Ongoing, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
@@ -312,7 +312,7 @@ class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
             " XO",
             "OX "
         ];
-        $this->assertEquals('ongoing', $this->stateOfTicTacToe->gameState($board));
+        $this->assertEquals(State::Ongoing, $this->stateOfTicTacToe->gameState($board));
     }
 
     /**
