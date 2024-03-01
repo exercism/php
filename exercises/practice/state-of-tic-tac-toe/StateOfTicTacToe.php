@@ -24,9 +24,16 @@
 
 declare(strict_types=1);
 
+enum State
+{
+    case Win;
+    case Ongoing;
+    case Draw;
+}
+
 class StateOfTicTacToe
 {
-    public static function gameState(array $board): string
+    public function gameState(array $board): State
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }

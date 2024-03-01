@@ -2,16 +2,19 @@
 
 declare(strict_types=1);
 
+enum State
+{
+    case Win;
+    case Ongoing;
+    case Draw;
+}
+
 class StateOfTicTacToe
 {
-    const WIN = "win";
-    const ONGOING = "ongoing";
-    const DRAW = "draw";
-
-    public static function gameState(array $board): string
+    public function gameState(array $board): State
     {
-        $xCount = self::countPlayer($board, 'X');
-        $oCount = self::countPlayer($board, 'O');
+        $xCount = $this->countPlayer($board, 'X');
+        $oCount = $this->countPlayer($board, 'O');
 
         if ($xCount < $oCount) {
             throw new \RuntimeException("Wrong turn order: O started");
@@ -21,25 +24,25 @@ class StateOfTicTacToe
             throw new \RuntimeException("Wrong turn order: X went twice");
         }
 
-        $xWon = self::hasWon($board, 'X');
-        $oWon = self::hasWon($board, 'O');
+        $xWon = $this->hasWon($board, 'X');
+        $oWon = $this->hasWon($board, 'O');
 
         if ($xWon && $oWon) {
             throw new \RuntimeException("Impossible board: game should have ended after the game was won");
         }
 
         if ($xWon || $oWon) {
-            return self::WIN;
+            return State::Win;
         }
 
         if ($xCount + $oCount === 9) {
-            return self::DRAW;
+            return State::Draw;
         }
 
-        return self::ONGOING;
+        return State::Ongoing;
     }
 
-    private static function countPlayer(array $board, string $player): int
+    private function countPlayer(array $board, string $player): int
     {
         $count = 0;
         foreach ($board as $row) {
@@ -52,7 +55,7 @@ class StateOfTicTacToe
         return $count;
     }
 
-    private static function hasWon(array $board, string $player): bool
+    private function hasWon(array $board, string $player): bool
     {
         for ($i = 0; $i < 3; $i++) {
             if (($board[$i][0] === $player && $board[$i][1] === $player && $board[$i][2] === $player) || ($board[0][$i] === $player && $board[1][$i] === $player && $board[2][$i] === $player)) {
