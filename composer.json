@@ -17,8 +17,7 @@
   },
   "scripts": {
     "post-install-cmd": [
-        "echo 'this needs to show up'",
-        "env",
+        "echo 'this must show up'; echo '$CI: '$CI",
         "@tool:configlet:fetch"
     ],
     "post-update-cmd": [
