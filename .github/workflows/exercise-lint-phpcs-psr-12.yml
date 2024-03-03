@@ -27,7 +27,7 @@ jobs:
           tools: composer
 
       - name: Install composer packages
-        run: CI="true" composer install
+        run: composer install
 
       - name: Lint exercises
         shell: bash

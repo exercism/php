@@ -17,7 +17,6 @@
   },
   "scripts": {
     "post-install-cmd": [
-        "cat composer.json",
         "@tool:configlet:fetch"
     ],
     "post-update-cmd": [
@@ -32,7 +31,7 @@
     "tool:configlet:fetch": "[ -z \"$CI\" ] || [ -x bin/configlet ] || bin/fetch-configlet",
     "tool:configlet:update": [
         "rm bin/configlet || true",
-        "bin/fetch-configlet"
+        "[ -n \"$CI\" ] || bin/fetch-configlet"
     ],
     "configlet:fmt": [
         "@tool:configlet:error",
