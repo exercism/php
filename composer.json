@@ -16,12 +16,25 @@
     "squizlabs/php_codesniffer": "^3.9"
   },
   "scripts": {
+    "post-install-cmd": [
+        "echo 'this needs to show up'",
+        "env",
+        "@tool:configlet:fetch"
+    ],
+    "post-update-cmd": [
+        "@tool:configlet:update"
+    ],
     "ci": [
         "@configlet:fmt",
         "@lint:check",
         "@tests:run"
     ],
     "tool:configlet:error": "[ -x bin/configlet ] || ( echo 'Fetch configlet first! Run: \"bin/fetch-configlet\"'; false )",
+    "tool:configlet:fetch": "[ -z \"$CI\" ] || [ -x bin/configlet ] || bin/fetch-configlet",
+    "tool:configlet:update": [
+        "rm bin/configlet || true",
+        "bin/fetch-configlet"
+    ],
     "configlet:fmt": [
         "@tool:configlet:error",
         "bin/configlet fmt"
