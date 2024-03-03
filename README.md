@@ -11,6 +11,7 @@ The following system dependencies are required:
 
 - `composer`, as recommended in the [PHP track installation docs][exercism-track-installation-composer].
 - [`bash` shell][gnu-bash]
+- PHP V8.2+ CLI
 
 Run the following commands to get started with this project:
 
@@ -50,6 +51,20 @@ composer lint:fix # Automatically fix codestyle issues
 - Follow the [PSR-12] coding style (Exercisms PHP track uses a slightly [modified][local-file-phpcs-config] version of [PSR-12]).
 - CI is run on all pull requests, it must pass the required checks for merge.
 - CI is running all tests on PHP 8.0 to PHP 8.2
+
+## Generating new practice exercises
+
+Use `bin/configlet create --practice-exercise <slug>` to create the exercism resources required.
+This provides you with the directories and files in `exercises/practice/<slug>`.
+Look into `tests.toml` for which test cases **not** to implement / generate and mark them with `include = false`.
+
+Test generator MVP used like this:
+
+```shell
+composer -d contribution/generator install
+contribution/generator/bin/console app:create-tests '<slug>'
+composer lint:fix
+```
 
 [exercism-configlet]: https://exercism.org/docs/building/configlet
 [exercism-docs]: https://exercism.org/docs
