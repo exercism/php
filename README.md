@@ -25,6 +25,9 @@ composer install # Required dependencies to develop this track
 `bin/configlet` is the official tool for managing Exercism language track repositories.
 See [Building Exercism docs][exercism-configlet].
 
+For convenience, you can use `composer configlet:fmt` to fix formatting issues in the Exercism track files.
+This is included in `composer ci` to run the CI checks locally.
+
 ## Running Unit Test Suite
 
 The tests are run with PHPUnit. A shell loop injecting `exemplar.php` is provided to ease testing.
@@ -35,15 +38,19 @@ Execute the following command to run the tests:
 composer test:run
 ```
 
+This is included in `composer ci` to run the CI checks locally.
+
 ## Running Style Checker
 
-This project use a slightly [modified][local-file-phpcs-config] version of [PSR-12].
+This project uses a slightly [modified][local-file-phpcs-config] version of [PSR-12].
 Use the following commands to apply code style:
 
 ```shell
 composer lint:check # Checks the files against the code style rules
-composer lint:fix # Automatically fix codestyle issues
+composer lint:fix # Automatically fix code style issues
 ```
+
+The `lint:check` is included in `composer ci` to run the CI checks locally.
 
 ## Contributing
 
