@@ -17,7 +17,7 @@
   },
   "scripts": {
     "post-install-cmd": [
-        "echo 'this must show up'; echo '$CI: '$CI",
+        "cat composer.json",
         "@tool:configlet:fetch"
     ],
     "post-update-cmd": [
