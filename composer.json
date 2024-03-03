@@ -16,6 +16,11 @@
     "squizlabs/php_codesniffer": "^3.9"
   },
   "scripts": {
+    "ci": [
+        "@configlet:fmt",
+        "@lint:check",
+        "@tests:run"
+    ],
     "configlet:fmt": "bin/configlet fmt",
     "format:fix": [
         "@lint:fix",
