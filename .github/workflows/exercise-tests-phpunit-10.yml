@@ -44,4 +44,5 @@ jobs:
         shell: bash
         env:
           PHPUNIT_BIN: 'bin/phpunit-10.phar'
+          XDEBUG_MODE: off
         run: bin/test.sh
