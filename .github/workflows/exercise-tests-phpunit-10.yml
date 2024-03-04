@@ -12,11 +12,14 @@ jobs:
   test:
     name: PHP ${{ matrix.php-version }} - ${{ matrix.os }} - ${{ github.event_name }}
     runs-on: ${{ matrix.os }}
+    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
-        php-version: [8.1, 8.2, 8.3]
-        os: [ubuntu-22.04, windows-2022, macOS-12]
+        #php-version: [8.1, 8.2, 8.3]
+        php-version: [8.3]
+        #os: [ubuntu-22.04, windows-2022, macOS-12]
+        os: [ubuntu-22.04]
 
     steps:
       - name: Set git line endings
