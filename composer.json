@@ -27,14 +27,12 @@
         "@lint:check",
         "@tests:run"
     ],
-    "tool:configlet:error": "[ -x bin/configlet ] || ( echo 'Fetch configlet first! Run: \"bin/fetch-configlet\"'; false )",
-    "tool:configlet:fetch": "[ -z \"$CI\" ] || [ -x bin/configlet ] || bin/fetch-configlet",
+    "tool:configlet:fetch": "[ -x bin/configlet ] || bin/fetch-configlet",
     "tool:configlet:update": [
         "rm bin/configlet || true",
-        "[ -n \"$CI\" ] || bin/fetch-configlet"
+        "bin/fetch-configlet"
     ],
     "configlet:fmt": [
-        "@tool:configlet:error",
         "bin/configlet fmt"
     ],
     "format:fix": [
