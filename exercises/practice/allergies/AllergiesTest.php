@@ -62,7 +62,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         }, $otherAllergen);
     }
 
-    public function provideListOfAllergen(): array
+    public static function provideListOfAllergen(): array
     {
         require_once 'Allergies.php';
 
