@@ -11,7 +11,7 @@ The following system dependencies are required:
 
 - `composer`, as recommended in the [PHP track installation docs][exercism-track-installation-composer].
 - [`bash` shell][gnu-bash].
-- PHP V8.2+ CLI
+- PHP V8.2+ CLI.
 - An active Internet connection for installing required tools / composer packages.
 
 Run the following command to get started with this project:
