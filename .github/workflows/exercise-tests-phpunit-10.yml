@@ -1,0 +1,48 @@
+name: Exercise tests with PHPUnit 10
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    name: PHP ${{ matrix.php-version }} - ${{ matrix.os }} - ${{ github.event_name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        #php-version: [8.1, 8.2, 8.3]
+        php-version: [8.3]
+        #os: [ubuntu-22.04, windows-2022, macOS-12]
+        os: [ubuntu-22.04]
+
+    steps:
+      - name: Set git line endings
+        if: ${{ matrix.os == 'windows-2022' }}
+        run: |
+          git config --system core.autocrlf false
+          git config --system core.eol lf
+
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+
+      - uses: shivammathur/setup-php@6d7209f44a25a59e904b1ee9f3b0c33ab2cd888d
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: gmp
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          curl -Lo ./bin/phpunit-10.phar https://phar.phpunit.de/phpunit-10.phar
+          chmod +x bin/phpunit-10.phar
+
+      - name: Test exercises
+        continue-on-error: true
+        shell: bash
+        env:
+          PHPUNIT_BIN: 'bin/phpunit-10.phar'
+          XDEBUG_MODE: off
+        run: bin/test.sh
