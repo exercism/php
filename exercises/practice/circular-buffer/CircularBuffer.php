@@ -24,16 +24,10 @@
 
 declare(strict_types=1);
 
-class BufferFullError extends Exception
-{
-}
-
-class BufferEmptyError extends Exception
-{
-}
-
 class CircularBuffer
 {
+    // You need to add more methods yourself!
+
     public function read()
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
@@ -43,14 +37,12 @@ class CircularBuffer
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
+}
 
-    public function forceWrite($item): void
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
+class BufferFullError extends Exception
+{
+}
 
-    public function clear(): void
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
+class BufferEmptyError extends Exception
+{
 }
