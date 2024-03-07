@@ -10,27 +10,24 @@ on:
 jobs:
   test:
     name: PHPCS Linting - ${{ github.event_name }}
-    runs-on: ubuntu-22.04
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
+      matrix:
+        php-version: [8.2]
+        os: [ubuntu-22.04]
 
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - uses: shivammathur/setup-php@a4e22b60bbb9c1021113f2860347b0759f66fe5d
         with:
-          php-version: '8.2'
+          php-version: ${{ matrix.php-version }}
           extensions: gmp
           tools: composer
 
-      - name: Install dependencies
-        shell: bash
-        run: |
-          curl -Lo bin/phpcs.phar https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
-          chmod +x bin/phpcs.phar
-
       - name: Install composer packages
-        run: composer install
+        run: composer install --no-scripts
 
       - name: Lint exercises
         shell: bash

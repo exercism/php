@@ -10,12 +10,35 @@
     }
   },
   "require-dev": {
-    "php": "^7.4 || ^8.0",
+    "php": "^8.0",
     "phpunit/phpunit": "^9.6 || ^10.5",
     "slevomat/coding-standard": "^8.14.1",
     "squizlabs/php_codesniffer": "^3.9"
   },
   "scripts": {
+    "post-install-cmd": [
+        "@tool:configlet:fetch"
+    ],
+    "post-update-cmd": [
+        "@tool:configlet:update"
+    ],
+    "ci": [
+        "@configlet:fmt",
+        "@lint:check",
+        "@tests:run"
+    ],
+    "tool:configlet:fetch": "[ -x bin/configlet ] || bin/fetch-configlet",
+    "tool:configlet:update": [
+        "rm bin/configlet || true",
+        "bin/fetch-configlet"
+    ],
+    "configlet:fmt": [
+        "bin/configlet fmt"
+    ],
+    "format:fix": [
+        "@lint:fix",
+        "@configlet:fmt"
+    ],
     "lint:check": "phpcs",
     "lint:fix": "phpcbf",
     "tests:run": "PHPUNIT_BIN='phpunit' bin/test.sh"
