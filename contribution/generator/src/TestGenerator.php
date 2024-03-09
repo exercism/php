@@ -7,6 +7,7 @@ namespace App;
 use App\TrackData\CanonicalData;
 use PhpParser\BuilderFactory;
 use PhpParser\Node;
+use PhpParser\Node\Expr\Assign;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\PrettyPrinter;
 use PHPUnit\Framework\TestCase;
@@ -74,6 +75,10 @@ class TestGenerator
                         [ 'This test has not been implemented yet.' ],
                     )
                 )
+                ->addStmt(new Assign(
+                    $this->builderFactory->var('subject'),
+                    $this->builderFactory->new($exerciseClass),
+                    ))
                 ;
             // if (isset($case->expected->error)) {
             //     $method->addStmt(
@@ -95,6 +100,8 @@ class TestGenerator
             $class->addStmt($method);
         }
 
+        // TODO: We do not use a namespace for the tests. Can we put `use` and `class` directly into pretty printer?
+        // TODO: Add `declare(strict_types=1);`
         $namespace = new Namespace_(new Node\Name('Tests'));
         $namespace->stmts[] = $this->builderFactory->use(TestCase::class)->getNode();
         $namespace->stmts[] = $class->getNode();
