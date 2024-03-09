@@ -43,20 +43,15 @@ class CreateTestsCommand extends Command
             $this->exercise->pathToTestFile(),
             $this->testGenerator->createTestClassFor(
                 $this->exercise->canonicalData(),
-                // TODO: Make '$this->exercise->testFile()'
-                $this->inPascalCase($exerciseSlug),
-                // TODO: Make '$this->exercise->studentsFile()'
+                $this->exercise->testClassName(),
+                $this->exercise->solutionClassName(),
+                $this->exercise->solutionFileName(),
             ),
         );
-        // TODO: Make '$this->exercise->pathToStudentsFile()'
-        // TODO: Make '$this->testGenerator->studentsClassStubFor()'
+        // TODO: Make '$this->exercise->pathToSolutionFile()'
+        // TODO: Make '$this->testGenerator->solutionClassStubFor($this->exercise->solutionClassName())'
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
-    }
-
-    private function inPascalCase(string $text): string
-    {
-        return \str_replace(" ", "", \ucwords(\str_replace("-", " ", $text)));
     }
 }

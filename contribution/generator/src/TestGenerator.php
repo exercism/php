@@ -23,18 +23,21 @@ class TestGenerator
 
     public function createTestClassFor(
         CanonicalData $canonicalData,
-        string $exerciseClass
+        string $testClass,
+        string $exerciseClass,
+        string $solutionFile,
     ): string {
         $this->builderFactory = new BuilderFactory();
 
-        $class = $this->builderFactory->class(
-            $exerciseClass . "Test"
-        )->makeFinal()->extend('TestCase');
-        $class->setDocComment($this->asDocBlock([
-            ...$canonicalData->comments,
-            '',
-            ...$this->trackRulesDocBlock()
-        ]));
+        $class = $this->builderFactory->class($testClass)
+            ->makeFinal()
+            ->extend('TestCase')
+            ->setDocComment($this->asDocBlock([
+                ...$canonicalData->comments,
+                '',
+                ...$this->trackRulesDocBlock(),
+            ]))
+            ;
 
         // Include Setup Method
         $methodSetup = 'setUpBeforeClass';
@@ -45,7 +48,7 @@ class TestGenerator
             ->addStmt(
                 $this->builderFactory->funcCall(
                     "require_once",
-                    [$exerciseClass . ".php"]
+                    [ $solutionFile ]
                 ),
             );
 

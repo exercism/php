@@ -44,7 +44,22 @@ class PracticeExercise implements Exercise
 
     public function pathToTestFile(): string
     {
-        return $this->pathToExercise . '/' . $this->metaConfigFiles()->testFiles[0];
+        return $this->pathToExercise . '/' . $this->testFileName();
+    }
+
+    public function testClassName(): string
+    {
+        return $this->classNameFrom($this->testFileName());
+    }
+
+    public function solutionClassName(): string
+    {
+        return $this->classNameFrom($this->solutionFileName());
+    }
+
+    public function solutionFileName(): string
+    {
+        return $this->metaConfigFiles()->solutionFiles[0];
     }
 
     public function canonicalData(): CanonicalData
@@ -60,6 +75,17 @@ class PracticeExercise implements Exercise
             $this->hydrateTestCasesFrom($canonicalData->cases),
             $canonicalData->comments,
         );
+    }
+
+    private function testFileName(): string
+    {
+        return $this->metaConfigFiles()->testFiles[0];
+    }
+
+    private function classNameFrom(string $fileName): string
+    {
+        // This track follows PSR-4 naming convention
+        return \str_replace(".php", "", $fileName);
     }
 
     private function metaConfigFiles(): MetaConfigFiles
