@@ -9,20 +9,35 @@ use App\TrackData\CanonicalData;
 use App\TrackData\CanonicalData\TestCase;
 use App\TrackData\Exercise;
 use RuntimeException;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class PracticeExercise implements Exercise
 {
+    private ?Configlet $configlet = null;
+
+    private string $exerciseSlug = '';
     private string $pathToPracticeExercises = '';
     private string $pathToExercise = '';
     private string $pathToCanonicalData = '';
 
     public function __construct(
         private string $trackRoot,
-        private string $exerciseSlug,
     ) {
         $this->pathToPracticeExercises = $trackRoot . '/exercises/practice/';
         $this->pathToExercise =
             $this->pathToPracticeExercises . $this->exerciseSlug;
+    }
+
+    #[Required]
+    public function setConfiglet(Configlet $configlet): void
+    {
+        $this->configlet = $configlet;
+    }
+
+    public function forSlug(string $slug): void
+    {
+        $this->exerciseSlug = $slug;
+        $this->pathToExercise = $this->pathToPracticeExercises . $slug;
     }
 
     public function pathToExercise(): string
@@ -84,10 +99,9 @@ class PracticeExercise implements Exercise
 
     private function pathToCachedCanonicalDataFromConfiglet(): void
     {
-        $configlet = new Configlet($this->trackRoot);
         $this->pathToCanonicalData = \sprintf(
             '%1$s/exercises/%2$s/canonical-data.json',
-            $configlet->cachePath(),
+            $this->configlet->cachePath(),
             $this->exerciseSlug
         );
     }

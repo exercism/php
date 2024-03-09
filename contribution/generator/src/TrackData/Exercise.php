@@ -8,12 +8,15 @@ interface Exercise
 {
     /**
      * @param string $trackRoot  The absolute location of the track tree
-     * @param string $exerciseSlug  The slug of this exercise used in the track tree
      */
     public function __construct(
         string $trackRoot,
-        string $exerciseSlug,
     );
+
+    /**
+     * @param string $slug  The slug of this exercise used in the track tree
+     */
+    public function forSlug(string $slug): void;
 
     /** The location of this exercises files in the track tree */
     public function pathToExercise(): string;
