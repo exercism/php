@@ -25,7 +25,7 @@ class TestGenerator
             $exerciseClass . "Test"
         )->makeFinal()->extend('TestCase');
         $class->setDocComment(
-            "/**\n * "
+            "\n/**\n * "
             . implode("\n * ", $canonicalData->comments)
             . "\n"
             . $this->trackRulesDocBlock()
@@ -57,7 +57,7 @@ class TestGenerator
             $method = $this->builderFactory->method($methodName)
                 ->makePublic()
                 ->setReturnType('void')
-                ->setDocComment("/**\n * uuid: {$case->uuid}\n * @testdox {$description}\n */")
+                ->setDocComment("\n/**\n * uuid: {$case->uuid}\n * @testdox {$description}\n */")
                 ->addStmt(
                     $this->builderFactory->funcCall(
                         '$this->markTestIncomplete',
