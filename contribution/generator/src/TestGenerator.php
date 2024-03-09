@@ -21,7 +21,7 @@ class TestGenerator
 
     private BuilderFactory $builderFactory;
 
-    public function createTestsFor(
+    public function createTestClassFor(
         CanonicalData $canonicalData,
         string $exerciseClass
     ): string {
