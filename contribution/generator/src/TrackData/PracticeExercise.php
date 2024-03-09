@@ -19,7 +19,6 @@ class PracticeExercise implements Exercise
 
     private string $exerciseSlug = '';
     private string $pathToExercise = '';
-    private string $pathToCanonicalData = '';
 
     public function __construct(private string $trackRoot) {}
 
@@ -44,19 +43,11 @@ class PracticeExercise implements Exercise
     public function canonicalData(): CanonicalData
     {
         $this->ensurePracticeExerciseCanBeUsed();
-        $this->pathToCanonicalDataFromConfiglet();
 
-        return $this->hydratedCanonicalData();
-    }
-
-    private function hydratedCanonicalData(): CanonicalData
-    {
-        $canonicalData = \json_decode(
-            json: \file_get_contents($this->pathToCanonicalData),
-            flags: JSON_THROW_ON_ERROR
-        );
+        $canonicalData = $this->loadCanonicalData();
 
         // TODO: Validate
+        // TODO: CanonicalData::from($this->loadCanonicalData())
         return new CanonicalData(
             $canonicalData->exercise,
             $this->hydrateTestCasesFrom($canonicalData->cases),
@@ -92,9 +83,13 @@ class PracticeExercise implements Exercise
         }
     }
 
-    private function pathToCanonicalDataFromConfiglet(): void
+    private function loadCanonicalData(): object
     {
-        $this->pathToCanonicalData =
-            $this->configlet->pathToCanonicalData($this->exerciseSlug);
+        return \json_decode(
+            json: \file_get_contents(
+                $this->configlet->pathToCanonicalData($this->exerciseSlug)
+            ),
+            flags: JSON_THROW_ON_ERROR
+        );
     }
 }
