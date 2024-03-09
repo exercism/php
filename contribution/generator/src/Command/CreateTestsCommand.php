@@ -47,11 +47,13 @@ class CreateTestsCommand extends Command
                 . 'Test.php',
             $this->testGenerator->createTestClassFor(
                 $this->exercise->canonicalData(),
-                $this->inPascalCase($exerciseSlug)
+                // TODO: Make '$this->exercise->testFile()'
+                $this->inPascalCase($exerciseSlug),
+                // TODO: Make '$this->exercise->studentsFile()'
             ),
         );
         // TODO: Make '$this->exercise->pathToStudentsFile()'
-        // TODO: Make '$this->testGenerator->studentsFileFor()'
+        // TODO: Make '$this->testGenerator->studentsClassStubFor()'
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
