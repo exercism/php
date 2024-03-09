@@ -13,6 +13,12 @@ use PHPUnit\Framework\TestCase;
 
 class TestGenerator
 {
+    /**
+     * PHP_EOL is CRLF on Windows, we always want LF
+     * @see https://www.php.net/manual/en/reserved.constants.php#constant.php-eol
+     */
+    private const LF = "\n";
+
     private BuilderFactory $builderFactory;
 
     public function createTestsFor(
@@ -92,24 +98,23 @@ class TestGenerator
 
         $printer = new PrettyPrinter\Standard();
 
-        return $printer->prettyPrintFile([$namespace]) . PHP_EOL;
+        return $printer->prettyPrintFile([$namespace]) . self::LF;
     }
 
     private function asDocBlock(array $lines): string
     {
-        /** @see https://www.php.net/manual/en/reserved.constants.php#constant.php-eol */
-        $lf = "\n";
+        $lf = self::LF;
 
-        return $lf
-            . '/**' . $lf
-            . ' * ' . implode($lf . ' * ', $lines) . $lf
+        return self::LF
+            . '/**' . self::LF
+            . ' * ' . implode(self::LF . ' * ', $lines) . self::LF
             . ' */'
             ;
     }
 
     private function trackRulesDocBlock(): array
     {
-        return \explode("\n", <<<'EO_TRACK_RULES'
+        return \explode(self::LF, <<<'EO_TRACK_RULES'
         - Please use `assertSame()` whenever possible. Add a comment with reason
           when it is not possible.
         - Do not use calls with named arguments. Use them only when the
