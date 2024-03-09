@@ -96,19 +96,20 @@ class TestGenerator
 
     private function trackRulesDocBlock(): string
     {
+        // Indented for class DocBlock
         return <<<'EO_TRACK_RULES'
-        *
-        * - Please use `assertSame()` whenever possible. Add a comment when it
-        *   is not possible.
-        * - Do not use calls with named arguments. Use them only when the
-        *   exercise requires named arguments (e.g. because the exercise is
-        *   about named arguments).
-        *   Named arguments are in the way of defining argument names the
-        *   students want (e.g. in their native language).
-        * - Add @testdox with a useful test title, e.g. the test case heading
-        *   from canonical data. The online editor shows that to students.
-        * - Add fail messages to assertions where helpful to tell students more
-        *   than @testdox says.
+         *
+         * - Please use `assertSame()` whenever possible. Add a comment when it
+         *   is not possible.
+         * - Do not use calls with named arguments. Use them only when the
+         *   exercise requires named arguments (e.g. because the exercise is
+         *   about named arguments).
+         *   Named arguments are in the way of defining argument names the
+         *   students want (e.g. in their native language).
+         * - Add @testdox with a useful test title, e.g. the test case heading
+         *   from canonical data. The online editor shows that to students.
+         * - Add fail messages to assertions where helpful to tell students more
+         *   than @testdox says.
         EO_TRACK_RULES;
     }
 }
