@@ -13,20 +13,15 @@ use Symfony\Contracts\Service\Attribute\Required;
 
 class PracticeExercise implements Exercise
 {
+    private const PATH_TO_EXERCISES = '/exercises/practice/';
+
     private ?Configlet $configlet = null;
 
     private string $exerciseSlug = '';
-    private string $pathToPracticeExercises = '';
     private string $pathToExercise = '';
     private string $pathToCanonicalData = '';
 
-    public function __construct(
-        private string $trackRoot,
-    ) {
-        $this->pathToPracticeExercises = $trackRoot . '/exercises/practice/';
-        $this->pathToExercise =
-            $this->pathToPracticeExercises . $this->exerciseSlug;
-    }
+    public function __construct(private string $trackRoot) {}
 
     #[Required]
     public function setConfiglet(Configlet $configlet): void
@@ -37,7 +32,8 @@ class PracticeExercise implements Exercise
     public function forSlug(string $slug): void
     {
         $this->exerciseSlug = $slug;
-        $this->pathToExercise = $this->pathToPracticeExercises . $slug;
+        $this->pathToExercise =
+            $this->trackRoot . self::PATH_TO_EXERCISES . $slug;
     }
 
     public function pathToExercise(): string
