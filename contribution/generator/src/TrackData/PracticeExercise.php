@@ -48,8 +48,7 @@ class PracticeExercise implements Exercise
     public function canonicalData(): CanonicalData
     {
         $this->ensurePracticeExerciseCanBeUsed();
-        $this->pathToCachedCanonicalDataFromConfiglet();
-        $this->ensurePathToCanonicalDataCanBeUsed();
+        $this->pathToCanonicalDataFromConfiglet();
 
         return $this->hydratedCanonicalData();
     }
@@ -97,28 +96,9 @@ class PracticeExercise implements Exercise
         }
     }
 
-    private function pathToCachedCanonicalDataFromConfiglet(): void
+    private function pathToCanonicalDataFromConfiglet(): void
     {
-        $this->pathToCanonicalData = \sprintf(
-            '%1$s/exercises/%2$s/canonical-data.json',
-            $this->configlet->cachePath(),
-            $this->exerciseSlug
-        );
-    }
-
-    private function ensurePathToCanonicalDataCanBeUsed(): void
-    {
-        if (
-            !(
-                \is_readable($this->pathToCanonicalData)
-                && \is_file($this->pathToCanonicalData)
-            )
-        ) {
-            throw new RuntimeException(
-                'Cannot read "configlet" provided cached canonical data from '
-                . $this->pathToCanonicalData
-                . '. Check exercise slug or access rights!'
-            );
-        }
+        $this->pathToCanonicalData =
+            $this->configlet->pathToCanonicalData($this->exerciseSlug);
     }
 }

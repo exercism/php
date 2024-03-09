@@ -16,11 +16,13 @@ class Configlet
         $this->pathToConfiglet = $trackRoot . '/bin/configlet';
     }
 
-    public function cachePath(): string
+    public function pathToCanonicalData(string $slug): string
     {
         $this->ensureConfigletCanBeUsed();
+        $canonicalData = $this->cachedCanonicalData($slug);
+        $this->ensureCanonicalDataCanBeUsed($canonicalData);
 
-        return $this->pathToConfigletCache();
+        return $canonicalData;
     }
 
     private function ensureConfigletCanBeUsed(): void
@@ -34,6 +36,32 @@ class Configlet
             throw new RuntimeException(
                 'configlet not found. Run the generator from track root.'
                 . ' Fetch configlet and create exercise with configlet first!'
+            );
+        }
+    }
+
+    private function cachedCanonicalData(string $slug): string
+    {
+        return \sprintf(
+            '%1$s/exercises/%2$s/canonical-data.json',
+            $this->pathToConfigletCache(),
+            $slug
+        );
+    }
+
+    private function ensureCanonicalDataCanBeUsed(string $canonicalData): void
+    {
+        if (
+            !(
+                \is_readable($canonicalData)
+                && \is_file($canonicalData)
+            )
+        ) {
+            throw new RuntimeException(
+                'Cannot read "configlet" provided cached canonical data from '
+                . $canonicalData
+                . '. Maybe the exercise has no canonical data?'
+                . ' Or check exercise slug and access rights!'
             );
         }
     }
