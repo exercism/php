@@ -4,6 +4,9 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+    app.env_track_root: '%env(TRACK_ROOT)%'
+    app.default_track_root: '%kernel.project_dir%/../..'
+    app.track_root: '%env(realpath:default:app.default_track_root:env_track_root)%'
 
 services:
     # default configuration for services in *this* file
@@ -12,6 +15,7 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             $projectDir: '%kernel.project_dir%'
+            $trackRoot: '%app.track_root%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
