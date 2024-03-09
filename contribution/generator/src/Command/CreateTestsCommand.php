@@ -40,11 +40,7 @@ class CreateTestsCommand extends Command
         $io->writeln('Generating tests for ' . $exerciseSlug . ' in ' . $this->exercise->pathToExercise());
 
         \file_put_contents(
-            // TODO: Make '$this->exercise->pathToTestFile()'
-            $this->exercise->pathToExercise()
-                . '/'
-                . $this->inPascalCase($exerciseSlug)
-                . 'Test.php',
+            $this->exercise->pathToTestFile(),
             $this->testGenerator->createTestClassFor(
                 $this->exercise->canonicalData(),
                 // TODO: Make '$this->exercise->testFile()'

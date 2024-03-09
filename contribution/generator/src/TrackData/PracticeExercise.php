@@ -14,8 +14,10 @@ use Symfony\Contracts\Service\Attribute\Required;
 class PracticeExercise implements Exercise
 {
     private const PATH_TO_EXERCISES = '/exercises/practice/';
+    private const PATH_TO_CONFIG = '/.meta/config.json';
 
     private ?Configlet $configlet = null;
+    private ?MetaConfigFiles $configFiles = null;
 
     private string $exerciseSlug = '';
     private string $pathToExercise = '';
@@ -40,6 +42,11 @@ class PracticeExercise implements Exercise
         return $this->pathToExercise;
     }
 
+    public function pathToTestFile(): string
+    {
+        return $this->pathToExercise . '/' . $this->metaConfigFiles()->testFiles[0];
+    }
+
     public function canonicalData(): CanonicalData
     {
         $this->ensurePracticeExerciseCanBeUsed();
@@ -53,6 +60,22 @@ class PracticeExercise implements Exercise
             $this->hydrateTestCasesFrom($canonicalData->cases),
             $canonicalData->comments,
         );
+    }
+
+    private function metaConfigFiles(): MetaConfigFiles
+    {
+        if (!$this->configFiles instanceof MetaConfigFiles)
+        {
+            $metaConfig = $this->loadMetaConfig();
+
+            $this->configFiles = new MetaConfigFiles(
+                $metaConfig->files->solution,
+                $metaConfig->files->test,
+                $metaConfig->files->example,
+            );
+        }
+
+        return $this->configFiles;
     }
 
     private function hydrateTestCasesFrom(array $rawData): array
@@ -81,6 +104,7 @@ class PracticeExercise implements Exercise
                 . ' configlet first or check access rights!'
             );
         }
+        // TODO: Validate metaConfigFiles(): one test file, one solution file, one example file
     }
 
     private function loadCanonicalData(): object
@@ -88,6 +112,16 @@ class PracticeExercise implements Exercise
         return \json_decode(
             json: \file_get_contents(
                 $this->configlet->pathToCanonicalData($this->exerciseSlug)
+            ),
+            flags: JSON_THROW_ON_ERROR
+        );
+    }
+
+    private function loadMetaConfig(): object
+    {
+        return \json_decode(
+            json: \file_get_contents(
+                $this->pathToExercise . self::PATH_TO_CONFIG
             ),
             flags: JSON_THROW_ON_ERROR
         );
