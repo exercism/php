@@ -24,13 +24,11 @@ class TestGenerator
         $class = $this->builderFactory->class(
             $exerciseClass . "Test"
         )->makeFinal()->extend('TestCase');
-        $class->setDocComment(
-            "\n/**\n * "
-            . implode("\n * ", $canonicalData->comments)
-            . "\n"
-            . $this->trackRulesDocBlock()
-            . "\n */"
-        );
+        $class->setDocComment($this->asDocBlock([
+            ...$canonicalData->comments,
+            '',
+            ...$this->trackRulesDocBlock()
+        ]));
 
         // Include Setup Method
         $methodSetup = 'setUpBeforeClass';
@@ -57,7 +55,10 @@ class TestGenerator
             $method = $this->builderFactory->method($methodName)
                 ->makePublic()
                 ->setReturnType('void')
-                ->setDocComment("\n/**\n * uuid: {$case->uuid}\n * @testdox {$description}\n */")
+                ->setDocComment($this->asDocBlock([
+                    'uuid: ' . $case->uuid,
+                    '@testdox ' . $description,
+                ]))
                 ->addStmt(
                     $this->builderFactory->funcCall(
                         '$this->markTestIncomplete',
@@ -94,22 +95,32 @@ class TestGenerator
         return $printer->prettyPrintFile([$namespace]) . PHP_EOL;
     }
 
-    private function trackRulesDocBlock(): string
+    private function asDocBlock(array $lines): string
     {
-        // Indented for class DocBlock
-        return <<<'EO_TRACK_RULES'
-         *
-         * - Please use `assertSame()` whenever possible. Add a comment when it
-         *   is not possible.
-         * - Do not use calls with named arguments. Use them only when the
-         *   exercise requires named arguments (e.g. because the exercise is
-         *   about named arguments).
-         *   Named arguments are in the way of defining argument names the
-         *   students want (e.g. in their native language).
-         * - Add @testdox with a useful test title, e.g. the test case heading
-         *   from canonical data. The online editor shows that to students.
-         * - Add fail messages to assertions where helpful to tell students more
-         *   than @testdox says.
-        EO_TRACK_RULES;
+        /** @see https://www.php.net/manual/en/reserved.constants.php#constant.php-eol */
+        $lf = "\n";
+
+        return $lf
+            . '/**' . $lf
+            . ' * ' . implode($lf . ' * ', $lines) . $lf
+            . ' */'
+            ;
+    }
+
+    private function trackRulesDocBlock(): array
+    {
+        return \explode("\n", <<<'EO_TRACK_RULES'
+        - Please use `assertSame()` whenever possible. Add a comment with reason
+          when it is not possible.
+        - Do not use calls with named arguments. Use them only when the
+          exercise requires named arguments (e.g. because the exercise is
+          about named arguments).
+          Named arguments are in the way of defining argument names the
+          students want (e.g. in their native language).
+        - Add `@testdox` with a useful test title, e.g. the test case heading
+          from canonical data. The online editor shows that to students.
+        - Add fail messages to assertions where helpful to tell students more
+          than `@testdox` says.
+        EO_TRACK_RULES);
     }
 }
