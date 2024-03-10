@@ -11,14 +11,6 @@ use PHPUnit\Framework\TestCase;
 final class CanonicalDataTest extends TestCase
 {
     #[Test]
-    #[TestDox('When given an empty object, then returns null')]
-    public function whenEmptyObject_thenNull(): void
-    {
-        $subject = CanonicalData::from((object)[]);
-        $this->assertNull($subject);
-    }
-
-    #[Test]
     #[TestDox('$_dataName')]
     #[DataProvider('renderingScenarios')]
     public function testRenderingScenario(
@@ -39,6 +31,8 @@ final class CanonicalDataTest extends TestCase
     public static function renderingScenarios(): array
     {
         return [
+            'When given an empty object, then renders only test class stub'
+                => [ 'empty-object' ],
             'When given object with only unknown keys, then renders only JSON in multi-line comment'
                 => [ 'only-unknown-keys' ],
             'When given object with multiline "comments", then renders test class with comments in class DocBlock'

@@ -30,12 +30,8 @@ class CanonicalData
     ) {
     }
 
-    public static function from(object $rawData): ?self
+    public static function from(object $rawData): self
     {
-        if (empty(\get_object_vars($rawData))) {
-            return null;
-        }
-
         $comments = $rawData->comments ?? [];
         unset($rawData->comments);
 
