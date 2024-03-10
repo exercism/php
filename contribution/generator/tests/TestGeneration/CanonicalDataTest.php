@@ -27,7 +27,11 @@ final class CanonicalDataTest extends TestCase
         $expected =  $this->expectedFor($scenario);
         $subject = $this->subjectFor($scenario);
 
-        $actual = $subject->toPhpCode();
+        $actual = $subject->toPhpCode(
+            'SomeTestClass',
+            'SomeSolutionFile.ext',
+            'SomeSolutionClass',
+        );
 
         $this->assertSame($expected, $actual);
     }
@@ -37,9 +41,11 @@ final class CanonicalDataTest extends TestCase
         return [
             'When given object with only unknown keys, then renders only JSON in multi-line comment'
                 => [ 'only-unknown-keys' ],
-
+            'When given object with multiline "comments", then renders test class with comments in class DocBlock'
+                => [ 'only-multiline-comments' ],
         ];
     }
+
     private function expectedFor(string $scenario): string
     {
         return \file_get_contents(
