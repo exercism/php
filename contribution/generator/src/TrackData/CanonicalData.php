@@ -24,8 +24,6 @@ class CanonicalData
      * @param string[] $comments
      */
     public function __construct(
-        // TODO: The exercise key is not required
-        public string $exercise,
         public array $testCases = [],
         public array $comments = [],
         private ?object $unknown = null,
@@ -42,7 +40,6 @@ class CanonicalData
         unset($rawData->comments);
 
         return new static(
-            '',
             comments: $comments,
             unknown: empty(\get_object_vars($rawData)) ? null : $rawData,
         );

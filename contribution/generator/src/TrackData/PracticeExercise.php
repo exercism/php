@@ -71,7 +71,6 @@ class PracticeExercise implements Exercise
         // TODO: Validate
         // TODO: CanonicalData::from($this->loadCanonicalData())
         return new CanonicalData(
-            $canonicalData->exercise,
             $this->hydrateTestCasesFrom($canonicalData->cases),
             $canonicalData->comments,
         );
