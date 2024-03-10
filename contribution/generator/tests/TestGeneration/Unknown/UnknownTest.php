@@ -31,6 +31,8 @@ final class UnknownTest extends PHPUnitTestCase
         return [
             'When given an empty object, then renders multiline comment with JSON'
                 => [ 'empty-object' ],
+            'When given any object, then renders multiline comment with JSON'
+                => [ 'any-object' ],
         ];
     }
 
