@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\TrackData\CanonicalData;
 
 use PhpParser\Comment\Doc;
-use PhpParser\Node\Stmt\Nop;
+use PhpParser\Node\Stmt\ClassMethod;
 
 /**
  * Represents a 'cases' entry, that is not one of the known types
@@ -30,20 +30,19 @@ class Unknown
 
     public function asAst(): array
     {
-        $nop = new Nop();
-        $nop->setDocComment(
+        $method = new ClassMethod('unknown data, break tests');
+        $method->setDocComment(
             new Doc($this->asMultiLineComment([\json_encode($this->data)]))
         );
 
-        return [ $nop ];
+        return [ $method ];
     }
 
     private function asMultiLineComment(array $lines): string
     {
-        return self::LF
-            . '/* Unknown data:' . self::LF
+        return '/* Unknown data:' . self::LF
             . ' * ' . implode(self::LF . ' * ', $lines) . self::LF
-            . ' */' . self::LF
+            . ' */'
             ;
     }
 }
