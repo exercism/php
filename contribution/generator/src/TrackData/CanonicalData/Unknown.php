@@ -28,7 +28,7 @@ class Unknown
         return new static($rawData);
     }
 
-    public function asAst(string $methodName): array
+    public function asClassMethods(string $methodName): array
     {
         $method = new ClassMethod($methodName);
         $method->setDocComment(

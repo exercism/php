@@ -29,7 +29,7 @@ class TestCase
         );
     }
 
-    public function asAst(): array
+    public function asClassMethods(): array
     {
         $topLevelStatements = [];
         return $topLevelStatements;

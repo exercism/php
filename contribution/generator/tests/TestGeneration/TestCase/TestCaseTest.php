@@ -21,7 +21,7 @@ final class TestCaseTest extends PHPUnitTestCase
         $expected =  $this->expectedFor($scenario);
         $subject = $this->subjectFor($scenario);
 
-        $actual = $subject->asAst();
+        $actual = $subject->asClassMethods();
 
         $this->assertSame($expected, $this->toPhpCode($actual));
     }

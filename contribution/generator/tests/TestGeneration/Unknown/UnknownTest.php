@@ -21,7 +21,7 @@ final class UnknownTest extends PHPUnitTestCase
         $expected =  $this->expectedFor($scenario);
         $subject = $this->subjectFor($scenario);
 
-        $actual = $subject->asAst('fallback_method_name');
+        $actual = $subject->asClassMethods('fallback_method_name');
 
         $this->assertSame($expected, $this->toPhpCode($actual));
     }
