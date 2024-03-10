@@ -38,6 +38,9 @@ class CanonicalData
         $comments = $rawData->comments ?? [];
         unset($rawData->comments);
 
+        // Ignore "exercise" key (not required)
+        unset($rawData->exercise);
+
         return new static(
             comments: $comments,
             unknown: empty(\get_object_vars($rawData)) ? null : $rawData,

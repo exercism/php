@@ -33,6 +33,8 @@ final class CanonicalDataTest extends TestCase
         return [
             'When given an empty object, then renders only test class stub'
                 => [ 'empty-object' ],
+            'When given object with "exercise", then ignores it'
+                => [ 'ignore-exercise' ],
             'When given object with only unknown keys, then renders JSON in multi-line comment'
                 => [ 'only-unknown-keys' ],
             'When given object with singleline "comments", then renders test class with comment in class DocBlock'
