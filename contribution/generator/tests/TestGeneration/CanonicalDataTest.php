@@ -3,6 +3,7 @@
 namespace App\Tests;
 
 use App\TrackData\CanonicalData;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
@@ -18,18 +19,43 @@ final class CanonicalDataTest extends TestCase
     }
 
     #[Test]
-    #[TestDox('When given object with only unknown keys, then renders only JSON in multi-line comment')]
-    public function whenObjectWithOnlyUnknownKeys_thenRendersOnlyMultiLineComment(): void
-    {
-        $input = \json_decode(
-            json: \file_get_contents(__DIR__ . '/fixtures/only-unknown-keys/input.json'),
-            flags: JSON_THROW_ON_ERROR
-        );
-        $expected =  \file_get_contents(__DIR__ . '/fixtures/only-unknown-keys/expected.txt');
-        $subject = CanonicalData::from($input);
+    #[TestDox('$_dataName')]
+    #[DataProvider('renderingScenarios')]
+    public function testRenderingScenario(
+        string $scenario,
+    ): void {
+        $expected =  $this->expectedFor($scenario);
+        $subject = $this->subjectFor($scenario);
 
         $actual = $subject->toPhpCode();
 
         $this->assertSame($expected, $actual);
+    }
+
+    public static function renderingScenarios(): array
+    {
+        return [
+            'When given object with only unknown keys, then renders only JSON in multi-line comment'
+                => [ 'only-unknown-keys' ],
+
+        ];
+    }
+    private function expectedFor(string $scenario): string
+    {
+        return \file_get_contents(
+            __DIR__ . '/fixtures/' . $scenario . '/expected.txt'
+        );
+    }
+
+    private function subjectFor(string $scenario): CanonicalData
+    {
+        $input = \json_decode(
+            json: \file_get_contents(
+                __DIR__ . '/fixtures/' . $scenario . '/input.json'
+            ),
+            flags: JSON_THROW_ON_ERROR
+        );
+
+        return CanonicalData::from($input);
     }
 }
