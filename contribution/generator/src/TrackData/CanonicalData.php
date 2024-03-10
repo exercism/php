@@ -105,9 +105,8 @@ class CanonicalData
             ;
         $class->addStmt($method);
 
-
-        if (\count($this->testCases) > 0) {
-            $class->addStmts(Unknown::from($this->testCases[0])->asAst());
+        foreach($this->testCases as $count => $testCase) {
+            $class->addStmts(Unknown::from($testCase)->asAst('unknownMethod' . $count));
         }
 
         $topLevelStatements[] = $class->getNode();

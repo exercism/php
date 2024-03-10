@@ -29,4 +29,16 @@ final class SomeTestClass extends TestCase
     function unknownMethod0()
     {
     }
+    /* Unknown data:
+     * {"another-unknown-item":"will render as multiline comment with JSON"}
+     */
+    function unknownMethod1()
+    {
+    }
+    /* Unknown data:
+     * {"a-last-unknown-item":"will render as multiline comment with JSON"}
+     */
+    function unknownMethod2()
+    {
+    }
 }

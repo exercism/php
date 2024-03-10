@@ -44,6 +44,8 @@ final class CanonicalDataTest extends TestCase
                 => [ 'only-multiline-comments' ],
             'When given object with one unknown item in "cases", then renders the item into the test class stub'
                 => [ 'one-unknown-case' ],
+            'When given object with many unknown items in "cases", then renders the items into the test class stub'
+                => [ 'many-unknown-cases' ],
         ];
     }
 
