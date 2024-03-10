@@ -40,7 +40,7 @@ final class TestCaseTest extends PHPUnitTestCase
                 => [ 'no-expected' ],
         ];
     }
-/*
+
     #[Test]
     #[TestDox('$_dataName')]
     #[DataProvider('renderingScenarios')]
@@ -54,12 +54,12 @@ final class TestCaseTest extends PHPUnitTestCase
 
         $this->assertSame($expected, $this->toPhpCode($actual));
     }
-*/
+
     public static function renderingScenarios(): array
     {
         return [
-            'When given an empty object, then renders nothing'
-                => [ 'empty-object' ],
+            'When given an object with all required properties, then renders method'
+                => [ 'all-required' ],
         ];
     }
 
