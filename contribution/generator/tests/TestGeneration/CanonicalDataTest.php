@@ -35,6 +35,8 @@ final class CanonicalDataTest extends TestCase
                 => [ 'empty-object' ],
             'When given object with only unknown keys, then renders JSON in multi-line comment'
                 => [ 'only-unknown-keys' ],
+            'When given object with singleline "comments", then renders test class with comment in class DocBlock'
+                => [ 'only-singleline-comment' ],
             'When given object with multiline "comments", then renders test class with comments in class DocBlock'
                 => [ 'only-multiline-comments' ],
         ];
