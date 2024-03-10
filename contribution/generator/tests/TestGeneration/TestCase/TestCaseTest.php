@@ -28,6 +28,16 @@ final class TestCaseTest extends PHPUnitTestCase
         return [
             'When given an empty object, then returns null'
                 => [ 'empty-object' ],
+            'When given object without "uuid", then returns null'
+                => [ 'no-uuid' ],
+            'When given object without "description", then returns null'
+                => [ 'no-description' ],
+            'When given object without "property", then returns null'
+                => [ 'no-property' ],
+            'When given object without "input", then returns null'
+                => [ 'no-input' ],
+            'When given object without "expected", then returns null'
+                => [ 'no-expected' ],
         ];
     }
 /*
