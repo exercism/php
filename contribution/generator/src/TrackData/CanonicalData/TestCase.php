@@ -13,6 +13,25 @@ class TestCase
         public mixed $input,
         public mixed $expected,
         public array $comments = [],
+        private ?object $unknown = null,
     ) {
+    }
+
+    public static function from(object $rawData): self
+    {
+        return new static(
+            uuid: '',
+            description: '',
+            property: '',
+            input: '',
+            expected: '',
+            unknown: empty(\get_object_vars($rawData)) ? null : $rawData,
+        );
+    }
+
+    public function asAst(): array
+    {
+        $topLevelStatements = [];
+        return $topLevelStatements;
     }
 }

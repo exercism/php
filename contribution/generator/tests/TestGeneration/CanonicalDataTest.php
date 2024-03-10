@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
+#[TestDox('Canonical Data (App\Tests\CanonicalDataTest)')]
 final class CanonicalDataTest extends TestCase
 {
     #[Test]
