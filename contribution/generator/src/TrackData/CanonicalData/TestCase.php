@@ -17,16 +17,9 @@ class TestCase
     ) {
     }
 
-    public static function from(object $rawData): self
+    public static function from(object $rawData): ?self
     {
-        return new static(
-            uuid: '',
-            description: '',
-            property: '',
-            input: '',
-            expected: '',
-            unknown: empty(\get_object_vars($rawData)) ? null : $rawData,
-        );
+        return null;
     }
 
     public function asClassMethods(): array

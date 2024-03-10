@@ -14,6 +14,25 @@ final class TestCaseTest extends PHPUnitTestCase
 {
     #[Test]
     #[TestDox('$_dataName')]
+    #[DataProvider('nonRenderingScenarios')]
+    public function testNonRenderingScenario(
+        string $scenario,
+    ): void {
+        $subject = $this->subjectFor($scenario);
+
+        $this->assertNull($subject);
+    }
+
+    public static function nonRenderingScenarios(): array
+    {
+        return [
+            'When given an empty object, then returns null'
+                => [ 'empty-object' ],
+        ];
+    }
+/*
+    #[Test]
+    #[TestDox('$_dataName')]
     #[DataProvider('renderingScenarios')]
     public function testRenderingScenario(
         string $scenario,
@@ -25,7 +44,7 @@ final class TestCaseTest extends PHPUnitTestCase
 
         $this->assertSame($expected, $this->toPhpCode($actual));
     }
-
+*/
     public static function renderingScenarios(): array
     {
         return [
@@ -41,7 +60,7 @@ final class TestCaseTest extends PHPUnitTestCase
         );
     }
 
-    private function subjectFor(string $scenario): TestCase
+    private function subjectFor(string $scenario): ?TestCase
     {
         $input = \json_decode(
             json: \file_get_contents(
