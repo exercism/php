@@ -16,4 +16,20 @@ final class CanonicalDataTest extends TestCase
         $subject = CanonicalData::from((object)[]);
         $this->assertNull($subject);
     }
+
+    #[Test]
+    #[TestDox('When given object with only unknown keys, then renders only JSON in multi-line comment')]
+    public function whenObjectWithOnlyUnknownKeys_thenRendersOnlyMultiLineComment(): void
+    {
+        $input = \json_decode(
+            json: \file_get_contents(__DIR__ . '/fixtures/only-unknown-keys/input.json'),
+            flags: JSON_THROW_ON_ERROR
+        );
+        $expected =  \file_get_contents(__DIR__ . '/fixtures/only-unknown-keys/expected.txt');
+        $subject = CanonicalData::from($input);
+
+        $actual = $subject->toPhpCode();
+
+        $this->assertSame($expected, $actual);
+    }
 }
