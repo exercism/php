@@ -42,6 +42,8 @@ final class CanonicalDataTest extends TestCase
                 => [ 'only-singleline-comment' ],
             'When given object with multiline "comments", then renders test class with comments in class DocBlock'
                 => [ 'only-multiline-comments' ],
+            'When given object with one unknown item in "cases", then renders the item into the test class stub'
+                => [ 'one-unknown-case' ],
         ];
     }
 

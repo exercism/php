@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\TrackData;
 
 use App\TrackData\CanonicalData\TestCase;
+use App\TrackData\CanonicalData\Unknown;
 use PhpParser\BuilderFactory;
 use PhpParser\Comment\Doc;
 use PhpParser\Node\DeclareItem;
@@ -38,10 +39,14 @@ class CanonicalData
         $comments = $rawData->comments ?? [];
         unset($rawData->comments);
 
+        $testCases = $rawData->cases ?? [];
+        unset($rawData->cases);
+
         // Ignore "exercise" key (not required)
         unset($rawData->exercise);
 
         return new static(
+            testCases: $testCases,
             comments: $comments,
             unknown: empty(\get_object_vars($rawData)) ? null : $rawData,
         );
@@ -98,12 +103,12 @@ class CanonicalData
                 ),
             )
             ;
+        $class->addStmt($method);
+
 
         if (\count($this->testCases) > 0) {
-            // TODO: Add test cases
+            $class->addStmts(Unknown::from($this->testCases[0])->asAst());
         }
-
-        $class->addStmt($method);
 
         $topLevelStatements[] = $class->getNode();
 
