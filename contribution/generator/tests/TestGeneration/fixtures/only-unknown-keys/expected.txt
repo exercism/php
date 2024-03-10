@@ -4,6 +4,8 @@
  * {"unknown-key":"does not matter"}
  */
 
+declare (strict_types=1);
+
 use PHPUnit\Framework\TestCase;
 
 /**

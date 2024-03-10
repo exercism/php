@@ -7,6 +7,9 @@ namespace App\TrackData;
 use App\TrackData\CanonicalData\TestCase;
 use PhpParser\BuilderFactory;
 use PhpParser\Comment\Doc;
+use PhpParser\Node\DeclareItem;
+use PhpParser\Node\Scalar\Int_;
+use PhpParser\Node\Stmt\Declare_;
 use PhpParser\Node\Stmt\Nop;
 use PhpParser\PrettyPrinter\Standard;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
@@ -53,8 +56,16 @@ class CanonicalData
             $topLevelStatements[] = $nop;
         }
 
+        $topLevelStatements[] = new Declare_([
+            new DeclareItem('strict_types', new Int_(1))
+        ]);
+
+        // Renders as empty line
+        $nop = new Nop();
+        $topLevelStatements[] = $nop;
+
         $builderFactory = new BuilderFactory();
-        // TODO: Add `declare(strict_types=1);`
+
         $topLevelStatements[] = $builderFactory->use(PHPUnitTestCase::class)->getNode();
 
         $class = $builderFactory->class($testClass)
