@@ -1,6 +1,6 @@
 /* Unknown data:
  * {}
  */
-function unknown data, break tests()
+function fallback_method_name()
 {
 }

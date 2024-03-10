@@ -28,9 +28,9 @@ class Unknown
         return new static($rawData);
     }
 
-    public function asAst(): array
+    public function asAst(string $methodName): array
     {
-        $method = new ClassMethod('unknown data, break tests');
+        $method = new ClassMethod($methodName);
         $method->setDocComment(
             new Doc($this->asMultiLineComment([\json_encode($this->data)]))
         );
