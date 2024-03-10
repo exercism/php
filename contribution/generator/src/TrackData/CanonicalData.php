@@ -18,4 +18,9 @@ class CanonicalData
         public array $comments = [],
     ) {
     }
+
+    public static function from(): null
+    {
+        return null;
+    }
 }
