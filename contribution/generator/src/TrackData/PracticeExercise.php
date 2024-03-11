@@ -54,7 +54,7 @@ class PracticeExercise implements Exercise
         return CanonicalData::from($this->loadCanonicalData())
         ->toPhpCode(
             $this->classNameFrom($this->testFileName()),
-            $this->testFileName(),
+            $this->solutionFileName(),
             $this->classNameFrom($this->solutionFileName()),
         );
     }
