@@ -39,6 +39,17 @@ final class SomeTestClass extends TestCase
     public function firstDescription(): void
     {
         $this->markTestSkipped('This test has not been implemented yet.');
+        
+        $input = array (
+          'argumentName' => 
+          array (
+          ),
+        );
+        $expected = true;
+        
+        $actual = $this->subject->someProperty(...$input);
+        
+        $this->assertSame($expected, $actual);
     }
     
     /* Unknown data:
@@ -56,5 +67,28 @@ final class SomeTestClass extends TestCase
     public function andALastOne(): void
     {
         $this->markTestSkipped('This test has not been implemented yet.');
+        
+        $input = array (
+          'argumentName' => 
+          array (
+            0 => 
+            array (
+              0 => 1,
+              1 => 2,
+            ),
+          ),
+        );
+        $expected = array (
+          0 => 
+          array (
+            0 => 1,
+            1 => 1,
+            2 => 3,
+          ),
+        );
+        
+        $actual = $this->subject->alsoProperty(...$input);
+        
+        $this->assertSame($expected, $actual);
     }
 }

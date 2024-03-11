@@ -61,6 +61,7 @@ class CanonicalData
     public function toPhpCode(
         string $testClass,
         string $solutionFile,
+        string $solutionClass = 'TODO',
     ): string {
         $topLevelStatements = [];
 
@@ -96,9 +97,8 @@ class CanonicalData
             )
             ;
 
-        // Include Setup Method
-        $methodSetup = 'setUpBeforeClass';
-        $method = $builderFactory->method($methodSetup)
+        // Require solution file once in setUpBeforeClass()
+        $method = $builderFactory->method('setUpBeforeClass')
             ->makePublic()
             ->makeStatic()
             ->setReturnType('void')
@@ -111,6 +111,19 @@ class CanonicalData
             ;
         $class->addStmt($method);
 
+        /*
+        // Produce new instance in setUp()
+        // TODO: Add class property 'subject'
+        $method = $builderFactory->method('setUp')
+            ->makePublic()
+            ->setReturnType('void')
+            ->addStmt(new Assign(
+                $builderFactory->var('this->subject'),
+                $builderFactory->new($solutionClass),
+            ))
+            ;
+        $class->addStmt($method);
+        */
         foreach($this->testCases as $count => $testCase) {
             $class->addStmts($testCase->asClassMethods('unknownMethod' . $count));
         }

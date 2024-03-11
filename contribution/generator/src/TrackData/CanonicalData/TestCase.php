@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace App\TrackData\CanonicalData;
 
+use Exception;
 use PhpParser\BuilderFactory;
+use PhpParser\Comment\Doc;
+use PhpParser\Node\Arg;
+use PhpParser\Node\Expr\Assign;
+use PhpParser\Node\Name\FullyQualified;
+use PhpParser\Node\Stmt\Nop;
 
 class TestCase
 {
@@ -54,6 +60,18 @@ class TestCase
     {
         $builderFactory = new BuilderFactory();
 
+        // Renders as blank line
+        $nop = new Nop();
+
+        // This should work for all types in input and expected
+        // Using a Nop() with a DocComment allows to write arbitrary strings
+        // into methods (not between them). Generating code is so complicated...
+        $vars = new Nop();
+        $vars->setDocComment(new Doc(
+            '$input = ' . var_export((array)$this->input, true) . ';' . self::LF
+            . '$expected = ' . var_export($this->expected, true) . ';'
+        ));
+
         $method = $builderFactory->method($this->testMethodName())
             ->makePublic()
             ->setReturnType('void')
@@ -72,7 +90,25 @@ class TestCase
                     [ 'This test has not been implemented yet.' ],
                 )
             )
+            ->addStmt($nop)
+            ->addStmt($vars)
+            ->addStmt($nop)
+            ->addStmt(new Assign(
+                $builderFactory->var('actual'),
+                $builderFactory->funcCall('$this->subject->' . $this->property, [new Arg($builderFactory->var('input'), unpack: true)]),
+            ))
+            ->addStmt($nop)
+            ->addStmt(
+                $builderFactory->funcCall(
+                    '$this->assertSame',
+                    [
+                        $builderFactory->var('expected'),
+                        $builderFactory->var('actual'),
+                    ]
+                )
+            )
             ;
+        ;
 
         return [ $method->getNode() ];
     }

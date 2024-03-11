@@ -6,4 +6,13 @@
 public function so_meDescriPtionWithTrailingSpace(): void
 {
     $this->markTestSkipped('This test has not been implemented yet.');
+    
+    $input = array (
+      'camelCasedArgumentName' => 'maybe any type',
+    );
+    $expected = 'maybe any type';
+    
+    $actual = $this->subject->camelCasedProperty(...$input);
+    
+    $this->assertSame($expected, $actual);
 }
