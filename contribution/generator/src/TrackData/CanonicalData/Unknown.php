@@ -40,7 +40,8 @@ class Unknown
 
     private function asMultiLineComment(array $lines): string
     {
-        return '/* Unknown data:' . self::LF
+        return self::LF
+            . '/* Unknown data:' . self::LF
             . ' * ' . implode(self::LF . ' * ', $lines) . self::LF
             . ' */'
             ;

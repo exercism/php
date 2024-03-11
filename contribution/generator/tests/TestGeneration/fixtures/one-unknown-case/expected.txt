@@ -23,6 +23,7 @@ final class SomeTestClass extends TestCase
     {
         require_once('SomeSolutionFile.ext');
     }
+    
     /* Unknown data:
      * {"an-unknown-item":"will render as multiline comment with JSON"}
      */
