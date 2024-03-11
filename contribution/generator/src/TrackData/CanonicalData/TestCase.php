@@ -58,6 +58,10 @@ class TestCase
             ->makePublic()
             ->setReturnType('void')
             ->setDocComment($this->asDocBlock([
+                ...($this->unknown !== null
+                    ? ['Unknown data:', \json_encode($this->unknown), '']
+                    : []
+                ),
                 'uuid: ' . $this->uuid,
                 '@testdox ' . \ucfirst($this->description),
                 '@test',
