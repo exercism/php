@@ -41,15 +41,10 @@ class CreateTestsCommand extends Command
 
         \file_put_contents(
             $this->exercise->pathToTestFile(),
-            $this->testGenerator->createTestClassFor(
-                $this->exercise->canonicalData(),
-                $this->exercise->testClassName(),
-                $this->exercise->solutionClassName(),
-                $this->exercise->solutionFileName(),
-            ),
+            $this->exercise->testFileContent(),
         );
         // TODO: Make '$this->exercise->pathToSolutionFile()'
-        // TODO: Make '$this->testGenerator->solutionClassStubFor($this->exercise->solutionClassName())'
+        // TODO: Make '$this->exercise->solutionFileContent()'
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;

@@ -47,6 +47,18 @@ class PracticeExercise implements Exercise
         return $this->pathToExercise . '/' . $this->testFileName();
     }
 
+    public function testFileContent(): string
+    {
+        $this->ensurePracticeExerciseCanBeUsed();
+
+        return CanonicalData::from($this->loadCanonicalData())
+        ->toPhpCode(
+            $this->classNameFrom($this->testFileName()),
+            $this->testFileName(),
+            $this->classNameFrom($this->solutionFileName()),
+        );
+    }
+
     public function testClassName(): string
     {
         return $this->classNameFrom($this->testFileName());

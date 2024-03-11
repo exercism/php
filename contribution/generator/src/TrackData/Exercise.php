@@ -24,6 +24,9 @@ interface Exercise
     /** The location of this exercises test file in the track tree */
     public function pathToTestFile(): string;
 
+    /** The content of this exercises test file */
+    public function testFileContent(): string;
+
     /** The unqualified class name of this exercises tests */
     public function testClassName(): string;
 
