@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\TestGenerator;
 use App\TrackData\Exercise;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -20,7 +19,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class CreateTestsCommand extends Command
 {
     public function __construct(
-        private TestGenerator $testGenerator,
         private Exercise $exercise,
     ) {
         parent::__construct();
