@@ -46,6 +46,8 @@ final class CanonicalDataTest extends TestCase
                 => [ 'one-unknown-case' ],
             'When given object with many unknown items in "cases", then renders the items into the test class stub'
                 => [ 'many-unknown-cases' ],
+            'When given object with one test case in "cases", then renders the test case into the test class stub'
+                => [ 'one-test-case' ],
         ];
     }
 

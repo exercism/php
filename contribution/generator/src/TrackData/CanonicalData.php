@@ -39,7 +39,13 @@ class CanonicalData
         $comments = $rawData->comments ?? [];
         unset($rawData->comments);
 
-        $testCases = $rawData->cases ?? [];
+        $testCases = [];
+        foreach($rawData->cases ?? [] as $rawTestCase) {
+            $thisCase = TestCase::from($rawTestCase);
+            if ($thisCase === null)
+                $thisCase = Unknown::from($rawTestCase);
+            $testCases[] = $thisCase;
+        }
         unset($rawData->cases);
 
         // Ignore "exercise" key (not required)
@@ -106,7 +112,7 @@ class CanonicalData
         $class->addStmt($method);
 
         foreach($this->testCases as $count => $testCase) {
-            $class->addStmts(Unknown::from($testCase)->asClassMethods('unknownMethod' . $count));
+            $class->addStmts($testCase->asClassMethods('unknownMethod' . $count));
         }
 
         $topLevelStatements[] = $class->getNode();
