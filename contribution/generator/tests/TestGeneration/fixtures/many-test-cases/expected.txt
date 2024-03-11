@@ -1,0 +1,56 @@
+<?php
+
+declare (strict_types=1);
+
+use PHPUnit\Framework\TestCase;
+
+/**
+ * - Please use `assertSame()` whenever possible. Add a comment with reason
+ *   when it is not possible.
+ * - Do not use calls with named arguments. Use them only when the
+ *   exercise requires named arguments (e.g. because the exercise is
+ *   about named arguments).
+ *   Named arguments are in the way of defining argument names the
+ *   students want (e.g. in their native language).
+ * - Add `@testdox` with a useful test title, e.g. the test case heading
+ *   from canonical data. The online editor shows that to students.
+ * - Add fail messages to assertions where helpful to tell students more
+ *   than `@testdox` says.
+ */
+final class SomeTestClass extends TestCase
+{
+    public static function setUpBeforeClass(): void
+    {
+        require_once('SomeSolutionFile.ext');
+    }
+    
+    /**
+     * uuid: 31a673f2-5e54-49fe-bd79-1c1dae476c9c
+     * @testdox First description
+     * @test
+     */
+    public function firstDescription(): void
+    {
+        $this->markTestSkipped('This test has not been implemented yet.');
+    }
+    
+    /**
+     * uuid: 4f99b933-367b-404b-8c6d-36d5923ee476
+     * @testdox Second description
+     * @test
+     */
+    public function secondDescription(): void
+    {
+        $this->markTestSkipped('This test has not been implemented yet.');
+    }
+    
+    /**
+     * uuid: 91122d10-5ec7-47cb-b759-033756375869
+     * @testdox And a last one
+     * @test
+     */
+    public function andALastOne(): void
+    {
+        $this->markTestSkipped('This test has not been implemented yet.');
+    }
+}

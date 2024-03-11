@@ -1,0 +1,31 @@
+{
+    "cases": [
+        {
+            "uuid": "31a673f2-5e54-49fe-bd79-1c1dae476c9c",
+            "description": "first description",
+            "property": "someProperty",
+            "input": {
+              "argumentName": []
+            },
+            "expected": true
+        },
+        {
+            "uuid": "4f99b933-367b-404b-8c6d-36d5923ee476",
+            "description": "second description",
+            "property": "otherProperty",
+            "input": {
+              "otherArgumentName": [[1, 1]]
+            },
+            "expected": "some value"
+        },
+        {
+            "uuid": "91122d10-5ec7-47cb-b759-033756375869",
+            "description": "and a last one",
+            "property": "alsoProperty",
+            "input": {
+              "argumentName": [[1, 2]]
+            },
+            "expected": [[1, 1, 3]]
+        }
+    ]
+}
