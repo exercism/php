@@ -59,38 +59,26 @@ class PracticeExercise implements Exercise
         );
     }
 
-    public function testClassName(): string
+    public function pathToSolutionFile(): string
     {
-        return $this->classNameFrom($this->testFileName());
+        return $this->pathToExercise . '/' . $this->solutionFileName();
     }
 
-    public function solutionClassName(): string
-    {
-        return $this->classNameFrom($this->solutionFileName());
-    }
-
-    public function solutionFileName(): string
-    {
-        return $this->metaConfigFiles()->solutionFiles[0];
-    }
-
-    public function canonicalData(): CanonicalData
+    public function solutionFileContent(): string
     {
         $this->ensurePracticeExerciseCanBeUsed();
 
-        $canonicalData = $this->loadCanonicalData();
-
-        // TODO: Validate
-        // TODO: CanonicalData::from($this->loadCanonicalData())
-        return new CanonicalData(
-            $this->hydrateTestCasesFrom($canonicalData->cases),
-            $canonicalData->comments,
-        );
+        return 'To be defined';
     }
 
     private function testFileName(): string
     {
         return $this->metaConfigFiles()->testFiles[0];
+    }
+
+    private function solutionFileName(): string
+    {
+        return $this->metaConfigFiles()->solutionFiles[0];
     }
 
     private function classNameFrom(string $fileName): string

@@ -27,15 +27,9 @@ interface Exercise
     /** The content of this exercises test file */
     public function testFileContent(): string;
 
-    /** The unqualified class name of this exercises tests */
-    public function testClassName(): string;
+    /** The location of this exercises solution file in the track tree */
+    public function pathToSolutionFile(): string;
 
-    /** The unqualified class name of this exercises solution */
-    public function solutionClassName(): string;
-
-    /** The name of this exercises solution file */
-    public function solutionFileName(): string;
-
-    /** The content of the canonical data from the problem specification */
-    public function canonicalData(): CanonicalData;
+    /** The content of this exercises solution file */
+    public function solutionFileContent(): string;
 }
