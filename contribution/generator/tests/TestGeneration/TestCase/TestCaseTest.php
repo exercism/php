@@ -60,8 +60,10 @@ final class TestCaseTest extends PHPUnitTestCase
         return [
             'When given an object with all required properties, then renders method'
                 => [ 'all-required' ],
-            'When given an object with all required properties and an unknown one, then renders method with JSON in DocBlock'
+                'When given an object with all required properties and an unknown one, then renders method with JSON in DocBlock'
                 => [ 'all-required-with-unknown' ],
+            'When given a valid object with problematic chars in description, then renders method name without those'
+                => [ 'all-required-with-problematic-description' ],
         ];
     }
 

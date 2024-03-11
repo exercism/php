@@ -79,7 +79,9 @@ class TestCase
 
     private function testMethodName(): string
     {
-        $methodNameParts = \explode(' ', $this->description);
+        $sanitizedDescription = \preg_replace('/\W+/', ' ', $this->description);
+
+        $methodNameParts = \explode(' ', $sanitizedDescription);
         $upperCasedParts = \array_map(
             fn ($part) => \ucfirst($part),
             $methodNameParts
