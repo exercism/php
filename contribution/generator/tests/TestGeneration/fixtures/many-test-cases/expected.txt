@@ -19,9 +19,16 @@ use PHPUnit\Framework\TestCase;
  */
 final class SomeTestClass extends TestCase
 {
+    private SomeSolutionClass $subject;
+    
     public static function setUpBeforeClass(): void
     {
         require_once('SomeSolutionFile.ext');
+    }
+    
+    public function setUp(): void
+    {
+        $this->subject = new SomeSolutionClass();
     }
     
     /**

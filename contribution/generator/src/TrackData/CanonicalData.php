@@ -9,6 +9,7 @@ use App\TrackData\CanonicalData\Unknown;
 use PhpParser\BuilderFactory;
 use PhpParser\Comment\Doc;
 use PhpParser\Node\DeclareItem;
+use PhpParser\Node\Expr\Assign;
 use PhpParser\Node\Scalar\Int_;
 use PhpParser\Node\Stmt\Declare_;
 use PhpParser\Node\Stmt\Nop;
@@ -61,7 +62,7 @@ class CanonicalData
     public function toPhpCode(
         string $testClass,
         string $solutionFile,
-        string $solutionClass = 'TODO',
+        string $solutionClass,
     ): string {
         $topLevelStatements = [];
 
@@ -97,6 +98,12 @@ class CanonicalData
             )
             ;
 
+        $property = $builderFactory->property('subject')
+            ->makePrivate()
+            ->setType($solutionClass)
+            ;
+        $class->addStmt($property);
+
         // Require solution file once in setUpBeforeClass()
         $method = $builderFactory->method('setUpBeforeClass')
             ->makePublic()
@@ -108,12 +115,11 @@ class CanonicalData
                     [ $solutionFile ]
                 ),
             )
+            ->setDocComment('')
             ;
         $class->addStmt($method);
 
-        /*
         // Produce new instance in setUp()
-        // TODO: Add class property 'subject'
         $method = $builderFactory->method('setUp')
             ->makePublic()
             ->setReturnType('void')
@@ -121,9 +127,10 @@ class CanonicalData
                 $builderFactory->var('this->subject'),
                 $builderFactory->new($solutionClass),
             ))
+            ->setDocComment('')
             ;
         $class->addStmt($method);
-        */
+
         foreach($this->testCases as $count => $testCase) {
             $class->addStmts($testCase->asClassMethods('unknownMethod' . $count));
         }
