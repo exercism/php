@@ -50,6 +50,8 @@ final class CanonicalDataTest extends TestCase
                 => [ 'one-test-case' ],
             'When given object with many test cases in "cases", then renders the test cases into the test class stub'
                 => [ 'many-test-cases' ],
+            'When given object with mixed test case and unknown in "cases", then renders everything in order of input into the test class stub'
+                => [ 'mixed-up-cases' ],
         ];
     }
 
