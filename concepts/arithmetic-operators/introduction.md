@@ -2,7 +2,7 @@
 
 PHP provides a number of operators for performing arithmetic operations. PHP follows the standard mathematical order of operations for its arithmetic operators. The operators that are provided by PHP are:
 
-* Identity (+)
+* Identity (=)
 * Negation (-)
 * Addition (+)
 * Subtraction (-)
