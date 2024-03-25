@@ -1,0 +1,18 @@
+@startuml
+participant Exercise as exercise
+participant CanonicalData as data
+participant InnerGroup as group
+participant Item as item
+
+exercise -> data : ItemFactory::from($data)
+data -> group : ItemFactory::from($data)
+group -> group : ItemFactory::from($data)
+group -> item : ItemFactory::from($data)
+
+exercise -> data : renderTestCode()
+data -> group : renderTestCode()
+group -> group : renderTestCode()
+group -> item : renderTestCode()
+
+exercise -> data : renderSolutionCode()
+@enduml

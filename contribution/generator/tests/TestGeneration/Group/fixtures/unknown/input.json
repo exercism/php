@@ -1,0 +1,14 @@
+{
+    "some-unknown-key": "with value",
+    "cases": [
+        {
+            "uuid": "31a673f2-5e54-49fe-bd79-1c1dae476c9c",
+            "description": "some description",
+            "property": "camelCasedProperty",
+            "input": {
+                "camelCasedArgumentName": "maybe any type"
+            },
+            "expected": "maybe any type"
+        }
+    ]
+}

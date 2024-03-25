@@ -1,0 +1,17 @@
+@startuml
+actor Developer as dev
+participant Command as command
+participant Exercise as exercise
+participant CanonicalData as data
+
+dev -> command : create-exercise $slug
+command -> exercise : create($slug)
+exercise -> exercise : loadData($slug)
+exercise -> data : ItemFactory::from($data)
+command -> exercise : testFileName()
+command -> exercise : testFileContent()
+exercise -> data : renderTestCode()
+command -> exercise : solutionFileName()
+command -> exercise : solutionFileContent()
+exercise -> data : renderSolutionCode()
+@enduml
