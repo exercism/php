@@ -1,0 +1,3 @@
+        $this->subject = new SomeSolutionClass();
+    }
+}
