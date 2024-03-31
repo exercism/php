@@ -1,10 +1,17 @@
 {
-  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money.",
-  "authors": ["MichaelBunker"],
-  "contributors": [],
+  "authors": [
+    "MichaelBunker"
+  ],
   "files": {
-    "solution": ["BankAccount.php"],
-    "test": ["BankAccountTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "BankAccount.php"
+    ],
+    "test": [
+      "BankAccountTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money."
 }

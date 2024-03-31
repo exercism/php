@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "tomasnorre"
+  ],
+  "files": {
+    "solution": [
+      "ZebraPuzzle.php"
+    ],
+    "test": [
+      "ZebraPuzzleTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Solve the zebra puzzle.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"
+}

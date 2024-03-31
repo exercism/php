@@ -1,10 +1,17 @@
 {
-  "blurb": "Translate RNA sequences into proteins.",
-  "authors": ["MichaelBunker"],
-  "contributors": [],
+  "authors": [
+    "MichaelBunker"
+  ],
   "files": {
-    "solution": ["ProteinTranslation.php"],
-    "test": ["ProteinTranslationTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "ProteinTranslation.php"
+    ],
+    "test": [
+      "ProteinTranslationTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Translate RNA sequences into proteins."
 }

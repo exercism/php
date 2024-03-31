@@ -82,7 +82,7 @@ class BinaryTest extends PHPUnit\Framework\TestCase
         parse_binary($value);
     }
 
-    public function invalidValues(): array
+    public static function invalidValues(): array
     {
         return [
             ['2'], ['12345'], ['a'], ['0abcdef'],

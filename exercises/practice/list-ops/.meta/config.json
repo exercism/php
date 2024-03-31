@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "homersimpsons"
+  ],
+  "files": {
+    "solution": [
+      "ListOps.php"
+    ],
+    "test": [
+      "ListOpsTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Implement basic list operations."
+}

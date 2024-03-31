@@ -174,7 +174,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function invalidCodonDataProvider(): array
+    public static function invalidCodonDataProvider(): array
     {
         return [
             'Non-existing' => ['AAA'],
