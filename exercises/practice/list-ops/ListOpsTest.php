@@ -36,7 +36,7 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox append entries to a list and return the new list -> empty lists
      */
-    public function testAppendEmptyLists()
+    public function testAppendEntriesToAListAndReturnTheNewListWithEmptyLists()
     {
         $listOps = new ListOps();
         $this->assertEquals([], $listOps->append([], []));
@@ -45,25 +45,25 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox append entries to a list and return the new list -> list to empty list
      */
-    public function testAppendNonEmptyListToEmptyList()
-    {
-        $listOps = new ListOps();
-        $this->assertEquals([1, 2, 3, 4], $listOps->append([1, 2, 3, 4], []));
-    }
-
-    /**
-     * @testdox append entries to a list and return the new list -> empty list to list
-     */
-    public function testAppendEmptyListToNonEmptyList()
+    public function testAppendEntriesToAListAndReturnTheNewListWithListToEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals([1, 2, 3, 4], $listOps->append([], [1, 2, 3, 4]));
     }
 
     /**
+     * @testdox append entries to a list and return the new list -> empty list to list
+     */
+    public function testAppendEntriesToAListAndReturnTheNewListWithEmptyListToList()
+    {
+        $listOps = new ListOps();
+        $this->assertEquals([1, 2, 3, 4], $listOps->append([1, 2, 3, 4], []));
+    }
+
+    /**
      * @testdox append entries to a list and return the new list -> non-empty lists
      */
-    public function testAppendNonEmptyLists()
+    public function testAppendEntriesToAListAndReturnTheNewListWithNonEmptyLists()
     {
         $listOps = new ListOps();
         $this->assertEquals([1, 2, 2, 3, 4, 5], $listOps->append([1, 2], [2, 3, 4, 5]));
@@ -72,16 +72,16 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox concatenate a list of lists -> empty list
      */
-    public function testConcatEmptyLists()
+    public function testConcatenateAListOfListsWithEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals([], $listOps->concat([], []));
+        $this->assertEquals([], $listOps->concat());
     }
 
     /**
      * @testdox concatenate a list of lists -> list of lists
      */
-    public function testConcatLists()
+    public function testConcatenateAListOfListsWithListOfLists()
     {
         $listOps = new ListOps();
         $this->assertEquals([1, 2, 3, 4, 5, 6], $listOps->concat([1, 2], [3], [], [4, 5, 6]));
@@ -90,7 +90,7 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox concatenate a list of lists -> list of nested lists
      */
-    public function testConcatNestedLists()
+    public function testConcatenateAListOfListsWithListOfNestedLists()
     {
         $listOps = new ListOps();
         $this->assertEquals([[1], [2], [3], [], [4, 5, 6]], $listOps->concat([[1], [2]], [[3]], [[]], [[4, 5, 6]]));
@@ -99,7 +99,7 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox filter list returning only values that satisfy the filter function -> empty list
      */
-    public function testFilterEmptyList()
+    public function testFilterListReturningOnlyValuesThatSatisfyTheFilterFunctionWithEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
@@ -109,9 +109,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox filter list returning only values that satisfy the filter function -> non empty list
+     * @testdox filter list returning only values that satisfy the filter function -> non-empty list
      */
-    public function testFilterNonEmptyList()
+    public function testFilterListReturningOnlyValuesThatSatisfyTheFilterFunctionWithNonEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
@@ -123,7 +123,7 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox returns the length of a list -> empty list
      */
-    public function testLengthEmptyList()
+    public function testReturnsTheLengthOfAListWithEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(0, $listOps->length([]));
@@ -132,16 +132,16 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox returns the length of a list -> non-empty list
      */
-    public function testLengthNonEmptyList()
+    public function testReturnsTheLengthOfAListWithNonEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(4, $listOps->length([1, 2, 3, 4]));
     }
 
     /**
-     * @testdox returns a list of elements whose values equal the list value transformed by the mapping function -> empty list
+     * @testdox return a list of elements whose values equal the list value transformed by the mapping function -> empty list
      */
-    public function testMapEmptyList()
+    public function testReturnAListOfElementsWhoseValuesEqualTheListValueTransformedByTheMappingFunctionWithEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
@@ -151,9 +151,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox returns a list of elements whose values equal the list value transformed by the mapping function -> non-empty list
+     * @testdox return a list of elements whose values equal the list value transformed by the mapping function -> non-empty list
      */
-    public function testMapNonEmptyList()
+    public function testReturnAListOfElementsWhoseValuesEqualTheListValueTransformedByTheMappingFunctionWithNonEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
@@ -165,7 +165,7 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox folds (reduces) the given list from the left with a function -> empty list
      */
-    public function testFoldlEmptyList()
+    public function testFoldsReducesTheGivenListFromTheLeftWithAFunctionWithEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
@@ -177,19 +177,19 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox folds (reduces) the given list from the left with a function -> direction independent function applied to non-empty list
      */
-    public function testFoldlDirectionIndependentNonEmptyList()
+    public function testFoldsReducesTheGivenListFromTheLeftWithAFunctionWithDirectionIndependentFunctionAppliedToNonEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
             15,
-            $listOps->foldl(static fn ($acc, $el) => $acc + $el, [1, 2, 3, 4], 5)
+            $listOps->foldl(static fn ($acc, $el) => $el + $acc, [1, 2, 3, 4], 5)
         );
     }
 
     /**
      * @testdox folds (reduces) the given list from the left with a function -> direction dependent function applied to non-empty list
      */
-    public function testFoldlDirectionDependentNonEmptyList()
+    public function testFoldsReducesTheGivenListFromTheLeftWithAFunctionWithDirectionDependentFunctionAppliedToNonEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
@@ -201,7 +201,7 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox folds (reduces) the given list from the right with a function -> empty list
      */
-    public function testFoldrEmptyList()
+    public function testFoldsReducesTheGivenListFromTheRightWithAFunctionWithEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
@@ -209,23 +209,21 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
             $listOps->foldr(static fn ($acc, $el) => $el * $acc, [], 2)
         );
     }
-
     /**
      * @testdox folds (reduces) the given list from the right with a function -> direction independent function applied to non-empty list
      */
-    public function testFoldrDirectionIndependentNonEmptyList()
+    public function testFoldsReducesTheGivenListFromTheRightWithAFunctionWithDirectionIndependentFunctionAppliedToNonEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
             15,
-            $listOps->foldr(static fn ($acc, $el) => $acc + $el, [1, 2, 3, 4], 5)
+            $listOps->foldr(static fn ($acc, $el) => $el + $acc, [1, 2, 3, 4], 5)
         );
     }
-
     /**
      * @testdox folds (reduces) the given list from the right with a function -> direction dependent function applied to non-empty list
      */
-    public function testFoldrDirectionDependentNonEmptyList()
+    public function testFoldsReducesTheGivenListFromTheRightWithAFunctionWithDirectionDependentFunctionAppliedToNonEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals(
@@ -233,29 +231,24 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
             $listOps->foldr(static fn ($acc, $el) => $el / $acc, [1, 2, 3, 4], 24)
         );
     }
-
-    /**
-     * @testdox reverse the elements of a list -> empty list
+        /**
+     * @testdox reverse the elements of the list -> empty list
      */
-    public function testReverseEmptyList()
+    public function testReverseTheElementsOfTheListWithEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals([], $listOps->reverse([]));
-    }
-
-    /**
-     * @testdox reverse the elements of a list -> non-empty list
+    }    /**
+     * @testdox reverse the elements of the list -> non-empty list
      */
-    public function testReverseNonEmptyList()
+    public function testReverseTheElementsOfTheListWithNonEmptyList()
     {
         $listOps = new ListOps();
         $this->assertEquals([7, 5, 3, 1], $listOps->reverse([1, 3, 5, 7]));
-    }
-
-    /**
-     * @testdox reverse the elements of a list -> list of lists is not flattened
+    }    /**
+     * @testdox reverse the elements of the list -> list of lists is not flattened
      */
-    public function testReverseNonEmptyListIsNotFlattened()
+    public function testReverseTheElementsOfTheListWithListOfListsIsNotFlattened()
     {
         $listOps = new ListOps();
         $this->assertEquals([[4, 5, 6], [], [3], [1, 2]], $listOps->reverse([[1, 2], [3], [], [4, 5, 6]]));
