@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Model\CanonicalData\CanonicalData;
 use RuntimeException;
 use Symfony\Component\Process\Exception\RuntimeException as ProcessRuntimeException;
 use Symfony\Component\Process\Process;
@@ -53,7 +54,7 @@ final class Configlet
     /**
      * @throws RuntimeException
      */
-    public function canonicalData(string $exerciseSlug): string
+    public function canonicalDataRaw(string $exerciseSlug): string
     {
         $canonicalDataPath = \sprintf(
             '%1$s/exercises/%2$s/canonical-data.json',
@@ -67,5 +68,17 @@ final class Configlet
         }
 
         return $canonicalData;
+    }
+
+    /**
+     * @throws RuntimeException
+     */
+    public function canonicalData(string $exerciseSlug): CanonicalData
+    {
+        $canonicalDataRaw = $this->canonicalDataRaw($exerciseSlug);
+        /** @var array $canonicalDataJson */
+        $canonicalDataJson = json_decode($canonicalDataRaw, true, flags: JSON_THROW_ON_ERROR);
+
+        return CanonicalData::from($canonicalDataJson);
     }
 }

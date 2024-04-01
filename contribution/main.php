@@ -7,6 +7,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use App\Command\CreateTestsCommand;
 use App\Command\Deprecated;
+use App\Command\GenerateTests;
+use App\Configlet;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Local\LocalFilesystemAdapter;
 use Symfony\Component\Console\Application;
@@ -22,5 +24,6 @@ $application->addCommand(
     ),
 );
 $application->addCommand(new CreateTestsCommand(__DIR__ . '/..'));
+$application->addCommand(new GenerateTests(new Configlet(__DIR__ . '/../bin/configlet'), new Filesystem($exercises)));
 
 $application->run();
