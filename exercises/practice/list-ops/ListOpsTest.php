@@ -12,6 +12,7 @@ class ListOpsTest extends TestCase
         require_once 'ListOps.php';
     }
 
+
     /**
      * uuid 485b9452-bf94-40f7-a3db-c3cf4850066a
      */
@@ -19,7 +20,12 @@ class ListOpsTest extends TestCase
     public function testAppendEmptyLists()
     {
         $listOps = new ListOps();
-        $this->assertEquals([], $listOps->append([], []));
+        $list1 = [];
+        $list2 = [];
+        
+        $result = $listOps->append($list1, $list2);
+
+        $this->assertEquals([], $result);
     }
 
     /**
@@ -29,7 +35,12 @@ class ListOpsTest extends TestCase
     public function testAppendNonEmptyListToEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals([1, 2, 3, 4], $listOps->append([], [1, 2, 3, 4]));
+        $list1 = [];
+        $list2 = [1, 2, 3, 4];
+        
+        $result = $listOps->append($list1, $list2);
+
+        $this->assertEquals([1, 2, 3, 4], $result);
     }
 
     /**
@@ -39,7 +50,12 @@ class ListOpsTest extends TestCase
     public function testAppendEmptyListToNonEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals([1, 2, 3, 4], $listOps->append([1, 2, 3, 4], []));
+        $list1 = [1, 2, 3, 4];
+        $list2 = [];
+        
+        $result = $listOps->append($list1, $list2);
+
+        $this->assertEquals([1, 2, 3, 4], $result);
     }
 
     /**
@@ -49,7 +65,12 @@ class ListOpsTest extends TestCase
     public function testAppendNonEmptyLists()
     {
         $listOps = new ListOps();
-        $this->assertEquals([1, 2, 2, 3, 4, 5], $listOps->append([1, 2], [2, 3, 4, 5]));
+        $list1 = [1, 2];
+        $list2 = [2, 3, 4, 5];
+        
+        $result = $listOps->append($list1, $list2);
+
+        $this->assertEquals([1, 2, 2, 3, 4, 5], $result);
     }
 
     /**
@@ -59,7 +80,11 @@ class ListOpsTest extends TestCase
     public function testConcatEmptyLists()
     {
         $listOps = new ListOps();
-        $this->assertEquals([], $listOps->concat());
+        $lists = [];
+        
+        $result = $listOps->concat($lists);
+
+        $this->assertEquals([], $result);
     }
 
     /**
@@ -69,7 +94,11 @@ class ListOpsTest extends TestCase
     public function testConcatLists()
     {
         $listOps = new ListOps();
-        $this->assertEquals([1, 2, 3, 4, 5, 6], $listOps->concat([1, 2], [3], [], [4, 5, 6]));
+        $lists = [[1, 2], [3], [], [4, 5, 6]];
+        
+        $result = $listOps->concat($lists);
+
+        $this->assertEquals([1, 2, 3, 4, 5, 6], $result);
     }
 
     /**
@@ -79,7 +108,11 @@ class ListOpsTest extends TestCase
     public function testConcatNestedLists()
     {
         $listOps = new ListOps();
-        $this->assertEquals([[1], [2], [3], [], [4, 5, 6]], $listOps->concat([[1], [2]], [[3]], [[]], [[4, 5, 6]]));
+        $lists = [[[1], [2]], [[3]], [[]], [[4, 5, 6]]];
+        
+        $result = $listOps->concat($lists);
+
+        $this->assertEquals([[1], [2], [3], [], [4, 5, 6]], $result);
     }
 
     /**
@@ -89,10 +122,12 @@ class ListOpsTest extends TestCase
     public function testFilterEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            [],
-            $listOps->filter(static fn ($el) => $el % 2 === 1, [])
-        );
+        $list = [];
+        $function = static fn ($el) => $el % 2 === 1;
+        
+        $result = $listOps->filter($list, $function);
+
+        $this->assertEquals([], $result);
     }
 
     /**
@@ -102,10 +137,12 @@ class ListOpsTest extends TestCase
     public function testFilterNonEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            [1, 3, 5],
-            $listOps->filter(static fn ($el) => $el % 2 === 1, [1, 2, 3, 5])
-        );
+        $list = [1, 2, 3, 5];
+        $function = static fn ($el) => $el % 2 === 1;
+        
+        $result = $listOps->filter($list, $function);
+
+        $this->assertEquals([1, 3, 5], $result);
     }
 
     /**
@@ -115,7 +152,11 @@ class ListOpsTest extends TestCase
     public function testLengthEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(0, $listOps->length([]));
+        $list = [];
+        
+        $result = $listOps->length($list);
+
+        $this->assertEquals(0, $result);
     }
 
     /**
@@ -125,7 +166,11 @@ class ListOpsTest extends TestCase
     public function testLengthNonEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(4, $listOps->length([1, 2, 3, 4]));
+        $list = [1, 2, 3, 4];
+        
+        $result = $listOps->length($list);
+
+        $this->assertEquals(4, $result);
     }
 
     /**
@@ -135,10 +180,12 @@ class ListOpsTest extends TestCase
     public function testMapEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            [],
-            $listOps->map(static fn ($el) => $el + 1, [])
-        );
+        $list = [];
+        $function = static fn ($el) => $el + 1;
+        
+        $result = $listOps->map($list, $function);
+
+        $this->assertEquals([], $result);
     }
 
     /**
@@ -148,10 +195,12 @@ class ListOpsTest extends TestCase
     public function testMapNonEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            [2, 4, 6, 8],
-            $listOps->map(static fn ($el) => $el + 1, [1, 3, 5, 7])
-        );
+        $list = [1, 3, 5, 7];
+        $function = static fn ($el) => $el + 1;
+        
+        $result = $listOps->map($list, $function);
+
+        $this->assertEquals([2, 4, 6, 8], $result);
     }
 
     /**
@@ -161,10 +210,13 @@ class ListOpsTest extends TestCase
     public function testFoldlEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            2,
-            $listOps->foldl(static fn ($acc, $el) => $el * $acc, [], 2)
-        );
+        $list = [];
+        $initial = 2;
+        $function = static fn ($acc, $el) => $el * $acc;
+        
+        $result = $listOps->foldl($list, $initial, $function);
+
+        $this->assertEquals(2, $result);
     }
 
     /**
@@ -174,10 +226,13 @@ class ListOpsTest extends TestCase
     public function testFoldlDirectionIndependentNonEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            15,
-            $listOps->foldl(static fn ($acc, $el) => $el + $acc, [1, 2, 3, 4], 5)
-        );
+        $list = [1, 2, 3, 4];
+        $initial = 5;
+        $function = static fn ($acc, $el) => $el + $acc;
+        
+        $result = $listOps->foldl($list, $initial, $function);
+
+        $this->assertEquals(15, $result);
     }
 
     /**
@@ -187,10 +242,13 @@ class ListOpsTest extends TestCase
     public function testFoldlDirectionDependentNonEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            64,
-            $listOps->foldl(static fn ($acc, $el) => $el / $acc, [1, 2, 3, 4], 24)
-        );
+        $list = [1, 2, 3, 4];
+        $initial = 24;
+        $function = static fn ($acc, $el) => $el / $acc;
+        
+        $result = $listOps->foldl($list, $initial, $function);
+
+        $this->assertEquals(64, $result);
     }
 
     /**
@@ -200,11 +258,15 @@ class ListOpsTest extends TestCase
     public function testFoldrEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            2,
-            $listOps->foldr(static fn ($acc, $el) => $el * $acc, [], 2)
-        );
+        $list = [];
+        $initial = 2;
+        $function = static fn ($acc, $el) => $el * $acc;
+        
+        $result = $listOps->foldr($list, $initial, $function);
+
+        $this->assertEquals(2, $result);
     }
+
     /**
      * uuid e1c64db7-9253-4a3d-a7c4-5273b9e2a1bd
      */
@@ -212,11 +274,15 @@ class ListOpsTest extends TestCase
     public function testFoldrDirectionIndependentNonEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            15,
-            $listOps->foldr(static fn ($acc, $el) => $el + $acc, [1, 2, 3, 4], 5)
-        );
+        $list = [1, 2, 3, 4];
+        $initial = 5;
+        $function = static fn ($acc, $el) => $el + $acc;
+        
+        $result = $listOps->foldr($list, $initial, $function);
+
+        $this->assertEquals(15, $result);
     }
+
     /**
      * uuid 8066003b-f2ff-437e-9103-66e6df474844
      */
@@ -224,10 +290,13 @@ class ListOpsTest extends TestCase
     public function testFoldrDirectionDependentNonEmptyList()
     {
         $listOps = new ListOps();
-        $this->assertEquals(
-            9,
-            $listOps->foldr(static fn ($acc, $el) => $el / $acc, [1, 2, 3, 4], 24)
-        );
+        $list = [1, 2, 3, 4];
+        $initial = 24;
+        $function = static fn ($acc, $el) => $el / $acc;
+        
+        $result = $listOps->foldr($list, $initial, $function);
+
+        $this->assertEquals(9, $result);
     }
 
     /**
@@ -267,6 +336,10 @@ class ListOpsTest extends TestCase
     public function testReverseNonEmptyListIsNotFlattened()
     {
         $listOps = new ListOps();
-        $this->assertEquals([[4, 5, 6], [], [3], [1, 2]], $listOps->reverse([[1, 2], [3], [], [4, 5, 6]]));
+        $list = [[1, 2], [3], [], [4, 5, 6]];
+        
+        $result = $listOps->reverse($list);
+
+        $this->assertEquals([[4, 5, 6], [], [3], [1, 2]], $result);
     }
 }
