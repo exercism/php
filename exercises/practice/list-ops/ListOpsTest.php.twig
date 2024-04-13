@@ -42,7 +42,8 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
         require_once 'ListOps.php';
     }
 
-    {% set case0 = cases[0] -%}
+
+    {% for case0 in cases -%}
     {% for case in case0.cases -%}
     /**
      * @testdox {{ case0.description }} -> {{ case.description }}
@@ -50,115 +51,15 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     public function {{ testfn(case0.description ~ ' with ' ~ case.description) }}()
     {
         $listOps = new ListOps();
-        $this->assertEquals({{ export(case.expected) }}, $listOps->{{ case.property }}({{ export(case.input.list1) }}, {{ export(case.input.list2) }}));
+        {% for property, value in case.input -%}
+        ${{ property }} = {{ property == 'function' ? callbacks[value] : export(value) }};
+        {% endfor %}
+
+        $result = $listOps->{{ case.property }}({{ case.input | keys | map(p => '$' ~ p) | join(', ')}});
+
+        $this->assertEquals({{ export(case.expected) }}, $result);
     }
 
     {% endfor -%}
-
-    {% set case1 = cases[1] -%}
-    {% for case in case1.cases -%}
-    /**
-     * @testdox {{ case1.description }} -> {{ case.description }}
-     */
-    public function {{ testfn(case1.description ~ ' with ' ~ case.description) }}()
-    {
-        $listOps = new ListOps();
-        $this->assertEquals({{ export(case.expected) }}, $listOps->{{ case.property }}({{ case.input.lists | map(l => export(l)) | join(', ') }}));
-    }
-
     {% endfor -%}
-
-
-    {% set case2 = cases[2] -%}
-    {% for case in case2.cases -%}
-    /**
-     * @testdox {{ case2.description }} -> {{ case.description }}
-     */
-    public function {{ testfn(case2.description ~ ' with ' ~ case.description) }}()
-    {
-        $listOps = new ListOps();
-        $this->assertEquals(
-            {{ export(case.expected) }},
-            $listOps->{{ case.property }}({{ callbacks[case.input.function] }}, {{ export(case.input.list) }})
-        );
-    }
-
-    {% endfor -%}
-
-
-    {% set case3 = cases[3] -%}
-    {% for case in case3.cases -%}
-    /**
-     * @testdox {{ case3.description }} -> {{ case.description }}
-     */
-    public function {{ testfn(case3.description ~ ' with ' ~ case.description) }}()
-    {
-        $listOps = new ListOps();
-        $this->assertEquals({{ export(case.expected) }}, $listOps->{{ case.property }}({{ export(case.input.list) }}));
-    }
-
-    {% endfor -%}
-
-
-    {% set case4 = cases[4] -%}
-    {% for case in case4.cases -%}
-    /**
-     * @testdox {{ case4.description }} -> {{ case.description }}
-     */
-    public function {{ testfn(case4.description ~ ' with ' ~ case.description) }}()
-    {
-        $listOps = new ListOps();
-        $this->assertEquals(
-            {{ export(case.expected) }},
-            $listOps->{{ case.property }}({{ callbacks[case.input.function] }}, {{ export(case.input.list) }})
-        );
-    }
-
-    {% endfor -%}
-
-
-    {% set case5 = cases[5] -%}
-    {% for case in case5.cases -%}
-    /**
-     * @testdox {{ case5.description }} -> {{ case.description }}
-     */
-    public function {{ testfn(case5.description ~ ' with ' ~ case.description) }}()
-    {
-        $listOps = new ListOps();
-        $this->assertEquals(
-            {{ export(case.expected) }},
-            $listOps->{{ case.property }}({{ callbacks[case.input.function] }}, {{ export(case.input.list) }}, {{ export(case.input.initial) }})
-        );
-    }
-
-    {% endfor -%}
-
-
-    {% set case6 = cases[6] -%}
-    {% for case in case6.cases -%}
-    /**
-     * @testdox {{ case6.description }} -> {{ case.description }}
-     */
-    public function {{ testfn(case6.description ~ ' with ' ~ case.description) }}()
-    {
-        $listOps = new ListOps();
-        $this->assertEquals(
-            {{ export(case.expected) }},
-            $listOps->{{ case.property }}({{ callbacks[case.input.function] }}, {{ export(case.input.list) }}, {{ export(case.input.initial) }})
-        );
-    }
-    {% endfor -%}
-
-    {%- set case7 = cases[7] %}
-    {%- for case in case7.cases %}
-    /**
-     * @testdox {{ case7.description }} -> {{ case.description }}
-     */
-    public function {{ testfn(case7.description ~ ' with ' ~ case.description) }}()
-    {
-        $listOps = new ListOps();
-        $this->assertEquals({{ export(case.expected) }}, $listOps->{{ case.property }}({{ export(case.input.list) }}));
-    }
-    {%- endfor %}
-
 }
