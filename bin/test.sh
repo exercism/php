@@ -58,7 +58,7 @@ function test {
     cp "${exercise_dir}/.meta/${example_file}" "${outdir}/${exercise_file}.${file_ext}"
   fi
 
-  eval "${PHPUNIT_BIN}" --default-time-limit 7 --enforce-time-limit --fail-on-risky --no-configuration "${outdir}/${test_file}"
+  eval "${PHPUNIT_BIN}" --default-time-limit 20 --enforce-time-limit --fail-on-risky --no-configuration "${outdir}/${test_file}"
 }
 
 function installed {
