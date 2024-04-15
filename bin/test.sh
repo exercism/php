@@ -58,7 +58,23 @@ function test {
     cp "${exercise_dir}/.meta/${example_file}" "${outdir}/${exercise_file}.${file_ext}"
   fi
 
-  eval "${PHPUNIT_BIN}" --default-time-limit 20 --enforce-time-limit --fail-on-risky --no-configuration "${outdir}/${test_file}"
+  # The time-limit `18` is based on an approximation of the performance.
+  # Online Test Runner is appr. 3x faster than GitHub CI on Ubuntu.
+  #
+  # The total runtime limit of the Online Test Runner is 20 seconds including
+  # Docker container launch and processing the results. That leaves appr. 18
+  # seconds for all tests of an exercise. But that's not the `18` here.
+  #
+  # The longest running exercise tests in CI are in `alphametics`. It has 3 slow
+  # test cases (9 letters and 10 letters) that require appr. 15 secs each in CI
+  # and appr. 5 seconds each in the Online Test Runner.
+  #
+  # Putting that together gives a max. of 6 seconds for each of the slow test
+  # cases in the Online Test Runner before hitting the timeout in production
+  # -> use 3x 6secs = 18 seconds as a CI limit to ensure tests can actually
+  # be run in production.
+  # See: https://forum.exercism.org/t/test-tracks-for-the-20-seconds-limit-on-test-runners/10536/8
+  eval "${PHPUNIT_BIN}" --default-time-limit 18 --enforce-time-limit --fail-on-risky --no-configuration "${outdir}/${test_file}"
 }
 
 function installed {
