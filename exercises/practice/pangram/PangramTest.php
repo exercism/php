@@ -11,7 +11,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 64f61791-508e-4f5c-83ab-05de042b0149
-     * @testdox empty sentence
+     * @testdox Empty sentence
      */
     public function testSentenceEmpty(): void
     {
@@ -20,7 +20,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 74858f80-4a4d-478b-8a5e-c6477e4e4e84
-     * @testdox perfect lower case
+     * @testdox Perfect lower case
      */
     public function testPerfectLowerCase(): void
     {
@@ -29,7 +29,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 61288860-35ca-4abe-ba08-f5df76ecbdcd
-     * @testdox only lower case
+     * @testdox Only lower case
      */
     public function testPangramWithOnlyLowerCase(): void
     {
@@ -38,7 +38,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 6564267d-8ac5-4d29-baf2-e7d2e304a743
-     * @testdox missing the letter 'x'
+     * @testdox Missing the letter 'x'
      */
     public function testMissingCharacterX(): void
     {
@@ -47,7 +47,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid c79af1be-d715-4cdb-a5f2-b2fa3e7e0de0
-     * @testdox missing the letter 'h'
+     * @testdox Missing the letter 'h'
      */
     public function testMissingCharacterH(): void
     {
@@ -56,7 +56,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid d835ec38-bc8f-48e4-9e36-eb232427b1df
-     * @testdox with underscores
+     * @testdox With underscores
      */
     public function testPangramWithUnderscores(): void
     {
@@ -65,7 +65,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 8cc1e080-a178-4494-b4b3-06982c9be2a8
-     * @testdox with numbers
+     * @testdox With numbers
      */
     public function testPangramWithNumbers(): void
     {
@@ -74,7 +74,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid bed96b1c-ff95-45b8-9731-fdbdcb6ede9a
-     * @testdox missing letters replaced by numbers
+     * @testdox Missing letters replaced by numbers
      */
     public function testMissingLettersReplacedByNumbers(): void
     {
@@ -83,7 +83,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 938bd5d8-ade5-40e2-a2d9-55a338a01030
-     * @testdox mixed case and punctuation
+     * @testdox Mixed case and punctuation
      */
     public function testPangramWithMixedCaseAndPunctuation(): void
     {
