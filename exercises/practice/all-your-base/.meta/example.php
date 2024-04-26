@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-function rebase(int $fromBase, array $digits, int $toBase)
+function rebase(int $fromBase, array $digits, int $toBase): ?array
 {
-    if (empty($digits) || $digits[0] == 0 || $fromBase <= 1 || $toBase <= 1) {
+    if ($fromBase <= 1 || $toBase <= 1) {
         return null;
     }
 

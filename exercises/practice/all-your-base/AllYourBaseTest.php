@@ -2,14 +2,6 @@
 
 declare(strict_types=1);
 
-/**
- * Design choices (standing against problem specs):
- * - Return `null` for errors
- * - Zero and leading zeros are errors. Problem spec says, these become `[0]`
- *
- * Because of these choices, some inputs for error cases differ from problem
- * specs, but target the same conditions as problem specs.
- */
 class AllYourBaseTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void
@@ -90,43 +82,39 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Conflicts with problem specs
-     * Resembles uuid d68788f7-66dd-43f8-a543-f15b6d233f83
+     * uuid d68788f7-66dd-43f8-a543-f15b6d233f83
      * @testdox Empty list
      */
-    public function testEmptyListReturnsNull(): void
+    public function testEmptyList(): void
     {
-        $this->assertEquals(null, rebase(10, [], 10));
+        $this->assertEquals([0], rebase(2, [], 10));
     }
 
     /**
-     * Conflicts with problem specs
-     * Resembles uuid 5e27e8da-5862-4c5f-b2a9-26c0382b6be7
+     * uuid 5e27e8da-5862-4c5f-b2a9-26c0382b6be7
      * @testdox Single zero
      */
-    public function testSingleZeroReturnsNull(): void
+    public function testSingleZero(): void
     {
-        $this->assertEquals(null, rebase(10, [0], 2));
+        $this->assertEquals([0], rebase(10, [0], 2));
     }
 
     /**
-     * Conflicts with problem specs
-     * Resembles uuid 2e1c2573-77e4-4b9c-8517-6c56c5bcfdf2
+     * uuid 2e1c2573-77e4-4b9c-8517-6c56c5bcfdf2
      * @testdox Multiple zeros
      */
-    public function testMultipleZerosReturnsNull(): void
+    public function testMultipleZeros(): void
     {
-        $this->assertEquals(null, rebase(10, [0, 0, 0], 2));
+        $this->assertEquals([0], rebase(10, [0, 0, 0], 2));
     }
 
     /**
-     * Conflicts with problem specs
-     * Resembles uuid 3530cd9f-8d6d-43f5-bc6e-b30b1db9629b
+     * uuid 3530cd9f-8d6d-43f5-bc6e-b30b1db9629b
      * @testdox Leading zeros
      */
-    public function testLeadingZerosReturnsNull(): void
+    public function testLeadingZeros(): void
     {
-        $this->assertEquals(null, rebase(10, [0, 6, 0], 2));
+        $this->assertEquals([4, 2], rebase(7, [0, 6, 0], 10));
     }
 
     /**
@@ -135,7 +123,7 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstBaseIsOne(): void
     {
-        $this->assertEquals(null, rebase(1, [6, 0], 2));
+        $this->assertEquals(null, rebase(1, [0], 10));
     }
 
     /**
@@ -144,7 +132,7 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstBaseIsZero(): void
     {
-        $this->assertEquals(null, rebase(0, [6, 0], 2));
+        $this->assertEquals(null, rebase(0, [], 10));
     }
 
     /**
