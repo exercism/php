@@ -64,3 +64,4 @@ description = "output base is negative"
 
 [0e6c895d-8a5d-4868-a345-309d094cfe8d]
 description = "both bases are negative"
+comment = "We cannot know which condition comes first. So no message is enforced."

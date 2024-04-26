@@ -214,8 +214,6 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * We cannot know which condition comes first. So no message is enforced.
-     *
      * uuid 0e6c895d-8a5d-4868-a345-309d094cfe8d
      * @testdox Both bases are negative
      */
