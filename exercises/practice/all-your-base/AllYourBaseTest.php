@@ -123,7 +123,10 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstBaseIsOne(): void
     {
-        $this->assertEquals(null, rebase(1, [0], 10));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('input base must be >= 2');
+
+        rebase(1, [0], 10);
     }
 
     /**
@@ -132,7 +135,10 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstBaseIsZero(): void
     {
-        $this->assertEquals(null, rebase(0, [], 10));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('input base must be >= 2');
+
+        rebase(0, [], 10);
     }
 
     /**
@@ -141,7 +147,10 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstBaseIsNegative(): void
     {
-        $this->assertEquals(null, rebase(-2, [1], 10));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('input base must be >= 2');
+
+        rebase(-2, [1], 10);
     }
 
     /**
@@ -150,7 +159,10 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testNegativeDigit(): void
     {
-        $this->assertEquals(null, rebase(2, [1, -1, 1, 0, 1, 0], 10));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('all digits must satisfy 0 <= d < input base');
+
+        rebase(2, [1, -1, 1, 0, 1, 0], 10);
     }
 
     /**
@@ -159,7 +171,10 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testInvalidPositiveDigit(): void
     {
-        $this->assertEquals(null, rebase(2, [1, 2, 1, 0, 1, 0], 10));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('all digits must satisfy 0 <= d < input base');
+
+        rebase(2, [1, 2, 1, 0, 1, 0], 10);
     }
 
     /**
@@ -168,7 +183,10 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondBaseIsOne(): void
     {
-        $this->assertEquals(null, rebase(2, [1, 0, 1, 0, 1, 0], 1));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('output base must be >= 2');
+
+        rebase(2, [1, 0, 1, 0, 1, 0], 1);
     }
 
     /**
@@ -177,7 +195,10 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondBaseIsZero(): void
     {
-        $this->assertEquals(null, rebase(10, [7], 0));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('output base must be >= 2');
+
+        rebase(10, [7], 0);
     }
 
     /**
@@ -186,15 +207,22 @@ class AllYourBaseTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondBaseIsNegative(): void
     {
-        $this->assertEquals(null, rebase(2, [1], -7));
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('output base must be >= 2');
+
+        rebase(2, [1], -7);
     }
 
     /**
+     * We cannot know which condition comes first. So no message is enforced.
+     *
      * uuid 0e6c895d-8a5d-4868-a345-309d094cfe8d
      * @testdox Both bases are negative
      */
     public function testBothBasesIsNegative(): void
     {
-        $this->assertEquals(null, rebase(-2, [1], -7));
+        $this->expectException(InvalidArgumentException::class);
+
+        rebase(-2, [1], -7);
     }
 }

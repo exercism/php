@@ -2,10 +2,14 @@
 
 declare(strict_types=1);
 
-function rebase(int $fromBase, array $digits, int $toBase): ?array
+function rebase(int $fromBase, array $digits, int $toBase): array
 {
-    if ($fromBase <= 1 || $toBase <= 1) {
-        return null;
+    if ($fromBase <= 1) {
+        throw new InvalidArgumentException('input base must be >= 2');
+    }
+
+    if ($toBase <= 1) {
+        throw new InvalidArgumentException('output base must be >= 2');
     }
 
     $decTotal = 0;
@@ -13,7 +17,7 @@ function rebase(int $fromBase, array $digits, int $toBase): ?array
     for ($i = 0; $i < count($digits); $i++) {
         $decTotal += $ordered[$i] * pow($fromBase, $i);
         if ($ordered[$i] >= $fromBase || $ordered[$i] < 0) {
-            return null;
+            throw new InvalidArgumentException('all digits must satisfy 0 <= d < input base');
         }
     }
 

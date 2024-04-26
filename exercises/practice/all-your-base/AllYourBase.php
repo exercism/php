@@ -24,7 +24,7 @@
 
 declare(strict_types=1);
 
-function rebase(int $fromBase, array $digits, int $toBase): ?array
+function rebase(int $fromBase, array $digits, int $toBase): array
 {
     throw new \BadFunctionCallException("Implement the rebase function");
 }
