@@ -13,5 +13,7 @@
       ".meta/example.php"
     ]
   },
-  "blurb": "Score a single throw of dice in the game Yacht."
+  "blurb": "Score a single throw of dice in the game Yacht.",
+  "source": "James Kilfiger, using wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Yacht_(dice_game)"
 }
