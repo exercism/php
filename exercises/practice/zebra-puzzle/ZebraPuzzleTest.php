@@ -18,6 +18,7 @@ class ZebraPuzzleTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 16efb4e4-8ad7-4d5e-ba96-e5537b66fd42
+     * @testdox Resident who drinks water
      */
     public function testResidentWhoDrinksWater(): void
     {
@@ -26,6 +27,7 @@ class ZebraPuzzleTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 084d5b8b-24e2-40e6-b008-c800da8cd257
+     * @testdox Resident who owns zebra
      */
     public function testResidentWhoOwnsZebra(): void
     {
