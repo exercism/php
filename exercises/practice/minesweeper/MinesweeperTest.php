@@ -130,4 +130,19 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * uuid 7037f483-ddb4-4b35-b005-0d0f4ef4606f
+     * @testdox Horizontal line
+     */
+    public function testHorizontalLine(): void
+    {
+        $minefield = [" * * "];
+        $expected = ["1*2*1"];
+
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
+    }
 }
