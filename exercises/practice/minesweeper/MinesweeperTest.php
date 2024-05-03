@@ -241,4 +241,33 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * uuid 04a260f1-b40a-4e89-839e-8dd8525abe0e
+     * @testdox Large minefield
+     */
+    public function testLargeMinefield(): void
+    {
+        $minefield = [
+            " *  * ",
+            "  *   ",
+            "    * ",
+            "   * *",
+            " *  * ",
+            "      ",
+        ];
+        $expected = [
+            "1*22*1",
+            "12*322",
+            " 123*2",
+            "112*4*",
+            "1*22*2",
+            "111111",
+        ];
+
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
+    }
 }
