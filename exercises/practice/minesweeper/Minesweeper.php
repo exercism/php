@@ -26,12 +26,12 @@ declare(strict_types=1);
 
 class Minesweeper
 {
-    public function __construct(array $minefield)
+    public function __construct(private array $minefield)
     {
     }
 
     public function annotate(): array
     {
-        throw new \BadFunctionCallException(sprintf('Implement the %s method', __FUNCTION__));
+        return $this->minefield;
     }
 }
