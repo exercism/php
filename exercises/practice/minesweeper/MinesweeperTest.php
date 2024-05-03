@@ -107,4 +107,27 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * uuid cb878f35-43e3-4c9d-93d9-139012cccc4a
+     * @testdox Space surrounded by mines
+     */
+    public function testSpaceSurroundedByMines(): void
+    {
+        $minefield = [
+            "***",
+            "* *",
+            "***",
+        ];
+        $expected = [
+            "***",
+            "*8*",
+            "***",
+        ];
+
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
+    }
 }
