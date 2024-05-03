@@ -214,4 +214,31 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * uuid 4b098563-b7f3-401c-97c6-79dd1b708f34
+     * @testdox Cross
+     */
+    public function testCross(): void
+    {
+        $minefield = [
+            "  *  ",
+            "  *  ",
+            "*****",
+            "  *  ",
+            "  *  ",
+        ];
+        $expected = [
+            " 2*2 ",
+            "25*52",
+            "*****",
+            "25*52",
+            " 2*2 ",
+        ];
+
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
+    }
 }
