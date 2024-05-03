@@ -38,4 +38,27 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * uuid 6fbf8f6d-a03b-42c9-9a58-b489e9235478
+     * @testdox No mines
+     */
+    public function testNoMines(): void
+    {
+        $minefield = [
+            "   ",
+            "   ",
+            "   ",
+        ];
+        $expected = [
+            "   ",
+            "   ",
+            "   ",
+        ];
+
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
+    }
 }
