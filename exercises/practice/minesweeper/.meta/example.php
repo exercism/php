@@ -41,8 +41,8 @@ class Minesweeper
     {
         $this->annotatedMinefield = $this->minefield;
 
-        foreach(\array_keys($this->minefield) as $row) {
-            foreach(\array_keys($this->minefield[$row]) as $col) {
+        foreach (\array_keys($this->minefield) as $row) {
+            foreach (\array_keys($this->minefield[$row]) as $col) {
                 if (!$this->isMine($row, $col)) {
                     $mineCount = $this->countMinesAround($row, $col);
                     $this->annotatedMinefield[$row][$col] =
