@@ -24,7 +24,14 @@
 
 declare(strict_types=1);
 
-function solve(string $minesweeperBoard): string
+class Minesweeper
 {
-    throw new \BadFunctionCallException("Implement the solve function");
+    public function __construct(array $minefield)
+    {
+    }
+
+    public function annotate(): array
+    {
+        throw new \BadFunctionCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
 }
