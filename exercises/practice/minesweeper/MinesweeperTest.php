@@ -145,4 +145,19 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * uuid uuid
+     * @testdox Horizontal line, mines at edges
+     */
+    public function testHorizontalLineMinesAtEdges(): void
+    {
+        $minefield = ["*   *"];
+        $expected = ["*1 1*"];
+
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
+    }
 }
