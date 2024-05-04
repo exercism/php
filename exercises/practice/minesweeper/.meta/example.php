@@ -24,7 +24,9 @@ class Minesweeper
     private function minefieldFrom(array $input): void
     {
         $this->minefield = \array_map(
-            fn ($row) => \str_split($row),
+            // In PHP < 8.2, str_split returns [''] for empty strings.
+            // In PHP >= 8.2 it returns the required [].
+            fn ($row) => empty($row) ? [] : \str_split($row),
             $input,
         );
     }
