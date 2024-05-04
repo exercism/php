@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 class Minesweeper
 {
-    private readonly array $minefield;
+    // In PHP < 8.1 `readonly` is unknown
+    private array $minefield;
     private array $annotatedMinefield = [];
 
     public function __construct(array $input)
