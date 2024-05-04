@@ -3,11 +3,11 @@
 Execute the tests with:
 
 ```shell
-> phpunit file_to_test.php
+phpunit file_to_test.php
 ```
 
-For example, to run the tests for the Hello World exercise, you would run: 
+For example, to run the tests for the Hello World exercise, you would run:
 
-```
-$ phpunit HellowWorldTest.php
+```shell
+phpunit HelloWorldTest.php
 ```
