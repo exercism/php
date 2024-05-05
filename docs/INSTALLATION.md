@@ -79,7 +79,7 @@ If you want to use a different OS, see instruction on [php.net/manual/en/install
 
 ## Install Composer
 
-Install [Composer](https://getcomposer.org) [here](https://getcomposer.org/doc/00-intro.md) following your devices OS installation instructions. We recommend installing it globally for ease of use.
+Install [Composer](https://getcomposer.org) following your devices OS [installation instructions](https://getcomposer.org/doc/00-intro.md). We recommend installing it globally for ease of use.
 
 ## Install PHPUnit
 
