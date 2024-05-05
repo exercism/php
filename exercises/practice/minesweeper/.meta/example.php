@@ -1,181 +1,99 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
-function solve($minesweeperBoard)
+class Minesweeper
 {
-    $minesweeperBoard = makeBoardFromString($minesweeperBoard);
+    // In PHP < 8.1 `readonly` is unknown
+    private array $minefield;
+    private array $annotatedMinefield = [];
 
-    validateBoardDimensions($minesweeperBoard);
+    public function __construct(array $input)
+    {
+        $this->minefieldFrom($input);
+    }
 
-    validateBorders($minesweeperBoard);
-
-    $grid = removeBorders($minesweeperBoard);
-
-    validateGridSize($grid);
-
-    validateContainsOnlyMines($grid);
-
-    $gridWithResults = addMineCount($grid);
-
-    return makeStringFromBoard(applyBorders($gridWithResults));
-}
-
-function makeBoardFromString($string)
-{
-    return array_map('str_split', explode("\n", trim($string)));
-}
-
-function makeStringFromBoard($board)
-{
-    return "\n" . implode("\n", $board) . "\n";
-}
-
-function validateBoardDimensions($board)
-{
-    $topRowWidth = count($board[0]);
-    foreach ($board as $line) {
-        if (count($line) !== $topRowWidth) {
-            throw new InvalidArgumentException('Your rows are not of equal length');
+    public function annotate(): array
+    {
+        if (empty($this->annotatedMinefield)) {
+            $this->annotateMinefield();
         }
-    }
-}
 
-function validateBorders($board)
-{
-    $topBorder = current(array_slice($board, 0, 1));
-    $middle = array_slice($board, 1, -1);
-    $bottomBorder = current(array_slice($board, 0, 1));
-
-    validateArrayStartsAndEndsWith($topBorder, '+');
-    validateArrayStartsAndEndsWith($bottomBorder, '+');
-
-    foreach (array_slice($topBorder, 1, -1) as $border) {
-        if ($border !== '-') {
-            throw new InvalidArgumentException('Top border is incomplete');
-        }
+        return $this->asAnnotatedMinefield();
     }
 
-    foreach (array_slice($bottomBorder, 1, -1) as $border) {
-        if ($border !== '-') {
-            throw new InvalidArgumentException('Bottom border is incomplete');
-        }
+    private function minefieldFrom(array $input): void
+    {
+        $this->minefield = \array_map(
+            // In PHP < 8.2, str_split returns [''] for empty strings.
+            // In PHP >= 8.2 it returns the required [].
+            fn ($row) => empty($row) ? [] : \str_split($row),
+            $input,
+        );
     }
 
-    foreach ($middle as $line) {
-        validateArrayStartsAndEndsWith($line, '|');
+    private function asAnnotatedMinefield(): array
+    {
+        return \array_map(
+            fn ($row) => \implode('', $row),
+            $this->annotatedMinefield,
+        );
     }
-}
 
-function validateArrayStartsAndEndsWith($arr, $char)
-{
-    if (array_shift($arr) !== $char || array_pop($arr) !== $char) {
-        throw new InvalidArgumentException('Invalid edge' . implode($arr) . ' ' . $char);
-    }
-}
+    private function annotateMinefield(): void
+    {
+        $this->annotatedMinefield = $this->minefield;
 
-function removeBorders($minesweeperBoard)
-{
-    array_shift($minesweeperBoard);
-    array_pop($minesweeperBoard);
-
-    return array_map(function ($line) {
-        return array_slice($line, 1, -1);
-    }, $minesweeperBoard);
-}
-
-function validateGridSize($grid)
-{
-    if (count($grid[0]) < 2 && count($grid) < 2) {
-        throw new InvalidArgumentException('Your grid is too small. Must be at least 2 squares');
-    }
-}
-
-function validateContainsOnlyMines($board)
-{
-    foreach ($board as $row) {
-        foreach ($row as $cell) {
-            if (!in_array($cell, [' ', '*'])) {
-                throw new InvalidArgumentException('Your board contains illegal characters: ' . $cell);
+        foreach (\array_keys($this->minefield) as $row) {
+            foreach (\array_keys($this->minefield[$row]) as $col) {
+                if (!$this->isMine($row, $col)) {
+                    $mineCount = $this->countMinesAround($row, $col);
+                    $this->annotatedMinefield[$row][$col] =
+                        $mineCount > 0 ? $mineCount : ' ';
+                }
             }
         }
     }
-}
 
-function applyBorders($grid)
-{
-    $width = count($grid[0]);
-    $mid = array_map(function ($line) {
-        array_unshift($line, '|');
-        $line[] = '|';
-        return $line;
-    }, $grid);
-    $horizontalBorder = array_fill(0, $width, '-');
-    array_unshift($horizontalBorder, '+');
-    $horizontalBorder[] = '+';
-
-    array_unshift($mid, $horizontalBorder);
-    $mid[] = $horizontalBorder;
-
-    return array_map('join', $mid);
-}
-
-function numSurroundingMines($grid, $r, $c)
-{
-    $positions = [
-        [-1, -1],
-        [-1, 0],
-        [-1, 1],
-        [0, -1],
-        [0, 1],
-        [1, -1],
-        [1, 0],
-        [1, 1],
-    ];
-
-    return array_reduce($positions, function ($mines, $offset) use ($grid, $r, $c) {
-        $r = $r + $offset[0];
-        $c = $c + $offset[1];
-        if (isset($grid[$r][$c]) && $grid[$r][$c] == '*') {
-            $mines += 1;
+    private function countMinesAround(int $row, int $col): int
+    {
+        $mineCount = 0;
+        if ($row > 0) {
+            $mineCount += $this->countMinesOfRowAroundCol($row - 1, $col);
         }
-        return $mines;
-    }) ?: ' ';
-}
 
-function addMineCount($grid)
-{
-    foreach ($grid as $r => &$row) {
-        foreach ($row as $c => &$cell) {
-            if ($cell == '*') {
-                continue;
-            }
-            if ($cell == ' ') {
-                $cell = numSurroundingMines($grid, $r, $c);
-            }
+        $mineCount += $this->countMinesOfRowAroundCol($row, $col);
+
+        if ($row < \count($this->minefield) - 1) {
+            $mineCount += $this->countMinesOfRowAroundCol($row + 1, $col);
         }
+
+        return $mineCount;
     }
-    return $grid;
+
+    private function countMinesOfRowAroundCol(int $row, int $col): int
+    {
+        $mineCount = 0;
+        if ($col > 0) {
+            $mineCount += $this->mineScore($row, $col - 1);
+        }
+
+        $mineCount += $this->mineScore($row, $col);
+
+        if ($col < \count($this->minefield[$row]) - 1) {
+            $mineCount += $this->mineScore($row, $col + 1);
+        }
+
+        return $mineCount;
+    }
+
+    private function mineScore(int $row, int $col): int
+    {
+        return $this->isMine($row, $col) ? 1 : 0;
+    }
+
+    private function isMine(int $row, int $col): bool
+    {
+        return $this->minefield[$row][$col] === '*';
+    }
 }
