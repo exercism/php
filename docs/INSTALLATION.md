@@ -52,7 +52,7 @@ Install PHP via homebrew
 brew install php@8.3
 ```
 
-This should display the now installed version of PHP, at least version `8.1.x`.
+This should display the now installed version of PHP, at least version `8.1.0`.
 
 ```shell
 php -v
