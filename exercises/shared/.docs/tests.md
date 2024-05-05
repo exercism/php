@@ -13,7 +13,7 @@
 
 3. Execute the tests:
 
-       ./phpunit file_to_test.php
+       ./phpunit test_file.php
 
    For example, to run the tests for the Hello World exercise, you would run:
 
