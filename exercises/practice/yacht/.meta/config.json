@@ -1,10 +1,19 @@
 {
-  "blurb": "Score a single throw of dice in the game Yacht.",
-  "authors": ["MichaelBunker"],
-  "contributors": [],
+  "authors": [
+    "MichaelBunker"
+  ],
   "files": {
-    "solution": ["Yacht.php"],
-    "test": ["YachtTest.php"],
-    "example": [".meta/example.php"]
-  }
+    "solution": [
+      "Yacht.php"
+    ],
+    "test": [
+      "YachtTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Score a single throw of dice in the game Yacht.",
+  "source": "James Kilfiger, using wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Yacht_(dice_game)"
 }

@@ -56,7 +56,7 @@ $infiltration->canSpy($is_knight_awake, $is_archer_awake, $is_prisoner_awake);
 
 ## 3. Check if the 'Signal Prisoner' action is possible
 
-Implement a function named `canSignalPrisoner` that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake.
+Implement a function named `canSignal` that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake.
 The function returns `true` if the 'Signal Prisoner' action is available based on the state of the characters.
 Otherwise, returns `false`:
 
@@ -72,7 +72,7 @@ $infiltration->canSignal($is_archer_awake, $is_prisoner_awake);
 
 ## 4. Check if the 'Free Prisoner' action is possible
 
-Implement a function named `canFreePrisoner` that takes four boolean values.
+Implement a function named `canLiberate` that takes four boolean values.
 The first three parameters indicate if the knight, archer and the prisoner, respectively, are awake.
 The last parameter indicates if Annalyn's pet dog is present.
 The function returns `true` if the 'Free Prisoner' action is available based on the state of the characters and Annalyn's pet dog presence.

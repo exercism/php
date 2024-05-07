@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<phpunit>
-    <testsuites>
-        <testsuite name="unit">
-            <directory>./</directory>
-        </testsuite>
-    </testsuites>
-</phpunit>

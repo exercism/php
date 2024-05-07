@@ -58,7 +58,18 @@ function test {
     cp "${exercise_dir}/.meta/${example_file}" "${outdir}/${exercise_file}.${file_ext}"
   fi
 
-  eval "${PHPUNIT_BIN}" --no-configuration "${outdir}/${test_file}"
+  # `54s` timeout is an approximation to ensure the tests will not timeont in Exercism Test Runner.
+  #
+  # 1. Exercism Test Runner is around 3 times faster than GitHub CI on Ubuntu.
+  #    See: https://forum.exercism.org/t/test-tracks-for-the-20-seconds-limit-on-test-runners/10536/8
+  # 2. Exercism Test Runner should complete in 20s and involves:
+  #    - Starting Docker container (~1s)
+  #    - Running the test suite
+  #    - Processing the results (~1s)
+  #
+  # This gives 18s maximum for the test suite to run in the Exercism Test Runner.
+  # Hence the test suite should complete in less than 18s x 3 = 54s in GitHub CI on Ubuntu.
+  timeout 54s "${PHPUNIT_BIN}" --no-configuration "${outdir}/${test_file}"
 }
 
 function installed {

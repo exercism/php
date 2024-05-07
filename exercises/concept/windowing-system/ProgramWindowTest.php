@@ -78,17 +78,6 @@ class ProgramWindowTest extends PHPUnit\Framework\TestCase
      * @testdox assert Position class exists, with constructor, properties
      * @task_id 3
      */
-    public function testPositionHasConstructorSettingInitialValues()
-    {
-        $position = new Position(30, 70);
-        $this->assertEquals(30, $position->y);
-        $this->assertEquals(70, $position->x);
-    }
-
-    /**
-     * @testdox assert Position class exists, with constructor, properties
-     * @task_id 3
-     */
     public function testSizeHasConstructorSettingInitialValues()
     {
         $size = new Size(300, 700);
@@ -107,6 +96,17 @@ class ProgramWindowTest extends PHPUnit\Framework\TestCase
         $window->resize($size);
         $this->assertEquals(430, $window->height);
         $this->assertEquals(2135, $window->width);
+    }
+
+    /**
+     * @testdox assert Position class exists, with constructor, properties
+     * @task_id 4
+     */
+    public function testPositionHasConstructorSettingInitialValues()
+    {
+        $position = new Position(30, 70);
+        $this->assertEquals(30, $position->y);
+        $this->assertEquals(70, $position->x);
     }
 
     /**

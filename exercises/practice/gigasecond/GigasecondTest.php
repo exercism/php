@@ -37,7 +37,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         return new DateTimeImmutable($date, $UTC);
     }
 
-    public function inputAndExpectedDates(): array
+    public static function inputAndExpectedDates(): array
     {
         return [
             ['2011-04-25', '2043-01-01 01:46:40'],
@@ -48,7 +48,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
         ];
     }
 
-    public function inputDates(): array
+    public static function inputDates(): array
     {
         return [
             ['2011-04-25'],

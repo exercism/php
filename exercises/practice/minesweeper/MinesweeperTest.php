@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class MinesweeperTest extends PHPUnit\Framework\TestCase
@@ -31,185 +9,265 @@ class MinesweeperTest extends PHPUnit\Framework\TestCase
         require_once 'Minesweeper.php';
     }
 
-    public function testAnEmptyBoard(): void
+    /**
+     * uuid 0c5ec4bd-dea7-4138-8651-1203e1cb9f44
+     * @testdox No rows
+     */
+    public function testNoRows(): void
     {
-        $emptyBoard = '
-+--+
-|  |
-+--+
-';
-        $this->assertSame($emptyBoard, solve($emptyBoard));
+        $minefield = [];
+        $expected = [];
+
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
     }
 
-    public function testAnIncompleteSideBorderThrowsAnException(): void
+    /**
+     * uuid 650ac4c0-ad6b-4b41-acde-e4ea5852c3b8
+     * @testdox No columns
+     */
+    public function testNoColumns(): void
     {
-        $incompleteBoard = '
-+--+
-   |
-+--+
-';
-        $this->expectException('InvalidArgumentException');
+        $minefield = [""];
+        $expected = [""];
 
-        solve($incompleteBoard);
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
     }
 
-    public function testAnIncompleteTopBorderThrowsAnException(): void
+    /**
+     * uuid 6fbf8f6d-a03b-42c9-9a58-b489e9235478
+     * @testdox No mines
+     */
+    public function testNoMines(): void
     {
-        $incompleteBoard = '
-+ -+
-|  |
-+--+
-';
-        $this->expectException('InvalidArgumentException');
+        $minefield = [
+            "   ",
+            "   ",
+            "   ",
+        ];
+        $expected = [
+            "   ",
+            "   ",
+            "   ",
+        ];
 
-        solve($incompleteBoard);
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
     }
 
-    public function testAMissingCornerThrowsAnException(): void
+    /**
+     * uuid 61aff1c4-fb31-4078-acad-cd5f1e635655
+     * @testdox Minefield with only mines
+     */
+    public function testMinefieldWithOnlyMines(): void
     {
-        $incompleteBoard = '
-+--
-|  |
-+--+
-';
-        $this->expectException('InvalidArgumentException');
+        $minefield = [
+            "***",
+            "***",
+            "***",
+        ];
+        $expected = [
+            "***",
+            "***",
+            "***",
+        ];
 
-        solve($incompleteBoard);
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
     }
 
-    public function testABoardWithLessThan2SquaresThrowsAnException(): void
+    /**
+     * uuid 84167147-c504-4896-85d7-246b01dea7c5
+     * @testdox Mine surrounded by spaces
+     */
+    public function testMineSurroundedBySpaces(): void
     {
-        $tinyBoard = '
-+-+
-| |
-+-+
-';
-        $this->expectException('InvalidArgumentException');
+        $minefield = [
+            "   ",
+            " * ",
+            "   ",
+        ];
+        $expected = [
+            "111",
+            "1*1",
+            "111",
+        ];
 
-        solve($tinyBoard);
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
     }
 
-    public function testRowsOfSameLength(): void
+    /**
+     * uuid cb878f35-43e3-4c9d-93d9-139012cccc4a
+     * @testdox Space surrounded by mines
+     */
+    public function testSpaceSurroundedByMines(): void
     {
-        $unequalBoard = '
-+---+
-|   |
-| |
-+---+
-';
+        $minefield = [
+            "***",
+            "* *",
+            "***",
+        ];
+        $expected = [
+            "***",
+            "*8*",
+            "***",
+        ];
 
-        $this->expectException('InvalidArgumentException');
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
 
-        solve($unequalBoard);
+        $this->assertSame($expected, $actual);
     }
 
-    public function testCanOnlyContainMines(): void
+    /**
+     * uuid 7037f483-ddb4-4b35-b005-0d0f4ef4606f
+     * @testdox Horizontal line
+     */
+    public function testHorizontalLine(): void
     {
-        $badBoard = '
-+---+
-|  *|
-| * |
-| ? |
-+---+
-';
+        $minefield = [" * * "];
+        $expected = ["1*2*1"];
 
-        $this->expectException('InvalidArgumentException');
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
 
-        solve($badBoard);
+        $this->assertSame($expected, $actual);
     }
 
-    public function testBoardWithOneMineToLeft(): void
+    /**
+     * uuid uuid
+     * @testdox Horizontal line, mines at edges
+     */
+    public function testHorizontalLineMinesAtEdges(): void
     {
-        $oneMine = '
-+--+
-|* |
-+--+
-';
+        $minefield = ["*   *"];
+        $expected = ["*1 1*"];
 
-        $expected = '
-+--+
-|*1|
-+--+
-';
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
 
-        $this->assertEquals($expected, solve($oneMine));
+        $this->assertSame($expected, $actual);
     }
 
-    public function testBoardWithOneMineToRight(): void
+    /**
+     * uuid c5198b50-804f-47e9-ae02-c3b42f7ce3ab
+     * @testdox Vertical line
+     */
+    public function testVerticalLine(): void
     {
-        $oneMine = '
-+--+
-| *|
-+--+
-';
+        $minefield = [
+            " ",
+            "*",
+            " ",
+            "*",
+            " ",
+        ];
+        $expected = [
+            "1",
+            "*",
+            "2",
+            "*",
+            "1",
+        ];
 
-        $expected = '
-+--+
-|1*|
-+--+
-';
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
 
-        $this->assertEquals($expected, solve($oneMine));
+        $this->assertSame($expected, $actual);
     }
 
-    public function testBoardWithAMineToTopAndRight(): void
+    /**
+     * uuid 0c79a64d-703d-4660-9e90-5adfa5408939
+     * @testdox Vertical line, mines at edges
+     */
+    public function testVerticalLineMinesAtEdges(): void
     {
-        $twoMines = '
-+--+
-|* |
-| *|
-+--+
-';
+        $minefield = [
+            "*",
+            " ",
+            " ",
+            " ",
+            "*",
+        ];
+        $expected = [
+            "*",
+            "1",
+            " ",
+            "1",
+            "*",
+        ];
 
-        $expected = '
-+--+
-|*2|
-|2*|
-+--+
-';
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
 
-        $this->assertEquals($expected, solve($twoMines));
+        $this->assertSame($expected, $actual);
     }
 
-    public function testBoardWithAMineToBottomAndLeftAndDiagonal(): void
+    /**
+     * uuid 4b098563-b7f3-401c-97c6-79dd1b708f34
+     * @testdox Cross
+     */
+    public function testCross(): void
     {
-        $threeMines = '
-+--+
-|* |
-|**|
-+--+
-';
+        $minefield = [
+            "  *  ",
+            "  *  ",
+            "*****",
+            "  *  ",
+            "  *  ",
+        ];
+        $expected = [
+            " 2*2 ",
+            "25*52",
+            "*****",
+            "25*52",
+            " 2*2 ",
+        ];
 
-        $expected = '
-+--+
-|*3|
-|**|
-+--+
-';
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
 
-        $this->assertEquals($expected, solve($threeMines));
+        $this->assertSame($expected, $actual);
     }
 
-    public function testAComplicatedBoard(): void
+    /**
+     * uuid 04a260f1-b40a-4e89-839e-8dd8525abe0e
+     * @testdox Large minefield
+     */
+    public function testLargeMinefield(): void
     {
-        $fourMines = '
-+-----+
-| * * |
-|  *  |
-|  *  |
-|     |
-+-----+
-';
+        $minefield = [
+            " *  * ",
+            "  *   ",
+            "    * ",
+            "   * *",
+            " *  * ",
+            "      ",
+        ];
+        $expected = [
+            "1*22*1",
+            "12*322",
+            " 123*2",
+            "112*4*",
+            "1*22*2",
+            "111111",
+        ];
 
-        $expected = '
-+-----+
-|1*3*1|
-|13*31|
-| 2*2 |
-| 111 |
-+-----+
-';
+        $subject = new Minesweeper($minefield);
+        $actual = $subject->annotate();
 
-        $this->assertEquals($expected, solve($fourMines));
+        $this->assertSame($expected, $actual);
     }
 }

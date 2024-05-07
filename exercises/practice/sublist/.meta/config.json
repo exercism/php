@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "tomasnorre"
+  ],
+  "files": {
+    "solution": [
+      "Sublist.php"
+    ],
+    "test": [
+      "SublistTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Write a function to determine if a list is a sublist of another list."
+}

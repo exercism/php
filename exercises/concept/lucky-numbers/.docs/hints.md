@@ -39,8 +39,8 @@
 [ref-type-cast-int]: https://www.php.net/manual/en/language.types.integer.php#language.types.integer.casting.from-string
 [ref-type-cast-string]: https://www.php.net/manual/en/language.types.string.php#language.types.string.casting
 [ref-numeric-strings]: https://www.php.net/manual/en/language.types.numeric-strings.php
-[ref-implode]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
-[ref-arithmetic-ops]: /tracks/php/concepts/arithmetic-operators
+[ref-implode]: https://www.php.net/manual/en/function.implode.php
+[ref-arithmetic-ops]: https://www.php.net/manual/en/language.operators.arithmetic.php
 [ref-strrev]: https://www.php.net/manual/en/function.strrev
 [ref-comparison-ops]: https://www.php.net/manual/en/language.operators.comparison.php
 [ref-if-statement]: https://www.php.net/manual/en/control-structures.if.php

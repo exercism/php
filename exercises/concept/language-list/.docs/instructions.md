@@ -15,7 +15,7 @@ language_list();
 
 ## 2. Modify function to create a list from any number of languages
 
-Modify the `language_list` function, so it takes a variadic argument or string languages.
+Modify the `language_list` function, so it takes a variadic argument of languages (strings).
 It should return the resulting list with the languages in the list.
 
 ```php
@@ -78,8 +78,8 @@ It should return the number of languages in the list.
 ```php
 <?php
 
-$language_list = $language_list("PHP", "Prolog", "Wren");
+$language_list = language_list("PHP", "Prolog", "Wren");
 // => ["PHP", "Prolog", "Wren"]
 language_list_length($language_list);
-// => 2
+// => 3
 ```

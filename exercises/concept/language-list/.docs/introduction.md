@@ -17,7 +17,7 @@ $no_keys == $integer_keys // => equal returns true
 $no_keys === $integer_keys // => strictly equal returns true
 ```
 
-A values are of `mixed` type, and each value in an array is not required to be of the same type.
+All values are of `mixed` type, and each value in an array is not required to be of the same type.
 
 ### Using Arrays
 
