@@ -1129,9 +1129,9 @@
         "difficulty": 4,
         "topics": [
           "conditionals",
-          "strings",
-          "status": "deprecated"
-        ]
+          "strings"
+        ],
+        "status": "deprecated"
       },
       {
         "slug": "bank-account",
