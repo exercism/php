@@ -123,4 +123,15 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
         $languages_count = language_list_length($language_list);
         $this->assertEquals(3, $languages_count);
     }
+
+    /**
+     * @testdox when getting the language count, original is unchanged
+     * @task_id 7
+     */
+    public function testLanguageListCountDoesNotMutate()
+    {
+        $language_list = language_list('c', 'cpp', 'php');
+        language_list_length($language_list);
+        $this->assertCount(3, $language_list);
+    }
 }
