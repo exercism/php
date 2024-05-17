@@ -185,7 +185,7 @@ class DndCharacterTest extends PHPUnit\Framework\TestCase
                 $expectedHitpoints,
                 $character->hitpoints,
                 'The calculated hitpoints value ' . $character->hitpoints
-                    . ' is not '. $expectedHitpoints . '.',
+                    . ' is not ' . $expectedHitpoints . '.',
             );
         }
     }
