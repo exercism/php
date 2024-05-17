@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\ExpectationFailedException;
-
 class DndCharacterTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void
@@ -103,16 +101,19 @@ class DndCharacterTest extends PHPUnit\Framework\TestCase
     {
         for ($i = 0; $i < 10; $i++) {
             $character = DndCharacter::generate();
-            $this->assertInRange($character->strength, 3, 18);
-            $this->assertInRange($character->dexterity, 3, 18);
-            $this->assertInRange($character->constitution, 3, 18);
-            $this->assertInRange($character->intelligence, 3, 18);
-            $this->assertInRange($character->wisdom, 3, 18);
-            $this->assertInRange($character->charisma, 3, 18);
+            $this->assertInRange($character->strength, 3, 18, 'strength');
+            $this->assertInRange($character->dexterity, 3, 18, 'dexterity');
+            $this->assertInRange($character->constitution, 3, 18, 'constitution');
+            $this->assertInRange($character->intelligence, 3, 18, 'intelligence');
+            $this->assertInRange($character->wisdom, 3, 18, 'wisdom');
+            $this->assertInRange($character->charisma, 3, 18, 'charisma');
 
+            $expectedHitpoints = 10 + DndCharacter::modifier($character->constitution);
             $this->assertEquals(
+                $expectedHitpoints,
                 $character->hitpoints,
-                10 + DndCharacter::modifier($character->constitution)
+                'The calculated hitpoints value ' . $character->hitpoints
+                    . ' is not '. $expectedHitpoints . '.',
             );
         }
     }
@@ -121,19 +122,16 @@ class DndCharacterTest extends PHPUnit\Framework\TestCase
     {
         for ($i = 0; $i < 10; $i++) {
             $character = DndCharacter::generate();
-            $this->assertEquals($character->strength, $character->strength);
-            $this->assertEquals($character->dexterity, $character->dexterity);
-            $this->assertEquals($character->constitution, $character->constitution);
-            $this->assertEquals($character->intelligence, $character->intelligence);
-            $this->assertEquals($character->wisdom, $character->wisdom);
-            $this->assertEquals($character->charisma, $character->charisma);
+            $this->assertDoesNotChange($character->strength, $character->strength, 'strength');
+            $this->assertDoesNotChange($character->dexterity, $character->dexterity, 'dexterity');
+            $this->assertDoesNotChange($character->constitution, $character->constitution, 'constitution');
+            $this->assertDoesNotChange($character->intelligence, $character->intelligence, 'intelligence');
+            $this->assertDoesNotChange($character->wisdom, $character->wisdom, 'wisdom');
+            $this->assertDoesNotChange($character->charisma, $character->charisma, 'charisma');
         }
     }
 
-    /**
-     * @throws ExpectationFailedException
-     */
-    private function assertInRange(int $value, $start, $end): void
+    private function assertInRange(int $value, int $start, int $end, string $valueName = ''): void
     {
         $this->assertThat(
             $value,
@@ -141,7 +139,26 @@ class DndCharacterTest extends PHPUnit\Framework\TestCase
                 $this->greaterThanOrEqual($start),
                 $this->lessThanOrEqual($end)
             ),
-            "The given value $value is not between $start and $end."
+            'The calculated'
+                . (empty($valueName) ? '' : (' ' . $valueName))
+                . ' value ' . $value
+                . ' is not between ' . $start . ' and ' . $end . '.',
+        );
+    }
+
+    private function assertDoesNotChange(
+        int $valueFirstAccess,
+        int $valueSecondAccess,
+        string $valueName = ''
+    ): void {
+        $this->assertEquals(
+            $valueFirstAccess,
+            $valueSecondAccess,
+            'The'
+                . (empty($valueName) ? '' : (' ' . $valueName))
+                . ' value changed from ' . $valueFirstAccess
+                . ' to ' . $valueSecondAccess
+                . ' when accessed a second time.',
         );
     }
 }
