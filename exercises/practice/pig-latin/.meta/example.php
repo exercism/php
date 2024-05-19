@@ -2,34 +2,22 @@
 
 declare(strict_types=1);
 
-/**
- * Translates a string into Pig Latin
- *
- * @param  string $str
- * @return string
- */
-function translate($str)
+function translate(string $text): string
 {
-    $words = explode(" ", $str);
+    $words = explode(" ", $text);
     $translatedWords = array_map('translateWord', $words);
     return implode(' ', $translatedWords);
 }
 
-/**
- * Translates a single word
- *
- * @param  string $str
- * @return string
- */
-function translateWord($str)
+function translateWord(string $text): string
 {
-    if (preg_match('/^s?qu|thr?|s?ch/', $str, $match)) {
-        return sprintf("%s%say", substr($str, strlen($match[0])), $match[0]);
+    if (preg_match('/^s?qu|thr?|s?ch|rh/', $text, $match)) {
+        return sprintf("%s%say", substr($text, strlen($match[0])), $match[0]);
     }
 
-    if (preg_match('/^[aeiou]|yt|xr/', $str)) {
-        return sprintf("%say", $str);
+    if (preg_match('/^[aeiou]|yt|xr/', $text)) {
+        return sprintf("%say", $text);
     }
 
-    return sprintf("%s%say", substr($str, 1), $str[0]);
+    return sprintf("%s%say", substr($text, 1), $text[0]);
 }
