@@ -30,4 +30,6 @@ class DndCharacter
     {
         throw new BadFunctionCallException("Please implement the DndCharacter class!");
     }
+
+    // Add methods as expected by the tests
 }
