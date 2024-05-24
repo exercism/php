@@ -36,7 +36,7 @@ $my_empty_arr = [];
 $my_empty_arr = array(); // => []
 
 // or
-$letters = explode("Hello", ""); // => ["H", "e", "l", "l", "o"] 
+$letters = mb_str_split("Hello"); // => ["H", "e", "l", "l", "o"] 
 ```
 
 Access, assign, append values using the index operator:
