@@ -23,9 +23,9 @@ Arrays can be declared as a literal (written in code, as done above) or created 
 Access, assign, append values using the index operator:
 
 ```php
-$prime_numbers = [1, 3, 5, 7, 11, 12];
+$prime_numbers = [1, 3, 5, 6];
 
-$prime_numbers[5] = 13; // replace 12 with 13
+$prime_numbers[3] = 7; // replace 6 with 7
 
-$prime_numbers[] = 17; // array now contains [1, 3, 5, 7, 11, 13, 17]
+$prime_numbers[] = 11; // array now contains [1, 3, 5, 7, 11]
 ```
