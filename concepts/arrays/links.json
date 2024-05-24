@@ -8,7 +8,7 @@
     "description": "PHP: Array Functions"
   },
   {
-    "url": "https://www.php.net/manual/en/function.explode",
-    "description": "PHP: String Functions: explode"
+    "url": "https://www.php.net/manual/en/function.mb-str-split.php",
+    "description": "PHP: Multibyte String Functions: mb_str_split"
   }
 ]
