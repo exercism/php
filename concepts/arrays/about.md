@@ -55,12 +55,12 @@ Iterate over an array using foreach:
 $names = ["Ani", "Jack", "Rami"]
 
 // Iterate just the values
-foreach($names as $name) {
+foreach ($names as $name) {
   echo $name;
 }
 
 // Iterate keys and values
-foreach($names as $index => $name) {
+foreach ($names as $index => $name) {
   echo "$index => $name";
 }
 ```
