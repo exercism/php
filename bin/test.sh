@@ -95,6 +95,8 @@ done
 # This gives 18s maximum for the test suite to run in the Exercism Test Runner.
 # Hence the test suite should complete in less than 18s x 3 = 54s in GitHub CI on Ubuntu.
 [ -f /etc/os-release ] && grep -q "ubuntu" /etc/os-release && {
+    echo "Using timeout of 54s for each exercise."
+    echo ""
     PHPUNIT_BIN="timeout 54s ${PHPUNIT_BIN}"
 }
 
