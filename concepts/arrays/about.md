@@ -15,7 +15,7 @@ $no_keys == $integer_keys // => equal returns true
 $no_keys === $integer_keys // => strictly equal returns true
 ```
 
-A value can be of `mixed` type, and each value in an array is not required to be of the same type.
+All values are of `mixed` type, and each value in an array is not required to be of the same type.
 
 ```php
 $my_arr = [
@@ -27,7 +27,7 @@ $my_arr = [
 
 ## Using Arrays
 
-Arrays can be declared as a literal (written in code, as done above) or created and manipulated as functions.
+Arrays can be declared as a literal (written in code, as done above) or created and manipulated by functions.
 
 ```php
 $my_empty_arr = [];
