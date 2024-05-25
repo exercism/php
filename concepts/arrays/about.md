@@ -15,7 +15,8 @@ $no_keys == $integer_keys // => equal returns true
 $no_keys === $integer_keys // => strictly equal returns true
 ```
 
-A value can be of `mixed` type, and each value in an array is not required to be of the same type.
+An array can store values of all types.
+Each value can have a different type.
 
 ```php
 $my_arr = [
@@ -27,7 +28,7 @@ $my_arr = [
 
 ## Using Arrays
 
-Arrays can be declared as a literal (written in code, as done above) or created and manipulated as functions.
+Arrays can be declared as a literal (written in code, as done above) or created and manipulated by functions.
 
 ```php
 $my_empty_arr = [];
@@ -36,17 +37,17 @@ $my_empty_arr = [];
 $my_empty_arr = array(); // => []
 
 // or
-$letters = explode("Hello", ""); // => ["H", "e", "l", "l", "o"] 
+$letters = mb_str_split("Hello"); // => ["H", "e", "l", "l", "o"] 
 ```
 
 Access, assign, append values using the index operator:
 
 ```php
-$prime_numbers = [1, 3, 5, 7, 11, 12];
+$prime_numbers = [2, 3, 5, 6];
 
-$prime_numbers[5] = 13; // replace 12 with 13
+$prime_numbers[3] = 7; // replace 6 with 7
 
-$prime_numbers[] = 17; // array now contains [1, 3, 5, 7, 11, 13, 17]
+$prime_numbers[] = 11; // array now contains [2, 3, 5, 7, 11]
 ```
 
 Iterate over an array using foreach:
@@ -55,12 +56,12 @@ Iterate over an array using foreach:
 $names = ["Ani", "Jack", "Rami"]
 
 // Iterate just the values
-foreach($names as $name) {
+foreach ($names as $name) {
   echo $name;
 }
 
 // Iterate keys and values
-foreach($names as $index => $name) {
+foreach ($names as $index => $name) {
   echo "$index => $name";
 }
 ```
