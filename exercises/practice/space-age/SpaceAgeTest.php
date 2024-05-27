@@ -11,12 +11,6 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     public const DELTA = 0.01;
 
-    public function testAgeInSeconds(): void
-    {
-        $age = new SpaceAge(1000000);
-        $this->assertEquals(1000000, $age->seconds());
-    }
-
     /**
      * uuid 84f609af-5a91-4d68-90a3-9e32d8a5cd34
      * @testdox Age on Earth

@@ -31,11 +31,6 @@ class SpaceAge
         throw new \BadMethodCallException("Implement the __construct method");
     }
 
-    public function seconds(): int
-    {
-        throw new \BadMethodCallException("Implement the seconds method");
-    }
-
     public function earth(): float
     {
         throw new \BadMethodCallException("Implement the earth method");

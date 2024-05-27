@@ -20,11 +20,6 @@ class SpaceAge
         $this->seconds = $seconds;
     }
 
-    public function seconds()
-    {
-        return $this->seconds;
-    }
-
     public function earth()
     {
         return $this->seconds / self::EARTH_YEAR_IN_SECONDS;
