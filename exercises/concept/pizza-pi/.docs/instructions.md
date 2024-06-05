@@ -15,9 +15,10 @@ The dough needed for the middle is a minimum 200g, but every person it serves re
 `grams = pizzas * ((persons * 20) + 200)`
 
 Lilly needs a function that:
-* Takes the number of pizzas
-* The number of persons each pizza will serve 
-* And returns the dough needed to the nearest gram.
+
+- Takes the number of pizzas
+- The number of persons each pizza will serve
+- And returns the dough needed to the nearest gram.
 
 For example, to make 4 pizzas that feed 8 people:
 
@@ -50,15 +51,16 @@ $pizza_pi->calculateSauceRequirement(8, 250);
 ## 3. Some Cheese, Please
 
 Cheese comes in perfect cubes and is sold by size.
-Lilly calculated an equation to determine how many pizzas can  of some diameter (d) made from a cheese cube of side-length (l):
+Lilly calculated an equation to determine how many pizzas can of some diameter (d) made from a cheese cube of side-length (l):
 
-`pizzas = (cheese_dimension^3) / (thickness * PI * diameter)`
+`pizzas = (cheese_dimension^3) / (thickness * PI * (diameter/2)^2)`
 
 Create a function that:
-* Takes a side-length dimension of a cheese cube
-* Takes the desired thickness of the cheese layer
-* Takes the diameter of the pizza
-* And returns the number of pizzas that can be made while rounding down.
+
+- Takes a side-length dimension of a cheese cube
+- Takes the desired thickness of the cheese layer
+- Takes the diameter of the pizza
+- And returns the number of pizzas that can be made while rounding down.
 
 For example, given a 25x25x25cm cheese cube, 0.5cm thick cheese layer and pizzas 30cm in diameter:
 
@@ -75,8 +77,9 @@ $pizza_pi->calculateCheeseCubeCoverage(25, 0.5, 30);
 Finally, Lilly wants her pizzas to divide into 8 slices each and distributed evenly among her friends.
 
 Create a function that:
-* Takes a number of pizzas and number of friends
-* and returns the number of slices that will be left over if each person takes an equal number of slices.
+
+- Takes a number of pizzas and number of friends
+- and returns the number of slices that will be left over if each person takes an equal number of slices.
 
 For example:
 
