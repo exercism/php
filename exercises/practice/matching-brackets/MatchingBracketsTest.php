@@ -46,12 +46,30 @@ class MatchingBracketsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * uuid f0f97c94-a149-4736-bc61-f2c5148ffb85
+     * @testdox Wrong closing bracket
+     */
+    public function testWrongClosingBracket(): void
+    {
+        $this->assertFalse(brackets_match('{]'));
+    }
+
+    /**
      * uuid 754468e0-4696-4582-a30e-534d47d69756
      * @testdox Paired with whitespace
      */
     public function testPairedWithWhitespace(): void
     {
         $this->assertTrue(brackets_match('{ }'));
+    }
+
+    /**
+     * uuid ba84f6ee-8164-434a-9c3e-b02c7f8e8545
+     * @testdox Partially paired brackets
+     */
+    public function testPartiallyPairedBrackets(): void
+    {
+        $this->assertFalse(brackets_match('{[])'));
     }
 
     /**
@@ -106,6 +124,51 @@ class MatchingBracketsTest extends PHPUnit\Framework\TestCase
     public function testPairedAndWrongNestedBrackets(): void
     {
         $this->assertFalse(brackets_match('[({]})'));
+    }
+
+    /**
+     * uuid 1d5c093f-fc84-41fb-8c2a-e052f9581602
+     * @testdox Paired and wrong nested brackets but innermost are correct
+     */
+    public function testPairedAndWrongNestedBracketsButInnermostAreCorrect(): void
+    {
+        $this->assertFalse(brackets_match('[({}])'));
+    }
+
+    /**
+     * uuid ef47c21b-bcfd-4998-844c-7ad5daad90a8
+     * @testdox Paired and incomplete brackets
+     */
+    public function testPairedAndIncompleteBrackets(): void
+    {
+        $this->assertFalse(brackets_match('{}['));
+    }
+
+    /**
+     * uuid a4675a40-a8be-4fc2-bc47-2a282ce6edbe
+     * @testdox Too many closing brackets
+     */
+    public function testTooManyClosingBrackets(): void
+    {
+        $this->assertFalse(brackets_match('[]]'));
+    }
+
+    /**
+     * uuid a345a753-d889-4b7e-99ae-34ac85910d1a
+     * @testdox Early unexpected brackets
+     */
+    public function testEarlyUnexpectedBrackets(): void
+    {
+        $this->assertFalse(brackets_match(')()'));
+    }
+
+    /**
+     * uuid 21f81d61-1608-465a-b850-baa44c5def83
+     * @testdox Early mismatched brackets
+     */
+    public function testEarlyMismatchedBrackets(): void
+    {
+        $this->assertFalse(brackets_match('{)()'));
     }
 
     /**
