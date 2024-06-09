@@ -55,11 +55,47 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It returns an empty string for invalid input
+     * @testdox It handles an empty string
      * uuid 123e4567-e89b-12d3-a456-426614174006
      */
-    public function testInvalidInputReturnsEmptyString(): void
+    public function testHandlesEmptyString(): void
     {
-        $this->assertSame('', toRna('X'));
+        $this->assertSame('', toRna(''));
+    }
+
+    /**
+     * @testdox It transcribes a sequence with only guanine
+     * uuid 123e4567-e89b-12d3-a456-426614174007
+     */
+    public function testTranscribesOnlyGuanine(): void
+    {
+        $this->assertSame('CCCC', toRna('GGGG'));
+    }
+
+    /**
+     * @testdox It transcribes a sequence with only cytosine
+     * uuid 123e4567-e89b-12d3-a456-426614174008
+     */
+    public function testTranscribesOnlyCytosine(): void
+    {
+        $this->assertSame('GGGG', toRna('CCCC'));
+    }
+
+    /**
+     * @testdox It transcribes a sequence with only thymine
+     * uuid 123e4567-e89b-12d3-a456-426614174009
+     */
+    public function testTranscribesOnlyThymine(): void
+    {
+        $this->assertSame('AAAA', toRna('TTTT'));
+    }
+
+    /**
+     * @testdox It transcribes a sequence with only adenine
+     * uuid 123e4567-e89b-12d3-a456-426614174010
+     */
+    public function testTranscribesOnlyAdenine(): void
+    {
+        $this->assertSame('UUUU', toRna('AAAA'));
     }
 }
