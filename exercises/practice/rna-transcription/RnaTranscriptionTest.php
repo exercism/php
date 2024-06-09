@@ -54,4 +54,13 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame('UGCACCAGAAUU', toRna('ACGTGGTCTTAA'));
     }
+
+    /**
+     * @testdox It returns an empty string for invalid input
+     * @uuid 123e4567-e89b-12d3-a456-426614174006
+     */
+    public function testInvalidInputReturnsEmptyString(): void
+    {
+        $this->assertSame('', toRna('X'));
+    }
 }
