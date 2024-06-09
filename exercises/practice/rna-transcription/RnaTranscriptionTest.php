@@ -11,7 +11,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It transcribes guanine to cytosine
-     * @uuid 123e4567-e89b-12d3-a456-426614174001
+     * uuid 123e4567-e89b-12d3-a456-426614174001
      */
     public function testTranscribesGuanineToCytosine(): void
     {
@@ -20,7 +20,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It transcribes cytosine to guanine
-     * @uuid 123e4567-e89b-12d3-a456-426614174002
+     * uuid 123e4567-e89b-12d3-a456-426614174002
      */
     public function testTranscribesCytosineToGuanine(): void
     {
@@ -29,7 +29,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It transcribes thymine to adenine
-     * @uuid 123e4567-e89b-12d3-a456-426614174003
+     * uuid 123e4567-e89b-12d3-a456-426614174003
      */
     public function testTranscribesThymineToAdenine(): void
     {
@@ -38,7 +38,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It transcribes adenine to uracil
-     * @uuid 123e4567-e89b-12d3-a456-426614174004
+     * uuid 123e4567-e89b-12d3-a456-426614174004
      */
     public function testTranscribesAdenineToUracil(): void
     {
@@ -47,7 +47,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It transcribes all occurrences in a given sequence
-     * @uuid 123e4567-e89b-12d3-a456-426614174005
+     * uuid 123e4567-e89b-12d3-a456-426614174005
      */
     public function testTranscribesAllOccurrencesOne(): void
     {
@@ -56,7 +56,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It returns an empty string for invalid input
-     * @uuid 123e4567-e89b-12d3-a456-426614174006
+     * uuid 123e4567-e89b-12d3-a456-426614174006
      */
     public function testInvalidInputReturnsEmptyString(): void
     {
