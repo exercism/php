@@ -10,8 +10,17 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * @testdox It handles an empty string
+     * uuid b4631f82-c98c-4a2f-90b3-c5c2b6c6f661
+     */
+    public function testHandlesEmptyString(): void
+    {
+        $this->assertSame('', toRna(''));
+    }
+
+    /**
      * @testdox It transcribes guanine to cytosine
-     * uuid 123e4567-e89b-12d3-a456-426614174001
+     * uuid a9558a3c-318c-4240-9256-5d5ed47005a6
      */
     public function testTranscribesGuanineToCytosine(): void
     {
@@ -20,7 +29,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It transcribes cytosine to guanine
-     * uuid 123e4567-e89b-12d3-a456-426614174002
+     * uuid 6eedbb5c-12cb-4c8b-9f51-f8320b4dc2e7
      */
     public function testTranscribesCytosineToGuanine(): void
     {
@@ -29,7 +38,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It transcribes thymine to adenine
-     * uuid 123e4567-e89b-12d3-a456-426614174003
+     * uuid 870bd3ec-8487-471d-8d9a-a25046488d3e
      */
     public function testTranscribesThymineToAdenine(): void
     {
@@ -38,7 +47,7 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
 
     /**
      * @testdox It transcribes adenine to uracil
-     * uuid 123e4567-e89b-12d3-a456-426614174004
+     * uuid aade8964-02e1-4073-872f-42d3ffd74c5f
      */
     public function testTranscribesAdenineToUracil(): void
     {
@@ -46,56 +55,11 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It transcribes all occurrences in a given sequence
-     * uuid 123e4567-e89b-12d3-a456-426614174005
+     * @testdox RNA complement
+     * uuid 79ed2757-f018-4f47-a1d7-34a559392dbf
      */
     public function testTranscribesAllOccurrencesOne(): void
     {
         $this->assertSame('UGCACCAGAAUU', toRna('ACGTGGTCTTAA'));
-    }
-
-    /**
-     * @testdox It handles an empty string
-     * uuid 123e4567-e89b-12d3-a456-426614174006
-     */
-    public function testHandlesEmptyString(): void
-    {
-        $this->assertSame('', toRna(''));
-    }
-
-    /**
-     * @testdox It transcribes a sequence with only guanine
-     * uuid 123e4567-e89b-12d3-a456-426614174007
-     */
-    public function testTranscribesOnlyGuanine(): void
-    {
-        $this->assertSame('CCCC', toRna('GGGG'));
-    }
-
-    /**
-     * @testdox It transcribes a sequence with only cytosine
-     * uuid 123e4567-e89b-12d3-a456-426614174008
-     */
-    public function testTranscribesOnlyCytosine(): void
-    {
-        $this->assertSame('GGGG', toRna('CCCC'));
-    }
-
-    /**
-     * @testdox It transcribes a sequence with only thymine
-     * uuid 123e4567-e89b-12d3-a456-426614174009
-     */
-    public function testTranscribesOnlyThymine(): void
-    {
-        $this->assertSame('AAAA', toRna('TTTT'));
-    }
-
-    /**
-     * @testdox It transcribes a sequence with only adenine
-     * uuid 123e4567-e89b-12d3-a456-426614174010
-     */
-    public function testTranscribesOnlyAdenine(): void
-    {
-        $this->assertSame('UUUU', toRna('AAAA'));
     }
 }
