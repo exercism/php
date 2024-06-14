@@ -46,7 +46,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 6 is Pling
+     * @testdox Sound for 6 is Pling as it has a factor 3
      * uuid 6bb4947b-a724-430c-923f-f0dc3d62e56a
      */
     public function testSoundFor6IsPling(): void
@@ -55,7 +55,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 8 is 8
+     * @testdox 2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base
      * uuid ce51e0e8-d9d4-446d-9949-96eac4458c2d
      */
     public function testSoundFor8Is8(): void
@@ -64,7 +64,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 9 is Pling
+     * @testdox Sound for 9 is Pling as it has a factor 3
      * uuid 0dd66175-e3e2-47fc-8750-d01739856671
      */
     public function testSoundFor9IsPling(): void
@@ -73,7 +73,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 10 is Plang
+     * @testdox Sound for 10 is Plang as it has a factor 5
      * uuid 022c44d3-2182-4471-95d7-c575af225c96
      */
     public function testSoundFor10IsPlang(): void
@@ -82,7 +82,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 14 is Plong
+     * @testdox Sound for 14 is Plong as it has a factor of 7
      * uuid 37ab74db-fed3-40ff-b7b9-04acdfea8edf
      */
     public function testSoundFor14IsPlong(): void
@@ -91,7 +91,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 15 is PlingPlang
+     * @testdox Sound for 15 is PlingPlang as it has factors 3 and 5
      * uuid 31f92999-6afb-40ee-9aa4-6d15e3334d0f
      */
     public function testSoundFor15IsPlingPlang(): void
@@ -100,7 +100,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 21 is PlingPlong
+     * @testdox Sound for 21 is PlingPlong as it has factors 3 and 7
      * uuid ff9bb95d-6361-4602-be2c-653fe5239b54
      */
     public function testSoundFor21IsPlingPlong(): void
@@ -109,7 +109,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 25 is Plang
+     * @testdox Sound for 25 is Plang as it has a factor 5
      * uuid d2e75317-b72e-40ab-8a64-6734a21dece1
      */
     public function testSoundFor25IsPlang(): void
@@ -118,7 +118,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 27 is Pling
+     * @testdox Sound for 27 is Pling as it has a factor 3
      * uuid a09c4c58-c662-4e32-97fe-f1501ef7125c
      */
     public function testSoundFor27IsPlang(): void
@@ -127,7 +127,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 35 is PlangPlong
+     * @testdox Sound for 35 is PlangPlong as it has factors 5 and 7
      * uuid bdf061de-8564-4899-a843-14b48b722789
      */
     public function testSoundFor35IsPlangPlong(): void
@@ -136,7 +136,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 49 is Plong
+     * @testdox Sound for 49 is Plong as it has a factor 7
      * uuid c4680bee-69ba-439d-99b5-70c5fd1a7a83
      */
     public function testSoundFor49IsPlong(): void
@@ -154,7 +154,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 105 is PlingPlangPlong
+     * @testdox Sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7
      * uuid e46677ed-ff1a-419f-a740-5c713d2830e4
      */
     public function testSoundFor105IsPlingPlangPlong(): void
@@ -163,7 +163,7 @@ class RaindropsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sound for 3125 is Plang
+     * @testdox Sound for 3125 is Plang as it has a factor 5
      * uuid 13c6837a-0fcd-4b86-a0eb-20572f7deb0b
      */
     public function testSoundFor3125IsPlang(): void
