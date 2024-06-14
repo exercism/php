@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class LeapTest extends PHPUnit\Framework\TestCase
@@ -31,28 +9,84 @@ class LeapTest extends PHPUnit\Framework\TestCase
         require_once 'Leap.php';
     }
 
-    public function testLeapYear(): void
+    /**
+     * @testdox Year not divisible by 4 in common year
+     * uuid 6466b30d-519c-438e-935d-388224ab5223
+     */
+    public function testCommonYearNotDivisibleBy4(): void
+    {
+        $this->assertFalse(isLeap(2015));
+    }
+
+    /**
+     * @testdox Year divisible by 2, not divisible by 4 in common year
+     * uuid ac227e82-ee82-4a09-9eb6-4f84331ffdb0
+     */
+    public function testCommonYearDivisibleBy2Not4(): void
+    {
+        $this->assertFalse(isLeap(1970));
+    }
+
+    /**
+     * @testdox Year divisible by 4, not divisible by 100 in leap year
+     * uuid 4fe9b84c-8e65-489e-970b-856d60b8b78e
+     */
+    public function testLeapYearDivisibleBy4Not100(): void
     {
         $this->assertTrue(isLeap(1996));
     }
 
-    public function testNonLeapYear(): void
+    /**
+     * @testdox Year divisible by 4 and 5 is still a leap year
+     * uuid 7fc6aed7-e63c-48f5-ae05-5fe182f60a5d
+     */
+    public function testLeapYearDivisibleBy4And5(): void
     {
-        $this->assertFalse(isLeap(1997));
+        $this->assertTrue(isLeap(1960));
     }
 
-    public function testNonLeapEvenYear(): void
+    /**
+     * @testdox Year divisible by 100, not divisible by 400 in common year
+     * uuid 78a7848f-9667-4192-ae53-87b30c9a02dd
+     */
+    public function testCommonYearDivisibleBy100Not400(): void
     {
-        $this->assertFalse(isLeap(1998));
+        $this->assertFalse(isLeap(2100));
     }
 
-    public function testCentury(): void
+    /**
+     * @testdox Year divisible by 100 but not by 3 is still not a leap year
+     * uuid 9d70f938-537c-40a6-ba19-f50739ce8bac
+     */
+    public function testCommonYearDivisibleBy100Not3(): void
     {
         $this->assertFalse(isLeap(1900));
     }
 
-    public function testFourthCentury(): void
+    /**
+     * @testdox Year divisible by 400 is leap year
+     * uuid 42ee56ad-d3e6-48f1-8e3f-c84078d916fc
+     */
+    public function testLeapYearDivisibleBy400(): void
+    {
+        $this->assertTrue(isLeap(2000));
+    }
+
+    /**
+     * @testdox Year divisible by 400 but not by 125 is still a leap year
+     * uuid 57902c77-6fe9-40de-8302-587b5c27121e
+     */
+    public function testLeapYearDivisibleBy400Not125(): void
     {
         $this->assertTrue(isLeap(2400));
+    }
+
+    /**
+     * @testdox Year divisible by 200, not divisible by 400 in common year
+     * uuid c30331f6-f9f6-4881-ad38-8ca8c12520c1
+     */
+    public function testCommonYearDivisibleBy200Not400(): void
+    {
+        $this->assertFalse(isLeap(1800));
     }
 }
