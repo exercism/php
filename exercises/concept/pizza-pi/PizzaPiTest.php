@@ -39,7 +39,7 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
     {
         $pizza_pi = new PizzaPi();
         $actual = $pizza_pi->calculateCheeseCubeCoverage(25, 0.5, 30);
-        $expected = 331;
+        $expected = 44;
         $this->assertEquals($expected, $actual);
     }
 
