@@ -44,7 +44,7 @@ These properties may be referenced internally or externally.
 
 class Car
 {
-    public $color
+    public $color;
 
     function __construct($color)
     {
