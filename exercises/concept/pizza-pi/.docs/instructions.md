@@ -54,7 +54,7 @@ Cheese comes in perfect cubes and is sold by size.
 
 Lilly decided to use the following formula to determine how many pizzas of some diameter (`diameter`) can be made from a cheese cube of side-length (`cheese_dimension`):
 
-`pizzas = (cheese_dimension³) / (thickness * PI * diameter)`
+`pizzas = (cheese_dimension³) / (thickness * PI * (diameter/2)²)`
 
 Create a function that:
 
@@ -70,7 +70,7 @@ For example, given a 25x25x25cm cheese cube, 0.5cm thick cheese layer and pizzas
 
 $pizza_pi = new PizzaPi();
 $pizza_pi->calculateCheeseCubeCoverage(25, 0.5, 30);
-// => 331
+// =>  44
 ```
 
 ## 4. A Fair Share
