@@ -23,7 +23,7 @@ class Door
 
 Classes are instantiated with the `new` keyword, this allocates memory for the class instance and calls the classes constructor method.
 Instantiated classes may be assigned to a variable.
-To invoke the methods of a class instance, we can use the `->` access operator 
+To invoke the methods of a class instance, we can use the `->` access operator.
 
 ```php
 <?php
@@ -49,7 +49,7 @@ class Car
         $this->color = $color;
     }
 
-    function getColor(): string
+    function getColor()
     {
         return $this->color;
     }
@@ -59,4 +59,3 @@ $a_car = new Car("red");
 $a_car->color; // => "red" by accessing the property
 $a_car->getColor(); // => "red" by invoking the instance method
 ```
-
