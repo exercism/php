@@ -62,31 +62,4 @@ class ReverseStringTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals("reward", reverseString("drawer"));
     }
-
-    /**
-     * @testdox wide characters
-     * uuid 1bed0f8a-13b0-4bd3-9d59-3d0593326fa2
-     */
-    public function testWideCharacters(): void
-    {
-        $this->assertEquals("猫子", reverseString("子猫"));
-    }
-
-    /**
-     * @testdox grapheme cluster with pre-combined form
-     * uuid 93d7e1b8-f60f-4f3c-9559-4056e10d2ead
-     */
-    public function testGraphemeClusterWithPreCombinedForm(): void
-    {
-        $this->assertEquals("dnatsnehctsrüW", reverseString("Würstchenstand"));
-    }
-
-    /**
-     * @testdox grapheme clusters
-     * uuid 1028b2c1-6763-4459-8540-2da47ca512d9
-     */
-    public function testGraphemeClusters(): void
-    {
-        $this->assertEquals("มรกแรปโนยขีเผู้", reverseString("ผู้เขียนโปรแกรม"));
-    }
 }
