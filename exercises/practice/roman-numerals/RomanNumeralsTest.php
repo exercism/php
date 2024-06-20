@@ -73,6 +73,15 @@ class RomanNumeralsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * @testdox 16 is XVI
+     * uuid 6d1d82d5-bf3e-48af-9139-87d7165ed509
+     */
+    public function test16IsXVI(): void
+    {
+        $this->assertSame('XVI', toRoman(16));
+    }
+
+    /**
      * @testdox 27 is XXVII
      * uuid 2bda64ca-7d28-4c56-b08d-16ce65716cf6
      */
@@ -109,6 +118,15 @@ class RomanNumeralsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * @testdox 66 is LXVI
+     * uuid 4465ffd5-34dc-44f3-ada5-56f5007b6dad
+     */
+    public function test66IsLXVI(): void
+    {
+        $this->assertSame('LXVI', toRoman(66));
+    }
+
+    /**
      * @testdox 93 is XCIII
      * uuid 46b46e5b-24da-4180-bfe2-2ef30b39d0d0
      */
@@ -136,6 +154,15 @@ class RomanNumeralsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * @testdox 166 is CLXVI
+     * uuid 902ad132-0b4d-40e3-8597-ba5ed611dd8d
+     */
+    public function test166IsCLXVI(): void
+    {
+        $this->assertSame('CLXVI', toRoman(166));
+    }
+
+    /**
      * @testdox 402 is CDII
      * uuid cdb06885-4485-4d71-8bfb-c9d0f496b404
      */
@@ -151,6 +178,15 @@ class RomanNumeralsTest extends PHPUnit\Framework\TestCase
     public function test575IsDLXXV(): void
     {
         $this->assertSame('DLXXV', toRoman(575));
+    }
+
+    /**
+     * @testdox 666 is DCLXVI
+     * uuid dacb84b9-ea1c-4a61-acbb-ce6b36674906
+     */
+    public function test666IsDCLXVI(): void
+    {
+        $this->assertSame('DCLXVI', toRoman(666));
     }
 
     /**
@@ -172,11 +208,47 @@ class RomanNumeralsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * @testdox 1666 is MDCLXVI
+     * uuid efbe1d6a-9f98-4eb5-82bc-72753e3ac328
+     */
+    public function test1666IsMDCLXVI(): void
+    {
+        $this->assertSame('MDCLXVI', toRoman(1666));
+    }
+
+    /**
      * @testdox 3000 is MMM
      * uuid bb550038-d4eb-4be2-a9ce-f21961ac3bc6
      */
     public function test3000IsMMM(): void
     {
         $this->assertSame('MMM', toRoman(3000));
+    }
+
+    /**
+     * @testdox 3001 is MMMI
+     * uuid 3bc4b41c-c2e6-49d9-9142-420691504336
+     */
+    public function test3001IsMMMI(): void
+    {
+        $this->assertSame('MMMI', toRoman(3001));
+    }
+
+    /**
+     * @testdox 3888 is MMMDCCCLXXXVIII
+     * uuid 2f89cad7-73f6-4d1b-857b-0ef531f68b7e
+     */
+    public function test3888IsMMMDCCCLXXXVIII(): void
+    {
+        $this->assertSame('MMMDCCCLXXXVIII', toRoman(3888));
+    }
+
+    /**
+     * @testdox 3999 is MMMCMXCIX
+     * uuid 4e18e96b-5fbb-43df-a91b-9cb511fe0856
+     */
+    public function test3999IsMMMCMXCIX(): void
+    {
+        $this->assertSame('MMMCMXCIX', toRoman(3999));
     }
 }
