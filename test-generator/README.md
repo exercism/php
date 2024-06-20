@@ -1,0 +1,26 @@
+TODO:
+- [ ] Readme
+  - [ ] Requirements (php 8.3)
+  - [ ] Usage `php test-generator/main.php exercises/practice/list-ops/ /home/codespace/.cache/exercism/configlet/problem-specifications/exercises/list-ops/canonical-data.json -vv`
+  - [ ] https://twig.symfony.com/
+  - [ ] custom functions `export` / `testf`
+- [ ] CI (generator)
+  - [ ] `phpstan`
+  - [ ] `phpcs`
+  - [ ] `phpunit`
+- [ ] CI (exercises): iterate over each exercise and run the generator in check mode
+- [ ] Write tests
+- [ ] Path to convert existing exercises to the test-generator
+- [ ] `@TODO`
+- [ ] Upgrade https://github.com/brick/varexporter
+- [ ] TOML Library for php (does not seem to exist any maitained library)
+- [ ] Default templates:
+  - [ ] Test function header (automatic docblock, automatic name)
+- [ ] Going further
+  - [ ] Skip re-implements
+  - [x] Read .meta/tests.toml to skip  `include=false` cases by uuid
+  - [ ] Ensure correctness between toml and effectively generated files
+  - [ ] Default templates to include (strict_types header, require_once based on config, testfn header [testdox, uuid, task_id])
+  - [ ] devcontainer for easy contribution in github codespace directly
+  - [ ] Automatically fetch configlet and exercise informations
+  - [x] Disable twig automatic isset
