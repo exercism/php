@@ -52,7 +52,8 @@ $pizza_pi->calculateSauceRequirement(8, 250);
 
 Cheese comes in perfect cubes and is sold by size.
 
-Lilly decided to use the following formula to determine how many pizzas of some diameter (`diameter`) can be made from a cheese cube of side-length (`cheese_dimension`):
+The formula Lily uses is not the formula for the area of the pizza since she does _not_ want the cheese to cover the entire area.
+She decided to use the following formula to determine how many pizzas of some diameter (`diameter`) can be made from a cheese cube of some side-length (`cheese_dimension`):
 
 `pizzas = (cheese_dimension³) / (thickness * PI * diameter)`
 
