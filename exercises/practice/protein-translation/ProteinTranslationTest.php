@@ -257,24 +257,26 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Invalid codon throws exception
-     * uuid 6b3d2d8a-6f6e-4f6e-8a0b-0d7d8a0b0d8a
-     * @dataProvider invalidCodonDataProvider
+     * @testdox Unknown amino acids, not part of a codon, can't translate
+     * uuid 9eac93f3-627a-4c90-8653-6d0a0595bc6f
      */
-    public function testTranslateFailsForInvalidCodons(string $rna): void
+    public function testUnknownAminoAcidsCantTranslate(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid codon');
-        $this->translater->getProteins($rna);
+        $this->translater->getProteins('XYZ');
     }
 
-    public static function invalidCodonDataProvider(): array
+
+    /**
+     * @testdox Incomplete RNA sequence can't translate
+     * uuid 9d73899f-e68e-4291-b1e2-7bf87c00f024
+     */
+    public function testIncompleteRnaSequenceCantTranslate(): void
     {
-        return [
-            'Non-existing' => ['AAA'],
-            'Unknown' => ['XYZ'],
-            'Incomplete' => ['AUGU'],
-        ];
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid codon');
+        $this->translater->getProteins('AUGU');
     }
 
     /**
