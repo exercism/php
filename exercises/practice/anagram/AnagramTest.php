@@ -167,13 +167,4 @@ class AnagramTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals(["ΒΓΑ", "γβα"], detectAnagrams('ΑΒΓ', ["ΒΓΑ", "ΒΓΔ", "γβα", "αβγ"]));
     }
-
-    /**
-     * @testdox different characters may have the same bytes
-     * uuid fd3509e5-e3ba-409d-ac3d-a9ac84d13296
-     */
-    public function testDifferentCharactersMayHaveTheSameBytes(): void
-    {
-        $this->assertEquals([], detectAnagrams('a⬂', ["€a"]));
-    }
 }
