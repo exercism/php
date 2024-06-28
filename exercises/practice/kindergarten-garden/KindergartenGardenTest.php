@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 class KindergartenGardenTest extends PHPUnit\Framework\TestCase
 {
+    const DIAGRAM = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
+
     public static function setUpBeforeClass(): void
     {
         require_once 'KindergartenGarden.php';
@@ -65,8 +67,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForAlice(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(['violets', 'radishes', 'violets', 'radishes'], $garden->plants('Alice'));
     }
 
@@ -76,8 +77,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForBob(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(['clover', 'grass', 'clover', 'clover'], $garden->plants('Bob'));
     }
 
@@ -87,8 +87,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForCharlie(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(['violets', 'violets', 'clover', 'grass'], $garden->plants('Charlie'));
     }
 
@@ -98,8 +97,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForDavid(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["radishes", "violets", "clover", "radishes"], $garden->plants('David'));
     }
 
@@ -109,8 +107,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForEve(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["clover", "grass", "radishes", "grass"], $garden->plants('Eve'));
     }
 
@@ -120,8 +117,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForFred(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["grass", "clover", "violets", "clover"], $garden->plants('Fred'));
     }
 
@@ -131,8 +127,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForGinny(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["clover", "grass", "grass", "clover"], $garden->plants('Ginny'));
     }
 
@@ -142,8 +137,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForHarriet(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["violets", "radishes", "radishes", "violets"], $garden->plants('Harriet'));
     }
 
@@ -153,8 +147,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForIleana(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["grass", "clover", "violets", "clover"], $garden->plants('Ileana'));
     }
 
@@ -164,8 +157,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForJoseph(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["violets", "clover", "violets", "grass"], $garden->plants('Joseph'));
     }
 
@@ -175,8 +167,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForKincaid(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["grass", "clover", "clover", "grass"], $garden->plants('Kincaid'));
     }
 
@@ -186,8 +177,7 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
      */
     public function testFullGardenForLarry(): void
     {
-        $diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-        $garden = new KindergartenGarden($diagram);
+        $garden = new KindergartenGarden(self::DIAGRAM);
         $this->assertEquals(["grass", "violets", "clover", "violets"], $garden->plants('Larry'));
     }
 }
