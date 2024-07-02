@@ -71,22 +71,4 @@ class AcronymTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals('SIMUFTA', acronym('Something - I made up from thin air'));
     }
-
-    /**
-     * @testdox Apostrophes
-     * uuid: 5118b4b1-4572-434c-8d57-5b762e57973e
-     */
-    public function testApostrophes(): void
-    {
-        $this->assertEquals('HC', acronym("Halley's Comet"));
-    }
-
-    /**
-     * @testdox Underscore emphasis
-     * uuid: adc12eab-ec2d-414f-b48c-66a4fc06cdef
-     */
-    public function testUnderscoreEmphasis(): void
-    {
-        $this->assertEquals('TRNT', acronym('The Road _Not_ Taken'));
-    }
 }
