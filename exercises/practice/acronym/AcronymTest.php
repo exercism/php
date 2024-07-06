@@ -31,9 +31,9 @@ class AcronymTest extends PHPUnit\Framework\TestCase
      * @testdox Punctuation
      * uuid: ec7000a7-3931-4a17-890e-33ca2073a548
      */
-    public function testCamelCase(): void
+    public function testPunctuation(): void
     {
-        $this->assertEquals('HTML', acronym('HyperText Markup Language'));
+        $this->assertEquals('FIFO', acronym('First In, First Out'));
     }
 
     /**
@@ -42,7 +42,7 @@ class AcronymTest extends PHPUnit\Framework\TestCase
      */
     public function testAllCapsWords(): void
     {
-        $this->assertEquals('PHP', acronym('PHP: Hypertext Preprocessor'));
+        $this->assertEquals('GIMP', acronym('GNU Image Manipulation Program'));
     }
 
     /**
