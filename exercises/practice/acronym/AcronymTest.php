@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class AcronymTest extends PHPUnit\Framework\TestCase
@@ -31,41 +9,66 @@ class AcronymTest extends PHPUnit\Framework\TestCase
         require_once 'Acronym.php';
     }
 
+    /**
+     * @testdox Basic
+     * uuid: 1e22cceb-c5e4-4562-9afe-aef07ad1eaf4
+     */
     public function testBasicTitleCase(): void
     {
         $this->assertEquals('PNG', acronym('Portable Network Graphics'));
     }
 
+    /**
+     * @testdox Lowercase words
+     * uuid: 79ae3889-a5c0-4b01-baf0-232d31180c08
+     */
     public function testLowerCaseWord(): void
     {
         $this->assertEquals('ROR', acronym('Ruby on Rails'));
     }
 
-    public function testCamelCase(): void
+    /**
+     * @testdox Punctuation
+     * uuid: ec7000a7-3931-4a17-890e-33ca2073a548
+     */
+    public function testPunctuation(): void
     {
-        $this->assertEquals('HTML', acronym('HyperText Markup Language'));
+        $this->assertEquals('FIFO', acronym('First In, First Out'));
     }
 
+    /**
+     * @testdox All caps word
+     * uuid: 32dd261c-0c92-469a-9c5c-b192e94a63b0
+     */
     public function testAllCapsWords(): void
     {
-        $this->assertEquals('PHP', acronym('PHP: Hypertext Preprocessor'));
+        $this->assertEquals('GIMP', acronym('GNU Image Manipulation Program'));
     }
 
+    /**
+     * @testdox Punctuation without whitespace
+     * uuid: ae2ac9fa-a606-4d05-8244-3bcc4659c1d4
+     */
     public function testHyphenated(): void
     {
         $this->assertEquals('CMOS', acronym('Complementary metal-oxide semiconductor'));
     }
 
-    // Additional points for making the following tests pass
-
-    public function testOneWordIsNotAbbreviated(): void
+    /**
+     * @testdox Very long abbreviation
+     * uuid: 0e4b1e7c-1a6d-48fb-81a7-bf65eb9e69f9
+     */
+    public function testVeryLongAbbreviation(): void
     {
-        $this->assertEmpty(acronym('Word'));
+        $this->assertEquals('ROTFLSHTMDCOALM', acronym('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me'));
     }
 
-    public function testUnicode(): void
+    /**
+     * @testdox Consecutive delimiters
+     * uuid: 6a078f49-c68d-4b7b-89af-33a1a98c28cc
+     */
+    public function testConsecutiveDelimiters(): void
     {
-        $phrase = 'Специализированная процессорная часть';
-        $this->assertEquals('СПЧ', acronym($phrase));
+        $this->assertEquals('SIMUFTA', acronym('Something - I made up from thin air'));
     }
 }
