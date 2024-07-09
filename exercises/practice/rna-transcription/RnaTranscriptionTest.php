@@ -10,8 +10,8 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It handles an empty string
      * uuid b4631f82-c98c-4a2f-90b3-c5c2b6c6f661
+     * @testdox It handles an empty string
      */
     public function testHandlesEmptyString(): void
     {
@@ -19,8 +19,8 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It transcribes guanine to cytosine
      * uuid a9558a3c-318c-4240-9256-5d5ed47005a6
+     * @testdox It transcribes guanine to cytosine
      */
     public function testTranscribesGuanineToCytosine(): void
     {
@@ -28,8 +28,8 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It transcribes cytosine to guanine
      * uuid 6eedbb5c-12cb-4c8b-9f51-f8320b4dc2e7
+     * @testdox It transcribes cytosine to guanine
      */
     public function testTranscribesCytosineToGuanine(): void
     {
@@ -37,8 +37,8 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It transcribes thymine to adenine
      * uuid 870bd3ec-8487-471d-8d9a-a25046488d3e
+     * @testdox It transcribes thymine to adenine
      */
     public function testTranscribesThymineToAdenine(): void
     {
@@ -46,8 +46,8 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It transcribes adenine to uracil
      * uuid aade8964-02e1-4073-872f-42d3ffd74c5f
+     * @testdox It transcribes adenine to uracil
      */
     public function testTranscribesAdenineToUracil(): void
     {
@@ -55,8 +55,8 @@ class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox RNA complement
      * uuid 79ed2757-f018-4f47-a1d7-34a559392dbf
+     * @testdox RNA complement
      */
     public function testTranscribesAllOccurrencesOne(): void
     {
