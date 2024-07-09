@@ -10,8 +10,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It works with one element
      * uuid b55c24a9-a98d-4379-a08c-2adcf8ebeee8
+     * @testdox It works with one element
      */
     public function testItWorksWithOneElement(): void
     {
@@ -19,8 +19,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It finds value in the middle
      * uuid 73469346-b0a0-4011-89bf-989e443d503d
+     * @testdox It finds value in the middle
      */
     public function testItFindsValueInMiddle(): void
     {
@@ -28,8 +28,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It finds value at the beginning
      * uuid 327bc482-ab85-424e-a724-fb4658e66ddb
+     * @testdox It finds value at the beginning
      */
     public function testItFindsValueInBeginning(): void
     {
@@ -37,8 +37,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It finds value at the end
      * uuid f9f94b16-fe5e-472c-85ea-c513804c7d59
+     * @testdox It finds value at the end
      */
     public function testItFindsValueAtEnd(): void
     {
@@ -46,8 +46,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It finds value in an odd-length array
      * uuid f0068905-26e3-4342-856d-ad153cadb338
+     * @testdox It finds value in an odd-length array
      */
     public function testItFindsValueInOddLengthArray(): void
     {
@@ -55,8 +55,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It finds value in an even-length array
      * uuid fc316b12-c8b3-4f5e-9e89-532b3389de8c
+     * @testdox It finds value in an even-length array
      */
     public function testItFindsValueInEvenLengthArray(): void
     {
@@ -64,8 +64,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It identifies that value is not in array
      * uuid da7db20a-354f-49f7-a6a1-650a54998aa6
+     * @testdox It identifies that value is not in array
      */
     public function testValueNotIncludedInArray(): void
     {
@@ -73,8 +73,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It does not find a value lower than the lowest value
      * uuid 95d869ff-3daf-4c79-b622-6e805c675f97
+     * @testdox It does not find a value lower than the lowest value
      */
     public function testLowerThanLowestValueNotIn(): void
     {
@@ -82,8 +82,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It does not find a value larger than the largest value
      * uuid 8b24ef45-6e51-4a94-9eac-c2bf38fdb0ba
+     * @testdox It does not find a value larger than the largest value
      */
     public function testLargerThanLargestValueNotIn(): void
     {
@@ -91,8 +91,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It does not find any value in an empty array
      * uuid f439a0fa-cf42-4262-8ad1-64bf41ce566a
+     * @testdox It does not find any value in an empty array
      */
     public function testNothingInEmptyArray(): void
     {
@@ -100,8 +100,8 @@ class BinarySearchTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox It does not find any value in left and right of array
      * uuid 2c353967-b56d-40b8-acff-ce43115eed64
+     * @testdox It does not find any value in left and right of array
      */
     public function testNothingFoundInLeftAndRight()
     {

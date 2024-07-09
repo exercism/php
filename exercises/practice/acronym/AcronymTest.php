@@ -10,8 +10,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Basic
      * uuid: 1e22cceb-c5e4-4562-9afe-aef07ad1eaf4
+     * @testdox Basic
      */
     public function testBasicTitleCase(): void
     {
@@ -19,8 +19,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Lowercase words
      * uuid: 79ae3889-a5c0-4b01-baf0-232d31180c08
+     * @testdox Lowercase words
      */
     public function testLowerCaseWord(): void
     {
@@ -28,8 +28,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Punctuation
      * uuid: ec7000a7-3931-4a17-890e-33ca2073a548
+     * @testdox Punctuation
      */
     public function testPunctuation(): void
     {
@@ -37,8 +37,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox All caps word
      * uuid: 32dd261c-0c92-469a-9c5c-b192e94a63b0
+     * @testdox All caps word
      */
     public function testAllCapsWords(): void
     {
@@ -46,8 +46,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Punctuation without whitespace
      * uuid: ae2ac9fa-a606-4d05-8244-3bcc4659c1d4
+     * @testdox Punctuation without whitespace
      */
     public function testHyphenated(): void
     {
@@ -55,8 +55,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Very long abbreviation
      * uuid: 0e4b1e7c-1a6d-48fb-81a7-bf65eb9e69f9
+     * @testdox Very long abbreviation
      */
     public function testVeryLongAbbreviation(): void
     {
@@ -64,8 +64,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Consecutive delimiters
      * uuid: 6a078f49-c68d-4b7b-89af-33a1a98c28cc
+     * @testdox Consecutive delimiters
      */
     public function testConsecutiveDelimiters(): void
     {
