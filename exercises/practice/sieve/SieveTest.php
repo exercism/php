@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class SieveTest extends PHPUnit\Framework\TestCase
@@ -31,22 +9,46 @@ class SieveTest extends PHPUnit\Framework\TestCase
         require_once 'Sieve.php';
     }
 
+    /**
+     * uuid: 88529125-c4ce-43cc-bb36-1eb4ddd7b44f
+     * @testdox No primes under two
+     */
     public function testNoPrimesUnderTwo(): void
     {
         $this->assertEquals([], sieve(1));
     }
+
+    /**
+     * uuid: 4afe9474-c705-4477-9923-840e1024cc2b
+     * @testdox Find first prime
+     */
     public function testFindFirstPrime(): void
     {
         $this->assertEquals([2], sieve(2));
     }
+
+    /**
+     * uuid: 974945d8-8cd9-4f00-9463-7d813c7f17b7
+     * @testdox Find primes up to 10
+     */
     public function testFindPrimesUpTo10(): void
     {
         $this->assertEquals([2, 3, 5, 7], sieve(10));
     }
+
+    /**
+     * uuid: 2e2417b7-3f3a-452a-8594-b9af08af6d82
+     * @testdox Limit is prime
+     */
     public function testLimitIsPrime(): void
     {
         $this->assertEquals([2, 3, 5, 7, 11, 13], sieve(13));
     }
+
+    /**
+     * uuid: 92102a05-4c7c-47de-9ed0-b7d5fcd00f21
+     * @testdox Find primes up to 1000
+     */
     public function testFindPrimesUpTo1000(): void
     {
         $this->assertEquals(
