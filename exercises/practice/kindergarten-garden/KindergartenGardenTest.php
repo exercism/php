@@ -12,8 +12,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox partial garden -> garden with single student
      * uuid: 1fc316ed-17ab-4fba-88ef-3ae78296b692
+     * @testdox partial garden -> garden with single student
      */
     public function testGardenSingleStudent(): void
     {
@@ -22,8 +22,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox partial garden -> different garden with single student
      * uuid: acd19dc1-2200-4317-bc2a-08f021276b40
+     * @testdox partial garden -> different garden with single student
      */
     public function testDifferentGardenSingleStudent(): void
     {
@@ -32,8 +32,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox partial garden -> garden with two students
      * uuid: c376fcc8-349c-446c-94b0-903947315757
+     * @testdox partial garden -> garden with two students
      */
     public function testGardenWithTwoStudents(): void
     {
@@ -42,8 +42,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox partial garden -> multiple students for the same garden with three students -> second student's garden
      * uuid: 2d620f45-9617-4924-9d27-751c80d17db9
+     * @testdox partial garden -> multiple students for the same garden with three students -> second student's garden
      */
     public function testSecondStudentsGarden(): void
     {
@@ -52,8 +52,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox partial garden -> multiple students for the same garden with three students -> third student's garden
      * uuid: 57712331-4896-4364-89f8-576421d69c44
+     * @testdox partial garden -> multiple students for the same garden with three students -> third student's garden
      */
     public function testThirdStudentsGarden(): void
     {
@@ -62,8 +62,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Alice, first student's garden
      * uuid: 149b4290-58e1-40f2-8ae4-8b87c46e765b
+     * @testdox full garden -> for Alice, first student's garden
      */
     public function testFullGardenForAlice(): void
     {
@@ -72,8 +72,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Bob, second student's garden
      * uuid: ba25dbbc-10bd-4a37-b18e-f89ecd098a5e
+     * @testdox full garden -> for Bob, second student's garden
      */
     public function testFullGardenForBob(): void
     {
@@ -82,8 +82,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Charlie
      * uuid: 566b621b-f18e-4c5f-873e-be30544b838c
+     * @testdox full garden -> for Charlie
      */
     public function testFullGardenForCharlie(): void
     {
@@ -92,8 +92,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for David
      * uuid: 3ad3df57-dd98-46fc-9269-1877abf612aa
+     * @testdox full garden -> for David
      */
     public function testFullGardenForDavid(): void
     {
@@ -102,8 +102,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Eve
      * uuid: 0f0a55d1-9710-46ed-a0eb-399ba8c72db2
+     * @testdox full garden -> for Eve
      */
     public function testFullGardenForEve(): void
     {
@@ -112,8 +112,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Fred
      * uuid: a7e80c90-b140-4ea1-aee3-f4625365c9a4
+     * @testdox full garden -> for Fred
      */
     public function testFullGardenForFred(): void
     {
@@ -122,8 +122,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Ginny
      * uuid: 9d94b273-2933-471b-86e8-dba68694c615
+     * @testdox full garden -> for Ginny
      */
     public function testFullGardenForGinny(): void
     {
@@ -132,8 +132,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Harriet
      * uuid: f55bc6c2-ade8-4844-87c4-87196f1b7258
+     * @testdox full garden -> for Harriet
      */
     public function testFullGardenForHarriet(): void
     {
@@ -142,8 +142,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Ileana
      * uuid: 759070a3-1bb1-4dd4-be2c-7cce1d7679ae
+     * @testdox full garden -> for Ileana
      */
     public function testFullGardenForIleana(): void
     {
@@ -152,8 +152,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Joseph
      * uuid: 78578123-2755-4d4a-9c7d-e985b8dda1c6
+     * @testdox full garden -> for Joseph
      */
     public function testFullGardenForJoseph(): void
     {
@@ -162,8 +162,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Kincaid, second to last student's garden
      * uuid: 6bb66df7-f433-41ab-aec2-3ead6e99f65b
+     * @testdox full garden -> for Kincaid, second to last student's garden
      */
     public function testFullGardenForKincaid(): void
     {
@@ -172,8 +172,8 @@ class KindergartenGardenTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox full garden -> for Larry, last student's garden
      * uuid: d7edec11-6488-418a-94e6-ed509e0fa7eb
+     * @testdox full garden -> for Larry, last student's garden
      */
     public function testFullGardenForLarry(): void
     {
