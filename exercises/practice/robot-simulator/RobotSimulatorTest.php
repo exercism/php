@@ -177,9 +177,9 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: e34ac672-4ed4-4be3-a0b8-d9af259cbaa1
-     * @testdox Follow series of instructions - moving east and north
+     * @testdox Follow series of instructions - moving east and north from instructions
      */
-    public function testFollowSeriesOfInstructionsMovingEastAndNorth(): void
+    public function testFollowSeriesOfInstructionsMovingEastAndNorthFromInstructions(): void
     {
         $robot = new Robot([7, 3], Robot::DIRECTION_NORTH);
         $robot->instructions('RAALAL');
@@ -214,9 +214,9 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 41f0bb96-c617-4e6b-acff-a4b279d44514
-     * @testdox Follow series of instructions - moving east and north another path
+     * @testdox Follow series of instructions - moving east and north
      */
-    public function testFollowSeriesOfInstructionsMovingEastAndNorth2(): void
+    public function testFollowSeriesOfInstructionsMovingEastAndNorth(): void
     {
         // Instructions to move east and north
         $robot = new Robot([8, 4], Robot::DIRECTION_SOUTH);
