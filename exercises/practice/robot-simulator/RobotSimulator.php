@@ -24,7 +24,7 @@
 
 declare(strict_types=1);
 
-class Robot
+class RobotSimulator
 {
     /**
      * @var int[]

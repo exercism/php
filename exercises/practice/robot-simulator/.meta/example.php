@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class Robot
+class RobotSimulator
 {
     public const DIRECTION_NORTH = 'north';
     public const DIRECTION_EAST = 'east';
@@ -41,9 +41,9 @@ class Robot
 
     /**
      * Turn the Robot clockwise
-     * @return Robot
+     * @return RobotSimulator
      */
-    public function turnRight(): \Robot
+    public function turnRight(): \RobotSimulator
     {
         $this->direction = self::listDirectionsClockwize()[$this->direction];
         return $this;
@@ -51,9 +51,9 @@ class Robot
 
     /**
      * Turn the Robot counterclockwise
-     * @return Robot
+     * @return RobotSimulator
      */
-    public function turnLeft(): \Robot
+    public function turnLeft(): \RobotSimulator
     {
         $this->direction = self::listDirectionsCounterClockwize()[$this->direction];
         return $this;
@@ -61,9 +61,9 @@ class Robot
 
     /**
      * Advance the Robot one step forward
-     * @return Robot
+     * @return RobotSimulator
      */
-    public function advance(): \Robot
+    public function advance(): \RobotSimulator
     {
         switch ($this->direction) {
             case self::DIRECTION_NORTH:
