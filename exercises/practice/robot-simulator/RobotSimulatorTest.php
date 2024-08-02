@@ -16,8 +16,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     public function testCreateRobotAtOriginFacingNorth(): void
     {
         $robot = new RobotSimulator([0, 0], 'north');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('north', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('north', $robot->getDirection());
     }
 
     /**
@@ -27,8 +27,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     public function testCreateRobotAtNegativePositionFacingSouth(): void
     {
         $robot = new RobotSimulator([-1, -1], 'south');
-        $this->assertEquals([-1, -1], $robot->position);
-        $this->assertEquals('south', $robot->direction);
+        $this->assertEquals([-1, -1], $robot->getPosition());
+        $this->assertEquals('south', $robot->getDirection());
     }
 
     /**
@@ -39,8 +39,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'north');
         $robot->instructions('R');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('east', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('east', $robot->getDirection());
     }
 
     /**
@@ -51,8 +51,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'east');
         $robot->instructions('R');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('south', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('south', $robot->getDirection());
     }
 
     /**
@@ -63,8 +63,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'south');
         $robot->instructions('R');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('west', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('west', $robot->getDirection());
     }
 
     /**
@@ -75,8 +75,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'west');
         $robot->instructions('R');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('north', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('north', $robot->getDirection());
     }
 
     /**
@@ -87,8 +87,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'north');
         $robot->instructions('L');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('west', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('west', $robot->getDirection());
     }
 
     /**
@@ -99,8 +99,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'west');
         $robot->instructions('L');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('south', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('south', $robot->getDirection());
     }
 
     /**
@@ -111,8 +111,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'south');
         $robot->instructions('L');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('east', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('east', $robot->getDirection());
     }
 
     /**
@@ -123,8 +123,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'east');
         $robot->instructions('L');
-        $this->assertEquals([0, 0], $robot->position);
-        $this->assertEquals('north', $robot->direction);
+        $this->assertEquals([0, 0], $robot->getPosition());
+        $this->assertEquals('north', $robot->getDirection());
     }
 
     /**
@@ -135,8 +135,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'north');
         $robot->instructions('A');
-        $this->assertEquals([0, 1], $robot->position);
-        $this->assertEquals('north', $robot->direction);
+        $this->assertEquals([0, 1], $robot->getPosition());
+        $this->assertEquals('north', $robot->getDirection());
     }
 
     /**
@@ -147,8 +147,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'south');
         $robot->instructions('A');
-        $this->assertEquals([0, -1], $robot->position);
-        $this->assertEquals('south', $robot->direction);
+        $this->assertEquals([0, -1], $robot->getPosition());
+        $this->assertEquals('south', $robot->getDirection());
     }
 
     /**
@@ -159,8 +159,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'east');
         $robot->instructions('A');
-        $this->assertEquals([1, 0], $robot->position);
-        $this->assertEquals('east', $robot->direction);
+        $this->assertEquals([1, 0], $robot->getPosition());
+        $this->assertEquals('east', $robot->getDirection());
     }
 
     /**
@@ -171,8 +171,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'west');
         $robot->instructions('A');
-        $this->assertEquals([-1, 0], $robot->position);
-        $this->assertEquals('west', $robot->direction);
+        $this->assertEquals([-1, 0], $robot->getPosition());
+        $this->assertEquals('west', $robot->getDirection());
     }
 
     /**
@@ -183,8 +183,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([7, 3], 'north');
         $robot->instructions('RAALAL');
-        $this->assertEquals([9, 4], $robot->position);
-        $this->assertEquals('west', $robot->direction);
+        $this->assertEquals([9, 4], $robot->getPosition());
+        $this->assertEquals('west', $robot->getDirection());
     }
 
     /**
@@ -195,8 +195,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
     {
         $robot = new RobotSimulator([0, 0], 'north');
         $robot->instructions('LAAARALA');
-        $this->assertEquals([-4, 1], $robot->position);
-        $this->assertEquals('west', $robot->direction);
+        $this->assertEquals([-4, 1], $robot->getPosition());
+        $this->assertEquals('west', $robot->getDirection());
     }
 
     /**
@@ -208,8 +208,8 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         // Instructions to move west and south
         $robot = new RobotSimulator([2, -7], 'east');
         $robot->instructions('RRAAAAALA');
-        $this->assertEquals([-3, -8], $robot->position);
-        $this->assertEquals('south', $robot->direction);
+        $this->assertEquals([-3, -8], $robot->getPosition());
+        $this->assertEquals('south', $robot->getDirection());
     }
 
     /**
@@ -221,7 +221,7 @@ class RobotSimulatorTest extends PHPUnit\Framework\TestCase
         // Instructions to move east and north
         $robot = new RobotSimulator([8, 4], 'south');
         $robot->instructions('LAAARRRALLLL');
-        $this->assertEquals([11, 5], $robot->position);
-        $this->assertEquals('north', $robot->direction);
+        $this->assertEquals([11, 5], $robot->getPosition());
+        $this->assertEquals('north', $robot->getDirection());
     }
 }

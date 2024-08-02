@@ -100,6 +100,16 @@ class RobotSimulator
         return $this;
     }
 
+    public function getPosition(): array
+    {
+        return $this->position;
+    }
+
+    public function getDirection(): string
+    {
+        return $this->direction;
+    }
+
     /**
      * List all possible clockwise turn combinations
      * @return array

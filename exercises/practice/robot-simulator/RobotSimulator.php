@@ -26,20 +26,25 @@ declare(strict_types=1);
 
 class RobotSimulator
 {
-    /**
-     * @var int[]
-     */
-    protected array $position;
-
-    protected string $direction;
-
+    /** @param int[] $position */
     public function __construct(array $position, string $direction)
     {
-        throw new \BadMethodCallException("Implement the __construct method");
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function instructions(): void
+    public function instructions(string $instructions): void
     {
-        throw new \BadMethodCallException("Implement the instructions method");
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+
+    /** @return int[] */
+    public function getPosition(): array
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+
+    public function getDirection(): string
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 }
