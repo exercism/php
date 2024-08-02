@@ -4,66 +4,66 @@ declare(strict_types=1);
 
 class RobotSimulator
 {
-    public const DIRECTION_NORTH = 'north';
-    public const DIRECTION_EAST = 'east';
-    public const DIRECTION_SOUTH = 'south';
-    public const DIRECTION_WEST = 'west';
+    private const DIRECTION_NORTH = 'north';
+    private const DIRECTION_EAST = 'east';
+    private const DIRECTION_SOUTH = 'south';
+    private const DIRECTION_WEST = 'west';
 
-    /**
-     *
-     * @var int[]
-     */
-    protected $position;
-
-    /**
-     *
-     * @var string
-     */
-    protected $direction;
-
-    public function __construct(array $position, string $direction)
-    {
-        $this->position = $position;
-        $this->direction = $direction;
+    /** @param int[] $position */
+    public function __construct(
+        private array $position,
+        private string $direction,
+    ) {
     }
 
     /**
-     * Make protected properties read-only.
-     * __get() is slow, but it's ok for the given task.
-     *
-     * @param string $name
-     * @return mixed
+     * Move the Robot according to instructions: R = Turn Right, L = Turn Left and A = Advance
      */
-    public function __get($name)
+    public function instructions(string $instructions): void
     {
-        return property_exists(self::class, $name) ? $this->$name : null;
+        if (!preg_match('/^[LAR]+$/', $instructions)) {
+            throw new InvalidArgumentException('Malformed instructions');
+        }
+
+        foreach ($this->mapInstructionsToActions($instructions) as $action) {
+            $this->$action();
+        }
     }
 
-    /**
-     * Turn the Robot clockwise
-     * @return RobotSimulator
-     */
-    public function turnRight(): \RobotSimulator
+    /** @return int[] */
+    public function getPosition(): array
     {
-        $this->direction = self::listDirectionsClockwize()[$this->direction];
-        return $this;
+        return $this->position;
     }
 
-    /**
-     * Turn the Robot counterclockwise
-     * @return RobotSimulator
-     */
-    public function turnLeft(): \RobotSimulator
+    public function getDirection(): string
     {
-        $this->direction = self::listDirectionsCounterClockwize()[$this->direction];
-        return $this;
+        return $this->direction;
     }
 
-    /**
-     * Advance the Robot one step forward
-     * @return RobotSimulator
-     */
-    public function advance(): \RobotSimulator
+    /** @return string[] */
+    private function mapInstructionsToActions(string $instructions): array
+    {
+        return array_map(function ($x) {
+            return [
+                'L' => 'turnLeft',
+                'R' => 'turnRight',
+                'A' => 'advance',
+            ][$x];
+        }, str_split($instructions));
+    }
+
+    private function turnRight(): void
+    {
+        $this->direction = $this->listDirectionsClockwize()[$this->direction];
+    }
+
+    private function turnLeft(): void
+    {
+        $this->direction = $this->listDirectionsCounterClockwize()[$this->direction];
+    }
+
+    private function advance(): void
     {
         switch ($this->direction) {
             case self::DIRECTION_NORTH:
@@ -82,39 +82,10 @@ class RobotSimulator
                 $this->position[0]--;
                 break;
         }
-        return $this;
     }
 
-    /**
-     * Move the Robot according to instructions: R = Turn Right, L = Turn Left and A = Advance
-     */
-    public function instructions($instructions)
-    {
-        if (!preg_match('/^[LAR]+$/', $instructions)) {
-            throw new InvalidArgumentException('Malformed instructions');
-        }
-
-        foreach ($this->mapInsructionsToActions($instructions) as $action) {
-            $this->$action();
-        }
-        return $this;
-    }
-
-    public function getPosition(): array
-    {
-        return $this->position;
-    }
-
-    public function getDirection(): string
-    {
-        return $this->direction;
-    }
-
-    /**
-     * List all possible clockwise turn combinations
-     * @return array
-     */
-    public static function listDirectionsClockwize(): array
+    /** @return Array<string, string> */
+    private function listDirectionsClockwize(): array
     {
         return [
             self::DIRECTION_NORTH => self::DIRECTION_EAST,
@@ -124,28 +95,9 @@ class RobotSimulator
         ];
     }
 
-    /**
-     * List all possible counterclockwise turn combinations
-     * @return array
-     */
-    public static function listDirectionsCounterClockwize(): array
+    /** @return Array<string, string> */
+    private function listDirectionsCounterClockwize(): array
     {
-        return array_flip(self::listDirectionsClockwize());
-    }
-
-    /**
-     * Translate instructions string to actions
-     * @param string $stringInstructions
-     * @return string[]
-     */
-    protected function mapInsructionsToActions($stringInstructions): array
-    {
-        return array_map(function ($x) {
-            return [
-                'L' => 'turnLeft',
-                'R' => 'turnRight',
-                'A' => 'advance',
-            ][$x];
-        }, str_split($stringInstructions));
+        return array_flip($this->listDirectionsClockwize());
     }
 }
