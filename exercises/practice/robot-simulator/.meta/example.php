@@ -1,132 +1,69 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
-class Robot
+class RobotSimulator
 {
-    public const DIRECTION_NORTH = 'north';
-    public const DIRECTION_EAST = 'east';
-    public const DIRECTION_SOUTH = 'south';
-    public const DIRECTION_WEST = 'west';
+    private const DIRECTION_NORTH = 'north';
+    private const DIRECTION_EAST = 'east';
+    private const DIRECTION_SOUTH = 'south';
+    private const DIRECTION_WEST = 'west';
 
-    /**
-     *
-     * @var int[]
-     */
-    protected $position;
-
-    /**
-     *
-     * @var string
-     */
-    protected $direction;
-
-    public function __construct(array $position, string $direction)
-    {
-        $this->position = $position;
-        $this->direction = $direction;
+    /** @param int[] $position */
+    public function __construct(
+        private array $position,
+        private string $direction,
+    ) {
     }
 
-    /**
-     * Make protected properties read-only.
-     * __get() is slow, but it's ok for the given task.
-     *
-     * @param string $name
-     * @return mixed
-     */
-    public function __get($name)
+    public function instructions(string $instructions): void
     {
-        return property_exists(self::class, $name) ? $this->$name : null;
-    }
-
-    /**
-     * Turn the Robot clockwise
-     * @return Robot
-     */
-    public function turnRight(): \Robot
-    {
-        $this->direction = self::listDirectionsClockwize()[$this->direction];
-        return $this;
-    }
-
-    /**
-     * Turn the Robot counterclockwise
-     * @return Robot
-     */
-    public function turnLeft(): \Robot
-    {
-        $this->direction = self::listDirectionsCounterClockwize()[$this->direction];
-        return $this;
-    }
-
-    /**
-     * Advance the Robot one step forward
-     * @return Robot
-     */
-    public function advance(): \Robot
-    {
-        switch ($this->direction) {
-            case self::DIRECTION_NORTH:
-                $this->position[1]++;
-                break;
-
-            case self::DIRECTION_EAST:
-                $this->position[0]++;
-                break;
-
-            case self::DIRECTION_SOUTH:
-                $this->position[1]--;
-                break;
-
-            case self::DIRECTION_WEST:
-                $this->position[0]--;
-                break;
-        }
-        return $this;
-    }
-
-    /**
-     * Move the Robot according to instructions: R = Turn Right, L = Turn Left and A = Advance
-     */
-    public function instructions($instructions)
-    {
-        if (!preg_match('/^[LAR]+$/', $instructions)) {
+        if (!preg_match('/^[RLA]+$/', $instructions)) {
             throw new InvalidArgumentException('Malformed instructions');
         }
 
-        foreach ($this->mapInsructionsToActions($instructions) as $action) {
-            $this->$action();
+        foreach (str_split($instructions) as $instruction) {
+            match ($instruction) {
+                'R' => $this->turnRight(),
+                'L' => $this->turnLeft(),
+                'A' => $this->advance(),
+            };
         }
-        return $this;
     }
 
-    /**
-     * List all possible clockwise turn combinations
-     * @return array
-     */
-    public static function listDirectionsClockwize(): array
+    /** @return int[] */
+    public function getPosition(): array
+    {
+        return $this->position;
+    }
+
+    public function getDirection(): string
+    {
+        return $this->direction;
+    }
+
+    private function turnRight(): void
+    {
+        $this->direction = $this->listDirectionsClockwize()[$this->direction];
+    }
+
+    private function turnLeft(): void
+    {
+        $this->direction = $this->listDirectionsCounterClockwize()[$this->direction];
+    }
+
+    private function advance(): void
+    {
+        match ($this->direction) {
+            self::DIRECTION_NORTH => $this->position[1]++,
+            self::DIRECTION_EAST => $this->position[0]++,
+            self::DIRECTION_SOUTH => $this->position[1]--,
+            self::DIRECTION_WEST => $this->position[0]--,
+        };
+    }
+
+    /** @return Array<string, string> */
+    private function listDirectionsClockwize(): array
     {
         return [
             self::DIRECTION_NORTH => self::DIRECTION_EAST,
@@ -136,28 +73,9 @@ class Robot
         ];
     }
 
-    /**
-     * List all possible counterclockwise turn combinations
-     * @return array
-     */
-    public static function listDirectionsCounterClockwize(): array
+    /** @return Array<string, string> */
+    private function listDirectionsCounterClockwize(): array
     {
-        return array_flip(self::listDirectionsClockwize());
-    }
-
-    /**
-     * Translate instructions string to actions
-     * @param string $stringInstructions
-     * @return string[]
-     */
-    protected function mapInsructionsToActions($stringInstructions): array
-    {
-        return array_map(function ($x) {
-            return [
-                'L' => 'turnLeft',
-                'R' => 'turnRight',
-                'A' => 'advance',
-            ][$x];
-        }, str_split($stringInstructions));
+        return array_flip($this->listDirectionsClockwize());
     }
 }
