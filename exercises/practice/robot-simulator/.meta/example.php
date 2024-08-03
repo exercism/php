@@ -18,7 +18,7 @@ class RobotSimulator
 
     public function instructions(string $instructions): void
     {
-        if (!preg_match('/^[LAR]+$/', $instructions)) {
+        if (!preg_match('/^[RLA]+$/', $instructions)) {
             throw new InvalidArgumentException('Malformed instructions');
         }
 
