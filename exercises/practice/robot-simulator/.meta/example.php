@@ -16,17 +16,18 @@ class RobotSimulator
     ) {
     }
 
-    /**
-     * Move the Robot according to instructions: R = Turn Right, L = Turn Left and A = Advance
-     */
     public function instructions(string $instructions): void
     {
         if (!preg_match('/^[LAR]+$/', $instructions)) {
             throw new InvalidArgumentException('Malformed instructions');
         }
 
-        foreach ($this->mapInstructionsToActions($instructions) as $action) {
-            $this->$action();
+        foreach (str_split($instructions) as $instruction) {
+            match ($instruction) {
+                'R' => $this->turnRight(),
+                'L' => $this->turnLeft(),
+                'A' => $this->advance(),
+            };
         }
     }
 
@@ -41,18 +42,6 @@ class RobotSimulator
         return $this->direction;
     }
 
-    /** @return string[] */
-    private function mapInstructionsToActions(string $instructions): array
-    {
-        return array_map(function ($x) {
-            return [
-                'L' => 'turnLeft',
-                'R' => 'turnRight',
-                'A' => 'advance',
-            ][$x];
-        }, str_split($instructions));
-    }
-
     private function turnRight(): void
     {
         $this->direction = $this->listDirectionsClockwize()[$this->direction];
@@ -65,23 +54,12 @@ class RobotSimulator
 
     private function advance(): void
     {
-        switch ($this->direction) {
-            case self::DIRECTION_NORTH:
-                $this->position[1]++;
-                break;
-
-            case self::DIRECTION_EAST:
-                $this->position[0]++;
-                break;
-
-            case self::DIRECTION_SOUTH:
-                $this->position[1]--;
-                break;
-
-            case self::DIRECTION_WEST:
-                $this->position[0]--;
-                break;
-        }
+        match ($this->direction) {
+            self::DIRECTION_NORTH => $this->position[1]++,
+            self::DIRECTION_EAST => $this->position[0]++,
+            self::DIRECTION_SOUTH => $this->position[1]--,
+            self::DIRECTION_WEST => $this->position[0]--,
+        };
     }
 
     /** @return Array<string, string> */
