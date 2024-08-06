@@ -350,7 +350,7 @@
         "uuid": "cc6c3b27-b719-454c-a743-7bc73bd47cf1",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
+        "difficulty": 5,
         "topics": [
           "oop"
         ]
