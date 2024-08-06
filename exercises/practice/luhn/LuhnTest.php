@@ -42,7 +42,7 @@ class LuhnTest extends PHPUnit\Framework\TestCase
      */
     public function testASimpleValidSINThatBecomesInvalidIfReversed(): void
     {
-        $this->assertFalse(isValid("59"));
+        $this->assertTrue(isValid("59"));
     }
 
     /**
