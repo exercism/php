@@ -111,6 +111,21 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    /**
+     * @testdox can spy when only the prisoner is asleep
+     * @task_id 2
+     */
+    public function testCanSpyWhenOnlyPrisonerAsleep()
+    {
+        $infiltration = new AnnalynsInfiltration();
+        $actual = $infiltration->canSpy(
+            is_knight_awake: true,
+            is_archer_awake: true,
+            is_prisoner_awake: false
+        );
+        $expected = true;
+        $this->assertEquals($expected, $actual);
+    }
 
     /**
      * @testdox can spy when only the archer is asleep
@@ -220,7 +235,7 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $expected = true;
         $this->assertEquals($expected, $actual);
     }
-    
+
     /**
      * @testdox can liberate the prisoner when prisoner is awake with dog
      * @task_id 4
@@ -237,7 +252,7 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $expected = true;
         $this->assertEquals($expected, $actual);
     }
-    
+
     /**
      * @testdox cannot liberate the prisoner when archer is awake with dog
      * @task_id 4
@@ -254,7 +269,7 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $expected = false;
         $this->assertEquals($expected, $actual);
     }
-   
+
     /**
      * @testdox can liberate the prisoner when only knight awake with dog
      * @task_id 4
@@ -271,7 +286,7 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $expected = true;
         $this->assertEquals($expected, $actual);
     }
-        
+
     /**
      * @testdox cannot liberate the prisoner when prisoner asleep with dog
      * @task_id 4
@@ -305,7 +320,7 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $expected = true;
         $this->assertEquals($expected, $actual);
     }
-    
+
     /**
      * @testdox cannot liberate the prisoner when knight asleep with dog
      * @task_id 4
@@ -322,7 +337,7 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $expected = false;
         $this->assertEquals($expected, $actual);
     }
-    
+
     /**
      * @testdox cannot liberate the prisoner when all awake with dog
      * @task_id 4
@@ -407,7 +422,7 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $expected = false;
         $this->assertEquals($expected, $actual);
     }
-    
+
     /**
      * @testdox cannot liberate the prisoner when prisoner asleep without dog
      * @task_id 4
@@ -458,7 +473,7 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
         $expected = false;
         $this->assertEquals($expected, $actual);
     }
-    
+
     /**
      * @testdox cannot liberate the prisoner when all awake without dog
      * @task_id 4
