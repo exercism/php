@@ -15,7 +15,7 @@
 - Logical operators in the order of their precedence (from highest to lowest): `!`, `&&`, `||`.
 - Check out [this article][operator-precedence] on Operator Precedence
 
-## 4. Check if the 'Free Prisoner' action is possible
+## 4. Check if the 'Liberate Prisoner' action is possible
 
 - `()` is the operator with the highest precedence. Use it to group logical expressions.
 

@@ -70,12 +70,12 @@ $infiltration->canSignal($is_archer_awake, $is_prisoner_awake);
 // => true
 ```
 
-## 4. Check if the 'Free Prisoner' action is possible
+## 4. Check if the 'Liberate Prisoner' action is possible
 
 Implement a function named `canLiberate` that takes four boolean values.
 The first three parameters indicate if the knight, archer and the prisoner, respectively, are awake.
 The last parameter indicates if Annalyn's pet dog is present.
-The function returns `true` if the 'Free Prisoner' action is available based on the state of the characters and Annalyn's pet dog presence.
+The function returns `true` if the 'Liberate Prisoner' action is available based on the state of the characters and Annalyn's pet dog presence.
 Otherwise, it returns `false`:
 
 ```php
