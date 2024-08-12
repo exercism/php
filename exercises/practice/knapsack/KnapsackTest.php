@@ -24,7 +24,14 @@ class KnapsackTest extends TestCase
      */
     public function testNoItems(): void
     {
-        $this->assertEquals(0, $this->knapsack->getMaximumValue(100, []));
+        $expected = 0;
+        $maximumWeight = 100;
+        $items = [];
+
+        $knapsack = new Knapsack();
+        $actual = $knapsack->getMaximumValue($maximumWeight, $items);
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -33,8 +40,14 @@ class KnapsackTest extends TestCase
      */
     public function testOneItemTooHeavy(): void
     {
+        $expected = 0;
+        $maximumWeight = 10;
         $items = [['weight' => 100, 'value' => 1]];
-        $this->assertEquals(0, $this->knapsack->getMaximumValue(10, $items));
+
+        $knapsack = new Knapsack();
+        $actual = $knapsack->getMaximumValue($maximumWeight, $items);
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -43,6 +56,8 @@ class KnapsackTest extends TestCase
      */
     public function testFiveItemsCannotBeGreedyByWeight(): void
     {
+        $expected = 21;
+        $maximumWeight = 10;
         $items = [
             ['weight' => 2, 'value' => 5],
             ['weight' => 2, 'value' => 5],
@@ -50,7 +65,11 @@ class KnapsackTest extends TestCase
             ['weight' => 2, 'value' => 5],
             ['weight' => 10, 'value' => 21],
         ];
-        $this->assertEquals(21, $this->knapsack->getMaximumValue(10, $items));
+
+        $knapsack = new Knapsack();
+        $actual = $knapsack->getMaximumValue($maximumWeight, $items);
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -59,6 +78,8 @@ class KnapsackTest extends TestCase
      */
     public function testFiveItemsCannotBeGreedyByValue(): void
     {
+        $expected = 80;
+        $maximumWeight = 10;
         $items = [
             ['weight' => 2, 'value' => 20],
             ['weight' => 2, 'value' => 20],
@@ -66,7 +87,11 @@ class KnapsackTest extends TestCase
             ['weight' => 2, 'value' => 20],
             ['weight' => 10, 'value' => 50],
         ];
-        $this->assertEquals(80, $this->knapsack->getMaximumValue(10, $items));
+
+        $knapsack = new Knapsack();
+        $actual = $knapsack->getMaximumValue($maximumWeight, $items);
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -75,13 +100,19 @@ class KnapsackTest extends TestCase
      */
     public function testExampleKnapsack(): void
     {
+        $expected = 90;
+        $maximumWeight = 10;
         $items = [
             ['weight' => 5, 'value' => 10],
             ['weight' => 4, 'value' => 40],
             ['weight' => 6, 'value' => 30],
             ['weight' => 4, 'value' => 50],
         ];
-        $this->assertEquals(90, $this->knapsack->getMaximumValue(10, $items));
+
+        $knapsack = new Knapsack();
+        $actual = $knapsack->getMaximumValue($maximumWeight, $items);
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -90,6 +121,8 @@ class KnapsackTest extends TestCase
      */
     public function testEightItems(): void
     {
+        $expected = 900;
+        $maximumWeight = 104;
         $items = [
             ['weight' => 25, 'value' => 350],
             ['weight' => 35, 'value' => 400],
@@ -100,7 +133,11 @@ class KnapsackTest extends TestCase
             ['weight' => 2, 'value' => 5],
             ['weight' => 2, 'value' => 5],
         ];
-        $this->assertEquals(900, $this->knapsack->getMaximumValue(104, $items));
+
+        $knapsack = new Knapsack();
+        $actual = $knapsack->getMaximumValue($maximumWeight, $items);
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -109,6 +146,8 @@ class KnapsackTest extends TestCase
      */
     public function testFifteenItems(): void
     {
+        $expected = 1458;
+        $maximumWeight = 750;
         $items = [
             ['weight' => 70, 'value' => 135],
             ['weight' => 73, 'value' => 139],
@@ -126,6 +165,10 @@ class KnapsackTest extends TestCase
             ['weight' => 118, 'value' => 229],
             ['weight' => 120, 'value' => 240],
         ];
-        $this->assertEquals(1458, $this->knapsack->getMaximumValue(750, $items));
+
+        $knapsack = new Knapsack();
+        $actual = $knapsack->getMaximumValue($maximumWeight, $items);
+
+        $this->assertEquals($expected, $actual);
     }
 }
