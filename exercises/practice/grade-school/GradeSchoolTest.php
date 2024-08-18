@@ -57,7 +57,7 @@ class GradeSchoolTest extends TestCase
         $this->assertCount(3, $students);
         $this->assertEqualsCanonicalizing(
             ['Claire', 'Marc', 'Virginie'],
-            $students
+            array_values($students)
         );
     }
 

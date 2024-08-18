@@ -73,7 +73,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
             new Allergen(Allergen::POLLEN),
             new Allergen(Allergen::STRAWBERRIES),
             new Allergen(Allergen::TOMATOES),
-        ], $allergies->getList());
+        ], array_values($allergies->getList()));
     }
 
     public function testIsAllergicToEggsAndPeanuts(): void
@@ -83,7 +83,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         $this->assertEqualsCanonicalizing([
             new Allergen(Allergen::EGGS),
             new Allergen(Allergen::PEANUTS),
-        ], $allergies->getList());
+        ], array_values($allergies->getList()));
     }
 
     public function testIsAllergicToEggsAndShellfish(): void
@@ -93,7 +93,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         $this->assertEqualsCanonicalizing([
             new Allergen(Allergen::EGGS),
             new Allergen(Allergen::SHELLFISH),
-        ], $allergies->getList());
+        ], array_values($allergies->getList()));
     }
 
     public function testIgnoreNonAllergenScorePart(): void
@@ -108,7 +108,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
             new Allergen(Allergen::SHELLFISH),
             new Allergen(Allergen::STRAWBERRIES),
             new Allergen(Allergen::TOMATOES),
-        ], $allergies->getList());
+        ], array_values($allergies->getList()));
     }
 
     /**
