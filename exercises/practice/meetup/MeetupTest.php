@@ -15,7 +15,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testMonteenthOfMay2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/5/13"), meetup_day(2013, 5, "teenth", "Monday"));
+        $expected = new DateTimeImmutable("2013/5/13");
+
+        $actual = meetup_day(2013, 5, "teenth", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -24,7 +28,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testMonteenthOfAugust2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/8/19"), meetup_day(2013, 8, "teenth", "Monday"));
+        $expected = new DateTimeImmutable("2013/8/19");
+
+        $actual = meetup_day(2013, 8, "teenth", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -33,7 +41,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testMonteenthOfSeptember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/9/16"), meetup_day(2013, 9, "teenth", "Monday"));
+        $expected = new DateTimeImmutable("2013/9/16");
+
+        $actual = meetup_day(2013, 9, "teenth", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -42,7 +54,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testTuesteenthOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/19"), meetup_day(2013, 3, "teenth", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/3/19");
+
+        $actual = meetup_day(2013, 3, "teenth", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -51,7 +67,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testTuesteenthOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/16"), meetup_day(2013, 4, "teenth", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/4/16");
+
+        $actual = meetup_day(2013, 4, "teenth", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -60,7 +80,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testTuesteenthOfAugust2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/8/13"), meetup_day(2013, 8, "teenth", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/8/13");
+
+        $actual = meetup_day(2013, 8, "teenth", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -69,7 +93,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testWednesteenthOfJanuary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/1/16"), meetup_day(2013, 1, "teenth", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/1/16");
+
+        $actual = meetup_day(2013, 1, "teenth", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -78,7 +106,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testWednesteenthOfFebruary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/2/13"), meetup_day(2013, 2, "teenth", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/2/13");
+
+        $actual = meetup_day(2013, 2, "teenth", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -87,7 +119,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testWednesteenthOfJune2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/6/19"), meetup_day(2013, 6, "teenth", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/6/19");
+
+        $actual = meetup_day(2013, 6, "teenth", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -96,7 +132,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThursteenthOfMay2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/5/16"), meetup_day(2013, 5, "teenth", "Thursday"));
+        $expected = new DateTimeImmutable("2013/5/16");
+
+        $actual = meetup_day(2013, 5, "teenth", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -105,7 +145,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThursteenthOfJune2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/6/13"), meetup_day(2013, 6, "teenth", "Thursday"));
+        $expected = new DateTimeImmutable("2013/6/13");
+
+        $actual = meetup_day(2013, 6, "teenth", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -114,7 +158,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThursteenthOfSeptember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/9/19"), meetup_day(2013, 9, "teenth", "Thursday"));
+        $expected = new DateTimeImmutable("2013/9/19");
+
+        $actual = meetup_day(2013, 9, "teenth", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -123,7 +171,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFriteenthOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/19"), meetup_day(2013, 4, "teenth", "Friday"));
+        $expected = new DateTimeImmutable("2013/4/19");
+
+        $actual = meetup_day(2013, 4, "teenth", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -132,7 +184,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFriteenthOfAugust2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/8/16"), meetup_day(2013, 8, "teenth", "Friday"));
+        $expected = new DateTimeImmutable("2013/8/16");
+
+        $actual = meetup_day(2013, 8, "teenth", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -141,7 +197,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFriteenthOfSeptember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/9/13"), meetup_day(2013, 9, "teenth", "Friday"));
+        $expected = new DateTimeImmutable("2013/9/13");
+
+        $actual = meetup_day(2013, 9, "teenth", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -150,7 +210,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSaturteenthOfFebruary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/2/16"), meetup_day(2013, 2, "teenth", "Saturday"));
+        $expected = new DateTimeImmutable("2013/2/16");
+
+        $actual = meetup_day(2013, 2, "teenth", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -159,7 +223,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSaturteenthOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/13"), meetup_day(2013, 4, "teenth", "Saturday"));
+        $expected = new DateTimeImmutable("2013/4/13");
+
+        $actual = meetup_day(2013, 4, "teenth", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -168,7 +236,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSaturteenthOfOctober2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/10/19"), meetup_day(2013, 10, "teenth", "Saturday"));
+        $expected = new DateTimeImmutable("2013/10/19");
+
+        $actual = meetup_day(2013, 10, "teenth", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -177,7 +249,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSunteenthOfMay2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/5/19"), meetup_day(2013, 5, "teenth", "Sunday"));
+        $expected = new DateTimeImmutable("2013/5/19");
+
+        $actual = meetup_day(2013, 5, "teenth", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -186,7 +262,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSunteenthOfJune2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/6/16"), meetup_day(2013, 6, "teenth", "Sunday"));
+        $expected = new DateTimeImmutable("2013/6/16");
+
+        $actual = meetup_day(2013, 6, "teenth", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -195,7 +275,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSunteenthOfOctober2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/10/13"), meetup_day(2013, 10, "teenth", "Sunday"));
+        $expected = new DateTimeImmutable("2013/10/13");
+
+        $actual = meetup_day(2013, 10, "teenth", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -204,7 +288,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstMondayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/4"), meetup_day(2013, 3, "first", "Monday"));
+        $expected = new DateTimeImmutable("2013/3/4");
+
+        $actual = meetup_day(2013, 3, "first", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -213,7 +301,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstMondayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/1"), meetup_day(2013, 4, "first", "Monday"));
+        $expected = new DateTimeImmutable("2013/4/1");
+
+        $actual = meetup_day(2013, 4, "first", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -222,7 +314,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstTuesdayOfMay2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/5/7"), meetup_day(2013, 5, "first", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/5/7");
+
+        $actual = meetup_day(2013, 5, "first", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -231,7 +327,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstTuesdayOfJune2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/6/4"), meetup_day(2013, 6, "first", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/6/4");
+
+        $actual = meetup_day(2013, 6, "first", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -240,7 +340,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstWednesdayOfJuly2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/7/3"), meetup_day(2013, 7, "first", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/7/3");
+
+        $actual = meetup_day(2013, 7, "first", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -249,7 +353,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstWednesdayOfAugust2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/8/7"), meetup_day(2013, 8, "first", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/8/7");
+
+        $actual = meetup_day(2013, 8, "first", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -258,7 +366,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstThursdayOfSeptember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/9/5"), meetup_day(2013, 9, "first", "Thursday"));
+        $expected = new DateTimeImmutable("2013/9/5");
+
+        $actual = meetup_day(2013, 9, "first", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -267,7 +379,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstThursdayOfOctober2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/10/3"), meetup_day(2013, 10, "first", "Thursday"));
+        $expected = new DateTimeImmutable("2013/10/3");
+
+        $actual = meetup_day(2013, 10, "first", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -276,7 +392,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstFridayOfNovember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/11/1"), meetup_day(2013, 11, "first", "Friday"));
+        $expected = new DateTimeImmutable("2013/11/1");
+
+        $actual = meetup_day(2013, 11, "first", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -285,7 +405,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstFridayOfDecember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/12/6"), meetup_day(2013, 12, "first", "Friday"));
+        $expected = new DateTimeImmutable("2013/12/6");
+
+        $actual = meetup_day(2013, 12, "first", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -294,7 +418,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstSaturdayOfJanuary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/1/5"), meetup_day(2013, 1, "first", "Saturday"));
+        $expected = new DateTimeImmutable("2013/1/5");
+
+        $actual = meetup_day(2013, 1, "first", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -303,7 +431,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstSaturdayOfFebruary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/2/2"), meetup_day(2013, 2, "first", "Saturday"));
+        $expected = new DateTimeImmutable("2013/2/2");
+
+        $actual = meetup_day(2013, 2, "first", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -312,7 +444,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstSundayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/3"), meetup_day(2013, 3, "first", "Sunday"));
+        $expected = new DateTimeImmutable("2013/3/3");
+
+        $actual = meetup_day(2013, 3, "first", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -321,7 +457,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstSundayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/7"), meetup_day(2013, 4, "first", "Sunday"));
+        $expected = new DateTimeImmutable("2013/4/7");
+
+        $actual = meetup_day(2013, 4, "first", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -330,7 +470,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondMondayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/11"), meetup_day(2013, 3, "second", "Monday"));
+        $expected = new DateTimeImmutable("2013/3/11");
+
+        $actual = meetup_day(2013, 3, "second", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -339,7 +483,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondMondayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/8"), meetup_day(2013, 4, "second", "Monday"));
+        $expected = new DateTimeImmutable("2013/4/8");
+
+        $actual = meetup_day(2013, 4, "second", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -348,7 +496,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondTuesdayOfMay2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/5/14"), meetup_day(2013, 5, "second", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/5/14");
+
+        $actual = meetup_day(2013, 5, "second", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -357,7 +509,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondTuesdayOfJune2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/6/11"), meetup_day(2013, 6, "second", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/6/11");
+
+        $actual = meetup_day(2013, 6, "second", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -366,7 +522,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondWednesdayOfJuly2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/7/10"), meetup_day(2013, 7, "second", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/7/10");
+
+        $actual = meetup_day(2013, 7, "second", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -375,7 +535,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondWednesdayOfAugust2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/8/14"), meetup_day(2013, 8, "second", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/8/14");
+
+        $actual = meetup_day(2013, 8, "second", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -384,7 +548,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondThursdayOfSeptember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/9/12"), meetup_day(2013, 9, "second", "Thursday"));
+        $expected = new DateTimeImmutable("2013/9/12");
+
+        $actual = meetup_day(2013, 9, "second", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -393,7 +561,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondThursdayOfOctober2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/10/10"), meetup_day(2013, 10, "second", "Thursday"));
+        $expected = new DateTimeImmutable("2013/10/10");
+
+        $actual = meetup_day(2013, 10, "second", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -402,7 +574,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondFridayOfNovember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/11/8"), meetup_day(2013, 11, "second", "Friday"));
+        $expected = new DateTimeImmutable("2013/11/8");
+
+        $actual = meetup_day(2013, 11, "second", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -411,7 +587,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondFridayOfDecember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/12/13"), meetup_day(2013, 12, "second", "Friday"));
+        $expected = new DateTimeImmutable("2013/12/13");
+
+        $actual = meetup_day(2013, 12, "second", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -420,7 +600,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondSaturdayOfJanuary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/1/12"), meetup_day(2013, 1, "second", "Saturday"));
+        $expected = new DateTimeImmutable("2013/1/12");
+
+        $actual = meetup_day(2013, 1, "second", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -429,7 +613,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondSaturdayOfFebruary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/2/9"), meetup_day(2013, 2, "second", "Saturday"));
+        $expected = new DateTimeImmutable("2013/2/9");
+
+        $actual = meetup_day(2013, 2, "second", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -438,7 +626,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondSundayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/10"), meetup_day(2013, 3, "second", "Sunday"));
+        $expected = new DateTimeImmutable("2013/3/10");
+
+        $actual = meetup_day(2013, 3, "second", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -447,7 +639,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testSecondSundayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/14"), meetup_day(2013, 4, "second", "Sunday"));
+        $expected = new DateTimeImmutable("2013/4/14");
+
+        $actual = meetup_day(2013, 4, "second", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -456,7 +652,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdMondayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/18"), meetup_day(2013, 3, "third", "Monday"));
+        $expected = new DateTimeImmutable("2013/3/18");
+
+        $actual = meetup_day(2013, 3, "third", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -465,7 +665,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdMondayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/15"), meetup_day(2013, 4, "third", "Monday"));
+        $expected = new DateTimeImmutable("2013/4/15");
+
+        $actual = meetup_day(2013, 4, "third", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -474,7 +678,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdTuesdayOfMay2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/5/21"), meetup_day(2013, 5, "third", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/5/21");
+
+        $actual = meetup_day(2013, 5, "third", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -483,7 +691,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdTuesdayOfJune2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/6/18"), meetup_day(2013, 6, "third", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/6/18");
+
+        $actual = meetup_day(2013, 6, "third", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -492,7 +704,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdWednesdayOfJuly2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/7/17"), meetup_day(2013, 7, "third", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/7/17");
+
+        $actual = meetup_day(2013, 7, "third", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -501,7 +717,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdWednesdayOfAugust2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/8/21"), meetup_day(2013, 8, "third", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/8/21");
+
+        $actual = meetup_day(2013, 8, "third", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -510,7 +730,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdThursdayOfSeptember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/9/19"), meetup_day(2013, 9, "third", "Thursday"));
+        $expected = new DateTimeImmutable("2013/9/19");
+
+        $actual = meetup_day(2013, 9, "third", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -519,7 +743,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdThursdayOfOctober2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/10/17"), meetup_day(2013, 10, "third", "Thursday"));
+        $expected = new DateTimeImmutable("2013/10/17");
+
+        $actual = meetup_day(2013, 10, "third", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -528,7 +756,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdFridayOfNovember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/11/15"), meetup_day(2013, 11, "third", "Friday"));
+        $expected = new DateTimeImmutable("2013/11/15");
+
+        $actual = meetup_day(2013, 11, "third", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -537,7 +769,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdFridayOfDecember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/12/20"), meetup_day(2013, 12, "third", "Friday"));
+        $expected = new DateTimeImmutable("2013/12/20");
+
+        $actual = meetup_day(2013, 12, "third", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -546,7 +782,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdSaturdayOfJanuary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/1/19"), meetup_day(2013, 1, "third", "Saturday"));
+        $expected = new DateTimeImmutable("2013/1/19");
+
+        $actual = meetup_day(2013, 1, "third", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -555,7 +795,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdSaturdayOfFebruary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/2/16"), meetup_day(2013, 2, "third", "Saturday"));
+        $expected = new DateTimeImmutable("2013/2/16");
+
+        $actual = meetup_day(2013, 2, "third", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -564,7 +808,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdSundayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/17"), meetup_day(2013, 3, "third", "Sunday"));
+        $expected = new DateTimeImmutable("2013/3/17");
+
+        $actual = meetup_day(2013, 3, "third", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -573,7 +821,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testThirdSundayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/21"), meetup_day(2013, 4, "third", "Sunday"));
+        $expected = new DateTimeImmutable("2013/4/21");
+
+        $actual = meetup_day(2013, 4, "third", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -582,7 +834,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthMondayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/25"), meetup_day(2013, 3, "fourth", "Monday"));
+        $expected = new DateTimeImmutable("2013/3/25");
+
+        $actual = meetup_day(2013, 3, "fourth", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -591,7 +847,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthMondayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/22"), meetup_day(2013, 4, "fourth", "Monday"));
+        $expected = new DateTimeImmutable("2013/4/22");
+
+        $actual = meetup_day(2013, 4, "fourth", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -600,7 +860,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthTuesdayOfMay2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/5/28"), meetup_day(2013, 5, "fourth", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/5/28");
+
+        $actual = meetup_day(2013, 5, "fourth", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -609,7 +873,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthTuesdayOfJune2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/6/25"), meetup_day(2013, 6, "fourth", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/6/25");
+
+        $actual = meetup_day(2013, 6, "fourth", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -618,7 +886,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthWednesdayOfJuly2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/7/24"), meetup_day(2013, 7, "fourth", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/7/24");
+
+        $actual = meetup_day(2013, 7, "fourth", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -627,7 +899,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthWednesdayOfAugust2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/8/28"), meetup_day(2013, 8, "fourth", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/8/28");
+
+        $actual = meetup_day(2013, 8, "fourth", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -636,7 +912,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthThursdayOfSeptember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/9/26"), meetup_day(2013, 9, "fourth", "Thursday"));
+        $expected = new DateTimeImmutable("2013/9/26");
+
+        $actual = meetup_day(2013, 9, "fourth", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -645,7 +925,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthThursdayOfOctober2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/10/24"), meetup_day(2013, 10, "fourth", "Thursday"));
+        $expected = new DateTimeImmutable("2013/10/24");
+
+        $actual = meetup_day(2013, 10, "fourth", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -654,7 +938,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthFridayOfNovember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/11/22"), meetup_day(2013, 11, "fourth", "Friday"));
+        $expected = new DateTimeImmutable("2013/11/22");
+
+        $actual = meetup_day(2013, 11, "fourth", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -663,7 +951,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthFridayOfDecember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/12/27"), meetup_day(2013, 12, "fourth", "Friday"));
+        $expected = new DateTimeImmutable("2013/12/27");
+
+        $actual = meetup_day(2013, 12, "fourth", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -672,7 +964,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthSaturdayOfJanuary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/1/26"), meetup_day(2013, 1, "fourth", "Saturday"));
+        $expected = new DateTimeImmutable("2013/1/26");
+
+        $actual = meetup_day(2013, 1, "fourth", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -681,7 +977,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthSaturdayOfFebruary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/2/23"), meetup_day(2013, 2, "fourth", "Saturday"));
+        $expected = new DateTimeImmutable("2013/2/23");
+
+        $actual = meetup_day(2013, 2, "fourth", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -690,7 +990,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthSundayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/24"), meetup_day(2013, 3, "fourth", "Sunday"));
+        $expected = new DateTimeImmutable("2013/3/24");
+
+        $actual = meetup_day(2013, 3, "fourth", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -699,7 +1003,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFourthSundayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/28"), meetup_day(2013, 4, "fourth", "Sunday"));
+        $expected = new DateTimeImmutable("2013/4/28");
+
+        $actual = meetup_day(2013, 4, "fourth", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -708,7 +1016,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastMondayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/25"), meetup_day(2013, 3, "last", "Monday"));
+        $expected = new DateTimeImmutable("2013/3/25");
+
+        $actual = meetup_day(2013, 3, "last", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -717,7 +1029,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastMondayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/29"), meetup_day(2013, 4, "last", "Monday"));
+        $expected = new DateTimeImmutable("2013/4/29");
+
+        $actual = meetup_day(2013, 4, "last", "Monday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -726,7 +1042,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastTuesdayOfMay2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/5/28"), meetup_day(2013, 5, "last", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/5/28");
+
+        $actual = meetup_day(2013, 5, "last", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -735,7 +1055,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastTuesdayOfJune2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/6/25"), meetup_day(2013, 6, "last", "Tuesday"));
+        $expected = new DateTimeImmutable("2013/6/25");
+
+        $actual = meetup_day(2013, 6, "last", "Tuesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -744,7 +1068,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastWednesdayOfJuly2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/7/31"), meetup_day(2013, 7, "last", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/7/31");
+
+        $actual = meetup_day(2013, 7, "last", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -753,7 +1081,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastWednesdayOfAugust2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/8/28"), meetup_day(2013, 8, "last", "Wednesday"));
+        $expected = new DateTimeImmutable("2013/8/28");
+
+        $actual = meetup_day(2013, 8, "last", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -762,7 +1094,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastThursdayOfSeptember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/9/26"), meetup_day(2013, 9, "last", "Thursday"));
+        $expected = new DateTimeImmutable("2013/9/26");
+
+        $actual = meetup_day(2013, 9, "last", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -771,7 +1107,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastThursdayOfOctober2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/10/31"), meetup_day(2013, 10, "last", "Thursday"));
+        $expected = new DateTimeImmutable("2013/10/31");
+
+        $actual = meetup_day(2013, 10, "last", "Thursday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -780,7 +1120,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastFridayOfNovember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/11/29"), meetup_day(2013, 11, "last", "Friday"));
+        $expected = new DateTimeImmutable("2013/11/29");
+
+        $actual = meetup_day(2013, 11, "last", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -789,7 +1133,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastFridayOfDecember2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/12/27"), meetup_day(2013, 12, "last", "Friday"));
+        $expected = new DateTimeImmutable("2013/12/27");
+
+        $actual = meetup_day(2013, 12, "last", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -798,7 +1146,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastSaturdayOfJanuary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/1/26"), meetup_day(2013, 1, "last", "Saturday"));
+        $expected = new DateTimeImmutable("2013/1/26");
+
+        $actual = meetup_day(2013, 1, "last", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -807,7 +1159,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastSaturdayOfFebruary2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/2/23"), meetup_day(2013, 2, "last", "Saturday"));
+        $expected = new DateTimeImmutable("2013/2/23");
+
+        $actual = meetup_day(2013, 2, "last", "Saturday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -816,7 +1172,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastSundayOfMarch2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/3/31"), meetup_day(2013, 3, "last", "Sunday"));
+        $expected = new DateTimeImmutable("2013/3/31");
+
+        $actual = meetup_day(2013, 3, "last", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -825,7 +1185,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastSundayOfApril2013(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2013/4/28"), meetup_day(2013, 4, "last", "Sunday"));
+        $expected = new DateTimeImmutable("2013/4/28");
+
+        $actual = meetup_day(2013, 4, "last", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -834,7 +1198,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastWednesdayOfFebruary2012(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2012/2/29"), meetup_day(2012, 2, "last", "Wednesday"));
+        $expected = new DateTimeImmutable("2012/2/29");
+
+        $actual = meetup_day(2012, 2, "last", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -843,7 +1211,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastWednesdayOfDecember2014(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2014/12/31"), meetup_day(2014, 12, "last", "Wednesday"));
+        $expected = new DateTimeImmutable("2014/12/31");
+
+        $actual = meetup_day(2014, 12, "last", "Wednesday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -852,7 +1224,11 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testLastSundayOfFebruary2015(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2015/2/22"), meetup_day(2015, 2, "last", "Sunday"));
+        $expected = new DateTimeImmutable("2015/2/22");
+
+        $actual = meetup_day(2015, 2, "last", "Sunday");
+
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -861,6 +1237,10 @@ class MeetupTest extends PHPUnit\Framework\TestCase
      */
     public function testFirstFridayOfDecember2012(): void
     {
-        $this->assertEquals(new DateTimeImmutable("2012/12/7"), meetup_day(2012, 12, "first", "Friday"));
+        $expected = new DateTimeImmutable("2012/12/7");
+
+        $actual = meetup_day(2012, 12, "first", "Friday");
+
+        $this->assertEquals($expected, $actual);
     }
 }
