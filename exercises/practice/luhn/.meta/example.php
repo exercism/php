@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function isValid($candidate)
+function isValid(string $candidate): bool
 {
     $sanitizedCandidate = str_replace(" ", "", $candidate);
 
@@ -10,19 +10,23 @@ function isValid($candidate)
         return false;
     }
 
-    $reversseCandidate = strrev($sanitizedCandidate);
+    $reverseCandidate = strrev($sanitizedCandidate);
     $sum = 0;
 
-    for ($i = 1; $i < strlen($reversseCandidate); $i += 2) {
-        $digit = 2 * intval($reversseCandidate[$i]);
+    for ($i = 0; $i < strlen($reverseCandidate); $i++) {
+        $digit = intval($reverseCandidate[$i]);
 
-        if ($digit > 9) {
-            $digit -= 9;
+        // Double every second digit starting from the second position
+        if ($i % 2 != 0) {
+            $digit *= 2;
+
+            if ($digit > 9) {
+                $digit -= 9;
+            }
         }
 
         $sum += $digit;
-        $sum += intval($reversseCandidate[$i - 1]);
     }
 
-    return $sum % 10 == 0;
+    return $sum % 10 === 0;
 }
