@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class HammingTest extends PHPUnit\Framework\TestCase
@@ -31,45 +9,98 @@ class HammingTest extends PHPUnit\Framework\TestCase
         require_once 'Hamming.php';
     }
 
-    public function testNoDifferenceBetweenIdenticalStrands(): void
+    /**
+     * uuid: f6dcb64f-03b0-4b60-81b1-3c9dbf47e887
+     * @testdox Empty strands
+     */
+    public function testEmptyStrands(): void
+    {
+        $this->assertEquals(0, distance('', ''));
+    }
+
+    /**
+     * uuid: 54681314-eee2-439a-9db0-b0636c656156
+     * @testdox Single letter identical strands
+     */
+    public function testSingleLetterIdenticalStrands(): void
     {
         $this->assertEquals(0, distance('A', 'A'));
     }
 
-    public function testCompleteHammingDistanceOfForSingleNucleotideStrand(): void
+    /**
+     * uuid: 294479a3-a4c8-478f-8d63-6209815a827b
+     * @testdox Single letter different strands
+     */
+    public function testSingleLetterDifferentStrands(): void
     {
-        $this->assertEquals(1, distance('A', 'G'));
+        $this->assertEquals(1, distance('G', 'T'));
     }
 
-    public function testCompleteHammingDistanceForSmallStrand(): void
+    /**
+     * uuid: 9aed5f34-5693-4344-9b31-40c692fb5592
+     * @testdox Long identical strands
+     */
+    public function testLongIdenticalStrands(): void
     {
-        $this->assertEquals(2, distance('AG', 'CT'));
+        $this->assertEquals(0, distance(
+            'GGACTGAAATCTG',
+            'GGACTGAAATCTG'
+        ));
     }
 
-    public function testSmallHammingDistance(): void
+    /**
+     * uuid: cd2273a5-c576-46c8-a52b-dee251c3e6e5
+     * @testdox Long different strands
+     */
+    public function testLongDifferentStrand(): void
     {
-        $this->assertEquals(1, distance('AT', 'CT'));
+        $this->assertEquals(9, distance(
+            'GGACGGATTCTG',
+            'AGGACGGATTCT'
+        ));
     }
 
-    public function testSmallHammingDistanceInLongerStrand(): void
-    {
-        $this->assertEquals(1, distance('GGACG', 'GGTCG'));
-    }
-
-    public function testLargeHammingDistance(): void
-    {
-        $this->assertEquals(4, distance('GATACA', 'GCATAA'));
-    }
-
-    public function testHammingDistanceInVeryLongStrand(): void
-    {
-        $this->assertEquals(9, distance('GGACGGATTCTG', 'AGGACGGATTCT'));
-    }
-
-    public function testExceptionThrownWhenStrandsAreDifferentLength(): void
+    /**
+     * uuid: b9228bb1-465f-4141-b40f-1f99812de5a8
+     * @testdox Disallow first strand longer
+     */
+    public function testDisallowFirstStrandLonger(): void
     {
         $this->expectException('InvalidArgumentException');
-        $this->expectExceptionMessage('DNA strands must be of equal length.');
-        distance('GGACG', 'AGGACGTGG');
+        $this->expectExceptionMessage('strands must be of equal length');
+        distance('AATG', 'AAA');
+    }
+
+    /**
+     * uuid: dab38838-26bb-4fff-acbe-3b0a9bfeba2d
+     * @testdox: Disallow second strand longer
+     */
+    public function testDisallowSecondStrandLonger(): void
+    {
+        $this->expectException('InvalidArgumentException');
+        $this->expectExceptionMessage('strands must be of equal length');
+        distance('ATA', 'AATG');
+    }
+
+    /**
+     * uuid: b764d47c-83ff-4de2-ab10-6cfe4b15c0f3
+     * @testdox: Disallow empty first strand
+     */
+    public function testDisallowEmptyFirstStrand(): void
+    {
+        $this->expectException('InvalidArgumentException');
+        $this->expectExceptionMessage('strands must be of equal length');
+        distance('', 'G');
+    }
+
+    /**
+     * uuid: 9ab9262f-3521-4191-81f5-0ed184a5aa89
+     * @testdox: Disallow empty second strand
+     */
+    public function testDisallowEmptySecondStrand(): void
+    {
+        $this->expectException('InvalidArgumentException');
+        $this->expectExceptionMessage('strands must be of equal length');
+        distance('G', '');
     }
 }
