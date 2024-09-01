@@ -42,7 +42,10 @@ class HammingTest extends PHPUnit\Framework\TestCase
      */
     public function testLongIdenticalStrands(): void
     {
-        $this->assertEquals(0, distance('GGACTGAAATCTG', 'GGACTGAAATCTG'));
+        $this->assertEquals(0, distance(
+            'GGACTGAAATCTG',
+            'GGACTGAAATCTG'
+        ));
     }
 
     /**
@@ -51,7 +54,10 @@ class HammingTest extends PHPUnit\Framework\TestCase
      */
     public function testLongDifferentStrand(): void
     {
-        $this->assertEquals(9, distance('GGACGGATTCTG', 'AGGACGGATTCT'));
+        $this->assertEquals(9, distance(
+            'GGACGGATTCTG',
+            'AGGACGGATTCT'
+        ));
     }
 
     /**
