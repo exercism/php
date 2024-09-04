@@ -6,10 +6,10 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'monthly'
 
   # Keep dependencies for Composer up-to-date
   - package-ecosystem: 'composer'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'monthly'
