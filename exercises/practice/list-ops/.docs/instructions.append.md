@@ -9,7 +9,7 @@ It is possible to create an anonymous function in a variable and call it with pa
 ```php
 $double = function ($number) {
     return $number * 2;
-}
+};
 
 $double(2); // returns 4
 $double(4); // returns 8
