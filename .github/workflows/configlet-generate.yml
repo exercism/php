@@ -24,7 +24,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Generete templated docs
-        run: configlet generate
+        run: configlet generate --update --yes
 
       - name: Commit generated code
         uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842
