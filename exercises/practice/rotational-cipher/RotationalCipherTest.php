@@ -4,18 +4,6 @@ declare(strict_types=1);
 
 class RotationalCipherTest extends PHPUnit\Framework\TestCase
 {
-    private RotationalCipher $rotationalCipher;
-
-    public static function setUpBeforeClass(): void
-    {
-        require_once 'RotationalCipher.php';
-    }
-
-    protected function setUp(): void
-    {
-        $this->rotationalCipher = new RotationalCipher();
-    }
-
     /**
      * uuid: 74e58a38-e484-43f1-9466-877a7515e10f
      * @testdox Rotate a by 0, same output as input
@@ -23,7 +11,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateAByZero(): void
     {
         $expected = 'a';
-        $actual = $this->rotationalCipher->rotate('a', 0);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('a', 0);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -34,7 +25,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateAByOne(): void
     {
         $expected = 'b';
-        $actual = $this->rotationalCipher->rotate('a', 1);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('a', 1);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -45,7 +39,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateABy26(): void
     {
         $expected = 'a';
-        $actual = $this->rotationalCipher->rotate('a', 26);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('a', 26);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -56,7 +53,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateMBy13(): void
     {
         $expected = 'z';
-        $actual = $this->rotationalCipher->rotate('m', 13);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('m', 13);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -67,7 +67,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateNBy13WithWrapAroundAlphabet(): void
     {
         $expected = 'a';
-        $actual = $this->rotationalCipher->rotate('n', 13);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('n', 13);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -78,7 +81,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateCapitalLetters(): void
     {
         $expected = 'TRL';
-        $actual = $this->rotationalCipher->rotate('OMG', 5);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('OMG', 5);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -89,7 +95,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateSpaces(): void
     {
         $expected = 'T R L';
-        $actual = $this->rotationalCipher->rotate('O M G', 5);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('O M G', 5);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -100,7 +109,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateNumbers(): void
     {
         $expected = 'Xiwxmrk 1 2 3 xiwxmrk';
-        $actual = $this->rotationalCipher->rotate('Testing 1 2 3 testing', 4);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('Testing 1 2 3 testing', 4);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -111,7 +123,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotatePunctuation(): void
     {
         $expected = "Gzo'n zvo, Bmviyhv!";
-        $actual = $this->rotationalCipher->rotate("Let's eat, Grandma!", 21);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate("Let's eat, Grandma!", 21);
+
         $this->assertEquals($expected, $actual);
     }
 
@@ -122,7 +137,10 @@ class RotationalCipherTest extends PHPUnit\Framework\TestCase
     public function testRotateAllLetters(): void
     {
         $expected = 'Gur dhvpx oebja sbk whzcf bire gur ynml qbt.';
-        $actual = $this->rotationalCipher->rotate('The quick brown fox jumps over the lazy dog.', 13);
+        $rotationalCipher = new RotationalCipher();
+
+        $actual = $rotationalCipher->rotate('The quick brown fox jumps over the lazy dog.', 13);
+
         $this->assertEquals($expected, $actual);
     }
 }
