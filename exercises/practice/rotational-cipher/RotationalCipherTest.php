@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 class RotationalCipherTest extends PHPUnit\Framework\TestCase
 {
+    public static function setUpBeforeClass(): void
+    {
+        require_once 'RotationalCipher.php';
+    }
+
     /**
      * uuid: 74e58a38-e484-43f1-9466-877a7515e10f
      * @testdox Rotate a by 0, same output as input
