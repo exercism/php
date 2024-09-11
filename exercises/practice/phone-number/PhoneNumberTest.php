@@ -10,7 +10,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 79666dce-e0f1-46de-95a1-563802913c35
+     * uuid 79666dce-e0f1-46de-95a1-563802913c35
+     * @testdox cleans the number
      */
     public function testCleansTheNumber(): void
     {
@@ -19,7 +20,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: c360451f-549f-43e4-8aba-fdf6cb0bf83f
+     * uuid c360451f-549f-43e4-8aba-fdf6cb0bf83f
+     * @testdox cleans numbers with dots
      */
     public function testCleansTheNumberWithDots(): void
     {
@@ -28,7 +30,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 08f94c34-9a37-46a2-a123-2a8e9727395d
+     * uuid 08f94c34-9a37-46a2-a123-2a8e9727395d
+     * @testdox cleans numbers with multiple spaces
      */
     public function testCleansTheNumberWithMultipleSpaces(): void
     {
@@ -37,7 +40,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 598d8432-0659-4019-a78b-1c6a73691d21
+     * uuid 598d8432-0659-4019-a78b-1c6a73691d21
+     * @testdox invalid when 9 digits
      */
     public function testInvalidWhen9Digits(): void
     {
@@ -48,7 +52,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 57061c72-07b5-431f-9766-d97da7c4399d
+     * uuid 57061c72-07b5-431f-9766-d97da7c4399d
+     * @testdox invalid when 11 digits does not start with a 1
      */
     public function testInvalidWhen11DigitsDoesNotStartWithA1(): void
     {
@@ -59,7 +64,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 9962cbf3-97bb-4118-ba9b-38ff49c64430
+     * uuid 9962cbf3-97bb-4118-ba9b-38ff49c64430
+     * @testdox valid when 11 digits and starting with 1
      */
     public function testValidWhen11DigitsAndStartingWith1(): void
     {
@@ -68,7 +74,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: fa724fbf-054c-4d91-95da-f65ab5b6dbca
+     * uuid fa724fbf-054c-4d91-95da-f65ab5b6dbca
+     * @testdox valid when 11 digits and starting with 1 even with punctuation
      */
     public function testValidWhen11DigitsAndStartingWith1EvenWithPunctuation(): void
     {
@@ -77,7 +84,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: c6a5f007-895a-4fc5-90bc-a7e70f9b5cad
+     * uuid c6a5f007-895a-4fc5-90bc-a7e70f9b5cad
+     * @testdox invalid when more than 11 digits
      */
     public function testInvalidWhenMoreThan11Digits(): void
     {
@@ -88,7 +96,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: eb8a1fc0-64e5-46d3-b0c6-33184208e28a
+     * uuid eb8a1fc0-64e5-46d3-b0c6-33184208e28a
+     * @testdox invalid with letters
      */
     public function testInvalidWithLetters(): void
     {
@@ -99,7 +108,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 065f6363-8394-4759-b080-e6c8c351dd1f
+     * uuid 065f6363-8394-4759-b080-e6c8c351dd1f
+     * @testdox invalid with punctuations
      */
     public function testInvalidWithPunctuation(): void
     {
@@ -110,7 +120,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: d77d07f8-873c-4b17-8978-5f66139bf7d7
+     * uuid d77d07f8-873c-4b17-8978-5f66139bf7d7
+     * @testdox invalid if area code starts with 0
      */
     public function testInvalidIfAreaCodeStartsWith0(): void
     {
@@ -121,7 +132,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: c7485cfb-1e7b-4081-8e96-8cdb3b77f15e
+     * uuid c7485cfb-1e7b-4081-8e96-8cdb3b77f15e
+     * @testdox invalid if area code starts with 1
      */
     public function testInvalidIfAreaCodeStartsWith1(): void
     {
@@ -132,7 +144,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 4d622293-6976-413d-b8bf-dd8a94d4e2ac
+     * uuid 4d622293-6976-413d-b8bf-dd8a94d4e2ac
+     * @testdox invalid if exchange code starts with 0
      */
     public function testInvalidIfExchangeCodeStartsWith0(): void
     {
@@ -143,7 +156,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 4cef57b4-7d8e-43aa-8328-1e1b89001262
+     * uuid 4cef57b4-7d8e-43aa-8328-1e1b89001262
+     * @testdox invalid if exchange code starts with 1
      */
     public function testInvalidIfExchangeCodeStartsWith1(): void
     {
@@ -154,7 +168,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 9925b09c-1a0d-4960-a197-5d163cbe308c
+     * uuid 9925b09c-1a0d-4960-a197-5d163cbe308c
+     * @testdox invalid if area code starts with 0 on valid 11-digit number
      */
     public function testInvalidIfAreaCodeStartsWith0OnValid11DigitNumber(): void
     {
@@ -165,7 +180,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 3f809d37-40f3-44b5-ad90-535838b1a816
+     * uuid 3f809d37-40f3-44b5-ad90-535838b1a816
+     * @testdox invalid if area code starts with 1 on valid 11-digit number
      */
     public function testInvalidIfAreaCodeStartsWith1OnValid11DigitNumber(): void
     {
@@ -176,7 +192,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: e08e5532-d621-40d4-b0cc-96c159276b65
+     * uuid e08e5532-d621-40d4-b0cc-96c159276b65
+     * @testdox invalid if exchange code starts with 0 on valid 11-digit number
      */
     public function testInvalidIfExchangeCodeStartsWith0OnValid11DigitNumber(): void
     {
@@ -187,7 +204,8 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @uuid: 57b32f3d-696a-455c-8bf1-137b6d171cdf
+     * uuid 57b32f3d-696a-455c-8bf1-137b6d171cdf
+     * @testdox invalid if exchange code starts with 1 on valid 11-digit number
      */
     public function testInvalidIfExchangeCodeStartsWith1OnValid11DigitNumber(): void
     {
