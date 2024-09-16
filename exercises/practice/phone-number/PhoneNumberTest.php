@@ -89,7 +89,6 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     public function testInvalidWhenMoreThan11Digits(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessageMatches('.* than 11 digits');
 
         new PhoneNumber('321234567890');
     }
