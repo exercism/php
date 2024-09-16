@@ -40,13 +40,12 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * uuid 598d8432-0659-4019-a78b-1c6a73691d21
+     * uuid 2de74156-f646-42b5-8638-0ef1d8b58bc2
      * @testdox invalid when 9 digits
      */
     public function testInvalidWhen9Digits(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('incorrect number of digits');
 
         new PhoneNumber('123456789');
     }
@@ -84,13 +83,13 @@ class PhoneNumberTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * uuid c6a5f007-895a-4fc5-90bc-a7e70f9b5cad
+     * uuid 4a1509b7-8953-4eec-981b-c483358ff531
      * @testdox invalid when more than 11 digits
      */
     public function testInvalidWhenMoreThan11Digits(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('more than 11 digits');
+        $this->expectExceptionMessageMatches('.* than 11 digits');
 
         new PhoneNumber('321234567890');
     }
