@@ -146,7 +146,7 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testShoutingWithNoExclamationMark(): void
     {
-        $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("I HATE YOU"));
+        $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("I HATE THE DENTIST"));
     }
 
     /**
