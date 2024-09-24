@@ -86,7 +86,7 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testUsingAcronymsInRegularSpeech(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("It's OK if you don't want to go to the DMV."));
+        $this->assertEquals("Whatever.", $this->bob->respondTo("It's OK if you don't want to go work for NASA."));
     }
 
     /**
