@@ -115,7 +115,7 @@ class BobTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: f7bc4b92-bdff-421e-a238-ae97f230ccac
-     * * @testdox no letters
+     * @testdox no letters
      */
     public function testOnlyNumbers(): void
     {
