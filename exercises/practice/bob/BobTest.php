@@ -97,6 +97,9 @@ class BobTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals(
             "Calm down, I know what I'm doing!",
+            $this->bob->respondTo("WHAT'S GOING ON?")
+        );
+            "Calm down, I know what I'm doing!",
             $this->bob->respondTo("WHAT THE HELL WERE YOU THINKING?")
         );
     }
