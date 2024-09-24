@@ -9,21 +9,16 @@ class BobTest extends PHPUnit\Framework\TestCase
         require_once 'Bob.php';
     }
 
-    /** @var Bob */
-    private $bob;
-
-    public function setUp(): void
-    {
-        $this->bob = new Bob();
-    }
-
     /**
      * uuid: e162fead-606f-437a-a166-d051915cea8e
      * @testdox stating something
      */
     public function testStatingSomething(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("Tom-ay-to, tom-aaaah-to."));
+        $input = "Tom-ay-to, tom-aaaah-to.";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -32,7 +27,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testShouting(): void
     {
-        $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("WATCH OUT!"));
+        $input = "WATCH OUT!";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -41,7 +39,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testShoutingGibberish(): void
     {
-        $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("FCECDFCAAB"));
+        $input = "FCECDFCAAB";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -50,7 +51,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testAskingAQuestion(): void
     {
-        $this->assertEquals("Sure.", $this->bob->respondTo("Does this cryogenic chamber make me look fat?"));
+        $input = "Does this cryogenic chamber make me look fat?";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -59,7 +63,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testAskingANumericQuestion(): void
     {
-        $this->assertEquals("Sure.", $this->bob->respondTo("You are, what, like 15?"));
+        $input = "You are, what, like 15?";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -68,7 +75,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testAskingGibberish(): void
     {
-        $this->assertEquals("Sure.", $this->bob->respondTo("fffbbcbeab?"));
+        $input = "fffbbcbeab?";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -77,7 +87,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testTalkingForcefully(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("Hi there!"));
+        $input = "Hi there!";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -86,7 +99,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testUsingAcronymsInRegularSpeech(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("It's OK if you don't want to go work for NASA."));
+        $input = "It's OK if you don't want to go work for NASA.";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -95,13 +111,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testForcefulQuestion(): void
     {
-        $this->assertEquals(
-            "Calm down, I know what I'm doing!",
-            $this->bob->respondTo("WHAT'S GOING ON?")
-        );
-            "Calm down, I know what I'm doing!",
-            $this->bob->respondTo("WHAT THE HELL WERE YOU THINKING?")
-        );
+        $input = "WHAT'S GOING ON?";
+        $expected = "Calm down, I know what I'm doing!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -110,7 +123,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testShoutingNumbers(): void
     {
-        $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("1, 2, 3 GO!"));
+        $input = "1, 2, 3 GO!";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -119,7 +135,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testOnlyNumbers(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("1, 2, 3"));
+        $input = "1, 2, 3";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -128,7 +147,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testQuestionWithOnlyNumbers(): void
     {
-        $this->assertEquals("Sure.", $this->bob->respondTo("4?"));
+        $input = "4?";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -137,7 +159,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testShoutingWithSpecialCharacters(): void
     {
-        $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"));
+        $input = "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -146,7 +171,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testShoutingWithNoExclamationMark(): void
     {
-        $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("I HATE THE DENTIST"));
+        $input = "I HATE THE DENTIST";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -155,7 +183,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testStatementContainingQuestionMark(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("Ending with ? means a question."));
+        $input = "Ending with ? means a question.";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -164,7 +195,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testNonLettersWithQuestion(): void
     {
-        $this->assertEquals("Sure.", $this->bob->respondTo(":) ?"));
+        $input = ":) ?";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -173,7 +207,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testPrattlingOn(): void
     {
-        $this->assertEquals("Sure.", $this->bob->respondTo("Wait! Hang on. Are you going to be OK?"));
+        $input = "Wait! Hang on. Are you going to be OK?";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -182,7 +219,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testSilence(): void
     {
-        $this->assertEquals("Fine. Be that way!", $this->bob->respondTo(""));
+        $input = "";
+        $expected = "Fine. Be that way!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -191,7 +231,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testProlongedSilence(): void
     {
-        $this->assertEquals("Fine. Be that way!", $this->bob->respondTo("         "));
+        $input = "          ";
+        $expected = "Fine. Be that way!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -200,7 +243,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testAlternateSilence(): void
     {
-        $this->assertEquals("Fine. Be that way!", $this->bob->respondTo("\t\t\t\t\t\t\t\t\t\t"));
+        $input = "\t\t\t\t\t\t\t\t\t\t";
+        $expected = "Fine. Be that way!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -209,7 +255,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testMultipleLineQuestion(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("\nDoes this cryogenic chamber make me look fat?\nno"));
+        $input = "\nDoes this cryogenic chamber make me look fat?\nNo.";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -218,7 +267,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testStartingWithWhitespace(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("        hmmmmmmm..."));
+        $input = "         hmmmmmmm...";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -227,7 +279,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testEndingWithWhitespace(): void
     {
-        $this->assertEquals("Sure.", $this->bob->respondTo("Okay if like my  spacebar  quite a bit?   "));
+        $input = "Okay if like my  spacebar  quite a bit?   ";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -236,7 +291,10 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testOtherWhitespace()
     {
-        $this->assertEquals("Fine. Be that way!", $this->bob->respondTo("\n\r \t"));
+        $input = "\n\r \t";
+        $expected = "Fine. Be that way!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
@@ -245,6 +303,9 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testNonQuestionEndingWithWhitespace(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("This is a statement ending with whitespace      "));
+        $input = "This is a statement ending with whitespace      ";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
     }
 }
