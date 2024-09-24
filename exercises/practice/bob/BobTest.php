@@ -77,7 +77,7 @@ class BobTest extends PHPUnit\Framework\TestCase
      */
     public function testTalkingForcefully(): void
     {
-        $this->assertEquals("Whatever.", $this->bob->respondTo("Let's go make out behind the gym!"));
+        $this->assertEquals("Whatever.", $this->bob->respondTo("Hi there!"));
     }
 
     /**
