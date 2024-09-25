@@ -130,7 +130,7 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
      * uuid: aac38b7a-77f4-4d62-9b91-8846d533b054
      * @testdox With the same buckets but a different goal, then it is possible
      */
-    public function testReachabilityNotPossibleToReachGoalStartWithBucketOneAndEndWithBucketTwo(): void
+    public function testWithSameBucketsButDifferentGoalItIsPossible(): void
     {
         $subject = new TwoBucket();
         $solution = $subject->solve(6, 15, 9, 'one');
