@@ -59,3 +59,5 @@ description = "Cannot deposit negative"
 
 [ba0c1e0b-0f00-416f-8097-a7dfc97871ff]
 description = "Can handle concurrent transactions"
+include = false
+comment = "PHP does not support concurrency (on a level we expect students to work in)"
