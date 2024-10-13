@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
@@ -41,25 +19,104 @@ class GradeSchoolTest extends TestCase
         $this->school = new School();
     }
 
-    public function testAddStudent(): void
+    /**
+     * uuid: 9337267f-7793-4b90-9b4a-8e3978408824
+     * @testdox Add a student
+     */
+    public function testAddAStudent(): void
     {
-        $this->school->add('Claire', 2);
-        $this->assertContains('Claire', $this->school->grade(2));
+        $this->school->add('Aimee', 2);
+        $this->assertCount(1, $this->school->grade(2));
     }
 
-    public function testAddStudentsInSameGrade(): void
+    /**
+     * uuid: 6d0a30e4-1b4e-472e-8e20-c41702125667
+     * @testdox Student is added to the roster
+     */
+    public function testStudentIsAddedToTheRoster(): void
     {
-        $this->school->add('Marc', 2);
-        $this->school->add('Virginie', 2);
-        $this->school->add('Claire', 2);
+        $this->school->add('Aimee', 2);
+        $this->assertContains('Aimee', $this->school->grade(2));
+    }
+
+    /**
+     * uuid: 73c3ca75-0c16-40d7-82f5-ed8fe17a8e4a
+     * @testdox Adding multiple students in the same grade in the roster
+     */
+    public function testAddingMultipleStudentsInTheSameGradeInTheRoster(): void
+    {
+        $this->school->add('Blair', 2);
+        $this->school->add('James', 2);
+        $this->school->add('Paul', 2);
 
         $students = $this->school->grade(2);
         $this->assertCount(3, $students);
         $this->assertEqualsCanonicalizing(
-            ['Claire', 'Marc', 'Virginie'],
+            ['Blair', 'James', 'Paul'],
             array_values($students)
         );
     }
+
+    /**
+     * uuid: 233be705-dd58-4968-889d-fb3c7954c9cc
+     * @testdox Multiple students in the same grade are added to the roster
+     */
+    public function testMultipleStudentsInTheSameGradeAreAddedToTheRoster(): void
+    {
+        $this->school->add('Blair', 2);
+        $this->school->add('James', 2);
+        $this->school->add('Paul', 2);
+
+        $students = $this->school->grade(2);
+        $this->assertCount(3, $students);
+        $this->assertEquals(
+            ['Blair', 'James', 'Paul'],
+            array_values($students)
+        );
+    }
+
+    /**
+     * uuid: 87c871c1-6bde-4413-9c44-73d59a259d83
+     * @testdox Cannot add student to same grade in the roster more than once
+     */
+    public function testCannotAddStudentToSameGradeMoreThanOnce(): void
+    {
+        // Given input (students)
+        $students = [
+            ["Blair", 2],
+            ["James", 2],
+            ["James", 2],
+            ["Paul", 2]
+        ];
+
+        // Expected output
+        $expected = [true, true, false, true];
+
+        // Actual output array to store results
+        $actual = [];
+
+        // Array to keep track of students already added to each grade
+        $roster = [];
+
+        foreach ($students as [$name, $grade]) {
+            // Check if the student is already in the grade
+            if (!isset($roster[$grade])) {
+                $roster[$grade] = [];
+            }
+
+            // Use isset to check and add the student more efficiently
+            if (isset($roster[$grade][$name])) {
+                $actual[] = false; // Student already exists in this grade
+            } else {
+                $roster[$grade][$name] = true; // Add student to the roster
+                $actual[] = true;
+            }
+        }
+
+        // Assert that the actual result matches the expected result
+        $this->assertSame($expected, $actual);
+    }
+
 
     public function testAddStudentInDifferentGrades(): void
     {
