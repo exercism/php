@@ -81,7 +81,6 @@ class GradeSchoolTest extends TestCase
      */
     public function testCannotAddStudentToSameGradeMoreThanOnce(): void
     {
-        // Given input (students)
         $students = [
             ["Blair", 2],
             ["James", 2],
@@ -89,34 +88,26 @@ class GradeSchoolTest extends TestCase
             ["Paul", 2]
         ];
 
-        // Expected output
-        $expected = [true, true, false, true];
-
-        // Actual output array to store results
         $actual = [];
-
-        // Array to keep track of students already added to each grade
         $roster = [];
 
-        foreach ($students as [$name, $grade]) {
-            // Check if the student is already in the grade
+        $actual = array_map(function ($student) use (&$roster) {
+            [$name, $grade] = $student;
+
             if (!isset($roster[$grade])) {
                 $roster[$grade] = [];
             }
 
-            // Use isset to check and add the student more efficiently
             if (isset($roster[$grade][$name])) {
-                $actual[] = false; // Student already exists in this grade
+                return false;
             } else {
-                $roster[$grade][$name] = true; // Add student to the roster
-                $actual[] = true;
+                $roster[$grade][$name] = true;
+                return true;
             }
-        }
+        }, $students);
 
-        // Assert that the actual result matches the expected result
-        $this->assertSame($expected, $actual);
+        $this->assertSame([true, true, false, true], $actual);
     }
-
 
     public function testAddStudentInDifferentGrades(): void
     {
