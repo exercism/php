@@ -24,20 +24,20 @@
 
 declare(strict_types=1);
 
-class School
+class GradeSchool
 {
-    public function add(string $name, int $grade): void
+    public function add(string $name, int $grade): bool
     {
-        throw new \BadMethodCallException("Implement the add method");
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function grade($grade)
+    public function grade(int $grade): array
     {
-        throw new \BadMethodCallException("Implement the grade method");
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function studentsByGradeAlphabetical(): array
+    public function roster(): array
     {
-        throw new \BadMethodCallException("Implement the studentsByGradeAlphabetical method");
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 }
