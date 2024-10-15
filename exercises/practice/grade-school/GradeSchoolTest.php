@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
@@ -33,79 +11,361 @@ class GradeSchoolTest extends TestCase
         require_once 'GradeSchool.php';
     }
 
-    /** @var School */
-    protected $school;
-
-    protected function setUp(): void
+    /**
+     * uuid: a3f0fb58-f240-4723-8ddc-e644666b85cc
+     * @testdox Roster is empty when no student is added
+     */
+    public function testRosterIsEmptyWhenNoStudentIsAdded(): void
     {
-        $this->school = new School();
+        $subject = new GradeSchool();
+
+        $this->assertSame([], $subject->roster());
     }
 
-    public function testAddStudent(): void
+    /**
+     * uuid: 9337267f-7793-4b90-9b4a-8e3978408824
+     * @testdox Add a student
+     */
+    public function testAddAStudent(): void
     {
-        $this->school->add('Claire', 2);
-        $this->assertContains('Claire', $this->school->grade(2));
+        $subject = new GradeSchool();
+        $actual = [];
+
+        $actual[] = $subject->add('Aimee', 2);
+
+        $this->assertSame([true], $actual);
     }
 
-    public function testAddStudentsInSameGrade(): void
+    /**
+     * uuid: 6d0a30e4-1b4e-472e-8e20-c41702125667
+     * @testdox Student is added to the roster
+     */
+    public function testStudentIsAddedToTheRoster(): void
     {
-        $this->school->add('Marc', 2);
-        $this->school->add('Virginie', 2);
-        $this->school->add('Claire', 2);
+        $subject = new GradeSchool();
 
-        $students = $this->school->grade(2);
-        $this->assertCount(3, $students);
-        $this->assertEqualsCanonicalizing(
-            ['Claire', 'Marc', 'Virginie'],
-            array_values($students)
-        );
+        $subject->add('Aimee', 2);
+        $actual = $subject->roster();
+
+        $this->assertSame(['Aimee'], $actual);
     }
 
-    public function testAddStudentInDifferentGrades(): void
+    /**
+     * uuid: 73c3ca75-0c16-40d7-82f5-ed8fe17a8e4a
+     * @testdox Adding multiple students in the same grade in the roster
+     */
+    public function testAddMultipleStudentsInSameGrade(): void
     {
-        $this->school->add('Marc', 3);
-        $this->school->add('Claire', 6);
+        $subject = new GradeSchool();
+        $actual = [];
 
-        $this->assertContains('Marc', $this->school->grade(3));
-        $this->assertContains('Claire', $this->school->grade(6));
-        $this->assertNotContains('Marc', $this->school->grade(6));
-        $this->assertNotContains('Claire', $this->school->grade(3));
+        $actual[] = $subject->add('Blair', 2);
+        $actual[] = $subject->add('James', 2);
+        $actual[] = $subject->add('Paul', 2);
+
+        $this->assertSame([true, true, true], $actual);
     }
 
-    public function testEmptyGrade(): void
+    /**
+     * uuid: 233be705-dd58-4968-889d-fb3c7954c9cc
+     * @testdox Multiple students in the same grade are added to the roster
+     */
+    public function testMultipleStudentsInSameGradeAreAddedToTheRoster(): void
     {
-        $this->assertEmpty($this->school->grade(1));
+        $subject = new GradeSchool();
+
+        $subject->add('Blair', 2);
+        $subject->add('James', 2);
+        $subject->add('Paul', 2);
+        $actual = $subject->roster();
+
+        $this->assertSame([
+            'Blair',
+            'James',
+            'Paul',
+        ], $actual);
     }
 
-    public function testSortSchool(): void
+    /**
+     * uuid: 87c871c1-6bde-4413-9c44-73d59a259d83
+     * @testdox Cannot add student to same grade in the roster more than once
+     */
+    public function testCannotAddStudentToSameGradeMoreThanOnce(): void
     {
-        $this->school->add('Marc', 5);
-        $this->school->add('Mehdi', 4);
-        $this->school->add('Virginie', 5);
-        $this->school->add('Claire', 5);
+        $subject = new GradeSchool();
+        $actual = [];
 
-        $sortedStudents = [
-            4 => ['Mehdi'],
-            5 => ['Claire', 'Marc', 'Virginie'],
-        ];
-        $schoolStudents = $this->school->studentsByGradeAlphabetical();
+        $actual[] = $subject->add('Blair', 2);
+        $actual[] = $subject->add('James', 2);
+        $actual[] = $subject->add('James', 2);
+        $actual[] = $subject->add('Paul', 2);
 
-        $this->assertSame($sortedStudents, $schoolStudents);
+        $this->assertSame([true, true, false, true], $actual);
     }
 
-    public function testSortSchoolByKey(): void
+    /**
+     * uuid: d7982c4f-1602-49f6-a651-620f2614243a
+     * @testdox Student not added to same grade in the roster more than once
+     */
+    public function testStudentNotAddedToSameGradeInTheRosterMoreThanOnce(): void
     {
-        $this->school->add('Marc', 4);
-        $this->school->add('Mehdi', 4);
-        $this->school->add('Virginie', 4);
-        $this->school->add('Claire', 5);
+        $subject = new GradeSchool();
 
-        $sortedStudents = [
-            4 => ['Marc', 'Mehdi', 'Virginie'],
-            5 => ['Claire']
-        ];
-        $schoolStudents = $this->school->studentsByGradeAlphabetical();
+        $subject->add('Blair', 2);
+        $subject->add('James', 2);
+        $subject->add('James', 2);
+        $subject->add('Paul', 2);
+        $actual = $subject->roster();
 
-        $this->assertSame($sortedStudents, $schoolStudents);
+        $this->assertSame([
+            'Blair',
+            'James',
+            'Paul',
+        ], $actual);
+    }
+
+    /**
+     * uuid: e70d5d8f-43a9-41fd-94a4-1ea0fa338056
+     * @testdox Adding students in multiple grades
+     */
+    public function testAddingStudentsInMultipleGrades(): void
+    {
+        $subject = new GradeSchool();
+        $actual = [];
+
+        $actual[] = $subject->add('Chelsea', 3);
+        $actual[] = $subject->add('Logan', 7);
+
+        $this->assertSame([true, true], $actual);
+    }
+
+    /**
+     * uuid: 75a51579-d1d7-407c-a2f8-2166e984e8ab
+     * @testdox Students in multiple grades are added to the roster
+     */
+    public function testStudentsInMultipleGradesAreAddedToTheRoster(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Chelsea', 3);
+        $subject->add('Logan', 7);
+        $actual = $subject->roster();
+
+        $this->assertSame([
+            'Chelsea',
+            'Logan',
+        ], $actual);
+    }
+
+    /**
+     * uuid: 7df542f1-57ce-433c-b249-ff77028ec479
+     * @testdox Cannot add same student to multiple grades in the roster
+     */
+    public function testCannotAddSameStudentToMultipleGrades(): void
+    {
+        $subject = new GradeSchool();
+        $actual = [];
+
+        $actual[] = $subject->add('Blair', 2);
+        $actual[] = $subject->add('James', 2);
+        $actual[] = $subject->add('James', 3);
+        $actual[] = $subject->add('Paul', 3);
+
+        $this->assertSame([true, true, false, true], $actual);
+    }
+
+    /**
+     * uuid: c7ec1c5e-9ab7-4d3b-be5c-29f2f7a237c5
+     * @testdox Student not added to multiple grades in the roster
+     */
+    public function testStudentNotAddedToMultipleGradesInTheRoster(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Blair', 2);
+        $subject->add('James', 2);
+        $subject->add('James', 3);
+        $subject->add('Paul', 3);
+        $actual = $subject->roster();
+
+        $this->assertSame([
+            'Blair',
+            'James',
+            'Paul',
+        ], $actual);
+    }
+
+    /**
+     * uuid: d9af4f19-1ba1-48e7-94d0-dabda4e5aba6
+     * @testdox Students are sorted by grades in the roster
+     */
+    public function testStudentsAreSortedByGradesInTheRoster(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Jim', 3);
+        $subject->add('Peter', 2);
+        $subject->add('Anna', 1);
+        $actual = $subject->roster();
+
+        $this->assertSame([
+            'Anna',
+            'Peter',
+            'Jim',
+        ], $actual);
+    }
+
+    /**
+     * uuid: d9fb5bea-f5aa-4524-9d61-c158d8906807
+     * @testdox Students are sorted by name in the roster
+     */
+    public function testStudentsAreSortedByNameInTheRoster(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Peter', 2);
+        $subject->add('Zoe', 2);
+        $subject->add('Alex', 2);
+        $actual = $subject->roster();
+
+        $this->assertSame([
+            'Alex',
+            'Peter',
+            'Zoe',
+        ], $actual);
+    }
+
+    /**
+     * uuid: 180a8ff9-5b94-43fc-9db1-d46b4a8c93b6
+     * @testdox Students are sorted by grades and then by name in the roster
+     */
+    public function testStudentsAreSortedByGradeThenByNameInTheRoster(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Peter', 2);
+        $subject->add('Anna', 1);
+        $subject->add('Barb', 1);
+        $subject->add('Zoe', 2);
+        $subject->add('Alex', 2);
+        $subject->add('Jim', 3);
+        $subject->add('Charlie', 1);
+        $actual = $subject->roster();
+
+        $this->assertSame([
+            'Anna',
+            'Barb',
+            'Charlie',
+            'Alex',
+            'Peter',
+            'Zoe',
+            'Jim',
+        ], $actual);
+    }
+
+    /**
+     * uuid: 5e67aa3c-a3c6-4407-a183-d8fe59cd1630
+     * @testdox Grade is empty if no students in the roster
+     */
+    public function testGradeIsEmptyWhenNoStudentsInTheRoster(): void
+    {
+        $subject = new GradeSchool();
+
+        $this->assertSame([], $subject->grade(1));
+    }
+
+    /**
+     * uuid: 1e0cf06b-26e0-4526-af2d-a2e2df6a51d6
+     * @testdox Grade is empty if no students in that grade
+     */
+    public function testGradeIsEmptyWhenNoStudentsInThatGrade(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Peter', 2);
+        $subject->add('Zoe', 2);
+        $subject->add('Alex', 2);
+        $subject->add('Jim', 3);
+
+        $this->assertSame([], $subject->grade(1));
+    }
+
+    /**
+     * uuid: 2bfc697c-adf2-4b65-8d0f-c46e085f796e
+     * @testdox Student not added to same grade more than once
+     */
+    public function testStudentNotAddedToSameGradeMoreThanOnce(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Blair', 2);
+        $subject->add('James', 2);
+        $subject->add('James', 2);
+        $subject->add('Paul', 2);
+        $actual = $subject->grade(2);
+
+        $this->assertSame([
+            'Blair',
+            'James',
+            'Paul',
+        ], $actual);
+    }
+
+    /**
+     * uuid: 66c8e141-68ab-4a04-a15a-c28bc07fe6b9
+     * @testdox Student not added to multiple grades
+     */
+    public function testStudentNotAddedToMultipleGrades(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Blair', 2);
+        $subject->add('James', 2);
+        $subject->add('James', 3);
+        $subject->add('Paul', 3);
+        $actual = $subject->grade(2);
+
+        $this->assertSame([
+            'Blair',
+            'James',
+        ], $actual);
+    }
+
+    /**
+     * uuid: c9c1fc2f-42e0-4d2c-b361-99271f03eda7
+     * @testdox Student not added to other grade for multiple grades
+     */
+    public function testStudentNotAddedToOtherGradeForMultipleGrades(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Blair', 2);
+        $subject->add('James', 2);
+        $subject->add('James', 3);
+        $subject->add('Paul', 3);
+        $actual = $subject->grade(3);
+
+        $this->assertSame([
+            'Paul',
+        ], $actual);
+    }
+
+    /**
+     * uuid: 1bfbcef1-e4a3-49e8-8d22-f6f9f386187e
+     * @testdox Students are sorted by name in a grade
+     */
+    public function testStudentsAreSortedByNameInAGrade(): void
+    {
+        $subject = new GradeSchool();
+
+        $subject->add('Franklin', 5);
+        $subject->add('Bradley', 5);
+        $subject->add('Jeff', 1);
+        $actual = $subject->grade(5);
+
+        $this->assertSame([
+            'Bradley',
+            'Franklin',
+        ], $actual);
     }
 }
