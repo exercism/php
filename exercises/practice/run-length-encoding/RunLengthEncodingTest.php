@@ -11,7 +11,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: ad53b61b-6ffc-422f-81a6-61f7df92a231
-     * @testdox empty string
+     * @testdox Run-length encode a string - empty string
      */
     public function testEncodeEmptyString(): void
     {
