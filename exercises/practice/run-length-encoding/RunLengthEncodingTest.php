@@ -156,7 +156,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals(
             'zzz ZZ  zZ',
-            decode('zzz ZZ  zZ')
+            decode(encode('zzz ZZ  zZ'))
         );
     }
 }
