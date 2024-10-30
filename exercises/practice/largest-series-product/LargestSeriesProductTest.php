@@ -52,7 +52,7 @@ class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
      */
     public function testCanFindTheLargestProductOf3WithNumbersInOrder(): void
     {
-        $series = new Series("123456789");
+        $series = new Series("0123456789");
         $this->assertEquals(504, $series->largestProduct(3));
     }
 
