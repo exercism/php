@@ -66,6 +66,6 @@ class CollatzConjectureTest extends PHPUnit\Framework\TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessageMatches('/Only positive (numbers|integers) are allowed/');
 
-        steps(-1);
+        steps(-15);
     }
 }
