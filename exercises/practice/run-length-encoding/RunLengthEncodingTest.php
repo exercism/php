@@ -150,7 +150,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
     }
     /**
      * uuid: 2a762efd-8695-4e04-b0d6-9736899fbc16
-     * @testdox Run-length decode a string - encode followed by decode gives original string
+     * @testdox encode followed by decode gives original string
      */
     public function testEncodeFollowedByDecodeGivesOriginalString(): void
     {
