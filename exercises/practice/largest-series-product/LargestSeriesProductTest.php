@@ -129,6 +129,16 @@ class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * uuid: 3ec0d92e-f2e2-4090-a380-70afee02f4c0
+     * @testdox reports 1 for nonempty string and empty product (0 span)
+     */
+    public function testReportsOneForNonemptyStringAndEmptyProductSpanZero(): void
+    {
+        $series = new Series("123");
+        $this->assertEquals(1, $series->largestProduct(0));
+    }
+
+    /**
      * uuid: 6d96c691-4374-4404-80ee-2ea8f3613dd4
      * @testdox rejects empty string and nonzero span
      */
