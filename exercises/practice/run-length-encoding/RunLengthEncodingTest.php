@@ -83,7 +83,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 7ec5c390-f03c-4acf-ac29-5f65861cdeb5
-     * @testdox empty string
+     * @testdox Run-length decode a string - empty string
      */
     public function testDecodeEmptyString(): void
     {
