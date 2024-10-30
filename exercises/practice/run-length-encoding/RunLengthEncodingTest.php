@@ -23,7 +23,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 52012823-b7e6-4277-893c-5b96d42f82de
-     * @testdox single characters only are encoded without count
+     * @testdox Run-length encode a string - single characters only are encoded without count
      */
     public function testEncodeSingleCharactersOnlyAreEncodedWithoutCount(): void
     {
@@ -35,7 +35,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: b7868492-7e3a-415f-8da3-d88f51f80409
-     * @testdox string with no single characters
+     * @testdox Run-length encode a string - string with no single characters
      */
     public function testEncodeStringWithNoSingleCharacters(): void
     {
@@ -47,7 +47,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 859b822b-6e9f-44d6-9c46-6091ee6ae358
-     * @testdox single characters mixed with repeated characters
+     * @testdox Run-length encode a string - single characters mixed with repeated characters
      */
     public function testEncodeSingleCharactersMixedWithRepeatedCharacters(): void
     {
@@ -59,7 +59,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 1b34de62-e152-47be-bc88-469746df63b3
-     * @testdox multiple whitespace mixed in string
+     * @testdox Run-length encode a string - multiple whitespace mixed in string
      */
     public function testEncodeMultipleWhitespaceMixedInString(): void
     {
@@ -71,7 +71,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: abf176e2-3fbd-40ad-bb2f-2dd6d4df721a
-     * @testdox lowercase characters
+     * @testdox Run-length encode a string - lowercase characters
      */
     public function testEncodeLowercaseCharacters(): void
     {
@@ -95,7 +95,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: ad23f455-1ac2-4b0e-87d0-b85b10696098
-     * @testdox single characters only
+     * @testdox Run-length decode a string - single characters only
      */
     public function testDecodeSingleCharactersOnly(): void
     {
@@ -106,7 +106,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
     }
     /**
      * uuid: 21e37583-5a20-4a0e-826c-3dee2c375f54
-     * @testdox string with no single characters
+     * @testdox Run-length decode a string - string with no single characters
      */
     public function testDecodeStringWithNoSingleCharacters(): void
     {
@@ -117,7 +117,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
     }
     /**
      * uuid: 1389ad09-c3a8-4813-9324-99363fba429c
-     * @testdox single characters with repeated characters
+     * @testdox Run-length decode a string - single characters with repeated characters
      */
     public function testDecodeSingleCharactersWithRepeatedCharacters(): void
     {
@@ -128,7 +128,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
     }
     /**
      * uuid: 3f8e3c51-6aca-4670-b86c-a213bf4706b0
-     * @testdox multiple whitespace mixed in string
+     * @testdox Run-length decode a string - multiple whitespace mixed in string
      */
     public function testDecodeMultipleWhitespaceMixedInString(): void
     {
@@ -139,7 +139,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
     }
     /**
      * uuid: 29f721de-9aad-435f-ba37-7662df4fb551
-     * @testdox lowercase string
+     * @testdox Run-length decode a string - lowercase string
      */
     public function testDecodeLowercaseString(): void
     {
@@ -150,7 +150,7 @@ class RunLengthEncodingTest extends PHPUnit\Framework\TestCase
     }
     /**
      * uuid: 2a762efd-8695-4e04-b0d6-9736899fbc16
-     * @testdox encode followed by decode gives original string
+     * @testdox Run-length decode a string - encode followed by decode gives original string
      */
     public function testEncodeFollowedByDecodeGivesOriginalString(): void
     {
