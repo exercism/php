@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class DiamondTest extends PHPUnit\Framework\TestCase
@@ -31,11 +9,19 @@ class DiamondTest extends PHPUnit\Framework\TestCase
         require_once 'Diamond.php';
     }
 
+    /**
+     * uuid: 202fb4cc-6a38-4883-9193-a29d5cb92076
+     * @testdox Degenerate case with a single 'A' row
+     */
     public function testDegenerateCaseWithASingleARow(): void
     {
         $this->assertEquals(["A"], diamond("A"));
     }
 
+    /**
+     * uuid: bd6a6d78-9302-42e9-8f60-ac1461e9abae
+     * @testdox Degenerate case with no row containing 3 distinct groups of spaces
+     */
     public function testDegenerateCaseWithNoRowContaining3DistinctGroupsOfSpaces(): void
     {
         $this->assertEquals(
@@ -48,6 +34,10 @@ class DiamondTest extends PHPUnit\Framework\TestCase
         );
     }
 
+    /**
+     * uuid: af8efb49-14ed-447f-8944-4cc59ce3fd76
+     * @testdox Smallest non-degenerate case with odd diamond side length
+     */
     public function testSmallestNonDegenerateCaseWithOddDiamondSideLength(): void
     {
         $this->assertEquals(
@@ -62,6 +52,10 @@ class DiamondTest extends PHPUnit\Framework\TestCase
         );
     }
 
+    /**
+     * uuid: e0c19a95-9888-4d05-86a0-fa81b9e70d1d
+     * @testdox Smallest non-degenerate case with even diamond side length
+     */
     public function testSmallestNonDegenerateCaseWithEvenDiamondSideLength(): void
     {
         $this->assertEquals(
@@ -78,6 +72,10 @@ class DiamondTest extends PHPUnit\Framework\TestCase
         );
     }
 
+    /**
+     * uuid: 82ea9aa9-4c0e-442a-b07e-40204e925944
+     * @testdox Largest possible diamond
+     */
     public function testLargestPossibleDiamond(): void
     {
         $this->assertEquals(
