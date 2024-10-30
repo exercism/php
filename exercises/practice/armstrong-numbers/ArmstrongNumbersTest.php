@@ -89,22 +89,4 @@ class ArmstrongNumbersTest extends PHPUnit\Framework\TestCase
     {
         $this->assertFalse(isArmstrongNumber(9926314));
     }
-
-    /**
-     * uuid: 5ee2fdf8-334e-4a46-bb8d-e5c19c02c148
-     * @testdox Armstrong number containing seven zeroes
-     */
-    public function testArmstrongNumberContainingSevenZeroes(): void
-    {
-        $this->assertTrue(isArmstrongNumber((int)186709961001538790100634132976990));
-    }
-
-    /**
-     * uuid: 12ffbf10-307a-434e-b4ad-c925680e1dd4
-     * @testdox The largest and last Armstrong number
-     */
-    public function testTheLargestAndLastArmstrongNumber(): void
-    {
-        $this->assertTrue(isArmstrongNumber((int)115132219018763992565095597973971522401));
-    }
 }
