@@ -48,5 +48,6 @@
     <exclude-pattern>*/*Test\.php</exclude-pattern>
     <exclude-pattern>*/.meta/*\.php</exclude-pattern>
     <exclude-pattern>src/*</exclude-pattern>
+    <exclude-pattern>contribution/*.php</exclude-pattern>
   </rule>
 </ruleset>
