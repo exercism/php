@@ -56,7 +56,7 @@ window_height(100);
 ```
 
 Functions inside classes and their instances are called methods.
-To call a method, the name is preceeded by the instance and `->`.
+To call a method, the name is preceded by the instance and `->`.
 Methods have access to the special variable `$this`, which refers to the current instance.
 
 ```php

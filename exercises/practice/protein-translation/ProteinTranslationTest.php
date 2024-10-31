@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 class ProteinTranslationTest extends PHPUnit\Framework\TestCase
 {
-    private ProteinTranslation $translater;
+    private ProteinTranslation $translator;
 
     public static function setUpBeforeClass(): void
     {
@@ -13,7 +13,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
 
     public function setUp(): void
     {
-        $this->translater = new ProteinTranslation();
+        $this->translator = new ProteinTranslation();
     }
 
     /**
@@ -22,7 +22,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testEmptyRnaSequence(): void
     {
-        $this->assertEquals([], $this->translater->getProteins(''));
+        $this->assertEquals([], $this->translator->getProteins(''));
     }
 
     /**
@@ -31,7 +31,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testMethionineRnaSequence(): void
     {
-        $this->assertEquals(['Methionine'], $this->translater->getProteins('AUG'));
+        $this->assertEquals(['Methionine'], $this->translator->getProteins('AUG'));
     }
 
     /**
@@ -40,7 +40,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testPhenylalanineRnaSequenceOne(): void
     {
-        $this->assertEquals(['Phenylalanine'], $this->translater->getProteins('UUU'));
+        $this->assertEquals(['Phenylalanine'], $this->translator->getProteins('UUU'));
     }
 
     /**
@@ -49,7 +49,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testPhenylalanineRnaSequenceTwo(): void
     {
-        $this->assertEquals(['Phenylalanine'], $this->translater->getProteins('UUC'));
+        $this->assertEquals(['Phenylalanine'], $this->translator->getProteins('UUC'));
     }
 
     /**
@@ -58,7 +58,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testLeucineRnaSequenceOne(): void
     {
-        $this->assertEquals(['Leucine'], $this->translater->getProteins('UUA'));
+        $this->assertEquals(['Leucine'], $this->translator->getProteins('UUA'));
     }
 
     /**
@@ -67,7 +67,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testLeucineRnaSequenceTwo(): void
     {
-        $this->assertEquals(['Leucine'], $this->translater->getProteins('UUG'));
+        $this->assertEquals(['Leucine'], $this->translator->getProteins('UUG'));
     }
 
     /**
@@ -76,7 +76,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testSerineRnaSequenceOne(): void
     {
-        $this->assertEquals(['Serine'], $this->translater->getProteins('UCU'));
+        $this->assertEquals(['Serine'], $this->translator->getProteins('UCU'));
     }
 
     /**
@@ -85,7 +85,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testSerineRnaSequenceTwo(): void
     {
-        $this->assertEquals(['Serine'], $this->translater->getProteins('UCC'));
+        $this->assertEquals(['Serine'], $this->translator->getProteins('UCC'));
     }
 
     /**
@@ -94,7 +94,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testSerineRnaSequenceThree(): void
     {
-        $this->assertEquals(['Serine'], $this->translater->getProteins('UCA'));
+        $this->assertEquals(['Serine'], $this->translator->getProteins('UCA'));
     }
 
     /**
@@ -103,7 +103,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testSerineRnaSequenceFour(): void
     {
-        $this->assertEquals(['Serine'], $this->translater->getProteins('UCG'));
+        $this->assertEquals(['Serine'], $this->translator->getProteins('UCG'));
     }
 
     /**
@@ -112,7 +112,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testTyrosineRnaSequenceOne(): void
     {
-        $this->assertEquals(['Tyrosine'], $this->translater->getProteins('UAU'));
+        $this->assertEquals(['Tyrosine'], $this->translator->getProteins('UAU'));
     }
 
     /**
@@ -121,7 +121,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testTyrosineRnaSequenceTwo(): void
     {
-        $this->assertEquals(['Tyrosine'], $this->translater->getProteins('UAC'));
+        $this->assertEquals(['Tyrosine'], $this->translator->getProteins('UAC'));
     }
 
     /**
@@ -130,7 +130,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testCysteineRnaSequenceOne(): void
     {
-        $this->assertEquals(['Cysteine'], $this->translater->getProteins('UGU'));
+        $this->assertEquals(['Cysteine'], $this->translator->getProteins('UGU'));
     }
 
     /**
@@ -139,7 +139,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testCysteineRnaSequenceTwo(): void
     {
-        $this->assertEquals(['Cysteine'], $this->translater->getProteins('UGC'));
+        $this->assertEquals(['Cysteine'], $this->translator->getProteins('UGC'));
     }
 
     /**
@@ -148,7 +148,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testTryptophanRnaSequence(): void
     {
-        $this->assertEquals(['Tryptophan'], $this->translater->getProteins('UGG'));
+        $this->assertEquals(['Tryptophan'], $this->translator->getProteins('UGG'));
     }
 
     /**
@@ -157,7 +157,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testStopCodonRnaSequenceOne(): void
     {
-        $this->assertEquals([], $this->translater->getProteins('UAA'));
+        $this->assertEquals([], $this->translator->getProteins('UAA'));
     }
 
     /**
@@ -166,7 +166,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testStopCodonRnaSequenceTwo(): void
     {
-        $this->assertEquals([], $this->translater->getProteins('UAG'));
+        $this->assertEquals([], $this->translator->getProteins('UAG'));
     }
 
     /**
@@ -175,7 +175,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testStopCodonRnaSequenceThree(): void
     {
-        $this->assertEquals([], $this->translater->getProteins('UGA'));
+        $this->assertEquals([], $this->translator->getProteins('UGA'));
     }
 
     /**
@@ -184,7 +184,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testToCodonsTranslateToProteins(): void
     {
-        $this->assertEquals(['Phenylalanine', 'Phenylalanine'], $this->translater->getProteins('UUUUUU'));
+        $this->assertEquals(['Phenylalanine', 'Phenylalanine'], $this->translator->getProteins('UUUUUU'));
     }
 
     /**
@@ -193,18 +193,18 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testToDifferentCodonsTranslateToProteins(): void
     {
-        $this->assertEquals(['Leucine', 'Leucine'], $this->translater->getProteins('UUAUUG'));
+        $this->assertEquals(['Leucine', 'Leucine'], $this->translator->getProteins('UUAUUG'));
     }
 
     /**
      * uuid d0f295df-fb70-425c-946c-ec2ec185388e
      * @testdox Translate RNA strand into correct protein list
      */
-    public function testTranslateRnaStrandToCorrectProteinList(): void
+    public function testTranslatoRnaStrandToCorrectProteinList(): void
     {
         $this->assertEquals(
             ['Methionine', 'Phenylalanine', 'Tryptophan'],
-            $this->translater->getProteins('AUGUUUUGG')
+            $this->translator->getProteins('AUGUUUUGG')
         );
     }
 
@@ -214,7 +214,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testTranslationStopsIfStopCodonAtBeginningOfSequence(): void
     {
-        $this->assertEquals([], $this->translater->getProteins('UAGUGG'));
+        $this->assertEquals([], $this->translator->getProteins('UAGUGG'));
     }
 
     /**
@@ -223,7 +223,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testTranslationStopsIfStopCodonAtEndOfTwoCodonSequence(): void
     {
-        $this->assertEquals(['Tryptophan'], $this->translater->getProteins('UGGUAG'));
+        $this->assertEquals(['Tryptophan'], $this->translator->getProteins('UGGUAG'));
     }
 
     /**
@@ -232,7 +232,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testTranslationStopsIfStopCodonAtEndOfThreeCodonSequence(): void
     {
-        $this->assertEquals(['Methionine', 'Phenylalanine'], $this->translater->getProteins('AUGUUUUAA'));
+        $this->assertEquals(['Methionine', 'Phenylalanine'], $this->translator->getProteins('AUGUUUUAA'));
     }
 
     /**
@@ -241,7 +241,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testTranslationStopsIfStopCodonInMiddleOfThreeCodonSequence(): void
     {
-        $this->assertEquals(['Tryptophan'], $this->translater->getProteins('UGGUAGUGG'));
+        $this->assertEquals(['Tryptophan'], $this->translator->getProteins('UGGUAGUGG'));
     }
 
     /**
@@ -252,7 +252,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals(
             ['Tryptophan', 'Cysteine', 'Tyrosine'],
-            $this->translater->getProteins('UGGUGUUAUUAAUGGUUU')
+            $this->translator->getProteins('UGGUGUUAUUAAUGGUUU')
         );
     }
 
@@ -264,7 +264,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid codon');
-        $this->translater->getProteins('XYZ');
+        $this->translator->getProteins('XYZ');
     }
 
 
@@ -276,7 +276,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid codon');
-        $this->translater->getProteins('AUGU');
+        $this->translator->getProteins('AUGU');
     }
 
     /**
@@ -285,6 +285,6 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      */
     public function testIncompleteRnaSequenceCanTranslateIfValidUntilStop(): void
     {
-        $this->assertEquals(['Phenylalanine', 'Phenylalanine'], $this->translater->getProteins('UUCUUCUAAUGGU'));
+        $this->assertEquals(['Phenylalanine', 'Phenylalanine'], $this->translator->getProteins('UUCUUCUAAUGGU'));
     }
 }
