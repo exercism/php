@@ -3,8 +3,8 @@
 ## Learning objectives
 
 - Reference to OOP
-- PHP is a multi-paradign general purpose language with OOP features, what does that mean?
-- How to use a constructor function 
+- PHP is a multi-paradigm general purpose language with OOP features, what does that mean?
+- How to use a constructor function
 - What does `$this` mean/do
 - How to create a new instance with `new`
 
@@ -23,7 +23,7 @@ The Concept this exercise unlocks is:
 
 ## Prerequisites
 
-- `funtions` as they are the basis for classes and are needed in the exercise
+- `functions` as they are the basis for classes and are needed in the exercise
 - `integers` as they are the basis for the properties underlying type
 
 ## Analyzer

@@ -78,7 +78,7 @@ function window_height()
 ```
 
 Functions inside classes and their instances are called methods.
-To call a method, the name is preceeded by the instance and `->`.
+To call a method, the name is preceded by the instance and `->`.
 A class instance is created by the `new` operation.
 Methods have access to the special variable `$this`, which refers to the current instance.
 

@@ -26,8 +26,7 @@ $add5 = makeAdderFunction(5);
 echo $add5(4); // echos 9
 ```
 
-In the function `makeAdderFunction` above, the `$number` value that is passed in is "closed" over withing the internally defined anonymous function which is then returned. Then whenever that function is executed it knows the value of the `$number` that was passed in. If you were to call this function again with another number, that would return a completely different function. It would not change the values or the functionality returned by the first function call.
-
+In the function `makeAdderFunction` above, the `$number` value that is passed in is "closed over" within the internally defined anonymous function which is then returned. Then whenever that function is executed it knows the value of the `$number` that was passed in. If you were to call this function again with another number, that would return a completely different function. It would not change the values or the functionality returned by the first function call.
 If you need to close over more than one variable, they can be added into the `use` keyword separated by a comma.
 
 PHP also has a shorter function syntax called `arrow functions`. They are required to be fairly simple. The basic form of these is:
@@ -63,7 +62,7 @@ function positiveAverage(array $numbers): float
     $total = 0;
     $count = 0;
     return array_walk(
-      $numbers, 
+      $numbers,
       function($num) use (&$count, &$total) {
           $total += abs($num);
           $count++;
