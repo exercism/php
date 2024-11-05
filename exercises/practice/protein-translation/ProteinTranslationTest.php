@@ -200,7 +200,7 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
      * uuid d0f295df-fb70-425c-946c-ec2ec185388e
      * @testdox Translate RNA strand into correct protein list
      */
-    public function testTranslatoRnaStrandToCorrectProteinList(): void
+    public function testTranslateRnaStrandIntoCorrectProteinList(): void
     {
         $this->assertEquals(
             ['Methionine', 'Phenylalanine', 'Tryptophan'],
