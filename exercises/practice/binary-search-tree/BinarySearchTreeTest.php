@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
@@ -31,12 +9,20 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         require_once 'BinarySearchTree.php';
     }
 
+    /**
+     * uuid e9c93a78-c536-4750-a336-94583d23fafa
+     * @testdox data is retained
+     */
     public function testDataIsRetained(): void
     {
         $tree = new BinarySearchTree(4);
         $this->assertEquals(4, $tree->data);
     }
 
+    /**
+     * uuid 7a95c9e8-69f6-476a-b0c4-4170cb3f7c91
+     * @testdox smaller number at left node
+     */
     public function testSmallNumberAtLeftNode(): void
     {
         $tree = new BinarySearchTree(4);
@@ -46,6 +32,10 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(2, $tree->left->data);
     }
 
+    /**
+     * uuid 22b89499-9805-4703-a159-1a6e434c1585
+     * @testdox same number at left node
+     */
     public function testSameNumberLeftNodes(): void
     {
         $tree = new BinarySearchTree(4);
@@ -55,6 +45,10 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(4, $tree->left->data);
     }
 
+    /**
+     * uuid 2e85fdde-77b1-41ed-b6ac-26ce6b663e34
+     * @testdox greater number at right node
+     */
     public function testGreaterNumberRightNode(): void
     {
         $tree = new BinarySearchTree(4);
@@ -64,6 +58,10 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(5, $tree->right->data);
     }
 
+    /**
+     * uuid dd898658-40ab-41d0-965e-7f145bf66e0b
+     * @testdox can create complex tree
+     */
     public function testCreateComplexTree(): void
     {
         $tree = new BinarySearchTree(4);
@@ -83,6 +81,10 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(7, $tree->right->right->data);
     }
 
+    /**
+     * uuid 9e0c06ef-aeca-4202-b8e4-97f1ed057d56
+     * @testdox can sort single number
+     */
     public function testCanSortSingleNode(): void
     {
         $tree = new BinarySearchTree(2);
@@ -90,6 +92,10 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals([2], $tree->getSortedData());
     }
 
+    /**
+     * uuid 425e6d07-fceb-4681-a4f4-e46920e380bb
+     * @testdox can sort if second number is smaller than first
+     */
     public function testCanSortSmallerSecondNumber(): void
     {
         $tree = new BinarySearchTree(2);
@@ -98,6 +104,10 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals([1, 2], $tree->getSortedData());
     }
 
+    /**
+     * uuid bd7532cc-6988-4259-bac8-1d50140079ab
+     * @testdox can sort if second number is same as first
+     */
     public function testCanSortSameNumbers(): void
     {
         $tree = new BinarySearchTree(2);
@@ -106,6 +116,10 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals([2, 2], $tree->getSortedData());
     }
 
+    /**
+     * uuid b6d1b3a5-9d79-44fd-9013-c83ca92ddd36
+     * @testdox can sort if second number is greater than first
+     */
     public function testCanSortGreaterSecondNumber(): void
     {
         $tree = new BinarySearchTree(2);
@@ -114,6 +128,10 @@ class BinarySearchTreeTest extends PHPUnit\Framework\TestCase
         $this->assertEquals([2, 3], $tree->getSortedData());
     }
 
+    /**
+     * uuid d00ec9bd-1288-4171-b968-d44d0808c1c8
+     * @testdox can sort complex tree
+     */
     public function testCanSortComplexTree(): void
     {
         $tree = new BinarySearchTree(2);
