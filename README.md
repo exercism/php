@@ -38,6 +38,16 @@ Execute the following command to run the tests:
 composer test:run
 ```
 
+### Run a specific test
+
+If you want to run tests for one specific exercise, you can do it with following cli command.
+
+```shell
+composer test:run -- exercise-name
+# e.g
+composer test:run -- book-store
+```
+
 This is included in `composer ci` to run the CI checks locally.
 
 ## Running Style Checker
