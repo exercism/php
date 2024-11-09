@@ -13,18 +13,12 @@ file_ext="php"
 function main {
   has_failures=0
 
-  if [ $# -ge 1 ] && [ -n "$1" ]; then
-    specific_exercise=$(find ./exercises/{practice,concept} -name $1 -type d | sort)
-    for exercise_dir in $specific_exercise; do
-        test "${exercise_dir}" "example"
-        if [[ $? -ne 0 ]]; then
-          has_failures=1
-        fi
-      done
-      return $has_failures
+  name_filter=()
+  if [ -n "$1" ]; then
+    name_filter=("-name" "$1")
   fi
 
-  all_practice_exercise_dirs=$(find ./exercises/practice -maxdepth 1 -mindepth 1 -type d | sort)
+  all_practice_exercise_dirs=$(find ./exercises/practice -maxdepth 1 -mindepth 1 -type d "${name_filter[@]}" | sort)
   for exercise_dir in $all_practice_exercise_dirs; do
     test "${exercise_dir}" "example"
     if [[ $? -ne 0 ]]; then
@@ -32,7 +26,7 @@ function main {
     fi
   done
 
-  all_concept_exercise_dirs=$(find ./exercises/concept -maxdepth 1 -mindepth 1 -type d | sort)
+  all_concept_exercise_dirs=$(find ./exercises/concept -maxdepth 1 -mindepth 1 -type d "${name_filter[@]}" | sort)
   for exercise_dir in $all_concept_exercise_dirs; do
     test "${exercise_dir}" "exemplar"
     if [[ $? -ne 0 ]]; then
