@@ -74,7 +74,7 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 4febca56-e7b7-4789-97b9-530d09ba95f0
-     * @testdox 4febca56-e7b7-4789-97b9-530d09ba95f0
+     * @testdox puzzle with seven letters
      */
     public function testPuzzleWithSevenLetter(): void
     {
