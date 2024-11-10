@@ -14,7 +14,7 @@ function main {
   has_failures=0
 
   name_filter=()
-  if [ -n "$1" ]; then
+  if [ $# -ge 1 ] && [ -n "$1" ]; then
     name_filter=("-name" "$1")
   fi
 
