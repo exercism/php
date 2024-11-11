@@ -40,6 +40,22 @@ composer test:run
 
 This is included in `composer ci` to run the CI checks locally.
 
+### Run a specific test
+
+If you want to run tests for one specific exercise, you can do it with following cli command.
+
+```shell
+composer test:run -- exercise-name
+# e.g
+composer test:run -- book-store
+```
+
+If you want to run all starting with let's say 'b' you can run
+
+```shell
+composer test:run -- "b*"
+```
+
 ## Running Style Checker
 
 This project uses a slightly [modified][local-file-phpcs-config] version of [PSR-12].
