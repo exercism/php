@@ -26,3 +26,24 @@ function encode($string)
 
     return implode('', $encoded);
 }
+
+function decode($string)
+{
+    $a_z = range('a', 'z');
+    $z_a = range('z', 'a');
+
+    $encodedString = str_replace(' ', '', $string);
+
+    $decoded = [];
+    foreach (str_split($encodedString) as $char) {
+        // Check if the character is numeric
+        if ($char >= '0' && $char <= '9') {
+            $decoded[] = $char;
+        } elseif ($char >= 'a' && $char <= 'z') {
+            // Map it from z_a back to a_z
+            $decoded[] = $a_z[array_search($char, $z_a)];
+        }
+    }
+
+    return implode('', $decoded);
+}
