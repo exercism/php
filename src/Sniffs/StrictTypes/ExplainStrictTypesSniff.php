@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Exercism\Sniffs;
+namespace Exercism\Sniffs\StrictTypes;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Fixer;
@@ -48,13 +48,13 @@ EOT;
         ];
     }
 
-    public function process(File $file, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr): void
     {
-        $this->fixer = $file->fixer;
+        $this->fixer = $phpcsFile->fixer;
         $this->position = $stackPtr;
 
-        if (!$file->findPrevious($this->tokens, $stackPtr)) {
-            $file->addFixableError(
+        if (!$phpcsFile->findPrevious($this->tokens, $stackPtr)) {
+            $phpcsFile->addFixableError(
                 'Missing explanation of declaration of strict types.',
                 $stackPtr - 1,
                 self::class
