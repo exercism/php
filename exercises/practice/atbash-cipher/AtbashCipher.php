@@ -28,3 +28,8 @@ function encode(string $text): string
 {
     throw new \BadFunctionCallException("Implement the encode function");
 }
+
+function decode(string $text): string
+{
+    throw new \BadFunctionCallException("Implement the decode function");
+}
