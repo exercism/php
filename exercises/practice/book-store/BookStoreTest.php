@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 /**
@@ -45,7 +23,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testSingleBook(): void
     {
         $basket = [1];
-        $this->assertEquals(8.0, total($basket));
+        $this->assertEquals(800, total($basket));
     }
 
     /**
@@ -55,7 +33,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testTwoSame(): void
     {
         $basket = [2, 2];
-        $this->assertEquals(16.0, total($basket));
+        $this->assertEquals(1600, total($basket));
     }
 
     /**
@@ -65,7 +43,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testEmpty(): void
     {
         $basket = [];
-        $this->assertEquals(0.0, total($basket));
+        $this->assertEquals(0, total($basket));
     }
 
     /**
@@ -75,7 +53,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testTwoDifferent(): void
     {
         $basket = [1, 2];
-        $this->assertEquals(15.2, total($basket));
+        $this->assertEquals(1520, total($basket));
     }
 
     /**
@@ -85,7 +63,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testThreeDifferent(): void
     {
         $basket = [1, 2, 3];
-        $this->assertEquals(21.60, total($basket));
+        $this->assertEquals(2160, total($basket));
     }
 
     /**
@@ -95,7 +73,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testFourDifferent(): void
     {
         $basket = [1, 2, 3, 4];
-        $this->assertEquals(25.60, total($basket));
+        $this->assertEquals(2560, total($basket));
     }
 
     /**
@@ -105,7 +83,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testFiveDifferent(): void
     {
         $basket = [1, 2, 3, 4, 5];
-        $this->assertEquals(30.00, total($basket));
+        $this->assertEquals(3000, total($basket));
     }
 
     /**
@@ -120,7 +98,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testEight(): void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 5];
-        $this->assertEquals(51.20, total($basket));
+        $this->assertEquals(5120, total($basket));
     }
 
     /**
@@ -132,7 +110,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testFourPairsPlusOne(): void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5];
-        $this->assertEquals(55.60, total($basket));
+        $this->assertEquals(5560, total($basket));
     }
 
     /**
@@ -143,7 +121,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testFivePairs(): void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
-        $this->assertEquals(60.00, total($basket));
+        $this->assertEquals(6000, total($basket));
     }
 
     /**
@@ -155,7 +133,7 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testFivePairsPlusOne(): void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1];
-        $this->assertEquals(68.00, total($basket));
+        $this->assertEquals(6800, total($basket));
     }
 
     /**
@@ -167,6 +145,6 @@ class BookStoreTest extends PHPUnit\Framework\TestCase
     public function testTwelve(): void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2];
-        $this->assertEquals(75.20, total($basket));
+        $this->assertEquals(7520, total($basket));
     }
 }
