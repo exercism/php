@@ -13,6 +13,7 @@ file_ext="php"
 function main {
   has_failures=0
 
+  local -a name_filter
   name_filter=()
   if [ $# -ge 1 ] && [ -n "$1" ]; then
     name_filter=("-name" "$1")
