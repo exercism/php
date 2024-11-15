@@ -34,7 +34,7 @@
     <exclude-pattern>*/concept/city-office/*</exclude-pattern>
     <exclude-pattern>*/concept/windowing-system/*</exclude-pattern>
   </rule>
-  <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/TypeHints/DeclareStrictTypesSniff.php">
+  <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
     <exclude-pattern>*/.meta/*\.php</exclude-pattern>
     <exclude-pattern>*/concept/*</exclude-pattern>
     <exclude-pattern>*/hello-world/*</exclude-pattern>
@@ -44,7 +44,7 @@
       <property name="spacesCountAroundEqualsSign" value="0" />
     </properties>
   </rule>
-  <rule ref="src/Sniffs/StrictTypes/ExplainStrictTypesSniff.php">
+  <rule ref="src/Exercism/Sniffs/StrictTypes/ExplainStrictTypesSniff.php">
     <exclude-pattern>*/*Test\.php</exclude-pattern>
     <exclude-pattern>*/.meta/*\.php</exclude-pattern>
     <exclude-pattern>src/*</exclude-pattern>

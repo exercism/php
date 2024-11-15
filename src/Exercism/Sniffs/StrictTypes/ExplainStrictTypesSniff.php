@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Exercism\Sniffs\StrictTypes;
+namespace Exercism\Exercism\Sniffs\StrictTypes;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Fixer;
@@ -57,7 +57,7 @@ EOT;
             $phpcsFile->addFixableError(
                 'Missing explanation of declaration of strict types.',
                 $stackPtr - 1,
-                self::class
+                'Missing'
             );
             $this->fix();
         }
