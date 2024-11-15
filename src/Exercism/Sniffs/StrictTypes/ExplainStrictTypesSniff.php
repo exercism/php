@@ -57,7 +57,7 @@ EOT;
             $phpcsFile->addFixableError(
                 'Missing explanation of declaration of strict types.',
                 $stackPtr - 1,
-                self::class
+                'Missing'
             );
             $this->fix();
         }
