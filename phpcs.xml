@@ -44,7 +44,7 @@
       <property name="spacesCountAroundEqualsSign" value="0" />
     </properties>
   </rule>
-  <rule ref="src/Sniffs/StrictTypes/ExplainStrictTypesSniff.php">
+  <rule ref="src/Exercism/Sniffs/StrictTypes/ExplainStrictTypesSniff.php">
     <exclude-pattern>*/*Test\.php</exclude-pattern>
     <exclude-pattern>*/.meta/*\.php</exclude-pattern>
     <exclude-pattern>src/*</exclude-pattern>
