@@ -13,7 +13,7 @@ file_ext="php"
 function main {
   has_failures=0
 
-  name_filter=()
+  name_filter=( "-name" "*" ) # MacOS otherwise sees unbound variable
   if [ $# -ge 1 ] && [ -n "$1" ]; then
     name_filter=("-name" "$1")
   fi
