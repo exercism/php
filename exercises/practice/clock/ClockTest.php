@@ -532,5 +532,4 @@ class ClockTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEquals(new Clock(24, 0), new Clock(0, 0));
     }
-
 }
