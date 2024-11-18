@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Exercism\Exercism\Sniffs\StrictTypes;
+namespace Exercism\Sniffs\StrictTypes;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Fixer;
