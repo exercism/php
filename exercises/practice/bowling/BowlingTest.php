@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 /**
@@ -43,6 +21,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game = new Game();
     }
 
+    /**
+     * uuid 656ae006-25c2-438c-a549-f338e7ec7441
+     * @testdox should be able to score a game with all zeros
+     */
     public function testShouldBeAbleToScoreAGameWithAllZeros(): void
     {
         $this->rollMany(20, 0);
@@ -50,6 +32,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(0, $this->game->score());
     }
 
+    /**
+     * uuid f85dcc56-cd6b-4875-81b3-e50921e3597b
+     * @testdox should be able to score a game with no strikes or spares
+     */
     public function testShouldBeAbleToScoreAGameWithNoStrikesOrSpares(): void
     {
         $this->game->roll(3);
@@ -76,6 +62,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(90, $this->game->score());
     }
 
+    /**
+     * uuid d1f56305-3ac2-4fe0-8645-0b37e3073e20
+     * @testdox a spare followed by zeros is worth ten points
+     */
     public function testASpareFollowedByZerosIsWorthTenPoints(): void
     {
         $this->game->roll(6);
@@ -85,6 +75,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(10, $this->game->score());
     }
 
+    /**
+     * uuid 0b8c8bb7-764a-4287-801a-f9e9012f8be4
+     * @testdox points scored in the roll after a spare are counted twice
+     */
     public function testPointsScoredInTheRollAfterASpareAreCountedTwice(): void
     {
         $this->game->roll(6);
@@ -95,6 +89,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(16, $this->game->score());
     }
 
+    /**
+     * uuid 4d54d502-1565-4691-84cd-f29a09c65bea
+     * @testdox consecutive spares each get a one roll bonus
+     */
     public function testConsecutiveSparesEachGetAOneRollBonus(): void
     {
         $this->game->roll(5);
@@ -107,6 +105,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(31, $this->game->score());
     }
 
+    /**
+     * uuid e5c9cf3d-abbe-4b74-ad48-34051b2b08c0
+     * @testdox a spare in the last frame gets a one roll bonus that is counted once
+     */
     public function testASpareInTheLastFrameGetsAOneRollBonusThatIsCountedOnce(): void
     {
         $this->rollMany(18, 0);
@@ -117,6 +119,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(17, $this->game->score());
     }
 
+    /**
+     * uuid 75269642-2b34-4b72-95a4-9be28ab16902
+     * @testdox a strike earns ten points in a frame with a single roll
+     */
     public function testAStrikeEarnsTenPointsInFrameWithASingleRoll(): void
     {
         $this->game->roll(10);
@@ -125,6 +131,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(10, $this->game->score());
     }
 
+    /**
+     * uuid 037f978c-5d01-4e49-bdeb-9e20a2e6f9a6
+     * @testdox points scored in the two rolls after a strike are counted twice as a bonus
+     */
     public function testPointsScoredInTheTwoRollsAfterAStrikeAreCountedTwiceAsABonus(): void
     {
         $this->game->roll(10);
@@ -135,6 +145,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(26, $this->game->score());
     }
 
+    /**
+     * uuid 1635e82b-14ec-4cd1-bce4-4ea14bd13a49
+     * @testdox consecutive strikes each get the two roll bonus
+     */
     public function testConsecutiveStrikesEachGetTheTwoRollBonus(): void
     {
         $this->game->roll(10);
@@ -147,6 +161,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(81, $this->game->score());
     }
 
+    /**
+     * uuid e483e8b6-cb4b-4959-b310-e3982030d766
+     * @testdox a strike in the last frame gets a two roll bonus that is counted once
+     */
     public function testAStrikeInTheLastFrameGetsATwoRollBonusThatIsCountedOnce(): void
     {
         $this->rollMany(18, 0);
@@ -157,6 +175,24 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(18, $this->game->score());
     }
 
+    /**
+     * uuid 9d5c87db-84bc-4e01-8e95-53350c8af1f8
+     * @testdox rolling a spare with the two roll bonus does not get a bonus roll
+     */
+    public function testAStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus(): void
+    {
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(7);
+        $this->game->roll(3);
+
+        $this->assertEquals(20, $this->game->score());
+    }
+
+    /**
+     * uuid 576faac1-7cff-4029-ad72-c16bcada79b5
+     * @testdox strikes with the two roll bonus do not get bonus rolls
+     */
     public function testRollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll(): void
     {
         $this->rollMany(18, 0);
@@ -167,16 +203,25 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(30, $this->game->score());
     }
 
-    public function testAStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus(): void
+    /**
+     * uuid efb426ec-7e15-42e6-9b96-b4fca3ec2359
+     * @testdox last two strikes followed by only last bonus with non strike points
+     */
+    public function testLastTwoStrikesFollowedByOnlyLastBonusWithNonStrikePoints(): void
     {
-        $this->rollMany(18, 0);
-        $this->game->roll(7);
-        $this->game->roll(3);
+        $this->rollMany(16, 0);
         $this->game->roll(10);
+        $this->game->roll(10);
+        $this->game->roll(0);
+        $this->game->roll(1);
 
-        $this->assertEquals(20, $this->game->score());
+        $this->assertEquals(31, $this->game->score());
     }
 
+    /**
+     * uuid 72e24404-b6c6-46af-b188-875514c0377b
+     * @testdox a strike with the one roll bonus after a spare in the last frame does not get a bonus
+     */
     public function testStrikesWithTheTwoRollBonusDoNotGetBonusRolls(): void
     {
         $this->rollMany(18, 0);
@@ -187,6 +232,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(20, $this->game->score());
     }
 
+    /**
+     * uuid 62ee4c72-8ee8-4250-b794-234f1fec17b1
+     * @testdox all strikes is a perfect gam
+     */
     public function testAllStrikesIsAPerfectGame(): void
     {
         $this->rollMany(12, 10);
@@ -194,6 +243,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(300, $this->game->score());
     }
 
+    /**
+     * uuid 1245216b-19c6-422c-b34b-6e4012d7459f
+     * @testdox rolls cannot score negative points
+     */
     public function testRollsCanNotScoreNegativePoints(): void
     {
         $this->expectException(Exception::class);
@@ -201,6 +254,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game->roll(-1);
     }
 
+    /**
+     * uuid 5fcbd206-782c-4faa-8f3a-be5c538ba841
+     * @testdox a roll cannot score more than 10 points
+     */
     public function testARollCanNotScoreMoreThan10Points(): void
     {
         $this->expectException(Exception::class);
@@ -210,6 +267,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
+    /**
+     * uuid fb023c31-d842-422d-ad7e-79ce1db23c21
+     * @testdox two rolls in a frame cannot score more than 10 points
+     */
     public function testTwoRollsInAFrameCanNotScoreMoreThan10Points(): void
     {
         $this->expectException(Exception::class);
@@ -220,6 +281,26 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
+    /**
+     * uuid 6082d689-d677-4214-80d7-99940189381b
+     * @testdox bonus roll after a strike in the last frame cannot score more than 10 points
+     */
+    public function testBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points(): void
+    {
+        $this->expectException(Exception::class);
+
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(11);
+
+        $this->game->score();
+    }
+
+
+    /**
+     * uuid e9565fe6-510a-4675-ba6b-733a56767a45
+     * @testdox two bonus rolls after a strike in the last frame cannot score more than 10 points
+     */
     public function testTwoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points(): void
     {
         $this->expectException(Exception::class);
@@ -232,6 +313,54 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
+    /**
+     * uuid 2f6acf99-448e-4282-8103-0b9c7df99c3d
+     * @testdox two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike
+     */
+    public function testTwoBonusRollsAfterAStrikeInTheLastFramCanScoreMoreThan10PointsIfOneIsAStrike(): void
+    {
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(10);
+        $this->game->roll(6);
+
+        $this->assertEquals(26, $this->game->score());
+    }
+
+    /**
+     * uuid 6380495a-8bc4-4cdb-a59f-5f0212dbed01
+     * @testdox the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike
+     */
+    public function testTheSecondBonusRollsAfterAStrikeInTheLastFrameCannotBeAStrikeIfTheFirstOneIsNotAStrike(): void
+    {
+        $this->expectException(Exception::class);
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(6);
+        $this->game->roll(10);
+
+        $this->game->score();
+    }
+
+    /**
+     * uuid 2b2976ea-446c-47a3-9817-42777f09fe7e
+     * @testdox second bonus roll after a strike in the last frame cannot score more than 10 points
+     */
+    public function testSecondBonusRollAfterAStrikeInTheLastFrameCannotScoreMoreThan10Points(): void
+    {
+        $this->expectException(Exception::class);
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(10);
+        $this->game->roll(11);
+
+        $this->game->score();
+    }
+
+    /**
+     * uuid 29220245-ac8d-463d-bc19-98a94cfada8a
+     * @testdox an unstarted game cannot be scored
+     */
     public function testAnUnstartedGameCanNotBeScored(): void
     {
         $this->expectException(Exception::class);
@@ -239,6 +368,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
+    /**
+     * uuid 4473dc5d-1f86-486f-bf79-426a52ddc955
+     * @testdox an incomplete game cannot be scored
+     */
     public function testAnIncompleteGameCanNotBeScored(): void
     {
         $this->expectException(Exception::class);
@@ -248,14 +381,23 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
-    public function testAGameWithMoreThanTenFramesCanNotBeScored(): void
+    /**
+     * uuid 2ccb8980-1b37-4988-b7d1-e5701c317df3
+     * @testdox cannot roll if game already has ten frames
+     */
+    public function testCannotRollIfGameAlreadyHasTenFrames(): void
     {
         $this->expectException(Exception::class);
-        $this->rollMany(21, 0);
+        $this->rollMany(20, 0);
+        $this->game->roll(0);
 
         $this->game->score();
     }
 
+    /**
+     * uuid 4864f09b-9df3-4b65-9924-c595ed236f1b
+     * @testdox bonus rolls for a strike in the last frame must be rolled before score can be calculated
+     */
     public function testBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated(): void
     {
         $this->expectException(Exception::class);
@@ -265,6 +407,10 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
+    /**
+     * uuid 537f4e37-4b51-4d1c-97e2-986eb37b2ac1
+     * @testdox both bonus rolls for a strike in the last frame must be rolled before score can be calculated
+     */
     public function testBothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated(): void
     {
         $this->expectException(Exception::class);
@@ -275,12 +421,48 @@ class BowlingTest extends PHPUnit\Framework\TestCase
         $this->game->score();
     }
 
+    /**
+     * uuid 8134e8c1-4201-4197-bf9f-1431afcde4b9
+     * @testdox bonus roll for a spare in the last frame must be rolled before score can be calculated
+     */
     public function testBonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated(): void
     {
         $this->expectException(Exception::class);
         $this->rollMany(18, 0);
         $this->game->roll(7);
         $this->game->roll(3);
+
+        $this->game->score();
+    }
+
+    /**
+     * uuid 9d4a9a55-134a-4bad-bae8-3babf84bd570
+     * @testdox cannot roll after bonus roll for spare
+     */
+    public function testCannotRollAfterBonusRollForSpare(): void
+    {
+        $this->expectException(Exception::class);
+        $this->rollMany(18, 0);
+        $this->game->roll(7);
+        $this->game->roll(3);
+        $this->game->roll(2);
+        $this->game->roll(2);
+
+        $this->game->score();
+    }
+
+    /**
+     * uuid d3e02652-a799-4ae3-b53b-68582cc604be
+     * @testdox cannot roll after bonus rolls for strike
+     */
+    public function testCannotRollAfterBonusRollsForStrike(): void
+    {
+        $this->expectException(Exception::class);
+        $this->rollMany(18, 0);
+        $this->game->roll(10);
+        $this->game->roll(3);
+        $this->game->roll(2);
+        $this->game->roll(2);
 
         $this->game->score();
     }
