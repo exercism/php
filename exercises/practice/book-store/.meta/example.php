@@ -1,41 +1,42 @@
 <?php
 
-declare(strict_types=1);
-
 function total(array $items): int
 {
-    return calculate($items, 0);
-}
+    $groups = array_fill(1, 5, 0); // Groups of books
+    $sets = array_fill(1, 5, 0);   // Sets by size
 
-function calculate(array $items, int $totalCents): int
-{
-    if (empty($items)) {
-        return $totalCents;
+    // Group the basket
+    foreach ($items as $bookId) {
+        $groups[$bookId]++;
     }
 
-    $group = array_unique($items);
-    $totalMinCents = PHP_INT_MAX;
-
-    for ($i = count($group); $i > 0; $i--) {
-        $itemsToRemove = array_flip(array_slice($group, 0, $i));
-        $itemsRemaining = array_filter($items, function ($x) use (&$itemsToRemove) {
-            if (array_key_exists($x, $itemsToRemove)) {
-                unset($itemsToRemove[$x]);
-                return false;
+    // Arrange groups into counts by set size
+    while (array_sum($groups) > 0) {
+        $setSize = 0;
+        foreach ($groups as $key => $count) {
+            if ($count > 0) {
+                $setSize++;
+                $groups[$key]--;
             }
-            return true;
-        });
-
-        $totalCurrentCents = calculate($itemsRemaining, $totalCents + totalForGroup($i));
-        $totalMinCents = min($totalMinCents, $totalCurrentCents);
+        }
+        if ($setSize > 0) {
+            $sets[$setSize]++;
+        }
     }
 
-    return $totalMinCents;
-}
+    // Replace each 3set+5set with two 4sets
+    while ($sets[3] > 0 && $sets[5] > 0) {
+        $sets[3]--;
+        $sets[5]--;
+        $sets[4] += 2;
+    }
 
-function totalForGroup(int $count): int
-{
-    $discount = [0, 0, 0.05, 0.1, 0.2, 0.25];
-    $price = 8;
-    return intval($price * $count * (1 - $discount[$count]) * 100);
+    // Calculate the total cost
+    $cost = 800 * $sets[1] +
+        (800 * 2 * 0.95) * $sets[2] +
+        (800 * 3 * 0.9) * $sets[3] +
+        (800 * 4 * 0.8) * $sets[4] +
+        (800 * 5 * 0.75) * $sets[5];
+
+    return (int)$cost;
 }
