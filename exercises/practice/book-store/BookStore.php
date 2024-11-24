@@ -24,7 +24,10 @@
 
 declare(strict_types=1);
 
-function total(array $items): float
+/**
+ * Note: we expect the total in cents (1$ = 100 cents).
+ */
+function total(array $items): int
 {
     throw new \BadFunctionCallException("Implement the total function");
 }
