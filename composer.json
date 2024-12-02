@@ -1,7 +1,6 @@
 {
   "name": "exercism/php",
   "autoload": {
-    "Exercism\\Sniffs\\": "src/Exercism/Sniffs",
     "Exercism\\Exercises\\": "exercises"
   },
   "config": {
