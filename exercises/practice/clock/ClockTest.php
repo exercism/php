@@ -303,7 +303,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 37336cac-5ede-43a5-9026-d426cbe40354
-     * @testdox subtract minutes
+     * @testdox Subtract minutes - subtract minutes
      */
     public function testSubtractMinutes(): void
     {
