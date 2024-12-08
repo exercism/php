@@ -173,7 +173,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * uuid 5d6bb225-130f-4084-84fd-9e0df8996f2a
+     * uuid d483ceef-b520-4f0c-b94a-8d2d58cf0484
      * @testdox negative minutes roll over continuously
      */
     public function testNegativeMinutesRollOverContinuously(): void
