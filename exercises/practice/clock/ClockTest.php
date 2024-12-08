@@ -11,7 +11,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid a577bacc-106b-496e-9792-b3083ea8705e
-     * @testdox on the hour
+     * @testdox Create a new clock with an initial time - on the hour
      */
     public function testOnTheHour(): void
     {
