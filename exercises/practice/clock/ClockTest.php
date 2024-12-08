@@ -391,7 +391,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid f2fdad51-499f-4c9b-a791-b28c9282e311
-     * @testdox clocks with same time
+     * @testdox Compare two clocks for equality - clocks with same time
      */
     public function testClocksWithSameTime(): void
     {
