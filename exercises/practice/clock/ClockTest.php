@@ -215,7 +215,7 @@ class ClockTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid d098e723-ad29-4ef9-997a-2693c4c9d89a
-     * @testdox Add minutes
+     * @testdox Add minutes - add minutes
      */
     public function testAddMinutes()
     {
