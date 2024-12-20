@@ -26,6 +26,17 @@ declare(strict_types=1);
 
 class Clock
 {
+    /**
+     * This class implements PHP's magic method __toString().
+     *
+     * By implementing this method, the class adheres to the `Stringable` interface.
+     * When an object of this class is used in string context (e.g., echo or string cast),
+     * this method is automatically called.
+     *
+     * More on `Stringable`: https://www.php.net/manual/en/class.stringable.php
+     *
+     * @return string The string representation of the Clock object
+     */
     public function __toString(): string
     {
         throw new \BadMethodCallException("Implement the __toString function");
