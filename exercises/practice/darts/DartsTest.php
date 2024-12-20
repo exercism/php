@@ -15,8 +15,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testMissedTarget(): void
     {
-        $board = new Darts(-9, 9);
-        $this->assertEquals(0, $board->score);
+        $this->assertEquals(0, calculateScore(-9.0, 9.0));
     }
 
     /**
@@ -25,8 +24,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testInOuterCircle(): void
     {
-        $board = new Darts(0, 10);
-        $this->assertEquals(1, $board->score);
+        $this->assertEquals(1, calculateScore(0.0, 10.0));
     }
 
     /**
@@ -35,8 +33,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testInMiddleCircle(): void
     {
-        $board = new Darts(-5, 0);
-        $this->assertEquals(5, $board->score);
+        $this->assertEquals(5, calculateScore(-5.0, 0.0));
     }
 
     /**
@@ -45,8 +42,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testInInnerCircle(): void
     {
-        $board = new Darts(0, -1);
-        $this->assertEquals(10, $board->score);
+        $this->assertEquals(10, calculateScore(0.0, -1.0));
     }
 
     /**
@@ -55,8 +51,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testInCenter(): void
     {
-        $board = new Darts(0, 0);
-        $this->assertEquals(10, $board->score);
+        $this->assertEquals(10, calculateScore(0.0, 0.0));
     }
 
     /**
@@ -65,8 +60,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testNearCenter(): void
     {
-        $board = new Darts(-0.1, -0.1);
-        $this->assertEquals(10, $board->score);
+        $this->assertEquals(10, calculateScore(-0.1, -0.1));
     }
 
     /**
@@ -75,8 +69,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testJustInsideCenter(): void
     {
-        $board = new Darts(0.7, 0.7);
-        $this->assertEquals(10, $board->score);
+        $this->assertEquals(10, calculateScore(0.7, 0.7));
     }
 
     /**
@@ -85,8 +78,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testJustOutsideCenter(): void
     {
-        $board = new Darts(0.8, -0.8);
-        $this->assertEquals(5, $board->score);
+        $this->assertEquals(5, calculateScore(0.8, -0.8));
     }
 
     /**
@@ -95,8 +87,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testJustWithinMiddleCircle(): void
     {
-        $board = new Darts(-3.5, 3.5);
-        $this->assertEquals(5, $board->score);
+        $this->assertEquals(5, calculateScore(-3.5, 3.5));
     }
 
     /**
@@ -105,8 +96,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testJustOutsideMiddleCircle(): void
     {
-        $board = new Darts(-3.6, -3.6);
-        $this->assertEquals(1, $board->score);
+        $this->assertEquals(1, calculateScore(-3.6, -3.6));
     }
 
     /**
@@ -115,8 +105,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testJustInsideOuterCircle(): void
     {
-        $board = new Darts(-7.0, 7.0);
-        $this->assertEquals(1, $board->score);
+        $this->assertEquals(1, calculateScore(-7.0, 7.0));
     }
 
     /**
@@ -125,8 +114,7 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testJustOutsideOuterCircle(): void
     {
-        $board = new Darts(7.1, -7.1);
-        $this->assertEquals(0, $board->score);
+        $this->assertEquals(0, calculateScore(7.1, -7.1));
     }
 
     /**
@@ -135,7 +123,6 @@ class DartsTest extends PHPUnit\Framework\TestCase
      */
     public function testAsymmetricPositionBetweenInnerAndOuterCircles(): void
     {
-        $board = new Darts(0.5, -4);
-        $this->assertEquals(5, $board->score);
+        $this->assertEquals(5, calculateScore(0.5, -4));
     }
 }
