@@ -26,7 +26,7 @@ class EtlTest extends PHPUnit\Framework\TestCase
      */
     public function testTransformMoreValues(): void
     {
-        $old = ['1' => str_split('AEIOU')];
+        $old = [1 => ["A", "E", "I", "O", "U"]];
         $expected = ['a' => 1, 'e' => 1, 'i' => 1, 'o' => 1, 'u' => 1];
         $this->assertEquals($expected, transform($old));
     }
