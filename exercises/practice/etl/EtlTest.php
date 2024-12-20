@@ -26,7 +26,7 @@ class EtlTest extends PHPUnit\Framework\TestCase
      */
     public function testTransformMoreValues(): void
     {
-        $old = [1 => ["A", "E", "I", "O", "U"]];
+        $old = [1 => ['A', 'E', 'I', 'O', 'U']];
         $expected = ['a' => 1, 'e' => 1, 'i' => 1, 'o' => 1, 'u' => 1];
         $this->assertEquals($expected, transform($old));
     }
@@ -37,7 +37,7 @@ class EtlTest extends PHPUnit\Framework\TestCase
      */
     public function testTransformMoreKeys(): void
     {
-        $old = ['1' => str_split('AE'), '2' => str_split('DG')];
+        $old = [1 => ['A', 'E'], 2 => ['D', 'G']];
         $expected = ['a' => 1, 'e' => 1, 'd' => 2, 'g' => 2];
         $this->assertEquals($expected, transform($old));
     }
@@ -49,13 +49,13 @@ class EtlTest extends PHPUnit\Framework\TestCase
     public function testTransformFullDataset(): void
     {
         $old = [
-            '1' => str_split('AEIOULNRST'),
-            '2' => str_split('DG'),
-            '3' => str_split('BCMP'),
-            '4' => str_split('FHVWY'),
-            '5' => str_split('K'),
-            '8' => str_split('JX'),
-            '10' => str_split('QZ'),
+            1 => ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
+            2 => ['D', 'G'],
+            3 => ['B', 'C', 'M', 'P'],
+            4 => ['F', 'H', 'V', 'W', 'Y'],
+            5 => ['K'],
+            8 => ['J', 'X'],
+            10 => ['Q', 'Z'],
         ];
         $expected = [
             'a' => 1, 'b' => 3, 'c' => 3, 'd' => 2, 'e' => 1,
