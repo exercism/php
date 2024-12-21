@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class EtlTest extends PHPUnit\Framework\TestCase
@@ -31,6 +9,10 @@ class EtlTest extends PHPUnit\Framework\TestCase
         require_once 'Etl.php';
     }
 
+    /**
+     * uuid 78a7a9f9-4490-4a47-8ee9-5a38bb47d28f
+     * @testdox single letter
+     */
     public function testTransformOneValue(): void
     {
         $old = ['1' => ['A']];
@@ -38,30 +20,42 @@ class EtlTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, transform($old));
     }
 
+    /**
+     * uuid 60dbd000-451d-44c7-bdbb-97c73ac1f497
+     * @testdox single score with multiple letters
+     */
     public function testTransformMoreValues(): void
     {
-        $old = ['1' => str_split('AEIOU')];
+        $old = [1 => ['A', 'E', 'I', 'O', 'U']];
         $expected = ['a' => 1, 'e' => 1, 'i' => 1, 'o' => 1, 'u' => 1];
         $this->assertEquals($expected, transform($old));
     }
 
+    /**
+     * uuid f5c5de0c-301f-4fdd-a0e5-df97d4214f54
+     * @testdox multiple scores with multiple letters
+     */
     public function testTransformMoreKeys(): void
     {
-        $old = ['1' => str_split('AE'), '2' => str_split('DG')];
+        $old = [1 => ['A', 'E'], 2 => ['D', 'G']];
         $expected = ['a' => 1, 'e' => 1, 'd' => 2, 'g' => 2];
         $this->assertEquals($expected, transform($old));
     }
 
+    /**
+     * uuid 5db8ea89-ecb4-4dcd-902f-2b418cc87b9d
+     * @testdox multiple scores with differing numbers of letters
+     */
     public function testTransformFullDataset(): void
     {
         $old = [
-            '1' => str_split('AEIOULNRST'),
-            '2' => str_split('DG'),
-            '3' => str_split('BCMP'),
-            '4' => str_split('FHVWY'),
-            '5' => str_split('K'),
-            '8' => str_split('JX'),
-            '10' => str_split('QZ'),
+            1 => ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
+            2 => ['D', 'G'],
+            3 => ['B', 'C', 'M', 'P'],
+            4 => ['F', 'H', 'V', 'W', 'Y'],
+            5 => ['K'],
+            8 => ['J', 'X'],
+            10 => ['Q', 'Z'],
         ];
         $expected = [
             'a' => 1, 'b' => 3, 'c' => 3, 'd' => 2, 'e' => 1,
