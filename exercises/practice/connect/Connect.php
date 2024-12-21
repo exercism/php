@@ -24,7 +24,7 @@
 
 declare(strict_types=1);
 
-function resultFor(array $lines)
+function winner(array $lines): ?string
 {
-    throw new \BadFunctionCallException("Implement the resultFor method");
+    throw new \BadFunctionCallException("Implement the winner method");
 }

@@ -22,31 +22,27 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "   . . . . .",
             "    . . . . .",
         ];
-        $this->assertEquals(null, resultFor($this->makeBoard($lines)));
+        $this->assertEquals(null, winner($lines));
     }
 
     /**
      * uuid 298b94c0-b46d-45d8-b34b-0fa2ea71f0a4
      * @testdox X can win on a 1x1 board
-     *
-     * @depends testEmptyBoardHasNoWinner
      */
     public function testOneByOneBoardBlack(): void
     {
         $lines = ["X"];
-        $this->assertEquals("black", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("black", winner($lines));
     }
 
     /**
      * uuid 763bbae0-cb8f-4f28-bc21-5be16a5722dc
      * @testdox O can win on a 1x1 board
-     *
-     * @depends testEmptyBoardHasNoWinner
      */
     public function testOneByOneBoardWhite(): void
     {
         $lines = ["O"];
-        $this->assertEquals("white", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("white", winner($lines));
     }
 
     /**
@@ -61,7 +57,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "  X . . X",
             "   X O O O",
         ];
-        $this->assertEquals("", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("", winner($lines));
     }
 
     /**
@@ -77,7 +73,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "   . O X .",
             "    X X O O",
         ];
-        $this->assertEquals("", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("", winner($lines));
     }
 
     /**
@@ -93,7 +89,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "   . O . X",
             "    . . O .",
         ];
-        $this->assertEquals("", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("", winner($lines));
     }
 
     /**
@@ -109,7 +105,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "   X X O X",
             "    . O X .",
         ];
-        $this->assertEquals("black", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("black", winner($lines));
     }
 
     /**
@@ -125,7 +121,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "   X X O X",
             "    . O X .",
         ];
-        $this->assertEquals("white", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("white", winner($lines));
     }
 
     /**
@@ -141,7 +137,7 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "   . X X . .",
             "    O O O O O",
         ];
-        $this->assertEquals("black", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("black", winner($lines));
     }
 
     /**
@@ -161,16 +157,6 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "       O O O O O O O X O",
             "        X X X X X X X X O",
         ];
-        $this->assertEquals("black", resultFor($this->makeBoard($lines)));
-    }
-
-    /**
-     * Strip off the spaces which are only for readability.
-     */
-    private function makeBoard($lines): array
-    {
-        return array_map(function ($line) {
-            return str_replace(" ", "", $line);
-        }, $lines);
+        $this->assertEquals("black", winner($lines));
     }
 }

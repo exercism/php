@@ -96,40 +96,14 @@ class Board
         }
         return $coords;
     }
-
-    // Prints the board, occasionally useful for debugging.
-    // Capital letters indicate a connect flag has been set.
-    public function dump(): void
-    {
-        print "\n";
-        for ($y = 0; $y < $this->height; $y++) {
-            print str_repeat(" ", $y);
-            for ($x = 0; $x < $this->width; $x++) {
-                $f = $this->fields[$y][$x];
-                if ($f & WHITE) {
-                    if ($f & WHITE_CONNECT) {
-                        print "O";
-                    } else {
-                        print "o";
-                    }
-                } elseif ($f & BLACK) {
-                    if ($f & BLACK_CONNECT) {
-                        print "X";
-                    } else {
-                        print "x";
-                    }
-                } else {
-                    print ".";
-                }
-                print " ";
-            }
-            print "\n";
-        }
-    }
 }
 
-function resultFor(array $lines)
+function winner(array $lines): ?string
 {
+    $lines = array_map(function ($line) {
+        return str_replace(" ", "", $line);
+    }, $lines);
+
     $board = new Board($lines);
     // Order of checking black and white doesn't matter, only one can win.
     foreach ($board->blackStartCoords() as $c) {
@@ -145,7 +119,7 @@ function resultFor(array $lines)
     return null;
 }
 
-function flood($board, $c, $colour_flag, $connect_flag)
+function flood($board, $c, $colour_flag, $connect_flag): bool
 {
     $f = $board->at($c);
     $is_colour = $f & $colour_flag;
