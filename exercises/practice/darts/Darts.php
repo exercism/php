@@ -24,7 +24,7 @@
 
 declare(strict_types=1);
 
-function __construct(float $xAxis, float $yAxis)
+function score(float $xAxis, float $yAxis): int
 {
-    throw new BadFunctionCallException("Please implement the Darts class!");
+    throw new BadFunctionCallException("Please implement the __FUNCTION__ function!");
 }

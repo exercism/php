@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function calculateScore(float $xAxis, float $yAxis): int
+function score(float $xAxis, float $yAxis): int
 {
     $location = $xAxis ** 2 + $yAxis ** 2;
 
