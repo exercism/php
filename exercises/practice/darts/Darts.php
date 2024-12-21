@@ -24,12 +24,7 @@
 
 declare(strict_types=1);
 
-class Darts
+function score(float $xAxis, float $yAxis): int
 {
-    public int $score = 0;
-
-    public function __construct(float $xAxis, float $yAxis)
-    {
-        throw new BadFunctionCallException("Please implement the Darts class!");
-    }
+    throw new BadFunctionCallException("Please implement the __FUNCTION__ function!");
 }
