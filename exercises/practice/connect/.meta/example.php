@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 const NOTHING = 0;
@@ -118,40 +96,14 @@ class Board
         }
         return $coords;
     }
-
-    // Prints the board, occasionally useful for debugging.
-    // Capital letters indicate a connect flag has been set.
-    public function dump(): void
-    {
-        print "\n";
-        for ($y = 0; $y < $this->height; $y++) {
-            print str_repeat(" ", $y);
-            for ($x = 0; $x < $this->width; $x++) {
-                $f = $this->fields[$y][$x];
-                if ($f & WHITE) {
-                    if ($f & WHITE_CONNECT) {
-                        print "O";
-                    } else {
-                        print "o";
-                    }
-                } elseif ($f & BLACK) {
-                    if ($f & BLACK_CONNECT) {
-                        print "X";
-                    } else {
-                        print "x";
-                    }
-                } else {
-                    print ".";
-                }
-                print " ";
-            }
-            print "\n";
-        }
-    }
 }
 
-function resultFor(array $lines)
+function winner(array $lines): ?string
 {
+    $lines = array_map(function ($line) {
+        return str_replace(" ", "", $line);
+    }, $lines);
+
     $board = new Board($lines);
     // Order of checking black and white doesn't matter, only one can win.
     foreach ($board->blackStartCoords() as $c) {
@@ -167,7 +119,7 @@ function resultFor(array $lines)
     return null;
 }
 
-function flood($board, $c, $colour_flag, $connect_flag)
+function flood($board, $c, $colour_flag, $connect_flag): bool
 {
     $f = $board->at($c);
     $is_colour = $f & $colour_flag;

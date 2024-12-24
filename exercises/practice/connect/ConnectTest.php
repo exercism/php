@@ -1,27 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class ConnectTest extends PHPUnit\Framework\TestCase
@@ -32,15 +10,9 @@ class ConnectTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Strip off the spaces which are only for readability.
+     * uuid 6eff0df4-3e92-478d-9b54-d3e8b354db56
+     * @testdox an empty board has no winner
      */
-    private function makeBoard($lines): array
-    {
-        return array_map(function ($line) {
-            return str_replace(" ", "", $line);
-        }, $lines);
-    }
-
     public function testEmptyBoardHasNoWinner(): void
     {
         $lines = [
@@ -50,118 +22,49 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "   . . . . .",
             "    . . . . .",
         ];
-        $this->assertEquals(null, resultFor($this->makeBoard($lines)));
+        $this->assertEquals(null, winner($lines));
     }
 
     /**
-     * @depends testEmptyBoardHasNoWinner
+     * uuid 298b94c0-b46d-45d8-b34b-0fa2ea71f0a4
+     * @testdox X can win on a 1x1 board
      */
     public function testOneByOneBoardBlack(): void
     {
         $lines = ["X"];
-        $this->assertEquals("black", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("black", winner($lines));
     }
 
     /**
-     * @depends testEmptyBoardHasNoWinner
+     * uuid 763bbae0-cb8f-4f28-bc21-5be16a5722dc
+     * @testdox O can win on a 1x1 board
      */
     public function testOneByOneBoardWhite(): void
     {
         $lines = ["O"];
-        $this->assertEquals("white", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("white", winner($lines));
     }
 
     /**
-     * @depends testOneByOneBoardBlack
-     * @depends testOneByOneBoardWhite
+     * uuid 819fde60-9ae2-485e-a024-cbb8ea68751b
+     * @testdox only edges does not make a winner
      */
-    public function testConvultedPath(): void
+    public function testOnlyEgesDoesNotMakeAWinner(): void
     {
         $lines = [
-            ". X X . .",
-            " X . X . X",
-            "  . X . X .",
-            "   . X X . .",
-            "    O O O O O",
+            "O O O X",
+            " X . . X",
+            "  X . . X",
+            "   X O O O",
         ];
-        $this->assertEquals("black", resultFor($this->makeBoard($lines)));
+        $this->assertEquals("", winner($lines));
     }
 
     /**
-     * @depends testConvultedPath
+     * uuid 2c56a0d5-9528-41e5-b92b-499dfe08506c
+     * @testdox illegal diagonal does not make a winner
      */
-    public function testRectangleWhiteWins(): void
-    {
-        $lines = [
-            ". O . .",
-            " O X X X",
-            "  O O O .",
-            "   X X O X",
-            "    . O X .",
-        ];
-        $this->assertEquals("white", resultFor($this->makeBoard($lines)));
-    }
-
-    /**
-     * @depends testConvultedPath
-     */
-    public function testRectangleBlackWins(): void
-    {
-        $lines = [
-            ". O . .",
-            " O X X X",
-            "  O X O .",
-            "   X X O X",
-            "    . O X .",
-        ];
-        $this->assertEquals("black", resultFor($this->makeBoard($lines)));
-    }
-
-    /**
-     * @depends testRectangleWhiteWins
-     * @depends testRectangleBlackWins
-     */
-    public function testSpiralBlackWins(): void
-    {
-        $lines = [
-            "OXXXXXXXX",
-            "OXOOOOOOO",
-            "OXOXXXXXO",
-            "OXOXOOOXO",
-            "OXOXXXOXO",
-            "OXOOOXOXO",
-            "OXXXXXOXO",
-            "OOOOOOOXO",
-            "XXXXXXXXO",
-        ];
-        $this->assertEquals("black", resultFor($this->makeBoard($lines)));
-    }
-
-    /**
-     * @depends testRectangleWhiteWins
-     * @depends testRectangleBlackWins
-     */
-    public function testSpiralNobodyWins(): void
-    {
-        $lines = [
-            "OXXXXXXXX",
-            "OXOOOOOOO",
-            "OXOXXXXXO",
-            "OXOXOOOXO",
-            "OXOX.XOXO",
-            "OXOOOXOXO",
-            "OXXXXXOXO",
-            "OOOOOOOXO",
-            "XXXXXXXXO",
-        ];
-        $this->assertEquals(null, resultFor($this->makeBoard($lines)));
-    }
-
-    /**
-     * @depends testSpiralBlackWins
-     * @depends testSpiralNobodyWins
-     */
-    public function testIllegalDiagonalNobodyWins(): void
+    public function testIllegalDiagonalDoesNotMakeAWinner(): void
     {
         $lines = [
             "X O . .",
@@ -170,7 +73,90 @@ class ConnectTest extends PHPUnit\Framework\TestCase
             "   . O X .",
             "    X X O O",
         ];
+        $this->assertEquals("", winner($lines));
+    }
 
-        $this->assertEquals(null, resultFor($this->makeBoard($lines)));
+    /**
+     * uuid 41cce3ef-43ca-4963-970a-c05d39aa1cc1
+     * @testdox nobody wins crossing adjacent angles
+     */
+    public function testNobodyWinsCrossingAdjacentAngles(): void
+    {
+        $lines = [
+            "X . . .",
+            " . X O .",
+            "  O . X O",
+            "   . O . X",
+            "    . . O .",
+        ];
+        $this->assertEquals("", winner($lines));
+    }
+
+    /**
+     * uuid cd61c143-92f6-4a8d-84d9-cb2b359e226b
+     * @testdox X wins crossing from left to right
+     */
+    public function testXWinsCrossingFromLeftToRight(): void
+    {
+        $lines = [
+            ". O . .",
+            " O X X X",
+            "  O X O .",
+            "   X X O X",
+            "    . O X .",
+        ];
+        $this->assertEquals("black", winner($lines));
+    }
+
+    /**
+     * uuid 73d1eda6-16ab-4460-9904-b5f5dd401d0b
+     * @testdox O wins crossing from top to bottom
+     */
+    public function testOWinsCrossingFromTopToBottom(): void
+    {
+        $lines = [
+            ". O . .",
+            " O X X X",
+            "  O O O .",
+            "   X X O X",
+            "    . O X .",
+        ];
+        $this->assertEquals("white", winner($lines));
+    }
+
+    /**
+     * uuid c3a2a550-944a-4637-8b3f-1e1bf1340a3d
+     * @testdox X wins using a convoluted path
+     */
+    public function testXWinsUsingAConvolutedPath(): void
+    {
+        $lines = [
+            ". X X . .",
+            " X . X . X",
+            "  . X . X .",
+            "   . X X . .",
+            "    O O O O O",
+        ];
+        $this->assertEquals("black", winner($lines));
+    }
+
+    /**
+     * uuid 17e76fa8-f731-4db7-92ad-ed2a285d31f3
+     * @testdox X wins using a spiral path
+     */
+    public function testXWinsUsingASpiralPath(): void
+    {
+        $lines = [
+            "O X X X X X X X X",
+            " O X O O O O O O O",
+            "  O X O X X X X X O",
+            "   O X O X O O O X O",
+            "    O X O X X X O X O",
+            "     O X O O O X O X O",
+            "      O X X X X X O X O",
+            "       O O O O O O O X O",
+            "        X X X X X X X X O",
+        ];
+        $this->assertEquals("black", winner($lines));
     }
 }
