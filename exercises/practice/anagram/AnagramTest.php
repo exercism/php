@@ -15,7 +15,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testNoMatches(): void
     {
-        $this->assertEqualsCanonicalizing([], detectAnagrams('diaper', ['hello', 'world', 'zombies', 'pants']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('diaper', ['hello', 'world', 'zombies', 'pants'])));
     }
 
     /**
