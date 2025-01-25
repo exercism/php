@@ -156,7 +156,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testWordsOtherThanThemselvesCanBeAnagrams(): void
     {
-        $this->assertEqualsCanonicalizing(['Silent'], detectAnagrams('LISTEN', ['LISTEN', 'Silent']));
+        $this->assertEqualsCanonicalizing(['Silent'], array_values(detectAnagrams('LISTEN', ['LISTEN', 'Silent'])));
     }
 
     /**
