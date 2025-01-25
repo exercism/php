@@ -45,7 +45,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsAnagram(): void
     {
-        $this->assertEqualsCanonicalizing(['inlets'], detectAnagrams('listen', ['enlists', 'google', 'inlets', 'banana']));
+        $this->assertEqualsCanonicalizing(['inlets'], array_values(detectAnagrams('listen', ['enlists', 'google', 'inlets', 'banana'])));
     }
 
     /**
