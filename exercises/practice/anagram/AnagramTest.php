@@ -147,7 +147,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testWordsAreNotAnagramsOfThemselvesEvenIfLetterCaseIsCompletelyDifferent(): void
     {
-        $this->assertEqualsCanonicalizing([], detectAnagrams('BANANA', ['banana']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('BANANA', ['banana'])));
     }
 
     /**
