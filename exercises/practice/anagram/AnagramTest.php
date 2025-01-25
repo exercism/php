@@ -15,7 +15,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testNoMatches(): void
     {
-        $this->assertEquals([], detectAnagrams('diaper', ['hello', 'world', 'zombies', 'pants']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('diaper', ['hello', 'world', 'zombies', 'pants'])));
     }
 
     /**
@@ -24,9 +24,9 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsTwoAnagrams(): void
     {
-        $this->assertEquals(
+        $this->assertEqualsCanonicalizing(
             ['lemons', 'melons'],
-            detectAnagrams('solemn', ['lemons', 'cherry', 'melons'])
+            array_values(detectAnagrams('solemn', ['lemons', 'cherry', 'melons']))
         );
     }
 
@@ -36,7 +36,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDoesNotDetectAnagramSubsets(): void
     {
-        $this->assertEquals([], detectAnagrams('good', ['dog', 'goody']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('good', ['dog', 'goody'])));
     }
 
     /**
@@ -45,7 +45,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsAnagram(): void
     {
-        $this->assertEquals(['inlets'], detectAnagrams('listen', ['enlists', 'google', 'inlets', 'banana']));
+        $this->assertEqualsCanonicalizing(['inlets'], array_values(detectAnagrams('listen', ['enlists', 'google', 'inlets', 'banana'])));
     }
 
     /**
@@ -54,9 +54,9 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsThreeAnagrams(): void
     {
-        $this->assertEquals(
+        $this->assertEqualsCanonicalizing(
             ['gallery', 'regally', 'largely'],
-            detectAnagrams('allergy', ['gallery', 'ballerina', 'regally', 'clergy', 'largely', 'leading'])
+            array_values(detectAnagrams('allergy', ['gallery', 'ballerina', 'regally', 'clergy', 'largely', 'leading']))
         );
     }
 
@@ -66,7 +66,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsMultipleAnagramsWithDifferentCase(): void
     {
-        $this->assertEquals(['Eons', 'ONES'], detectAnagrams('nose', ['Eons', 'ONES']));
+        $this->assertEqualsCanonicalizing(['Eons', 'ONES'], array_values(detectAnagrams('nose', ['Eons', 'ONES'])));
     }
 
     /**
@@ -75,7 +75,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDoesNotDetectNonAnagramsWithIdenticalChecksum(): void
     {
-        $this->assertEquals([], detectAnagrams('mass', ['last']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('mass', ['last'])));
     }
 
     /**
@@ -84,7 +84,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsAnagramsCaseInsensitively(): void
     {
-        $this->assertEquals(['Carthorse'], detectAnagrams('Orchestra', ['cashregister', 'Carthorse', 'radishes']));
+        $this->assertEqualsCanonicalizing(['Carthorse'], array_values(detectAnagrams('Orchestra', ['cashregister', 'Carthorse', 'radishes'])));
     }
 
     /**
@@ -93,7 +93,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsAnagramsUsingCaseInsensitiveSubject(): void
     {
-        $this->assertEquals(['carthorse'], detectAnagrams('Orchestra', ['cashregister', 'carthorse', 'radishes']));
+        $this->assertEqualsCanonicalizing(['carthorse'], array_values(detectAnagrams('Orchestra', ['cashregister', 'carthorse', 'radishes'])));
     }
 
     /**
@@ -102,7 +102,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsAnagramsUsingCaseInsensitvePossibleMatches(): void
     {
-        $this->assertEquals(['Carthorse'], detectAnagrams('orchestra', ['cashregister', 'Carthorse', 'radishes']));
+        $this->assertEqualsCanonicalizing(['Carthorse'], array_values(detectAnagrams('orchestra', ['cashregister', 'Carthorse', 'radishes'])));
     }
 
     /**
@@ -111,7 +111,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDoesNotDetectAAnagramIfTheOriginalWordIsRepeated(): void
     {
-        $this->assertEquals([], detectAnagrams('go', ['goGoGO']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('go', ['goGoGO'])));
     }
 
     /**
@@ -120,7 +120,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testAnagramsMustUseAllLettersExactlyOnce(): void
     {
-        $this->assertEquals([], detectAnagrams('tapper', ['patter']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('tapper', ['patter'])));
     }
 
     /**
@@ -129,7 +129,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testWordsAreNotAnagramsOfThemselves(): void
     {
-        $this->assertEquals([], detectAnagrams('BANANA', ['BANANA']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('BANANA', ['BANANA'])));
     }
 
     /**
@@ -138,7 +138,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testWordsAreNotAnagramsOfThemselvesEvenIfLetterCaseIsPartiallyDifferent(): void
     {
-        $this->assertEquals([], detectAnagrams('BANANA', ['Banana']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('BANANA', ['Banana'])));
     }
 
     /**
@@ -147,7 +147,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testWordsAreNotAnagramsOfThemselvesEvenIfLetterCaseIsCompletelyDifferent(): void
     {
-        $this->assertEquals([], detectAnagrams('BANANA', ['banana']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('BANANA', ['banana'])));
     }
 
     /**
@@ -156,7 +156,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testWordsOtherThanThemselvesCanBeAnagrams(): void
     {
-        $this->assertEquals(['Silent'], detectAnagrams('LISTEN', ['LISTEN', 'Silent']));
+        $this->assertEqualsCanonicalizing(['Silent'], array_values(detectAnagrams('LISTEN', ['LISTEN', 'Silent'])));
     }
 
     /**
