@@ -66,7 +66,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsMultipleAnagramsWithDifferentCase(): void
     {
-        $this->assertEqualsCanonicalizing(['Eons', 'ONES'], detectAnagrams('nose', ['Eons', 'ONES']));
+        $this->assertEqualsCanonicalizing(['Eons', 'ONES'], array_values(detectAnagrams('nose', ['Eons', 'ONES'])));
     }
 
     /**
