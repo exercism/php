@@ -36,7 +36,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDoesNotDetectAnagramSubsets(): void
     {
-        $this->assertEqualsCanonicalizing([], detectAnagrams('good', ['dog', 'goody']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('good', ['dog', 'goody'])));
     }
 
     /**
