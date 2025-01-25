@@ -56,7 +56,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEqualsCanonicalizing(
             ['gallery', 'regally', 'largely'],
-            detectAnagrams('allergy', ['gallery', 'ballerina', 'regally', 'clergy', 'largely', 'leading'])
+            array_values(detectAnagrams('allergy', ['gallery', 'ballerina', 'regally', 'clergy', 'largely', 'leading']))
         );
     }
 
