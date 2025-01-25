@@ -26,7 +26,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
     {
         $this->assertEqualsCanonicalizing(
             ['lemons', 'melons'],
-            detectAnagrams('solemn', ['lemons', 'cherry', 'melons'])
+            array_values(detectAnagrams('solemn', ['lemons', 'cherry', 'melons']))
         );
     }
 
