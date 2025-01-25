@@ -84,7 +84,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDetectsAnagramsCaseInsensitively(): void
     {
-        $this->assertEqualsCanonicalizing(['Carthorse'], detectAnagrams('Orchestra', ['cashregister', 'Carthorse', 'radishes']));
+        $this->assertEqualsCanonicalizing(['Carthorse'], array_values(detectAnagrams('Orchestra', ['cashregister', 'Carthorse', 'radishes'])));
     }
 
     /**
