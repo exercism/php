@@ -120,7 +120,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testAnagramsMustUseAllLettersExactlyOnce(): void
     {
-        $this->assertEqualsCanonicalizing([], detectAnagrams('tapper', ['patter']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('tapper', ['patter'])));
     }
 
     /**
