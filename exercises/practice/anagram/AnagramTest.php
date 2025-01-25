@@ -75,7 +75,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDoesNotDetectNonAnagramsWithIdenticalChecksum(): void
     {
-        $this->assertEqualsCanonicalizing([], detectAnagrams('mass', ['last']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('mass', ['last'])));
     }
 
     /**
