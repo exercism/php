@@ -111,7 +111,7 @@ class AnagramTest extends PHPUnit\Framework\TestCase
      */
     public function testDoesNotDetectAAnagramIfTheOriginalWordIsRepeated(): void
     {
-        $this->assertEqualsCanonicalizing([], detectAnagrams('go', ['goGoGO']));
+        $this->assertEqualsCanonicalizing([], array_values(detectAnagrams('go', ['goGoGO'])));
     }
 
     /**
