@@ -2,6 +2,9 @@
   "authors": [
     "homersimpsons"
   ],
+  "contributors": [
+    "tomasnorre"
+  ],
   "files": {
     "solution": [
       "EliudsEggs.php"
