@@ -83,16 +83,31 @@ Install [Composer](https://getcomposer.org) following your devices OS [installat
 
 ## Install PHPUnit
 
+### Via PHP Archive (PHAR)
+
+The easiest way to use PHPUnit for Exercism exercises is downloading a distribution that is packaged as a PHP Archive (PHAR), which is also the recommended way to use PHPUnit.
+
+### Manual installation
+
+You can download a release of PHPUnit packages as a PHP archive:
+
+```shell
+wget -O phpunit.phar https://phar.phpunit.de/phpunit-10.phar
+```
+Then make the PHAR executable (it is a common practice)
+
+```shell
+chmod +x phpunit.phar
+```
+Now you can run the PHAR.
+
+You can also follow the official  [Installing PHPUnit instructions](https://docs.phpunit.de/en/10.5/installation.html#installing-phpunit) to Install PHPUnit via a PHP Archive (PHAR) 
+
 ### Via Composer
 
-PHPUnit version 10 can be installed globally via [Composer](https://getcomposer.org), using the following command:
+PHPUnit version 10 can also be installed globally via [Composer](https://getcomposer.org), using the following command:
 
 ```shell
 composer global require phpunit/phpunit ^10.5
 ```
-
 Please make sure you install version 10.5 or later.
-
-### Manual installation
-
-If you are not using Composer package manager, follow the official [Installing PHPUnit instructions](https://docs.phpunit.de/en/10.5/installation.html#installing-phpunit).
