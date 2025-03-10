@@ -101,7 +101,7 @@ chmod +x phpunit.phar
 ```
 Now you can run the PHAR.
 
-You can also follow the official  [Installing PHPUnit instructions](https://docs.phpunit.de/en/10.5/installation.html#installing-phpunit) to Install PHPUnit via a PHP Archive (PHAR) 
+You can also follow the official [Installing PHPUnit instructions](https://docs.phpunit.de/en/10.5/installation.html#installing-phpunit) to install PHPUnit.
 
 ### Via Composer
 
