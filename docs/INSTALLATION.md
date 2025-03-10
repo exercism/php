@@ -86,8 +86,7 @@ Install [Composer](https://getcomposer.org) following your devices OS [installat
 ### Via PHP Archive (PHAR)
 
 The easiest way to use PHPUnit for Exercism exercises is downloading a distribution that is packaged as a PHP Archive (PHAR), which is also the recommended way to use PHPUnit.
-
-### Manual installation
+Store the PHAR where you stored the `exercism` CLI to run PHPUnit from wherever you are.
 
 You can download a release of PHPUnit packages as a PHP archive:
 
