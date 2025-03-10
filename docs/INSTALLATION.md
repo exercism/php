@@ -99,7 +99,26 @@ Then make the downloaded file executable:
 ```shell
 chmod +x phpunit.phar
 ```
-Now you can run the PHAR.
+
+And move it to the same location as you moved the `exercism` CLI, naming the command `phpunit`:
+
+```shell
+mv phpunit.phar ~/bin/phpunit
+```
+
+Now you can run `phpunit` from wherever you are, as shown in the [PHP track testing docs](https://exercism.org/docs/tracks/php/tests):
+
+```shell
+phpunit --version
+```
+
+The output should look like this:
+
+```
+PHPUnit 10.5.45 by Sebastian Bergmann and contributors.
+
+```
+
 
 You can also follow the official [Installing PHPUnit instructions](https://docs.phpunit.de/en/10.5/installation.html#installing-phpunit) to install PHPUnit.
 
