@@ -110,4 +110,5 @@ PHPUnit version 10 can also be installed globally via [Composer](https://getcomp
 ```shell
 composer global require phpunit/phpunit ^10.5
 ```
+
 Please make sure you install version 10.5 or later.
