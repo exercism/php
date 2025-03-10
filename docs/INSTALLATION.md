@@ -93,7 +93,8 @@ You can download a release of PHPUnit packages as a PHP archive:
 ```shell
 wget -O phpunit.phar https://phar.phpunit.de/phpunit-10.phar
 ```
-Then make the PHAR executable (it is a common practice)
+
+Then make the downloaded file executable:
 
 ```shell
 chmod +x phpunit.phar
