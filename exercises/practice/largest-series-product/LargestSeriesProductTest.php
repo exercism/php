@@ -107,7 +107,7 @@ class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * uuid: 5d81aaf7-4f67-4125-bf33-11493cc7eab7
+     * uuid: 0ae1ce53-d9ba-41bb-827f-2fceb64f058b
      * @testdox rejects span longer than string length
      */
     public function testRejectsSpanLongerThanStringLength(): void
@@ -139,7 +139,7 @@ class LargestSeriesProductTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * uuid: 6d96c691-4374-4404-80ee-2ea8f3613dd4
+     * uuid: 6cf66098-a6af-4223-aab1-26aeeefc7402
      * @testdox rejects empty string and nonzero span
      */
     public function testRejectsEmptyStringAndNonzeroSpan(): void
