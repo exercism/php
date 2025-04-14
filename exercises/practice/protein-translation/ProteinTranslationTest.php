@@ -257,6 +257,18 @@ class ProteinTranslationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * uuid f6f92714-769f-4187-9524-e353e8a41a80
+     * @testdox Sequence of two non-STOP codons does not translate to a STOP codon
+     */
+    public function testSequenceOfTwoNonStopCodonsDoesNotTranslateToAStopCodon(): void
+    {
+        $this->assertEquals(
+            ['Methionine', 'Methionine'],
+            $this->translator->getProteins('AUGAUG')
+        );
+    }
+
+    /**
      * uuid 9eac93f3-627a-4c90-8653-6d0a0595bc6f
      * @testdox Unknown amino acids, not part of a codon, can't translate
      */
