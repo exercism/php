@@ -100,6 +100,15 @@ class PigLatinTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * uuid e59dbbe8-ccee-4619-a8e9-ce017489bfc0
+     * @testdox First letter and ay are moved to the end of words that start with consonants -> word beginning with consonant and vowel containing qu
+     */
+    public function testWordBeginningWithConsonantAndVowelContainingQu(): void
+    {
+        $this->assertEquals("iquidlay", translate("liquid"));
+    }
+
+    /**
      * uuid c01e049a-e3e2-451c-bf8e-e2abb7e438b8
      * @testdox Some letter clusters are treated like a single consonant -> word beginning with ch
      */
