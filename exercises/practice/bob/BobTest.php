@@ -250,18 +250,6 @@ class BobTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * uuid: 66953780-165b-4e7e-8ce3-4bcb80b6385a
-     * @testdox multiple line question
-     */
-    public function testMultipleLineQuestion(): void
-    {
-        $input = "\nDoes this cryogenic chamber make me look fat?\nNo.";
-        $expected = "Whatever.";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
      * uuid: 5371ef75-d9ea-4103-bcfa-2da973ddec1b
      * @testdox starting with whitespace
      */
@@ -305,6 +293,18 @@ class BobTest extends PHPUnit\Framework\TestCase
     {
         $input = "This is a statement ending with whitespace      ";
         $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: 2c7278ac-f955-4eb4-bf8f-e33eb4116a15
+     * @testdox multiple line question
+     */
+    public function testMultipleLineQuestion(): void
+    {
+        $input = "\nDoes this cryogenic chamber make\n me look fat?";
+        $expected = "Sure.";
         $subject = new Bob();
         $this->assertEquals($expected, $subject->respondTo($input));
     }
