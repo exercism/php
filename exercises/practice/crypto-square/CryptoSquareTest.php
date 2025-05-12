@@ -73,8 +73,8 @@ class CryptoSquareTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * uuid fbcb0c6d-4c39-4a31-83f6-c473baa6af80
-     * @testdox 54 character plaintext results in 7 chunks, the last two with trailing spaces
+     * uuid 33fd914e-fa44-445b-8f38-ff8fbc9fe6e6
+     * @testdox 54 character plaintext results in 8 chunks, the last two with trailing spaces
      */
     public function test54CharacterPlaintextResultsIn7ChunksTheLastTwoWithTrailingSpaces(): void
     {
