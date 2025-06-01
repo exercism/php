@@ -10,7 +10,7 @@ $value_is_true = true;
 $value_is_false = false;
 ```
 
-Boolean values are often use in logical expressions as the result of an operator and then used in control structures.
+Boolean values are often used in logical expressions as the result of an operator and then used in control structures.
 
 ## Logical Operators
 
