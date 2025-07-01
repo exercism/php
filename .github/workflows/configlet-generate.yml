@@ -27,4 +27,4 @@ jobs:
         run: configlet generate --update --yes
 
       - name: Commit generated code
-        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403
+        uses: stefanzweifel/git-auto-commit-action@778341af668090896ca464160c2def5d1d1a3eb0
