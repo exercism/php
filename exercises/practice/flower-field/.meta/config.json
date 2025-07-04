@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "petemcfarlane"
+  ],
+  "contributors": [
+    "arueckauer",
+    "keiravillekode",
+    "kunicmarko20",
+    "kytrinyx",
+    "neenjaw",
+    "mk-mxp"
+  ],
+  "files": {
+    "solution": [
+      "FlowerField.php"
+    ],
+    "test": [
+      "FlowerFieldTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
