@@ -20,14 +20,6 @@ echo 'The exercises listed should be deprecated in "config.json" and then remove
 function getExercises(): array
 {
     return [
-        "annalyns-infiltration",
-        "city-office",
-        "language-list",
-        "lasagna",
-        "lucky-numbers",
-        "pizza-pi",
-        "sweethearts",
-        "windowing-system",
         "acronym",
         "affine-cipher",
         "allergies",
