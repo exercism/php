@@ -41,7 +41,6 @@ luhn
 matching-brackets
 meetup
 micro-blog
-minesweeper
 nucleotide-count
 pangram
 pascals-triangle
