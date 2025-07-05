@@ -74,7 +74,7 @@ The `lint:check` is included in `composer ci` to run the CI checks locally.
 - Follow the [PSR-12] coding style (Exercisms PHP track uses a slightly [modified][local-file-phpcs-config] version of [PSR-12]).
 - Run `composer ci` to run CI checks locally before pushing.
 - CI is run on all pull requests, it must pass the required checks for merge.
-- CI is running all tests on PHP 8.0 to PHP 8.2 for Linux, Windows and MacOS.
+- CI is running all tests on PHP 8.1 to PHP 8.4 for Linux, Windows and MacOS.
 
 ## Generating new practice exercises
 
