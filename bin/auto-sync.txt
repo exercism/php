@@ -41,7 +41,6 @@ luhn
 matching-brackets
 meetup
 micro-blog
-minesweeper
 nucleotide-count
 pangram
 pascals-triangle
@@ -49,9 +48,6 @@ phone-number
 pig-latin
 protein-translation
 raindrops
-resistor-color
-resistor-color-duo
-resistor-color-trio
 reverse-string
 rna-transcription
 robot-simulator
