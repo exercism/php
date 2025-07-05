@@ -5,6 +5,7 @@ if [[ "$#" != 0 ]]; then
     forwardedParameters=( "$@" )
 else
     forwardedParameters=( -o -u -y --docs --filepaths --metadata )
+    # forwardedParameters=( -o -u -y --tests include )
 fi
 
 exitWithFailure() {
