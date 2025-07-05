@@ -57,6 +57,7 @@ function getExercises(): array
         "eliuds-eggs",
         "etl",
         "flatten-array",
+        "flower-field",
         "food-chain",
         "gigasecond",
         "grade-school",
