@@ -15,18 +15,11 @@ foreach (getExercises() as $exercise) {
 
 var_dump($deprecatedExercises);
 
+echo 'The exercises listed should be deprecated in "config.json" and then removed from this script.' . PHP_EOL;
+
 function getExercises(): array
 {
     return [
-        "annalyns-infiltration",
-        "city-office",
-        "language-list",
-        "lasagna",
-        "lucky-numbers",
-        "pizza-pi",
-        "sweethearts",
-        "windowing-system",
-        "accumulate",
         "acronym",
         "affine-cipher",
         "allergies",
@@ -36,8 +29,6 @@ function getExercises(): array
         "armstrong-numbers",
         "atbash-cipher",
         "bank-account",
-        "beer-song",
-        "binary",
         "binary-search",
         "binary-search-tree",
         "bob",
@@ -82,7 +73,6 @@ function getExercises(): array
         "matrix",
         "meetup",
         "micro-blog",
-        "minesweeper",
         "nth-prime",
         "nucleotide-count",
         "ocr-numbers",
@@ -112,7 +102,6 @@ function getExercises(): array
         "rotational-cipher",
         "run-length-encoding",
         "say",
-        "scale-generator",
         "scrabble-score",
         "secret-handshake",
         "series",
@@ -127,7 +116,6 @@ function getExercises(): array
         "tournament",
         "transpose",
         "triangle",
-        "trinary",
         "twelve-days",
         "two-bucket",
         "two-fer",
