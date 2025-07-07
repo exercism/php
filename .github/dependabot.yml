@@ -9,7 +9,8 @@ updates:
       interval: 'monthly'
     groups:
       github-actions:
-        patterns: '*'
+        patterns:
+          - '*'
 
   # Keep dependencies for Composer up-to-date
   - package-ecosystem: 'composer'
@@ -18,4 +19,5 @@ updates:
       interval: 'monthly'
     groups:
       composer:
-        patterns: '*'
+        patterns:
+          - '*'
