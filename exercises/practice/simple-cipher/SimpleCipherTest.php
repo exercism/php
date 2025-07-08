@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class SimpleCipherTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class SimpleCipherTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -65,19 +67,19 @@ class SimpleCipherTest extends PHPUnit\Framework\TestCase
 
     public function testCipherWithCapsKey(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         $cipher = new SimpleCipher('ABCDEF');
     }
 
     public function testCipherWithNumericKey(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         $cipher = new SimpleCipher('12345');
     }
 
     public function testCipherWithEmptyKey(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         $cipher = new SimpleCipher('');
     }
 

@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class WordyTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class WordyTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

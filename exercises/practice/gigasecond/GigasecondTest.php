@@ -24,7 +24,10 @@
 
 declare(strict_types=1);
 
-class GigasecondTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
+
+class GigasecondTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -60,10 +63,10 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider inputAndExpectedDates
      * @param string $inputDate
      * @param string $expected
      */
+    #[DataProvider('inputAndExpectedDates')]
     public function testFrom(string $inputDate, string $expected): void
     {
         $date = $this->dateSetup($inputDate);
@@ -73,9 +76,9 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider inputDates
      * @param string $inputDate
      */
+    #[DataProvider('inputDates')]
     public function testFromReturnType(string $inputDate): void
     {
         $date = $this->dateSetup($inputDate);

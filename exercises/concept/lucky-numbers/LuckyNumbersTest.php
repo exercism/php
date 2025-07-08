@@ -1,6 +1,10 @@
 <?php
 
-class LuckyNumbersTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class LuckyNumbersTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -8,10 +12,10 @@ class LuckyNumbersTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Sums up $digitsOfNumber1 and $digitsOfNumber2 to $expected
      * @task_id 1
-     * @dataProvider sumUpTestCases
      */
+    #[DataProvider('sumUpTestCases')]
+    #[TestDox('Sums up $digitsOfNumber1 and $digitsOfNumber2 to $expected')]
     public function testSumUp(
         array $digitsOfNumber1,
         array $digitsOfNumber2,
@@ -38,10 +42,10 @@ class LuckyNumbersTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Detects palindromic number $number
      * @task_id 2
-     * @dataProvider isPalindromeTestCases
      */
+    #[DataProvider('isPalindromeTestCases')]
+    #[TestDox('Detects palindromic number $number')]
     public function testIsPalindrome(int $number): void
     {
         $class = new LuckyNumbers();
@@ -63,10 +67,10 @@ class LuckyNumbersTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Detects non-palindromic number $number
      * @task_id 2
-     * @dataProvider isNoPalindromeTestCases
      */
+    #[DataProvider('isNoPalindromeTestCases')]
+    #[TestDox('Detects non-palindromic number $number')]
     public function testIsNoPalindrome(int $number): void
     {
         $class = new LuckyNumbers();
@@ -86,9 +90,9 @@ class LuckyNumbersTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Error message for empty input
      * @task_id 3
      */
+    #[TestDox('Error message for empty input')]
     public function testErrorMessageForEmptyInput(): void
     {
         $class = new LuckyNumbers();
@@ -99,10 +103,10 @@ class LuckyNumbersTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Error message for invalid input $input
      * @task_id 3
-     * @dataProvider invalidInputTestCases
      */
+    #[DataProvider('invalidInputTestCases')]
+    #[TestDox('Error message for invalid input $input')]
     public function testErrorMessageForInvalidInput(
         string $input
     ): void {
@@ -124,10 +128,10 @@ class LuckyNumbersTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox Error message for invalid input $input
      * @task_id 3
-     * @dataProvider validInputTestCases
      */
+    #[DataProvider('validInputTestCases')]
+    #[TestDox('Error message for invalid input $input')]
     public function testErrorMessageForValidInput(
         string $input
     ): void {

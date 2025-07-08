@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class SayTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class SayTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -125,7 +127,7 @@ class SayTest extends PHPUnit\Framework\TestCase
 
     public function testNumbersBelowZeroAreOutOfRange(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Input out of range');
 
         say(-1);
@@ -133,7 +135,7 @@ class SayTest extends PHPUnit\Framework\TestCase
 
     public function testNumbersAbove999999999999AreOutOfRange(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Input out of range');
 
         say(1_000_000_000_000);

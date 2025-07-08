@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class RobotNameTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class RobotNameTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

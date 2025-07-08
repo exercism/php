@@ -28,7 +28,7 @@ class DndCharacter
 {
     public function __construct()
     {
-        throw new BadFunctionCallException("Please implement the DndCharacter class!");
+        throw new \BadFunctionCallException("Please implement the DndCharacter class!");
     }
 
     // Add methods as expected by the tests

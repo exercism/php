@@ -70,17 +70,18 @@ PHP_STUB
 cat <<- PHP_STUB >> "${base_dir}/${test_file}"
 <?php
 
-class ${new_classname}Test extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class ${new_classname}Test extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
         require_once '${new_classname}.php';
     }
 
-    /**
-     * @testdox some test stub
-     * @task_id 1
-     */
+    /** @task_id 1 */
+    #[TestDox('some test stub')]
     public function testStub()
     {
         \$class = new ${new_classname}();

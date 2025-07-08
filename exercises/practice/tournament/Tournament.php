@@ -28,6 +28,6 @@ class Tournament
 {
     public function __construct()
     {
-        throw new BadFunctionCallException("Please implement the Tournament class!");
+        throw new \BadFunctionCallException("Please implement the Tournament class!");
     }
 }
