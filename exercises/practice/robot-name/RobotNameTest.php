@@ -73,34 +73,18 @@ class RobotNameTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression('/\w{2}\d{3}/', $name2);
     }
 
-    /**
-     * PHPUnit ^10.5 has an issue with
-     *   $this->assertArrayNotHasKey($name, $names, sprintf...
-     * that leads to test timeouts. This is fixed in PHPUnit ^11.
-     * Revert workaround
-     *   $this->assertFalse(isset($names[$name]), sprintf...
-     * when upgrading.
-     */
-    public function testNameArentRecycled(): void
+    public function testNamesArentRecycled(): void
     {
         $names = [];
 
         for ($i = 0; $i < 10000; $i++) {
             $name = $this->robot->getName();
-            $this->assertFalse(isset($names[$name]), sprintf('Name %s reissued after Reset.', $name));
+            $this->assertArrayNotHasKey($name, $names, sprintf('Name %s reissued after Reset.', $name));
             $names[$name] = true;
             $this->robot->reset();
         }
     }
 
-    /**
-     * PHPUnit ^10.5 has an issue with
-     *   $this->assertArrayNotHasKey($name, $names, sprintf...
-     * that leads to test timeouts. This is fixed in PHPUnit ^11.
-     * Revert workaround
-     *   $this->assertFalse(isset($names[$name]), sprintf...
-     * when upgrading.
-     */
     // This test is optional.
     public function testNameUniquenessManyRobots(): void
     {
@@ -108,7 +92,7 @@ class RobotNameTest extends PHPUnit\Framework\TestCase
 
         for ($i = 0; $i < 10000; $i++) {
             $name = (new Robot())->getName();
-            $this->assertFalse(isset($names[$name]), sprintf('Name %s reissued after %d robots', $name, $i));
+            $this->assertArrayNotHasKey($name, $names, sprintf('Name %s reissued after %d robots', $name, $i));
             $names[$name] = true;
         }
     }
