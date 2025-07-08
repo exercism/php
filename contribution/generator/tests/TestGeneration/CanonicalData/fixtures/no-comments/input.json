@@ -1,0 +1,9 @@
+{
+    "testClassName": "SomeTestClass",
+    "solutionFileName": "SomeSolutionFile.ext",
+    "solutionClassName": "SomeSolutionClass",
+    "exercise": "some-exercise-slug",
+    "cases": [
+        { "some-unknown-case-item": "some value" }
+    ]
+}
