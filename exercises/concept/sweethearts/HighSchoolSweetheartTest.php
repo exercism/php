@@ -1,6 +1,9 @@
 <?php
 
-class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class HighSchoolSweetheartTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -8,9 +11,9 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox gets the first letter from a string
      * @task_id 1
      */
+    #[TestDox('gets the first letter from a string')]
     public function testFirstLetter()
     {
         $sweetheart = new HighSchoolSweetheart();
@@ -18,9 +21,9 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox getting the first letter doesn't change the case
      * @task_id 1
      */
+    #[TestDox("getting the first letter doesn't change the case")]
     public function testFirstLetterDoesNotChangeCase()
     {
         $sweetheart = new HighSchoolSweetheart();
@@ -28,9 +31,9 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox getting the first letter removes whitespace from the name
      * @task_id 1
      */
+    #[TestDox('getting the first letter removes whitespace from the name')]
     public function testFirstLetterRemovesWhitespace()
     {
         $sweetheart = new HighSchoolSweetheart();
@@ -38,9 +41,9 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox gets the first letter and appends a dot
      * @task_id 2
      */
+    #[TestDox('gets the first letter and appends a dot')]
     public function testCreatesInitial()
     {
         $sweetheart = new HighSchoolSweetheart();
@@ -48,9 +51,9 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox creates an uppercase initial
      * @task_id 2
      */
+    #[TestDox('creates an uppercase initial')]
     public function testCreatesUppercaseInitial()
     {
         $sweetheart = new HighSchoolSweetheart();
@@ -58,9 +61,9 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox creates a set of initials
      * @task_id 3
      */
+    #[TestDox('creates a set of initials')]
     public function testCreatesInitials()
     {
         $sweetheart = new HighSchoolSweetheart();
@@ -68,9 +71,9 @@ class HighSchoolSweetheartTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox creates a set of initials, wrapped in a heart
      * @task_id 4
      */
+    #[TestDox('creates a set of initials, wrapped in a heart')]
     public function testPair()
     {
         $sweetheart = new HighSchoolSweetheart();

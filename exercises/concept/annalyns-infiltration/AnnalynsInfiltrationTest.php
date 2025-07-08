@@ -1,6 +1,9 @@
 <?php
 
-class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class AnnalynsInfiltrationTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -8,9 +11,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot fast attack when the knight is awake
      * @task_id 1
      */
+    #[TestDox('cannot fast attack when the knight is awake')]
     public function testCannotFastAttackWhenKnightIsAwake()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -20,9 +23,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can fast attack when the knight is asleep
      * @task_id 1
      */
+    #[TestDox('can fast attack when the knight is asleep')]
     public function testCanFastAttackWhenKnightIsAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -32,9 +35,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot spy when everyone is asleep
      * @task_id 2
      */
+    #[TestDox('cannot spy when everyone is asleep')]
     public function testCannotSpyWhenEveryoneAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -48,9 +51,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can spy when only the prisoner is awake
      * @task_id 2
      */
+    #[TestDox('can spy when only the prisoner is awake')]
     public function testCanSpyWhenOnlyPrisonerAwake()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -64,9 +67,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can spy when only the archer is awake
      * @task_id 2
      */
+    #[TestDox('can spy when only the archer is awake')]
     public function testCanSpyWhenOnlyArcherAwake()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -80,9 +83,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can spy when only the knight is awake
      * @task_id 2
      */
+    #[TestDox('can spy when only the knight is awake')]
     public function testCanSpyWhenOnlyKnightAwake()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -96,9 +99,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can spy when only the knight is asleep
      * @task_id 2
      */
+    #[TestDox('can spy when only the knight is asleep')]
     public function testCanSpyWhenOnlyKnightAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -112,9 +115,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can spy when only the prisoner is asleep
      * @task_id 2
      */
+    #[TestDox('can spy when only the prisoner is asleep')]
     public function testCanSpyWhenOnlyPrisonerAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -128,9 +131,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can spy when only the archer is asleep
      * @task_id 2
      */
+    #[TestDox('can spy when only the archer is asleep')]
     public function testCanSpyWhenOnlyArcherAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -144,9 +147,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can spy when everyone is awake
      * @task_id 2
      */
+    #[TestDox('can spy when everyone is awake')]
     public function testCanSpyWhenEveryoneAwake()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -160,9 +163,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot signal the prisoner when everyone is asleep
      * @task_id 3
      */
+    #[TestDox('cannot signal the prisoner when everyone is asleep')]
     public function testCannotSignalWhenAllAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -175,9 +178,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can signal the prisoner when archer is asleep
      * @task_id 3
      */
+    #[TestDox('can signal the prisoner when archer is asleep')]
     public function testCanSignalWhenArcherAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -190,9 +193,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot signal the prisoner when prisoner is asleep
      * @task_id 3
      */
+    #[TestDox('cannot signal the prisoner when prisoner is asleep')]
     public function testCannotSignalWhenPrisonerAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -205,9 +208,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot signal the prisoner when no one is asleep
      * @task_id 3
      */
+    #[TestDox('cannot signal the prisoner when no one is asleep')]
     public function testCannotSignalWhenNoOneAsleep()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -220,9 +223,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can liberate the prisoner when no one is awake but dog present
      * @task_id 4
      */
+    #[TestDox('can liberate the prisoner when no one is awake but dog present')]
     public function testCanLiberateWhenAllAsleepAndDogPresent()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -237,9 +240,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can liberate the prisoner when prisoner is awake with dog
      * @task_id 4
      */
+    #[TestDox('can liberate the prisoner when prisoner is awake with dog')]
     public function testCanLiberateWhenPrisonerAwakeWithDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -254,9 +257,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when archer is awake with dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when archer is awake with dog')]
     public function testCannotLiberateWhenArcherAwakeWithDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -271,9 +274,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can liberate the prisoner when only knight awake with dog
      * @task_id 4
      */
+    #[TestDox('can liberate the prisoner when only knight awake with dog')]
     public function testCanLiberateWhenKnightAwakeWithDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -288,9 +291,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when prisoner asleep with dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when prisoner asleep with dog')]
     public function testCannotLiberateWhenPrisonerAsleepWithDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -305,9 +308,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can liberate the prisoner when only archer asleep with dog
      * @task_id 4
      */
+    #[TestDox('can liberate the prisoner when only archer asleep with dog')]
     public function testCanLiberateWhenArcherAsleepWithDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -322,9 +325,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when knight asleep with dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when knight asleep with dog')]
     public function testCannotLiberateWhenKnightAsleepWithDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -339,9 +342,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when all awake with dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when all awake with dog')]
     public function testCannotLiberateWhenAllAwakeWithDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -356,9 +359,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when no one is awake and no dog present
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when no one is awake and no dog present')]
     public function testCannotLiberateWhenAllAsleepAndNoDogPresent()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -373,9 +376,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox can liberate the prisoner when prisoner is awake without dog
      * @task_id 4
      */
+    #[TestDox('can liberate the prisoner when prisoner is awake without dog')]
     public function testCanLiberateWhenPrisonerAwakeWithoutDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -390,9 +393,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when archer is awake without dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when archer is awake without dog')]
     public function testCannotLiberateWhenArcherAwakeWithoutDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -407,9 +410,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when only knight awake without dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when only knight awake without dog')]
     public function testCannotLiberateWhenKnightAwakeWithoutDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -424,9 +427,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when prisoner asleep without dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when prisoner asleep without dog')]
     public function testCannotLiberateWhenPrisonerAsleepWithoutDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -441,9 +444,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when only archer asleep without dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when only archer asleep without dog')]
     public function testCannotLiberateWhenArcherAsleepWithoutDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -458,9 +461,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when knight asleep without dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when knight asleep without dog')]
     public function testCannotLiberateWhenKnightAsleepWithoutDog()
     {
         $infiltration = new AnnalynsInfiltration();
@@ -475,9 +478,9 @@ class AnnalynsInfiltrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox cannot liberate the prisoner when all awake without dog
      * @task_id 4
      */
+    #[TestDox('cannot liberate the prisoner when all awake without dog')]
     public function testCannotLiberateWhenAllAwakeWithoutDog()
     {
         $infiltration = new AnnalynsInfiltration();

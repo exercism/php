@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class ResistorColorTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class ResistorColorTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

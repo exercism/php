@@ -26,5 +26,5 @@ declare(strict_types=1);
 
 function reverseString(string $text): string
 {
-    throw new BadFunctionCallException("Please implement the reverseString method!");
+    throw new \BadFunctionCallException("Please implement the reverseString method!");
 }

@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-class MicroBlogTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class MicroBlogTest extends TestCase
 {
     private MicroBlog $microBlog;
 

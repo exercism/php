@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-class StateOfTicTacToeTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class StateOfTicTacToeTest extends TestCase
 {
     private StateOfTicTacToe $stateOfTicTacToe;
 

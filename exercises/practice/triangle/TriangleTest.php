@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class TriangleTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class TriangleTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

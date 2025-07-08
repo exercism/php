@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class TwelveDaysTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class TwelveDaysTest extends TestCase
 {
     private TwelveDays $twelveDays;
 

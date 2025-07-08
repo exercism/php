@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class WordCountTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class WordCountTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

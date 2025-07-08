@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class MarkdownTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class MarkdownTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class QueenAttackTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class QueenAttackTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

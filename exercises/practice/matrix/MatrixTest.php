@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class MatrixTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class MatrixTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

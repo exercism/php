@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class TransposeTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class TransposeTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

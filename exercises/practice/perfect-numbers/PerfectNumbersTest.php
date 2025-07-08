@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class PerfectNumbersTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class PerfectNumbersTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

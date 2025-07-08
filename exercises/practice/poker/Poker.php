@@ -30,6 +30,6 @@ class Poker
 
     public function __construct(array $hands)
     {
-        throw new BadFunctionCallException("Please implement the Poker class!");
+        throw new \BadFunctionCallException("Please implement the Poker class!");
     }
 }

@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class NthPrimeTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class NthPrimeTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class TrinaryTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class TrinaryTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

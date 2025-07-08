@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class ProverbTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class ProverbTest extends TestCase
 {
     private Proverb $proverb;
 

@@ -28,6 +28,6 @@ class Scale
 {
     public function __construct(string $tonic, string $scaleName, string $pattern)
     {
-        throw new BadFunctionCallException("Please implement the Scale class!");
+        throw new \BadFunctionCallException("Please implement the Scale class!");
     }
 }

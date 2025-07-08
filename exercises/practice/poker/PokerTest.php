@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class PokerTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class PokerTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

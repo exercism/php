@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-class HouseTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class HouseTest extends TestCase
 {
     private House $house;
 
