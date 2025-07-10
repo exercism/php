@@ -85,7 +85,7 @@ $is_archer_awake = true;
 $is_prisoner_awake = false;
 $is_dog_present = false
 
-$infiltration = new AnnalynsInfiltration()
+$infiltration = new AnnalynsInfiltration();
 $infiltration->canLiberate(
     $is_knight_awake,
     $is_archer_awake,
