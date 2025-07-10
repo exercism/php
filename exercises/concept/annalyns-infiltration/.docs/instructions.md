@@ -32,7 +32,7 @@ Otherwise, returns `false`:
 <?php
 $is_knight_awake = true;
 
-$infiltration = new AnnalynsInfiltration()
+$infiltration = new AnnalynsInfiltration();
 $infiltration->canFastAttack($is_knight_awake);
 // => false
 ```
@@ -49,7 +49,7 @@ $is_knight_awake = false;
 $is_archer_awake = true;
 $is_prisoner_awake = false;
 
-$infiltration = new AnnalynsInfiltration()
+$infiltration = new AnnalynsInfiltration();
 $infiltration->canSpy($is_knight_awake, $is_archer_awake, $is_prisoner_awake);
 // => true
 ```
@@ -65,7 +65,7 @@ Otherwise, returns `false`:
 $is_archer_awake = false;
 $is_prisoner_awake = true;
 
-$infiltration = new AnnalynsInfiltration()
+$infiltration = new AnnalynsInfiltration();
 $infiltration->canSignal($is_archer_awake, $is_prisoner_awake);
 // => true
 ```
@@ -83,7 +83,7 @@ Otherwise, it returns `false`:
 $is_knight_awake = false;
 $is_archer_awake = true;
 $is_prisoner_awake = false;
-$is_dog_present = false
+$is_dog_present = false;
 
 $infiltration = new AnnalynsInfiltration();
 $infiltration->canLiberate(
