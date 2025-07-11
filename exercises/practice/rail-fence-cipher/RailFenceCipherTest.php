@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class RailFenceCipherTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class RailFenceCipherTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

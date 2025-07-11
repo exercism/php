@@ -1,6 +1,9 @@
 <?php
 
-class PizzaPiTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class PizzaPiTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -8,9 +11,9 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox determine how much dough is required
      * @task_id 1
      */
+    #[TestDox('determine how much dough is required')]
     public function testCalculateDoughRequirement()
     {
         $pizza_pi = new PizzaPi();
@@ -20,9 +23,9 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox determine how many cans of sauce are required
      * @task_id 2
      */
+    #[TestDox('determine how many cans of sauce are required')]
     public function testCalculateSauceRequirement()
     {
         $pizza_pi = new PizzaPi();
@@ -32,9 +35,9 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox determine how many pizzas a cube of cheese can cover
      * @task_id 3
      */
+    #[TestDox('determine how many pizzas a cube of cheese can cover')]
     public function testCalculateCheeseCoverage()
     {
         $pizza_pi = new PizzaPi();
@@ -44,9 +47,9 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox determine number of pieces remaining when evenly dividing
      * @task_id 4
      */
+    #[TestDox('determine number of pieces remaining when evenly dividing')]
     public function testCalculateLeftOverSlicesWithoutLeftOver()
     {
         $pizza_pi = new PizzaPi();
@@ -56,9 +59,9 @@ class PizzaPiTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox determine number of pieces remaining when not evenly dividing
      * @task_id 4
      */
+    #[TestDox('determine number of pieces remaining when not evenly dividing')]
     public function testCalculateLeftOverSlicesWithLeftOver()
     {
         $pizza_pi = new PizzaPi();

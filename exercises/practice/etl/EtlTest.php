@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-class EtlTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class EtlTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -11,8 +14,8 @@ class EtlTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 78a7a9f9-4490-4a47-8ee9-5a38bb47d28f
-     * @testdox single letter
      */
+    #[TestDox('single letter')]
     public function testTransformOneValue(): void
     {
         $old = ['1' => ['A']];
@@ -22,8 +25,8 @@ class EtlTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 60dbd000-451d-44c7-bdbb-97c73ac1f497
-     * @testdox single score with multiple letters
      */
+    #[TestDox('single score with multiple letters')]
     public function testTransformMoreValues(): void
     {
         $old = [1 => ['A', 'E', 'I', 'O', 'U']];
@@ -33,8 +36,8 @@ class EtlTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid f5c5de0c-301f-4fdd-a0e5-df97d4214f54
-     * @testdox multiple scores with multiple letters
      */
+    #[TestDox('multiple scores with multiple letters')]
     public function testTransformMoreKeys(): void
     {
         $old = [1 => ['A', 'E'], 2 => ['D', 'G']];
@@ -44,8 +47,8 @@ class EtlTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 5db8ea89-ecb4-4dcd-902f-2b418cc87b9d
-     * @testdox multiple scores with differing numbers of letters
      */
+    #[TestDox('multiple scores with differing numbers of letters')]
     public function testTransformFullDataset(): void
     {
         $old = [

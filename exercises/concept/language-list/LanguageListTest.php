@@ -1,6 +1,9 @@
 <?php
 
-class LanguageListTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class LanguageListTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -8,9 +11,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox calling language_list without arguments, returns empty array
      * @task_id 1
      */
+    #[TestDox('calling language_list without arguments, returns empty array')]
     public function testEmpty()
     {
         $language_list = language_list();
@@ -18,9 +21,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox variadic call to language_list with 1 arg returns args
      * @task_id 2
      */
+    #[TestDox('variadic call to language_list with 1 arg returns args')]
     public function testVariadicCallWithOne()
     {
         $language_list = language_list('c');
@@ -28,9 +31,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox variadic call to language_list with 2 arg returns args
      * @task_id 2
      */
+    #[TestDox('variadic call to language_list with 2 arg returns args')]
     public function testVariadicCallWithTwo()
     {
         $language_list = language_list('c', 'cpp');
@@ -38,9 +41,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox variadic call to language_list with 2 arg returns args
      * @task_id 2
      */
+    #[TestDox('variadic call to language_list with 2 arg returns args')]
     public function testVariadicCallWithThree()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -48,9 +51,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox push new languages to the back of the list
      * @task_id 3
      */
+    #[TestDox('push new languages to the back of the list')]
     public function testAddingToLanguageList()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -59,9 +62,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox when pushing, original is unchanged
      * @task_id 3
      */
+    #[TestDox('when pushing, original is unchanged')]
     public function testAddingDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -70,9 +73,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox remove completed language from the front of the list
      * @task_id 4
      */
+    #[TestDox('remove completed language from the front of the list')]
     public function testCompleteLanguageList()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -81,9 +84,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox when pushing, original is unchanged
      * @task_id 4
      */
+    #[TestDox('when pushing, original is unchanged')]
     public function testPruningDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -92,9 +95,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox index and return the first language
      * @task_id 5
      */
+    #[TestDox('index and return the first language')]
     public function testCurrentReturnsTheFirstLanguage()
     {
         $language_list = language_list('php');
@@ -103,9 +106,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox when getting the first language, original is unchanged
      * @task_id 5
      */
+    #[TestDox('when getting the first language, original is unchanged')]
     public function testGettingFirstDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -114,9 +117,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox the count of the languages in the language list
      * @task_id 6
      */
+    #[TestDox('the count of the languages in the language list')]
     public function testLanguageListCount()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -125,9 +128,9 @@ class LanguageListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox when getting the language count, original is unchanged
      * @task_id 6
      */
+    #[TestDox('when getting the language count, original is unchanged')]
     public function testLanguageListCountDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');

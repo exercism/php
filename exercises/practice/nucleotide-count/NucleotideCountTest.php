@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class NucleotideCountTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class NucleotideCountTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

@@ -28,16 +28,16 @@ class Matrix
 {
     public function __construct(string $matrix)
     {
-        throw new BadFunctionCallException("Please implement the Matrix class!");
+        throw new \BadFunctionCallException("Please implement the Matrix class!");
     }
 
     public function getRow(int $rowId): array
     {
-        throw new BadFunctionCallException("Please implement the getRow method!");
+        throw new \BadFunctionCallException("Please implement the getRow method!");
     }
 
     public function getColumn(int $columnId): array
     {
-        throw new BadFunctionCallException("Please implement the getColumn method!");
+        throw new \BadFunctionCallException("Please implement the getColumn method!");
     }
 }

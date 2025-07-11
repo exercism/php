@@ -24,7 +24,10 @@
 
 declare(strict_types=1);
 
-class BinaryTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
+
+class BinaryTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -72,9 +75,7 @@ class BinaryTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(3, parse_binary('00011'));
     }
 
-    /**
-     * @dataProvider invalidValues
-     */
+    #[DataProvider('invalidValues')]
     public function testItOnlyAcceptsStringsContainingZerosAndOnes($value): void
     {
         $this->expectException(InvalidArgumentException::class);

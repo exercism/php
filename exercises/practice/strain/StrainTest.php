@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-class StrainTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class StrainTest extends TestCase
 {
     private Strain $strain;
 

@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-class IsbnVerifierTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class IsbnVerifierTest extends TestCase
 {
     private IsbnVerifier $isbnVerifier;
 

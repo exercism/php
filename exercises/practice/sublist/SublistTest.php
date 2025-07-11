@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-class SublistTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class SublistTest extends TestCase
 {
     private Sublist $sublist;
 

@@ -28,6 +28,6 @@ class LinkedList
 {
     public function __construct()
     {
-        throw new BadFunctionCallException("Please implement the LinkedList class!");
+        throw new \BadFunctionCallException("Please implement the LinkedList class!");
     }
 }

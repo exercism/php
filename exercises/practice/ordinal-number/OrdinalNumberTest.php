@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class OrdinalNumberTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class OrdinalNumberTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
