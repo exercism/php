@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class SeriesTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class SeriesTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

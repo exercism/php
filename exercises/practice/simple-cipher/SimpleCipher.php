@@ -28,7 +28,7 @@ class SimpleCipher
 {
     public function __construct(string $key = null)
     {
-        throw new BadFunctionCallException("Please implement the SimpleCipher class!");
+        throw new \BadFunctionCallException("Please implement the SimpleCipher class!");
     }
 
     public function encode(string $plainText): string

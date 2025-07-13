@@ -1,17 +1,20 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
 require_once 'ReflectionAssertions.php';
 require_once 'Address.php';
 require_once 'Form.php';
 
-class CityOfficeTest extends PHPUnit\Framework\TestCase
+class CityOfficeTest extends TestCase
 {
     use ReflectionAssertions;
 
     /**
-     * @testdox specify a string type for Address::$street
      * @task_id 1
      */
+    #[TestDox('specify a string type for Address::$street')]
     public function testTypeOfAddressStreetProperty()
     {
         $this->assertProperty(
@@ -26,9 +29,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify a string type for Address::$postal_code
      * @task_id 1
      */
+    #[TestDox('specify a string type for Address::$postal_code')]
     public function testTypeOfAddressPostalCodeProperty()
     {
         $this->assertProperty(
@@ -43,9 +46,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify a string type for Address::$city
      * @task_id 1
      */
+    #[TestDox('specify a string type for Address::$city')]
     public function testTypeOfAddressCityProperty()
     {
         $this->assertProperty(
@@ -60,9 +63,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an int type for Form::blanks length parameter
      * @task_id 2
      */
+    #[TestDox('specify an int type for Form::blanks length parameter')]
     public function testParameterTypeOfFormBlanksLengthParameter()
     {
         $this->assertMethodParameter(
@@ -80,9 +83,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an int type for Form::blanks return type
      * @task_id 2
      */
+    #[TestDox('specify an int type for Form::blanks return type')]
     public function testParameterTypeOfFormBlanksReturnType()
     {
         $this->assertMethodReturnType(
@@ -97,9 +100,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an int type for Form::letters word parameter
      * @task_id 3
      */
+    #[TestDox('specify an int type for Form::letters word parameter')]
     public function testParameterTypeOfFormLettersWordParameter()
     {
         $this->assertMethodParameter(
@@ -117,9 +120,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an int type for Form::letters return type
      * @task_id 3
      */
+    #[TestDox('specify an int type for Form::letters return type')]
     public function testParameterTypeOfFormLettersReturnType()
     {
         $this->assertMethodReturnType(
@@ -134,9 +137,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an int type for Form::checkLength word parameter
      * @task_id 4
      */
+    #[TestDox('specify an int type for Form::checkLength word parameter')]
     public function testParameterTypeOfFormCheckLengthWordParameter()
     {
         $this->assertMethodParameter(
@@ -154,9 +157,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an int type for Form::checkLength max_length parameter
      * @task_id 4
      */
+    #[TestDox('specify an int type for Form::checkLength max_length parameter')]
     public function testParameterTypeOfFormCheckLengthMaxLengthParameter()
     {
         $this->assertMethodParameter(
@@ -174,9 +177,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an int type for Form::checkLength return type
      * @task_id 4
      */
+    #[TestDox('specify an int type for Form::checkLength return type')]
     public function testParameterTypeOfFormCheckLengthReturnType()
     {
         $this->assertMethodReturnType(
@@ -191,9 +194,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an Address type for Form::formatAddress address parameter
      * @task_id 5
      */
+    #[TestDox('specify an Address type for Form::formatAddress address parameter')]
     public function testParameterTypeOfFormFormatAddressParameter()
     {
         $this->assertMethodParameter(
@@ -211,9 +214,9 @@ class CityOfficeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox specify an int type for Form::checkLength return type
      * @task_id 5
      */
+    #[TestDox('specify an int type for Form::checkLength return type')]
     public function testParameterTypeOfFormFormatAddressReturnType()
     {
         $this->assertMethodReturnType(

@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-class SieveTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class SieveTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -11,8 +14,8 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 88529125-c4ce-43cc-bb36-1eb4ddd7b44f
-     * @testdox No primes under two
      */
+    #[TestDox('No primes under two')]
     public function testNoPrimesUnderTwo(): void
     {
         $this->assertEquals([], sieve(1));
@@ -20,8 +23,8 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 4afe9474-c705-4477-9923-840e1024cc2b
-     * @testdox Find first prime
      */
+    #[TestDox('Find first prime')]
     public function testFindFirstPrime(): void
     {
         $this->assertEquals([2], sieve(2));
@@ -29,8 +32,8 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 974945d8-8cd9-4f00-9463-7d813c7f17b7
-     * @testdox Find primes up to 10
      */
+    #[TestDox('Find primes up to 10')]
     public function testFindPrimesUpTo10(): void
     {
         $this->assertEquals([2, 3, 5, 7], sieve(10));
@@ -38,8 +41,8 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 2e2417b7-3f3a-452a-8594-b9af08af6d82
-     * @testdox Limit is prime
      */
+    #[TestDox('Limit is prime')]
     public function testLimitIsPrime(): void
     {
         $this->assertEquals([2, 3, 5, 7, 11, 13], sieve(13));
@@ -47,8 +50,8 @@ class SieveTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 92102a05-4c7c-47de-9ed0-b7d5fcd00f21
-     * @testdox Find primes up to 1000
      */
+    #[TestDox('Find primes up to 1000')]
     public function testFindPrimesUpTo1000(): void
     {
         $this->assertEquals(

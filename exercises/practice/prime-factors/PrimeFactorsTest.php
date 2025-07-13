@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class PrimeFactorsTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class PrimeFactorsTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

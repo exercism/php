@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class HelloWorldTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class HelloWorldTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

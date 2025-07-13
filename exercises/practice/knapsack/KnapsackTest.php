@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class KnapsackTest extends TestCase
@@ -20,8 +21,8 @@ class KnapsackTest extends TestCase
 
     /**
      * uuid: 3993a824-c20e-493d-b3c9-ee8a7753ee59
-     * @testdox No Items
      */
+    #[TestDox('No Items')]
     public function testNoItems(): void
     {
         $expected = 0;
@@ -36,8 +37,8 @@ class KnapsackTest extends TestCase
 
     /**
      * uuid: 1d39e98c-6249-4a8b-912f-87cb12e506b0
-     * @testdox One item, too heavy
      */
+    #[TestDox('One item, too heavy')]
     public function testOneItemTooHeavy(): void
     {
         $expected = 0;
@@ -52,8 +53,8 @@ class KnapsackTest extends TestCase
 
     /**
      * uuid: 833ea310-6323-44f2-9d27-a278740ffbd8
-     * @testdox Five items (cannot be greedy by weight)
      */
+    #[TestDox('Five items (cannot be greedy by weight)')]
     public function testFiveItemsCannotBeGreedyByWeight(): void
     {
         $expected = 21;
@@ -74,8 +75,8 @@ class KnapsackTest extends TestCase
 
     /**
      * uuid: 277cdc52-f835-4c7d-872b-bff17bab2456
-     * @testdox Five items (cannot be greedy by value)
      */
+    #[TestDox('Five items (cannot be greedy by value)')]
     public function testFiveItemsCannotBeGreedyByValue(): void
     {
         $expected = 80;
@@ -96,8 +97,8 @@ class KnapsackTest extends TestCase
 
     /**
      * uuid: 81d8e679-442b-4f7a-8a59-7278083916c9
-     * @testdox Example knapsack
      */
+    #[TestDox('Example knapsack')]
     public function testExampleKnapsack(): void
     {
         $expected = 90;
@@ -117,8 +118,8 @@ class KnapsackTest extends TestCase
 
     /**
      * uuid: f23a2449-d67c-4c26-bf3e-cde020f27ecc
-     * @testdox 8 items
      */
+    #[TestDox('8 items')]
     public function testEightItems(): void
     {
         $expected = 900;
@@ -142,8 +143,8 @@ class KnapsackTest extends TestCase
 
     /**
      * uuid: 7c682ae9-c385-4241-a197-d2fa02c81a11
-     * @testdox 15 items
      */
+    #[TestDox('15 items')]
     public function testFifteenItems(): void
     {
         $expected = 1458;

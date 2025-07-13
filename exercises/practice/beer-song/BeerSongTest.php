@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class BeerSongTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class BeerSongTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

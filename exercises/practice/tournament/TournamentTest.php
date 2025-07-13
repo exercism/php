@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class TournamentTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class TournamentTest extends TestCase
 {
     private Tournament $tournament;
 

@@ -53,7 +53,11 @@ class TestGenerator
             $method = $this->builderFactory->method($methodName)
                 ->makePublic()
                 ->setReturnType('void')
-                ->setDocComment("/**\n * uuid: {$case->uuid}\n * @testdox {$description}\n */")
+                ->setDocComment("/** uuid: {$case->uuid} */")
+                ->addAttribute(new Node\Attribute(
+                    new Node\Name(\PHPUnit\Framework\Attributes\TestDox::class),
+                    [new Node\Arg(new Node\Scalar\String_($description))],
+                ))
                 ->addStmt(
                     $this->builderFactory->funcCall(
                         '$this->markTestIncomplete',

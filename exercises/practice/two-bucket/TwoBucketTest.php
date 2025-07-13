@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-class TwoBucketTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class TwoBucketTest extends TestCase
 {
     private TwoBucket $twoBucket;
 
@@ -13,8 +16,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: a6f2b4ba-065f-4dca-b6f0-e3eee51cb661
-     * @testdox Measure using bucket one of size 3 and bucket two of size 5 - start with bucket one
      */
+    #[TestDox('Measure using bucket one of size 3 and bucket two of size 5 - start with bucket one')]
     public function testMeasureUsingBucketOneOfSize3AndBucketTwoOfSize5StartWithBucketOne(): void
     {
         $subject = new TwoBucket();
@@ -27,8 +30,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 6c4ea451-9678-4926-b9b3-68364e066d40
-     * @testdox Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two
      */
+    #[TestDox('Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two')]
     public function testMeasureUsingBucketOneOfSize3AndBucketTwoOfSize5StartWithBucketTwo(): void
     {
         $subject = new TwoBucket();
@@ -41,8 +44,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 3389f45e-6a56-46d5-9607-75aa930502ff
-     * @testdox Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one
      */
+    #[TestDox('Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one')]
     public function testMeasureUsingBucketOneOfSize7AndBucketTwoOfSize11StartWithBucketOne(): void
     {
         $subject = new TwoBucket();
@@ -55,8 +58,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: fe0ff9a0-3ea5-4bf7-b17d-6d4243961aa1
-     * @testdox Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two
      */
+    #[TestDox('Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two')]
     public function testMeasureUsingBucketOneOfSize7AndBucketTwoOfSize11StartWithBucketTwo(): void
     {
         $subject = new TwoBucket();
@@ -69,8 +72,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 0ee1f57e-da84-44f7-ac91-38b878691602
-     * @testdox Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two
      */
+    #[TestDox('Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two')]
     public function testMeasureOneStepUsingBucketOneOfSize1AndBucketTwoOfSize3StartWithBucketTwo(): void
     {
         $subject = new TwoBucket();
@@ -83,8 +86,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: eb329c63-5540-4735-b30b-97f7f4df0f84
-     * @testdox Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two
      */
+    #[TestDox('Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two')]
     public function testMeasureUsingBucketOneOfSize2AndBucketTwoOfSize3StartWithBucketOneAndEndWithBucketTwo(): void
     {
         $subject = new TwoBucket();
@@ -97,8 +100,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 449be72d-b10a-4f4b-a959-ca741e333b72
-     * @testdox Not possible to reach the goal
      */
+    #[TestDox('Not possible to reach the goal')]
     public function testReachabilityNotPossibleToReachGoalStartWithBucketOne(): void
     {
         $this->expectException(Exception::class);
@@ -109,8 +112,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: aac38b7a-77f4-4d62-9b91-8846d533b054
-     * @testdox With the same buckets but a different goal, then it is possible
      */
+    #[TestDox('With the same buckets but a different goal, then it is possible')]
     public function testWithSameBucketsButDifferentGoalItIsPossible(): void
     {
         $subject = new TwoBucket();
@@ -123,8 +126,8 @@ class TwoBucketTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 74633132-0ccf-49de-8450-af4ab2e3b299
-     * @testdox Goal larger than both buckets is impossible
      */
+    #[TestDox('Goal larger than both buckets is impossible')]
     public function testGoalLargerThanBothBucketsIsImpossible(): void
     {
         $this->expectException(Exception::class);

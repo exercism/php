@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-class AlphameticsTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class AlphameticsTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -11,8 +14,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid e0c08b07-9028-4d5f-91e1-d178fead8e1a
-     * @testdox puzzle with three letters
      */
+    #[TestDox('puzzle with three letters')]
     public function testSolveThreeLetterPuzzle(): void
     {
         $alphametics = new Alphametics();
@@ -21,8 +24,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid a504ee41-cb92-4ec2-9f11-c37e95ab3f25
-     * @testdox solution must have unique value for each letter
      */
+    #[TestDox('solution must have unique value for each letter')]
     public function testSolutionsMustHaveUniqueValuesForLetters(): void
     {
         $alphametics = new Alphametics();
@@ -31,8 +34,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 4e3b81d2-be7b-4c5c-9a80-cd72bc6d465a
-     * @testdox leading zero solution is invalid
      */
+    #[TestDox('leading zero solution is invalid')]
     public function testLeadingZerosAreInvalid(): void
     {
         $alphametics = new Alphametics();
@@ -41,8 +44,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 8a3e3168-d1ee-4df7-94c7-b9c54845ac3a
-     * @testdox puzzle with two digits final carry
      */
+    #[TestDox('puzzle with two digits final carry')]
     public function testPuzzleWithTwoDigitsFinalCarry(): void
     {
         $alphametics = new Alphametics();
@@ -52,8 +55,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid a9630645-15bd-48b6-a61e-d85c4021cc09
-     * @testdox puzzle with four letters
      */
+    #[TestDox('puzzle with four letters')]
     public function testPuzzleWithFourLetters(): void
     {
         $alphametics = new Alphametics();
@@ -63,8 +66,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 3d905a86-5a52-4e4e-bf80-8951535791bd
-     * @testdox puzzle with six letters
      */
+    #[TestDox('puzzle with six letters')]
     public function testPuzzleWithSixLetters(): void
     {
         $alphametics = new Alphametics();
@@ -74,8 +77,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 4febca56-e7b7-4789-97b9-530d09ba95f0
-     * @testdox puzzle with seven letters
      */
+    #[TestDox('puzzle with seven letters')]
     public function testPuzzleWithSevenLetter(): void
     {
         $alphametics = new Alphametics();
@@ -85,8 +88,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 12125a75-7284-4f9a-a5fa-191471e0d44f
-     * @testdox puzzle with eight letters
      */
+    #[TestDox('puzzle with eight letters')]
     public function testPuzzleWithEightLetters(): void
     {
         $alphametics = new Alphametics();
@@ -96,8 +99,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid fb05955f-38dc-477a-a0b6-5ef78969fffa
-     * @testdox puzzle with ten letters
      */
+    #[TestDox('puzzle with ten letters')]
     public function testPuzzleWithTenLetters(): void
     {
         $alphametics = new Alphametics();
@@ -118,8 +121,8 @@ class AlphameticsTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 9a101e81-9216-472b-b458-b513a7adacf7
-     * @testdox puzzle with ten letters and 199 addends
      */
+    #[TestDox('puzzle with ten letters and 199 addends')]
     public function testPuzzleWithTenLettersAnd199Addends(): void
     {
         $alphametics = new Alphametics();

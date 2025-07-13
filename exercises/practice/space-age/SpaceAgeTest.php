@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-class SpaceAgeTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class SpaceAgeTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -13,8 +16,8 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 84f609af-5a91-4d68-90a3-9e32d8a5cd34
-     * @testdox Age on Earth
      */
+    #[TestDox('Age on Earth')]
     public function testAgeOnEarth(): void
     {
         $age = new SpaceAge(1000000000);
@@ -23,8 +26,8 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid ca20c4e9-6054-458c-9312-79679ffab40b
-     * @testdox Age on Mercury
      */
+    #[TestDox('Age on Mercury')]
     public function testAgeOnMercury(): void
     {
         $age = new SpaceAge(2134835688);
@@ -33,8 +36,8 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 502c6529-fd1b-41d3-8fab-65e03082b024
-     * @testdox Age on Venus
      */
+    #[TestDox('Age on Venus')]
     public function testAgeOnVenus(): void
     {
         $age = new SpaceAge(189839836);
@@ -43,8 +46,8 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 9ceadf5e-a0d5-4388-9d40-2c459227ceb8
-     * @testdox Age on Mars
      */
+    #[TestDox('Age on Mars')]
     public function testAgeOnMars(): void
     {
         $age = new SpaceAge(2129871239);
@@ -53,8 +56,8 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 42927dc3-fe5e-4f76-a5b5-f737fc19bcde
-     * @testdox Age on Jupiter
      */
+    #[TestDox('Age on Jupiter')]
     public function testAgeOnJupiter(): void
     {
         $age = new SpaceAge(901876382);
@@ -63,8 +66,8 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 8469b332-7837-4ada-b27c-00ee043ebcad
-     * @testdox Age on Saturn
      */
+    #[TestDox('Age on Saturn')]
     public function testAgeOnSaturn(): void
     {
         $age = new SpaceAge(2000000000);
@@ -73,8 +76,8 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 999354c1-76f8-4bb5-a672-f317b6436743
-     * @testdox Age on Uranus
      */
+    #[TestDox('Age on Uranus')]
     public function testAgeOnUranus(): void
     {
         $age = new SpaceAge(1210123456);
@@ -83,8 +86,8 @@ class SpaceAgeTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid 80096d30-a0d4-4449-903e-a381178355d8
-     * @testdox Age on Neptune
      */
+    #[TestDox('Age on Neptune')]
     public function testAgeOnNeptune(): void
     {
         $age = new SpaceAge(1821023456);

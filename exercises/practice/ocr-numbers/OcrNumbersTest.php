@@ -24,7 +24,9 @@
 
 declare(strict_types=1);
 
-class OcrNumbersTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class OcrNumbersTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {

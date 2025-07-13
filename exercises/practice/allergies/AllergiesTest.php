@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-class AllergiesTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
+
+class AllergiesTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -10,10 +13,9 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider provideListOfAllergen
-     *
      * @param Allergen $allergen
      */
+    #[DataProvider('provideListOfAllergen')]
     public function testNoAllergiesMeansNotAllergicToAnything($allergen): void
     {
         $allergies = new Allergies(0);
@@ -22,10 +24,9 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider provideListOfAllergen
-     *
      * @param Allergen $allergicTo
      */
+    #[DataProvider('provideListOfAllergen')]
     public function testAllergiesToOneAllergen($allergicTo): void
     {
         $allergies = new Allergies($allergicTo->getScore());
@@ -111,9 +112,7 @@ class AllergiesTest extends PHPUnit\Framework\TestCase
         ], array_values($allergies->getList()));
     }
 
-    /**
-     * @dataProvider provideListOfAllergen
-     */
+    #[DataProvider('provideListOfAllergen')]
     public function testIsAllergicToEverything($allergen): void
     {
         $allergies = new Allergies(255);

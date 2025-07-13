@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-class AcronymTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class AcronymTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -11,8 +14,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 1e22cceb-c5e4-4562-9afe-aef07ad1eaf4
-     * @testdox Basic
      */
+    #[TestDox('Basic')]
     public function testBasicTitleCase(): void
     {
         $this->assertEquals('PNG', acronym('Portable Network Graphics'));
@@ -20,8 +23,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 79ae3889-a5c0-4b01-baf0-232d31180c08
-     * @testdox Lowercase words
      */
+    #[TestDox('Lowercase words')]
     public function testLowerCaseWord(): void
     {
         $this->assertEquals('ROR', acronym('Ruby on Rails'));
@@ -29,8 +32,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: ec7000a7-3931-4a17-890e-33ca2073a548
-     * @testdox Punctuation
      */
+    #[TestDox('Punctuation')]
     public function testPunctuation(): void
     {
         $this->assertEquals('FIFO', acronym('First In, First Out'));
@@ -38,8 +41,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 32dd261c-0c92-469a-9c5c-b192e94a63b0
-     * @testdox All caps word
      */
+    #[TestDox('All caps word')]
     public function testAllCapsWords(): void
     {
         $this->assertEquals('GIMP', acronym('GNU Image Manipulation Program'));
@@ -47,8 +50,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: ae2ac9fa-a606-4d05-8244-3bcc4659c1d4
-     * @testdox Punctuation without whitespace
      */
+    #[TestDox('Punctuation without whitespace')]
     public function testHyphenated(): void
     {
         $this->assertEquals('CMOS', acronym('Complementary metal-oxide semiconductor'));
@@ -56,8 +59,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 0e4b1e7c-1a6d-48fb-81a7-bf65eb9e69f9
-     * @testdox Very long abbreviation
      */
+    #[TestDox('Very long abbreviation')]
     public function testVeryLongAbbreviation(): void
     {
         $this->assertEquals('ROTFLSHTMDCOALM', acronym('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me'));
@@ -65,8 +68,8 @@ class AcronymTest extends PHPUnit\Framework\TestCase
 
     /**
      * uuid: 6a078f49-c68d-4b7b-89af-33a1a98c28cc
-     * @testdox Consecutive delimiters
      */
+    #[TestDox('Consecutive delimiters')]
     public function testConsecutiveDelimiters(): void
     {
         $this->assertEquals('SIMUFTA', acronym('Something - I made up from thin air'));
