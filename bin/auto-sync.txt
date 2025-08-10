@@ -28,6 +28,7 @@ flower-field
 food-chain
 grade-school
 hamming
+hello-world
 house
 isbn-verifier
 isogram
