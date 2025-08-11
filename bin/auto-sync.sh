@@ -4,8 +4,7 @@ scriptDirectory="$( dirname "$0" )"
 if [[ "$#" != 0 ]]; then
     forwardedParameters=( "$@" )
 else
-    forwardedParameters=( -o -u -y --docs --filepaths --metadata )
-    # forwardedParameters=( -o -u -y --tests include )
+    forwardedParameters=( -o -u -y --docs --filepaths --metadata --tests include )
 fi
 
 exitWithFailure() {
