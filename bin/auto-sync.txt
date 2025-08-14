@@ -38,6 +38,7 @@ knapsack
 largest-series-product
 leap
 list-ops
+linked-list
 luhn
 matching-brackets
 meetup
