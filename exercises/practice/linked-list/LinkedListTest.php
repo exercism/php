@@ -1,30 +1,9 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
 class LinkedListTest extends TestCase
 {
@@ -33,6 +12,10 @@ class LinkedListTest extends TestCase
         require_once 'LinkedList.php';
     }
 
+    /**
+     * uuid: c3f67e5d-cfa2-4c3e-a18f-7ce999c3c885
+     */
+    #[TestDox('push/pop respectively add/remove at the end of the list')]
     public function testPushAndPopAreFirstInLastOut(): void
     {
         $list = new LinkedList();
@@ -45,6 +28,10 @@ class LinkedListTest extends TestCase
         $this->assertEquals(10, $list->pop());
     }
 
+     /**
+     * uuid: 37962ee0-3324-4a29-b588-5a4c861e6564
+     */
+    #[TestDox('shift gets first element from the list')]
     public function testPushAndShiftAreFirstInFirstOut(): void
     {
         $list = new LinkedList();
@@ -57,6 +44,10 @@ class LinkedListTest extends TestCase
         $this->assertEquals(15, $list->shift());
     }
 
+    /**
+     * uuid: 30a3586b-e9dc-43fb-9a73-2770cec2c718
+     */
+    #[TestDox('unshift adds element at start of the list')]
     public function testUnshiftAndShiftAreLastInFirstOut(): void
     {
         $list = new LinkedList();
@@ -69,6 +60,10 @@ class LinkedListTest extends TestCase
         $this->assertEquals(10, $list->shift());
     }
 
+    /**
+     * uuid: 7f7e3987-b954-41b8-8084-99beca08752c
+     */
+    #[TestDox('pop gets element from the list')]
     public function testUnshiftAndPopAreLastInLastOut(): void
     {
         $list = new LinkedList();
@@ -81,6 +76,10 @@ class LinkedListTest extends TestCase
         $this->assertEquals(15, $list->pop());
     }
 
+     /**
+     * uuid: 042f71e4-a8a7-4cf0-8953-7e4f3a21c42d
+     */
+    #[TestDox('pop, push, shift, and unshift can be used in any order')]
     public function testAllMethodsCanBeUsedTogether(): void
     {
         $list = new LinkedList();
