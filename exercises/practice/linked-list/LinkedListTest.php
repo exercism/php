@@ -294,9 +294,9 @@ class LinkedListTest extends TestCase
     //     $list = new LinkedList();
     //     $list->push(89);
 
-    //     $list->delete(103); 
+    //     $list->delete(103);
 
-    //     $this->assertEquals(1, $list->count()); 
+    //     $this->assertEquals(1, $list->count());
     // }
 
     /**
