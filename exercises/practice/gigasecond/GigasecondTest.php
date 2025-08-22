@@ -12,12 +12,6 @@ class GigasecondTest extends TestCase
         require_once 'Gigasecond.php';
     }
 
-    public function dateSetup($date): DateTimeImmutable
-    {
-        $UTC = new DateTimeZone('UTC');
-        return new DateTimeImmutable($date, $UTC);
-    }
-
     public static function inputAndExpectedDates(): array
     {
         return [
@@ -36,7 +30,8 @@ class GigasecondTest extends TestCase
     #[DataProvider('inputAndExpectedDates')]
     public function testFrom(string $inputDate, string $expected): void
     {
-        $date = $this->dateSetup($inputDate);
+        $UTC = new DateTimeZone('UTC');
+        $date = new DateTimeImmutable($inputDate, $UTC);
         $gs = from($date);
 
         $this->assertInstanceOf(DateTimeImmutable::class, $gs);
