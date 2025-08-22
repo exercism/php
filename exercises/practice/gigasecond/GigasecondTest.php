@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\TestDox;
 
 /**
- * ATTENTION: We use a `from()` function for backwards compatibility, not `add()`
+ * ATTENTION: We use function `from()` for backwards compatibility, not `add()`
  */
 class GigasecondTest extends TestCase
 {
