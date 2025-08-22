@@ -29,17 +29,6 @@ class GigasecondTest extends TestCase
         ];
     }
 
-    public static function inputDates(): array
-    {
-        return [
-            ['2011-04-25'],
-            ['1977-06-13'],
-            ['1959-07-19'],
-            ['2015-01-24 22:00:00'],
-            ['2015-01-24 23:59:59'],
-        ];
-    }
-
     /**
      * @param string $inputDate
      * @param string $expected
@@ -50,16 +39,7 @@ class GigasecondTest extends TestCase
         $date = $this->dateSetup($inputDate);
         $gs = from($date);
 
+        $this->assertInstanceOf(DateTimeImmutable::class, $gs);
         $this->assertSame($expected, $gs->format('Y-m-d H:i:s'));
-    }
-
-    /**
-     * @param string $inputDate
-     */
-    #[DataProvider('inputDates')]
-    public function testFromReturnType(string $inputDate): void
-    {
-        $date = $this->dateSetup($inputDate);
-        $this->assertInstanceOf(DateTimeImmutable::class, from($date));
     }
 }
