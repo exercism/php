@@ -23,18 +23,15 @@ class GigasecondTest extends TestCase
         ];
     }
 
-    /**
-     * @param string $inputDate
-     * @param string $expected
-     */
     #[DataProvider('inputAndExpectedDates')]
     public function testFrom(string $inputDate, string $expected): void
     {
         $UTC = new DateTimeZone('UTC');
-        $date = new DateTimeImmutable($inputDate, $UTC);
-        $gs = from($date);
+        $input = new DateTimeImmutable($inputDate, $UTC);
 
-        $this->assertInstanceOf(DateTimeImmutable::class, $gs);
-        $this->assertSame($expected, $gs->format('Y-m-d H:i:s'));
+        $actual = from($input);
+
+        $this->assertInstanceOf(DateTimeImmutable::class, $actual);
+        $this->assertSame($expected, $actual->format('Y-m-d H:i:s'));
     }
 }
