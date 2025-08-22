@@ -19,7 +19,6 @@ class GigasecondTest extends TestCase
     public static function inputAndExpectedDates(): array
     {
         return [
-            ['1977-06-13', '2009-02-19 01:46:40'],
             ['1959-07-19', '1991-03-27 01:46:40'],
             ['2015-01-24 22:00:00', '2046-10-02 23:46:40'],
             ['2015-01-24 23:59:59', '2046-10-03 01:46:39'],
@@ -50,6 +49,22 @@ class GigasecondTest extends TestCase
         $this->assertInstanceOf(DateTimeImmutable::class, $actual);
         $this->assertSame(
             '2043-01-01 01:46:40',
+            $actual->format('Y-m-d H:i:s'),
+        );
+    }
+
+    /** uuid: 6d86dd16-6f7a-47be-9e58-bb9fb2ae1433 */
+    #[TestDox('Second test for date only specification of time')]
+    public function testSecondTestForDateOnlySpecificationOfTime(): void
+    {
+        $UTC = new DateTimeZone('UTC');
+        $input = new DateTimeImmutable('1977-06-13', $UTC);
+
+        $actual = from($input);
+
+        $this->assertInstanceOf(DateTimeImmutable::class, $actual);
+        $this->assertSame(
+            '2009-02-19 01:46:40',
             $actual->format('Y-m-d H:i:s'),
         );
     }
