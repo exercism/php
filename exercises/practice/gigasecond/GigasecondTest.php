@@ -5,6 +5,9 @@ declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 
+/**
+ * ATTENTION: We use a `from()` function for backwards compatibility, not `add()`
+ */
 class GigasecondTest extends TestCase
 {
     public static function setUpBeforeClass(): void
