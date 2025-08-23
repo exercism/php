@@ -303,7 +303,7 @@ class LinkedListTest extends TestCase
      * uuid: 7e04828f-6082-44e3-a059-201c63252a76
      */
     // #[TestDox('deletes only the first occurrence')]
-    // public function testDeleteOnlyFirstOccurrence(): void
+    // public function testDeleteOnlyTheFirstOccurrence(): void
     // {
     //     $list = new LinkedList();
     //     $list->push(73);
