@@ -56,7 +56,7 @@ class LinkedListTest extends TestCase
      * uuid: 37962ee0-3324-4a29-b588-5a4c861e6564
      */
     #[TestDox('shift gets first element from the list')]
-    public function testPushAndShiftAreFirstInFirstOut(): void
+    public function testShiftGetsFirstElementFromTheList(): void
     {
         $list = new LinkedList();
         $list->push(23);
