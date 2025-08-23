@@ -257,7 +257,7 @@ class LinkedListTest extends TestCase
      * uuid: ee3729ee-3405-4bd2-9bad-de0d4aa5d647
      */
     // #[TestDox('deletes the first of two elements')]
-    // public function testDeleteFirstOfTwoElements(): void
+    // public function testDeletesTheFirstOfTwoElements(): void
     // {
     //     $list = new LinkedList();
     //     $list->push(97);
