@@ -16,7 +16,7 @@ class LinkedListTest extends TestCase
      * uuid: 7f7e3987-b954-41b8-8084-99beca08752c
      */
     #[TestDox('pop gets element from the list')]
-    public function testUnshiftAndPopAreLastInLastOut(): void
+    public function testPopGetsElementFromTheList(): void
     {
         $list = new LinkedList();
         $list->push(7);
