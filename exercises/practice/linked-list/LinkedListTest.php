@@ -86,7 +86,7 @@ class LinkedListTest extends TestCase
      * uuid: 042f71e4-a8a7-4cf0-8953-7e4f3a21c42d
      */
     #[TestDox('pop, push, shift, and unshift can be used in any order')]
-    public function testAllMethodsCanBeUsedTogether(): void
+    public function testPopPushShiftAndUnshiftCanBeUsedInAnyOrder(): void
     {
         $list = new LinkedList();
         $list->push(1);
