@@ -203,7 +203,7 @@ class LinkedListTest extends TestCase
      * uuid: fd65e422-51f3-45c0-9fd0-c33da638f89b
      */
     // #[TestDox('deletes the element with the specified value from the list')]
-    // public function testDeleteElementFromList(): void
+    // public function testDeletesTheElementWithTheSpecifiedValueFromTheList(): void
     // {
     //     $list = new LinkedList();
     //     $list->push(71);
