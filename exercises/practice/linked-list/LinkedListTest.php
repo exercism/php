@@ -239,7 +239,7 @@ class LinkedListTest extends TestCase
      * uuid: 58242222-5d39-415b-951d-8128247f8993
      */
     // #[TestDox('deletes the element with the specified value from the list, re-assigns head')]
-    // public function testDeleteElementAndReassignHead(): void
+    // public function testDeletesTheElementWithTheSpecifiedValueFromTheListReassignsHead(): void
     // {
     //     $list = new LinkedList();
     //     $list->push(71);
