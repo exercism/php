@@ -1,6 +1,6 @@
 <?php
 
- /*
+/*
  * By adding type hints and enabling strict type checking, code can become
  * easier to read, self-documenting and reduce the number of potential bugs.
  * By default, type declarations are non-strict, which means they will attempt
