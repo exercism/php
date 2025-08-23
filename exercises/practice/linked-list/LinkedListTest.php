@@ -28,7 +28,7 @@ class LinkedListTest extends TestCase
      * uuid: c3f67e5d-cfa2-4c3e-a18f-7ce999c3c885
      */
     #[TestDox('push/pop respectively add/remove at the end of the list')]
-    public function testPushAndPopAreFirstInLastOut(): void
+    public function testPushPopRespectivelyAddRemoveAtTheEndOfTheList(): void
     {
         $list = new LinkedList();
         $list->push(11);
