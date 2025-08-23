@@ -70,7 +70,7 @@ class LinkedListTest extends TestCase
      * uuid: 30a3586b-e9dc-43fb-9a73-2770cec2c718
      */
     #[TestDox('unshift adds element at start of the list')]
-    public function testUnshiftAndShiftAreLastInFirstOut(): void
+    public function testUnshiftAddsElementAtStartOfTheList(): void
     {
         $list = new LinkedList();
         $list->unshift(23);
