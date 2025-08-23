@@ -289,7 +289,7 @@ class LinkedListTest extends TestCase
      * uuid: 7b420958-f285-4922-b8f9-10d9dcab5179
      */
     // #[TestDox('delete does not modify the list if the element is not found')]
-    // public function testDeleteNonExistentElement(): void
+    // public function testDeleteDoesNotModifyTheListIfTheElementIsNotFound(): void
     // {
     //     $list = new LinkedList();
     //     $list->push(89);
