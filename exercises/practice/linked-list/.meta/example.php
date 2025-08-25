@@ -49,6 +49,50 @@ class LinkedList
 
         return $data;
     }
+
+    public function count(): int
+    {
+        if (!$this->head) {
+            return 0;
+        }
+
+        $count = 1;
+        $current = $this->head->next;
+
+        while ($current !== $this->head) {
+            $count++;
+            $current = $current->next;
+        }
+
+        return $count;
+    }
+
+    public function delete($value): void
+    {
+        if (!$this->head) {
+            return;
+        }
+
+        $current = $this->head;
+        do {
+            if ($current->data === $value) {
+                if ($current->next === $current) {
+                    $this->head = null;
+                    return;
+                }
+
+                $current->prev->next = $current->next;
+                $current->next->prev = $current->prev;
+
+                if ($current === $this->head) {
+                    $this->head = $current->next;
+                }
+
+                return;
+            }
+            $current = $current->next;
+        } while ($current !== $this->head);
+    }
 }
 
 class Node
