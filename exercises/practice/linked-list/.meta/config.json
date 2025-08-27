@@ -2,6 +2,9 @@
   "authors": [
     "MichaelBunker"
   ],
+  "contributors": [
+    "A-O-Emmanuel"
+  ],
   "files": {
     "solution": [
       "LinkedList.php"
@@ -13,5 +16,6 @@
       ".meta/example.php"
     ]
   },
-  "blurb": "Implement a doubly linked list"
+  "blurb": "Implement a doubly linked list.",
+  "source": "Classic computer science topic"
 }
