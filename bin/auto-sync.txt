@@ -30,6 +30,7 @@ gigasecond
 grade-school
 hamming
 hello-world
+high-scores
 house
 isbn-verifier
 isogram
