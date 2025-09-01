@@ -24,6 +24,12 @@
 
 declare(strict_types=1);
 
+/* 
+ * You will need to add the methods and properties to store and present the
+ * desired values yourself. You will want to consider using property hooks:
+ * https://www.php.net/manual/en/language.oop5.property-hooks.php
+ */ 
+
 class HighScores
 {
     public function __construct(array $scores)
