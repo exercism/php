@@ -93,6 +93,32 @@ class HighScoresTest extends TestCase
     }
 
     /*
+     * uuid: 2df075f9-fec9-4756-8f40-98c52a11504f
+     */
+    #[TestDox('Top 3 scores -> Latest score after personal top scores')]
+    public function testTop3ScoresLatestScoreAfterPersonalTopScores(): void
+    {
+        $input     = [20, 100, 30, 90, 2, 70];
+        $highScore = new HighScores($input);
+
+        $this->assertEquals([100, 90, 70], $highScore->personalTopThree);
+        $this->assertEquals(70, $highScore->latest);
+    }
+
+    /*
+     * uuid: 809c4058-7eb1-4206-b01e-79238b9b71bc
+     */
+    #[TestDox('Top 3 scores -> Scores after personal top scores')]
+    public function testTop3ScoresScoresAfterPersonalTopScores(): void
+    {
+        $input     = [30, 50, 20, 70];
+        $highScore = new HighScores($input);
+
+        $this->assertEquals([70, 50, 30], $highScore->personalTopThree);
+        $this->assertEquals([30, 50, 20, 70], $highScore->scores);
+    }
+
+    /*
      * uuid: ddb0efc0-9a86-4f82-bc30-21ae0bdc6418
      */
     #[TestDox('Top 3 scores -> Latest score after personal best')]
@@ -106,15 +132,15 @@ class HighScoresTest extends TestCase
     }
 
     /*
-     * uuid: 2df075f9-fec9-4756-8f40-98c52a11504f
+     * uuid: 6a0fd2d1-4cc4-46b9-a5bb-2fb667ca2364
      */
-    #[TestDox('Top 3 scores -> Latest score after personal top scores')]
-    public function testTop3ScoresLatestScoreAfterPersonalTopScores(): void
+    #[TestDox('Top 3 scores -> Scores after personal best')]
+    public function testTop3ScoresScoresAfterPersonalBest(): void
     {
-        $input     = [20, 100, 30, 90, 2, 70];
+        $input     = [20, 70, 15, 25, 30];
         $highScore = new HighScores($input);
 
-        $this->assertEquals([100, 90, 70], $highScore->personalTopThree);
-        $this->assertEquals(70, $highScore->latest);
+        $this->assertEquals(70, $highScore->personalBest);
+        $this->assertEquals([20, 70, 15, 25, 30], $highScore->scores);
     }
 }
