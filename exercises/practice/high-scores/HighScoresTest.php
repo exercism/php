@@ -98,11 +98,11 @@ class HighScoresTest extends TestCase
     #[TestDox('Top 3 scores -> Latest score after personal top scores')]
     public function testTop3ScoresLatestScoreAfterPersonalTopScores(): void
     {
-        $input     = [20, 100, 30, 90, 2, 70];
+        $input     = [70, 50, 20, 30];
         $highScore = new HighScores($input);
 
-        $this->assertEquals([100, 90, 70], $highScore->personalTopThree);
-        $this->assertEquals(70, $highScore->latest);
+        $this->assertEquals([70, 50, 30], $highScore->personalTopThree);
+        $this->assertEquals(30, $highScore->latest);
     }
 
     /*
