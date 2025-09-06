@@ -24,6 +24,7 @@ difference-of-squares
 dnd-character
 eliuds-eggs
 etl
+flatten-array
 flower-field
 food-chain
 gigasecond
