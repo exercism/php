@@ -11,6 +11,18 @@ class FlattenArrayTest extends TestCase
     {
         require_once 'FlattenArray.php';
     }
+
+    /**
+     * uuid 8c71dabd-da60-422d-a290-4a571471fb14
+     */
+    #[TestDox('empty')]
+    public function testEmpty(): void
+    {
+        $input = [];
+        $expected = [];
+        $this->assertEquals($expected, flatten($input));
+    }
+
     /**
      * uuid d268b919-963c-442d-9f07-82b93f1b518c
      */
@@ -19,6 +31,18 @@ class FlattenArrayTest extends TestCase
     {
         $input = [0, 1, 2];
         $expected = [0, 1, 2];
+        $this->assertEquals($expected, flatten($input));
+    }
+
+
+    /**
+     * uuid 3f15bede-c856-479e-bb71-1684b20c6a30
+     */
+    #[TestDox('flattens a nested array')]
+    public function testFlattensANestedArray(): void
+    {
+        $input = [[[]]];
+        $expected = [];
         $this->assertEquals($expected, flatten($input));
     }
 
@@ -57,10 +81,77 @@ class FlattenArrayTest extends TestCase
     }
 
     /**
+     * uuid 0705a8e5-dc86-4cec-8909-150c5e54fa9c
+     */
+    #[TestDox('null values are omitted from the final result')]
+    public function testNullValuesAreOmittedFromTheFinalResult(): void
+    {
+        $input = [1, 2, null];
+        $expected = [1, 2];
+        $this->assertEquals($expected, flatten($input));
+    }
+
+    /**
+     * uuid c6cf26de-8ccd-4410-84bd-b9efd88fd2bc
+     */
+    #[TestDox('consecutive null values at the front of the list are omitted from the final result')]
+    public function testConsecutiveNullValuesAtTheFrontOfTheListAreOmittedFromTheFinalResult(): void
+    {
+        $input = [null, null, 3];
+        $expected = [3];
+        $this->assertEquals($expected, flatten($input));
+    }
+
+    /**
+     * uuid bc72da10-5f55-4ada-baf3-50e4da02ec8e
+     */
+    #[TestDox('consecutive null values at the front of the array are omitted from the final result')]
+    public function testConsecutiveNullValuesAtTheFrontOfTheArrayAreOmittedFromTheFinalResult(): void
+    {
+        $input = [null, null, 3];
+        $expected = [3];
+        $this->assertEquals($expected, flatten($input));
+    }
+
+    /**
+     * uuid 382c5242-587e-4577-b8ce-a5fb51e385a1
+     */
+    #[TestDox('consecutive null values in the middle of the list are omitted from the final result')]
+    public function testConsecutiveNullValuesInTheMiddleOfTheListAreOmittedFromTheFinalResult(): void
+    {
+        $input = [1, null, null, 4];
+        $expected = [1, 4];
+        $this->assertEquals($expected, flatten($input));
+    }
+
+    /**
+     * uuid 6991836d-0d9b-4703-80a0-3f1f23eb5981
+     */
+    #[TestDox('consecutive null values in the middle of the array are omitted from the final result')]
+    public function testConsecutiveNullValuesInTheMiddleOfTheArrayAreOmittedFromTheFinalResult(): void
+    {
+        $input = [1, null, null, 4];
+        $expected = [1, 4];
+        $this->assertEquals($expected, flatten($input));
+    }
+
+    /**
+     * uuid ef1d4790-1b1e-4939-a179-51ace0829dbd
+     */
+    #[TestDox('6 level nest list with null values')]
+    public function testSixLevelNestListWithNullValues(): void
+    {
+        $input = [0, 2, [[2, 3], 8, [[100]], null, [[null]]], -2];
+        $expected = [0, 2, 2, 3, 8, 100, -2];
+        $this->assertEquals($expected, flatten($input));
+    }
+
+
+    /**
      * uuid dc90a09c-5376-449c-a7b3-c2d20d540069
      */
     #[TestDox('6 level nested array with null values')]
-    public function testSixLevelNestListWithNullValues(): void
+    public function testSixLevelNestedArrayWithNullValues(): void
     {
         $input = [0, 2, [[2, 3], 8, [[100]], null, [[null]]], -2];
         $expected = [0, 2, 2, 3, 8, 100, -2];
