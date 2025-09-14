@@ -126,7 +126,7 @@ class FlattenArrayTest extends TestCase
      * uuid 51f5d9af-8f7f-4fb5-a156-69e8282cb275
      */
     #[TestDox('all values in nested array are null')]
-    public function testAllValuesInNestedListAreNull(): void
+    public function testAllValuesInNestedArrayAreNull(): void
     {
         $input = [null, [[[null]]], null, null, [[null, null], null], null];
         $expected = [];
