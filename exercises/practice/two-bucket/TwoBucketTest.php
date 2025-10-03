@@ -98,6 +98,30 @@ class TwoBucketTest extends TestCase
         $this->assertEquals(2, $solution->litersLeftInOtherBucket);
     }
 
+    /** uuid: 58d70152-bf2b-46bb-ad54-be58ebe94c03 */
+    #[TestDox('Measure using bucket one much bigger than bucket two')]
+    public function testMeasureUsingBucketOneMuchBiggerThanBucketTwo(): void
+    {
+        $subject = new TwoBucket();
+        $solution = $subject->solve(5, 1, 2, 'one');
+
+        $this->assertEquals(6, $solution->numberOfActions);
+        $this->assertEquals('one', $solution->nameOfBucketWithDesiredLiters);
+        $this->assertEquals(1, $solution->litersLeftInOtherBucket);
+    }
+
+    /** uuid: 9dbe6499-caa5-4a58-b5ce-c988d71b8981 */
+    #[TestDox('Measure using bucket one much smaller than bucket two')]
+    public function testMeasureUsingBucketOneMuchSmallerThanBucketTwo(): void
+    {
+        $subject = new TwoBucket();
+        $solution = $subject->solve(3, 15, 9, 'one');
+
+        $this->assertEquals(6, $solution->numberOfActions);
+        $this->assertEquals('two', $solution->nameOfBucketWithDesiredLiters);
+        $this->assertEquals(0, $solution->litersLeftInOtherBucket);
+    }
+
     /**
      * uuid: 449be72d-b10a-4f4b-a959-ca741e333b72
      */
