@@ -7,8 +7,6 @@ use PHPUnit\Framework\Attributes\TestDox;
 
 class TwoBucketTest extends TestCase
 {
-    private TwoBucket $twoBucket;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'TwoBucket.php';
