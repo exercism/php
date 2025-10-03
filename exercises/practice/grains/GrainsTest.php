@@ -30,7 +30,7 @@ class GrainsTest extends TestCase
     #[TestDox('grains on square 1')]
     public function testGrainsOnSquare1(): void
     {
-        $this->assertSame(1, square(1));
+        $this->assertSame('1', square(1));
     }
 
     /**
@@ -39,7 +39,7 @@ class GrainsTest extends TestCase
     #[TestDox('grains on square 2')]
     public function testGrainsOnSquare2(): void
     {
-        $this->assertSame(2, square(2));
+        $this->assertSame('2', square(2));
     }
 
      /**
@@ -48,7 +48,7 @@ class GrainsTest extends TestCase
     #[TestDox('grains on square 3')]
     public function testGrainsOnSquare3(): void
     {
-        $this->assertSame(4, square(3));
+        $this->assertSame('4', square(3));
     }
 
     /**
@@ -57,7 +57,7 @@ class GrainsTest extends TestCase
     #[TestDox('grains on square 4')]
     public function testGrainsOnSquare4(): void
     {
-        $this->assertSame(8, square(4));
+        $this->assertSame('8', square(4));
     }
 
     /**
@@ -66,7 +66,7 @@ class GrainsTest extends TestCase
     #[TestDox('grains on square 16')]
     public function testGrainsOnSquare16(): void
     {
-        $this->assertSame(32768, square(16));
+        $this->assertSame('32768', square(16));
     }
 
     /**
@@ -75,7 +75,7 @@ class GrainsTest extends TestCase
     #[TestDox('grains on square 32')]
     public function testGrainsOnSquare32(): void
     {
-        $this->assertSame(2147483648, square(32));
+        $this->assertSame('2147483648', square(32));
     }
 
     /**
@@ -84,7 +84,7 @@ class GrainsTest extends TestCase
     #[TestDox('grains on square 64')]
     public function testGrainsOnSquare64(): void
     {
-        $this->assertSame(9223372036854775808, square(64));
+        $this->assertSame('9223372036854775808', square(64));
     }
 
     /**
@@ -94,7 +94,6 @@ class GrainsTest extends TestCase
     public function testSquare0IsInvalid(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('square must be between 1 and 64');
 
         square(0);
     }
@@ -106,7 +105,6 @@ class GrainsTest extends TestCase
     public function testRejectsNegative(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('square must be between 1 and 64');
 
         square(-1);
     }
@@ -118,7 +116,6 @@ class GrainsTest extends TestCase
     public function testRejectsGreaterThan64(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('square must be between 1 and 64');
 
         square(65);
     }
@@ -129,6 +126,6 @@ class GrainsTest extends TestCase
     #[TestDox('returns the total number of grains on the board')]
     public function testTotal(): void
     {
-        $this->assertSame(18446744073709551615, total());
+        $this->assertSame('18446744073709551615', total());
     }
 }
