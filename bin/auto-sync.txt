@@ -40,8 +40,9 @@ kindergarten-garden
 knapsack
 largest-series-product
 leap
-list-ops
+line-up
 linked-list
+list-ops
 luhn
 matching-brackets
 meetup
