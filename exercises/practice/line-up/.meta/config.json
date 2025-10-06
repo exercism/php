@@ -1,5 +1,9 @@
 {
-  "authors": [],
+  "authors": [
+    "codedge",
+    "neenjaw",
+    "mk-mxp"
+  ],
   "files": {
     "solution": [
       "LineUp.php"
