@@ -170,6 +170,14 @@
         "difficulty": 1
       },
       {
+        "slug": "line-up",
+        "name": "Line up",
+        "uuid": "6016009e-9012-447a-87b7-d33ea01492d9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "48de430b-0d88-4af0-ab48-d00b840312bb",
@@ -1120,6 +1128,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
+        "status": "deprecated",
         "topics": [
           "strings",
           "conditionals"

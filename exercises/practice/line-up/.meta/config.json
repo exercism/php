@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "codedge",
+    "neenjaw",
+    "mk-mxp"
+  ],
+  "files": {
+    "solution": [
+      "LineUp.php"
+    ],
+    "test": [
+      "LineUpTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Help lining up customers at Yaʻqūb's Deli.",
+  "source": "mk-mxp, based on previous work from Exercism contributors codedge and neenjaw",
+  "source_url": "https://forum.exercism.org/t/new-exercise-ordinal-numbers/19147"
+}
