@@ -29,6 +29,7 @@ flower-field
 food-chain
 gigasecond
 grade-school
+grains
 hamming
 hello-world
 high-scores

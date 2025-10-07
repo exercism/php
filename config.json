@@ -919,7 +919,7 @@
         "uuid": "3b001897-4052-4dab-84fd-b971a9946e0a",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
+        "difficulty": 4,
         "topics": [
           "algorithms",
           "floating_point_numbers"
