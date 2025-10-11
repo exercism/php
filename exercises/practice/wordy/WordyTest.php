@@ -12,11 +12,46 @@ class WordyTest extends TestCase
         require_once 'Wordy.php';
     }
 
+    // /** uuid: 88bf4b28-0de3-4883-93c7-db1b14aa806e */
+    // #[TestDox('just a number')]
+    // public function testJustANumber(): void
+    // {
+    //     $this->assertEquals(5, calculate('What is 5?'));
+    // }
+
+    // /** uuid: 18983214-1dfc-4ebd-ac77-c110dde699ce */
+    // #[TestDox('just a zero')]
+    // public function testJustAZero(): void
+    // {
+    //     $this->assertEquals(0, calculate('What is 0?'));
+    // }
+
+    // /** uuid: 607c08ee-2241-4288-916d-dae5455c87e6 */
+    // #[TestDox('just a negative number')]
+    // public function testJustANegativeNumber(): void
+    // {
+    //     $this->assertEquals(-123, calculate('What is -123?'));
+    // }
+
     /** uuid: bb8c655c-cf42-4dfc-90e0-152fcfd8d4e0 */
     #[TestDox('addition')]
     public function testAdd1(): void
     {
         $this->assertEquals(2, calculate('What is 1 plus 1?'));
+    }
+
+    /** uuid: bb9f2082-171c-46ad-ad4e-c3f72087c1b5 */
+    #[TestDox('addition with a left hand zero')]
+    public function testAdditionWithALeftHandZero(): void
+    {
+        $this->assertEquals(2, calculate('What is 0 plus 2?'));
+    }
+
+    /** uuid: 6fa05f17-405a-4742-80ae-5d1a8edb0d5d */
+    #[TestDox('addition with a right hand zero')]
+    public function testAdditionWithARightHandZero(): void
+    {
+        $this->assertEquals(3, calculate('What is 3 plus 0?'));
     }
 
     /** uuid: 79e49e06-c5ae-40aa-a352-7a3a01f70015 */
@@ -126,5 +161,59 @@ class WordyTest extends TestCase
         $this->expectException('InvalidArgumentException');
 
         calculate('Who is the president of the United States?');
+    }
+
+    /** uuid: 42d78b5f-dbd7-4cdb-8b30-00f794bb24cf */
+    #[TestDox('reject problem missing an operand')]
+    public function testRejectProblemMissingAnOperand(): void
+    {
+        $this->expectException('InvalidArgumentException');
+
+        calculate('What is 1 plus?');
+    }
+
+    /** uuid: c2c3cbfc-1a72-42f2-b597-246e617e66f5 */
+    #[TestDox('reject problem with no operands or operators')]
+    public function testRejectProblemWithNoOperandsOrOperators(): void
+    {
+        $this->expectException('InvalidArgumentException');
+
+        calculate('What is?');
+    }
+
+    /** uuid: 4b3df66d-6ed5-4c95-a0a1-d38891fbdab6 */
+    #[TestDox('reject two operations in a row')]
+    public function testRejectTwoOperationsInARow(): void
+    {
+        $this->expectException('InvalidArgumentException');
+
+        calculate('What is 1 plus plus 2?');
+    }
+
+    /** uuid: 6abd7a50-75b4-4665-aa33-2030fd08bab1 */
+    #[TestDox('reject two numbers in a row')]
+    public function testRejectTwoNumbersInARow(): void
+    {
+        $this->expectException('InvalidArgumentException');
+
+        calculate('What is 1 plus 2 1?');
+    }
+
+    /** uuid: 10a56c22-e0aa-405f-b1d2-c642d9c4c9de */
+    #[TestDox('reject postfix notation')]
+    public function testRejectPostfixNotation(): void
+    {
+        $this->expectException('InvalidArgumentException');
+
+        calculate('What is 1 2 plus?');
+    }
+
+    /** uuid: 0035bc63-ac43-4bb5-ad6d-e8651b7d954e */
+    #[TestDox('reject prefix notation')]
+    public function testRejectPrefixNotation(): void
+    {
+        $this->expectException('InvalidArgumentException');
+
+        calculate('What is plus 1 2?');
     }
 }
