@@ -11,18 +11,12 @@
 
 [88bf4b28-0de3-4883-93c7-db1b14aa806e]
 description = "just a number"
-include = false
-comment = "New requirement incompatible with our solution"
 
 [18983214-1dfc-4ebd-ac77-c110dde699ce]
 description = "just a zero"
-include = false
-comment = "New requirement incompatible with our solution"
 
 [607c08ee-2241-4288-916d-dae5455c87e6]
 description = "just a negative number"
-include = false
-comment = "New requirement incompatible with our solution"
 
 [bb8c655c-cf42-4dfc-90e0-152fcfd8d4e0]
 description = "addition"

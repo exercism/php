@@ -5,31 +5,35 @@ declare(strict_types=1);
 function calculate($question = "")
 {
     preg_match(
-        "/What is (-?\d+) (plus|minus|multiplied by|divided by) "
-        . "(-?\d+)(?: (plus|minus|multiplied by|divided by) (-?\d+))?\?/",
+        "/What is (-?\d+)(?: (plus|minus|multiplied by|divided by) "
+        . "(-?\d+)(?: (plus|minus|multiplied by|divided by) (-?\d+))?)?\?/",
         $question,
         $matches
     );
 
-    if (empty($matches[2])) {
+    if (!isset($matches[1])) {
         throw new InvalidArgumentException();
     }
 
-    switch ($matches[2]) {
-        case 'plus':
-            $number = $matches[1] + $matches[3];
-            break;
-        case 'minus':
-            $number = $matches[1] - $matches[3];
-            break;
-        case 'multiplied by':
-            $number = $matches[1] * $matches[3];
-            break;
-        case 'divided by':
-            $number = $matches[1] / $matches[3];
-            break;
-        default:
-            $number = 0;
+    $number = $matches[1];
+
+    if (isset($matches[2]) && isset($matches[3])) {
+        switch ($matches[2]) {
+            case 'plus':
+                $number = $matches[1] + $matches[3];
+                break;
+            case 'minus':
+                $number = $matches[1] - $matches[3];
+                break;
+            case 'multiplied by':
+                $number = $matches[1] * $matches[3];
+                break;
+            case 'divided by':
+                $number = $matches[1] / $matches[3];
+                break;
+            default:
+                throw new InvalidArgumentException();
+        }
     }
 
     if (isset($matches[4]) && isset($matches[5])) {

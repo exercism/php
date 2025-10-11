@@ -12,26 +12,26 @@ class WordyTest extends TestCase
         require_once 'Wordy.php';
     }
 
-    // /** uuid: 88bf4b28-0de3-4883-93c7-db1b14aa806e */
-    // #[TestDox('just a number')]
-    // public function testJustANumber(): void
-    // {
-    //     $this->assertEquals(5, calculate('What is 5?'));
-    // }
+    /** uuid: 88bf4b28-0de3-4883-93c7-db1b14aa806e */
+    #[TestDox('just a number')]
+    public function testJustANumber(): void
+    {
+        $this->assertEquals(5, calculate('What is 5?'));
+    }
 
-    // /** uuid: 18983214-1dfc-4ebd-ac77-c110dde699ce */
-    // #[TestDox('just a zero')]
-    // public function testJustAZero(): void
-    // {
-    //     $this->assertEquals(0, calculate('What is 0?'));
-    // }
+    /** uuid: 18983214-1dfc-4ebd-ac77-c110dde699ce */
+    #[TestDox('just a zero')]
+    public function testJustAZero(): void
+    {
+        $this->assertEquals(0, calculate('What is 0?'));
+    }
 
-    // /** uuid: 607c08ee-2241-4288-916d-dae5455c87e6 */
-    // #[TestDox('just a negative number')]
-    // public function testJustANegativeNumber(): void
-    // {
-    //     $this->assertEquals(-123, calculate('What is -123?'));
-    // }
+    /** uuid: 607c08ee-2241-4288-916d-dae5455c87e6 */
+    #[TestDox('just a negative number')]
+    public function testJustANegativeNumber(): void
+    {
+        $this->assertEquals(-123, calculate('What is -123?'));
+    }
 
     /** uuid: bb8c655c-cf42-4dfc-90e0-152fcfd8d4e0 */
     #[TestDox('addition')]
