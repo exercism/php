@@ -784,7 +784,7 @@
         "uuid": "85408bdd-3c22-4b5a-9c61-044ddfb0c3ac",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
+        "difficulty": 5,
         "topics": [
           "parsing",
           "strings",
