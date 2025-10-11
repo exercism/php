@@ -71,5 +71,6 @@ strain
 sublist
 two-bucket
 two-fer
+wordy
 yacht
 zebra-puzzle
