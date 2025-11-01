@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\TestGenerator;
-use App\TrackData\PracticeExercise;
+use App\TrackData\Exercise;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -19,13 +18,9 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class CreateTestsCommand extends Command
 {
-    private string $trackRoot;
-
     public function __construct(
-        private string $projectDir,
+        private Exercise $exercise,
     ) {
-        $this->trackRoot = realpath($projectDir . '/../..');
-
         parent::__construct();
     }
 
@@ -37,35 +32,22 @@ class CreateTestsCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $exerciseSlug = $input->getArgument('exercise');
-        $exercise = new PracticeExercise(
-            $this->trackRoot,
-            $exerciseSlug,
-        );
-        $testGenerator = new TestGenerator();
+        $this->exercise->forSlug($exerciseSlug);
 
         $io = new SymfonyStyle($input, $output);
-        $io->writeln('Generating tests for ' . $exerciseSlug . ' in ' . $exercise->pathToExercise());
+        $io->writeln('Generating tests for ' . $exerciseSlug . ' in ' . $this->exercise->pathToExercise());
 
         \file_put_contents(
-            // TODO: Make '$exercise->pathToTestFile()'
-            $exercise->pathToExercise()
-                . '/'
-                . $this->inPascalCase($exerciseSlug)
-                . 'Test.php',
-            $testGenerator->createTestsFor(
-                $exercise->canonicalData(),
-                $this->inPascalCase($exerciseSlug)
-            ),
+            $this->exercise->pathToTestFile(),
+            $this->exercise->testFileContent(),
         );
-        // TODO: Make '$exercise->pathToStudentsFile()'
-        // TODO: Make '$testGenerator->studentsFileFor()'
+
+        \file_put_contents(
+            $this->exercise->pathToSolutionFile(),
+            $this->exercise->solutionFileContent(),
+        );
 
         $io->success('Generating Tests - Finished');
         return Command::SUCCESS;
-    }
-
-    private function inPascalCase(string $text): string
-    {
-        return \str_replace(" ", "", \ucwords(\str_replace("-", " ", $text)));
     }
 }
