@@ -10,7 +10,8 @@
 
 ## 2. A Splash of Sauce
 
-- To ensure a whole number of cans, you'll need to round up. PHP provides [numeric functions][numeric-functions] that can help.
+- To ensure a whole number of cans, you'll need to round up.
+- PHP provides [numeric functions][numeric-functions] that can help.
 
 ## 3. Some Cheese, Please
 
