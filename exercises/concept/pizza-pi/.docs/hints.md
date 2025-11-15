@@ -6,22 +6,23 @@
 
 ## 1. A Dough Ratio
 
-- PHP has [a built-in constant][pi-constant] for pi (π) 
-- When it comes to rounding, PHP provides [numeric functions][numeric-functions]
+- You can solve this task using basic arithmetic operators for addition and multiplication.
 
 ## 2. A Splash of Sauce
 
-- When rounding up, PHP provides a [numeric function][numeric-functions].
+- To ensure a whole number of cans, you'll need to round up.
+- PHP provides [numeric functions][numeric-functions] that can help.
 
 ## 3. Some Cheese, Please
 
-- For cubing a number, there is a [built-in exponentiation function][arithmetic-operations].
+- You can cube a number using the [exponentiation operator][arithmetic-operations].
+- To ensure a whole number of pizzas, you’ll need to round down.
+- PHP provides [numeric functions][numeric-functions] that can help.
+- PHP has a [built-in constant][pi-constant] for pi (π).
 
 ## 4. A Fair Share
 
-- This part requires using a function you may not have come across before, the [modulo
-function][arithmetic-operations] (`%`).
-  This function gives you the remainder of the division between two numbers.
+- Use the [modulo operator][arithmetic-operations] (`%`) to get the remainder after division.
 
 [arithmetic-operations]: https://www.php.net/manual/en/language.operators.arithmetic.php
 [pi-constant]: https://www.php.net/manual/en/function.pi.php
