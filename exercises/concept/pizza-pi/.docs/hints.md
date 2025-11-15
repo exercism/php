@@ -18,7 +18,7 @@
 - You can cube a number using the [exponentiation operator][arithmetic-operations].
 - To ensure a whole number of pizzas, you’ll need to round down.
 - PHP provides [numeric functions][numeric-functions] that can help.
-- PHP also provides a [built-in function][pi-function] for pi (π) 
+- PHP has a [built-in constant][pi-constant] for pi (π).
 
 ## 4. A Fair Share
 
