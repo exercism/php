@@ -25,5 +25,5 @@
 - Use the [modulo operator][arithmetic-operations] (`%`) to get the remainder after division.
 
 [arithmetic-operations]: https://www.php.net/manual/en/language.operators.arithmetic.php
-[pi-function]: https://www.php.net/manual/en/function.pi.php
+[pi-constant]: https://www.php.net/manual/en/function.pi.php
 [numeric-functions]: https://www.php.net/manual/en/ref.math.php
