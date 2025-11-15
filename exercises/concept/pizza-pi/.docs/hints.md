@@ -6,7 +6,7 @@
 
 ## 1. A Dough Ratio
 
-- This task uses basic arithmetic with addition and multiplication.
+- You can solve this task using basic arithmetic operators for addition and multiplication.
 
 ## 2. A Splash of Sauce
 
