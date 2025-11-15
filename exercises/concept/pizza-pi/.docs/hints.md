@@ -16,7 +16,8 @@
 ## 3. Some Cheese, Please
 
 - You can cube a number using the [exponentiation operator][arithmetic-operations].
-- You’ll need to round the result down; PHP has a [numeric function][numeric-functions] for that.
+- To ensure a whole number of pizzas, you’ll need to round down.
+- PHP provides [numeric functions][numeric-functions] that can help.
 - PHP also provides a [built-in function][pi-function] for pi (π) 
 
 ## 4. A Fair Share
