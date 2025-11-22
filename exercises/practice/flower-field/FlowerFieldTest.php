@@ -273,4 +273,19 @@ class FlowerFieldTest extends TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * uuid 6e4ac13a-3e43-4728-a2e3-3551d4b1a996
+     */
+    #[TestDox('Multiple adjacent flowers')]
+    public function testMultipleAdjacentFlowers(): void
+    {
+        $garden = [" ** "];
+        $expected = ["1**1"];
+
+        $subject = new FlowerField($garden);
+        $actual = $subject->annotate();
+
+        $this->assertSame($expected, $actual);
+    }
 }
