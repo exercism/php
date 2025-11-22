@@ -75,6 +75,22 @@ class IsbnVerifierTest extends TestCase
     }
 
     /**
+     * uuid: 8005b57f-f194-44ee-88d2-a77ac4142591
+     */
+    public function testOnlyOneCheckDigitIsAllowed(): void
+    {
+        $this->assertFalse($this->isbnVerifier->isValid('3-598-21508-96'));
+    }
+
+    /**
+     * uuid: fdb14c99-4cf8-43c5-b06d-eb1638eff343
+     */
+    public function testXIsNotSubstitutedByTheValue10(): void
+    {
+        $this->assertFalse($this->isbnVerifier->isValid('3-598-2X507-5'));
+    }
+
+    /**
      * uuid: f6294e61-7e79-46b3-977b-f48789a4945b
      */
     public function testValidIsbnWithoutSeparatingDashes(): void
