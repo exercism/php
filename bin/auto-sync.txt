@@ -49,6 +49,7 @@ matching-brackets
 meetup
 micro-blog
 nucleotide-count
+ocr-numbers
 pangram
 pascals-triangle
 phone-number
