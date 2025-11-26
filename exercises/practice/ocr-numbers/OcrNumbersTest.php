@@ -1,29 +1,8 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class OcrNumbersTest extends TestCase
@@ -34,9 +13,9 @@ class OcrNumbersTest extends TestCase
     }
 
     /**
-     * Recognition result should be returned as a string
+     * uuid: 5ee54e1a-b554-4bf3-a056-9a7976c3f7e8
      */
-
+    #[TestDox('Recognizes 0')]
     public function testRecognizes0(): void
     {
         $input = [
@@ -48,6 +27,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('0', recognize($input));
     }
 
+    /**
+     * uuid: 027ada25-17fd-4d78-aee6-35a19623639d
+     */
+    #[TestDox('Recognizes 1')]
     public function testRecognizes1(): void
     {
         $input = [
@@ -60,9 +43,10 @@ class OcrNumbersTest extends TestCase
     }
 
     /**
-     * Unreadable but correctly sized inputs return ?
+     * uuid: 3cce2dbd-01d9-4f94-8fae-419a822e89bb
      */
-    public function testUnreadable(): void
+    #[TestDox('Unreadable but correctly sized inputs return ?')]
+    public function testUnreadableButCorrectlySizedInputsReturnQuestionmark(): void
     {
         $input = [
             "   ",
@@ -74,9 +58,10 @@ class OcrNumbersTest extends TestCase
     }
 
     /**
-     * Input with a number of lines that is not a multiple of four raises an error
+     * uuid: cb19b733-4e36-4cf9-a4a1-6e6aac808b9a
      */
-    public function testErrorWrongNumberOfLines(): void
+    #[TestDox('Input with a number of lines that is not a multiple of four raises an error')]
+    public function testInputWithANumberOfLinesThatIsNotAMultipleOfFourRaisesAnError(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -89,9 +74,10 @@ class OcrNumbersTest extends TestCase
     }
 
     /**
-     * Input with a number of columns that is not a multiple of three raises an error
+     * uuid: 235f7bd1-991b-4587-98d4-84206eec4cc6
      */
-    public function testErrorWrongNumberOfColumns(): void
+    #[TestDox('Input with a number of columns that is not a multiple of three raises an error')]
+    public function testInputWithANumberOfColumnsThatIsNotAMultipleOfThreeRaisesAnError(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -104,6 +90,10 @@ class OcrNumbersTest extends TestCase
         recognize($input);
     }
 
+    /**
+     * uuid: 4a841794-73c9-4da9-a779-1f9837faff66
+     */
+    #[TestDox('Recognizes 110101100')]
     public function testRecognizes110101100(): void
     {
         $input = [
@@ -116,9 +106,10 @@ class OcrNumbersTest extends TestCase
     }
 
     /**
-     * Garbled numbers in a string are replaced with ?
+     * uuid: 70c338f9-85b1-4296-a3a8-122901cdfde8
      */
-    public function testGarbled(): void
+    #[TestDox('Garbled numbers in a string are replaced with ?')]
+    public function testGarbledNumbersInAStringAreReplacedWithQuestionmark(): void
     {
         $input = [
             "       _     _           _ ",
@@ -129,6 +120,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('11?10?1?0', recognize($input));
     }
 
+    /**
+     * uuid: ea494ff4-3610-44d7-ab7e-72fdef0e0802
+     */
+    #[TestDox('Recognizes 2')]
     public function testRecognizes2(): void
     {
         $input = [
@@ -140,6 +135,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('2', recognize($input));
     }
 
+    /**
+     * uuid: 1acd2c00-412b-4268-93c2-bd7ff8e05a2c
+     */
+    #[TestDox('Recognizes 3')]
     public function testRecognizes3(): void
     {
         $input = [
@@ -151,6 +150,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('3', recognize($input));
     }
 
+    /**
+     * uuid: eaec6a15-be17-4b6d-b895-596fae5d1329
+     */
+    #[TestDox('Recognizes 4')]
     public function testRecognizes4(): void
     {
         $input = [
@@ -162,6 +165,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('4', recognize($input));
     }
 
+    /**
+     * uuid: 440f397a-f046-4243-a6ca-81ab5406c56e
+     */
+    #[TestDox('Recognizes 5')]
     public function testRecognizes5(): void
     {
         $input = [
@@ -173,6 +180,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('5', recognize($input));
     }
 
+    /**
+     * uuid: f4c9cf6a-f1e2-4878-bfc3-9b85b657caa0
+     */
+    #[TestDox('Recognizes 6')]
     public function testRecognizes6(): void
     {
         $input = [
@@ -184,6 +195,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('6', recognize($input));
     }
 
+    /**
+     * uuid: e24ebf80-c611-41bb-a25a-ac2c0f232df5
+     */
+    #[TestDox('Recognizes 7')]
     public function testRecognizes7(): void
     {
         $input = [
@@ -195,6 +210,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('7', recognize($input));
     }
 
+    /**
+     * uuid: b79cad4f-e264-4818-9d9e-77766792e233
+     */
+    #[TestDox('Recognizes 8')]
     public function testRecognizes8(): void
     {
         $input = [
@@ -206,6 +225,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('8', recognize($input));
     }
 
+    /**
+     * uuid: 5efc9cfc-9227-4688-b77d-845049299e66
+     */
+    #[TestDox('Recognizes 9')]
     public function testRecognizes9(): void
     {
         $input = [
@@ -217,6 +240,10 @@ class OcrNumbersTest extends TestCase
         $this->assertSame('9', recognize($input));
     }
 
+    /**
+     * uuid: f60cb04a-42be-494e-a535-3451c8e097a4
+     */
+    #[TestDox('Recognizes string of decimal numbers')]
     public function testRecognizesStringOfDecimalNumbers(): void
     {
         $input = [
@@ -229,9 +256,10 @@ class OcrNumbersTest extends TestCase
     }
 
     /**
-     * Numbers separated by empty lines are recognized. Lines are joined by commas.
+     * uuid: b73ecf8b-4423-4b36-860d-3710bdb8a491
      */
-    public function testLinesWithCommas(): void
+    #[TestDox('Numbers separated by empty lines are recognized. Lines are joined by commas.')]
+    public function testNumbersSeparatedByEmptyLinesAreRecognizedLinesAreJoinedByCommas(): void
     {
         $input = [
             "    _  _ ",

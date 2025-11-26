@@ -953,7 +953,7 @@
         "uuid": "a7a269a5-e99c-4fcf-b331-9a130e94f9e4",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
+        "difficulty": 5,
         "topics": [
           "algorithms",
           "strings",
