@@ -1,0 +1,9 @@
+{
+    "uuid": "31a673f2-5e54-49fe-bd79-1c1dae476c9c",
+    "description": "empty input = empty output",
+    "property": "canChain",
+    "input": {
+      "dominoes": []
+    },
+    "expected": true
+}

@@ -1,0 +1,5 @@
+[
+    { "an-unknown-item": "will render as multiline comment with JSON" },
+    { "another-unknown-item": "will render as multiline comment with JSON" },
+    { "a-last-unknown-item": "will render as multiline comment with JSON" }
+]
