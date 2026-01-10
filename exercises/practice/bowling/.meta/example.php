@@ -9,11 +9,49 @@ declare(strict_types=1);
 class Game
 {
     private $rolls = [];
+    private $currentFrame = 1;
+    private $rollsInFrame = 0;
+    private $firstRollPins = 0;
 
     public function roll($pins): void
     {
         if ($pins < 0 || $pins > 10) {
             throw new Exception('Pins must be between 0 and 10');
+        }
+        // For frames 1-9
+        if ($this->currentFrame < 10) {
+            if ($this->rollsInFrame == 0) {
+                // First roll of frame
+                $this->firstRollPins = $pins;
+                $this->rollsInFrame = 1;
+
+                if ($pins == 10) { // Strike
+                    $this->currentFrame++;
+                    $this->rollsInFrame = 0;
+                }
+            } else {
+                // Second roll of frame
+                if ($this->firstRollPins + $pins > 10) {
+                    throw new Exception("Pin count exceeds pins on the lane");
+                }
+                $this->currentFrame++;
+                $this->rollsInFrame = 0;
+            }
+        } else {
+            // Frame 10 special handling
+            if ($this->rollsInFrame == 0) {
+                $this->firstRollPins = $pins;
+                $this->rollsInFrame = 1;
+            } elseif ($this->rollsInFrame == 1) {
+                // Second roll in frame 10
+                if ($this->firstRollPins < 10 && $this->firstRollPins + $pins > 10) {
+                    throw new Exception("Pin count exceeds pins on the lane");
+                }
+                $this->rollsInFrame = 2;
+            } else {
+                // Third roll in frame 10 (only valid after strike or spare)
+                $this->rollsInFrame = 3;
+            }
         }
         $this->rolls[] = $pins;
     }

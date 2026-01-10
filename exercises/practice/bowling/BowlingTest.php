@@ -16,23 +16,55 @@ class BowlingTest extends TestCase
         require_once 'Bowling.php';
     }
 
-    /** @var Game */
-    private $game;
-
-    public function setUp(): void
-    {
-        $this->game = new Game();
-    }
-
     /**
      * uuid 656ae006-25c2-438c-a549-f338e7ec7441
      */
     #[TestDox('should be able to score a game with all zeros')]
     public function testShouldBeAbleToScoreAGameWithAllZeros(): void
     {
-        $this->rollMany(20, 0);
+        $game = new Game();
 
-        $this->assertEquals(0, $this->game->score());
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $this->assertEquals(0, $game->score());
     }
 
     /**
@@ -41,28 +73,49 @@ class BowlingTest extends TestCase
     #[TestDox('should be able to score a game with no strikes or spares')]
     public function testShouldBeAbleToScoreAGameWithNoStrikesOrSpares(): void
     {
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
-        $this->game->roll(3);
-        $this->game->roll(6);
+        $game = new Game();
 
-        $this->assertEquals(90, $this->game->score());
+        // Frame 1
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 2
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 3
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 4
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 5
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 6
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 7
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 8
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 9
+        $game->roll(3);
+        $game->roll(6);
+
+        // Frame 10
+        $game->roll(3);
+        $game->roll(6);
+
+        $this->assertEquals(90, $game->score());
     }
 
     /**
@@ -71,11 +124,49 @@ class BowlingTest extends TestCase
     #[TestDox('a spare followed by zeros is worth ten points')]
     public function testASpareFollowedByZerosIsWorthTenPoints(): void
     {
-        $this->game->roll(6);
-        $this->game->roll(4);
-        $this->rollMany(18, 0);
+        $game = new Game();
 
-        $this->assertEquals(10, $this->game->score());
+        // Frame 1 - Spare
+        $game->roll(6);
+        $game->roll(4);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $this->assertEquals(10, $game->score());
     }
 
     /**
@@ -84,12 +175,49 @@ class BowlingTest extends TestCase
     #[TestDox('points scored in the roll after a spare are counted twice')]
     public function testPointsScoredInTheRollAfterASpareAreCountedTwice(): void
     {
-        $this->game->roll(6);
-        $this->game->roll(4);
-        $this->game->roll(3);
-        $this->rollMany(17, 0);
+        $game = new Game();
 
-        $this->assertEquals(16, $this->game->score());
+        // Frame 1 - Spare
+        $game->roll(6);
+        $game->roll(4);
+
+        // Frame 2
+        $game->roll(3);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $this->assertEquals(16, $game->score());
     }
 
     /**
@@ -98,14 +226,49 @@ class BowlingTest extends TestCase
     #[TestDox('consecutive spares each get a one roll bonus')]
     public function testConsecutiveSparesEachGetAOneRollBonus(): void
     {
-        $this->game->roll(5);
-        $this->game->roll(5);
-        $this->game->roll(3);
-        $this->game->roll(7);
-        $this->game->roll(4);
-        $this->rollMany(15, 0);
+        $game = new Game();
 
-        $this->assertEquals(31, $this->game->score());
+        // Frame 1 - Spare
+        $game->roll(5);
+        $game->roll(5);
+
+        // Frame 2 - Spare
+        $game->roll(3);
+        $game->roll(7);
+
+        // Frame 3
+        $game->roll(4);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $this->assertEquals(31, $game->score());
     }
 
     /**
@@ -114,12 +277,50 @@ class BowlingTest extends TestCase
     #[TestDox('a spare in the last frame gets a one roll bonus that is counted once')]
     public function testASpareInTheLastFrameGetsAOneRollBonusThatIsCountedOnce(): void
     {
-        $this->rollMany(18, 0);
-        $this->game->roll(7);
-        $this->game->roll(3);
-        $this->game->roll(7);
+        $game = new Game();
 
-        $this->assertEquals(17, $this->game->score());
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Spare with bonus roll
+        $game->roll(7);
+        $game->roll(3);
+        $game->roll(7);
+
+        $this->assertEquals(17, $game->score());
     }
 
     /**
@@ -128,10 +329,48 @@ class BowlingTest extends TestCase
     #[TestDox('a strike earns ten points in a frame with a single roll')]
     public function testAStrikeEarnsTenPointsInFrameWithASingleRoll(): void
     {
-        $this->game->roll(10);
-        $this->rollMany(18, 0);
+        $game = new Game();
 
-        $this->assertEquals(10, $this->game->score());
+        // Frame 1 - Strike
+        $game->roll(10);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $this->assertEquals(10, $game->score());
     }
 
     /**
@@ -140,12 +379,48 @@ class BowlingTest extends TestCase
     #[TestDox('points scored in the two rolls after a strike are counted twice as a bonus')]
     public function testPointsScoredInTheTwoRollsAfterAStrikeAreCountedTwiceAsABonus(): void
     {
-        $this->game->roll(10);
-        $this->game->roll(5);
-        $this->game->roll(3);
-        $this->rollMany(16, 0);
+        $game = new Game();
 
-        $this->assertEquals(26, $this->game->score());
+        // Frame 1 - Strike
+        $game->roll(10);
+
+        // Frame 2
+        $game->roll(5);
+        $game->roll(3);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $this->assertEquals(26, $game->score());
     }
 
     /**
@@ -154,14 +429,46 @@ class BowlingTest extends TestCase
     #[TestDox('consecutive strikes each get the two roll bonus')]
     public function testConsecutiveStrikesEachGetTheTwoRollBonus(): void
     {
-        $this->game->roll(10);
-        $this->game->roll(10);
-        $this->game->roll(10);
-        $this->game->roll(5);
-        $this->game->roll(3);
-        $this->rollMany(12, 0);
+        $game = new Game();
 
-        $this->assertEquals(81, $this->game->score());
+        // Frame 1 - Strike
+        $game->roll(10);
+
+        // Frame 2 - Strike
+        $game->roll(10);
+
+        // Frame 3 - Strike
+        $game->roll(10);
+
+        // Frame 4
+        $game->roll(5);
+        $game->roll(3);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $this->assertEquals(81, $game->score());
     }
 
     /**
@@ -170,12 +477,50 @@ class BowlingTest extends TestCase
     #[TestDox('a strike in the last frame gets a two roll bonus that is counted once')]
     public function testAStrikeInTheLastFrameGetsATwoRollBonusThatIsCountedOnce(): void
     {
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(7);
-        $this->game->roll(1);
+        $game = new Game();
 
-        $this->assertEquals(18, $this->game->score());
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(7);
+        $game->roll(1);
+
+        $this->assertEquals(18, $game->score());
     }
 
     /**
@@ -184,12 +529,50 @@ class BowlingTest extends TestCase
     #[TestDox('rolling a spare with the two roll bonus does not get a bonus roll')]
     public function testAStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus(): void
     {
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(7);
-        $this->game->roll(3);
+                $game = new Game();
 
-        $this->assertEquals(20, $this->game->score());
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(7);
+        $game->roll(3);
+
+        $this->assertEquals(20, $game->score());
     }
 
     /**
@@ -198,12 +581,50 @@ class BowlingTest extends TestCase
     #[TestDox('strikes with the two roll bonus do not get bonus rolls')]
     public function testRollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll(): void
     {
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(10);
-        $this->game->roll(10);
+        $game = new Game();
 
-        $this->assertEquals(30, $this->game->score());
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(10);
+        $game->roll(10);
+
+        $this->assertEquals(30, $game->score());
     }
 
     /**
@@ -212,13 +633,49 @@ class BowlingTest extends TestCase
     #[TestDox('last two strikes followed by only last bonus with non strike points')]
     public function testLastTwoStrikesFollowedByOnlyLastBonusWithNonStrikePoints(): void
     {
-        $this->rollMany(16, 0);
-        $this->game->roll(10);
-        $this->game->roll(10);
-        $this->game->roll(0);
-        $this->game->roll(1);
+        $game = new Game();
 
-        $this->assertEquals(31, $this->game->score());
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9 - Strike
+        $game->roll(10);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(0);
+        $game->roll(1);
+
+        $this->assertEquals(31, $game->score());
     }
 
     /**
@@ -227,12 +684,50 @@ class BowlingTest extends TestCase
     #[TestDox('a strike with the one roll bonus after a spare in the last frame does not get a bonus')]
     public function testStrikesWithTheTwoRollBonusDoNotGetBonusRolls(): void
     {
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(7);
-        $this->game->roll(3);
+        $game = new Game();
 
-        $this->assertEquals(20, $this->game->score());
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with spare as bonus rolls
+        $game->roll(10);
+        $game->roll(7);
+        $game->roll(3);
+
+        $this->assertEquals(20, $game->score());
     }
 
     /**
@@ -241,9 +736,41 @@ class BowlingTest extends TestCase
     #[TestDox('all strikes is a perfect gam')]
     public function testAllStrikesIsAPerfectGame(): void
     {
-        $this->rollMany(12, 10);
+        $game = new Game();
 
-        $this->assertEquals(300, $this->game->score());
+        // Frame 1 - Strike
+        $game->roll(10);
+
+        // Frame 2 - Strike
+        $game->roll(10);
+
+        // Frame 3 - Strike
+        $game->roll(10);
+
+        // Frame 4 - Strike
+        $game->roll(10);
+
+        // Frame 5 - Strike
+        $game->roll(10);
+
+        // Frame 6 - Strike
+        $game->roll(10);
+
+        // Frame 7 - Strike
+        $game->roll(10);
+
+        // Frame 8 - Strike
+        $game->roll(10);
+
+        // Frame 9 - Strike
+        $game->roll(10);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(10);
+        $game->roll(10);
+
+        $this->assertEquals(300, $game->score());
     }
 
     /**
@@ -252,9 +779,11 @@ class BowlingTest extends TestCase
     #[TestDox('rolls cannot score negative points')]
     public function testRollsCanNotScoreNegativePoints(): void
     {
+        $game = new Game();
+
         $this->expectException(Exception::class);
 
-        $this->game->roll(-1);
+        $game->roll(-1);
     }
 
     /**
@@ -263,11 +792,11 @@ class BowlingTest extends TestCase
     #[TestDox('a roll cannot score more than 10 points')]
     public function testARollCanNotScoreMoreThan10Points(): void
     {
-        $this->expectException(Exception::class);
-        $this->game->roll(11);
-        $this->rollMany(19, 0);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        $game->roll(11);
     }
 
     /**
@@ -276,12 +805,51 @@ class BowlingTest extends TestCase
     #[TestDox('two rolls in a frame cannot score more than 10 points')]
     public function testTwoRollsInAFrameCanNotScoreMoreThan10Points(): void
     {
-        $this->expectException(Exception::class);
-        $this->game->roll(5);
-        $this->game->roll(6);
-        $this->rollMany(18, 0);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        // Frame 1
+        $game->roll(5);
+        $game->roll(6);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $game->score();
     }
 
     /**
@@ -290,13 +858,51 @@ class BowlingTest extends TestCase
     #[TestDox('bonus roll after a strike in the last frame cannot score more than 10 points')]
     public function testBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points(): void
     {
+        $game = new Game();
+
         $this->expectException(Exception::class);
 
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(11);
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
 
-        $this->game->score();
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(11);
+
+        $game->score();
     }
 
 
@@ -306,14 +912,52 @@ class BowlingTest extends TestCase
     #[TestDox('two bonus rolls after a strike in the last frame cannot score more than 10 points')]
     public function testTwoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points(): void
     {
+        $game = new Game();
+
         $this->expectException(Exception::class);
 
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(5);
-        $this->game->roll(6);
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
 
-        $this->game->score();
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(5);
+        $game->roll(6);
+
+        $game->score();
     }
 
     /**
@@ -322,12 +966,50 @@ class BowlingTest extends TestCase
     #[TestDox('two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike')]
     public function testTwoBonusRollsAfterAStrikeInTheLastFramCanScoreMoreThan10PointsIfOneIsAStrike(): void
     {
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(10);
-        $this->game->roll(6);
+        $game = new Game();
 
-        $this->assertEquals(26, $this->game->score());
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(10);
+        $game->roll(6);
+
+        $this->assertEquals(26, $game->score());
     }
 
     /**
@@ -336,13 +1018,52 @@ class BowlingTest extends TestCase
     #[TestDox('the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike')]
     public function testTheSecondBonusRollsAfterAStrikeInTheLastFrameCannotBeAStrikeIfTheFirstOneIsNotAStrike(): void
     {
-        $this->expectException(Exception::class);
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(6);
-        $this->game->roll(10);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(6);
+        $game->roll(10);
+
+        $game->score();
     }
 
     /**
@@ -351,13 +1072,50 @@ class BowlingTest extends TestCase
     #[TestDox('second bonus roll after a strike in the last frame cannot score more than 10 points')]
     public function testSecondBonusRollAfterAStrikeInTheLastFrameCannotScoreMoreThan10Points(): void
     {
+        $game = new Game();
         $this->expectException(Exception::class);
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(10);
-        $this->game->roll(11);
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
 
-        $this->game->score();
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(10);
+        $game->roll(11);
+
+        $game->score();
     }
 
     /**
@@ -366,9 +1124,11 @@ class BowlingTest extends TestCase
     #[TestDox('an unstarted game cannot be scored')]
     public function testAnUnstartedGameCanNotBeScored(): void
     {
+        $game = new Game();
+
         $this->expectException(Exception::class);
 
-        $this->game->score();
+        $game->score();
     }
 
     /**
@@ -377,11 +1137,14 @@ class BowlingTest extends TestCase
     #[TestDox('an incomplete game cannot be scored')]
     public function testAnIncompleteGameCanNotBeScored(): void
     {
-        $this->expectException(Exception::class);
-        $this->game->roll(0);
-        $this->game->roll(0);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        $game->roll(0);
+        $game->roll(0);
+
+        $game->score();
     }
 
     /**
@@ -390,11 +1153,53 @@ class BowlingTest extends TestCase
     #[TestDox('cannot roll if game already has ten frames')]
     public function testCannotRollIfGameAlreadyHasTenFrames(): void
     {
-        $this->expectException(Exception::class);
-        $this->rollMany(20, 0);
-        $this->game->roll(0);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10
+        $game->roll(0);
+        $game->roll(0);
+
+        $game->roll(0);
+
+        $game->score();
     }
 
     /**
@@ -403,11 +1208,50 @@ class BowlingTest extends TestCase
     #[TestDox('bonus rolls for a strike in the last frame must be rolled before score can be calculated')]
     public function testBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated(): void
     {
-        $this->expectException(Exception::class);
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+
+        $game->score();
     }
 
     /**
@@ -416,12 +1260,51 @@ class BowlingTest extends TestCase
     #[TestDox('both bonus rolls for a strike in the last frame must be rolled before score can be calculated')]
     public function testBothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated(): void
     {
-        $this->expectException(Exception::class);
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(10);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(10);
+
+        $game->score();
     }
 
     /**
@@ -430,12 +1313,51 @@ class BowlingTest extends TestCase
     #[TestDox('bonus roll for a spare in the last frame must be rolled before score can be calculated')]
     public function testBonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated(): void
     {
-        $this->expectException(Exception::class);
-        $this->rollMany(18, 0);
-        $this->game->roll(7);
-        $this->game->roll(3);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Spare with bonus roll
+        $game->roll(7);
+        $game->roll(3);
+
+        $game->score();
     }
 
     /**
@@ -444,14 +1366,53 @@ class BowlingTest extends TestCase
     #[TestDox('cannot roll after bonus roll for spare')]
     public function testCannotRollAfterBonusRollForSpare(): void
     {
-        $this->expectException(Exception::class);
-        $this->rollMany(18, 0);
-        $this->game->roll(7);
-        $this->game->roll(3);
-        $this->game->roll(2);
-        $this->game->roll(2);
+        $game = new Game();
 
-        $this->game->score();
+        $this->expectException(Exception::class);
+
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Spare with bonus roll
+        $game->roll(7);
+        $game->roll(3);
+        $game->roll(2);
+        $game->roll(2);
+
+        $game->score();
     }
 
     /**
@@ -460,30 +1421,52 @@ class BowlingTest extends TestCase
     #[TestDox('cannot roll after bonus rolls for strike')]
     public function testCannotRollAfterBonusRollsForStrike(): void
     {
+        $game = new Game();
+
         $this->expectException(Exception::class);
-        $this->rollMany(18, 0);
-        $this->game->roll(10);
-        $this->game->roll(3);
-        $this->game->roll(2);
-        $this->game->roll(2);
 
-        $this->game->score();
-    }
+        // Frame 1
+        $game->roll(0);
+        $game->roll(0);
 
-    private function rollStrike(): void
-    {
-        $this->game->roll(10);
-    }
+        // Frame 2
+        $game->roll(0);
+        $game->roll(0);
 
-    private function rollSpare(): void
-    {
-        $this->rollMany(2, 5);
-    }
+        // Frame 3
+        $game->roll(0);
+        $game->roll(0);
 
-    private function rollMany($n, $pins): void
-    {
-        for ($i = 0; $i < $n; $i++) {
-            $this->game->roll($pins);
-        }
+        // Frame 4
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 5
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 6
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 7
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 8
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 9
+        $game->roll(0);
+        $game->roll(0);
+
+        // Frame 10 - Strike with two bonus rolls
+        $game->roll(10);
+        $game->roll(3);
+        $game->roll(2);
+        $game->roll(2);
+
+        $game->score();
     }
 }
