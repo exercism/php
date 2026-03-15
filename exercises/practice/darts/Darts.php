@@ -26,5 +26,5 @@ declare(strict_types=1);
 
 function score(float $xAxis, float $yAxis): int
 {
-    throw new \BadFunctionCallException("Please implement the __FUNCTION__ function!");
+    throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
 }
