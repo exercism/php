@@ -112,6 +112,36 @@ class ConnectTest extends TestCase
     }
 
     /**
+     * uuid 495e33ed-30a9-4012-b46e-d7c4d5fe13c3
+     */
+    #[TestDox('X wins with left-hand dead end fork')]
+    public function testXWinsWithLeftHandDeadEndFork(): void
+    {
+        $lines = [
+            ". . X .",
+            " X X . .",
+            "  . X X X",
+            "   O O O O",
+        ];
+        $this->assertEquals("black", winner($lines));
+    }
+
+    /**
+     * uuid ab167ab0-4a98-4d0f-a1c0-e1cddddc3d58
+     */
+    #[TestDox('X wins with right-hand dead end fork')]
+    public function testXWinsWithRightHandDeadEndFork(): void
+    {
+        $lines = [
+            ". . X X",
+            " X X . .",
+            "  . X X .",
+            "   O O O O",
+        ];
+        $this->assertEquals("black", winner($lines));
+    }
+
+    /**
      * uuid 73d1eda6-16ab-4460-9904-b5f5dd401d0b
      */
     #[TestDox('O wins crossing from top to bottom')]
