@@ -34,9 +34,17 @@ function generateCipherbet($a, $b, $alphabet)
     );
 }
 
+function gcd($a, $b)
+{
+    while ($b !== 0) {
+        [$a, $b] = [$b, $a % $b];
+    }
+    return $a;
+}
+
 function coprimeCheck($a)
 {
-    if (gmp_intval(gmp_gcd($a, 26)) !== 1) {
+    if (gcd($a, 26) !== 1) {
         throw new Exception();
     }
 }
