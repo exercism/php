@@ -5,7 +5,8 @@
   "contributors": [
     "arueckauer",
     "kytrinyx",
-    "yisraeldov"
+    "yisraeldov",
+    "Narkunan"
   ],
   "files": {
     "solution": [
@@ -18,5 +19,5 @@
       ".meta/example.php"
     ]
   },
-  "blurb": "Refactor a Markdown parser"
+  "blurb": "Refactor a Markdown parser."
 }
