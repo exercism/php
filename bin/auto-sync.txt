@@ -45,6 +45,7 @@ line-up
 linked-list
 list-ops
 luhn
+markdown
 matching-brackets
 meetup
 micro-blog
