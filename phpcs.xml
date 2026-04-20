@@ -38,7 +38,6 @@
     <exclude-pattern>*/.meta/*\.php</exclude-pattern>
     <exclude-pattern>*/concept/*</exclude-pattern>
     <exclude-pattern>*/hello-world/*</exclude-pattern>
-    <exclude-pattern>*/markdown/*</exclude-pattern>
     <properties>
       <property name="linesCountBeforeDeclare" value="1" />
       <property name="linesCountAfterDeclare" value="1" />
