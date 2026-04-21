@@ -33,6 +33,21 @@ $prime_numbers[3] = 7; // replace 6 with 7
 $prime_numbers[] = 11; // array now contains [2, 3, 5, 7, 11]
 ```
 
+### Performing Actions with Arrays
+
+PHP provides functions you can use to modify arrays and work with items in arrays. Below are some of the frequently used ones:
+
+```php
+$prime_numbers = [2, 3, 5, 6];
+
+count($prime_numbers); // 4
+
+array_shift($prime_numbers); // array now contains [3, 5, 6]
+
+array_pop($prime_numbers); // array now contains [3, 5]
+
+```
+
 ## Variable-Length Arguments
 
 Function arguments can be specified such that it can take any number of arguments:
