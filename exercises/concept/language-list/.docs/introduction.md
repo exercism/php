@@ -35,7 +35,7 @@ $prime_numbers[] = 11; // array now contains [2, 3, 5, 7, 11]
 
 ### Performing Actions with Arrays
 
-PHP provides functions you can use to modify arrays and work with items in arrays. The PHP documentation offers detailed information array functions in the [array](https://www.php.net/manual/en/language.types.array.php) documentation.
+PHP provides functions you can use to modify arrays and work with items in arrays. The PHP documentation offers detailed information [array](https://www.php.net/manual/en/language.types.array.php) functions.
 
 ## Variable-Length Arguments
 
