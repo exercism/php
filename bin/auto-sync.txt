@@ -47,6 +47,7 @@ list-ops
 luhn
 markdown
 matching-brackets
+matrix
 meetup
 micro-blog
 nucleotide-count
