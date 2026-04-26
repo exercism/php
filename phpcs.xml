@@ -49,6 +49,5 @@
     <exclude-pattern>*/.meta/*\.php</exclude-pattern>
     <exclude-pattern>src/*</exclude-pattern>
     <exclude-pattern>contribution/*.php</exclude-pattern>
-    <exclude-pattern>*/matrix/*</exclude-pattern>
   </rule>
 </ruleset>
