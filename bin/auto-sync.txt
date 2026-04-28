@@ -49,6 +49,7 @@ markdown
 matching-brackets
 matrix
 meetup
+nth-prime
 micro-blog
 nucleotide-count
 ocr-numbers
