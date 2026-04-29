@@ -5,7 +5,7 @@ declare(strict_types=1);
 function prime($count)
 {
     if ($count < 1) {
-        return false;
+        throw new Exception('there is no zeroth prime');
     }
     $primes = [];
     $i = 2;

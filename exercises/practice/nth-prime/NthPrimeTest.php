@@ -44,6 +44,8 @@ class NthPrimeTest extends TestCase
     #[TestDox('there is no zeroth prime')]
     public function testZeroPrime(): void
     {
-        $this->assertEquals(false, prime(0));
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('there is no zeroth prime');
+        prime(0);
     }
 }
