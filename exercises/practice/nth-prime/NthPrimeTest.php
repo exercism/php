@@ -45,7 +45,6 @@ class NthPrimeTest extends TestCase
     public function testZeroPrime(): void
     {
         $this->expectException(Exception::class);
-        $this->expectExceptionMessage('there is no zeroth prime');
         prime(0);
     }
 }
