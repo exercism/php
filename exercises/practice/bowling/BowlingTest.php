@@ -804,7 +804,7 @@ class BowlingTest extends TestCase
      */
     #[TestDox('two rolls in a frame cannot score more than 10 points')]
     public function testTwoRollsInAFrameCanNotScoreMoreThan10Points(): void
-    {//@todo
+    {
         $game = new Game();
 
         $this->expectException(Exception::class);
