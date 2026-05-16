@@ -527,9 +527,9 @@ class BowlingTest extends TestCase
      * uuid 9d5c87db-84bc-4e01-8e95-53350c8af1f8
      */
     #[TestDox('rolling a spare with the two roll bonus does not get a bonus roll')]
-    public function testAStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus(): void
+    public function testRollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll(): void
     {
-                $game = new Game();
+        $game = new Game();
 
         // Frame 1
         $game->roll(0);
@@ -579,7 +579,7 @@ class BowlingTest extends TestCase
      * uuid 576faac1-7cff-4029-ad72-c16bcada79b5
      */
     #[TestDox('strikes with the two roll bonus do not get bonus rolls')]
-    public function testRollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll(): void
+    public function testStrikesWithTheTwoRollBonusDoNotGetBonusRolls(): void
     {
         $game = new Game();
 
@@ -682,7 +682,7 @@ class BowlingTest extends TestCase
      * uuid 72e24404-b6c6-46af-b188-875514c0377b
      */
     #[TestDox('a strike with the one roll bonus after a spare in the last frame does not get a bonus')]
-    public function testStrikesWithTheTwoRollBonusDoNotGetBonusRolls(): void
+    public function testAStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus(): void
     {
         $game = new Game();
 
@@ -723,9 +723,9 @@ class BowlingTest extends TestCase
         $game->roll(0);
 
         // Frame 10 - Strike with spare as bonus rolls
-        $game->roll(10);
         $game->roll(7);
         $game->roll(3);
+        $game->roll(10);
 
         $this->assertEquals(20, $game->score());
     }
@@ -733,7 +733,7 @@ class BowlingTest extends TestCase
     /**
      * uuid 62ee4c72-8ee8-4250-b794-234f1fec17b1
      */
-    #[TestDox('all strikes is a perfect gam')]
+    #[TestDox('all strikes is a perfect game')]
     public function testAllStrikesIsAPerfectGame(): void
     {
         $game = new Game();
@@ -804,7 +804,7 @@ class BowlingTest extends TestCase
      */
     #[TestDox('two rolls in a frame cannot score more than 10 points')]
     public function testTwoRollsInAFrameCanNotScoreMoreThan10Points(): void
-    {
+    {//@todo
         $game = new Game();
 
         $this->expectException(Exception::class);
