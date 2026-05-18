@@ -1,29 +1,5 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
-declare(strict_types=1);
-
 use PHPUnit\Framework\TestCase;
 
 class ProverbTest extends TestCase
@@ -40,6 +16,8 @@ class ProverbTest extends TestCase
         $this->proverb = new Proverb();
     }
 
+    /** @uuid e974b73e-7851-484f-8d6d-92e07fe742fc */
+    #[TestDox('zero pieces')]
     public function testNoVerses(): void
     {
         $pieces   = [];
@@ -47,6 +25,8 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $this->proverb->recite($pieces));
     }
 
+    /** @uuid 2fcd5f5e-8b82-4e74-b51d-df28a5e0faa4 */
+    #[TestDox('one piece')]
     public function testOneVerse(): void
     {
         $pieces   = ['nail'];
@@ -54,6 +34,8 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $this->proverb->recite($pieces));
     }
 
+    /** @uuid d9d0a8a1-d933-46e2-aa94-eecf679f4b0e */
+    #[TestDox('two pieces')]
     public function testTwoVerses(): void
     {
         $pieces   = ['nail', 'shoe'];
@@ -61,6 +43,8 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $this->proverb->recite($pieces));
     }
 
+    /** @uuid c95ef757-5e94-4f0d-a6cb-d2083f5e5a83 */
+    #[TestDox('three pieces')]
     public function testThreeVerses(): void
     {
         $pieces   = ['nail', 'shoe', 'horse'];
@@ -72,6 +56,8 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $this->proverb->recite($pieces));
     }
 
+    /** @uuid 433fb91c-35a2-4d41-aeab-4de1e82b2126 */
+    #[TestDox('full proverb')]
     public function testFullProverb(): void
     {
         $pieces   = ['nail', 'shoe', 'horse', 'rider', 'message', 'battle', 'kingdom'];
@@ -87,6 +73,8 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $this->proverb->recite($pieces));
     }
 
+    /** @uuid c1eefa5a-e8d9-41c7-91d4-99fab6d6b9f7 */
+    #[TestDox('four pieces modernized')]
     public function testFourModernizedVerses(): void
     {
         $pieces   = ['pin', 'gun', 'soldier', 'battle'];
