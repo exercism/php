@@ -55,6 +55,7 @@ nucleotide-count
 ocr-numbers
 pangram
 pascals-triangle
+perfect-numbers
 phone-number
 pig-latin
 protein-translation
