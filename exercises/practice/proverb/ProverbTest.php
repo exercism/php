@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 use PHPUnit\Framework\TestCase;
+
 
 class ProverbTest extends TestCase
 {
@@ -39,7 +42,10 @@ class ProverbTest extends TestCase
     public function testTwoVerses(): void
     {
         $pieces   = ['nail', 'shoe'];
-        $expected = ['For want of a nail the shoe was lost.', 'And all for the want of a nail.'];
+        $expected = [
+            'For want of a nail the shoe was lost.',
+            'And all for the want of a nail.'
+        ];
         $this->assertEquals($expected, $this->proverb->recite($pieces));
     }
 
