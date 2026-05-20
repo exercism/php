@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 
-
 class ProverbTest extends TestCase
 {
     private Proverb $proverb;
@@ -21,7 +20,7 @@ class ProverbTest extends TestCase
 
     /** @uuid e974b73e-7851-484f-8d6d-92e07fe742fc */
     #[TestDox('zero pieces')]
-    public function testNoVerses(): void
+    public function testZeroPieces(): void 
     {
         $pieces   = [];
         $expected = [];
@@ -30,7 +29,7 @@ class ProverbTest extends TestCase
 
     /** @uuid 2fcd5f5e-8b82-4e74-b51d-df28a5e0faa4 */
     #[TestDox('one piece')]
-    public function testOneVerse(): void
+    public function testOnePiece(): void
     {
         $pieces   = ['nail'];
         $expected = ['And all for the want of a nail.'];
@@ -39,7 +38,7 @@ class ProverbTest extends TestCase
 
     /** @uuid d9d0a8a1-d933-46e2-aa94-eecf679f4b0e */
     #[TestDox('two pieces')]
-    public function testTwoVerses(): void
+    public function testTwoPieces(): void
     {
         $pieces   = ['nail', 'shoe'];
         $expected = [
@@ -51,7 +50,7 @@ class ProverbTest extends TestCase
 
     /** @uuid c95ef757-5e94-4f0d-a6cb-d2083f5e5a83 */
     #[TestDox('three pieces')]
-    public function testThreeVerses(): void
+    public function testThreePieces(): void
     {
         $pieces   = ['nail', 'shoe', 'horse'];
         $expected = [
@@ -81,7 +80,7 @@ class ProverbTest extends TestCase
 
     /** @uuid c1eefa5a-e8d9-41c7-91d4-99fab6d6b9f7 */
     #[TestDox('four pieces modernized')]
-    public function testFourModernizedVerses(): void
+    public function testFourPiecesModernized(): void
     {
         $pieces   = ['pin', 'gun', 'soldier', 'battle'];
         $expected = [

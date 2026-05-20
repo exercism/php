@@ -1,8 +1,10 @@
 {
   "authors": [
-    "MichaelBunker",
-    "luciagiampieri"
+    "MichaelBunker"
   ],
+  "contributors": [
+    "luciagiampieri"
+  ], 
   "files": {
     "solution": [
       "Proverb.php"
