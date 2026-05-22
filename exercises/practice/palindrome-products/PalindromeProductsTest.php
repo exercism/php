@@ -25,7 +25,7 @@ class PalindromeProductsTest extends TestCase
         ]);
     }
 
-     /**
+    /**
      * uuid: 0853f82c-5fc4-44ae-be38-fadb2cced92d
      */
     #[TestDox('find the largest palindrome from single digit factors')]
@@ -39,7 +39,7 @@ class PalindromeProductsTest extends TestCase
         ]);
     }
 
-     /**
+    /**
      * uuid: 66c3b496-bdec-4103-9129-3fcb5a9063e1
      */
     #[TestDox('find the smallest palindrome from double digit factors')]
@@ -52,7 +52,7 @@ class PalindromeProductsTest extends TestCase
         ]);
     }
 
-     /**
+    /**
      * uuid: a10682ae-530a-4e56-b89d-69664feafe53
      */
     #[TestDox('find the largest palindrome from double digit factors')]
@@ -65,7 +65,7 @@ class PalindromeProductsTest extends TestCase
         ]);
     }
 
-     /**
+    /**
      * uuid: cecb5a35-46d1-4666-9719-fa2c3af7499d
      */
     #[TestDox('find the smallest palindrome from triple digit factors')]
@@ -104,8 +104,6 @@ class PalindromeProductsTest extends TestCase
         ]);
     }
 
-
-
     /**
      * uuid: 787525e0-a5f9-40f3-8cb2-23b52cf5d0be
      */
@@ -119,8 +117,7 @@ class PalindromeProductsTest extends TestCase
         ]);
     }
 
-
-     /**
+    /**
      * uuid: 58fb1d63-fddb-4409-ab84-a7a8e58d9ea0
      */
     #[TestDox('empty result for smallest if no palindrome in the range')]
@@ -131,7 +128,7 @@ class PalindromeProductsTest extends TestCase
     }
 
 
-     /**
+    /**
      * uuid: 9de9e9da-f1d9-49a5-8bfc-3d322efbdd02
      */
     #[TestDox('empty result for largest if no palindrome in the range')]
@@ -142,7 +139,7 @@ class PalindromeProductsTest extends TestCase
     }
 
 
-     /**
+    /**
      * uuid: 12e73aac-d7ee-4877-b8aa-2aa3dcdb9f8a
      */
     #[TestDox('error result for smallest if min is more than max')]
@@ -153,7 +150,7 @@ class PalindromeProductsTest extends TestCase
     }
 
 
-     /**
+    /**
      * uuid: eeeb5bff-3f47-4b1e-892f-05829277bd74
      */
     #[TestDox('error result for largest if min is more than max')]
@@ -163,7 +160,7 @@ class PalindromeProductsTest extends TestCase
         largest(2, 1);
     }
 
-        /**
+    /**
      * uuid: 16481711-26c4-42e0-9180-e2e4e8b29c23
      */
     #[TestDox('smallest product does not use the smallest factor')]
