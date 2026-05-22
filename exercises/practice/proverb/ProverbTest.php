@@ -20,7 +20,7 @@ class ProverbTest extends TestCase
 
     /** @uuid e974b73e-7851-484f-8d6d-92e07fe742fc */
     #[TestDox('zero pieces')]
-    public function testZeroPieces(): void 
+    public function testZeroPieces(): void
     {
         $pieces   = [];
         $expected = [];
