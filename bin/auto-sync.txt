@@ -53,6 +53,7 @@ nth-prime
 micro-blog
 nucleotide-count
 ocr-numbers
+palindrome-products
 pangram
 pascals-triangle
 perfect-numbers
