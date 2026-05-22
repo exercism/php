@@ -59,6 +59,7 @@ perfect-numbers
 phone-number
 pig-latin
 protein-translation
+proverb
 raindrops
 reverse-string
 rna-transcription
