@@ -1,11 +1,9 @@
 <?php
 
-
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\TestDox;
-
 
 class QueenAttackTest extends TestCase
 {
@@ -142,5 +140,4 @@ class QueenAttackTest extends TestCase
     {
         $this->assertFalse(canAttack([4, 1], [2, 5]));
     }
-
 }
