@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class PrimeFactorsTest extends TestCase
 {
-   
     public static function setUpBeforeClass(): void
     {
         require_once 'PrimeFactors.php';
@@ -35,7 +34,7 @@ class PrimeFactorsTest extends TestCase
      * uuid: 238d57c8-4c12-42ef-af34-ae4929f94789
      */
     #[TestDox('another prime number')]
-    public function testAnotherPrimeNumber(): void 
+    public function testAnotherPrimeNumber(): void
     {
         $this->assertSame([3], factors(3));
     }
@@ -53,7 +52,7 @@ class PrimeFactorsTest extends TestCase
      * uuid: 756949d3-3158-4e3d-91f2-c4f9f043ee70
      */
     #[TestDox('product of first prime')]
-    public function testProductOfFirstPrime(): void 
+    public function testProductOfFirstPrime(): void
     {
         $this->assertSame([2,2], factors(4));
     }
@@ -71,7 +70,7 @@ class PrimeFactorsTest extends TestCase
      * uuid: 7d6a3300-a4cb-4065-bd33-0ced1de6cb44
      */
     #[TestDox('product of second prime')]
-    public function testProductOfSecondPrime(): void  
+    public function testProductOfSecondPrime(): void
     {
         $this->assertSame([3,3,3], factors(27));
     }
@@ -80,7 +79,7 @@ class PrimeFactorsTest extends TestCase
      * uuid: 073ac0b2-c915-4362-929d-fc45f7b9a9e4
      */
     #[TestDox('product of third prime')]
-    public function testProductOfThirdPrime(): void  
+    public function testProductOfThirdPrime(): void
     {
         $this->assertSame([5,5,5,5], factors(625));
     }
@@ -89,7 +88,7 @@ class PrimeFactorsTest extends TestCase
      * uuid: 6e0e4912-7fb6-47f3-a9ad-dbcd79340c75
      */
     #[TestDox('product of first and second prime')]
-    public function testProductOfFirstAndSecondPrime(): void  
+    public function testProductOfFirstAndSecondPrime(): void
     {
         $this->assertSame([2,3], factors(6));
     }
