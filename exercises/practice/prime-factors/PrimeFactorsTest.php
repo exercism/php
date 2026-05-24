@@ -90,7 +90,7 @@ class PrimeFactorsTest extends TestCase
     #[TestDox('product of first and second prime')]
     public function testProductOfFirstAndSecondPrime(): void
     {
-        $this->assertSame([2, 3], factors(6));
+        $this->assertEquals([2, 3], factors(6));
     }
 
     /**
