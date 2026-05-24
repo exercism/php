@@ -115,7 +115,6 @@ class PrimeFactorsTest extends TestCase
      * uuid: 070cf8dc-e202-4285-aa37-8d775c9cd473
      */
     #[TestDox('factors include a large prime')]
-
     public function testFactorsIncludeALargePrime(): void
     {
         $this->assertEquals([11, 9539, 894119], factors(93819012551));
