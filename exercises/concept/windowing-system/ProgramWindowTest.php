@@ -80,7 +80,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 3
      */
-    #[TestDox('assert Position class exists, with constructor, properties')]
+    #[TestDox('assert Size class exists, with constructor, properties')]
     public function testSizeHasConstructorSettingInitialValues()
     {
         $size = new Size(300, 700);
