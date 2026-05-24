@@ -43,7 +43,7 @@ class PrimeFactorsTest extends TestCase
      * uuid: f59b8350-a180-495a-8fb1-1712fbee1158
      */
     #[TestDox('square of a prime')]
-    public function testSquareOfPrime(): void
+    public function testSquareOfAPrime(): void
     {
         $this->assertSame([3, 3], factors(9));
     }
@@ -54,14 +54,14 @@ class PrimeFactorsTest extends TestCase
     #[TestDox('product of first prime')]
     public function testProductOfFirstPrime(): void
     {
-        $this->assertSame([2,2], factors(4));
+        $this->assertSame([2, 2], factors(4));
     }
 
     /**
      * uuid: bc8c113f-9580-4516-8669-c5fc29512ceb
      */
     #[TestDox('cube of a prime')]
-    public function testCubeOfPrime(): void
+    public function testCubeOfAPrime(): void
     {
         $this->assertSame([2, 2, 2], factors(8));
     }
@@ -72,7 +72,7 @@ class PrimeFactorsTest extends TestCase
     #[TestDox('product of second prime')]
     public function testProductOfSecondPrime(): void
     {
-        $this->assertSame([3,3,3], factors(27));
+        $this->assertSame([3, 3, 3], factors(27));
     }
 
     /**
@@ -81,7 +81,7 @@ class PrimeFactorsTest extends TestCase
     #[TestDox('product of third prime')]
     public function testProductOfThirdPrime(): void
     {
-        $this->assertSame([5,5,5,5], factors(625));
+        $this->assertSame([5, 5, 5, 5], factors(625));
     }
 
     /**
@@ -90,14 +90,14 @@ class PrimeFactorsTest extends TestCase
     #[TestDox('product of first and second prime')]
     public function testProductOfFirstAndSecondPrime(): void
     {
-        $this->assertSame([2,3], factors(6));
+        $this->assertSame([2, 3], factors(6));
     }
 
     /**
      * uuid: 00485cd3-a3fe-4fbe-a64a-a4308fc1f870
      */
     #[TestDox('product of primes and non-primes')]
-    public function testProductOfPrimesAndNonPrime(): void
+    public function testProductOfPrimesAndNonPrimes(): void
     {
         $this->assertEquals([2, 2, 3], factors(12));
     }
@@ -105,7 +105,7 @@ class PrimeFactorsTest extends TestCase
     /**
      * uuid: 02251d54-3ca1-4a9b-85e1-b38f4b0ccb91
      */
-    #[TestDox('product of prime')]
+    #[TestDox('product of primes')]
     public function testProductOfPrimes(): void
     {
         $this->assertEquals([5, 17, 23, 461], factors(901255));
@@ -116,7 +116,7 @@ class PrimeFactorsTest extends TestCase
      */
     #[TestDox('factors include a large prime')]
 
-    public function testFactorsIncludeLargePrime(): void
+    public function testFactorsIncludeALargePrime(): void
     {
         $this->assertEquals([11, 9539, 894119], factors(93819012551));
     }
