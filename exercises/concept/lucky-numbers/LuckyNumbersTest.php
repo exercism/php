@@ -18,9 +18,9 @@ class LuckyNumbersTest extends TestCase
     #[TestDox('Sums up array [$imploded_digitsOfNumber1] and array [$imploded_digitsOfNumber2] to $expected')]
     public function testSumUp(
         array $digitsOfNumber1,
-		string $imploded_digitsOfNumber1,
+        string $imploded_digitsOfNumber1,
         array $digitsOfNumber2,
-		string $imploded_digitsOfNumber2,
+        string $imploded_digitsOfNumber2,
         int $expected
     ): void {
         $class = new LuckyNumbers();
