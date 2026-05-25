@@ -59,7 +59,7 @@ class RailFenceCipherTest extends TestCase
         $expected = "THEDEVILISINTHEDETAILS";
         $this->assertEquals($expected, decode($encryptedText, $rails));
     }
-    
+
     /**
      * uuid dd7b4a98-1a52-4e5c-9499-cbb117833507
      */
