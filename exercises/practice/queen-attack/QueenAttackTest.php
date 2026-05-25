@@ -125,7 +125,7 @@ class QueenAttackTest extends TestCase
     }
 
     /**
-    * uuid: 543f8fd4-2597-4aad-8d77-cbdab63619f8
+     * uuid: 543f8fd4-2597-4aad-8d77-cbdab63619f8
      */
     #[TestDox('Test the ability of one queen to attack another -> cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal')]
     public function testTheAbilityOfOneQueenToAttackAnotherCannotAttackReflectedDiagonal(): void
