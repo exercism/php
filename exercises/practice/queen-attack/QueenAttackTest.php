@@ -12,7 +12,7 @@ class QueenAttackTest extends TestCase
         require_once 'QueenAttack.php';
     }
 
-     /**
+    /**
      * uuid: 3ac4f735-d36c-44c4-a3e2-316f79704203
      */
     #[TestDox('Test creation of Queens with valid and invalid positions -> queen with a valid position')]
