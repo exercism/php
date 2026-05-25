@@ -86,7 +86,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 4
      */
-    #[TestDox('when removing, original is unchanged')]
+    #[TestDox('when pruning, original is unchanged')]
     public function testPruningDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');
