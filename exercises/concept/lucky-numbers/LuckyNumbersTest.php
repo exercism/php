@@ -15,10 +15,12 @@ class LuckyNumbersTest extends TestCase
      * @task_id 1
      */
     #[DataProvider('sumUpTestCases')]
-    #[TestDox('Sums up $digitsOfNumber1 and $digitsOfNumber2 to $expected')]
+    #[TestDox('Sums up array [$imploded_digitsOfNumber1] and array [$imploded_digitsOfNumber2] to $expected')]
     public function testSumUp(
         array $digitsOfNumber1,
+		string $imploded_digitsOfNumber1,
         array $digitsOfNumber2,
+		string $imploded_digitsOfNumber2,
         int $expected
     ): void {
         $class = new LuckyNumbers();
@@ -31,13 +33,13 @@ class LuckyNumbersTest extends TestCase
     public static function sumUpTestCases()
     {
         return [
-            'both numbers same length 1' => [ [2], [7], 9 ],
-            'both numbers same length 2' => [ [2, 4], [5, 7], 81 ],
-            'both numbers same length 3' => [ [5, 3, 4], [3, 6, 2], 896 ],
-            'first shorter than second number' => [ [2, 4], [1, 5, 7], 181 ],
-            'first longer than second number' => [ [2, 2, 5], [5, 7], 282 ],
-            'handles overflow' => [ [9, 9, 9], [1, 0, 1], 1100 ],
-            'handles large numbers' => [ [9, 9, 9, 9, 9, 9], [1], 1000000 ],
+            'both numbers same length 1' => [ [2], "2", [7], "7", 9 ],
+            'both numbers same length 2' => [ [2, 4], "2, 4", [5, 7], "5, 7", 81 ],
+            'both numbers same length 3' => [ [5, 3, 4], "5, 3, 4", [3, 6, 2], "3, 6, 2", 896 ],
+            'first shorter than second number' => [ [2, 4], "2, 4", [1, 5, 7], "1, 5, 7", 181 ],
+            'first longer than second number' => [ [2, 2, 5], "2, 2, 5", [5, 7], "5, 7", 282 ],
+            'handles overflow' => [ [9, 9, 9], "9, 9, 9", [1, 0, 1], "1, 0, 1", 1100 ],
+            'handles large numbers' => [ [9, 9, 9, 9, 9, 9], "9, 9, 9, 9, 9, 9", [1], "1", 1000000 ],
         ];
     }
 
