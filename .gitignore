@@ -11,3 +11,4 @@ composer.lock
 
 # IDE Files
 .idea
+.vscode

@@ -4,26 +4,39 @@ declare(strict_types=1);
 
 namespace App\TrackData;
 
+use App\Configlet;
 use App\TrackData\CanonicalData;
-use App\TrackData\CanonicalData\TestCase;
 use App\TrackData\Exercise;
 use RuntimeException;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class PracticeExercise implements Exercise
 {
-    private string $pathToConfiglet = '';
-    private string $pathToPracticeExercises = '';
+    private const PATH_TO_EXERCISES = '/exercises/practice/';
+    private const PATH_TO_CONFIG = '/.meta/config.json';
+
+    private ?Configlet $configlet = null;
+    private ?MetaConfigFiles $configFiles = null;
+
+    private string $exerciseSlug = '';
     private string $pathToExercise = '';
-    private string $pathToCanonicalData = '';
 
     public function __construct(
         private string $trackRoot,
-        private string $exerciseSlug,
-    ) {
-        $this->pathToConfiglet = $trackRoot . '/bin/configlet';
-        $this->pathToPracticeExercises = $trackRoot . '/exercises/practice/';
+        private ItemFactory $itemFactory,
+    ) {}
+
+    #[Required]
+    public function setConfiglet(Configlet $configlet): void
+    {
+        $this->configlet = $configlet;
+    }
+
+    public function forSlug(string $slug): void
+    {
+        $this->exerciseSlug = $slug;
         $this->pathToExercise =
-            $this->pathToPracticeExercises . $this->exerciseSlug;
+            $this->trackRoot . self::PATH_TO_EXERCISES . $slug;
     }
 
     public function pathToExercise(): string
@@ -31,65 +44,75 @@ class PracticeExercise implements Exercise
         return $this->pathToExercise;
     }
 
-    public function canonicalData(): CanonicalData
+    public function pathToTestFile(): string
     {
-        $this->ensureConfigletCanBeUsed();
+        return $this->pathToExercise . '/' . $this->testFileName();
+    }
+
+    public function testFileContent(): string
+    {
         $this->ensurePracticeExerciseCanBeUsed();
-        $this->pathToCachedCanonicalDataFromConfiglet();
-        $this->ensurePathToCanonicalDataCanBeUsed();
 
-        return $this->hydratedCanonicalData();
+        // This returns an object derived from stdClass, so adding keys is safe
+        $rawData = $this->loadCanonicalData();
+        $rawData->testClassName = $this->classNameFrom($this->testFileName());
+        $rawData->solutionFileName = $this->solutionFileName();
+        $rawData->solutionClassName = $this->classNameFrom($this->solutionFileName());
+
+        return $this->itemFactory->from($rawData)->renderPhpCode();
     }
 
-    private function hydratedCanonicalData(): CanonicalData
+    public function pathToSolutionFile(): string
     {
-        $canonicalData = \json_decode(
-            json: \file_get_contents($this->pathToCanonicalData),
-            flags: JSON_THROW_ON_ERROR
-        );
-
-        // TODO: Validate
-        return new CanonicalData(
-            $canonicalData->exercise,
-            $this->hydrateTestCasesFrom($canonicalData->cases),
-            $canonicalData->comments,
-        );
+        return $this->pathToExercise . '/' . $this->solutionFileName();
     }
 
-    private function hydrateTestCasesFrom(array $rawData): array
+    public function solutionFileContent(): string
     {
-        // TODO: Validate
-        return array_map(fn ($case) => new TestCase(
-            $case->uuid ?? null,
-            $case->description ?? null,
-            $case->property ?? null,
-            $case->input ?? null,
-            $case->expected ?? null,
-            $case->comments ?? [],
-        ), $rawData);
+        $this->ensurePracticeExerciseCanBeUsed();
+
+        // TODO: Implement this...
+        return 'To be defined';
     }
 
-    private function ensureConfigletCanBeUsed(): void
+    private function testFileName(): string
     {
-        if (
-            !(
-                is_executable($this->pathToConfiglet)
-                && is_file($this->pathToConfiglet)
-            )
-        ) {
-            throw new RuntimeException(
-                'configlet not found. Run the generator from track root.'
-                . ' Fetch configlet and create exercise with configlet first!'
+        return $this->metaConfigFiles()->testFiles[0];
+    }
+
+    private function solutionFileName(): string
+    {
+        return $this->metaConfigFiles()->solutionFiles[0];
+    }
+
+    private function classNameFrom(string $fileName): string
+    {
+        // This track follows PSR-4 naming convention
+        return \str_replace(".php", "", $fileName);
+    }
+
+    private function metaConfigFiles(): MetaConfigFiles
+    {
+        if (!$this->configFiles instanceof MetaConfigFiles)
+        {
+            $metaConfig = $this->loadMetaConfig();
+
+            $this->configFiles = new MetaConfigFiles(
+                $metaConfig->files->solution,
+                $metaConfig->files->test,
+                $metaConfig->files->example,
             );
         }
+
+        return $this->configFiles;
     }
 
     private function ensurePracticeExerciseCanBeUsed(): void
     {
         if (
             !(
-                is_writable($this->pathToExercise)
-                && is_dir($this->pathToExercise)
+                \is_writable($this->pathToExercise)
+                && \is_dir($this->pathToExercise)
             )
         ) {
             throw new RuntimeException(
@@ -97,60 +120,26 @@ class PracticeExercise implements Exercise
                 . ' configlet first or check access rights!'
             );
         }
+        // TODO: Validate metaConfigFiles(): one test file, one solution file, one example file
     }
 
-    private function pathToCachedCanonicalDataFromConfiglet(): void
+    private function loadCanonicalData(): object
     {
-        /*
-        When running configlet with detailed output (-v d) and a command that
-        requires problem specification data (e.g. info), it prints the location
-        of the cache as the first line. To avoid an HTTP call, use the offline
-        mode (-o).
-
-        Pipe the output through 'head' to get the first line only, then 'cut'
-        the 5th field to get the path only.
-
-        configlet may fail when there is no cached data (offline mode), which
-        tells us, that the exercise hasn't been generated before (the cache is
-        required for that, too). So BASH must use `-eo pipefail` to get the
-        failure code back.
-        */
-        $command = 'bash -c \'set -eo pipefail; '
-            . $this->pathToConfiglet
-            . ' -v d -t '
-            . $this->trackRoot
-            . ' info -o | head -1 | cut -d " " -f 5\''
-            ;
-        $resultCode = 1;
-
-        $configletCache = \exec(command: $command, result_code: $resultCode);
-        if ($configletCache === false || $resultCode !== 0) {
-            throw new RuntimeException(
-                '"configlet" could not provide cached canonical data.'
-                . ' Create exercise with configlet first!'
-            );
-        }
-
-        $this->pathToCanonicalData = \sprintf(
-            '%1$s/exercises/%2$s/canonical-data.json',
-            $configletCache,
-            $this->exerciseSlug
+        return \json_decode(
+            json: \file_get_contents(
+                $this->configlet->pathToCanonicalData($this->exerciseSlug)
+            ),
+            flags: JSON_THROW_ON_ERROR
         );
     }
 
-    private function ensurePathToCanonicalDataCanBeUsed(): void
+    private function loadMetaConfig(): object
     {
-        if (
-            !(
-                is_readable($this->pathToCanonicalData)
-                && is_file($this->pathToCanonicalData)
-            )
-        ) {
-            throw new RuntimeException(
-                'Cannot read "configlet" provided cached canonical data from '
-                . $this->pathToCanonicalData
-                . '. Check exercise slug or access rights!'
-            );
-        }
+        return \json_decode(
+            json: \file_get_contents(
+                $this->pathToExercise . self::PATH_TO_CONFIG
+            ),
+            flags: JSON_THROW_ON_ERROR
+        );
     }
 }

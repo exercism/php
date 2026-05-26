@@ -1,0 +1,16 @@
+{
+    "testClassName": "SomeTestClass",
+    "solutionFileName": "SomeSolutionFile.ext",
+    "solutionClassName": "SomeSolutionClass",
+    "exercise": "some-exercise-slug",
+    "comments": [
+        "One line in comments"
+    ],
+    "cases": [
+        {
+            "cases": [],
+            "description": "subgroup has unindented folding marks"
+        }
+    ],
+    "some-unknown-key": "some value"
+}

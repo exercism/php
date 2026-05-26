@@ -1,0 +1,9 @@
+{
+    "uuid": "31a673f2-5e54-49fe-bd79-1c1dae476c9c",
+    "description": "*+^-#.,'`\"<>= so_me *+-,'^`\"#.<>= descri*,'`\"\\+-#.<>=ption *^+-#.with trailing space!<>=,'`\" ",
+    "property": "camelCasedProperty",
+    "input": {
+        "camelCasedArgumentName": "maybe any type"
+    },
+    "expected": "maybe any type"
+}
