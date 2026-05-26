@@ -1,30 +1,9 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
 class TwoFerTest extends TestCase
 {
@@ -33,16 +12,28 @@ class TwoFerTest extends TestCase
         require_once 'TwoFer.php';
     }
 
+    /**
+     * uuid 1cf3e15a-a3d7-4a87-aeb3-ba1b43bc8dce
+     */
+    #[TestDox('no name given')]
     public function testNoNameGiven(): void
     {
         $this->assertEquals('One for you, one for me.', twoFer());
     }
 
+    /**
+     * uuid b4c6dbb8-b4fb-42c2-bafd-10785abe7709
+     */
+    #[TestDox('a name given')]
     public function testANameGiven(): void
     {
         $this->assertEquals('One for Alice, one for me.', twoFer('Alice'));
     }
 
+    /**
+     * uuid 3549048d-1a6e-4653-9a79-b0bda163e8d5
+     */
+    #[TestDox('another name given')]
     public function testAnotherNameGiven(): void
     {
         $this->assertEquals('One for Bob, one for me.', twoFer('Bob'));
