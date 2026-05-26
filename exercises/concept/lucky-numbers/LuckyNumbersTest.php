@@ -1,7 +1,6 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;
 
 class LuckyNumbersTest extends TestCase
@@ -14,145 +13,260 @@ class LuckyNumbersTest extends TestCase
     /**
      * @task_id 1
      */
-    #[DataProvider('sumUpTestCases')]
-    #[TestDox('Sums up array [$imploded_digitsOfNumber1] and array [$imploded_digitsOfNumber2] to $expected')]
-    public function testSumUp(
-        array $digitsOfNumber1,
-        string $imploded_digitsOfNumber1,
-        array $digitsOfNumber2,
-        string $imploded_digitsOfNumber2,
-        int $expected
-    ): void {
-        $class = new LuckyNumbers();
-
-        $actual = $class->sumUp($digitsOfNumber1, $digitsOfNumber2);
-
-        $this->assertSame($expected, $actual);
+    #[TestDox('Sums up two single digit numbers')]
+    public function testSumsUpTwoSingleDigitNumbers(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertEquals(9, $luckynumber->sumUp([2], [7]));
     }
 
-    public static function sumUpTestCases()
+    /**
+     * @task_id 1
+     */
+    #[TestDox('Sums up two numbers with two digits each')]
+    public function testSumsUpTwoNumbersWithTwoDigitsEach(): void
     {
-        return [
-            'both numbers same length 1' => [ [2], "2", [7], "7", 9 ],
-            'both numbers same length 2' => [ [2, 4], "2, 4", [5, 7], "5, 7", 81 ],
-            'both numbers same length 3' => [ [5, 3, 4], "5, 3, 4", [3, 6, 2], "3, 6, 2", 896 ],
-            'first shorter than second number' => [ [2, 4], "2, 4", [1, 5, 7], "1, 5, 7", 181 ],
-            'first longer than second number' => [ [2, 2, 5], "2, 2, 5", [5, 7], "5, 7", 282 ],
-            'handles overflow' => [ [9, 9, 9], "9, 9, 9", [1, 0, 1], "1, 0, 1", 1100 ],
-            'handles large numbers' => [ [9, 9, 9, 9, 9, 9], "9, 9, 9, 9, 9, 9", [1], "1", 1000000 ],
-        ];
+        $luckynumber = new LuckyNumbers();
+        $this->assertEquals(81, $luckynumber->sumUp([2, 4], [5, 7]));
+    }
+
+    /**
+     * @task_id 1
+     */
+    #[TestDox('Sums up two numbers with three digits each')]
+    public function testSumsUpTwoNumbersWithThreeDigitsEach(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertEquals(896, $luckynumber->sumUp([5, 3, 4], [3, 6, 2]));
+    }
+
+    /**
+     * @task_id 1
+     */
+    #[TestDox('Sums up two numbers when the first contains fewer digits than the second')]
+    public function testSumsUpTwoNumbersWhenTheFirstContainsFewerDigitsThanTheSecond(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertEquals(181, $luckynumber->sumUp([2, 4], [1, 5, 7]));
+    }
+
+    /**
+     * @task_id 1
+     */
+    #[TestDox('Sums up two numbers when the first contains more digits than the second')]
+    public function testSumsUpTwoNumbersWhenTheFirstContainsMoreDigitsThanTheSecond(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertEquals(282, $luckynumber->sumUp([2, 2, 5], [5, 7]));
+    }
+
+    /**
+     * @task_id 1
+     */
+    #[TestDox('sumUp method handles overflow')]
+    public function testSumUpMethodHandlesOverflow(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertEquals(1100, $luckynumber->sumUp([9, 9, 9], [1, 0, 1]));
+    }
+
+    /**
+     * @task_id 1
+     */
+    #[TestDox('sumUp method handles large numbers')]
+    public function testSumUpMethodHandlesLargeNumbers(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertEquals(1000000, $luckynumber->sumUp([9, 9, 9, 9, 9, 9], [1]));
     }
 
     /**
      * @task_id 2
      */
-    #[DataProvider('isPalindromeTestCases')]
-    #[TestDox('Detects palindromic number $number')]
-    public function testIsPalindrome(int $number): void
+    #[TestDox('Detects a palindromic number consisting of a single zero')]
+    public function testDetectsAPalindromicNumberConsistingOfASingleZero(): void
     {
-        $class = new LuckyNumbers();
-
-        $actual = $class->isPalindrome($number);
-
-        $this->assertTrue($actual);
-    }
-
-    public static function isPalindromeTestCases()
-    {
-        return [
-            [ 0 ],
-            [ 6 ],
-            [ 33 ],
-            [ 15651 ],
-            [ 48911984 ],
-        ];
+        $luckynumber = new LuckyNumbers();
+        $this->assertTrue($luckynumber->isPalindrome(0));
     }
 
     /**
      * @task_id 2
      */
-    #[DataProvider('isNoPalindromeTestCases')]
-    #[TestDox('Detects non-palindromic number $number')]
-    public function testIsNoPalindrome(int $number): void
+    #[TestDox('Detects a palindromic number consisting of a single digit')]
+    public function testDetectsAPalindromicNumberConsistingOfASingleDigit(): void
     {
-        $class = new LuckyNumbers();
-
-        $actual = $class->isPalindrome($number);
-
-        $this->assertFalse($actual);
+        $luckynumber = new LuckyNumbers();
+        $this->assertTrue($luckynumber->isPalindrome(6));
     }
 
-    public static function isNoPalindromeTestCases()
+    /**
+     * @task_id 2
+     */
+    #[TestDox('Detects a palindromic number with two identical digits')]
+    public function testDetectsAPalindromicNumberWithTwoIdenticalDigits(): void
     {
-        return [
-            [ 12 ],
-            [ 156512 ],
-            [ 48921984 ],
-        ];
+        $luckynumber = new LuckyNumbers();
+        $this->assertTrue($luckynumber->isPalindrome(33));
+    }
+
+    /**
+     * @task_id 2
+     */
+    #[TestDox('Detects a palindromic number with five symmetric digits')]
+    public function testDetectsAPalindromicNumberWithFiveSymmetricDigits(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertTrue($luckynumber->isPalindrome(15651));
+    }
+
+    /**
+     * @task_id 2
+     */
+    #[TestDox('Detects a palindromic number with eight symmetric digits')]
+    public function testDetectsAPalindromicNumberWithEightSymmetricDigits(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertTrue($luckynumber->isPalindrome(48911984));
+    }
+
+    /**
+     * @task_id 2
+     */
+    #[TestDox('Detects a non-palindromic number with two distinct digits')]
+    public function testDetectsANonPalindromicNumberWithTwoDistinctDigits(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertFalse($luckynumber->isPalindrome(12));
+    }
+
+    /**
+     * @task_id 2
+     */
+    #[TestDox('Detects a non-palindromic number with six asymmetric digits')]
+    public function testDetectsANonPalindromicNumberWithSixAsymmetricDigits(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertFalse($luckynumber->isPalindrome(156512));
+    }
+
+    /**
+     * @task_id 2
+     */
+    #[TestDox('Detects a non-palindromic number with eight nearly symmetric digits')]
+    public function testDetectsANonPalindromicNumberWithEightNearlySymmetricDigits(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertFalse($luckynumber->isPalindrome(48921984));
     }
 
     /**
      * @task_id 3
      */
-    #[TestDox('Error message for empty input')]
-    public function testErrorMessageForEmptyInput(): void
+    #[TestDox('Error message for an empty input')]
+    public function testErrorMessageForAnEmptyInput(): void
     {
-        $class = new LuckyNumbers();
-
-        $actual = $class->validate('');
-
-        $this->assertSame('Required field', $actual);
+        $luckynumber = new LuckyNumbers();
+       $this->assertSame('Required field', $luckynumber->validate(''));
     }
 
     /**
      * @task_id 3
      */
-    #[DataProvider('invalidInputTestCases')]
-    #[TestDox('Error message for invalid input $input')]
-    public function testErrorMessageForInvalidInput(
-        string $input
-    ): void {
-        $class = new LuckyNumbers();
-
-        $actual = $class->validate($input);
-
-        $this->assertSame('Must be a whole number larger than 0', $actual);
-    }
-
-    public static function invalidInputTestCases()
+    #[TestDox('Error message for a string input')]
+    public function testErrorMessageForAStringInput(): void
     {
-        return [
-            [ 'some text' ],
-            [ 'f861' ],
-            [ '-42' ],
-            [ '0' ],
-        ];
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('Must be a whole number larger than 0', $luckynumber->validate('some text'));
     }
 
     /**
      * @task_id 3
      */
-    #[DataProvider('validInputTestCases')]
-    #[TestDox('Error message for invalid input $input')]
-    public function testErrorMessageForValidInput(
-        string $input
-    ): void {
-        $class = new LuckyNumbers();
-
-        $actual = $class->validate($input);
-
-        $this->assertSame('', $actual);
+    #[TestDox('Error message for an alphanumeric input')]
+    public function testErrorMessageForAnAlphanumericInput(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('Must be a whole number larger than 0', $luckynumber->validate('f861'));
     }
 
-    public static function validInputTestCases()
+    /**
+     * @task_id 3
+     */
+    #[TestDox('Error message for a negative number input')]
+    public function testErrorMessageForANegativeNumberInput(): void
     {
-        return [
-            [ '1' ],
-            [ '123456789' ],
-            [ '   123    ' ],
-            [ '5e3' ],
-            [ '4.2E1' ],
-            [ '00015-plus' ],
-        ];
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('Must be a whole number larger than 0', $luckynumber->validate('-42'));
+    }
+
+    /**
+     * @task_id 3
+     */
+    #[TestDox('Error message for zero as a digit input')]
+    public function testErrorMessageForZeroAsADigitInput(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('Must be a whole number larger than 0', $luckynumber->validate('0'));
+    }
+
+    /**
+     * @task_id 3
+     */
+    #[TestDox('Returns an empty string for a valid digit input')]
+    public function testReturnsAnEmptyStringForAValidDigitInput(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('', $luckynumber->validate('1'));
+    }
+
+    /**
+     * @task_id 3
+     */
+    #[TestDox('Returns an empty string for a valid number input')]
+    public function testReturnsAnEmptyStringForAValidNumberInput(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('', $luckynumber->validate('123456789'));
+    }
+
+    /**
+     * @task_id 3
+     */
+    #[TestDox('Returns an empty string for a valid number input with leading and trailing whitespace')]
+    public function testReturnsAnEmptyStringForAValidNumberInputWithLeadingAndTrailingWhitespace(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('', $luckynumber->validate('   123    '));
+    }
+
+    /**
+     * @task_id 3
+     */
+    #[TestDox('Returns an empty string for a valid number input using lowercase exponent notation')]
+    public function testReturnsAnEmptyStringForAValidNumberInputUsingLowercaseExponentNotation(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('', $luckynumber->validate('5e3'));
+    }
+
+    /**
+     * @task_id 3
+     */
+    #[TestDox('Returns an empty string for a valid number input using uppercase exponent notation')]
+    public function testReturnsAnEmptyStringForAValidNumberInputUsingUppercaseExponentNotation(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('', $luckynumber->validate('4.2E1'));
+    }
+
+    /**
+     * @task_id 3
+     */
+    #[TestDox('Returns an empty string for a valid number input using octal notation')]
+    public function testReturnsAnEmptyStringForAValidNumberInputUsingOcatlNotation(): void
+    {
+        $luckynumber = new LuckyNumbers();
+        $this->assertSame('', $luckynumber->validate('00015-plus'));
     }
 }
