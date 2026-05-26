@@ -167,7 +167,7 @@ class LuckyNumbersTest extends TestCase
     public function testErrorMessageForAnEmptyInput(): void
     {
         $luckynumber = new LuckyNumbers();
-       $this->assertSame('Required field', $luckynumber->validate(''));
+        $this->assertSame('Required field', $luckynumber->validate(''));
     }
 
     /**
