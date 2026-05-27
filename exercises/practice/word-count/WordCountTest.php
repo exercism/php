@@ -132,7 +132,7 @@ class WordCountTest extends TestCase
     }
 
     /**
-     * UUID 6d00f1db-901c-4bec-9829-d20eb3044557 
+     * UUID 6d00f1db-901c-4bec-9829-d20eb3044557
      */
     #[TestDox('quotation for word with apostrophe')]
     public function testQuotationForWordWithApostrophe(): void
