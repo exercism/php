@@ -62,6 +62,7 @@ pig-latin
 protein-translation
 proverb
 raindrops
+resistor-color-duo
 reverse-string
 rna-transcription
 robot-simulator
