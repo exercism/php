@@ -64,6 +64,7 @@ proverb
 queen-attack
 rail-fence-cipher
 raindrops
+resistor-color-duo
 reverse-string
 rna-transcription
 robot-simulator
