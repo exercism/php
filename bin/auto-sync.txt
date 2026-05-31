@@ -71,6 +71,7 @@ robot-simulator
 roman-numerals
 rotational-cipher
 run-length-encoding
+say
 scrabble-score
 secret-handshake
 sieve
