@@ -73,6 +73,7 @@ rotational-cipher
 run-length-encoding
 scrabble-score
 secret-handshake
+series
 sieve
 space-age
 spiral-matrix
