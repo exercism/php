@@ -264,7 +264,7 @@ class LuckyNumbersTest extends TestCase
      * @task_id 3
      */
     #[TestDox('Returns an empty string for a valid number input using octal notation')]
-    public function testReturnsAnEmptyStringForAValidNumberInputUsingOcatlNotation(): void
+    public function testReturnsAnEmptyStringForAValidNumberInputUsingOctalNotation(): void
     {
         $luckynumber = new LuckyNumbers();
         $this->assertSame('', $luckynumber->validate('00015-plus'));
