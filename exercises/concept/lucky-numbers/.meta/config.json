@@ -2,6 +2,9 @@
   "authors": [
     "mk-mxp"
   ],
+  "contributors": [
+    "resu-xuniL"
+  ],
   "files": {
     "solution": [
       "LuckyNumbers.php"
