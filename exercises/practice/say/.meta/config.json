@@ -2,6 +2,9 @@
   "authors": [
     "vnkmpf"
   ],
+  "contributors": [
+    "resu-xuniL"
+  ],
   "files": {
     "solution": [
       "Say.php"
