@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
 class SeriesTest extends TestCase
 {
@@ -11,14 +12,34 @@ class SeriesTest extends TestCase
         require_once 'Series.php';
     }
 
-    public function testSlicesOfOne(): void
+    /**
+     * uuid 7ae7a46a-d992-4c2a-9c15-a112d125ebad
+     */
+    #[TestDox('slices of one from one')]
+    public function testSlicesOfOneFromOne(): void
     {
         $this->assertEquals(
-            ["0", "1", "2", "3", "4"],
-            slices("01234", 1)
+            ["1"],
+            slices("1", 1)
         );
     }
 
+    /**
+     * uuid 3143b71d-f6a5-4221-aeae-619f906244d2
+     */
+    #[TestDox('slices of one from two')]
+    public function testSlicesOfOneFromTwo(): void
+    {
+        $this->assertEquals(
+            ["1", "2"],
+            slices("12", 1)
+        );
+    }
+
+    /**
+     * uuid dbb68ff5-76c5-4ccd-895a-93dbec6d5805
+     */
+    #[TestDox('slices of two')]
     public function testSlicesOfTwo(): void
     {
         $this->assertEquals(
@@ -27,39 +48,124 @@ class SeriesTest extends TestCase
         );
     }
 
-    public function testSlicesOfThree(): void
+    /**
+     * uuid 19bbea47-c987-4e11-a7d1-e103442adf86
+     */
+    #[TestDox('slices of two overlap')]
+    public function testSlicesOfTwoOverlap(): void
     {
         $this->assertEquals(
-            ["978", "786", "867", "675", "756", "564"],
-            slices("97867564", 3)
+            ["97", "78"],
+            slices("978", 2)
         );
     }
 
-    public function testSlicesOfFour(): void
+    /**
+     * uuid 8e17148d-ba0a-4007-a07f-d7f87015d84c
+     */
+    #[TestDox('slices can include duplicates')]
+    public function testSlicesCanIncludeDuplicates(): void
     {
         $this->assertEquals(
-            ["0123", "1234"],
-            slices("01234", 4)
+            ["121", "212", "121", "212", "121"],
+            slices("1212121", 3)
         );
     }
 
-    public function testSlicesOfFive(): void
+    /**
+     * uuid bd5b085e-f612-4f81-97a8-6314258278b0
+     */
+    #[TestDox('slices of a long series')]
+    public function testSlicesOfALongSeries(): void
     {
         $this->assertEquals(
-            ["01234"],
-            slices("01234", 5)
+            [
+                "01234567890123456789",
+                "12345678901234567890",
+                "23456789012345678901",
+                "34567890123456789012",
+                "45678901234567890123",
+                "56789012345678901234",
+                "67890123456789012345",
+                "78901234567890123456",
+                "89012345678901234567",
+                "90123456789012345678",
+                "01234567890123456789",
+                "12345678901234567890",
+                "23456789012345678901",
+                "34567890123456789012",
+                "45678901234567890123",
+                "56789012345678901234",
+                "67890123456789012345",
+                "78901234567890123456",
+                "89012345678901234567",
+                "90123456789012345678",
+                "01234567890123456789",
+                "12345678901234567890",
+                "23456789012345678901",
+                "34567890123456789012",
+                "45678901234567890123",
+                "56789012345678901234",
+                "67890123456789012345",
+                "78901234567890123456",
+                "89012345678901234567",
+                "90123456789012345678",
+                "01234567890123456789"
+            ],
+            slices(
+                "01234567890123456789012345678901234567890123456789",
+                20
+            )
         );
     }
 
-    public function testOverlyLongSlice(): void
+    /**
+     * uuid 6d235d85-46cf-4fae-9955-14b6efef27cd
+     */
+    #[TestDox('slice length is too large')]
+    public function testSliceLengthIsTooLarge(): void
     {
         $this->expectException(Exception::class);
         slices("012", 4);
     }
 
-    public function testOverlyShortSlice(): void
+    /**
+     * uuid d7957455-346d-4e47-8e4b-87ed1564c6d7
+     */
+    #[TestDox('slice length is way too large')]
+    public function testSliceLengthIsWayTooLarge(): void
+    {
+        $this->expectException(Exception::class);
+        slices("01234", 9999999999);
+    }
+
+    /**
+     * uuid d34004ad-8765-4c09-8ba1-ada8ce776806
+     */
+    #[TestDox('slice length cannot be zero')]
+    public function testSliceLengthCannotBeZero(): void
     {
         $this->expectException(Exception::class);
         slices("01234", 0);
+    }
+
+    /**
+     * uuid 10ab822d-8410-470a-a85d-23fbeb549e54
+     */
+    #[TestDox('slice length cannot be negative')]
+    public function testSliceLengthCannotBeNegative(): void
+    {
+        $this->expectException(Exception::class);
+        slices("01234", -1);
+    }
+
+    /**
+     * uuid c7ed0812-0e4b-4bf3-99c4-28cbbfc246a2
+     */
+    #[TestDox('empty series is invalid')]
+    public function testEmptySeriesIsInvalid(): void
+    {
+        $this->expectException(Exception::class);
+        slices("", 2);
     }
 }
