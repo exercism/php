@@ -92,7 +92,19 @@ class WordCountTest extends TestCase
     #[TestDox('with apostrophes')]
     public function testWithApostrophes(): void
     {
-        $this->assertEquals(['first' => 1, "don't" => 1, 'count' => 1], wordCount("first: don't count"));
+        $this->assertEquals(
+            [
+                'first' => 1,
+                "don't" => 2,
+                'laugh' => 1,
+                'then' => 1,
+                'cry' => 1,
+                "you're" => 1,
+                'getting' => 1,
+                'it' => 1,
+            ],
+            wordCount("'First: don't laugh. Then: don't cry. You're getting it.'")
+        );
     }
 
     /**
