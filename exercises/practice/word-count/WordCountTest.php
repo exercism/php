@@ -147,10 +147,10 @@ class WordCountTest extends TestCase
     /**
      * UUID 50176e8a-fe8e-4f4c-b6b6-aa9cf8f20360
      */
-    #[TestDox('alternating word separators are not detected as words')]
-    public function testAlternatingWordSeparatorsNotDetectedAsWord(): void
+    #[TestDox('alternating word separators are not detected as a word')]
+    public function testAlternatingWordSeparatorsNotDetectedAsAWord(): void
     {
-        $this->assertEquals(['one' => 1, 'two' => 1, 'three' => 1], wordCount("one,\ntwo,\nthree"));
+        $this->assertEquals(['one' => 1, 'two' => 1, 'three' => 1], wordCount(",\n,one,\n ,two \n 'three'"));
     }
 
     /**
