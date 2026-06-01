@@ -138,8 +138,8 @@ class WordCountTest extends TestCase
     /**
      * UUID c5f4ef26-f3f7-4725-b314-855c04fb4c13
      */
-    #[TestDox('counts multiple spaces as one')]
-    public function testCountsMultipleSpacesAsOne(): void
+    #[TestDox('multiple spaces not detected as a word')]
+    public function testMultipleSpacesNotDetectedAsAWord(): void
     {
         $this->assertEquals(['multiple' => 1, 'whitespaces' => 1], wordCount(' multiple   whitespaces'));
     }
