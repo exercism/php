@@ -33,7 +33,7 @@ class WordCountTest extends TestCase
             [
                 'one' => 1,
                 'of' => 1,
-                'each' => 1
+                'each' => 1,
             ],
             wordCount('one of each'),
         );
@@ -51,7 +51,7 @@ class WordCountTest extends TestCase
                 'fish' => 4,
                 'two' => 1,
                 'red' => 1,
-                'blue' => 1
+                'blue' => 1,
             ],
             wordCount('one fish two fish red fish blue fish'),
         );
@@ -67,7 +67,7 @@ class WordCountTest extends TestCase
             [
                 'one' => 1,
                 'two' => 1,
-                'three' => 1
+                'three' => 1,
             ],
             wordCount('one,two,three'),
         );
@@ -83,7 +83,7 @@ class WordCountTest extends TestCase
             [
                 'one' => 1,
                 'two' => 1,
-                'three' => 1
+                'three' => 1,
             ],
             wordCount("one,\ntwo,\nthree"),
         );
@@ -101,7 +101,7 @@ class WordCountTest extends TestCase
                 'carpet' => 1,
                 'as' => 1,
                 'java' => 1,
-                'javascript' => 1
+                'javascript' => 1,
             ],
             wordCount('car : carpet as java : javascript!!&@$%^&'),
         );
@@ -117,7 +117,7 @@ class WordCountTest extends TestCase
             [
                 '1' => 1,
                 '2' => 1,
-                'testing' => 2
+                'testing' => 2,
             ],
             wordCount('testing, 1, 2 testing'),
         );
@@ -218,7 +218,7 @@ class WordCountTest extends TestCase
             [
                 'one' => 1,
                 'two' => 1,
-                'three' => 1
+                'three' => 1,
             ],
             wordCount(",\n,one,\n ,two \n 'three'"),
         );
