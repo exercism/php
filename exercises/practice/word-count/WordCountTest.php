@@ -55,7 +55,7 @@ class WordCountTest extends TestCase
     {
         $this->assertEquals(
             ['one' => 1, 'two' => 1, 'three' => 1],
-            wordCount('one, two, three')
+            wordCount("one,\ntwo,\nthree"),
         );
     }
 
