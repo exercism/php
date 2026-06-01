@@ -117,10 +117,22 @@ class WordCountTest extends TestCase
     /**
      * UUID 8d6815fe-8a51-4a65-96f9-2fb3f6dc6ed6
      */
-    #[TestDox('starts from the beginning')]
-    public function testStartsFromTheBeginning(): void
+    #[TestDox('substrings from the beginning')]
+    public function testSubstringsFromTheBeginning(): void
     {
-        $this->assertEquals(['goody' => 1, 'good' => 1, 'oody' => 1], wordCount('goody good oody'));
+        $this->assertEquals(
+            [
+                'joe' => 1,
+                "can't" => 1,
+                'tell' => 1,
+                'between' => 1,
+                'app' => 1,
+                'apple' => 1,
+                'and' => 1,
+                'a' => 1,
+            ],
+            wordCount("Joe can't tell between app, apple and a."),
+        );
     }
 
     /**
