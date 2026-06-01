@@ -141,7 +141,7 @@ class WordCountTest extends TestCase
     #[TestDox('counts multiple spaces as one')]
     public function testCountsMultipleSpacesAsOne(): void
     {
-        $this->assertEquals(['hello' => 1, 'world' => 1], wordCount('hello  world'));
+        $this->assertEquals(['multiple' => 1, 'whitespaces' => 1], wordCount(' multiple   whitespaces'));
     }
 
     /**
