@@ -17,7 +17,10 @@ class WordCountTest extends TestCase
     #[TestDox('count one word')]
     public function testCountOneWord(): void
     {
-        $this->assertEquals(['word' => 1], wordCount('word'));
+        $this->assertEquals(
+            ['word' => 1],
+            wordCount('word'),
+        );
     }
 
     /**
@@ -26,7 +29,14 @@ class WordCountTest extends TestCase
     #[TestDox('count one of each word')]
     public function testCountOneOfEachWord(): void
     {
-        $this->assertEquals(['one' => 1, 'of' => 1, 'each' => 1], wordCount('one of each'));
+        $this->assertEquals(
+            [
+                'one' => 1,
+                'of' => 1,
+                'each' => 1
+            ],
+            wordCount('one of each'),
+        );
     }
 
     /**
@@ -35,7 +45,16 @@ class WordCountTest extends TestCase
     #[TestDox('multiple occurrences of a word')]
     public function testMultipleOccurrencesOfAWord(): void
     {
-        $this->assertEquals(['one' => 1, 'fish' => 4, 'two' => 1, 'red' => 1, 'blue' => 1], wordCount('one fish two fish red fish blue fish'));
+        $this->assertEquals(
+            [
+                'one' => 1,
+                'fish' => 4,
+                'two' => 1,
+                'red' => 1,
+                'blue' => 1
+            ],
+            wordCount('one fish two fish red fish blue fish'),
+        );
     }
 
     /**
@@ -44,7 +63,14 @@ class WordCountTest extends TestCase
     #[TestDox('handles cramped lists')]
     public function testHandlesCrampedLists(): void
     {
-        $this->assertEquals(['one' => 1, 'two' => 1, 'three' => 1], wordCount('one,two,three'));
+        $this->assertEquals(
+            [
+                'one' => 1,
+                'two' => 1,
+                'three' => 1
+            ],
+            wordCount('one,two,three'),
+        );
     }
 
     /**
@@ -54,7 +80,11 @@ class WordCountTest extends TestCase
     public function testHandlesExpandedLists(): void
     {
         $this->assertEquals(
-            ['one' => 1, 'two' => 1, 'three' => 1],
+            [
+                'one' => 1,
+                'two' => 1,
+                'three' => 1
+            ],
             wordCount("one,\ntwo,\nthree"),
         );
     }
@@ -65,7 +95,16 @@ class WordCountTest extends TestCase
     #[TestDox('ignore punctuation')]
     public function testIgnorePunctuation(): void
     {
-        $this->assertEquals(['car' => 1, 'carpet' => 1, 'as' => 1, 'java' => 1, 'javascript' => 1], wordCount('car : carpet as java : javascript!!&@$%^&'));
+        $this->assertEquals(
+            [
+                'car' => 1,
+                'carpet' => 1,
+                'as' => 1,
+                'java' => 1,
+                'javascript' => 1
+            ],
+            wordCount('car : carpet as java : javascript!!&@$%^&'),
+        );
     }
 
     /**
@@ -74,7 +113,14 @@ class WordCountTest extends TestCase
     #[TestDox('include numbers')]
     public function testIncludeNumbers(): void
     {
-        $this->assertEquals(['1' => 1, '2' => 1, 'testing' => 2], wordCount('testing, 1, 2 testing'));
+        $this->assertEquals(
+            [
+                '1' => 1,
+                '2' => 1,
+                'testing' => 2
+            ],
+            wordCount('testing, 1, 2 testing'),
+        );
     }
 
     /**
@@ -83,7 +129,10 @@ class WordCountTest extends TestCase
     #[TestDox('normalize case')]
     public function testNormalizeCase(): void
     {
-        $this->assertEquals(['go' => 3, 'stop' => 2], wordCount('go Go GO Stop stop'));
+        $this->assertEquals(
+            ['go' => 3, 'stop' => 2],
+            wordCount('go Go GO Stop stop'),
+        );
     }
 
     /**
@@ -103,7 +152,7 @@ class WordCountTest extends TestCase
                 'getting' => 1,
                 'it' => 1,
             ],
-            wordCount("'First: don't laugh. Then: don't cry. You're getting it.'")
+            wordCount("'First: don't laugh. Then: don't cry. You're getting it.'"),
         );
     }
 
@@ -153,7 +202,10 @@ class WordCountTest extends TestCase
     #[TestDox('multiple spaces not detected as a word')]
     public function testMultipleSpacesNotDetectedAsAWord(): void
     {
-        $this->assertEquals(['multiple' => 1, 'whitespaces' => 1], wordCount(' multiple   whitespaces'));
+        $this->assertEquals(
+            ['multiple' => 1, 'whitespaces' => 1],
+            wordCount(' multiple   whitespaces'),
+        );
     }
 
     /**
@@ -162,7 +214,14 @@ class WordCountTest extends TestCase
     #[TestDox('alternating word separators are not detected as a word')]
     public function testAlternatingWordSeparatorsNotDetectedAsAWord(): void
     {
-        $this->assertEquals(['one' => 1, 'two' => 1, 'three' => 1], wordCount(",\n,one,\n ,two \n 'three'"));
+        $this->assertEquals(
+            [
+                'one' => 1,
+                'two' => 1,
+                'three' => 1
+            ],
+            wordCount(",\n,one,\n ,two \n 'three'"),
+        );
     }
 
     /**
@@ -171,6 +230,9 @@ class WordCountTest extends TestCase
     #[TestDox('quotation for word with apostrophe')]
     public function testQuotationForWordWithApostrophe(): void
     {
-        $this->assertEquals(['can' => 1, "can't" => 2], wordCount("can, can't, 'can't'"));
+        $this->assertEquals(
+            ['can' => 1, "can't" => 2],
+            wordCount("can, can't, 'can't'"),
+        );
     }
 }
