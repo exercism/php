@@ -101,7 +101,17 @@ class WordCountTest extends TestCase
     #[TestDox('with quotations')]
     public function testWithQuotations(): void
     {
-        $this->assertEquals(['hello' => 1, "world" => 1], wordCount("hello \"world\""));
+        $this->assertEquals(
+            [
+                'joe' => 1,
+                "can't" => 1,
+                'tell' => 1,
+                'between' => 1,
+                'large' => 2,
+                'and' => 1,
+            ],
+            wordCount("Joe can't tell between 'large' and large."),
+        );
     }
 
     /**
