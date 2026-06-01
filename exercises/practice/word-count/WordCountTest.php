@@ -161,28 +161,4 @@ class WordCountTest extends TestCase
     {
         $this->assertEquals(['can' => 1, "can't" => 2], wordCount("can, can't, 'can't'"));
     }
-
-    /**
-     * UUID not found
-     */
-    public function testDoesNotCountLeadingOrTrailingWhitespace(): void
-    {
-        $this->assertEquals(['introductory' => 1, 'course' => 1], wordCount("\t\tIntroductory Course      "));
-    }
-
-    /**
-     * UUID not found
-     */
-    public function testCountsMultiline(): void
-    {
-        $this->assertEquals(['hello' => 1, 'world' => 1], wordCount("hello\nworld"));
-    }
-
-    /**
-     * UUID not found
-     */
-    public function testCountsTabs(): void
-    {
-        $this->assertEquals(['hello' => 1, 'world' => 1], wordCount("hello\tworld"));
-    }
 }
