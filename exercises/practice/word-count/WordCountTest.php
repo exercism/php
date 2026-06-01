@@ -159,7 +159,7 @@ class WordCountTest extends TestCase
     #[TestDox('quotation for word with apostrophe')]
     public function testQuotationForWordWithApostrophe(): void
     {
-        $this->assertEquals(['well' => 1, 'happening' => 1, "what's" => 1], wordCount("well, \"what's\" happening"));
+        $this->assertEquals(['can' => 1, "can't" => 2], wordCount("can, can't, 'can't'"));
     }
 
     /**
