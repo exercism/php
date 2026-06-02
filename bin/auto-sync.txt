@@ -84,5 +84,6 @@ twelve-days
 two-bucket
 two-fer
 wordy
+word-count
 yacht
 zebra-puzzle
