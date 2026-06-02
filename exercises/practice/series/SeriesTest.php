@@ -43,8 +43,8 @@ class SeriesTest extends TestCase
     public function testSlicesOfTwo(): void
     {
         $this->assertEquals(
-            ["97", "78", "86", "67", "75", "56", "64"],
-            slices("97867564", 2)
+            ["35"],
+            slices("35", 2)
         );
     }
 
@@ -55,8 +55,8 @@ class SeriesTest extends TestCase
     public function testSlicesOfTwoOverlap(): void
     {
         $this->assertEquals(
-            ["97", "78"],
-            slices("978", 2)
+            ["91", "14", "42"],
+            slices("9142", 2)
         );
     }
 
@@ -67,8 +67,8 @@ class SeriesTest extends TestCase
     public function testSlicesCanIncludeDuplicates(): void
     {
         $this->assertEquals(
-            ["121", "212", "121", "212", "121"],
-            slices("1212121", 3)
+            ["777", "777", "777", "777"],
+            slices("777777", 3)
         );
     }
 
@@ -80,42 +80,16 @@ class SeriesTest extends TestCase
     {
         $this->assertEquals(
             [
-                "01234567890123456789",
-                "12345678901234567890",
-                "23456789012345678901",
-                "34567890123456789012",
-                "45678901234567890123",
-                "56789012345678901234",
-                "67890123456789012345",
-                "78901234567890123456",
-                "89012345678901234567",
-                "90123456789012345678",
-                "01234567890123456789",
-                "12345678901234567890",
-                "23456789012345678901",
-                "34567890123456789012",
-                "45678901234567890123",
-                "56789012345678901234",
-                "67890123456789012345",
-                "78901234567890123456",
-                "89012345678901234567",
-                "90123456789012345678",
-                "01234567890123456789",
-                "12345678901234567890",
-                "23456789012345678901",
-                "34567890123456789012",
-                "45678901234567890123",
-                "56789012345678901234",
-                "67890123456789012345",
-                "78901234567890123456",
-                "89012345678901234567",
-                "90123456789012345678",
-                "01234567890123456789"
+                "91849",
+                "18493",
+                "84939",
+                "49390",
+                "93904",
+                "39042",
+                "90424",
+                "04243"
             ],
-            slices(
-                "01234567890123456789012345678901234567890123456789",
-                20
-            )
+            slices("918493904243", 5)
         );
     }
 
@@ -126,7 +100,7 @@ class SeriesTest extends TestCase
     public function testSliceLengthIsTooLarge(): void
     {
         $this->expectException(Exception::class);
-        slices("012", 4);
+        slices("12345", 6);
     }
 
     /**
@@ -136,7 +110,7 @@ class SeriesTest extends TestCase
     public function testSliceLengthIsWayTooLarge(): void
     {
         $this->expectException(Exception::class);
-        slices("01234", 9999999999);
+        slices("12345", 42);
     }
 
     /**
@@ -146,7 +120,7 @@ class SeriesTest extends TestCase
     public function testSliceLengthCannotBeZero(): void
     {
         $this->expectException(Exception::class);
-        slices("01234", 0);
+        slices("12345", 0);
     }
 
     /**
@@ -156,7 +130,7 @@ class SeriesTest extends TestCase
     public function testSliceLengthCannotBeNegative(): void
     {
         $this->expectException(Exception::class);
-        slices("01234", -1);
+        slices("123", -1);
     }
 
     /**
@@ -166,6 +140,6 @@ class SeriesTest extends TestCase
     public function testEmptySeriesIsInvalid(): void
     {
         $this->expectException(Exception::class);
-        slices("", 2);
+        slices("", 1);
     }
 }
