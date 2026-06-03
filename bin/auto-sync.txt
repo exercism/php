@@ -74,6 +74,7 @@ run-length-encoding
 say
 scrabble-score
 secret-handshake
+series
 sieve
 space-age
 spiral-matrix
