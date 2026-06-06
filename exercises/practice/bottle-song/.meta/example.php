@@ -38,10 +38,11 @@ class BottleSong
     {
         $song = "";
 
-        for ($i=0; $i < $size; $i++) {
+        for ($i = 0; $i < $size; $i++) {
             $song .= $this->verse($start - $i);
-            if ($i < $size -1)
+            if ($i < $size - 1) {
                 $song .= PHP_EOL . "" . PHP_EOL;
+            }
         }
 
         return $song;
