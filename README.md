@@ -13,6 +13,7 @@ The following system dependencies are required:
 - [`bash` shell][gnu-bash].
 - PHP V8.4+ CLI.
 - An active Internet connection for installing required tools / composer packages.
+- [`jq`][jq], if you change the difficulty or add a practice exercise.
 
 Run the following command to get started with this project:
 
@@ -90,6 +91,8 @@ contribution/generator/bin/console app:create-tests '<slug>'
 composer lint:fix
 ```
 
+Run `bin/order-exercises.sh` when you set the exercise difficulty to a sensible value to order the exercises on the website accordingly.
+
 [exercism-configlet]: https://exercism.org/docs/building/configlet
 [exercism-docs]: https://exercism.org/docs
 [exercism-track-home]: https://exercism.org/docs/tracks/php
@@ -98,3 +101,4 @@ composer lint:fix
 [gnu-bash]: https://www.gnu.org/software/bash/
 [local-file-phpcs-config]: phpcs.xml
 [psr-12]: https://www.php-fig.org/psr/psr-12
+[jq]: https://jqlang.org/
