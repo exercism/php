@@ -188,7 +188,7 @@ class TwelveDaysTest extends TestCase
      * uuid c095af0d-3137-4653-ad32-bfb899eda24c
      */
     #[TestDox('lyrics -> recites three verses from the middle of the song')]
-    public function testLyricesRecitesThreeVersesFromMiddleOfSong(): void
+    public function testLyricsRecitesThreeVersesFromMiddleOfSong(): void
     {
         $expected =
             "On the fourth day of Christmas my true love gave to me: four Calling Birds, three French Hens, " .
