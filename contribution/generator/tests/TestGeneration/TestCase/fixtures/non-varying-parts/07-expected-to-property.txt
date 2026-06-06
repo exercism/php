@@ -1,0 +1,3 @@
+    $expected = 'maybe any type';
+    
+    $actual = $this->subject->camelCasedProperty(...$input);
