@@ -66,6 +66,7 @@ rail-fence-cipher
 raindrops
 reverse-string
 rna-transcription
+robot-name
 robot-simulator
 roman-numerals
 rotational-cipher
