@@ -64,6 +64,8 @@ proverb
 queen-attack
 rail-fence-cipher
 raindrops
+resistor-color
+resistor-color-duo
 reverse-string
 rna-transcription
 robot-name
@@ -71,14 +73,17 @@ robot-simulator
 roman-numerals
 rotational-cipher
 run-length-encoding
+say
 scrabble-score
 secret-handshake
+series
 sieve
 space-age
 spiral-matrix
 state-of-tic-tac-toe
 strain
 sublist
+twelve-days
 two-bucket
 two-fer
 wordy

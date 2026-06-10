@@ -1,0 +1,16 @@
+name: Ensure practice exercise order
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  call-gha-workflow:
+    name: check
+    uses: exercism/github-actions/.github/workflows/sorted.yml@main
+    with:
+      ordering: ".difficulty, .lowercase_name"
