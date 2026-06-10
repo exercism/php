@@ -24,7 +24,7 @@ class BafflingBirthdays
     public function randomBirthdates(int $number): array
     {
         $birthdates = [];
-        $actualYear = (int) new DateTime('now')->format('Y');
+        $actualYear = (int) (new DateTime('now'))->format('Y');
 
         for ($i = 0; $i < $number; $i++) {
             $randomYear = rand(1900, $actualYear);
@@ -33,7 +33,7 @@ class BafflingBirthdays
                 $randomYear = $randomYear + 1;
             }
 
-            $birthdates[] = new DateTime()
+            $birthdates[] = (new DateTime())
                 ->setDate(
                     $randomYear,
                     rand(1, 12),
