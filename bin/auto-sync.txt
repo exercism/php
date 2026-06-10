@@ -6,6 +6,7 @@ alphametics
 anagram
 armstrong-numbers
 atbash-cipher
+baffling-birthdays
 bank-account
 binary-search
 binary-search-tree
