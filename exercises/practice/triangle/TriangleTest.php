@@ -167,19 +167,9 @@ class TriangleTest extends TestCase
     public function testIsoscelesSidesMayBeFloats(): void
     {
         $this->assertEquals(
-            'scalene',
+            'isosceles',
             (new Triangle(0.5, 0.4, 0.5))->kind()
         );
-    }
-
-  /**
-   * Uuid: c6585b7d-a8c0-4ad8-8a34-e21d36f7ad87.
-   */
-    #[TestDox('equilateral triangle -> no sides are equal')]
-    public function testEquilateralTriangleNoSidesAreEqual(): void
-    {
-        $this->expectException(Exception::class);
-        (new Triangle(5, 4, 6))->kind();
     }
 
   /**
