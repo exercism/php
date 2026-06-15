@@ -76,6 +76,7 @@ spiral-matrix
 state-of-tic-tac-toe
 strain
 sublist
+triangle
 two-bucket
 two-fer
 wordy
