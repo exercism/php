@@ -238,14 +238,6 @@
         ]
       },
       {
-        "slug": "bottle-song",
-        "name": "Bottle Song",
-        "uuid": "e63faaa7-d0a4-4442-881f-8c6ed9f986e9",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
         "slug": "bowling",
         "name": "Bowling",
         "uuid": "54df08ec-4a04-40f3-b974-e59de425ec80",
@@ -984,6 +976,14 @@
           "control_flow_if_else_statements",
           "strings"
         ]
+      },
+      {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "e63faaa7-d0a4-4442-881f-8c6ed9f986e9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "dnd-character",
