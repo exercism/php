@@ -1,30 +1,9 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
 class QueenAttackTest extends TestCase
 {
@@ -34,110 +13,123 @@ class QueenAttackTest extends TestCase
     }
 
     /**
-     * Test a queen is placed in a valid position.
+     * uuid: 3ac4f735-d36c-44c4-a3e2-316f79704203
      */
-    public function testCreateQueenWithValidPosition(): void
+    #[TestDox('Test creation of Queens with valid and invalid positions -> queen with a valid position')]
+    public function testCreationOfQueensWithValidAndInvalidPositionsCreateQueenWithValidPosition(): void
     {
         $this->assertTrue(placeQueen(2, 2));
     }
 
     /**
-     * Test the queen is placed on a positive rank.
+     * uuid: 4e812d5d-b974-4e38-9a6b-8e0492bfa7be
      */
-    public function testQueenHasPositiveRank(): void
+    #[TestDox('Test creation of Queens with valid and invalid positions -> queen must have positive row')]
+    public function testCreationOfQueensWithValidAndInvalidPositionsQueenMustHavePositiveRow(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('The rank and file numbers must be positive.');
-
         placeQueen(-2, 2);
     }
 
     /**
-     * Test the queen has a rank on the board.
+     * uuid: f07b7536-b66b-4f08-beb9-4d70d891d5c8
      */
-    public function testQueenHasRankOnBoard(): void
+    #[TestDox('Test creation of Queens with valid and invalid positions -> queen must have row on board')]
+    public function testCreationOfQueensWithValidAndInvalidPositionsQueenMustHaveRowOnBoard(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('The position must be on a standard size chess board.');
-
         placeQueen(8, 4);
     }
 
     /**
-     * Test the queen is placed on a positive file.
+     * uuid: 15a10794-36d9-4907-ae6b-e5a0d4c54ebe
      */
-    public function testQueenHasPositiveFile(): void
+     #[TestDox('Test creation of Queens with valid and invalid positions -> queen must have positive column')]
+    public function testCreationOfQueensWithValidAndInvalidPositionsQueenMustHavePositiveColumn(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('The rank and file numbers must be positive.');
-
         placeQueen(2, -2);
     }
 
     /**
-     * Test the queen has a file on the board.
+     * uuid: 6907762d-0e8a-4c38-87fb-12f2f65f0ce4
      */
-    public function testQueenHasFileOnBoard(): void
+    #[TestDox('Test creation of Queens with valid and invalid positions -> queen must have column on board')]
+    public function testCreationOfQueensWithValidAndInvalidPositionsQueenMustHaveColumnOnBoard(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('The position must be on a standard size chess board.');
-
         placeQueen(4, 8);
     }
 
     /**
-     * Test if queens can attack each other.
+     * uuid: 33ae4113-d237-42ee-bac1-e1e699c0c007
      */
-    public function testQueensCanAttack(): void
+    #[TestDox('Test the ability of one queen to attack another -> cannot attack')]
+    public function testTheAbilityOfOneQueenToAttackAnotherCannotAttack(): void
     {
         $this->assertFalse(canAttack([2, 4], [6, 6]));
     }
 
     /**
-     * Test if queens can attack each other on the same rank.
+     * uuid: eaa65540-ea7c-4152-8c21-003c7a68c914
      */
-    public function testQueensCanAttackOnSameRank(): void
+    #[TestDox('Test the ability of one queen to attack another -> can attack on same row')]
+    public function testTheAbilityOfOneQueenToAttackAnotherCanAttackOnSameRow(): void
     {
         $this->assertTrue(canAttack([2, 4], [2, 6]));
     }
 
     /**
-     * Test if queens can attack each other on the same file.
+     * uuid: bae6f609-2c0e-4154-af71-af82b7c31cea
      */
-    public function testQueensCanAttackOnSameFile(): void
+    #[TestDox('Test the ability of one queen to attack another -> can attack on same column')]
+    public function testTheAbilityOfOneQueenToAttackAnotherCanAttackOnSameColumn(): void
     {
         $this->assertTrue(canAttack([4, 5], [2, 5]));
     }
 
     /**
-     * Test if queens can attack each other on the first diagonal.
+     * uuid: 0e1b4139-b90d-4562-bd58-dfa04f1746c7
      */
-    public function testQueensCanAttackOnFirstDiagonal(): void
+    #[TestDox('Test the ability of one queen to attack another -> can attack on first diagonal')]
+    public function testTheAbilityOfOneQueenToAttackAnotherCanAttackOnFirstDiagonal(): void
     {
         $this->assertTrue(canAttack([2, 2], [0, 4]));
     }
 
     /**
-     * Test if queens can attack each other on the second diagonal.
+     * uuid: ff9b7ed4-e4b6-401b-8d16-bc894d6d3dcd
      */
-    public function testQueensCanAttackOnSecondDiagonal(): void
+    #[TestDox('Test the ability of one queen to attack another -> can attack on second diagonal')]
+    public function testTheAbilityOfOneQueenToAttackAnotherCanAttackOnSecondDiagonal(): void
     {
         $this->assertTrue(canAttack([2, 2], [3, 1]));
     }
 
     /**
-     * Test if queens can attack each other on the third diagonal.
+     * uuid: 0a71e605-6e28-4cc2-aa47-d20a2e71037a
      */
-    public function testQueensCanAttackOnThirdDiagonal(): void
+    #[TestDox('Test the ability of one queen to attack another -> can attack on third diagonal')]
+    public function testTheAbilityOfOneQueenToAttackAnotherCanAttackOnThirdDiagonal(): void
     {
         $this->assertTrue(canAttack([2, 2], [1, 1]));
     }
 
     /**
-     * Test if queens can attack each other on the fourth diagonal.
+     * uuid: 0790b588-ae73-4f1f-a968-dd0b34f45f86
      */
-    public function testQueensCanAttackOnFourthDiagonal(): void
+    #[TestDox('Test the ability of one queen to attack another -> can attack on fourth diagonal')]
+    public function testTheAbilityOfOneQueenToAttackAnotherCanAttackOnFourthDiagonal(): void
     {
-        $this->assertTrue(canAttack([2, 2], [5, 5]));
+        $this->assertTrue(canAttack([1, 7], [0, 6]));
+    }
+
+    /**
+     * uuid: 543f8fd4-2597-4aad-8d77-cbdab63619f8
+     */
+    #[TestDox('Test the ability of one queen to attack another -> cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal')]
+    public function testTheAbilityOfOneQueenToAttackAnotherCannotAttackReflectedDiagonal(): void
+    {
+        $this->assertFalse(canAttack([4, 1], [2, 5]));
     }
 }

@@ -1,29 +1,8 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class ResistorColorTest extends TestCase
@@ -33,6 +12,10 @@ class ResistorColorTest extends TestCase
         require_once 'ResistorColor.php';
     }
 
+    /**
+     * uuid: 581d68fa-f968-4be2-9f9d-880f2fb73cf7
+     */
+    #[TestDox('Colors')]
     public function testColors(): void
     {
         $this->assertEquals([
@@ -49,16 +32,28 @@ class ResistorColorTest extends TestCase
         ], getAllColors());
     }
 
+    /**
+     * uuid: 49eb31c5-10a8-4180-9f7f-fea632ab87ef
+     */
+    #[TestDox('Black')]
     public function testBlackColorCode(): void
     {
         $this->assertEquals(0, colorCode("black"));
     }
 
+    /**
+     * uuid: 5f81608d-f36f-4190-8084-f45116b6f380
+     */
+    #[TestDox('Orange')]
     public function testOrangeColorCode(): void
     {
         $this->assertEquals(3, colorCode("orange"));
     }
 
+    /**
+     * uuid: 0a4df94b-92da-4579-a907-65040ce0b3fc
+     */
+    #[TestDox('White')]
     public function testWhiteColorCode(): void
     {
         $this->assertEquals(9, colorCode("white"));

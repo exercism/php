@@ -1,30 +1,9 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
 class RailFenceCipherTest extends TestCase
 {
@@ -34,8 +13,9 @@ class RailFenceCipherTest extends TestCase
     }
 
     /**
-     * Test encode with two rails.
+     * uuid 46dc5c50-5538-401d-93a5-41102680d068
      */
+    #[TestDox('encode with two rails')]
     public function testEncodeWithTwoRails(): void
     {
         $plainText = "XOXOXOXOXOXOXOXOXO";
@@ -43,9 +23,11 @@ class RailFenceCipherTest extends TestCase
         $expected = "XXXXXXXXXOOOOOOOOO";
         $this->assertEquals($expected, encode($plainText, $rails));
     }
+
     /**
-     * Test encode with three rails.
+     * uuid 25691697-fbd8-4278-8c38-b84068b7bc29
      */
+    #[TestDox('encode with three rails')]
     public function testEncodeWithThreeRails(): void
     {
         $plainText = "WEAREDISCOVEREDFLEEATONCE";
@@ -55,8 +37,9 @@ class RailFenceCipherTest extends TestCase
     }
 
     /**
-     * Test encode with ending in the middle.
+     * uuid 384f0fea-1442-4f1a-a7c4-5cbc2044002c
      */
+    #[TestDox('encode with ending in the middle')]
     public function testEncodeWithEndingInTheMiddle(): void
     {
         $plainText = "EXERCISES";
@@ -66,8 +49,9 @@ class RailFenceCipherTest extends TestCase
     }
 
     /**
-     * Test decode with three rails.
+     * uuid cd525b17-ec34-45ef-8f0e-4f27c24a7127
      */
+    #[TestDox('decode with three rails')]
     public function testDecodeWithThreeRails(): void
     {
         $encryptedText = "TEITELHDVLSNHDTISEIIEA";
@@ -75,9 +59,11 @@ class RailFenceCipherTest extends TestCase
         $expected = "THEDEVILISINTHEDETAILS";
         $this->assertEquals($expected, decode($encryptedText, $rails));
     }
+
     /**
-     * Test decode with five rails.
+     * uuid dd7b4a98-1a52-4e5c-9499-cbb117833507
      */
+    #[TestDox('decode with five rails')]
     public function testDecodeWithFiveRails(): void
     {
         $encryptedText = "EIEXMSMESAORIWSCE";
@@ -87,8 +73,9 @@ class RailFenceCipherTest extends TestCase
     }
 
     /**
-     * Test decode with six rails.
+     * uuid 93e1ecf4-fac9-45d9-9cd2-591f47d3b8d3
      */
+    #[TestDox('decode with six rails')]
     public function testDecodeWithSixRails(): void
     {
         $encryptedText = "133714114238148966225439541018335470986172518171757571896261";

@@ -1,3 +1,8 @@
+# Instructions append
+
+## Implementation
+
 ~~~~exercism/note
-Do not use PHP functions like `str_rot13()` to solve this exercise! Only use basic string and character manipulation functions.
+Do not use PHP functions like `str_rot13()` to solve this exercise!
+Only use basic string and character manipulation functions.
 ~~~~
