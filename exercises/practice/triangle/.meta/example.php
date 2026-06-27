@@ -7,7 +7,6 @@ class Triangle
     protected $sideA;
     protected $sideB;
     protected $sideC;
-
     public function __construct($sideA, $sideB, $sideC)
     {
         $this->sideA = $sideA;
@@ -15,33 +14,37 @@ class Triangle
         $this->sideC = $sideC;
     }
 
-    public function kind(): string
+    private function isValidTriangle(): bool
     {
-        if (0 == ($this->sideA + $this->sideB + $this->sideC)) {
-            throw new Exception("These sides have no values.");
+        if ($this->sideA <= 0 || $this->sideB <= 0 || $this->sideC <= 0) {
+            return false;
         }
 
-        $sides = [$this->sideA, $this->sideB, $this->sideC];
-        sort($sides);
-        if ($sides[2] >= $sides[0] + $sides[1]) {
-            throw new Exception("This violates the triangle inequality");
-        }
+        return (
+            $this->sideA + $this->sideB > $this->sideC &&
+            $this->sideA + $this->sideC > $this->sideB &&
+            $this->sideB + $this->sideC > $this->sideA
+        );
+    }
 
-        if (
+    public function isEquilateral(): bool
+    {
+        return $this->isValidTriangle() &&
             $this->sideA == $this->sideB &&
-            $this->sideA == $this->sideC
-        ) {
-            return 'equilateral';
-        }
+            $this->sideA == $this->sideC;
+    }
 
-        if (
-            $this->sideB == $this->sideC ||
+    public function isIsosceles(): bool
+    {
+        return $this->isValidTriangle() && (
+            $this->sideA == $this->sideB ||
             $this->sideA == $this->sideC ||
-            $this->sideA == $this->sideB
-        ) {
-            return 'isosceles';
-        }
+            $this->sideB == $this->sideC
+        );
+    }
 
-        return 'scalene';
+    public function isScalene(): bool
+    {
+        return $this->isValidTriangle() && !$this->isIsosceles();
     }
 }
