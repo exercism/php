@@ -42,7 +42,7 @@ class TriangleTest extends TestCase
     public function testNoSidesAreEqual(): void
     {
         $this->assertFalse(
-            new Triangle(5, 4, 6)->isEquilateral()
+            (new Triangle(5, 4, 6))->isEquilateral()
         );
     }
 
@@ -109,7 +109,7 @@ class TriangleTest extends TestCase
     public function testIsoscelesTriangleNoSidesAreEqual(): void
     {
         $this->assertFalse(
-            new Triangle(2, 3, 4)->isIsosceles()
+            (new Triangle(2, 3, 4))->isIsosceles()
         );
     }
 
