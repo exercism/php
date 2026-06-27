@@ -28,6 +28,7 @@ etl
 flatten-array
 flower-field
 food-chain
+game-of-life
 gigasecond
 grade-school
 grains
