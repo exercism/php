@@ -18,9 +18,8 @@ class TriangleTest extends TestCase
     #[TestDox('equilateral triangle -> all sides are equal')]
     public function testEquilateralTrianglesHaveEqualSides(): void
     {
-        $this->assertEquals(
-            'equilateral',
-            (new Triangle(2, 2, 2))->kind()
+        $this->assertTrue(
+            (new Triangle(2, 2, 2))->isEquilateral()
         );
     }
 
@@ -31,8 +30,9 @@ class TriangleTest extends TestCase
     public function testAnySideIsUnequal(): void
     {
 
-        $this->expectException(Exception::class);
-        (new Triangle(2, 3, 2))->kind();
+        $this->assertFalse(
+            (new Triangle(2, 3, 2))->isEquilateral()
+        );
     }
 
   /**
@@ -41,9 +41,9 @@ class TriangleTest extends TestCase
     #[TestDox('equilateral triangle -> no sides are equal')]
     public function testNoSidesAreEqual(): void
     {
-        $this->expectException(Exception::class);
-
-        (new Triangle(5, 4, 6))->kind();
+        $this->assertFalse(
+            new Triangle(5, 4, 6)->isEquilateral()
+        );
     }
 
   /**
@@ -52,20 +52,9 @@ class TriangleTest extends TestCase
     #[TestDox('equilateral triangle -> all zero sides is not a triangle')]
     public function testEquilateralAllZeroSidesIsNotATriangle(): void
     {
-        $this->expectException(Exception::class);
 
-        (new Triangle(0, 0, 0))->kind();
-    }
-
-  /**
-   * Uuid: 3022f537-b8e5-4cc1-8f12-fd775827a00c.
-   */
-    #[TestDox('equilateral triangle -> sides may be floats')]
-    public function testEquilateralSidesMayBeFloats(): void
-    {
-        $this->assertEquals(
-            'equilateral',
-            (new Triangle(0.5, 0.5, 0.5)->kind())
+        $this->assertFalse(
+            (new Triangle(0, 0, 0))->isEquilateral()
         );
     }
 
@@ -75,9 +64,8 @@ class TriangleTest extends TestCase
     #[TestDox('isosceles triangle -> last two sides are equal')]
     public function testIsoscelesTriangleWhenLastTwoSidesAreEqual(): void
     {
-        $this->assertEquals(
-            'isosceles',
-            (new Triangle(3, 4, 4))->kind()
+        $this->assertTrue(
+            (new Triangle(3, 4, 4))->isIsosceles()
         );
     }
 
@@ -87,9 +75,8 @@ class TriangleTest extends TestCase
     #[TestDox('isosceles triangle -> first two sides are equal')]
     public function testIsoscelesTriangleWhenFirstTwoSidesAreEqual(): void
     {
-        $this->assertEquals(
-            'isosceles',
-            (new Triangle(4, 4, 3))->kind()
+        $this->assertTrue(
+            (new Triangle(4, 4, 3))->isIsosceles()
         );
     }
 
@@ -99,9 +86,8 @@ class TriangleTest extends TestCase
     #[TestDox('isosceles triangle -> first and last sides are equal')]
     public function testIsoscelesTriangleWhenFirstAndLastSidesAreEqual(): void
     {
-        $this->assertEquals(
-            'isosceles',
-            (new Triangle(4, 3, 4))->kind()
+        $this->assertTrue(
+            (new Triangle(4, 3, 4))->isIsosceles()
         );
     }
 
@@ -111,9 +97,8 @@ class TriangleTest extends TestCase
     #[TestDox('isosceles triangle -> equilateral triangles are also isosceles')]
     public function testIsoscelesTriangleEquilateralTrianglesAreAlsoIsoceles(): void
     {
-        $this->assertEquals(
-            'isosceles',
-            (new Triangle(4, 4, 4))->kind()
+        $this->assertTrue(
+            (new Triangle(4, 4, 4))->isIsosceles()
         );
     }
 
@@ -123,8 +108,9 @@ class TriangleTest extends TestCase
     #[TestDox('isosceles triangle -> no sides are equal')]
     public function testIsoscelesTriangleNoSidesAreEqual(): void
     {
-        $this->expectException(Exception::class);
-        (new Triangle(2, 3, 4))->kind();
+        $this->assertFalse(
+            new Triangle(2, 3, 4)->isIsosceles()
+        );
     }
 
    /**
@@ -133,9 +119,10 @@ class TriangleTest extends TestCase
     #[TestDox('isosceles triangle -> first triangle inequality violation')]
     public function testIsoscelesFirstTriangleInequalityViolation(): void
     {
-        $this->expectException(Exception::class);
 
-        (new Triangle(1, 1, 3))->kind();
+        $this->assertFalse(
+            (new Triangle(1, 1, 3))->isIsosceles()
+        );
     }
 
   /**
@@ -144,9 +131,9 @@ class TriangleTest extends TestCase
     #[TestDox('isosceles triangle -> second triangle inequality violation')]
     public function testIsoscelesSecondTriangleInequalityViolation(): void
     {
-        $this->expectException(Exception::class);
-
-        (new Triangle(1, 3, 1))->kind();
+        $this->assertFalse(
+            (new Triangle(1, 3, 1))->isIsosceles()
+        );
     }
 
   /**
@@ -155,20 +142,8 @@ class TriangleTest extends TestCase
     #[TestDox('isosceles triangle -> third triangle inequality violation')]
     public function testTrianglesThirdTriangleInequalityViolation(): void
     {
-        $this->expectException(Exception::class);
-
-        (new Triangle(3, 1, 1))->kind();
-    }
-
-  /**
-   * Uuid: adb4ee20-532f-43dc-8d31-e9271b7ef2bc.
-   */
-    #[TestDox('isosceles triangle -> sides may be floats')]
-    public function testIsoscelesSidesMayBeFloats(): void
-    {
-        $this->assertEquals(
-            'isosceles',
-            (new Triangle(0.5, 0.4, 0.5))->kind()
+        $this->assertFalse(
+            (new Triangle(3, 1, 1))->isIsosceles()
         );
     }
 
@@ -179,8 +154,9 @@ class TriangleTest extends TestCase
     public function testScaleneAllSidesAreEqual(): void
     {
 
-        $this->expectException(Exception::class);
-        (new Triangle(4, 4, 4))->kind();
+        $this->assertFalse(
+            (new Triangle(4, 4, 4))->isScalene()
+        );
     }
 
   /**
@@ -190,8 +166,9 @@ class TriangleTest extends TestCase
     public function testScaleneFirstAndSecondSidesAreEqual(): void
     {
 
-        $this->expectException(Exception::class);
-        (new Triangle(4, 4, 3))->kind();
+        $this->assertFalse(
+            (new Triangle(4, 4, 3))->isScalene()
+        );
     }
 
   /**
@@ -200,8 +177,9 @@ class TriangleTest extends TestCase
     #[TestDox('scalene triangle -> first and third sides are equal')]
     public function testScaleneFirstAndThirdSidesAreEqual(): void
     {
-        $this->expectException(Exception::class);
-        (new Triangle(3, 4, 3))->kind();
+        $this->assertFalse(
+            (new Triangle(3, 4, 3))->isScalene()
+        );
     }
 
   /**
@@ -210,8 +188,9 @@ class TriangleTest extends TestCase
     #[TestDox('scalene triangle -> second and third sides are equal')]
     public function testScaleneSecondAndThirdSidesAreEqual(): void
     {
-        $this->expectException(Exception::class);
-        (new Triangle(4, 3, 3))->kind();
+        $this->assertFalse(
+            (new Triangle(4, 3, 3))->isScalene()
+        );
     }
 
   /**
@@ -220,19 +199,8 @@ class TriangleTest extends TestCase
     #[TestDox('scalene triangle -> may not violate triangle inequality')]
     public function testScaleneMayNotViolateTriangleInequality(): void
     {
-        $this->expectException(Exception::class);
-        (new Triangle(7, 3, 2))->kind();
-    }
-
-  /**
-   * Uuid: 26d9d59d-f8f1-40d3-ad58-ae4d54123d7d.
-   */
-    #[TestDox('scalene triangle -> sides may be floats')]
-    public function testScaleneSidesMayBeFloats(): void
-    {
-        $this->assertEquals(
-            'scalene',
-            (new Triangle(0.5, 0.4, 0.6))->kind()
+        $this->assertFalse(
+            (new Triangle(7, 3, 2))->isScalene()
         );
     }
 }
