@@ -28,11 +28,21 @@ class Triangle
 {
     public function __construct(int $a, int $b, int $c)
     {
-        throw new \BadMethodCallException("Implement the __construct method");
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function kind(): string
+    public function isEquilateral(): bool
     {
-        throw new \BadMethodCallException("Implement the kind method");
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+
+    public function isIsosceles(): bool
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+
+    public function isScalene(): bool
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 }
