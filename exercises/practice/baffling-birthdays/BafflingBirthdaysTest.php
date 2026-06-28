@@ -130,10 +130,10 @@ class BafflingBirthdaysTest extends TestCase
     #[TestDox('random birthdates -> generate requested number of birthdates')]
     public function testRandomBirthdatesGenerateRequestedNumberOfBirthdates(): void
     {
-        $generate = rand(100, 1000);
+        $generate  = rand(100, 1000);
         $birthdays = new BafflingBirthdays();
 
-        $this->assertEquals($generate, count($birthdays->randomBirthdates($generate)));
+        $this->assertCount($generate, $birthdays->randomBirthdates($generate));
     }
 
     /**
@@ -142,16 +142,14 @@ class BafflingBirthdaysTest extends TestCase
     #[TestDox('random birthdates -> years are not leap years')]
     public function testRandomBirthdatesYearsAreNotLeapYears(): void
     {
-        $generate  = rand(100, 1000);
-        $birthdays = new BafflingBirthdays();
-        $result    = true;
+        $generate            = 1000;
+        $birthdays           = new BafflingBirthdays();
+        $generatedBirthdates = $birthdays->randomBirthdates($generate);
 
-        foreach ($birthdays->randomBirthdates($generate) as $birthdate) {
-            $leapCheck = DateTime::createFromFormat('Y-m-d', $birthdate);
-            $result = $result && $leapCheck && $leapCheck->format('L') == 0;
+        foreach ($generatedBirthdates as $birthdate) {
+            $isLeapYear = (new DateTime($birthdate))->format('L') === '1';
+            $this->assertFalse($isLeapYear);
         }
-
-        $this->assertTrue($result);
     }
 
     /**
@@ -160,20 +158,16 @@ class BafflingBirthdaysTest extends TestCase
     #[TestDox('random birthdates -> months are random')]
     public function testRandomBirthdatesMonthsAreRandom(): void
     {
-        $generate    = rand(100, 1000);
-        $birthdays   = new BafflingBirthdays();
-        $months      = [];
-        $randomCheck = true;
+        $generate            = 1000;
+        $birthdays           = new BafflingBirthdays();
+        $months              = [];
+        $generatedBirthdates = $birthdays->randomBirthdates($generate);
 
-        foreach ($birthdays->randomBirthdates($generate) as $birthdate) {
+        foreach ($generatedBirthdates as $birthdate) {
             $checkMonth = substr($birthdate, 5, -3);
-
             $months[$checkMonth] = ($months[$checkMonth] ?? 0) + 1;
         }
-
-        $randomCheck = count($months) === 12 ;
-
-        $this->assertTrue($randomCheck);
+        $this->assertCount(12, $months);
     }
 
     /**
@@ -182,20 +176,16 @@ class BafflingBirthdaysTest extends TestCase
     #[TestDox('random birthdates -> days are random')]
     public function testRandomBirthdatesDaysAreRandom(): void
     {
-        $generate    = rand(300, 1000);
-        $birthdays   = new BafflingBirthdays();
-        $days        = [];
-        $randomCheck = true;
+        $generate            = 1000;
+        $birthdays           = new BafflingBirthdays();
+        $days                = [];
+        $generatedBirthdates = $birthdays->randomBirthdates($generate);
 
-        foreach ($birthdays->randomBirthdates($generate) as $birthdate) {
+        foreach ($generatedBirthdates as $birthdate) {
             $checkDay = substr($birthdate, -2);
-
             $days[$checkDay] = ($days[$checkDay] ?? 0) + 1;
         }
-
-        $randomCheck = count($days) === 31 ;
-
-        $this->assertTrue($randomCheck);
+        $this->assertCount(31, $days);
     }
 
     /**
@@ -205,9 +195,10 @@ class BafflingBirthdaysTest extends TestCase
     public function testEstimatedProbabilityOfAtLeastOneSharedBirthdayForOnePerson(): void
     {
         $birthdays = new BafflingBirthdays();
-        $this->assertEquals(
+        $this->assertEqualsWithDelta(
             0.0,
-            $birthdays->estimatedProbabilityOfSharedBirthday(1)
+            $birthdays->estimatedProbabilityOfSharedBirthday(1),
+            1
         );
     }
 
