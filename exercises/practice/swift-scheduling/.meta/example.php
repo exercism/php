@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 class SwiftScheduling
 {
-    private const array QUARTER = [
+    private const QUARTER = [
         1 => 4,
         2 => 7,
         3 => 10,
@@ -12,7 +12,8 @@ class SwiftScheduling
     ];
 
     public function __construct(private DateTime $meetingStart)
-    {}
+    {
+    }
 
     public function deliveryDate(string $description): DateTime
     {
