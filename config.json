@@ -1123,6 +1123,14 @@
         "difficulty": 5
       },
       {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "0854014f-e678-4844-9c39-55997fff1d07",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "9a8df843-8805-4287-b863-b8123defc266",
