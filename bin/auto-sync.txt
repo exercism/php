@@ -84,6 +84,7 @@ spiral-matrix
 state-of-tic-tac-toe
 strain
 sublist
+swift-scheduling
 triangle
 twelve-days
 two-bucket

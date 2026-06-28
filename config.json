@@ -1231,6 +1231,14 @@
         "difficulty": 5
       },
       {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "d080d214-1d41-4347-a494-1e05db9f614a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "516250c6-6e1b-4710-b2b9-6bef1716c6d8",
