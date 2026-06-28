@@ -490,14 +490,6 @@
         ]
       },
       {
-        "slug": "swift-scheduling",
-        "name": "Swift Scheduling",
-        "uuid": "d080d214-1d41-4347-a494-1e05db9f614a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
         "slug": "transpose",
         "name": "Transpose",
         "uuid": "cb413881-99b6-493f-bea2-89563dc173a6",
@@ -1226,6 +1218,14 @@
         "slug": "state-of-tic-tac-toe",
         "name": "State of Tic-Tac-Toe",
         "uuid": "64ea517d-88ec-46db-b723-004681255580",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "d080d214-1d41-4347-a494-1e05db9f614a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
