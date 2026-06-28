@@ -4,29 +4,32 @@ declare(strict_types=1);
 
 class SwiftScheduling
 {
-    private const QUARTER = [
+    private const array QUARTER = [
         1 => 4,
         2 => 7,
         3 => 10,
         4 => 13
     ];
 
-    public function deliveryDate(DateTime $meetingStart, string $description): ?DateTime
+    public function __construct(private DateTime $meetingStart)
+    {}
+
+    public function deliveryDate(string $description): DateTime
     {
         switch ($description) {
             case 'NOW':
-                return $this->convertNow($meetingStart);
+                return $this->convertNow($this->meetingStart);
             case 'ASAP':
-                return $this->convertAsap($meetingStart);
+                return $this->convertAsap($this->meetingStart);
             case 'EOW':
-                return $this->convertEow($meetingStart);
+                return $this->convertEow($this->meetingStart);
             default:
                 if (str_ends_with($description, "M")) {
-                    return $this->convertVariableM($meetingStart, (int) substr($description, 0, -1));
+                    return $this->convertVariableM($this->meetingStart, (int) substr($description, 0, -1));
                 } elseif (str_starts_with($description, "Q")) {
-                    return $this->convertVariableQ($meetingStart, (int) substr($description, 1,));
+                    return $this->convertVariableQ($this->meetingStart, (int) substr($description, 1,));
                 } else {
-                    return null;
+                    throw new InvalidArgumentException('Unexpected $description');
                 }
         }
     }

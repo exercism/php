@@ -26,8 +26,13 @@ declare(strict_types=1);
 
 class SwiftScheduling
 {
-    public function deliveryDate(DateTime $start, string $description): DateTime
+    public function __construct(DateTime $meetingStart)
     {
-        throw new \BadMethodCallException("Implement the deliveryDate method");
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+
+    public function deliveryDate(string $description): DateTime
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 }

@@ -21,9 +21,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "NOW";
         $meetingStart    = new DateTime("2012-02-13T09:00:00");
         $expected        = new DateTime("2012-02-13T11:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -35,9 +35,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "ASAP";
         $meetingStart    = new DateTime("1999-06-03T09:45:00");
         $expected        = new DateTime("1999-06-03T17:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -49,9 +49,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "ASAP";
         $meetingStart    = new DateTime("2008-12-21T13:00:00");
         $expected        = new DateTime("2008-12-22T13:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -63,9 +63,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "ASAP";
         $meetingStart    = new DateTime("2008-12-21T14:50:00");
         $expected        = new DateTime("2008-12-22T13:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -77,9 +77,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "EOW";
         $meetingStart    = new DateTime("2025-02-03T16:00:00");
         $expected        = new DateTime("2025-02-07T17:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -91,9 +91,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "EOW";
         $meetingStart    = new DateTime("1997-04-29T10:50:00");
         $expected        = new DateTime("1997-05-02T17:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -105,9 +105,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "EOW";
         $meetingStart    = new DateTime("2005-09-14T11:00:00");
         $expected        = new DateTime("2005-09-16T17:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -119,9 +119,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "EOW";
         $meetingStart    = new DateTime("2011-05-19T08:30:00");
         $expected        = new DateTime("2011-05-22T20:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -133,9 +133,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "EOW";
         $meetingStart    = new DateTime("2022-08-05T14:00:00");
         $expected        = new DateTime("2022-08-07T20:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -147,9 +147,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "EOW";
         $meetingStart    = new DateTime("2008-02-25T10:30:00");
         $expected        = new DateTime("2008-02-29T17:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -161,9 +161,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "2M";
         $meetingStart    = new DateTime("2007-01-02T14:15:00");
         $expected        = new DateTime("2007-02-01T08:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -175,9 +175,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "11M";
         $meetingStart    = new DateTime("2013-11-21T15:30:00");
         $expected        = new DateTime("2014-11-03T08:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -189,9 +189,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "4M";
         $meetingStart    = new DateTime("2019-11-18T15:15:00");
         $expected        = new DateTime("2020-04-01T08:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -203,9 +203,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "Q1";
         $meetingStart    = new DateTime("2003-01-01T10:45:00");
         $expected        = new DateTime("2003-03-31T08:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -217,9 +217,9 @@ class SwiftSchedulingTest extends TestCase
         $description     = "Q4";
         $meetingStart    = new DateTime("2001-04-09T09:00:00");
         $expected        = new DateTime("2001-12-31T08:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 
     /**
@@ -231,8 +231,8 @@ class SwiftSchedulingTest extends TestCase
         $description     = "Q3";
         $meetingStart    = new DateTime("2022-10-06T11:00:00");
         $expected        = new DateTime("2023-09-29T08:00:00");
-        $swiftScheduling = new SwiftScheduling();
+        $swiftScheduling = new SwiftScheduling($meetingStart);
 
-        $this->assertEquals($expected, $swiftScheduling->deliveryDate($meetingStart, $description));
+        $this->assertEquals($expected, $swiftScheduling->deliveryDate($description));
     }
 }
