@@ -6,11 +6,13 @@ alphametics
 anagram
 armstrong-numbers
 atbash-cipher
+baffling-birthdays
 bank-account
 binary-search
 binary-search-tree
 bob
 book-store
+bottle-song
 bowling
 change
 circular-buffer
@@ -68,6 +70,7 @@ resistor-color
 resistor-color-duo
 reverse-string
 rna-transcription
+robot-name
 robot-simulator
 roman-numerals
 rotational-cipher
@@ -83,6 +86,8 @@ spiral-matrix
 state-of-tic-tac-toe
 strain
 sublist
+swift-scheduling
+triangle
 twelve-days
 two-bucket
 two-fer
