@@ -29,8 +29,7 @@ class SaddlePointsTest extends TestCase
                 "column" => 1
             ]
         ];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 
     /**
@@ -41,8 +40,7 @@ class SaddlePointsTest extends TestCase
     {
         $matrix = [[]];
         $expected = [];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 
     /**
@@ -57,8 +55,7 @@ class SaddlePointsTest extends TestCase
             [2, 3, 1]
         ];
         $expected = [];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 
     /**
@@ -86,8 +83,7 @@ class SaddlePointsTest extends TestCase
                 "column" => 2
             ]
         ];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 
     /**
@@ -115,8 +111,7 @@ class SaddlePointsTest extends TestCase
                 "column" => 3
             ]
         ];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 
     /**
@@ -136,8 +131,7 @@ class SaddlePointsTest extends TestCase
                 "column" => 3
             ]
         ];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 
     /**
@@ -160,8 +154,7 @@ class SaddlePointsTest extends TestCase
                 "column" => 3
             ]
         ];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 
     /**
@@ -186,8 +179,7 @@ class SaddlePointsTest extends TestCase
                 "column" => 1
             ]
         ];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 
     /**
@@ -209,7 +201,6 @@ class SaddlePointsTest extends TestCase
                 "column" => 4
             ]
         ];
-        $song = new SaddlePoints();
-        $this->assertEquals($expected, $song->saddlePoints($matrix));
+        $this->assertEquals($expected, saddlePoints($matrix));
     }
 }

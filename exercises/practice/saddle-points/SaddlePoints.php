@@ -24,10 +24,7 @@
 
 declare(strict_types=1);
 
-class SaddlePoints
+function saddlePoints(array $matrix): array
 {
-    public function saddlePoints(array $matrix): array
-    {
-        throw new \BadMethodCallException("Implement the saddlePoints method");
-    }
+    throw new \BadMethodCallException(sprintf('Implement the %s function', __FUNCTION__));
 }
