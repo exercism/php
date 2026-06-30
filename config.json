@@ -954,6 +954,14 @@
         "difficulty": 3
       },
       {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
+        "uuid": "5ae50dea-8879-414f-afc8-49db16b53498",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "e0572cf4-5481-4da4-bf9b-0e921cb81627",
