@@ -22,9 +22,9 @@ class GameOfLife
             foreach ($values as $col => $cell) {
                 $countLiveCell = $this->checkNeighborhood($currentMatrix, $row, $col);
 
-                if ($this->matrix[$row][$col] === 1 && ($countLiveCell === 2 || $countLiveCell === 3)) {
+                if ($currentMatrix[$row][$col] === 1 && ($countLiveCell === 2 || $countLiveCell === 3)) {
                     $this->matrix[$row][$col] = 1;
-                } elseif ($this->matrix[$row][$col] === 0 && $countLiveCell === 3) {
+                } elseif ($currentMatrix[$row][$col] === 0 && $countLiveCell === 3) {
                     $this->matrix[$row][$col] = 1;
                 } else {
                     $this->matrix[$row][$col] = 0;
