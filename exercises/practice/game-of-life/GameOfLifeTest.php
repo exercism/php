@@ -18,7 +18,13 @@ class GameOfLifeTest extends TestCase
     #[TestDox('empty matrix')]
     public function testEmptyMatrix(): void
     {
-        $this->assertEquals([], tick([]));
+        $matrix = [];
+        $expected = [];
+
+        $subject = new GameOfLife($matrix);
+        $subject->tick();
+
+        $this->assertEquals($expected, $subject->matrix);
     }
 
     /**
@@ -27,15 +33,21 @@ class GameOfLifeTest extends TestCase
     #[TestDox('live cells with zero live neighbors die')]
     public function testLiveCellsWithZeroLiveNeighborsDie(): void
     {
-        $this->assertEquals([
-            [0, 0, 0],
-            [0, 0, 0],
-            [0, 0, 0]
-        ], tick([
+        $matrix = [
             [0, 0, 0],
             [0, 1, 0],
             [0, 0, 0]
-        ]));
+        ];
+        $expected = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0]
+        ];
+
+        $subject = new GameOfLife($matrix);
+        $subject->tick();
+
+        $this->assertEquals($expected, $subject->matrix);
     }
 
     /**
@@ -44,15 +56,21 @@ class GameOfLifeTest extends TestCase
     #[TestDox('live cells with only one live neighbor die')]
     public function testLiveCellsWithOnlyOneLiveNeighborDie(): void
     {
-        $this->assertEquals([
-            [0, 0, 0],
-            [0, 0, 0],
-            [0, 0, 0]
-        ], tick([
+        $matrix = [
             [0, 0, 0],
             [0, 1, 0],
             [0, 1, 0]
-        ]));
+        ];
+        $expected = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0]
+        ];
+
+        $subject = new GameOfLife($matrix);
+        $subject->tick();
+
+        $this->assertEquals($expected, $subject->matrix);
     }
 
     /**
@@ -61,15 +79,21 @@ class GameOfLifeTest extends TestCase
     #[TestDox('live cells with two live neighbors stay alive')]
     public function testLiveCellsWithTwoLiveNeighborsStayAlive(): void
     {
-        $this->assertEquals([
-            [0, 0, 0],
-            [1, 0, 1],
-            [0, 0, 0]
-        ], tick([
+        $matrix = [
             [1, 0, 1],
             [1, 0, 1],
             [1, 0, 1]
-        ]));
+        ];
+        $expected = [
+            [0, 0, 0],
+            [1, 0, 1],
+            [0, 0, 0]
+        ];
+
+        $subject = new GameOfLife($matrix);
+        $subject->tick();
+
+        $this->assertEquals($expected, $subject->matrix);
     }
 
     /**
@@ -78,15 +102,21 @@ class GameOfLifeTest extends TestCase
     #[TestDox('live cells with three live neighbors stay alive')]
     public function testLiveCellsWithThreeLiveNeighborsStayAlive(): void
     {
-        $this->assertEquals([
-            [0, 0, 0],
-            [1, 0, 0],
-            [1, 1, 0]
-        ], tick([
+        $matrix = [
             [0, 1, 0],
             [1, 0, 0],
             [1, 1, 0]
-        ]));
+        ];
+        $expected = [
+            [0, 0, 0],
+            [1, 0, 0],
+            [1, 1, 0]
+        ];
+
+        $subject = new GameOfLife($matrix);
+        $subject->tick();
+
+        $this->assertEquals($expected, $subject->matrix);
     }
 
     /**
@@ -95,15 +125,21 @@ class GameOfLifeTest extends TestCase
     #[TestDox('dead cells with three live neighbors become alive')]
     public function testDeadCellsWithThreeLiveNeighborsBecomeAlive(): void
     {
-        $this->assertEquals([
-            [0, 0, 0],
-            [1, 1, 0],
-            [0, 0, 0]
-        ], tick([
+        $matrix = [
             [1, 1, 0],
             [0, 0, 0],
             [1, 0, 0]
-        ]));
+        ];
+        $expected = [
+            [0, 0, 0],
+            [1, 1, 0],
+            [0, 0, 0]
+        ];
+
+        $subject = new GameOfLife($matrix);
+        $subject->tick();
+
+        $this->assertEquals($expected, $subject->matrix);
     }
 
     /**
@@ -112,15 +148,21 @@ class GameOfLifeTest extends TestCase
     #[TestDox('live cells with four or more neighbors die')]
     public function testLiveCellsWithFourOrMoreNeighborsDie(): void
     {
-        $this->assertEquals([
-            [1, 0, 1],
-            [0, 0, 0],
-            [1, 0, 1]
-        ], tick([
+        $matrix = [
             [1, 1, 1],
             [1, 1, 1],
             [1, 1, 1]
-        ]));
+        ];
+        $expected = [
+            [1, 0, 1],
+            [0, 0, 0],
+            [1, 0, 1]
+        ];
+
+        $subject = new GameOfLife($matrix);
+        $subject->tick();
+
+        $this->assertEquals($expected, $subject->matrix);
     }
 
     /**
@@ -129,16 +171,7 @@ class GameOfLifeTest extends TestCase
     #[TestDox('bigger matrix')]
     public function testBiggerMatrix(): void
     {
-        $this->assertEquals([
-            [1, 1, 0, 1, 1, 0, 0, 0],
-            [0, 0, 0, 0, 0, 1, 1, 0],
-            [1, 0, 1, 1, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 1],
-            [1, 1, 0, 0, 1, 0, 0, 1],
-            [1, 1, 0, 1, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1]
-        ], tick([
+        $matrix = [
             [1, 1, 0, 1, 1, 0, 0, 0],
             [1, 0, 1, 1, 0, 0, 0, 0],
             [1, 1, 1, 0, 0, 1, 1, 1],
@@ -147,6 +180,21 @@ class GameOfLifeTest extends TestCase
             [1, 1, 0, 0, 0, 1, 1, 1],
             [0, 0, 1, 0, 1, 0, 0, 1],
             [1, 0, 0, 0, 0, 0, 1, 1]
-        ]));
+        ];
+        $expected = [
+            [1, 1, 0, 1, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 1, 0],
+            [1, 0, 1, 1, 1, 1, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 1],
+            [1, 1, 0, 0, 1, 0, 0, 1],
+            [1, 1, 0, 1, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 1]
+        ];
+
+        $subject = new GameOfLife($matrix);
+        $subject->tick();
+
+        $this->assertEquals($expected, $subject->matrix);
     }
 }

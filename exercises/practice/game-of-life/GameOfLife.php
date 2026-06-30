@@ -24,7 +24,19 @@
 
 declare(strict_types=1);
 
-function tick(array $matrix): array
+class GameOfLife
 {
-    throw new \BadFunctionCallException("Implement the tick function");
+    /**
+     * In PHP 8.4 and newer you can use Asymmetric Property Visibility to enhance data encapsulation
+     * @see https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visibility-members-aviz
+     */
+    public function __construct(public array $matrix)
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+
+    public function tick(): void
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
 }
