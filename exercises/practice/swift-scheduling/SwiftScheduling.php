@@ -24,24 +24,14 @@
 
 declare(strict_types=1);
 
-class Triangle
+class SwiftScheduling
 {
-    public function __construct(int $a, int $b, int $c)
+    public function __construct(DateTime $meetingStart)
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function isEquilateral(): bool
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function isIsosceles(): bool
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function isScalene(): bool
+    public function deliveryDate(string $description): DateTime
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }

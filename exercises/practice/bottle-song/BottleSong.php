@@ -24,25 +24,20 @@
 
 declare(strict_types=1);
 
-class Triangle
+class BottleSong
 {
-    public function __construct(int $a, int $b, int $c)
+    public function verse(int $number): string
     {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+        throw new \BadMethodCallException("Implement the verse method");
     }
 
-    public function isEquilateral(): bool
+    public function verses(int $start, int $size): string
     {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+        throw new \BadMethodCallException("Implement the verses method");
     }
 
-    public function isIsosceles(): bool
+    public function lyrics(): string
     {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function isScalene(): bool
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+        throw new \BadMethodCallException("Implement the lyrics method");
     }
 }

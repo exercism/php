@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "resu-xuniL"
+  ],
+  "files": {
+    "solution": [
+      "SaddlePoints.php"
+    ],
+    "test": [
+      "SaddlePointsTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Detect saddle points in a matrix.",
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "https://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

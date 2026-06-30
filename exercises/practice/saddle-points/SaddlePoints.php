@@ -24,25 +24,7 @@
 
 declare(strict_types=1);
 
-class Triangle
+function saddlePoints(array $matrix): array
 {
-    public function __construct(int $a, int $b, int $c)
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function isEquilateral(): bool
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function isIsosceles(): bool
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function isScalene(): bool
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
+    throw new \BadMethodCallException(sprintf('Implement the %s function', __FUNCTION__));
 }

@@ -24,24 +24,19 @@
 
 declare(strict_types=1);
 
-class Triangle
+class BafflingBirthdays
 {
-    public function __construct(int $a, int $b, int $c)
+    public function sharedBirthday(array $birthdates): bool
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function isEquilateral(): bool
+    public function randomBirthdates(): bool
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function isIsosceles(): bool
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function isScalene(): bool
+    public function estimatedProbabilityOfSharedBirthday(int $groupSize): float
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
