@@ -297,14 +297,6 @@
         "difficulty": 1
       },
       {
-        "slug": "game-of-life",
-        "name": "Conway's Game of Life",
-        "uuid": "33d09051-b335-453b-80c1-0909a5c05b8a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "14aa815d-8073-4a71-841e-9bfdba4b0b1a",
@@ -984,6 +976,14 @@
           "control_flow_if_else_statements",
           "strings"
         ]
+      },
+      {
+        "slug": "game-of-life",
+        "name": "Conway's Game of Life",
+        "uuid": "33d09051-b335-453b-80c1-0909a5c05b8a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "dnd-character",
