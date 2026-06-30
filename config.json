@@ -954,6 +954,14 @@
         "difficulty": 3
       },
       {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
+        "uuid": "5ae50dea-8879-414f-afc8-49db16b53498",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "e0572cf4-5481-4da4-bf9b-0e921cb81627",
@@ -976,6 +984,14 @@
           "control_flow_if_else_statements",
           "strings"
         ]
+      },
+      {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "e63faaa7-d0a4-4442-881f-8c6ed9f986e9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "game-of-life",
@@ -1123,6 +1139,14 @@
         "difficulty": 5
       },
       {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "0854014f-e678-4844-9c39-55997fff1d07",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "9a8df843-8805-4287-b863-b8123defc266",
@@ -1226,6 +1250,14 @@
         "slug": "state-of-tic-tac-toe",
         "name": "State of Tic-Tac-Toe",
         "uuid": "64ea517d-88ec-46db-b723-004681255580",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "d080d214-1d41-4347-a494-1e05db9f614a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
