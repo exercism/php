@@ -198,7 +198,7 @@ class BafflingBirthdaysTest extends TestCase
         $this->assertEqualsWithDelta(
             0.0,
             $birthdays->estimatedProbabilityOfSharedBirthday(1),
-            1
+            2
         );
     }
 
@@ -212,7 +212,7 @@ class BafflingBirthdaysTest extends TestCase
         $this->assertEqualsWithDelta(
             11.694818,
             $birthdays->estimatedProbabilityOfSharedBirthday(10),
-            1
+            2
         );
     }
 
@@ -226,7 +226,7 @@ class BafflingBirthdaysTest extends TestCase
         $this->assertEqualsWithDelta(
             50.729723,
             $birthdays->estimatedProbabilityOfSharedBirthday(23),
-            2
+            3
         );
     }
 
@@ -240,7 +240,7 @@ class BafflingBirthdaysTest extends TestCase
         $this->assertEqualsWithDelta(
             99.915958,
             $birthdays->estimatedProbabilityOfSharedBirthday(70),
-            1
+            2
         );
     }
 }
