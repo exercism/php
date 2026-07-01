@@ -69,6 +69,7 @@ rail-fence-cipher
 raindrops
 resistor-color
 resistor-color-duo
+resistor-color-trio
 reverse-string
 rna-transcription
 robot-name
