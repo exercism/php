@@ -490,6 +490,14 @@
         ]
       },
       {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "d75c009b-ad65-455f-a824-ed61c8797cc4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "transpose",
         "name": "Transpose",
         "uuid": "cb413881-99b6-493f-bea2-89563dc173a6",
