@@ -15,7 +15,7 @@ class SquareRootTest extends TestCase
     #[TestDox('does not use or mention PHP square root functions')]
     public function testDoesNotUseOrMentionPhpSquareRootFunctions(): void
     {
-        $code = file_get_contents('SquareRoot.php');
+        $code = file_get_contents(__DIR__ . '/SquareRoot.php');
 
         $this->assertStringNotContainsString('sqrt(', $code);
     }
