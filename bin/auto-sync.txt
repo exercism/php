@@ -62,6 +62,7 @@ pascals-triangle
 perfect-numbers
 phone-number
 pig-latin
+poker
 protein-translation
 proverb
 queen-attack
