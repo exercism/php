@@ -297,14 +297,6 @@
         "difficulty": 1
       },
       {
-        "slug": "crypto-square",
-        "name": "Crypto Square",
-        "uuid": "14aa815d-8073-4a71-841e-9bfdba4b0b1a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "64a8f560-0991-4897-812e-7c57a2617fde",
@@ -584,6 +576,14 @@
           "algorithms",
           "math"
         ]
+      },
+      {
+        "slug": "crypto-square",
+        "name": "Crypto Square",
+        "uuid": "14aa815d-8073-4a71-841e-9bfdba4b0b1a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "darts",
