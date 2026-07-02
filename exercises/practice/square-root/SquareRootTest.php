@@ -12,6 +12,14 @@ class SquareRootTest extends TestCase
         require_once 'SquareRoot.php';
     }
 
+    #[TestDox('does not use or mention PHP square root functions')]
+    public function testDoesNotUseOrMentionPhpSquareRootFunctions(): void
+    {
+        $code = file_get_contents('SquareRoot.php');
+
+        $this->assertStringNotContainsString('sqrt(', $code);
+    }
+
     /**
      * uuid: 9b748478-7b0a-490c-b87a-609dacf631fd
      */
