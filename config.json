@@ -297,6 +297,14 @@
         "difficulty": 1
       },
       {
+        "slug": "crypto-square",
+        "name": "Crypto Square",
+        "uuid": "14aa815d-8073-4a71-841e-9bfdba4b0b1a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "64a8f560-0991-4897-812e-7c57a2617fde",
@@ -482,14 +490,6 @@
         ]
       },
       {
-        "slug": "square-root",
-        "name": "Square Root",
-        "uuid": "d75c009b-ad65-455f-a824-ed61c8797cc4",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
         "slug": "transpose",
         "name": "Transpose",
         "uuid": "cb413881-99b6-493f-bea2-89563dc173a6",
@@ -576,14 +576,6 @@
           "algorithms",
           "math"
         ]
-      },
-      {
-        "slug": "crypto-square",
-        "name": "Crypto Square",
-        "uuid": "14aa815d-8073-4a71-841e-9bfdba4b0b1a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
       },
       {
         "slug": "darts",
@@ -735,6 +727,14 @@
           "integers",
           "strings"
         ]
+      },
+      {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "d75c009b-ad65-455f-a824-ed61c8797cc4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "strain",
