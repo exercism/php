@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 function squareRoot(int $number): int
 {
-    $sqrt = $number;
+    $squareRoot = $number;
 
-    while (pow($sqrt, 2) > $number) {
-        $sqrt--;
+    while (pow($squareRoot, 2) > $number) {
+        $squareRoot--;
     }
 
-    return $sqrt;
+    return $squareRoot;
 }

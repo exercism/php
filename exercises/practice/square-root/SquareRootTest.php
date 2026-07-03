@@ -17,7 +17,7 @@ class SquareRootTest extends TestCase
     {
         $code = file_get_contents(__DIR__ . '/SquareRoot.php');
 
-        $this->assertStringNotContainsString('sqrt(', $code);
+        $this->assertStringNotContainsString('sqrt', $code, 'Please do not use the word "sqrt" anywhere in your code!');
     }
 
     /**
