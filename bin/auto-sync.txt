@@ -91,6 +91,7 @@ state-of-tic-tac-toe
 strain
 sublist
 swift-scheduling
+tournament
 triangle
 twelve-days
 two-bucket
