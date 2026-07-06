@@ -22,7 +22,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: 67e9fab1-07c1-49cf-9159-bc8671cc7c9c
      */
-    #[TestDox('just the header if no input')]
+    #[TestDox('Just the header if no input')]
     public function testJustTheHeaderIfNoInput(): void
     {
         $scores   = '';
@@ -33,7 +33,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: 1b4a8aef-0734-4007-80a2-0626178c88f4
      */
-    #[TestDox('a win is three points, a loss is zero points')]
+    #[TestDox('A win is three points, a loss is zero points')]
     public function testAWinIsThreePointsALossIsZeroPoints(): void
     {
         $scores = 'Allegoric Alaskans;Blithering Badgers;win';
@@ -47,7 +47,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: 5f45ac09-4efe-46e7-8ddb-75ad85f86e05
      */
-    #[TestDox('a win can also be expressed as a loss')]
+    #[TestDox('A win can also be expressed as a loss')]
     public function testAWinCanAlsoBeExpressedAsALoss(): void
     {
         $scores = 'Blithering Badgers;Allegoric Alaskans;loss';
@@ -61,7 +61,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: fd297368-efa0-442d-9f37-dd3f9a437239
      */
-    #[TestDox('a different team can win')]
+    #[TestDox('A different team can win')]
     public function testADifferentTeamCanWin(): void
     {
         $scores = 'Blithering Badgers;Allegoric Alaskans;win';
@@ -75,7 +75,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: 26c016f9-e753-4a93-94e9-842f7b4d70fc
      */
-    #[TestDox('a draw is one point each')]
+    #[TestDox('A draw is one point each')]
     public function testADrawIsOnePointEach(): void
     {
         $scores = 'Allegoric Alaskans;Blithering Badgers;draw';
@@ -139,7 +139,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: 97022974-0c8a-4a50-8fe7-e36bdd8a5945
      */
-    #[TestDox('typical input')]
+    #[TestDox('Typical input')]
     public function testTypicalInput(): void
     {
         $scores =
@@ -161,7 +161,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: fe562f0d-ac0a-4c62-b9c9-44ee3236392b
      */
-    #[TestDox('incomplete competition (not all pairs have played)')]
+    #[TestDox('Incomplete competition (not all pairs have played)')]
     public function testIncompleteCompetitionNotAllPairsHavePlayed(): void
     {
         $scores =
@@ -181,7 +181,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: 3aa0386f-150b-4f99-90bb-5195e7b7d3b8
      */
-    #[TestDox('ties broken alphabetically')]
+    #[TestDox('Ties broken alphabetically')]
     public function testTiesBrokenAlphabetically(): void
     {
         $scores =
@@ -203,7 +203,7 @@ class TournamentTest extends TestCase
     /**
      * uuid: f9e20931-8a65-442a-81f6-503c0205b17a
      */
-    #[TestDox('ensure points sorted numerically')]
+    #[TestDox('Ensure points sorted numerically')]
     public function testEnsurePointsSortedNumerically(): void
     {
         $scores =
