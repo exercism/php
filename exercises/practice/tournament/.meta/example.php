@@ -5,7 +5,7 @@ declare(strict_types=1);
 class Tournament
 {
     private string $header  = "Team                           | MP |  W |  D |  L |  P\n";
-    private string $teamRow = "%s                               |  %d |  %d |  %d |  %d |  %d\n";
+    private string $teamRow = "%s                               |%3d |%3d |%3d |%3d |%3d\n";
 
     public function tally(string $scores): string
     {
