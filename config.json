@@ -970,18 +970,6 @@
         "difficulty": 3
       },
       {
-        "slug": "tournament",
-        "name": "Tournament",
-        "uuid": "e0572cf4-5481-4da4-bf9b-0e921cb81627",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "parsing",
-          "strings"
-        ]
-      },
-      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "ae91650f-fe06-466a-a40a-6a24f5926fbe",
@@ -1137,6 +1125,18 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
+      },
+      {
+        "slug": "tournament",
+        "name": "Tournament",
+        "uuid": "e0572cf4-5481-4da4-bf9b-0e921cb81627",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "parsing",
+          "strings"
+        ]
       },
       {
         "slug": "alphametics",
