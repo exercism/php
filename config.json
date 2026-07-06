@@ -1210,19 +1210,6 @@
         ]
       },
       {
-        "slug": "poker",
-        "name": "Poker",
-        "uuid": "e8669c8e-bfdd-4207-baf6-23c2e4b12d13",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "games",
-          "parsing",
-          "sorting"
-        ]
-      },
-      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "cc6c3b27-b719-454c-a743-7bc73bd47cf1",
@@ -1345,6 +1332,19 @@
           "strings",
           "text_formatting",
           "transforming"
+        ]
+      },
+      {
+        "slug": "poker",
+        "name": "Poker",
+        "uuid": "e8669c8e-bfdd-4207-baf6-23c2e4b12d13",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7,
+        "topics": [
+          "games",
+          "parsing",
+          "sorting"
         ]
       },
       {
