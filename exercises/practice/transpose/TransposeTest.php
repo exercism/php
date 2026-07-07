@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
 class TransposeTest extends TestCase
 {
@@ -11,6 +12,10 @@ class TransposeTest extends TestCase
         require_once 'Transpose.php';
     }
 
+    /**
+     * uuid: 404b7262-c050-4df0-a2a2-0cb06cd6a821
+     */
+    #[TestDox('Empty string')]
     public function testEmptyString(): void
     {
         $input = [""];
@@ -18,6 +23,10 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: a89ce8a3-c940-4703-a688-3ea39412fbcb
+     */
+    #[TestDox('Two characters in a row')]
     public function testTwoCharactersInARow(): void
     {
         $input = [
@@ -30,6 +39,10 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: 855bb6ae-4180-457c-abd0-ce489803ce98
+     */
+    #[TestDox('Two characters in a column')]
     public function testTwoCharactersInAColumn(): void
     {
         $input = [
@@ -42,6 +55,10 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: 5ceda1c0-f940-441c-a244-0ced197769c8
+     */
+    #[TestDox('Simple')]
     public function testSimple(): void
     {
         $input = [
@@ -56,6 +73,10 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: a54675dd-ae7d-4a58-a9c4-0c20e99a7c1f
+     */
+    #[TestDox('Single line')]
     public function testSingleLine(): void
     {
         $input = [
@@ -78,6 +99,10 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: 0dc2ec0b-549d-4047-aeeb-8029fec8d5c5
+     */
+    #[TestDox('First line longer than second line')]
     public function testFirstLineLongerThanSecondLine(): void
     {
         $input = [
@@ -105,6 +130,10 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: 984e2ec3-b3d3-4b53-8bd6-96f5ef404102
+     */
+    #[TestDox('Second line longer than first line')]
     public function testSecondLineLongerThanFirstLine(): void
     {
         $input = [
@@ -132,6 +161,44 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: eccd3784-45f0-4a3f-865a-360cb323d314
+     */
+    #[TestDox('Mixed line length')]
+    public function testMixedLineLength(): void
+    {
+        $input = [
+            "The longest line.",
+            "A long line.",
+            "A longer line.",
+            "A line.",
+        ];
+        $expected = [
+            "TAAA",
+            "h   ",
+            "elll",
+            " ooi",
+            "lnnn",
+            "ogge",
+            "n e.",
+            "glr",
+            "ei ",
+            "snl",
+            "tei",
+            " .n",
+            "l e",
+            "i .",
+            "n",
+            "e",
+            ".",
+        ];
+        $this->assertEquals($expected, transpose($input));
+    }
+
+    /**
+     * uuid: 85b96b3f-d00c-4f80-8ca2-c8a5c9216c2d
+     */
+    #[TestDox('Square')]
     public function testSquare(): void
     {
         $input = [
@@ -151,6 +218,10 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: b9257625-7a53-4748-8863-e08e9d27071d
+     */
+    #[TestDox('Rectangle')]
     public function testRectangle(): void
     {
         $input = [
@@ -172,6 +243,10 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: b80badc9-057e-4543-bd07-ce1296a1ea2c
+     */
+    #[TestDox('Triangle')]
     public function testTriangle(): void
     {
         $input = [
@@ -193,6 +268,32 @@ class TransposeTest extends TestCase
         $this->assertEquals($expected, transpose($input));
     }
 
+    /**
+     * uuid: 76acfd50-5596-4d05-89f1-5116328a7dd9
+     */
+    #[TestDox('Jagged triangle')]
+    public function testJaggedTriangle(): void
+    {
+        $input = [
+            "11",
+            "2",
+            "3333",
+            "444",
+            "555555",
+            "66666",
+        ];
+        $expected = [
+            "123456",
+            "1 3456",
+            "  3456",
+            "  3 56",
+            "    56",
+            "    5",
+        ];
+        $this->assertEquals($expected, transpose($input));
+    }
+
+    #[TestDox('Many lines')]
     public function testManyLines(): void
     {
         $input = [
