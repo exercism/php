@@ -15,7 +15,7 @@ class ConnectTest extends TestCase
     /**
      * uuid 6eff0df4-3e92-478d-9b54-d3e8b354db56
      */
-    #[TestDox('an empty board has no winner')]
+    #[TestDox('An empty board has no winner')]
     public function testEmptyBoardHasNoWinner(): void
     {
         $lines = [
@@ -51,7 +51,7 @@ class ConnectTest extends TestCase
     /**
      * uuid 819fde60-9ae2-485e-a024-cbb8ea68751b
      */
-    #[TestDox('only edges does not make a winner')]
+    #[TestDox('Only edges does not make a winner')]
     public function testOnlyEgesDoesNotMakeAWinner(): void
     {
         $lines = [
@@ -66,7 +66,7 @@ class ConnectTest extends TestCase
     /**
      * uuid 2c56a0d5-9528-41e5-b92b-499dfe08506c
      */
-    #[TestDox('illegal diagonal does not make a winner')]
+    #[TestDox('Illegal diagonal does not make a winner')]
     public function testIllegalDiagonalDoesNotMakeAWinner(): void
     {
         $lines = [
@@ -82,7 +82,7 @@ class ConnectTest extends TestCase
     /**
      * uuid 41cce3ef-43ca-4963-970a-c05d39aa1cc1
      */
-    #[TestDox('nobody wins crossing adjacent angles')]
+    #[TestDox('Nobody wins crossing adjacent angles')]
     public function testNobodyWinsCrossingAdjacentAngles(): void
     {
         $lines = [

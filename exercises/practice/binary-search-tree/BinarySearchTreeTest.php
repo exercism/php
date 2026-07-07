@@ -15,7 +15,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid e9c93a78-c536-4750-a336-94583d23fafa
      */
-    #[TestDox('data is retained')]
+    #[TestDox('Data is retained')]
     public function testDataIsRetained(): void
     {
         $tree = new BinarySearchTree(4);
@@ -25,7 +25,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid 7a95c9e8-69f6-476a-b0c4-4170cb3f7c91
      */
-    #[TestDox('smaller number at left node')]
+    #[TestDox('Smaller number at left node')]
     public function testSmallNumberAtLeftNode(): void
     {
         $tree = new BinarySearchTree(4);
@@ -38,7 +38,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid 22b89499-9805-4703-a159-1a6e434c1585
      */
-    #[TestDox('same number at left node')]
+    #[TestDox('Same number at left node')]
     public function testSameNumberLeftNodes(): void
     {
         $tree = new BinarySearchTree(4);
@@ -51,7 +51,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid 2e85fdde-77b1-41ed-b6ac-26ce6b663e34
      */
-    #[TestDox('greater number at right node')]
+    #[TestDox('Greater number at right node')]
     public function testGreaterNumberRightNode(): void
     {
         $tree = new BinarySearchTree(4);
@@ -64,7 +64,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid dd898658-40ab-41d0-965e-7f145bf66e0b
      */
-    #[TestDox('can create complex tree')]
+    #[TestDox('Can create complex tree')]
     public function testCreateComplexTree(): void
     {
         $tree = new BinarySearchTree(4);
@@ -87,7 +87,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid 9e0c06ef-aeca-4202-b8e4-97f1ed057d56
      */
-    #[TestDox('can sort single number')]
+    #[TestDox('Can sort single number')]
     public function testCanSortSingleNode(): void
     {
         $tree = new BinarySearchTree(2);
@@ -98,7 +98,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid 425e6d07-fceb-4681-a4f4-e46920e380bb
      */
-    #[TestDox('can sort if second number is smaller than first')]
+    #[TestDox('Can sort if second number is smaller than first')]
     public function testCanSortSmallerSecondNumber(): void
     {
         $tree = new BinarySearchTree(2);
@@ -110,7 +110,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid bd7532cc-6988-4259-bac8-1d50140079ab
      */
-    #[TestDox('can sort if second number is same as first')]
+    #[TestDox('Can sort if second number is same as first')]
     public function testCanSortSameNumbers(): void
     {
         $tree = new BinarySearchTree(2);
@@ -122,7 +122,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid b6d1b3a5-9d79-44fd-9013-c83ca92ddd36
      */
-    #[TestDox('can sort if second number is greater than first')]
+    #[TestDox('Can sort if second number is greater than first')]
     public function testCanSortGreaterSecondNumber(): void
     {
         $tree = new BinarySearchTree(2);
@@ -134,7 +134,7 @@ class BinarySearchTreeTest extends TestCase
     /**
      * uuid d00ec9bd-1288-4171-b968-d44d0808c1c8
      */
-    #[TestDox('can sort complex tree')]
+    #[TestDox('Can sort complex tree')]
     public function testCanSortComplexTree(): void
     {
         $tree = new BinarySearchTree(2);

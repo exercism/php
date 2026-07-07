@@ -15,7 +15,7 @@ class BottleSongTest extends TestCase
     /**
      * uuid: d4ccf8fc-01dc-48c0-a201-4fbeb30f2d03
      */
-    #[TestDox('verse -> single verse -> first generic verse')]
+    #[TestDox('Verse -> Single verse -> First generic verse')]
     public function testVerseSingleVerseFirstGenericVerse(): void
     {
         $expected = "Ten green bottles hanging on the wall,\n" .
@@ -29,7 +29,7 @@ class BottleSongTest extends TestCase
     /**
      * uuid: 0f0aded3-472a-4c64-b842-18d4f1f5f030
      */
-    #[TestDox('verse -> single verse -> last generic verse')]
+    #[TestDox('Verse -> Single verse -> Last generic verse')]
     public function testVerseSingleVerseLastGenericVerse(): void
     {
         $expected = "Three green bottles hanging on the wall,\n" .
@@ -43,7 +43,7 @@ class BottleSongTest extends TestCase
     /**
      * uuid: f61f3c97-131f-459e-b40a-7428f3ed99d9
      */
-    #[TestDox('verse -> single verse -> verse with 2 bottles')]
+    #[TestDox('Verse -> Single verse -> Verse with 2 bottles')]
     public function testVerseSingleVerseVerseWithTwoBottles(): void
     {
         $expected = "Two green bottles hanging on the wall,\n" .
@@ -57,7 +57,7 @@ class BottleSongTest extends TestCase
     /**
      * uuid: 05eadba9-5dbd-401e-a7e8-d17cc9baa8e0
      */
-    #[TestDox('verse -> single verse -> verse with 1 bottle')]
+    #[TestDox('Verse -> Single verse -> Verse with 1 bottle')]
     public function testVerseSingleVerseVerseWithOneBottle(): void
     {
         $expected = "One green bottle hanging on the wall,\n" .
@@ -71,7 +71,7 @@ class BottleSongTest extends TestCase
     /**
      * uuid: a4a28170-83d6-4dc1-bd8b-319b6abb6a80
      */
-    #[TestDox('verses -> multiple verses -> first two verses')]
+    #[TestDox('Verses -> Multiple verses -> First two verses')]
     public function testVersesMultipleVersesFirstTwoVerses(): void
     {
         $expected = "Ten green bottles hanging on the wall,\n" .
@@ -90,7 +90,7 @@ class BottleSongTest extends TestCase
     /**
      * uuid: 3185d438-c5ac-4ce6-bcd3-02c9ff1ed8db
      */
-    #[TestDox('verses -> multiple verses -> last three verses')]
+    #[TestDox('Verses -> Multiple verses -> Last three verses')]
     public function testVersesMultipleVersesLastThreeVerses(): void
     {
         $expected = "Three green bottles hanging on the wall,\n" .
@@ -114,7 +114,7 @@ class BottleSongTest extends TestCase
     /**
      * uuid: 28c1584a-0e51-4b65-9ae2-fbc0bf4bbb28
      */
-    #[TestDox('lyrics -> multiple verses -> all verses')]
+    #[TestDox('Lyrics -> Multiple verses -> All verses')]
     public function testLyricsMultipleVersesAllVerses(): void
     {
         $expected = <<<SONG

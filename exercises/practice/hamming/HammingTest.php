@@ -77,7 +77,7 @@ class HammingTest extends TestCase
     /**
      * uuid: dab38838-26bb-4fff-acbe-3b0a9bfeba2d
      */
-    #[TestDox(': Disallow second strand longer')]
+    #[TestDox('Disallow second strand longer')]
     public function testDisallowSecondStrandLonger(): void
     {
         $this->expectException('InvalidArgumentException');
@@ -88,7 +88,7 @@ class HammingTest extends TestCase
     /**
      * uuid: b764d47c-83ff-4de2-ab10-6cfe4b15c0f3
      */
-    #[TestDox(': Disallow empty first strand')]
+    #[TestDox('Disallow empty first strand')]
     public function testDisallowEmptyFirstStrand(): void
     {
         $this->expectException('InvalidArgumentException');
@@ -99,7 +99,7 @@ class HammingTest extends TestCase
     /**
      * uuid: 9ab9262f-3521-4191-81f5-0ed184a5aa89
      */
-    #[TestDox(': Disallow empty second strand')]
+    #[TestDox('Disallow empty second strand')]
     public function testDisallowEmptySecondStrand(): void
     {
         $this->expectException('InvalidArgumentException');

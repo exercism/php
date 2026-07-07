@@ -15,7 +15,7 @@ class CollatzConjectureTest extends TestCase
     /**
      * uuid: 540a3d51-e7a6-47a5-92a3-4ad1838f0bfd
      */
-    #[TestDox('zero steps for one')]
+    #[TestDox('Zero steps for one')]
     public function testZeroStepsForOne(): void
     {
         $this->assertEquals(0, steps(1));
@@ -24,7 +24,7 @@ class CollatzConjectureTest extends TestCase
     /**
      * uuid: 3d76a0a6-ea84-444a-821a-f7857c2c1859
      */
-    #[TestDox('divide if even')]
+    #[TestDox('Divide if even')]
     public function testDivideIfEven(): void
     {
         $this->assertEquals(4, steps(16));
@@ -33,7 +33,7 @@ class CollatzConjectureTest extends TestCase
     /**
      * uuid: 754dea81-123c-429e-b8bc-db20b05a87b9
      */
-    #[TestDox('even and odd steps')]
+    #[TestDox('Even and odd steps')]
     public function testEvenAndOddSteps(): void
     {
         $this->assertEquals(9, steps(12));
@@ -42,7 +42,7 @@ class CollatzConjectureTest extends TestCase
     /**
      * uuid: ecfd0210-6f85-44f6-8280-f65534892ff6
      */
-    #[TestDox('large number of even and odd steps')]
+    #[TestDox('Large number of even and odd steps')]
     public function testLargeNumberOfEvenAndOddSteps(): void
     {
         $this->assertEquals(152, steps(1000000));
@@ -51,7 +51,7 @@ class CollatzConjectureTest extends TestCase
     /**
      * uuid: 2187673d-77d6-4543-975e-66df6c50e2da
      */
-    #[TestDox('zero is an error')]
+    #[TestDox('Zero is an error')]
     public function testZeroIsAnError(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -65,7 +65,7 @@ class CollatzConjectureTest extends TestCase
     /**
      * uuid: ec11f479-56bc-47fd-a434-bcd7a31a7a2e
      */
-    #[TestDox('negative value is an error')]
+    #[TestDox('Negative value is an error')]
     public function testNegativeValueIsAnError(): void
     {
         $this->expectException(InvalidArgumentException::class);

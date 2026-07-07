@@ -15,7 +15,7 @@ class WordCountTest extends TestCase
     /**
      * UUID 61559d5f-2cad-48fb-af53-d3973a9ee9ef
      */
-    #[TestDox('count one word')]
+    #[TestDox('Count one word')]
     public function testCountOneWord(): void
     {
         $this->assertEquals(
@@ -27,7 +27,7 @@ class WordCountTest extends TestCase
     /**
      * UUID 5abd53a3-1aed-43a4-a15a-29f88c09cbbd
      */
-    #[TestDox('count one of each word')]
+    #[TestDox('Count one of each word')]
     public function testCountOneOfEachWord(): void
     {
         $this->assertEquals(
@@ -43,7 +43,7 @@ class WordCountTest extends TestCase
     /**
      * UUID 2a3091e5-952e-4099-9fac-8f85d9655c0e
      */
-    #[TestDox('multiple occurrences of a word')]
+    #[TestDox('Multiple occurrences of a word')]
     public function testMultipleOccurrencesOfAWord(): void
     {
         $this->assertEquals(
@@ -61,7 +61,7 @@ class WordCountTest extends TestCase
     /**
      * UUID e81877ae-d4da-4af4-931c-d923cd621ca6
      */
-    #[TestDox('handles cramped lists')]
+    #[TestDox('Handles cramped lists')]
     public function testHandlesCrampedLists(): void
     {
         $this->assertEquals(
@@ -77,7 +77,7 @@ class WordCountTest extends TestCase
     /**
      * UUID 7349f682-9707-47c0-a9af-be56e1e7ff30
      */
-    #[TestDox('handles expanded lists')]
+    #[TestDox('Handles expanded lists')]
     public function testHandlesExpandedLists(): void
     {
         $this->assertEquals(
@@ -93,7 +93,7 @@ class WordCountTest extends TestCase
     /**
      * UUID a514a0f2-8589-4279-8892-887f76a14c82
      */
-    #[TestDox('ignore punctuation')]
+    #[TestDox('Ignore punctuation')]
     public function testIgnorePunctuation(): void
     {
         $this->assertEquals(
@@ -111,7 +111,7 @@ class WordCountTest extends TestCase
     /**
      * UUID d2e5cee6-d2ec-497b-bdc9-3ebe092ce55e
      */
-    #[TestDox('include numbers')]
+    #[TestDox('Include numbers')]
     public function testIncludeNumbers(): void
     {
         $this->assertEquals(
@@ -127,7 +127,7 @@ class WordCountTest extends TestCase
     /**
      * UUID dac6bc6a-21ae-4954-945d-d7f716392dbf
      */
-    #[TestDox('normalize case')]
+    #[TestDox('Normalize case')]
     public function testNormalizeCase(): void
     {
         $this->assertEquals(
@@ -139,7 +139,7 @@ class WordCountTest extends TestCase
     /**
      * UUID 4ff6c7d7-fcfc-43ef-b8e7-34ff1837a2d3
      */
-    #[TestDox('with apostrophes')]
+    #[TestDox('With apostrophes')]
     public function testWithApostrophes(): void
     {
         $this->assertEquals(
@@ -160,7 +160,7 @@ class WordCountTest extends TestCase
     /**
      * UUID be72af2b-8afe-4337-b151-b297202e4a7b
      */
-    #[TestDox('with quotations')]
+    #[TestDox('With quotations')]
     public function testWithQuotations(): void
     {
         $this->assertEquals(
@@ -179,7 +179,7 @@ class WordCountTest extends TestCase
     /**
      * UUID 8d6815fe-8a51-4a65-96f9-2fb3f6dc6ed6
      */
-    #[TestDox('substrings from the beginning')]
+    #[TestDox('Substrings from the beginning')]
     public function testSubstringsFromTheBeginning(): void
     {
         $this->assertEquals(
@@ -200,7 +200,7 @@ class WordCountTest extends TestCase
     /**
      * UUID c5f4ef26-f3f7-4725-b314-855c04fb4c13
      */
-    #[TestDox('multiple spaces not detected as a word')]
+    #[TestDox('Multiple spaces not detected as a word')]
     public function testMultipleSpacesNotDetectedAsAWord(): void
     {
         $this->assertEquals(
@@ -212,7 +212,7 @@ class WordCountTest extends TestCase
     /**
      * UUID 50176e8a-fe8e-4f4c-b6b6-aa9cf8f20360
      */
-    #[TestDox('alternating word separators are not detected as a word')]
+    #[TestDox('Alternating word separators are not detected as a word')]
     public function testAlternatingWordSeparatorsNotDetectedAsAWord(): void
     {
         $this->assertEquals(
@@ -228,7 +228,7 @@ class WordCountTest extends TestCase
     /**
      * UUID 6d00f1db-901c-4bec-9829-d20eb3044557
      */
-    #[TestDox('quotation for word with apostrophe')]
+    #[TestDox('Quotation for word with apostrophe')]
     public function testQuotationForWordWithApostrophe(): void
     {
         $this->assertEquals(

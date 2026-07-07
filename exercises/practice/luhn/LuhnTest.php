@@ -177,7 +177,7 @@ class LuhnTest extends TestCase
     /**
      * uuid: 8a7c0e24-85ea-4154-9cf1-c2db90eabc08
      */
-    #[TestDox('valid luhn with an odd number of digits and non zero first digit')]
+    #[TestDox('Valid luhn with an odd number of digits and non zero first digit')]
     public function testValidLuhnWithAnOddNumberOfDigitsAndNonZeroFirstDigit(): void
     {
         $this->assertTrue(isValid("109"));
@@ -186,7 +186,7 @@ class LuhnTest extends TestCase
     /**
      * uuid: 39a06a5a-5bad-4e0f-b215-b042d46209b1
      */
-    #[TestDox("using ascii value for non-doubled non-digit isn't allowed")]
+    #[TestDox("Using ASCII value for non-doubled non-digit isn't allowed")]
     public function testUsingAsciiValueForNonDoubledNonDigitIsntAllowed(): void
     {
         $this->assertFalse(isValid("055b 444 285"));
@@ -195,7 +195,7 @@ class LuhnTest extends TestCase
     /**
      * uuid: f94cf191-a62f-4868-bc72-7253114aa157
      */
-    #[TestDox("using ascii value for doubled non-digit isn't allowed")]
+    #[TestDox("Using ASCII value for doubled non-digit isn't allowed")]
     public function testUsingAsciiValueForDoubledNonDigitIsntAllowed(): void
     {
         $this->assertFalse(isValid(":9"));
@@ -204,7 +204,7 @@ class LuhnTest extends TestCase
     /**
      * uuid: 8b72ad26-c8be-49a2-b99c-bcc3bf631b33
      */
-    #[TestDox("non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed")]
+    #[TestDox("Non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed")]
     public function testNonNumericNonSpaceCharInMiddleWithSumDivisibleBy10IsntAllowed(): void
     {
         $this->assertFalse(isValid("59%59"));

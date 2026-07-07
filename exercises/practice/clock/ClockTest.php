@@ -26,7 +26,7 @@ class ClockTest extends TestCase
     /**
      * uuid b5d0c360-3b88-489b-8e84-68a1c7a4fa23
      */
-    #[TestDox('past the hour')]
+    #[TestDox('Past the hour')]
     public function testPastTheHour(): void
     {
         $clock = new Clock(11, 9);
@@ -37,7 +37,7 @@ class ClockTest extends TestCase
     /**
      * uuid 473223f4-65f3-46ff-a9f7-7663c7e59440
      */
-    #[TestDox('midnight is zero hours')]
+    #[TestDox('Midnight is zero hours')]
     public function testMidnightIsZeroHours(): void
     {
         $clock = new Clock(24, 0);
@@ -47,7 +47,7 @@ class ClockTest extends TestCase
     /**
      * uuid ca95d24a-5924-447d-9a96-b91c8334725c
      */
-    #[TestDox('hour rolls over')]
+    #[TestDox('Hour rolls over')]
     public function testHourRollsOver(): void
     {
         $clock = new Clock(25, 0);
@@ -57,7 +57,7 @@ class ClockTest extends TestCase
     /**
      * uuid f3826de0-0925-4d69-8ac8-89aea7e52b78
      */
-    #[TestDox('hour rolls over continuously')]
+    #[TestDox('Hour rolls over continuously')]
     public function testHourRollsOverContinuously(): void
     {
         $clock = new Clock(100, 0);
@@ -67,7 +67,7 @@ class ClockTest extends TestCase
     /**
      * uuid a02f7edf-dfd4-4b11-b21a-86de3cc6a95c
      */
-    #[TestDox('sixty minutes is next hour')]
+    #[TestDox('Sixty minutes is next hour')]
     public function testSixtyMinutesIsNextHour(): void
     {
         $clock = new Clock(1, 60);
@@ -77,7 +77,7 @@ class ClockTest extends TestCase
     /**
      * uuid 8f520df6-b816-444d-b90f-8a477789beb5
      */
-    #[TestDox('minutes roll over')]
+    #[TestDox('Minutes roll over')]
     public function testMinutesRollOver(): void
     {
         $clock = new Clock(0, 160);
@@ -87,7 +87,7 @@ class ClockTest extends TestCase
     /**
      * uuid c75c091b-47ac-4655-8d40-643767fc4eed
      */
-    #[TestDox('minutes roll over continuously')]
+    #[TestDox('Minutes roll over continuously')]
     public function testMinutesRollOverContinuously(): void
     {
         $clock = new Clock(0, 1723);
@@ -97,7 +97,7 @@ class ClockTest extends TestCase
     /**
      * uuid 06343ecb-cf39-419d-a3f5-dcbae0cc4c57
      */
-    #[TestDox('hour and minutes roll over')]
+    #[TestDox('Hour and minutes roll over')]
     public function testHourAndMinutesRollOver(): void
     {
         $clock = new Clock(25, 160);
@@ -107,7 +107,7 @@ class ClockTest extends TestCase
     /**
      * uuid be60810e-f5d9-4b58-9351-a9d1e90e660c
      */
-    #[TestDox('hour and minutes roll over continuously')]
+    #[TestDox('Hour and minutes roll over continuously')]
     public function testHourAndMinutesRollOverContinuously(): void
     {
         $clock = new Clock(201, 3001);
@@ -118,7 +118,7 @@ class ClockTest extends TestCase
     /**
      * uuid 1689107b-0b5c-4bea-aad3-65ec9859368a
      */
-    #[TestDox('hour and minutes roll over to exactly midnight')]
+    #[TestDox('Hour and minutes roll over to exactly midnight')]
     public function testHourAndMinutesRollOverToExactlyMidnight(): void
     {
         $clock = new Clock(72, 8640);
@@ -128,7 +128,7 @@ class ClockTest extends TestCase
     /**
      * uuid d3088ee8-91b7-4446-9e9d-5e2ad6219d91
      */
-    #[TestDox('negative hour')]
+    #[TestDox('Negative hour')]
     public function testNegativeHour(): void
     {
         $clock = new Clock(-1, 15);
@@ -138,7 +138,7 @@ class ClockTest extends TestCase
     /**
      * uuid 77ef6921-f120-4d29-bade-80d54aa43b54
      */
-    #[TestDox('negative hour rolls over')]
+    #[TestDox('Negative hour rolls over')]
     public function testNegativeHourRollsOver(): void
     {
         $clock = new Clock(-25, 0);
@@ -148,7 +148,7 @@ class ClockTest extends TestCase
     /**
      * uuid 359294b5-972f-4546-bb9a-a85559065234
      */
-    #[TestDox('negative hour rolls over continuously')]
+    #[TestDox('Negative hour rolls over continuously')]
     public function testNegativeHourRollsOverContinuously(): void
     {
         $clock = new Clock(-91, 0);
@@ -158,7 +158,7 @@ class ClockTest extends TestCase
     /**
      * uuid 509db8b7-ac19-47cc-bd3a-a9d2f30b03c0
      */
-    #[TestDox('negative minutes')]
+    #[TestDox('Negative minutes')]
     public function testNegativeMinutes(): void
     {
         $clock = new Clock(1, -40);
@@ -168,7 +168,7 @@ class ClockTest extends TestCase
     /**
      * uuid 5d6bb225-130f-4084-84fd-9e0df8996f2a
      */
-    #[TestDox('negative minutes roll over')]
+    #[TestDox('Negative minutes roll over')]
     public function testNegativeMinutesRollOver(): void
     {
         $clock = new Clock(1, -160);
@@ -178,7 +178,7 @@ class ClockTest extends TestCase
     /**
      * uuid d483ceef-b520-4f0c-b94a-8d2d58cf0484
      */
-    #[TestDox('negative minutes roll over continuously')]
+    #[TestDox('Negative minutes roll over continuously')]
     public function testNegativeMinutesRollOverContinuously(): void
     {
         $clock = new Clock(1, -4820);
@@ -188,7 +188,7 @@ class ClockTest extends TestCase
     /**
      * uuid 1cd19447-19c6-44bf-9d04-9f8305ccb9ea
      */
-    #[TestDox('negative sixty minutes is previous hour')]
+    #[TestDox('Negative sixty minutes is previous hour')]
     public function testNegativeSixtyMinutesIsPreviousHour(): void
     {
         $clock = new Clock(2, -60);
@@ -198,7 +198,7 @@ class ClockTest extends TestCase
     /**
      * uuid 9d3053aa-4f47-4afc-bd45-d67a72cef4dc
      */
-    #[TestDox('negative hour and minutes both roll over')]
+    #[TestDox('Negative hour and minutes both roll over')]
     public function testNegativeHourAndMinutesBothRollOver(): void
     {
         $clock = new Clock(-25, -160);
@@ -208,7 +208,7 @@ class ClockTest extends TestCase
     /**
      * uuid 51d41fcf-491e-4ca0-9cae-2aa4f0163ad4
      */
-    #[TestDox('negative hour and minutes both roll over continuously')]
+    #[TestDox('Negative hour and minutes both roll over continuously')]
     public function testNegativeHourAndMinutesBothRollOverContinuously(): void
     {
         $clock = new Clock(-121, -5810);
@@ -318,7 +318,7 @@ class ClockTest extends TestCase
     /**
      * uuid 0aafa4d0-3b5f-4b12-b3af-e3a9e09c047b
      */
-    #[TestDox('subtract to previous hour')]
+    #[TestDox('Subtract to previous hour')]
     public function testSubtractToPreviousHour(): void
     {
         $clock = new Clock(10, 3);
@@ -329,7 +329,7 @@ class ClockTest extends TestCase
     /**
      * uuid 9b4e809c-612f-4b15-aae0-1df0acb801b9
      */
-    #[TestDox('subtract more than an hour')]
+    #[TestDox('Subtract more than an hour')]
     public function testSubtractMoreThanAnHour(): void
     {
         $clock = new Clock(10, 3);
@@ -340,7 +340,7 @@ class ClockTest extends TestCase
     /**
      * uuid 8b04bb6a-3d33-4e6c-8de9-f5de6d2c70d6
      */
-    #[TestDox('subtract across midnight')]
+    #[TestDox('Subtract across midnight')]
     public function testSubtractAcrossMidnight(): void
     {
         $clock = new Clock(0, 3);
@@ -351,7 +351,7 @@ class ClockTest extends TestCase
     /**
      * uuid 07c3bbf7-ce4d-4658-86e8-4a77b7a5ccd9
      */
-    #[TestDox('subtract more than two hours')]
+    #[TestDox('Subtract more than two hours')]
     public function testSubtractMoreThanTwoHours(): void
     {
         $clock = new Clock(0, 0);
@@ -362,7 +362,7 @@ class ClockTest extends TestCase
     /**
      * uuid 90ac8a1b-761c-4342-9c9c-cdc3ed5db097
      */
-    #[TestDox('subtract more than two hours with borrow')]
+    #[TestDox('Subtract more than two hours with borrow')]
     public function testSubtractMoreThanTwoHoursWithBorrow(): void
     {
         $clock = new Clock(6, 15);
@@ -373,7 +373,7 @@ class ClockTest extends TestCase
     /**
      * uuid 2149f985-7136-44ad-9b29-ec023a97a2b7
      */
-    #[TestDox('subtract more than one day (1500 min = 25 hrs)')]
+    #[TestDox('Subtract more than one day (1500 min = 25 hrs)')]
     public function testSubtractMoreThanOneDay(): void
     {
         $clock = new Clock(5, 32);
@@ -384,7 +384,7 @@ class ClockTest extends TestCase
     /**
      * uuid ba11dbf0-ac27-4acb-ada9-3b853ec08c97
      */
-    #[TestDox('subtract more than two days')]
+    #[TestDox('Subtract more than two days')]
     public function testSubtractMoreThanTwoDays(): void
     {
         $clock = new Clock(2, 20);
@@ -404,7 +404,7 @@ class ClockTest extends TestCase
     /**
      * uuid 5d409d4b-f862-4960-901e-ec430160b768
      */
-    #[TestDox('clocks a minute apart')]
+    #[TestDox('Clocks a minute apart')]
     public function testClocksAMinuteApart(): void
     {
         $this->assertNotEquals(new Clock(15, 36), new Clock(15, 37));
@@ -413,7 +413,7 @@ class ClockTest extends TestCase
     /**
      * uuid a6045fcf-2b52-4a47-8bb2-ef10a064cba5
      */
-    #[TestDox('clocks an hour apart')]
+    #[TestDox('Clocks an hour apart')]
     public function testClocksAnHourApart(): void
     {
         $this->assertNotEquals(new Clock(14, 37), new Clock(15, 37));
@@ -422,7 +422,7 @@ class ClockTest extends TestCase
     /**
      * uuid 66b12758-0be5-448b-a13c-6a44bce83527
      */
-    #[TestDox('clocks with hour overflow')]
+    #[TestDox('Clocks with hour overflow')]
     public function testClocksWithHourOverflow(): void
     {
         $this->assertEquals(new Clock(10, 37), new Clock(34, 37));
@@ -431,7 +431,7 @@ class ClockTest extends TestCase
     /**
      * uuid 2b19960c-212e-4a71-9aac-c581592f8111
      */
-    #[TestDox('clocks with hour overflow by several days')]
+    #[TestDox('Clocks with hour overflow by several days')]
     public function testClocksWithHourOverflowBySeveralDays(): void
     {
         $this->assertEquals(new Clock(3, 11), new Clock(99, 11));
@@ -440,7 +440,7 @@ class ClockTest extends TestCase
     /**
      * uuid 6f8c6541-afac-4a92-b0c2-b10d4e50269f
      */
-    #[TestDox('clocks with negative hour')]
+    #[TestDox('Clocks with negative hour')]
     public function testClocksWithNegativeHour(): void
     {
         $this->assertEquals(new Clock(22, 40), new Clock(-2, 40));
@@ -449,7 +449,7 @@ class ClockTest extends TestCase
     /**
      * uuid bb9d5a68-e324-4bf5-a75e-0e9b1f97a90d
      */
-    #[TestDox('clocks with negative hour that wraps')]
+    #[TestDox('Clocks with negative hour that wraps')]
     public function testClocksWithNegativeHourThatWraps(): void
     {
         $this->assertEquals(new Clock(17, 3), new Clock(-31, 3));
@@ -458,7 +458,7 @@ class ClockTest extends TestCase
     /**
      * uuid 56c0326d-565b-4d19-a26f-63b3205778b7
      */
-    #[TestDox('clocks with negative hour that wraps multiple times')]
+    #[TestDox('Clocks with negative hour that wraps multiple times')]
     public function testClocksWithNegativeHourThatWrapsMultipleTimes(): void
     {
         $this->assertEquals(new Clock(13, 49), new Clock(-83, 49));
@@ -467,7 +467,7 @@ class ClockTest extends TestCase
     /**
      * uuid c90b9de8-ddff-4ffe-9858-da44a40fdbc2
      */
-    #[TestDox('clocks with minute overflow')]
+    #[TestDox('Clocks with minute overflow')]
     public function testClocksWithMinuteOverflow(): void
     {
         $this->assertEquals(new Clock(0, 1), new Clock(0, 1441));
@@ -476,7 +476,7 @@ class ClockTest extends TestCase
     /**
      * uuid 533a3dc5-59a7-491b-b728-a7a34fe325de
      */
-    #[TestDox('clocks with minute overflow by several days')]
+    #[TestDox('Clocks with minute overflow by several days')]
     public function testClocksWithMinuteOverflowBySeveralDays(): void
     {
         $this->assertEquals(new Clock(2, 2), new Clock(2, 4322));
@@ -485,7 +485,7 @@ class ClockTest extends TestCase
     /**
      * uuid fff49e15-f7b7-4692-a204-0f6052d62636
      */
-    #[TestDox('clocks with negative minute')]
+    #[TestDox('Clocks with negative minute')]
     public function testClocksWithNegativeMinute(): void
     {
         $this->assertEquals(new Clock(2, 40), new Clock(3, -20));
@@ -494,7 +494,7 @@ class ClockTest extends TestCase
     /**
      * uuid 605c65bb-21bd-43eb-8f04-878edf508366
      */
-    #[TestDox('clocks with negative minute that wraps')]
+    #[TestDox('Clocks with negative minute that wraps')]
     public function testClocksWithNegativeMinuteThatWraps(): void
     {
         $this->assertEquals(new Clock(4, 10), new Clock(5, -1490));
@@ -503,7 +503,7 @@ class ClockTest extends TestCase
     /**
      * uuid b87e64ed-212a-4335-91fd-56da8421d077
      */
-    #[TestDox('clocks with negative minute that wraps multiple times')]
+    #[TestDox('Clocks with negative minute that wraps multiple times')]
     public function testClocksWithNegativeMinuteThatWrapsMultipleTimes(): void
     {
         $this->assertEquals(new Clock(6, 15), new Clock(6, -4305));
@@ -512,7 +512,7 @@ class ClockTest extends TestCase
     /**
      * uuid 822fbf26-1f3b-4b13-b9bf-c914816b53dd
      */
-    #[TestDox('clocks with negative hours and minutes')]
+    #[TestDox('Clocks with negative hours and minutes')]
     public function testClocksWithNegativeHoursAndMinutes(): void
     {
         $this->assertEquals(new Clock(7, 32), new Clock(-12, -268));
@@ -521,7 +521,7 @@ class ClockTest extends TestCase
     /**
      * uuid e787bccd-cf58-4a1d-841c-ff80eaaccfaa
      */
-    #[TestDox('clocks with negative hours and minutes that wrap')]
+    #[TestDox('Clocks with negative hours and minutes that wrap')]
     public function testClocksWithNegativeHoursAndMinutesThatWrap(): void
     {
         $this->assertEquals(new Clock(18, 7), new Clock(-54, -11513));
@@ -530,7 +530,7 @@ class ClockTest extends TestCase
     /**
      * uuid 96969ca8-875a-48a1-86ae-257a528c44f5
      */
-    #[TestDox('full clock and zeroed clock')]
+    #[TestDox('Full clock and zeroed clock')]
     public function testFullClockAndZeroedClock(): void
     {
         $this->assertEquals(new Clock(24, 0), new Clock(0, 0));

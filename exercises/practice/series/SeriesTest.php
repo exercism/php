@@ -15,7 +15,7 @@ class SeriesTest extends TestCase
     /**
      * uuid 7ae7a46a-d992-4c2a-9c15-a112d125ebad
      */
-    #[TestDox('slices of one from one')]
+    #[TestDox('Slices of one from one')]
     public function testSlicesOfOneFromOne(): void
     {
         $this->assertEquals(
@@ -27,7 +27,7 @@ class SeriesTest extends TestCase
     /**
      * uuid 3143b71d-f6a5-4221-aeae-619f906244d2
      */
-    #[TestDox('slices of one from two')]
+    #[TestDox('Slices of one from two')]
     public function testSlicesOfOneFromTwo(): void
     {
         $this->assertEquals(
@@ -39,7 +39,7 @@ class SeriesTest extends TestCase
     /**
      * uuid dbb68ff5-76c5-4ccd-895a-93dbec6d5805
      */
-    #[TestDox('slices of two')]
+    #[TestDox('Slices of two')]
     public function testSlicesOfTwo(): void
     {
         $this->assertEquals(
@@ -51,7 +51,7 @@ class SeriesTest extends TestCase
     /**
      * uuid 19bbea47-c987-4e11-a7d1-e103442adf86
      */
-    #[TestDox('slices of two overlap')]
+    #[TestDox('Slices of two overlap')]
     public function testSlicesOfTwoOverlap(): void
     {
         $this->assertEquals(
@@ -63,7 +63,7 @@ class SeriesTest extends TestCase
     /**
      * uuid 8e17148d-ba0a-4007-a07f-d7f87015d84c
      */
-    #[TestDox('slices can include duplicates')]
+    #[TestDox('Slices can include duplicates')]
     public function testSlicesCanIncludeDuplicates(): void
     {
         $this->assertEquals(
@@ -75,7 +75,7 @@ class SeriesTest extends TestCase
     /**
      * uuid bd5b085e-f612-4f81-97a8-6314258278b0
      */
-    #[TestDox('slices of a long series')]
+    #[TestDox('Slices of a long series')]
     public function testSlicesOfALongSeries(): void
     {
         $this->assertEquals(
@@ -96,7 +96,7 @@ class SeriesTest extends TestCase
     /**
      * uuid 6d235d85-46cf-4fae-9955-14b6efef27cd
      */
-    #[TestDox('slice length is too large')]
+    #[TestDox('Slice length is too large')]
     public function testSliceLengthIsTooLarge(): void
     {
         $this->expectException(Exception::class);
@@ -106,7 +106,7 @@ class SeriesTest extends TestCase
     /**
      * uuid d7957455-346d-4e47-8e4b-87ed1564c6d7
      */
-    #[TestDox('slice length is way too large')]
+    #[TestDox('Slice length is way too large')]
     public function testSliceLengthIsWayTooLarge(): void
     {
         $this->expectException(Exception::class);
@@ -116,7 +116,7 @@ class SeriesTest extends TestCase
     /**
      * uuid d34004ad-8765-4c09-8ba1-ada8ce776806
      */
-    #[TestDox('slice length cannot be zero')]
+    #[TestDox('Slice length cannot be zero')]
     public function testSliceLengthCannotBeZero(): void
     {
         $this->expectException(Exception::class);
@@ -126,7 +126,7 @@ class SeriesTest extends TestCase
     /**
      * uuid 10ab822d-8410-470a-a85d-23fbeb549e54
      */
-    #[TestDox('slice length cannot be negative')]
+    #[TestDox('Slice length cannot be negative')]
     public function testSliceLengthCannotBeNegative(): void
     {
         $this->expectException(Exception::class);
@@ -136,7 +136,7 @@ class SeriesTest extends TestCase
     /**
      * uuid c7ed0812-0e4b-4bf3-99c4-28cbbfc246a2
      */
-    #[TestDox('empty series is invalid')]
+    #[TestDox('Empty series is invalid')]
     public function testEmptySeriesIsInvalid(): void
     {
         $this->expectException(Exception::class);

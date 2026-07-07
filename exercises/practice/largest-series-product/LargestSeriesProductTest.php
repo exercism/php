@@ -19,7 +19,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 7c82f8b7-e347-48ee-8a22-f672323324d4
      */
-    #[TestDox('finds the largest product if span equals length')]
+    #[TestDox('Finds the largest product if span equals length')]
     public function testFindsTheLargestProductIfSpanEqualsLength(): void
     {
         $series = new Series("29");
@@ -29,7 +29,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 88523f65-21ba-4458-a76a-b4aaf6e4cb5e
      */
-    #[TestDox('can find the largest product of 2 with numbers in order')]
+    #[TestDox('Can find the largest product of 2 with numbers in order')]
     public function testCanFindTheLargestProductOf2WithNumbersInOrder(): void
     {
         // The number starts with a 0, qualifying it to be an octal
@@ -41,7 +41,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: f1376b48-1157-419d-92c2-1d7e36a70b8a
      */
-    #[TestDox('can find the largest product of 2')]
+    #[TestDox('Can find the largest product of 2')]
     public function testCanFindTheLargestProductOf2(): void
     {
         $series = new Series("576802143");
@@ -51,7 +51,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 46356a67-7e02-489e-8fea-321c2fa7b4a4
      */
-    #[TestDox('can find the largest product of 3 with numbers in order')]
+    #[TestDox('Can find the largest product of 3 with numbers in order')]
     public function testCanFindTheLargestProductOf3WithNumbersInOrder(): void
     {
         $series = new Series("0123456789");
@@ -61,7 +61,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: a2dcb54b-2b8f-4993-92dd-5ce56dece64a
      */
-    #[TestDox('can find the largest product of 3')]
+    #[TestDox('Can find the largest product of 3')]
     public function testCanFindTheLargestProductOf3(): void
     {
         $series = new Series("1027839564");
@@ -71,7 +71,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 673210a3-33cd-4708-940b-c482d7a88f9d
      */
-    #[TestDox('can find the largest product of 5 with numbers in order')]
+    #[TestDox('Can find the largest product of 5 with numbers in order')]
     public function testCanFindTheLargestProductOf5WithNumbersInOrder(): void
     {
         $series = new Series("0123456789");
@@ -81,7 +81,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 02acd5a6-3bbf-46df-8282-8b313a80a7c9
      */
-    #[TestDox('can get the largest product of a big number')]
+    #[TestDox('Can get the largest product of a big number')]
     public function testCanGetTheLargestProductOfABigNumber(): void
     {
         $series = new Series("73167176531330624919225119674426574742355349194934");
@@ -91,7 +91,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 76dcc407-21e9-424c-a98e-609f269622b5
      */
-    #[TestDox('reports zero if the only digits are zero')]
+    #[TestDox('Reports zero if the only digits are zero')]
     public function testReportsZeroIfTheOnlyDigitsAreZero(): void
     {
         $series = new Series("0000");
@@ -101,7 +101,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 6ef0df9f-52d4-4a5d-b210-f6fae5f20e19
      */
-    #[TestDox('reports zero if all spans include zero')]
+    #[TestDox('Reports zero if all spans include zero')]
     public function testReportsZeroIfAllSpansIncludeZero(): void
     {
         $series = new Series("99099");
@@ -111,7 +111,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 0ae1ce53-d9ba-41bb-827f-2fceb64f058b
      */
-    #[TestDox('rejects span longer than string length')]
+    #[TestDox('Rejects span longer than string length')]
     public function testRejectsSpanLongerThanStringLength(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -123,7 +123,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 06bc8b90-0c51-4c54-ac22-3ec3893a079e
      */
-    #[TestDox('reports 1 for empty string and empty product (0 span)')]
+    #[TestDox('Reports 1 for empty string and empty product (0 span)')]
     public function testReportsOneForEmptyStringAndEmptyProductSpanZero(): void
     {
         $series = new Series("");
@@ -133,7 +133,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 3ec0d92e-f2e2-4090-a380-70afee02f4c0
      */
-    #[TestDox('reports 1 for nonempty string and empty product (0 span)')]
+    #[TestDox('Reports 1 for nonempty string and empty product (0 span)')]
     public function testReportsOneForNonemptyStringAndEmptyProductSpanZero(): void
     {
         $series = new Series("123");
@@ -143,7 +143,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 6cf66098-a6af-4223-aab1-26aeeefc7402
      */
-    #[TestDox('rejects empty string and nonzero span')]
+    #[TestDox('Rejects empty string and nonzero span')]
     public function testRejectsEmptyStringAndNonzeroSpan(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -155,7 +155,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: 7a38f2d6-3c35-45f6-8d6f-12e6e32d4d74
      */
-    #[TestDox('rejects invalid character in digits')]
+    #[TestDox('Rejects invalid character in digits')]
     public function testRejectsInvalidCharacterInDigits(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -167,7 +167,7 @@ class LargestSeriesProductTest extends TestCase
     /**
      * uuid: c859f34a-9bfe-4897-9c2f-6d7f8598e7f0
      */
-    #[TestDox('rejects negative span')]
+    #[TestDox('Rejects negative span')]
     public function testRejectsNegativeSpan(): void
     {
         $this->expectException(InvalidArgumentException::class);

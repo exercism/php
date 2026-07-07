@@ -13,7 +13,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('calling language_list without arguments, returns empty array')]
+    #[TestDox('Calling language_list without arguments, returns empty array')]
     public function testEmpty()
     {
         $language_list = language_list();
@@ -23,7 +23,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 2
      */
-    #[TestDox('variadic call to language_list with 1 arg returns args')]
+    #[TestDox('Variadic call to language_list with 1 arg returns args')]
     public function testVariadicCallWithOne()
     {
         $language_list = language_list('c');
@@ -33,7 +33,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 2
      */
-    #[TestDox('variadic call to language_list with 2 arg returns args')]
+    #[TestDox('Variadic call to language_list with 2 arg returns args')]
     public function testVariadicCallWithTwo()
     {
         $language_list = language_list('c', 'cpp');
@@ -43,7 +43,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 2
      */
-    #[TestDox('variadic call to language_list with 2 arg returns args')]
+    #[TestDox('Variadic call to language_list with 2 arg returns args')]
     public function testVariadicCallWithThree()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -53,7 +53,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 3
      */
-    #[TestDox('push new languages to the back of the list')]
+    #[TestDox('Push new languages to the back of the list')]
     public function testAddingToLanguageList()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -64,7 +64,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 3
      */
-    #[TestDox('when pushing, original is unchanged')]
+    #[TestDox('When pushing, original is unchanged')]
     public function testAddingDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -75,7 +75,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 4
      */
-    #[TestDox('remove completed language from the front of the list')]
+    #[TestDox('Remove completed language from the front of the list')]
     public function testCompleteLanguageList()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -86,7 +86,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 4
      */
-    #[TestDox('when pruning, original is unchanged')]
+    #[TestDox('When pruning, original is unchanged')]
     public function testPruningDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -97,7 +97,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 5
      */
-    #[TestDox('index and return the first language')]
+    #[TestDox('Index and return the first language')]
     public function testCurrentReturnsTheFirstLanguage()
     {
         $language_list = language_list('php');
@@ -108,7 +108,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 5
      */
-    #[TestDox('when getting the first language, original is unchanged')]
+    #[TestDox('When getting the first language, original is unchanged')]
     public function testGettingFirstDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -119,7 +119,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 6
      */
-    #[TestDox('the count of the languages in the language list')]
+    #[TestDox('The count of the languages in the language list')]
     public function testLanguageListCount()
     {
         $language_list = language_list('c', 'cpp', 'php');
@@ -130,7 +130,7 @@ class LanguageListTest extends TestCase
     /**
      * @task_id 6
      */
-    #[TestDox('when getting the language count, original is unchanged')]
+    #[TestDox('When getting the language count, original is unchanged')]
     public function testLanguageListCountDoesNotMutate()
     {
         $language_list = language_list('c', 'cpp', 'php');

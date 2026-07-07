@@ -18,7 +18,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid 2f47ebe1-eab9-4d6b-b3c6-627562a31c77
      */
-    #[TestDox('encode yes')]
+    #[TestDox('Encode yes')]
     public function testEncodeYes(): void
     {
         $this->assertEquals('bvh', encode('yes'));
@@ -27,7 +27,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid b4ffe781-ea81-4b74-b268-cc58ba21c739
      */
-    #[TestDox('encode no')]
+    #[TestDox('Encode no')]
     public function testEncodeNo(): void
     {
         $this->assertEquals('ml', encode('no'));
@@ -36,7 +36,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid 10e48927-24ab-4c4d-9d3f-3067724ace00
      */
-    #[TestDox('encode OMG')]
+    #[TestDox('Encode OMG')]
     public function testEncodeOmg(): void
     {
         $this->assertEquals('lnt', encode('OMG'));
@@ -45,7 +45,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid d59b8bc3-509a-4a9a-834c-6f501b98750b
      */
-    #[TestDox('encode spaces')]
+    #[TestDox('Encode spaces')]
     public function testEncodeOmgWithSpaces(): void
     {
         $this->assertEquals('lnt', encode('O M G'));
@@ -54,7 +54,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid 31d44b11-81b7-4a94-8b43-4af6a2449429
      */
-    #[TestDox('encode mindblowingly')]
+    #[TestDox('Encode mindblowingly')]
     public function testEncodeLongWord(): void
     {
         $this->assertEquals('nrmwy oldrm tob', encode('mindblowingly'));
@@ -63,7 +63,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid d503361a-1433-48c0-aae0-d41b5baa33ff
      */
-    #[TestDox('encode numbers')]
+    #[TestDox('Encode numbers')]
     public function testEncodeNumbers(): void
     {
         $this->assertEquals('gvhgr mt123 gvhgr mt', encode('Testing, 1 2 3, testing.'));
@@ -72,7 +72,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid 79c8a2d5-0772-42d4-b41b-531d0b5da926
      */
-    #[TestDox('encode deep thought')]
+    #[TestDox('Encode deep thought')]
     public function testEncodeSentence(): void
     {
         $this->assertEquals('gifgs rhurx grlm', encode('Truth is fiction.'));
@@ -81,7 +81,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid 9ca13d23-d32a-4967-a1fd-6100b8742bab
      */
-    #[TestDox('encode all the letters')]
+    #[TestDox('Encode all the letters')]
     public function testEncodeAllTheThings(): void
     {
         $plaintext = 'The quick brown fox jumps over the lazy dog.';
@@ -95,7 +95,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid bb50e087-7fdf-48e7-9223-284fe7e69851
      */
-    #[TestDox('decode exercism')]
+    #[TestDox('Decode exercism')]
     public function testDecodeExercism(): void
     {
         $this->assertEquals('exercism', decode('vcvix rhn'));
@@ -104,7 +104,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid ac021097-cd5d-4717-8907-b0814b9e292c
      */
-    #[TestDox('decode a sentence')]
+    #[TestDox('Decode a sentence')]
     public function testDecodeASentence(): void
     {
         $this->assertEquals(
@@ -116,7 +116,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid 18729de3-de74-49b8-b68c-025eaf77f851
      */
-    #[TestDox('decode numbers')]
+    #[TestDox('Decode numbers')]
     public function testDecodeNumbers(): void
     {
         $this->assertEquals(
@@ -128,7 +128,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid 0f30325f-f53b-415d-ad3e-a7a4f63de034
      */
-    #[TestDox('decode all the letters')]
+    #[TestDox('Decode all the letters')]
     public function testDecodeAllTheLetters(): void
     {
         $this->assertEquals(
@@ -140,7 +140,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid 39640287-30c6-4c8c-9bac-9d613d1a5674
      */
-    #[TestDox('decode with too many spaces')]
+    #[TestDox('Decode with too many spaces')]
     public function testDecodeWithTooManySpaces(): void
     {
         $this->assertEquals(
@@ -152,7 +152,7 @@ class AtbashCipherTest extends TestCase
     /**
      * uuid b34edf13-34c0-49b5-aa21-0768928000d5
      */
-    #[TestDox('decode with no spaces')]
+    #[TestDox('Decode with no spaces')]
     public function testDecodeWithNoSpacesInInput(): void
     {
         $this->assertEquals(

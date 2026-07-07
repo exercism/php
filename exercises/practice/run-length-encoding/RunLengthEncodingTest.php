@@ -154,7 +154,7 @@ class RunLengthEncodingTest extends TestCase
     /**
      * uuid: 2a762efd-8695-4e04-b0d6-9736899fbc16
      */
-    #[TestDox('encode followed by decode gives original string')]
+    #[TestDox('Encode followed by decode gives original string')]
     public function testEncodeFollowedByDecodeGivesOriginalString(): void
     {
         $this->assertEquals(

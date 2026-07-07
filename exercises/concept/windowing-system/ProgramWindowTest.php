@@ -15,7 +15,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('assert ProgramWindow has a $y property')]
+    #[TestDox('Assert ProgramWindow has a $y property')]
     public function testHasPropertyY()
     {
         $reflector = new ReflectionClass(ProgramWindow::class);
@@ -28,7 +28,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('assert ProgramWindow has a $x property')]
+    #[TestDox('Assert ProgramWindow has a $x property')]
     public function testHasPropertyX()
     {
         $reflector = new ReflectionClass(ProgramWindow::class);
@@ -41,7 +41,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('assert ProgramWindow has a $height property')]
+    #[TestDox('Assert ProgramWindow has a $height property')]
     public function testHasPropertyHeight()
     {
         $reflector = new ReflectionClass(ProgramWindow::class);
@@ -54,7 +54,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('assert ProgramWindow has a $width property')]
+    #[TestDox('Assert ProgramWindow has a $width property')]
     public function testHasPropertyWidth()
     {
         $reflector = new ReflectionClass(ProgramWindow::class);
@@ -67,7 +67,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 2
      */
-    #[TestDox('assert ProgramWindow has a constructor initial values')]
+    #[TestDox('Assert ProgramWindow has a constructor initial values')]
     public function testHasConstructorSettingInitialValues()
     {
         $window = new ProgramWindow();
@@ -80,7 +80,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 3
      */
-    #[TestDox('assert Size class exists, with constructor, properties')]
+    #[TestDox('Assert Size class exists, with constructor, properties')]
     public function testSizeHasConstructorSettingInitialValues()
     {
         $size = new Size(300, 700);
@@ -91,7 +91,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 3
      */
-    #[TestDox('assert ProgramWindow::resize function exists')]
+    #[TestDox('Assert ProgramWindow::resize function exists')]
     public function testProgramWindowResize()
     {
         $window = new ProgramWindow();
@@ -104,7 +104,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 4
      */
-    #[TestDox('assert Position class exists, with constructor, properties')]
+    #[TestDox('Assert Position class exists, with constructor, properties')]
     public function testPositionHasConstructorSettingInitialValues()
     {
         $position = new Position(30, 70);
@@ -115,7 +115,7 @@ class ProgramWindowTest extends TestCase
     /**
      * @task_id 4
      */
-    #[TestDox('assert ProgramWindow::move function exists')]
+    #[TestDox('Assert ProgramWindow::move function exists')]
     public function testProgramWindowMove()
     {
         $window = new ProgramWindow();

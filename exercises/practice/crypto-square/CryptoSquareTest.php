@@ -15,7 +15,7 @@ class CryptoSquareTest extends TestCase
     /**
      * uuid 407c3837-9aa7-4111-ab63-ec54b58e8e9f
      */
-    #[TestDox('empty plaintext results in an empty ciphertext')]
+    #[TestDox('Empty plaintext results in an empty ciphertext')]
     public function testEmptyPlaintextResultsInAnEmptyCiphertext(): void
     {
         $this->assertEquals("", crypto_square(""));
@@ -24,7 +24,7 @@ class CryptoSquareTest extends TestCase
     /**
      * uuid aad04a25-b8bb-4304-888b-581bea8e0040
      */
-    #[TestDox('normalization results in empty plaintext')]
+    #[TestDox('Normalization results in empty plaintext')]
     public function testNormalizationResultsInEmptyPlaintext(): void
     {
         $this->assertEquals("", crypto_square("... --- ..."));

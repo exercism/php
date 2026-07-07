@@ -40,7 +40,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: 0e20e466-3519-4134-8082-5639d85fef71
      */
-    #[TestDox('close your eyes for 100')]
+    #[TestDox('Close your eyes for 100')]
     public function testCloseYourEyesForHundred(): void
     {
         $this->assertEquals(['close your eyes'], $this->secretHandshake->commands(0b100));
@@ -49,7 +49,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: b339ddbb-88b7-4b7d-9b19-4134030d9ac0
      */
-    #[TestDox('jump for 1000')]
+    #[TestDox('Jump for 1000')]
     public function testJumpForThousand(): void
     {
         $this->assertEquals(['jump'], $this->secretHandshake->commands(8));
@@ -58,7 +58,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: 40499fb4-e60c-43d7-8b98-0de3ca44e0eb
      */
-    #[TestDox('combine two actions')]
+    #[TestDox('Combine two actions')]
     public function testCombineTwoActions(): void
     {
         $this->assertEquals(['wink', 'double blink'], $this->secretHandshake->commands(3));
@@ -67,7 +67,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: 9730cdd5-ef27-494b-afd3-5c91ad6c3d9d
      */
-    #[TestDox('reverse two actions')]
+    #[TestDox('Reverse two actions')]
     public function testReverseTwoActions(): void
     {
         $this->assertEquals(['double blink', 'wink'], $this->secretHandshake->commands(0b10011));
@@ -76,7 +76,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: 0b828205-51ca-45cd-90d5-f2506013f25f
      */
-    #[TestDox('reversing one action gives the same action')]
+    #[TestDox('Reversing one action gives the same action')]
     public function testReversingOneActionGivesTheSameAction(): void
     {
         $this->assertEquals(['jump'], $this->secretHandshake->commands(24));
@@ -85,7 +85,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: 9949e2ac-6c9c-4330-b685-2089ab28b05f
      */
-    #[TestDox('reversing no actions still gives no actions')]
+    #[TestDox('Reversing no actions still gives no actions')]
     public function testReversingNoActionsStillGivesNoActions(): void
     {
         $this->assertEquals([], $this->secretHandshake->commands(16));
@@ -94,7 +94,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: 23fdca98-676b-4848-970d-cfed7be39f81
      */
-    #[TestDox('all possible actions')]
+    #[TestDox('All possible actions')]
     public function testAllPossibleActions(): void
     {
         $this->assertEquals(
@@ -106,7 +106,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: ae8fe006-d910-4d6f-be00-54b7c3799e79
      */
-    #[TestDox('reverse all possible actions')]
+    #[TestDox('Reverse all possible actions')]
     public function testReverseAllPossibleActions(): void
     {
         $this->assertEquals(
@@ -118,7 +118,7 @@ class SecretHandshakeTest extends TestCase
     /**
      * uuid: 3d36da37-b31f-4cdb-a396-d93a2ee1c4a5
      */
-    #[TestDox('do nothing for zero')]
+    #[TestDox('Do nothing for zero')]
     public function testDoNothingForZero(): void
     {
         $this->assertEquals([], $this->secretHandshake->commands(0b0));

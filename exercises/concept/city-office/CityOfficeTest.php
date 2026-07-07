@@ -14,7 +14,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('specify a string type for Address::$street')]
+    #[TestDox('Specify a string type for Address::$street')]
     public function testTypeOfAddressStreetProperty()
     {
         $this->assertProperty(
@@ -31,7 +31,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('specify a string type for Address::$postal_code')]
+    #[TestDox('Specify a string type for Address::$postal_code')]
     public function testTypeOfAddressPostalCodeProperty()
     {
         $this->assertProperty(
@@ -48,7 +48,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('specify a string type for Address::$city')]
+    #[TestDox('Specify a string type for Address::$city')]
     public function testTypeOfAddressCityProperty()
     {
         $this->assertProperty(
@@ -65,7 +65,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 2
      */
-    #[TestDox('specify an int type for Form::blanks length parameter')]
+    #[TestDox('Specify an int type for Form::blanks length parameter')]
     public function testParameterTypeOfFormBlanksLengthParameter()
     {
         $this->assertMethodParameter(
@@ -85,7 +85,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 2
      */
-    #[TestDox('specify an int type for Form::blanks return type')]
+    #[TestDox('Specify an int type for Form::blanks return type')]
     public function testParameterTypeOfFormBlanksReturnType()
     {
         $this->assertMethodReturnType(
@@ -102,7 +102,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 3
      */
-    #[TestDox('specify an int type for Form::letters word parameter')]
+    #[TestDox('Specify an int type for Form::letters word parameter')]
     public function testParameterTypeOfFormLettersWordParameter()
     {
         $this->assertMethodParameter(
@@ -122,7 +122,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 3
      */
-    #[TestDox('specify an int type for Form::letters return type')]
+    #[TestDox('Specify an int type for Form::letters return type')]
     public function testParameterTypeOfFormLettersReturnType()
     {
         $this->assertMethodReturnType(
@@ -139,7 +139,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 4
      */
-    #[TestDox('specify an int type for Form::checkLength word parameter')]
+    #[TestDox('Specify an int type for Form::checkLength word parameter')]
     public function testParameterTypeOfFormCheckLengthWordParameter()
     {
         $this->assertMethodParameter(
@@ -159,7 +159,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 4
      */
-    #[TestDox('specify an int type for Form::checkLength max_length parameter')]
+    #[TestDox('Specify an int type for Form::checkLength max_length parameter')]
     public function testParameterTypeOfFormCheckLengthMaxLengthParameter()
     {
         $this->assertMethodParameter(
@@ -179,7 +179,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 4
      */
-    #[TestDox('specify an int type for Form::checkLength return type')]
+    #[TestDox('Specify an int type for Form::checkLength return type')]
     public function testParameterTypeOfFormCheckLengthReturnType()
     {
         $this->assertMethodReturnType(
@@ -196,7 +196,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 5
      */
-    #[TestDox('specify an Address type for Form::formatAddress address parameter')]
+    #[TestDox('Specify an Address type for Form::formatAddress address parameter')]
     public function testParameterTypeOfFormFormatAddressParameter()
     {
         $this->assertMethodParameter(
@@ -216,7 +216,7 @@ class CityOfficeTest extends TestCase
     /**
      * @task_id 5
      */
-    #[TestDox('specify an int type for Form::checkLength return type')]
+    #[TestDox('Specify an int type for Form::checkLength return type')]
     public function testParameterTypeOfFormFormatAddressReturnType()
     {
         $this->assertMethodReturnType(

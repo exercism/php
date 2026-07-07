@@ -15,7 +15,7 @@ class RailFenceCipherTest extends TestCase
     /**
      * uuid 46dc5c50-5538-401d-93a5-41102680d068
      */
-    #[TestDox('encode with two rails')]
+    #[TestDox('Encode with two rails')]
     public function testEncodeWithTwoRails(): void
     {
         $plainText = "XOXOXOXOXOXOXOXOXO";
@@ -27,7 +27,7 @@ class RailFenceCipherTest extends TestCase
     /**
      * uuid 25691697-fbd8-4278-8c38-b84068b7bc29
      */
-    #[TestDox('encode with three rails')]
+    #[TestDox('Encode with three rails')]
     public function testEncodeWithThreeRails(): void
     {
         $plainText = "WEAREDISCOVEREDFLEEATONCE";
@@ -39,7 +39,7 @@ class RailFenceCipherTest extends TestCase
     /**
      * uuid 384f0fea-1442-4f1a-a7c4-5cbc2044002c
      */
-    #[TestDox('encode with ending in the middle')]
+    #[TestDox('Encode with ending in the middle')]
     public function testEncodeWithEndingInTheMiddle(): void
     {
         $plainText = "EXERCISES";
@@ -51,7 +51,7 @@ class RailFenceCipherTest extends TestCase
     /**
      * uuid cd525b17-ec34-45ef-8f0e-4f27c24a7127
      */
-    #[TestDox('decode with three rails')]
+    #[TestDox('Decode with three rails')]
     public function testDecodeWithThreeRails(): void
     {
         $encryptedText = "TEITELHDVLSNHDTISEIIEA";
@@ -63,7 +63,7 @@ class RailFenceCipherTest extends TestCase
     /**
      * uuid dd7b4a98-1a52-4e5c-9499-cbb117833507
      */
-    #[TestDox('decode with five rails')]
+    #[TestDox('Decode with five rails')]
     public function testDecodeWithFiveRails(): void
     {
         $encryptedText = "EIEXMSMESAORIWSCE";
@@ -75,7 +75,7 @@ class RailFenceCipherTest extends TestCase
     /**
      * uuid 93e1ecf4-fac9-45d9-9cd2-591f47d3b8d3
      */
-    #[TestDox('decode with six rails')]
+    #[TestDox('Decode with six rails')]
     public function testDecodeWithSixRails(): void
     {
         $encryptedText = "133714114238148966225439541018335470986172518171757571896261";

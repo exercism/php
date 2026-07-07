@@ -15,14 +15,14 @@ class ReverseStringTest extends TestCase
     /**
      * uuid c3b7d806-dced-49ee-8543-933fd1719b1c
      */
-    #[TestDox('an empty string')]
+    #[TestDox('An empty string')]
     public function testEmptyString(): void
     {
         $this->assertEquals("", reverseString(""));
     }
 
     /** uuid 01ebf55b-bebb-414e-9dec-06f7bb0bee3c */
-    #[TestDox('a word')]
+    #[TestDox('A word')]
     public function testWord(): void
     {
         $this->assertEquals("tobor", reverseString("robot"));
@@ -31,7 +31,7 @@ class ReverseStringTest extends TestCase
     /**
      * uuid 0f7c07e4-efd1-4aaa-a07a-90b49ce0b746
      */
-    #[TestDox('a capitalized word')]
+    #[TestDox('A capitalized word')]
     public function testCapitalizedWord(): void
     {
         $this->assertEquals("nemaR", reverseString("Ramen"));
@@ -40,7 +40,7 @@ class ReverseStringTest extends TestCase
     /**
      * uuid 71854b9c-f200-4469-9f5c-1e8e5eff5614
      */
-    #[TestDox('a sentence with punctuation')]
+    #[TestDox('A sentence with punctuation')]
     public function testSentenceWithPunctuation(): void
     {
         $this->assertEquals("!yrgnuh m'I", reverseString("I'm hungry!"));
@@ -49,7 +49,7 @@ class ReverseStringTest extends TestCase
     /**
      * uuid 1f8ed2f3-56f3-459b-8f3e-6d8d654a1f6c
      */
-    #[TestDox('a palindrome')]
+    #[TestDox('A palindrome')]
     public function testPalindrome(): void
     {
         $this->assertEquals("racecar", reverseString("racecar"));
@@ -58,7 +58,7 @@ class ReverseStringTest extends TestCase
     /**
      * uuid b9e7dec1-c6df-40bd-9fa3-cd7ded010c4c
      */
-    #[TestDox('an even-sized word')]
+    #[TestDox('An even-sized word')]
     public function testEvenSizedWord(): void
     {
         $this->assertEquals("reward", reverseString("drawer"));

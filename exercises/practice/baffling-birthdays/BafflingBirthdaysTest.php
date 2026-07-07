@@ -15,7 +15,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: 716dcc2b-8fe4-4fc9-8c48-cbe70d8e6b67
      */
-    #[TestDox('shared birthday -> one birthdate')]
+    #[TestDox('Shared birthday -> One birthdate')]
     public function testSharedBirthdayOneBirthdate(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -25,7 +25,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: f7b3eb26-bcfc-4c1e-a2de-af07afc33f45
      */
-    #[TestDox('shared birthday -> two birthdates with same year, month, and day')]
+    #[TestDox('Shared birthday -> Two birthdates with same year, month, and day')]
     public function testSharedBirthdayTwoBirthdatesWithSameYearMonthAndDay(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -35,7 +35,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: 7193409a-6e16-4bcb-b4cc-9ffe55f79b25
      */
-    #[TestDox('shared birthday -> two birthdates with same year and month, but different day')]
+    #[TestDox('Shared birthday -> Two birthdates with same year and month, but different day')]
     public function testSharedBirthdayTwoBirthdatesWithSameYearAndMonthButDifferentDay(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -45,7 +45,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: d04db648-121b-4b72-93e8-d7d2dced4495
      */
-    #[TestDox('shared birthday -> two birthdates with same month and day, but different year')]
+    #[TestDox('Shared birthday -> Two birthdates with same month and day, but different year')]
     public function testSharedBirthdayTwoBirthdatesWithSameMonthAndDayButDifferentYear(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -55,7 +55,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: 3c8bd0f0-14c6-4d4c-975a-4c636bfdc233
      */
-    #[TestDox('shared birthday -> two birthdates with same year, but different month and day')]
+    #[TestDox('Shared birthday -> Two birthdates with same year, but different month and day')]
     public function testSharedBirthdayTwoBirthdatesWithSameYearButDifferentMonthAndDay(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -65,7 +65,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: df5daba6-0879-4480-883c-e855c99cdaa3
      */
-    #[TestDox('shared birthday -> two birthdates with different year, month, and day')]
+    #[TestDox('Shared birthday -> Two birthdates with different year, month, and day')]
     public function testSharedBirthdayTwoBirthdatesWithDifferentYearMonthAndDay(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -75,7 +75,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: 0c17b220-cbb9-4bd7-872f-373044c7b406
      */
-    #[TestDox('shared birthday -> multiple birthdates without shared birthday')]
+    #[TestDox('Shared birthday -> Multiple birthdates without shared birthday')]
     public function testSharedBirthdayMultipleBirthdatesWithoutSharedBirthday(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -92,7 +92,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: 966d6b0b-5c0a-4b8c-bc2d-64939ada49f8
      */
-    #[TestDox('shared birthday -> multiple birthdates with one shared birthday')]
+    #[TestDox('Shared birthday -> Multiple birthdates with one shared birthday')]
     public function testSharedBirthdayMultipleBirthdatesWithOneSharedBirthday(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -109,7 +109,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: b7937d28-403b-4500-acce-4d9fe3a9620d
      */
-    #[TestDox('shared birthday -> multiple birthdates with more than one shared birthday')]
+    #[TestDox('Shared birthday -> Multiple birthdates with more than one shared birthday')]
     public function testSharedBirthdayMultipleBirthdatesWithMoreThanOneSharedBirthday(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -127,7 +127,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: 70b38cea-d234-4697-b146-7d130cd4ee12
      */
-    #[TestDox('random birthdates -> generate requested number of birthdates')]
+    #[TestDox('Random birthdates -> Generate requested number of birthdates')]
     public function testRandomBirthdatesGenerateRequestedNumberOfBirthdates(): void
     {
         $generate  = rand(100, 1000);
@@ -139,7 +139,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: d9d5b7d3-5fea-4752-b9c1-3fcd176d1b03
      */
-    #[TestDox('random birthdates -> years are not leap years')]
+    #[TestDox('Random birthdates -> Years are not leap years')]
     public function testRandomBirthdatesYearsAreNotLeapYears(): void
     {
         $generate            = 1000;
@@ -155,7 +155,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: d1074327-f68c-4c8a-b0ff-e3730d0f0521
      */
-    #[TestDox('random birthdates -> months are random')]
+    #[TestDox('Random birthdates -> Months are random')]
     public function testRandomBirthdatesMonthsAreRandom(): void
     {
         $generate            = 1000;
@@ -173,7 +173,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: 7df706b3-c3f5-471d-9563-23a4d0577940
      */
-    #[TestDox('random birthdates -> days are random')]
+    #[TestDox('Random birthdates -> Days are random')]
     public function testRandomBirthdatesDaysAreRandom(): void
     {
         $generate            = 1000;
@@ -191,7 +191,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: 89a462a4-4265-4912-9506-fb027913f221
      */
-    #[TestDox('estimated probability of at least one shared birthday -> for one person')]
+    #[TestDox('Estimated probability of at least one shared birthday -> For one person')]
     public function testEstimatedProbabilityOfAtLeastOneSharedBirthdayForOnePerson(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -205,7 +205,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: ec31c787-0ebb-4548-970c-5dcb4eadfb5f
      */
-    #[TestDox('estimated probability of at least one shared birthday -> among ten people')]
+    #[TestDox('Estimated probability of at least one shared birthday -> Among ten people')]
     public function testEstimatedProbabilityOfAtLeastOneSharedBirthdayAmongTenPeople(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -219,7 +219,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: b548afac-a451-46a3-9bb0-cb1f60c48e2f
      */
-    #[TestDox('estimated probability of at least one shared birthday -> among twenty-three people')]
+    #[TestDox('Estimated probability of at least one shared birthday -> Among twenty-three people')]
     public function testEstimatedProbabilityOfAtLeastOneSharedBirthdayAmongTwentyThreePeople(): void
     {
         $birthdays = new BafflingBirthdays();
@@ -233,7 +233,7 @@ class BafflingBirthdaysTest extends TestCase
     /**
      * uuid: b548afac-a451-46a3-9bb0-cb1f60c48e2f
      */
-    #[TestDox('estimated probability of at least one shared birthday -> among seventy people')]
+    #[TestDox('Estimated probability of at least one shared birthday -> Among seventy people')]
     public function testEstimatedProbabilityOfAtLeastOneSharedBirthdayAmongSeventyPeople(): void
     {
         $birthdays = new BafflingBirthdays();

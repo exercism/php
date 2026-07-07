@@ -22,7 +22,7 @@ class SpiralMatrixTest extends TestCase
     /**
      * uuid: 8f584201-b446-4bc9-b132-811c8edd9040
      */
-    #[TestDox('empty spiral')]
+    #[TestDox('Empty spiral')]
     public function testEmptySpiral(): void
     {
         $expected = [];
@@ -33,7 +33,7 @@ class SpiralMatrixTest extends TestCase
     /**
      * uuid: e40ae5f3-e2c9-4639-8116-8a119d632ab2
      */
-    #[TestDox('trivial spiral')]
+    #[TestDox('Trivial spiral')]
     public function testTrivialSpiral(): void
     {
         $expected = [[1]];
@@ -44,7 +44,7 @@ class SpiralMatrixTest extends TestCase
     /**
      * uuid: cf05e42d-eb78-4098-a36e-cdaf0991bc48
      */
-    #[TestDox('spiral of size 2')]
+    #[TestDox('Spiral of size 2')]
     public function testSpiralOfSize2(): void
     {
         $expected = [
@@ -58,7 +58,7 @@ class SpiralMatrixTest extends TestCase
     /**
      * uuid: 1c475667-c896-4c23-82e2-e033929de939
      */
-    #[TestDox('spiral of size 3')]
+    #[TestDox('Spiral of size 3')]
     public function testSpiralOfSize3(): void
     {
         $expected = [
@@ -73,7 +73,7 @@ class SpiralMatrixTest extends TestCase
     /**
      * uuid: 05ccbc48-d891-44f5-9137-f4ce462a759d
      */
-    #[TestDox('spiral of size 4')]
+    #[TestDox('Spiral of size 4')]
     public function testSpiralOfSize4(): void
     {
         $expected = [
@@ -89,7 +89,7 @@ class SpiralMatrixTest extends TestCase
     /**
      * uuid: f4d2165b-1738-4e0c-bed0-c459045ae50d
      */
-    #[TestDox('spiral of size 5')]
+    #[TestDox('Spiral of size 5')]
     public function testSpiralOfSize5(): void
     {
         $expected = [

@@ -22,7 +22,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid c0b5a5e6-c89d-49b1-a6b2-9f523bff33f7
      */
-    #[TestDox('verse -> first day a partridge in a pear tree')]
+    #[TestDox('Verse -> First day a partridge in a pear tree')]
     public function testVerseFirstDayAPartridgeInAPearTree(): void
     {
         $expected = "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.";
@@ -32,7 +32,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 1c64508a-df3d-420a-b8e1-fe408847854a
      */
-    #[TestDox('verse -> second day two turtle doves')]
+    #[TestDox('Verse -> Second day two turtle doves')]
     public function testVerseSecondDayTwoTurtleDoves(): void
     {
         $expected =
@@ -44,7 +44,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid a919e09c-75b2-4e64-bb23-de4a692060a8
      */
-    #[TestDox('verse -> third day three french hens')]
+    #[TestDox('Verse -> Third day three french hens')]
     public function testVerseThirdDayThreeFrenchHens(): void
     {
         $expected =
@@ -56,7 +56,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 9bed8631-ec60-4894-a3bb-4f0ec9fbe68d
      */
-    #[TestDox('verse -> fourth day four calling birds')]
+    #[TestDox('Verse -> Fourth day four calling birds')]
     public function testVerseFourthDayFourCallingBirds(): void
     {
         $expected =
@@ -68,7 +68,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid cf1024f0-73b6-4545-be57-e9cea565289a
      */
-    #[TestDox('verse -> fifth day five gold rings')]
+    #[TestDox('Verse -> Fifth day five gold rings')]
     public function testVerseFifthDayFiveGoldRings(): void
     {
         $expected =
@@ -80,7 +80,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 50bd3393-868a-4f24-a618-68df3d02ff04
      */
-    #[TestDox('verse -> sixth day six geese-a-laying')]
+    #[TestDox('Verse -> Sixth day six geese-a-laying')]
     public function testVerseSixthDaySixGeeseALaying(): void
     {
         $expected =
@@ -92,7 +92,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 8f29638c-9bf1-4680-94be-e8b84e4ade83
      */
-    #[TestDox('verse -> seventh day seven swans-a-swimming')]
+    #[TestDox('Verse -> Seventh day seven swans-a-swimming')]
     public function testVerseSeventhDaySevenSwansASwimming(): void
     {
         $expected =
@@ -105,7 +105,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 7038d6e1-e377-47ad-8c37-10670a05bc05
      */
-    #[TestDox('verse -> eighth day eight maids-a-milking')]
+    #[TestDox('Verse -> Eighth day eight maids-a-milking')]
     public function testVerseEightDayEightMaidsAMilking(): void
     {
         $expected =
@@ -118,7 +118,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 37a800a6-7a56-4352-8d72-0f51eb37cfe8
      */
-    #[TestDox('verse -> ninth day nine ladies dancing')]
+    #[TestDox('Verse -> Ninth day nine ladies dancing')]
     public function testVerseNinthDayNineLadiesDancing(): void
     {
         $expected =
@@ -131,7 +131,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 10b158aa-49ff-4b2d-afc3-13af9133510d
      */
-    #[TestDox('verse -> tenth day ten lords-a-leaping')]
+    #[TestDox('Verse -> Tenth day ten lords-a-leaping')]
     public function testVerseTenthDayTenLordsALeaping(): void
     {
         $expected =
@@ -144,7 +144,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 08d7d453-f2ba-478d-8df0-d39ea6a4f457
      */
-    #[TestDox('verse -> eleventh day eleven pipers piping')]
+    #[TestDox('Verse -> Eleventh day eleven pipers piping')]
     public function testVerseEleventhDayElevenPipersPiping(): void
     {
         $expected =
@@ -158,7 +158,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 0620fea7-1704-4e48-b557-c05bf43967f0
      */
-    #[TestDox('verse -> twelfth day twelve drummers drumming')]
+    #[TestDox('Verse -> Twelfth day twelve drummers drumming')]
     public function testVerseTwelfthDayTwelveDrummersDrumming(): void
     {
         $expected =
@@ -172,7 +172,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid da8b9013-b1e8-49df-b6ef-ddec0219e398
      */
-    #[TestDox('lyrics -> recites first three verses of the song')]
+    #[TestDox('Lyrics -> Recites first three verses of the song')]
     public function testLyricsRecitesFirstThreeVersesOfSong(): void
     {
         $expected =
@@ -187,7 +187,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid c095af0d-3137-4653-ad32-bfb899eda24c
      */
-    #[TestDox('lyrics -> recites three verses from the middle of the song')]
+    #[TestDox('Lyrics -> Recites three verses from the middle of the song')]
     public function testLyricsRecitesThreeVersesFromMiddleOfSong(): void
     {
         $expected =
@@ -203,7 +203,7 @@ class TwelveDaysTest extends TestCase
     /**
      * uuid 20921bc9-cc52-4627-80b3-198cbbfcf9b7
      */
-    #[TestDox('lyrics -> recites the whole song')]
+    #[TestDox('Lyrics -> Recites the whole song')]
     public function testLyricsRecitesTheWholeSong(): void
     {
         $expected =
