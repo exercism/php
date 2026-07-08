@@ -24,8 +24,8 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
 class MarkdownTest extends TestCase
 {
