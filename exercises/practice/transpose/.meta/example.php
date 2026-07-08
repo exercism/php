@@ -12,25 +12,19 @@ declare(strict_types=1);
  */
 function transpose($text)
 {
-    $findMaxLength = function ($lines) {
-        return array_reduce($lines, function ($max, $line) {
-            return max($max, strlen($line));
-        }, 0);
-    };
+    $pad = function ($lines) {
+        for ($i = count($lines) - 2; $i >= 0; $i--) {
+            $lines[$i] = str_pad($lines[$i], strlen($lines[$i + 1]), ' ', STR_PAD_RIGHT);
+        }
 
-    $pad = function ($lines, $length) {
-        return array_map(function ($line) use ($length) {
-            return str_pad($line, $length, ' ', STR_PAD_RIGHT);
-        }, $lines);
+        return $lines;
     };
 
     if ($text === ['']) {
         return $text;
     }
 
-    $maxLength = $findMaxLength($text);
-
-    $lines = $pad($text, $maxLength);
+    $lines = $pad($text);
 
     $result = [];
 
