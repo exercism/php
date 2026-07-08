@@ -174,7 +174,7 @@ class BookStoreTest extends TestCase
      *
      * uuid c0a779d5-a40c-47ae-9828-a340e936b866
      */
-    #[TestDox('Two copies of each boo')]
+    #[TestDox('Two copies of each book')]
     public function testFivePairs(): void
     {
         $basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
