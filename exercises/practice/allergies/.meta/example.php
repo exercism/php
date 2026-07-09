@@ -13,8 +13,7 @@ class Allergies
 
     public function getList(): array
     {
-        $score = $this->score;
-        return array_filter(Allergen::allergenList(), function ($allergen) use ($score) {
+        return array_filter(Allergen::allergenList(), function ($allergen) {
             return $this->isAllergicTo($allergen);
         });
     }
