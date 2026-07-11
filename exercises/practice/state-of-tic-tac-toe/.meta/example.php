@@ -27,7 +27,11 @@ class StateOfTicTacToe
         $xWon = $this->hasWon($board, 'X');
         $oWon = $this->hasWon($board, 'O');
 
-        if ($xWon && $oWon) {
+        if (
+            ($xCount === $oCount && $xWon)
+            || ($xCount > $oCount && $oWon)
+            || ($xWon && $oWon)
+        ) {
             throw new \RuntimeException("Impossible board: game should have ended after the game was won");
         }
 
