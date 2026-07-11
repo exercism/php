@@ -490,22 +490,6 @@
         ]
       },
       {
-        "slug": "transpose",
-        "name": "Transpose",
-        "uuid": "cb413881-99b6-493f-bea2-89563dc173a6",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "arrays",
-          "lists",
-          "loops",
-          "matrices",
-          "strings",
-          "text_formatting"
-        ]
-      },
-      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "75763125-adb8-4ab3-9630-4e5a85c6ae35",
@@ -761,6 +745,22 @@
         "difficulty": 2,
         "topics": [
           "math"
+        ]
+      },
+      {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "cb413881-99b6-493f-bea2-89563dc173a6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "arrays",
+          "lists",
+          "loops",
+          "matrices",
+          "strings",
+          "text_formatting"
         ]
       },
       {
