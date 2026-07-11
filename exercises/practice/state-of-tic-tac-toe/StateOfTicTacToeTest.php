@@ -378,7 +378,7 @@ class StateOfTicTacToeTest extends TestCase
     /**
      * uuid: 47c048e8-b404-4bcf-9e51-8acbb3253f3b
      */
-    #[TestDox('nvalid boards -> Invalid board: O started')]
+    #[TestDox('Invalid boards -> Invalid board: O started')]
     public function testInvalidBoardsInvalidBoardOStarted(): void
     {
         $this->expectException(RuntimeException::class);
