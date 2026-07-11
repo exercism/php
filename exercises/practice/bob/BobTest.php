@@ -13,13 +13,13 @@ class BobTest extends TestCase
     }
 
     /**
-     * uuid: e162fead-606f-437a-a166-d051915cea8e
+     * uuid: 8a2e771d-d6f1-4e3f-b6c6-b41495556e37
      */
-    #[TestDox('Stating something')]
-    public function testStatingSomething(): void
+    #[TestDox('Asking a question')]
+    public function testAskingAQuestion(): void
     {
-        $input = "Tom-ay-to, tom-aaaah-to.";
-        $expected = "Whatever.";
+        $input = "Does this cryogenic chamber make me look fat?";
+        $expected = "Sure.";
         $subject = new Bob();
         $this->assertEquals($expected, $subject->respondTo($input));
     }
@@ -37,25 +37,37 @@ class BobTest extends TestCase
     }
 
     /**
-     * uuid: d6c98afd-df35-4806-b55e-2c457c3ab748
+     * uuid: a5193c61-4a92-4f68-93e2-f554eb385ec6
      */
-    #[TestDox('Shouting gibberish')]
-    public function testShoutingGibberish(): void
+    #[TestDox('Forceful question')]
+    public function testForcefulQuestion(): void
     {
-        $input = "FCECDFCAAB";
-        $expected = "Whoa, chill out!";
+        $input = "WHAT'S GOING ON?";
+        $expected = "Calm down, I know what I'm doing!";
         $subject = new Bob();
         $this->assertEquals($expected, $subject->respondTo($input));
     }
 
     /**
-     * uuid: 8a2e771d-d6f1-4e3f-b6c6-b41495556e37
+     * uuid: bc39f7c6-f543-41be-9a43-fd1c2f753fc0
      */
-    #[TestDox('Asking a question')]
-    public function testAskingAQuestion(): void
+    #[TestDox('Silence')]
+    public function testSilence(): void
     {
-        $input = "Does this cryogenic chamber make me look fat?";
-        $expected = "Sure.";
+        $input = "";
+        $expected = "Fine. Be that way!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: e162fead-606f-437a-a166-d051915cea8e
+     */
+    #[TestDox('Stating something')]
+    public function testStatingSomething(): void
+    {
+        $input = "Tom-ay-to, tom-aaaah-to.";
+        $expected = "Whatever.";
         $subject = new Bob();
         $this->assertEquals($expected, $subject->respondTo($input));
     }
@@ -85,66 +97,6 @@ class BobTest extends TestCase
     }
 
     /**
-     * uuid: c02f9179-ab16-4aa7-a8dc-940145c385f7
-     */
-    #[TestDox('Talking forcefully')]
-    public function testTalkingForcefully(): void
-    {
-        $input = "Hi there!";
-        $expected = "Whatever.";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: 153c0e25-9bb5-4ec5-966e-598463658bcd
-     */
-    #[TestDox('Using acronyms in regular speech')]
-    public function testUsingAcronymsInRegularSpeech(): void
-    {
-        $input = "It's OK if you don't want to go work for NASA.";
-        $expected = "Whatever.";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: a5193c61-4a92-4f68-93e2-f554eb385ec6
-     */
-    #[TestDox('Forceful question')]
-    public function testForcefulQuestion(): void
-    {
-        $input = "WHAT'S GOING ON?";
-        $expected = "Calm down, I know what I'm doing!";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: a20e0c54-2224-4dde-8b10-bd2cdd4f61bc
-     */
-    #[TestDox('Shouting numbers')]
-    public function testShoutingNumbers(): void
-    {
-        $input = "1, 2, 3 GO!";
-        $expected = "Whoa, chill out!";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: f7bc4b92-bdff-421e-a238-ae97f230ccac
-     */
-    #[TestDox('No letters')]
-    public function testOnlyNumbers(): void
-    {
-        $input = "1, 2, 3";
-        $expected = "Whatever.";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
      * uuid: bb0011c5-cd52-4a5b-8bfb-a87b6283b0e2
      */
     #[TestDox('Question with no letters')]
@@ -152,42 +104,6 @@ class BobTest extends TestCase
     {
         $input = "4?";
         $expected = "Sure.";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: 496143c8-1c31-4c01-8a08-88427af85c66
-     */
-    #[TestDox('Shouting with special characters')]
-    public function testShoutingWithSpecialCharacters(): void
-    {
-        $input = "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!";
-        $expected = "Whoa, chill out!";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: e6793c1c-43bd-4b8d-bc11-499aea73925f
-     */
-    #[TestDox('Shouting with no exclamation mark')]
-    public function testShoutingWithNoExclamationMark(): void
-    {
-        $input = "I HATE THE DENTIST";
-        $expected = "Whoa, chill out!";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: aa8097cc-c548-4951-8856-14a404dd236a
-     */
-    #[TestDox('Statement containing question mark')]
-    public function testStatementContainingQuestionMark(): void
-    {
-        $input = "Ending with ? means a question.";
-        $expected = "Whatever.";
         $subject = new Bob();
         $this->assertEquals($expected, $subject->respondTo($input));
     }
@@ -217,13 +133,85 @@ class BobTest extends TestCase
     }
 
     /**
-     * uuid: bc39f7c6-f543-41be-9a43-fd1c2f753fc0
+     * uuid: 05b304d6-f83b-46e7-81e0-4cd3ca647900
      */
-    #[TestDox('Silence')]
-    public function testSilence(): void
+    #[TestDox('Ending with whitespace')]
+    public function testEndingWithWhitespace(): void
     {
-        $input = "";
-        $expected = "Fine. Be that way!";
+        $input = "Okay if like my  spacebar  quite a bit?   ";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: 2c7278ac-f955-4eb4-bf8f-e33eb4116a15
+     */
+    #[TestDox('Multiple line question')]
+    public function testMultipleLineQuestion(): void
+    {
+        $input = "\nDoes this cryogenic chamber make\n me look fat?";
+        $expected = "Sure.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: d6c98afd-df35-4806-b55e-2c457c3ab748
+     */
+    #[TestDox('Shouting gibberish')]
+    public function testShoutingGibberish(): void
+    {
+        $input = "FCECDFCAAB";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: 3c954328-86fb-4c71-8961-e18d6a5e2517
+     */
+    #[TestDox('Shouting a statement containing a question mark')]
+    public function testShoutingAStatementContainingAQuestionMark(): void
+    {
+        $input = "DO LIONS EAT PEOPLE? AHHHHH.";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: a20e0c54-2224-4dde-8b10-bd2cdd4f61bc
+     */
+    #[TestDox('Shouting numbers')]
+    public function testShoutingNumbers(): void
+    {
+        $input = "1, 2, 3 GO!";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: 496143c8-1c31-4c01-8a08-88427af85c66
+     */
+    #[TestDox('Shouting with special characters')]
+    public function testShoutingWithSpecialCharacters(): void
+    {
+        $input = "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!";
+        $expected = "Whoa, chill out!";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: e6793c1c-43bd-4b8d-bc11-499aea73925f
+     */
+    #[TestDox('Shouting with no exclamation mark')]
+    public function testShoutingWithNoExclamationMark(): void
+    {
+        $input = "I HATE THE DENTIST";
+        $expected = "Whoa, chill out!";
         $subject = new Bob();
         $this->assertEquals($expected, $subject->respondTo($input));
     }
@@ -253,30 +241,6 @@ class BobTest extends TestCase
     }
 
     /**
-     * uuid: 5371ef75-d9ea-4103-bcfa-2da973ddec1b
-     */
-    #[TestDox('Starting with whitespace')]
-    public function testStartingWithWhitespace(): void
-    {
-        $input = "         hmmmmmmm...";
-        $expected = "Whatever.";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: 05b304d6-f83b-46e7-81e0-4cd3ca647900
-     */
-    #[TestDox('Ending with whitespace')]
-    public function testEndingWithWhitespace(): void
-    {
-        $input = "Okay if like my  spacebar  quite a bit?   ";
-        $expected = "Sure.";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
      * uuid: 72bd5ad3-9b2f-4931-a988-dce1f5771de2
      */
     #[TestDox('Other whitespace')]
@@ -289,6 +253,66 @@ class BobTest extends TestCase
     }
 
     /**
+     * uuid: c02f9179-ab16-4aa7-a8dc-940145c385f7
+     */
+    #[TestDox('Talking forcefully')]
+    public function testTalkingForcefully(): void
+    {
+        $input = "Hi there!";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: 153c0e25-9bb5-4ec5-966e-598463658bcd
+     */
+    #[TestDox('Using acronyms in regular speech')]
+    public function testUsingAcronymsInRegularSpeech(): void
+    {
+        $input = "It's OK if you don't want to go work for NASA.";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: f7bc4b92-bdff-421e-a238-ae97f230ccac
+     */
+    #[TestDox('No letters')]
+    public function testOnlyNumbers(): void
+    {
+        $input = "1, 2, 3";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: aa8097cc-c548-4951-8856-14a404dd236a
+     */
+    #[TestDox('Statement containing question mark')]
+    public function testStatementContainingQuestionMark(): void
+    {
+        $input = "Ending with ? means a question.";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
+     * uuid: 5371ef75-d9ea-4103-bcfa-2da973ddec1b
+     */
+    #[TestDox('Starting with whitespace')]
+    public function testStartingWithWhitespace(): void
+    {
+        $input = "         hmmmmmmm...";
+        $expected = "Whatever.";
+        $subject = new Bob();
+        $this->assertEquals($expected, $subject->respondTo($input));
+    }
+
+    /**
      * uuid: 12983553-8601-46a8-92fa-fcaa3bc4a2a0
      */
     #[TestDox('Non-question ending with whitespace')]
@@ -296,18 +320,6 @@ class BobTest extends TestCase
     {
         $input = "This is a statement ending with whitespace      ";
         $expected = "Whatever.";
-        $subject = new Bob();
-        $this->assertEquals($expected, $subject->respondTo($input));
-    }
-
-    /**
-     * uuid: 2c7278ac-f955-4eb4-bf8f-e33eb4116a15
-     */
-    #[TestDox('Multiple line question')]
-    public function testMultipleLineQuestion(): void
-    {
-        $input = "\nDoes this cryogenic chamber make\n me look fat?";
-        $expected = "Sure.";
         $subject = new Bob();
         $this->assertEquals($expected, $subject->respondTo($input));
     }
