@@ -50,4 +50,5 @@
     <exclude-pattern>src/*</exclude-pattern>
     <exclude-pattern>contribution/*.php</exclude-pattern>
   </rule>
+  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
 </ruleset>
