@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class KillerSudokuHelperTest extends TestCase
@@ -21,6 +22,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: 2aaa8f13-11b5-4054-b95c-a906e4d79fb6
      */
+    #[TestDox('Trivial 1-digit cages -> 1')]
     public function testTrivialOneDigitCages1(): void
     {
         $expected = [
@@ -32,6 +34,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: 4645da19-9fdd-4087-a910-a6ed66823563
      */
+    #[TestDox('Trivial 1-digit cages -> 2')]
     public function testTrivialOneDigitCages2(): void
     {
         $expected = [
@@ -43,6 +46,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: 07cfc704-f8aa-41b2-8f9a-cbefb674cb48
      */
+    #[TestDox('Trivial 1-digit cages -> 3')]
     public function testTrivialOneDigitCages3(): void
     {
         $expected = [
@@ -54,6 +58,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: 22b8b2ba-c4fd-40b3-b1bf-40aa5e7b5f24
      */
+    #[TestDox('Trivial 1-digit cages -> 4')]
     public function testTrivialOneDigitCages4(): void
     {
         $expected = [
@@ -65,6 +70,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: b75d16e2-ff9b-464d-8578-71f73094cea7
      */
+    #[TestDox('Trivial 1-digit cages -> 5')]
     public function testTrivialOneDigitCages5(): void
     {
         $expected = [
@@ -76,6 +82,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: bcbf5afc-4c89-4ff6-9357-07ab4d42788f
      */
+    #[TestDox('Trivial 1-digit cages -> 6')]
     public function testTrivialOneDigitCages6(): void
     {
         $expected = [
@@ -87,6 +94,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: 511b3bf8-186f-4e35-844f-c804d86f4a7a
      */
+    #[TestDox('Trivial 1-digit cages -> 7')]
     public function testTrivialOneDigitCages7(): void
     {
         $expected = [
@@ -98,6 +106,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: bd09a60d-3aca-43bd-b6aa-6ccad01bedda
      */
+    #[TestDox('Trivial 1-digit cages -> 8')]
     public function testTrivialOneDigitCages8(): void
     {
         $expected = [
@@ -109,6 +118,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: 9b539f27-44ea-4ff8-bd3d-c7e136bee677
      */
+    #[TestDox('Trivial 1-digit cages -> 9')]
     public function testTrivialOneDigitCages9(): void
     {
         $expected = [
@@ -120,6 +130,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: 0a8b2078-b3a4-4dbd-be0d-b180f503d5c3
      */
+    #[TestDox('Cage with sum 45 contains all digits 1:9')]
     public function testCageWithSum45ContainsAllDigits1To9(): void
     {
         $expected = [
@@ -131,6 +142,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: 2635d7c9-c716-4da1-84f1-c96e03900142
      */
+    #[TestDox('Cage with only 1 possible combination')]
     public function testCageWithOnlyOnePossibleCombination(): void
     {
         $expected = [
@@ -142,6 +154,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: a5bde743-e3a2-4a0c-8aac-e64fceea4228
      */
+    #[TestDox('Cage with several combinations')]
     public function testCageWithSeveralCombinations(): void
     {
         $expected = [
@@ -153,6 +166,7 @@ class KillerSudokuHelperTest extends TestCase
     /**
      * uuid: dfbf411c-737d-465a-a873-ca556360c274
      */
+    #[TestDox('Cage with several combinations that is restricted')]
     public function testCageWithSeveralCombinationsThatIsRestricted(): void
     {
         $expected = [
