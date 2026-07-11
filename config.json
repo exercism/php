@@ -970,18 +970,6 @@
         "difficulty": 3
       },
       {
-        "slug": "tournament",
-        "name": "Tournament",
-        "uuid": "e0572cf4-5481-4da4-bf9b-0e921cb81627",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "parsing",
-          "strings"
-        ]
-      },
-      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "ae91650f-fe06-466a-a40a-6a24f5926fbe",
@@ -1139,6 +1127,18 @@
         "difficulty": 4
       },
       {
+        "slug": "tournament",
+        "name": "Tournament",
+        "uuid": "e0572cf4-5481-4da4-bf9b-0e921cb81627",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "parsing",
+          "strings"
+        ]
+      },
+      {
         "slug": "alphametics",
         "name": "Alphametics",
         "uuid": "49d212c6-6fa3-4e7b-95d9-595613630566",
@@ -1215,19 +1215,6 @@
           "algorithms",
           "strings",
           "transforming"
-        ]
-      },
-      {
-        "slug": "poker",
-        "name": "Poker",
-        "uuid": "e8669c8e-bfdd-4207-baf6-23c2e4b12d13",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "games",
-          "parsing",
-          "sorting"
         ]
       },
       {
@@ -1353,6 +1340,19 @@
           "strings",
           "text_formatting",
           "transforming"
+        ]
+      },
+      {
+        "slug": "poker",
+        "name": "Poker",
+        "uuid": "e8669c8e-bfdd-4207-baf6-23c2e4b12d13",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7,
+        "topics": [
+          "games",
+          "parsing",
+          "sorting"
         ]
       },
       {

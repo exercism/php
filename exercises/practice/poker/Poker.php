@@ -26,6 +26,15 @@ declare(strict_types=1);
 
 class Poker
 {
+    /**
+     * In PHP 8.4 and newer, you can use to enhance data encapsulation:
+     * - Asymmetric Property Visibility
+     *   @see https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visibility-members-aviz
+     * Or:
+     * - Property hooks
+     *   @see https://www.php.net/manual/en/language.oop5.property-hooks.php
+     */
+
     public array $bestHands = [];
 
     public function __construct(array $hands)

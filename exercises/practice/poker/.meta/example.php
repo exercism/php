@@ -1,32 +1,12 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
 class Poker
 {
     public array $bestHands = [];
+    private int $tie;
+
     // The '..' prefix for card ranks allows for matching index -> value increasing readability.
     public const CARD_RANKS = '..23456789TJQKA';
     public const CARD_SUITS = 'HSDC';
@@ -36,8 +16,41 @@ class Poker
         $this->bestHands = $this->calculateBestHands($hands);
     }
 
+    private function sortRanks(string $hand): array
+    {
+        $cards = explode(",", $hand);
+
+        usort($cards, function ($a, $b) {
+            return $b[0] <=> $a[0];
+        });
+
+        return array_map(fn($card) => $card[0], $cards);
+    }
+
+    private function seekTies(array $hands): int
+    {
+        $prevRanks = null;
+
+        foreach ($hands as $hand) {
+            $ranks = $this->sortRanks($hand);
+
+            if ($prevRanks !== null) {
+                for ($i = 0; $i < count($ranks); $i++) {
+                    if ($ranks[$i] !== $prevRanks[$i]) {
+                        return $i;
+                    }
+                }
+            }
+
+            $prevRanks = $ranks;
+        }
+
+        return 0;
+    }
+
     private function calculateBestHands(array $hands): array
     {
+        $this->tie = $this->seekTies($hands);
         $bestHands   = [];
         $parsedHands = [];
 
@@ -134,6 +147,7 @@ class Poker
         //Normalize aces for low straights.
         if ($this->isEqualHandRanks([14, 2, 3, 4, 5], $ranks)) {
             $ranks = [5, 4, 3, 2, 1];
+            $cardsByRank = $ranks;
         }
 
         $isFlush    = count(array_unique($suits)) === 1;
@@ -152,7 +166,7 @@ class Poker
         }
 
         if ($isFlush) {
-            return new Score(500 + current($cardsByRank), 0);
+            return new Score(500 + current($cardsByRank), $cardsByRank[$this->tie]);
         }
 
         if ($isStraight) {
@@ -168,10 +182,10 @@ class Poker
         }
 
         if ($this->isEqualHandRanks($ranksByFreq, [2,1,1,1])) {
-            return new Score(100 + $cardsByRank[0], 0);
+            return new Score(100 + $cardsByRank[0], $cardsByRank[2]);
         }
 
-        return new Score(max($ranks), $cardsByRank[4]);
+        return new Score(max($ranks), $cardsByRank[$this->tie]);
     }
 
     private function isEqualHandRanks(array $handOne, array $handTwo): bool
