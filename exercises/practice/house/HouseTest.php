@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class HouseTest extends TestCase
@@ -21,7 +22,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 28a540ff-f765-4348-9d57-ae33f25f41f2
      */
-    public function testVerseOne(): void
+    #[TestDox('Verse one - the house that jack built')]
+    public function testVerseOneTheHouseThatJackBuilt(): void
     {
         $lyrics = ['This is the house that Jack built.'];
         $this->assertEquals($lyrics, $this->house->verse(1));
@@ -30,7 +32,8 @@ class HouseTest extends TestCase
     /**
      * uuid: ebc825ac-6e2b-4a5e-9afd-95732191c8da
      */
-    public function testVerseTwo(): void
+    #[TestDox('Verse two - the malt that lay')]
+    public function testVerseTwoTheMaltThatLay(): void
     {
         $lyrics = [
             'This is the malt',
@@ -42,7 +45,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 1ed8bb0f-edb8-4bd1-b6d4-b64754fe4a60
      */
-    public function testVerseThree(): void
+    #[TestDox('Verse three - the rat that ate')]
+    public function testVerseThreeTheRatThatAte(): void
     {
         $lyrics = [
             'This is the rat',
@@ -55,7 +59,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 64b0954e-8b7d-4d14-aad0-d3f6ce297a30
      */
-    public function testVerseFour(): void
+    #[TestDox('Verse four - the cat that killed')]
+    public function testVerseFourTheCatThatKilled(): void
     {
         $lyrics = [
             'This is the cat',
@@ -69,7 +74,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 1e8d56bc-fe31-424d-9084-61e6111d2c82
      */
-    public function testVerseFive(): void
+    #[TestDox('Verse five - the dog that worried')]
+    public function testVerseFiveTheDogThatWorried(): void
     {
         $lyrics = [
             'This is the dog',
@@ -84,7 +90,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 6312dc6f-ab0a-40c9-8a55-8d4e582beac4
      */
-    public function testVerseSix(): void
+    #[TestDox('Verse six - the cow with the crumpled horn')]
+    public function testVerseSixTheCowWithTheCrumpledHorn(): void
     {
         $lyrics = [
             'This is the cow with the crumpled horn',
@@ -100,7 +107,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 68f76d18-6e19-4692-819c-5ff6a7f92feb
      */
-    public function testVerseSeven(): void
+    #[TestDox('Verse seven - the maiden all forlorn')]
+    public function testVerseSevenTheMaidenAllForlorn(): void
     {
         $lyrics = [
             'This is the maiden all forlorn',
@@ -117,7 +125,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 73872564-2004-4071-b51d-2e4326096747
      */
-    public function testVerseEight(): void
+    #[TestDox('Verse eight - the man all tattered and torn')]
+    public function testVerseEightTheManAllTatteredAndTorn(): void
     {
         $lyrics = [
             'This is the man all tattered and torn',
@@ -135,7 +144,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 0d53d743-66cb-4351-a173-82702f3338c9
      */
-    public function testVerseNine(): void
+    #[TestDox('Verse nine - the priest all shaven and shorn')]
+    public function testVerseNineThePriestAllShavenAndShorn(): void
     {
         $lyrics = [
             'This is the priest all shaven and shorn',
@@ -154,7 +164,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 452f24dc-8fd7-4a82-be1a-3b4839cfeb41
      */
-    public function testVerseTen(): void
+    #[TestDox('Verse ten - the rooster that crowed in the morn')]
+    public function testVerseTenTheRoosterThatCrowedInTheMorn(): void
     {
         $lyrics = [
             'This is the rooster that crowed in the morn',
@@ -174,7 +185,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 97176f20-2dd3-4646-ac72-cffced91ea26
      */
-    public function testVerseEleven(): void
+    #[TestDox('Verse eleven - the farmer sowing his corn')]
+    public function testVerseElevenTheFarmerSowingHisCorn(): void
     {
         $lyrics = [
             'This is the farmer sowing his corn',
@@ -195,7 +207,8 @@ class HouseTest extends TestCase
     /**
      * uuid: 09824c29-6aad-4dcd-ac98-f61374a6a8b7
      */
-    public function testVerseTwelve(): void
+    #[TestDox('Verse twelve - the horse and the hound and the horn')]
+    public function testVerseTwelveTheHorseAndTheHoundAndTheHorn(): void
     {
         $lyrics = [
             'This is the horse and the hound and the horn',
@@ -217,6 +230,7 @@ class HouseTest extends TestCase
     /**
      * uuid: d2b980d3-7851-49e1-97ab-1524515ec200
      */
+    #[TestDox('Multiple verses')]
     public function testMultipleVerses(): void
     {
         $startVerse = 4;
@@ -263,6 +277,7 @@ class HouseTest extends TestCase
     /**
      * uuid: 0311d1d0-e085-4f23-8ae7-92406fb3e803
      */
+    #[TestDox('Full rhyme')]
     public function testFullRhyme(): void
     {
         $startVerse = 1;
