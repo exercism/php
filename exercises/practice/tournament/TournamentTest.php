@@ -1,94 +1,96 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class TournamentTest extends TestCase
 {
-    private Tournament $tournament;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'Tournament.php';
     }
 
-    protected function setUp(): void
+    /**
+     * uuid: 67e9fab1-07c1-49cf-9159-bc8671cc7c9c
+     */
+    #[TestDox('Just the header if no input')]
+    public function testJustTheHeaderIfNoInput(): void
     {
-        $this->tournament = new Tournament();
-    }
-
-    public function testHeaderOnlyNoTeams(): void
-    {
+        $tournament = new Tournament();
         $scores   = '';
         $expected = 'Team                           | MP |  W |  D |  L |  P';
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
-    public function testWinIsThreePointsLossIsZeroPoints(): void
+    /**
+     * uuid: 1b4a8aef-0734-4007-80a2-0626178c88f4
+     */
+    #[TestDox('A win is three points, a loss is zero points')]
+    public function testAWinIsThreePointsALossIsZeroPoints(): void
     {
+        $tournament = new Tournament();
         $scores = 'Allegoric Alaskans;Blithering Badgers;win';
         $expected =
             "Team                           | MP |  W |  D |  L |  P\n" .
             "Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3\n" .
             "Blithering Badgers             |  1 |  0 |  0 |  1 |  0";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
-    public function testWinCanAlsoBeExpressedAsALoss(): void
+    /**
+     * uuid: 5f45ac09-4efe-46e7-8ddb-75ad85f86e05
+     */
+    #[TestDox('A win can also be expressed as a loss')]
+    public function testAWinCanAlsoBeExpressedAsALoss(): void
     {
+        $tournament = new Tournament();
         $scores = 'Blithering Badgers;Allegoric Alaskans;loss';
         $expected =
             "Team                           | MP |  W |  D |  L |  P\n" .
             "Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3\n" .
             "Blithering Badgers             |  1 |  0 |  0 |  1 |  0";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
-    public function testDifferentTeamsCanWin(): void
+    /**
+     * uuid: fd297368-efa0-442d-9f37-dd3f9a437239
+     */
+    #[TestDox('A different team can win')]
+    public function testADifferentTeamCanWin(): void
     {
+        $tournament = new Tournament();
         $scores = 'Blithering Badgers;Allegoric Alaskans;win';
         $expected =
             "Team                           | MP |  W |  D |  L |  P\n" .
             "Blithering Badgers             |  1 |  1 |  0 |  0 |  3\n" .
             "Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
+    /**
+     * uuid: 26c016f9-e753-4a93-94e9-842f7b4d70fc
+     */
+    #[TestDox('A draw is one point each')]
     public function testADrawIsOnePointEach(): void
     {
+        $tournament = new Tournament();
         $scores = 'Allegoric Alaskans;Blithering Badgers;draw';
         $expected =
             "Team                           | MP |  W |  D |  L |  P\n" .
             "Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1\n" .
             "Blithering Badgers             |  1 |  0 |  1 |  0 |  1";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
-    public function testThereCanBeMultipleMatches(): void
+    /**
+     * uuid: 731204f6-4f34-4928-97eb-1c307ba83e62
+     */
+    #[TestDox('There can be more than one match')]
+    public function testThereCanBeMoreThanOneMatch(): void
     {
+        $tournament = new Tournament();
         $scores =
             "Allegoric Alaskans;Blithering Badgers;win\n" .
             "Allegoric Alaskans;Blithering Badgers;win";
@@ -96,11 +98,16 @@ class TournamentTest extends TestCase
             "Team                           | MP |  W |  D |  L |  P\n" .
             "Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6\n" .
             "Blithering Badgers             |  2 |  0 |  0 |  2 |  0";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
+    /**
+     * uuid: 49dc2463-42af-4ea6-95dc-f06cc5776adf
+     */
+    #[TestDox('There can be more than one winner')]
     public function testThereCanBeMoreThanOneWinner(): void
     {
+        $tournament = new Tournament();
         $scores =
             "Allegoric Alaskans;Blithering Badgers;loss\n" .
             "Allegoric Alaskans;Blithering Badgers;win";
@@ -108,11 +115,16 @@ class TournamentTest extends TestCase
             "Team                           | MP |  W |  D |  L |  P\n" .
             "Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3\n" .
             "Blithering Badgers             |  2 |  1 |  0 |  1 |  3";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
+    /**
+     * uuid: 6d930f33-435c-4e6f-9e2d-63fa85ce7dc7
+     */
+    #[TestDox('There can be more than two teams')]
     public function testThereCanBeMoreThanTwoTeams(): void
     {
+        $tournament = new Tournament();
         $scores =
             "Allegoric Alaskans;Blithering Badgers;win\n" .
             "Blithering Badgers;Courageous Californians;win\n" .
@@ -122,11 +134,16 @@ class TournamentTest extends TestCase
             "Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6\n" .
             "Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n" .
             "Courageous Californians        |  2 |  0 |  0 |  2 |  0";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
-    public function testStandardInput(): void
+    /**
+     * uuid: 97022974-0c8a-4a50-8fe7-e36bdd8a5945
+     */
+    #[TestDox('Typical input')]
+    public function testTypicalInput(): void
     {
+        $tournament = new Tournament();
         $scores =
             "Allegoric Alaskans;Blithering Badgers;win\n" .
             "Devastating Donkeys;Courageous Californians;draw\n" .
@@ -140,11 +157,16 @@ class TournamentTest extends TestCase
             "Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6\n" .
             "Blithering Badgers             |  3 |  1 |  0 |  2 |  3\n" .
             "Courageous Californians        |  3 |  0 |  1 |  2 |  1";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
-    public function testIncompleteCompetitionWhereNotAllGamesPlayed(): void
+    /**
+     * uuid: fe562f0d-ac0a-4c62-b9c9-44ee3236392b
+     */
+    #[TestDox('Incomplete competition (not all pairs have played)')]
+    public function testIncompleteCompetitionNotAllPairsHavePlayed(): void
     {
+        $tournament = new Tournament();
         $scores =
             "Allegoric Alaskans;Blithering Badgers;loss\n" .
             "Devastating Donkeys;Allegoric Alaskans;loss\n" .
@@ -156,11 +178,16 @@ class TournamentTest extends TestCase
             "Blithering Badgers             |  2 |  1 |  1 |  0 |  4\n" .
             "Courageous Californians        |  2 |  0 |  1 |  1 |  1\n" .
             "Devastating Donkeys            |  1 |  0 |  0 |  1 |  0";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 
-    public function testTiesSortedAlphabetically(): void
+    /**
+     * uuid: 3aa0386f-150b-4f99-90bb-5195e7b7d3b8
+     */
+    #[TestDox('Ties broken alphabetically')]
+    public function testTiesBrokenAlphabetically(): void
     {
+        $tournament = new Tournament();
         $scores =
             "Courageous Californians;Devastating Donkeys;win\n" .
             "Allegoric Alaskans;Blithering Badgers;win\n" .
@@ -174,6 +201,26 @@ class TournamentTest extends TestCase
             "Courageous Californians        |  3 |  2 |  1 |  0 |  7\n" .
             "Blithering Badgers             |  3 |  0 |  1 |  2 |  1\n" .
             "Devastating Donkeys            |  3 |  0 |  1 |  2 |  1";
-        $this->assertEquals($expected, $this->tournament->tally($scores));
+        $this->assertEquals($expected, $tournament->tally($scores));
+    }
+
+    /**
+     * uuid: f9e20931-8a65-442a-81f6-503c0205b17a
+     */
+    #[TestDox('Ensure points sorted numerically')]
+    public function testEnsurePointsSortedNumerically(): void
+    {
+        $tournament = new Tournament();
+        $scores =
+            "Devastating Donkeys;Blithering Badgers;win\n" .
+            "Devastating Donkeys;Blithering Badgers;win\n" .
+            "Devastating Donkeys;Blithering Badgers;win\n" .
+            "Devastating Donkeys;Blithering Badgers;win\n" .
+            "Blithering Badgers;Devastating Donkeys;win";
+        $expected =
+            "Team                           | MP |  W |  D |  L |  P\n" .
+            "Devastating Donkeys            |  5 |  4 |  0 |  1 | 12\n" .
+            "Blithering Badgers             |  5 |  1 |  0 |  4 |  3";
+        $this->assertEquals($expected, $tournament->tally($scores));
     }
 }
