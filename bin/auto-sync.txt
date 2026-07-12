@@ -90,6 +90,7 @@ square-root
 state-of-tic-tac-toe
 strain
 sublist
+sum-of-multiples
 swift-scheduling
 transpose
 tournament
