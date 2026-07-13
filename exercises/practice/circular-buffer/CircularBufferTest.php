@@ -5,10 +5,13 @@ declare(strict_types=1);
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
-require_once 'CircularBuffer.php';
-
 class CircularBufferTest extends TestCase
 {
+    public static function setUpBeforeClass(): void
+    {
+        require_once 'CircularBuffer.php';
+    }
+
     /**
      * uuid: 28268ed4-4ff3-45f3-820e-895b44d53dfa
      */
