@@ -3,10 +3,9 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\TestCase;
 
 require_once 'CircularBuffer.php';
-
-use PHPUnit\Framework\TestCase;
 
 class CircularBufferTest extends TestCase
 {
