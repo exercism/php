@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class KillerSudokuHelperTest extends TestCase
 {
-    private KillerSudokuHelper $killerSudokuHelper;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'KillerSudokuHelper.php';
-    }
-
-    protected function setUp(): void
-    {
-        $this->killerSudokuHelper = new KillerSudokuHelper();
     }
 
     /**
@@ -25,10 +18,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 1')]
     public function testTrivialOneDigitCages1(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [1]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(1, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(1, 1, []));
     }
 
     /**
@@ -37,10 +31,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 2')]
     public function testTrivialOneDigitCages2(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [2]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(2, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(2, 1, []));
     }
 
     /**
@@ -49,10 +44,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 3')]
     public function testTrivialOneDigitCages3(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [3]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(3, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(3, 1, []));
     }
 
     /**
@@ -61,10 +57,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 4')]
     public function testTrivialOneDigitCages4(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [4]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(4, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(4, 1, []));
     }
 
     /**
@@ -73,10 +70,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 5')]
     public function testTrivialOneDigitCages5(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [5]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(5, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(5, 1, []));
     }
 
     /**
@@ -85,10 +83,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 6')]
     public function testTrivialOneDigitCages6(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [6]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(6, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(6, 1, []));
     }
 
     /**
@@ -97,10 +96,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 7')]
     public function testTrivialOneDigitCages7(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [7]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(7, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(7, 1, []));
     }
 
     /**
@@ -109,10 +109,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 8')]
     public function testTrivialOneDigitCages8(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [8]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(8, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(8, 1, []));
     }
 
     /**
@@ -121,10 +122,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Trivial 1-digit cages -> 9')]
     public function testTrivialOneDigitCages9(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [9]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(9, 1, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(9, 1, []));
     }
 
     /**
@@ -133,10 +135,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Cage with sum 45 contains all digits 1:9')]
     public function testCageWithSum45ContainsAllDigits1To9(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [1, 2, 3, 4, 5, 6, 7, 8, 9]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(45, 9, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(45, 9, []));
     }
 
     /**
@@ -145,10 +148,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Cage with only 1 possible combination')]
     public function testCageWithOnlyOnePossibleCombination(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [1, 2, 4]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(7, 3, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(7, 3, []));
     }
 
     /**
@@ -157,10 +161,11 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Cage with several combinations')]
     public function testCageWithSeveralCombinations(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [1, 9], [2, 8], [3, 7], [4, 6]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(10, 2, []));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(10, 2, []));
     }
 
     /**
@@ -169,9 +174,10 @@ class KillerSudokuHelperTest extends TestCase
     #[TestDox('Cage with several combinations that is restricted')]
     public function testCageWithSeveralCombinationsThatIsRestricted(): void
     {
+        $killerSudokuHelper = new KillerSudokuHelper();
         $expected = [
             [2, 8], [3, 7]
         ];
-        $this->assertEquals($expected, $this->killerSudokuHelper->combinations(10, 2, [1, 4]));
+        $this->assertEquals($expected, $killerSudokuHelper->combinations(10, 2, [1, 4]));
     }
 }
