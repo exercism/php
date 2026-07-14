@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class ResistorColorDuoTest extends TestCase
 {
-    private ResistorColorDuo $resistor;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'ResistorColorDuo.php';
-    }
-
-    public function setUp(): void
-    {
-        $this->resistor = new ResistorColorDuo();
     }
 
     /**
@@ -25,7 +18,8 @@ class ResistorColorDuoTest extends TestCase
     #[TestDox('Brown and black')]
     public function testBrownAndBlack(): void
     {
-        $this->assertEquals(10, $this->resistor->getColorsValue(['brown', 'black']));
+        $resistor = new ResistorColorDuo();
+        $this->assertEquals(10, $resistor->getColorsValue(['brown', 'black']));
     }
 
     /**
@@ -34,7 +28,8 @@ class ResistorColorDuoTest extends TestCase
     #[TestDox('Blue and grey')]
     public function testBlueAndGrey(): void
     {
-        $this->assertEquals(68, $this->resistor->getColorsValue(['blue', 'grey']));
+        $resistor = new ResistorColorDuo();
+        $this->assertEquals(68, $resistor->getColorsValue(['blue', 'grey']));
     }
 
     /**
@@ -43,7 +38,8 @@ class ResistorColorDuoTest extends TestCase
     #[TestDox('Yellow and violet')]
     public function testYellowAndViolet(): void
     {
-        $this->assertEquals(47, $this->resistor->getColorsValue(['yellow', 'violet']));
+        $resistor = new ResistorColorDuo();
+        $this->assertEquals(47, $resistor->getColorsValue(['yellow', 'violet']));
     }
 
     /**
@@ -52,7 +48,8 @@ class ResistorColorDuoTest extends TestCase
     #[TestDox('White and red')]
     public function testWhiteAndRed(): void
     {
-        $this->assertEquals(92, $this->resistor->getColorsValue(['white', 'red']));
+        $resistor = new ResistorColorDuo();
+        $this->assertEquals(92, $resistor->getColorsValue(['white', 'red']));
     }
 
     /**
@@ -61,7 +58,8 @@ class ResistorColorDuoTest extends TestCase
     #[TestDox('Orange and orange')]
     public function testOrangeAndOrange(): void
     {
-        $this->assertEquals(33, $this->resistor->getColorsValue(['orange', 'orange']));
+        $resistor = new ResistorColorDuo();
+        $this->assertEquals(33, $resistor->getColorsValue(['orange', 'orange']));
     }
 
     /**
@@ -70,7 +68,8 @@ class ResistorColorDuoTest extends TestCase
     #[TestDox('Ignore additional colors')]
     public function testIgnoreAdditionalColors(): void
     {
-        $this->assertEquals(51, $this->resistor->getColorsValue(['green', 'brown', 'orange']));
+        $resistor = new ResistorColorDuo();
+        $this->assertEquals(51, $resistor->getColorsValue(['green', 'brown', 'orange']));
     }
 
     /**
@@ -79,6 +78,7 @@ class ResistorColorDuoTest extends TestCase
     #[TestDox('Black and brown, one-digit')]
     public function testBlackAndBrownOneDigit(): void
     {
-        $this->assertEquals(1, $this->resistor->getColorsValue(['black', 'brown']));
+        $resistor = new ResistorColorDuo();
+        $this->assertEquals(1, $resistor->getColorsValue(['black', 'brown']));
     }
 }
