@@ -2,6 +2,9 @@
   "authors": [
     "tomasnorre"
   ],
+  "contributors": [
+    "resu-xuniL"
+  ],
   "files": {
     "solution": [
       "Knapsack.php"
