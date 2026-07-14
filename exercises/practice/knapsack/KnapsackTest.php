@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class KnapsackTest extends TestCase
 {
-    private Knapsack $knapsack;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'Knapsack.php';
-    }
-
-    protected function setUp(): void
-    {
-        $this->knapsack = new Knapsack();
     }
 
     /**
