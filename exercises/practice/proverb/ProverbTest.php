@@ -12,7 +12,9 @@ class ProverbTest extends TestCase
         require_once 'Proverb.php';
     }
 
-    /** @uuid e974b73e-7851-484f-8d6d-92e07fe742fc */
+    /**
+     * uuid e974b73e-7851-484f-8d6d-92e07fe742fc
+     */
     #[TestDox('Zero pieces')]
     public function testZeroPieces(): void
     {
@@ -22,7 +24,9 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $proverb->recite($pieces));
     }
 
-    /** @uuid 2fcd5f5e-8b82-4e74-b51d-df28a5e0faa4 */
+    /**
+     * uuid 2fcd5f5e-8b82-4e74-b51d-df28a5e0faa4
+     */
     #[TestDox('One piece')]
     public function testOnePiece(): void
     {
@@ -32,7 +36,9 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $proverb->recite($pieces));
     }
 
-    /** @uuid d9d0a8a1-d933-46e2-aa94-eecf679f4b0e */
+    /**
+     * uuid d9d0a8a1-d933-46e2-aa94-eecf679f4b0e
+     */
     #[TestDox('Two pieces')]
     public function testTwoPieces(): void
     {
@@ -45,7 +51,9 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $proverb->recite($pieces));
     }
 
-    /** @uuid c95ef757-5e94-4f0d-a6cb-d2083f5e5a83 */
+    /**
+     * uuid c95ef757-5e94-4f0d-a6cb-d2083f5e5a83
+     */
     #[TestDox('Three pieces')]
     public function testThreePieces(): void
     {
@@ -59,7 +67,9 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $proverb->recite($pieces));
     }
 
-    /** @uuid 433fb91c-35a2-4d41-aeab-4de1e82b2126 */
+    /**
+     * uuid 433fb91c-35a2-4d41-aeab-4de1e82b2126
+     */
     #[TestDox('Full proverb')]
     public function testFullProverb(): void
     {
@@ -77,7 +87,9 @@ class ProverbTest extends TestCase
         $this->assertEquals($expected, $proverb->recite($pieces));
     }
 
-    /** @uuid c1eefa5a-e8d9-41c7-91d4-99fab6d6b9f7 */
+    /**
+     * uuid c1eefa5a-e8d9-41c7-91d4-99fab6d6b9f7
+     */
     #[TestDox('Four pieces modernized')]
     public function testFourPiecesModernized(): void
     {
