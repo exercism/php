@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class ResistorColorTrioTest extends TestCase
 {
-    private ResistorColorTrio $resistor;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'ResistorColorTrio.php';
-    }
-
-    public function setUp(): void
-    {
-        $this->resistor = new ResistorColorTrio();
     }
 
     /**
@@ -25,7 +18,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Orange and orange and black')]
     public function testOrangeAndOrangeAndBlack(): void
     {
-        $this->assertEquals('33 ohms', $this->resistor->label(['orange', 'orange', 'black']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('33 ohms', $resistor->label(['orange', 'orange', 'black']));
     }
 
     /**
@@ -34,7 +28,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Blue and grey and brown')]
     public function testBlueAndGreyAndBrown(): void
     {
-        $this->assertEquals('680 ohms', $this->resistor->label(['blue', 'grey', 'brown']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('680 ohms', $resistor->label(['blue', 'grey', 'brown']));
     }
 
     /**
@@ -43,7 +38,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Red and black and red')]
     public function testRedAndBlackAndRed(): void
     {
-        $this->assertEquals('2 kiloohms', $this->resistor->label(['red', 'black', 'red']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('2 kiloohms', $resistor->label(['red', 'black', 'red']));
     }
 
     /**
@@ -52,7 +48,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Green and brown and orange')]
     public function testGreenAndBrownAndOrange(): void
     {
-        $this->assertEquals('51 kiloohms', $this->resistor->label(['green', 'brown', 'orange']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('51 kiloohms', $resistor->label(['green', 'brown', 'orange']));
     }
 
     /**
@@ -61,7 +58,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Yellow and violet and yellow')]
     public function testYellowAndVioletAndYellow(): void
     {
-        $this->assertEquals('470 kiloohms', $this->resistor->label(['yellow', 'violet', 'yellow']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('470 kiloohms', $resistor->label(['yellow', 'violet', 'yellow']));
     }
 
     /**
@@ -70,7 +68,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Blue and violet and blue')]
     public function testBlueAndVioletAndBlue(): void
     {
-        $this->assertEquals('67 megaohms', $this->resistor->label(['blue', 'violet', 'blue']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('67 megaohms', $resistor->label(['blue', 'violet', 'blue']));
     }
 
     /**
@@ -79,7 +78,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Minimum possible value')]
     public function testMinimumPossibleValue(): void
     {
-        $this->assertEquals('0 ohms', $this->resistor->label(['black', 'black', 'black']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('0 ohms', $resistor->label(['black', 'black', 'black']));
     }
 
     /**
@@ -88,7 +88,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Maximum possible value')]
     public function testMaximumPossibleValue(): void
     {
-        $this->assertEquals('99 gigaohms', $this->resistor->label(['white', 'white', 'white']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('99 gigaohms', $resistor->label(['white', 'white', 'white']));
     }
 
     /**
@@ -97,7 +98,8 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('First two colors make an invalid octal number')]
     public function testFirstTwoColorsMakeAnInvalidOctalNumber(): void
     {
-        $this->assertEquals('8 ohms', $this->resistor->label(['black', 'grey', 'black']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('8 ohms', $resistor->label(['black', 'grey', 'black']));
     }
 
     /**
@@ -106,6 +108,7 @@ class ResistorColorTrioTest extends TestCase
     #[TestDox('Ignore extra colors')]
     public function testIgnoreExtraColors(): void
     {
-        $this->assertEquals('650 kiloohms', $this->resistor->label(['blue', 'green', 'yellow', 'orange']));
+        $resistor = new ResistorColorTrio();
+        $this->assertEquals('650 kiloohms', $resistor->label(['blue', 'green', 'yellow', 'orange']));
     }
 }
