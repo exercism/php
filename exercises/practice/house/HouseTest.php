@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class HouseTest extends TestCase
 {
-    private House $house;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'House.php';
-    }
-
-    protected function setUp(): void
-    {
-        $this->house = new House();
     }
 
     /**
@@ -25,8 +18,9 @@ class HouseTest extends TestCase
     #[TestDox('Verse one - the house that jack built')]
     public function testVerseOneTheHouseThatJackBuilt(): void
     {
+        $house = new House();
         $lyrics = ['This is the house that Jack built.'];
-        $this->assertEquals($lyrics, $this->house->verse(1));
+        $this->assertEquals($lyrics, $house->verse(1));
     }
 
     /**
@@ -35,11 +29,12 @@ class HouseTest extends TestCase
     #[TestDox('Verse two - the malt that lay')]
     public function testVerseTwoTheMaltThatLay(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(2));
+        $this->assertEquals($lyrics, $house->verse(2));
     }
 
     /**
@@ -48,12 +43,13 @@ class HouseTest extends TestCase
     #[TestDox('Verse three - the rat that ate')]
     public function testVerseThreeTheRatThatAte(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the rat',
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(3));
+        $this->assertEquals($lyrics, $house->verse(3));
     }
 
     /**
@@ -62,13 +58,14 @@ class HouseTest extends TestCase
     #[TestDox('Verse four - the cat that killed')]
     public function testVerseFourTheCatThatKilled(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the cat',
             'that killed the rat',
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(4));
+        $this->assertEquals($lyrics, $house->verse(4));
     }
 
     /**
@@ -77,6 +74,7 @@ class HouseTest extends TestCase
     #[TestDox('Verse five - the dog that worried')]
     public function testVerseFiveTheDogThatWorried(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the dog',
             'that worried the cat',
@@ -84,7 +82,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(5));
+        $this->assertEquals($lyrics, $house->verse(5));
     }
 
     /**
@@ -93,6 +91,7 @@ class HouseTest extends TestCase
     #[TestDox('Verse six - the cow with the crumpled horn')]
     public function testVerseSixTheCowWithTheCrumpledHorn(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the cow with the crumpled horn',
             'that tossed the dog',
@@ -101,7 +100,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(6));
+        $this->assertEquals($lyrics, $house->verse(6));
     }
 
     /**
@@ -110,6 +109,7 @@ class HouseTest extends TestCase
     #[TestDox('Verse seven - the maiden all forlorn')]
     public function testVerseSevenTheMaidenAllForlorn(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the maiden all forlorn',
             'that milked the cow with the crumpled horn',
@@ -119,7 +119,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(7));
+        $this->assertEquals($lyrics, $house->verse(7));
     }
 
     /**
@@ -128,6 +128,7 @@ class HouseTest extends TestCase
     #[TestDox('Verse eight - the man all tattered and torn')]
     public function testVerseEightTheManAllTatteredAndTorn(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the man all tattered and torn',
             'that kissed the maiden all forlorn',
@@ -138,7 +139,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(8));
+        $this->assertEquals($lyrics, $house->verse(8));
     }
 
     /**
@@ -147,6 +148,7 @@ class HouseTest extends TestCase
     #[TestDox('Verse nine - the priest all shaven and shorn')]
     public function testVerseNineThePriestAllShavenAndShorn(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the priest all shaven and shorn',
             'that married the man all tattered and torn',
@@ -158,7 +160,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(9));
+        $this->assertEquals($lyrics, $house->verse(9));
     }
 
     /**
@@ -167,6 +169,7 @@ class HouseTest extends TestCase
     #[TestDox('Verse ten - the rooster that crowed in the morn')]
     public function testVerseTenTheRoosterThatCrowedInTheMorn(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the rooster that crowed in the morn',
             'that woke the priest all shaven and shorn',
@@ -179,7 +182,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(10));
+        $this->assertEquals($lyrics, $house->verse(10));
     }
 
     /**
@@ -188,6 +191,7 @@ class HouseTest extends TestCase
     #[TestDox('Verse eleven - the farmer sowing his corn')]
     public function testVerseElevenTheFarmerSowingHisCorn(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the farmer sowing his corn',
             'that kept the rooster that crowed in the morn',
@@ -201,7 +205,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(11));
+        $this->assertEquals($lyrics, $house->verse(11));
     }
 
     /**
@@ -210,6 +214,7 @@ class HouseTest extends TestCase
     #[TestDox('Verse twelve - the horse and the hound and the horn')]
     public function testVerseTwelveTheHorseAndTheHoundAndTheHorn(): void
     {
+        $house = new House();
         $lyrics = [
             'This is the horse and the hound and the horn',
             'that belonged to the farmer sowing his corn',
@@ -224,7 +229,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verse(12));
+        $this->assertEquals($lyrics, $house->verse(12));
     }
 
     /**
@@ -233,6 +238,7 @@ class HouseTest extends TestCase
     #[TestDox('Multiple verses')]
     public function testMultipleVerses(): void
     {
+        $house = new House();
         $startVerse = 4;
         $endVerse = 8;
         $lyrics = [
@@ -271,7 +277,7 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verses($startVerse, $endVerse));
+        $this->assertEquals($lyrics, $house->verses($startVerse, $endVerse));
     }
 
     /**
@@ -280,6 +286,7 @@ class HouseTest extends TestCase
     #[TestDox('Full rhyme')]
     public function testFullRhyme(): void
     {
+        $house = new House();
         $startVerse = 1;
         $endVerse = 12;
         $lyrics = [
@@ -373,6 +380,6 @@ class HouseTest extends TestCase
             'that ate the malt',
             'that lay in the house that Jack built.',
         ];
-        $this->assertEquals($lyrics, $this->house->verses($startVerse, $endVerse));
+        $this->assertEquals($lyrics, $house->verses($startVerse, $endVerse));
     }
 }
