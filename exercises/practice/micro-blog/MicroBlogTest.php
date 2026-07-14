@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class MicroBlogTest extends TestCase
 {
-    private MicroBlog $microBlog;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'MicroBlog.php';
-    }
-
-    protected function setUp(): void
-    {
-        $this->microBlog = new MicroBlog();
     }
 
     /**
@@ -25,7 +18,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('English language short')]
     public function testEnglishLanguageShort(): void
     {
-        $this->assertEquals('Hi', $this->microBlog->truncate('Hi'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('Hi', $microBlog->truncate('Hi'));
     }
 
     /**
@@ -34,7 +28,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('English language long')]
     public function testEnglishLanguageLong(): void
     {
-        $this->assertEquals('Hello', $this->microBlog->truncate('Hello there'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('Hello', $microBlog->truncate('Hello there'));
     }
 
     /**
@@ -43,7 +38,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('German language short (broth)')]
     public function testGermanLanguageShortBroth(): void
     {
-        $this->assertEquals('brühe', $this->microBlog->truncate('brühe'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('brühe', $microBlog->truncate('brühe'));
     }
 
     /**
@@ -52,7 +48,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('German language long (bear carpet → beards)')]
     public function testGermanLanguageLongBearCarpetToBeards(): void
     {
-        $this->assertEquals('Bärte', $this->microBlog->truncate('Bärteppich'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('Bärte', $microBlog->truncate('Bärteppich'));
     }
 
     /**
@@ -61,7 +58,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('Bulgarian language short (good)')]
     public function testBulgarianLanguageShortGood(): void
     {
-        $this->assertEquals('Добър', $this->microBlog->truncate('Добър'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('Добър', $microBlog->truncate('Добър'));
     }
 
     /**
@@ -70,7 +68,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('Greek language short (health)')]
     public function testGreekLanguageShortHealth(): void
     {
-        $this->assertEquals('υγειά', $this->microBlog->truncate('υγειά'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('υγειά', $microBlog->truncate('υγειά'));
     }
 
     /**
@@ -79,7 +78,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('Maths short')]
     public function testMathShort(): void
     {
-        $this->assertEquals('a=πr²', $this->microBlog->truncate('a=πr²'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('a=πr²', $microBlog->truncate('a=πr²'));
     }
 
     /**
@@ -88,7 +88,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('Maths long')]
     public function testMathLong(): void
     {
-        $this->assertEquals('∅⊊ℕ⊊ℤ', $this->microBlog->truncate('∅⊊ℕ⊊ℤ⊊ℚ⊊ℝ⊊ℂ'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('∅⊊ℕ⊊ℤ', $microBlog->truncate('∅⊊ℕ⊊ℤ⊊ℚ⊊ℝ⊊ℂ'));
     }
 
     /**
@@ -97,7 +98,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('English and emoji short')]
     public function testEnglishAndEmojiShort(): void
     {
-        $this->assertEquals('Fly 🛫', $this->microBlog->truncate('Fly 🛫'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('Fly 🛫', $microBlog->truncate('Fly 🛫'));
     }
 
     /**
@@ -106,7 +108,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('Emoji short')]
     public function testEmojiShort(): void
     {
-        $this->assertEquals('💇', $this->microBlog->truncate('💇'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('💇', $microBlog->truncate('💇'));
     }
 
     /**
@@ -115,7 +118,8 @@ class MicroBlogTest extends TestCase
     #[TestDox('Emoji long')]
     public function testEmojiLong(): void
     {
-        $this->assertEquals('❄🌡🤧🤒🏥', $this->microBlog->truncate('❄🌡🤧🤒🏥🕰😀'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('❄🌡🤧🤒🏥', $microBlog->truncate('❄🌡🤧🤒🏥🕰😀'));
     }
 
     /**
@@ -124,6 +128,7 @@ class MicroBlogTest extends TestCase
     #[TestDox('Royal Flush?')]
     public function testRoyalFlush(): void
     {
-        $this->assertEquals('🃎🂸🃅🃋🃍', $this->microBlog->truncate('🃎🂸🃅🃋🃍🃁🃊'));
+        $microBlog = new MicroBlog();
+        $this->assertEquals('🃎🂸🃅🃋🃍', $microBlog->truncate('🃎🂸🃅🃋🃍🃁🃊'));
     }
 }
