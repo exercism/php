@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class SpiralMatrixTest extends TestCase
 {
-    private SpiralMatrix $spiralMatrix;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'SpiralMatrix.php';
-    }
-
-    public function setUp(): void
-    {
-        $this->spiralMatrix = new SpiralMatrix();
     }
 
     /**
@@ -25,8 +18,9 @@ class SpiralMatrixTest extends TestCase
     #[TestDox('Empty spiral')]
     public function testEmptySpiral(): void
     {
+        $spiralMatrix = new SpiralMatrix();
         $expected = [];
-        $actual = $this->spiralMatrix->draw(0);
+        $actual = $spiralMatrix->draw(0);
         $this->assertEquals($expected, $actual);
     }
 
@@ -36,8 +30,9 @@ class SpiralMatrixTest extends TestCase
     #[TestDox('Trivial spiral')]
     public function testTrivialSpiral(): void
     {
+        $spiralMatrix = new SpiralMatrix();
         $expected = [[1]];
-        $actual = $this->spiralMatrix->draw(1);
+        $actual = $spiralMatrix->draw(1);
         $this->assertEquals($expected, $actual);
     }
 
@@ -47,11 +42,12 @@ class SpiralMatrixTest extends TestCase
     #[TestDox('Spiral of size 2')]
     public function testSpiralOfSize2(): void
     {
+        $spiralMatrix = new SpiralMatrix();
         $expected = [
             [1, 2],
             [4, 3],
         ];
-        $actual = $this->spiralMatrix->draw(2);
+        $actual = $spiralMatrix->draw(2);
         $this->assertEquals($expected, $actual);
     }
 
@@ -61,12 +57,13 @@ class SpiralMatrixTest extends TestCase
     #[TestDox('Spiral of size 3')]
     public function testSpiralOfSize3(): void
     {
+        $spiralMatrix = new SpiralMatrix();
         $expected = [
             [1, 2, 3],
             [8, 9, 4],
             [7, 6, 5],
         ];
-        $actual = $this->spiralMatrix->draw(3);
+        $actual = $spiralMatrix->draw(3);
         $this->assertEquals($expected, $actual);
     }
 
@@ -76,13 +73,14 @@ class SpiralMatrixTest extends TestCase
     #[TestDox('Spiral of size 4')]
     public function testSpiralOfSize4(): void
     {
+        $spiralMatrix = new SpiralMatrix();
         $expected = [
             [1, 2, 3, 4],
             [12, 13, 14, 5],
             [11, 16, 15, 6],
             [10, 9, 8, 7],
         ];
-        $actual = $this->spiralMatrix->draw(4);
+        $actual = $spiralMatrix->draw(4);
         $this->assertEquals($expected, $actual);
     }
 
@@ -92,6 +90,7 @@ class SpiralMatrixTest extends TestCase
     #[TestDox('Spiral of size 5')]
     public function testSpiralOfSize5(): void
     {
+        $spiralMatrix = new SpiralMatrix();
         $expected = [
             [1, 2, 3, 4, 5],
             [16, 17, 18, 19, 6],
@@ -99,7 +98,7 @@ class SpiralMatrixTest extends TestCase
             [14, 23, 22, 21, 8],
             [13, 12, 11, 10, 9],
         ];
-        $actual = $this->spiralMatrix->draw(5);
+        $actual = $spiralMatrix->draw(5);
         $this->assertEquals($expected, $actual);
     }
 }
