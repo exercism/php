@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class SublistTest extends TestCase
 {
-    private Sublist $sublist;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'Sublist.php';
-    }
-
-    public function setUp(): void
-    {
-        $this->sublist = new Sublist();
     }
 
     /**
@@ -25,10 +18,11 @@ class SublistTest extends TestCase
     #[TestDox('Empty lists')]
     public function testEmptyLists(): void
     {
+        $sublist = new Sublist();
         $listOne = [];
         $listTwo = [];
 
-        $this->assertEquals('EQUAL', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('EQUAL', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -37,10 +31,11 @@ class SublistTest extends TestCase
     #[TestDox('Empty list within non empty list')]
     public function testEmptyListWithinNonEmptyList(): void
     {
+        $sublist = new Sublist();
         $listOne = [];
         $listTwo = [1, 2, 3];
 
-        $this->assertEquals('SUBLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUBLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -49,10 +44,11 @@ class SublistTest extends TestCase
     #[TestDox('Non empty list contains empty list')]
     public function testNonEmptyListContainsEmptyList(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 2, 3];
         $listTwo = [];
 
-        $this->assertEquals('SUPERLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUPERLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -61,10 +57,11 @@ class SublistTest extends TestCase
     #[TestDox('List equals itself')]
     public function testListEqualsItself(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 2, 3];
         $listTwo = [1, 2, 3];
 
-        $this->assertEquals('EQUAL', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('EQUAL', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -73,10 +70,11 @@ class SublistTest extends TestCase
     #[TestDox('Different lists')]
     public function testDifferentLists(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 2, 3];
         $listTwo = [2, 3, 4];
 
-        $this->assertEquals('UNEQUAL', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('UNEQUAL', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -85,10 +83,11 @@ class SublistTest extends TestCase
     #[TestDox('False start')]
     public function testFalseStart(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 2, 5];
         $listTwo = [0, 1, 2, 3, 1, 2, 5, 6];
 
-        $this->assertEquals('SUBLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUBLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -97,10 +96,11 @@ class SublistTest extends TestCase
     #[TestDox('Consecutive')]
     public function testConsecutive(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 1, 2];
         $listTwo = [0, 1, 1, 1, 2, 1, 2];
 
-        $this->assertEquals('SUBLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUBLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -109,10 +109,11 @@ class SublistTest extends TestCase
     #[TestDox('Sublist at start')]
     public function testSublistAtStart(): void
     {
+        $sublist = new Sublist();
         $listOne = [0, 1, 2];
         $listTwo = [0, 1, 2, 3, 4, 5];
 
-        $this->assertEquals('SUBLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUBLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -121,10 +122,11 @@ class SublistTest extends TestCase
     #[TestDox('Sublist in middle')]
     public function testSublistInMiddle(): void
     {
+        $sublist = new Sublist();
         $listOne = [2, 3, 4];
         $listTwo = [0, 1, 2, 3, 4, 5];
 
-        $this->assertEquals('SUBLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUBLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -133,10 +135,11 @@ class SublistTest extends TestCase
     #[TestDox('Sublist at end')]
     public function testSublistAtEnd(): void
     {
+        $sublist = new Sublist();
         $listOne = [3, 4, 5];
         $listTwo = [0, 1, 2, 3, 4, 5];
 
-        $this->assertEquals('SUBLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUBLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -145,10 +148,11 @@ class SublistTest extends TestCase
     #[TestDox('At start of superlist')]
     public function testAtStartOfSuperlist(): void
     {
+        $sublist = new Sublist();
         $listOne = [0, 1, 2, 3, 4, 5];
         $listTwo = [0, 1, 2];
 
-        $this->assertEquals('SUPERLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUPERLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -157,10 +161,11 @@ class SublistTest extends TestCase
     #[TestDox('In middle of superlist')]
     public function testInMiddleOfSuperlist(): void
     {
+        $sublist = new Sublist();
         $listOne = [0, 1, 2, 3, 4, 5];
         $listTwo = [2, 3];
 
-        $this->assertEquals('SUPERLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUPERLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -169,10 +174,11 @@ class SublistTest extends TestCase
     #[TestDox('At end of superlist')]
     public function testAtEndOfSuperlist(): void
     {
+        $sublist = new Sublist();
         $listOne = [0, 1, 2, 3, 4, 5];
         $listTwo = [3, 4, 5];
 
-        $this->assertEquals('SUPERLIST', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('SUPERLIST', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -181,10 +187,11 @@ class SublistTest extends TestCase
     #[TestDox('First list missing element from second list')]
     public function testFirstListMissingElementFromSecondList(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 3];
         $listTwo = [1, 2, 3];
 
-        $this->assertEquals('UNEQUAL', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('UNEQUAL', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -193,10 +200,11 @@ class SublistTest extends TestCase
     #[TestDox('Second list missing element from first list')]
     public function testSecondListMissingElementFromFirstList(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 2, 3];
         $listTwo = [1, 3];
 
-        $this->assertEquals('UNEQUAL', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('UNEQUAL', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -205,10 +213,11 @@ class SublistTest extends TestCase
     #[TestDox('First list missing additional digits from second list')]
     public function testFirstListMissingAdditionalDigitsFromSecondList(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 2];
         $listTwo = [1, 22];
 
-        $this->assertEquals('UNEQUAL', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('UNEQUAL', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -217,10 +226,11 @@ class SublistTest extends TestCase
     #[TestDox('Order matters to a list')]
     public function testOrderMattersToList(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 2, 3];
         $listTwo = [3, 2, 1];
 
-        $this->assertEquals('UNEQUAL', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('UNEQUAL', $sublist->compare($listOne, $listTwo));
     }
 
     /**
@@ -229,9 +239,10 @@ class SublistTest extends TestCase
     #[TestDox('Same digits but different numbers')]
     public function testSameDigitsButDifferentNumbers(): void
     {
+        $sublist = new Sublist();
         $listOne = [1, 0, 1];
         $listTwo = [10, 1];
 
-        $this->assertEquals('UNEQUAL', $this->sublist->compare($listOne, $listTwo));
+        $this->assertEquals('UNEQUAL', $sublist->compare($listOne, $listTwo));
     }
 }
