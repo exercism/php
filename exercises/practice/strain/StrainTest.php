@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class StrainTest extends TestCase
 {
-    private Strain $strain;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'Strain.php';
-    }
-
-    public function setUp(): void
-    {
-        $this->strain = new Strain();
     }
 
     /**
@@ -25,12 +18,13 @@ class StrainTest extends TestCase
     #[TestDox('Keep on empty list returns empty list')]
     public function testKeepOnEmptyListReturnsEmptyList(): void
     {
+        $strain = new Strain();
         $list = [];
         $predicate = function ($x) {
             return true;
         };
 
-        $this->assertEquals([], $this->strain->keep($list, $predicate));
+        $this->assertEquals([], $strain->keep($list, $predicate));
     }
 
     /**
@@ -39,12 +33,13 @@ class StrainTest extends TestCase
     #[TestDox('Keeps everything')]
     public function testKeepsEverything(): void
     {
+        $strain = new Strain();
         $list = [1, 3, 5];
         $predicate = function ($x) {
             return true;
         };
 
-        $this->assertEquals([1, 3, 5], $this->strain->keep($list, $predicate));
+        $this->assertEquals([1, 3, 5], $strain->keep($list, $predicate));
     }
 
     /**
@@ -53,12 +48,13 @@ class StrainTest extends TestCase
     #[TestDox('Keeps nothing')]
     public function testKeepNothing(): void
     {
+        $strain = new Strain();
         $list = [1, 3, 5];
         $predicate = function ($x) {
             return false;
         };
 
-        $this->assertEquals([], $this->strain->keep($list, $predicate));
+        $this->assertEquals([], $strain->keep($list, $predicate));
     }
 
     /**
@@ -67,12 +63,13 @@ class StrainTest extends TestCase
     #[TestDox('Keeps first and last')]
     public function testKeepFirstAndLast(): void
     {
+        $strain = new Strain();
         $list = [1, 2, 3];
         $predicate = function ($x) {
             return $x % 2 === 1;
         };
 
-        $this->assertEquals([1, 3], $this->strain->keep($list, $predicate));
+        $this->assertEquals([1, 3], $strain->keep($list, $predicate));
     }
 
     /**
@@ -81,12 +78,13 @@ class StrainTest extends TestCase
     #[TestDox('Keeps neither first nor last')]
     public function testKeepNeitherFirstNorLast(): void
     {
+        $strain = new Strain();
         $list = [1, 2, 3];
         $predicate = function ($x) {
             return $x % 2 === 0;
         };
 
-        $this->assertEquals([2], $this->strain->keep($list, $predicate));
+        $this->assertEquals([2], $strain->keep($list, $predicate));
     }
 
     /**
@@ -95,12 +93,13 @@ class StrainTest extends TestCase
     #[TestDox('Keeps strings')]
     public function testKeepStrings(): void
     {
+        $strain = new Strain();
         $list = ["apple", "zebra", "banana", "zombies", "cherimoya", "zealot"];
         $predicate = function ($x) {
             return str_starts_with($x, 'z');
         };
 
-        $this->assertEquals(["zebra", "zombies", "zealot"], $this->strain->keep($list, $predicate));
+        $this->assertEquals(["zebra", "zombies", "zealot"], $strain->keep($list, $predicate));
     }
 
     /**
@@ -109,6 +108,7 @@ class StrainTest extends TestCase
     #[TestDox('Keeps lists')]
     public function testKeepsLists(): void
     {
+        $strain = new Strain();
         $list = [
             [1, 2, 3],
             [5, 5, 5],
@@ -129,7 +129,7 @@ class StrainTest extends TestCase
             [1, 2, 5]
         ];
 
-        $this->assertEquals($expected, $this->strain->keep($list, $predicate));
+        $this->assertEquals($expected, $strain->keep($list, $predicate));
     }
 
     /**
@@ -138,12 +138,13 @@ class StrainTest extends TestCase
     #[TestDox('Discard on empty list returns empty list')]
     public function testDiscardOnEmptyListReturnsEmptyList(): void
     {
+        $strain = new Strain();
         $list = [];
         $predicate = function ($x) {
             return true;
         };
 
-        $this->assertEquals([], $this->strain->discard($list, $predicate));
+        $this->assertEquals([], $strain->discard($list, $predicate));
     }
 
     /**
@@ -152,12 +153,13 @@ class StrainTest extends TestCase
     #[TestDox('Discards everything')]
     public function testDiscardEverything(): void
     {
+        $strain = new Strain();
         $list = [1, 3, 5];
         $predicate = function ($x) {
             return true;
         };
 
-        $this->assertEquals([], $this->strain->discard($list, $predicate));
+        $this->assertEquals([], $strain->discard($list, $predicate));
     }
 
     /**
@@ -166,12 +168,13 @@ class StrainTest extends TestCase
     #[TestDox('Discards nothing')]
     public function testDiscardNothing(): void
     {
+        $strain = new Strain();
         $list = [1, 3, 5];
         $predicate = function ($x) {
             return false;
         };
 
-        $this->assertEquals([1, 3, 5], $this->strain->discard($list, $predicate));
+        $this->assertEquals([1, 3, 5], $strain->discard($list, $predicate));
     }
 
     /**
@@ -180,12 +183,13 @@ class StrainTest extends TestCase
     #[TestDox('Discards first and last')]
     public function testDiscardFirstAndLast(): void
     {
+        $strain = new Strain();
         $list = [1, 2, 3];
         $predicate = function ($x) {
             return $x % 2 === 1;
         };
 
-        $this->assertEquals([2], $this->strain->discard($list, $predicate));
+        $this->assertEquals([2], $strain->discard($list, $predicate));
     }
 
     /**
@@ -194,12 +198,13 @@ class StrainTest extends TestCase
     #[TestDox('Discards neither first nor last')]
     public function testDiscardNeitherFirstNorLast(): void
     {
+        $strain = new Strain();
         $list = [1, 2, 3];
         $predicate = function ($x) {
             return $x % 2 === 0;
         };
 
-        $this->assertEquals([1,3], $this->strain->discard($list, $predicate));
+        $this->assertEquals([1,3], $strain->discard($list, $predicate));
     }
 
     /**
@@ -208,12 +213,13 @@ class StrainTest extends TestCase
     #[TestDox('Discards strings')]
     public function testDiscardStrings(): void
     {
+        $strain = new Strain();
         $list = ["apple", "zebra", "banana", "zombies", "cherimoya", "zealot"];
         $predicate = function ($x) {
             return str_starts_with($x, 'z');
         };
 
-        $this->assertEquals(["apple", "banana", "cherimoya"], $this->strain->discard($list, $predicate));
+        $this->assertEquals(["apple", "banana", "cherimoya"], $strain->discard($list, $predicate));
     }
 
     /**
@@ -222,6 +228,7 @@ class StrainTest extends TestCase
     #[TestDox('Discards lists')]
     public function testDiscardLists(): void
     {
+        $strain = new Strain();
         $list = [
             [1, 2, 3],
             [5, 5, 5],
@@ -241,6 +248,6 @@ class StrainTest extends TestCase
             [2, 2, 1]
         ];
 
-        $this->assertEquals($expected, $this->strain->discard($list, $predicate));
+        $this->assertEquals($expected, $strain->discard($list, $predicate));
     }
 }
