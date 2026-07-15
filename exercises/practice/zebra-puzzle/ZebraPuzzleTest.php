@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class ZebraPuzzleTest extends TestCase
 {
-    private ZebraPuzzle $zebraPuzzle;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'ZebraPuzzle.php';
-    }
-
-    public function setUp(): void
-    {
-        $this->zebraPuzzle = new ZebraPuzzle();
     }
 
     /**
@@ -25,7 +18,8 @@ class ZebraPuzzleTest extends TestCase
     #[TestDox('Resident who drinks water')]
     public function testResidentWhoDrinksWater(): void
     {
-        $this->assertEquals('Norwegian', $this->zebraPuzzle->waterDrinker());
+        $zebraPuzzle = new ZebraPuzzle();
+        $this->assertEquals('Norwegian', $zebraPuzzle->waterDrinker());
     }
 
     /**
@@ -34,6 +28,7 @@ class ZebraPuzzleTest extends TestCase
     #[TestDox('Resident who owns zebra')]
     public function testResidentWhoOwnsZebra(): void
     {
-        $this->assertEquals('Japanese', $this->zebraPuzzle->zebraOwner());
+        $zebraPuzzle = new ZebraPuzzle();
+        $this->assertEquals('Japanese', $zebraPuzzle->zebraOwner());
     }
 }
