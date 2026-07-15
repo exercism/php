@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class TwelveDaysTest extends TestCase
 {
-    private TwelveDays $twelveDays;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'TwelveDays.php';
-    }
-
-    public function setUp(): void
-    {
-        $this->twelveDays = new TwelveDays();
     }
 
     /**
@@ -25,8 +18,9 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> First day a partridge in a pear tree')]
     public function testVerseFirstDayAPartridgeInAPearTree(): void
     {
+        $twelveDays = new TwelveDays();
         $expected = "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(1, 1));
+        $this->assertEquals($expected, $twelveDays->recite(1, 1));
     }
 
     /**
@@ -35,10 +29,11 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Second day two turtle doves')]
     public function testVerseSecondDayTwoTurtleDoves(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the second day of Christmas my true love gave to me: two Turtle Doves, " .
             "and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(2, 2));
+        $this->assertEquals($expected, $twelveDays->recite(2, 2));
     }
 
     /**
@@ -47,10 +42,11 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Third day three french hens')]
     public function testVerseThirdDayThreeFrenchHens(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, " .
             "and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(3, 3));
+        $this->assertEquals($expected, $twelveDays->recite(3, 3));
     }
 
     /**
@@ -59,10 +55,11 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Fourth day four calling birds')]
     public function testVerseFourthDayFourCallingBirds(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the fourth day of Christmas my true love gave to me: four Calling Birds, three French Hens, " .
             "two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(4, 4));
+        $this->assertEquals($expected, $twelveDays->recite(4, 4));
     }
 
     /**
@@ -71,10 +68,11 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Fifth day five gold rings')]
     public function testVerseFifthDayFiveGoldRings(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, " .
             "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(5, 5));
+        $this->assertEquals($expected, $twelveDays->recite(5, 5));
     }
 
     /**
@@ -83,10 +81,11 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Sixth day six geese-a-laying')]
     public function testVerseSixthDaySixGeeseALaying(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, five Gold Rings, " .
             "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(6, 6));
+        $this->assertEquals($expected, $twelveDays->recite(6, 6));
     }
 
     /**
@@ -95,11 +94,12 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Seventh day seven swans-a-swimming')]
     public function testVerseSeventhDaySevenSwansASwimming(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the seventh day of Christmas my true love gave to me: seven Swans-a-Swimming, " .
             "six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, " .
             "and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(7, 7));
+        $this->assertEquals($expected, $twelveDays->recite(7, 7));
     }
 
     /**
@@ -108,11 +108,12 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Eighth day eight maids-a-milking')]
     public function testVerseEightDayEightMaidsAMilking(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the eighth day of Christmas my true love gave to me: eight Maids-a-Milking, " .
             "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, " .
             "two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(8, 8));
+        $this->assertEquals($expected, $twelveDays->recite(8, 8));
     }
 
     /**
@@ -121,11 +122,12 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Ninth day nine ladies dancing')]
     public function testVerseNinthDayNineLadiesDancing(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the ninth day of Christmas my true love gave to me: nine Ladies Dancing, " .
             "eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, " .
             "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(9, 9));
+        $this->assertEquals($expected, $twelveDays->recite(9, 9));
     }
 
     /**
@@ -134,11 +136,12 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Tenth day ten lords-a-leaping')]
     public function testVerseTenthDayTenLordsALeaping(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, " .
             "nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, " .
             "five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(10, 10));
+        $this->assertEquals($expected, $twelveDays->recite(10, 10));
     }
 
     /**
@@ -147,12 +150,13 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Eleventh day eleven pipers piping')]
     public function testVerseEleventhDayElevenPipersPiping(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, " .
             "ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, " .
             "six Geese-a-Laying, five Gold Rings, four Calling Birds, " .
             "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(11, 11));
+        $this->assertEquals($expected, $twelveDays->recite(11, 11));
     }
 
     /**
@@ -161,12 +165,13 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Verse -> Twelfth day twelve drummers drumming')]
     public function testVerseTwelfthDayTwelveDrummersDrumming(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the twelfth day of Christmas my true love gave to me: twelve Drummers Drumming, " .
             "eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, " .
             "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, " .
             "two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(12, 12));
+        $this->assertEquals($expected, $twelveDays->recite(12, 12));
     }
 
     /**
@@ -175,13 +180,14 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Lyrics -> Recites first three verses of the song')]
     public function testLyricsRecitesFirstThreeVersesOfSong(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree." . PHP_EOL .
             "On the second day of Christmas my true love gave to me: two Turtle Doves, " .
             "and a Partridge in a Pear Tree." . PHP_EOL .
             "On the third day of Christmas my true love gave to me: three French Hens, two Turtle Doves, " .
             "and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(1, 3));
+        $this->assertEquals($expected, $twelveDays->recite(1, 3));
     }
 
     /**
@@ -190,6 +196,7 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Lyrics -> Recites three verses from the middle of the song')]
     public function testLyricsRecitesThreeVersesFromMiddleOfSong(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the fourth day of Christmas my true love gave to me: four Calling Birds, three French Hens, " .
             "two Turtle Doves, and a Partridge in a Pear Tree." . PHP_EOL .
@@ -197,7 +204,7 @@ class TwelveDaysTest extends TestCase
             "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree." . PHP_EOL .
             "On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, five Gold Rings, " .
             "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(4, 6));
+        $this->assertEquals($expected, $twelveDays->recite(4, 6));
     }
 
     /**
@@ -206,6 +213,7 @@ class TwelveDaysTest extends TestCase
     #[TestDox('Lyrics -> Recites the whole song')]
     public function testLyricsRecitesTheWholeSong(): void
     {
+        $twelveDays = new TwelveDays();
         $expected =
             "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree." . PHP_EOL .
             "On the second day of Christmas my true love gave to me: two Turtle Doves, " .
@@ -238,6 +246,6 @@ class TwelveDaysTest extends TestCase
             "eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, " .
             "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, " .
             "two Turtle Doves, and a Partridge in a Pear Tree.";
-        $this->assertEquals($expected, $this->twelveDays->recite(1, 12));
+        $this->assertEquals($expected, $twelveDays->recite(1, 12));
     }
 }
