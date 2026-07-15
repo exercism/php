@@ -7,16 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class SecretHandshakeTest extends TestCase
 {
-    private SecretHandshake $secretHandshake;
-
     public static function setUpBeforeClass(): void
     {
         require_once 'SecretHandshake.php';
-    }
-
-    public function setUp(): void
-    {
-        $this->secretHandshake = new SecretHandshake();
     }
 
     /**
@@ -25,7 +18,8 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Wink for 1')]
     public function testWinkForOne(): void
     {
-        $this->assertEquals(['wink'], $this->secretHandshake->commands(1));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals(['wink'], $secretHandshake->commands(1));
     }
 
     /**
@@ -34,7 +28,8 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Double blink for 10')]
     public function testDoubleBlinkForTen(): void
     {
-        $this->assertEquals(['double blink'], $this->secretHandshake->commands(0b0_0010));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals(['double blink'], $secretHandshake->commands(0b0_0010));
     }
 
     /**
@@ -43,7 +38,8 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Close your eyes for 100')]
     public function testCloseYourEyesForHundred(): void
     {
-        $this->assertEquals(['close your eyes'], $this->secretHandshake->commands(0b100));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals(['close your eyes'], $secretHandshake->commands(0b100));
     }
 
     /**
@@ -52,7 +48,8 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Jump for 1000')]
     public function testJumpForThousand(): void
     {
-        $this->assertEquals(['jump'], $this->secretHandshake->commands(8));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals(['jump'], $secretHandshake->commands(8));
     }
 
     /**
@@ -61,7 +58,8 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Combine two actions')]
     public function testCombineTwoActions(): void
     {
-        $this->assertEquals(['wink', 'double blink'], $this->secretHandshake->commands(3));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals(['wink', 'double blink'], $secretHandshake->commands(3));
     }
 
     /**
@@ -70,7 +68,8 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Reverse two actions')]
     public function testReverseTwoActions(): void
     {
-        $this->assertEquals(['double blink', 'wink'], $this->secretHandshake->commands(0b10011));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals(['double blink', 'wink'], $secretHandshake->commands(0b10011));
     }
 
     /**
@@ -79,7 +78,8 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Reversing one action gives the same action')]
     public function testReversingOneActionGivesTheSameAction(): void
     {
-        $this->assertEquals(['jump'], $this->secretHandshake->commands(24));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals(['jump'], $secretHandshake->commands(24));
     }
 
     /**
@@ -88,7 +88,8 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Reversing no actions still gives no actions')]
     public function testReversingNoActionsStillGivesNoActions(): void
     {
-        $this->assertEquals([], $this->secretHandshake->commands(16));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals([], $secretHandshake->commands(16));
     }
 
     /**
@@ -97,9 +98,10 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('All possible actions')]
     public function testAllPossibleActions(): void
     {
+        $secretHandshake = new SecretHandshake();
         $this->assertEquals(
             ['wink', 'double blink', 'close your eyes', 'jump'],
-            $this->secretHandshake->commands(15)
+            $secretHandshake->commands(15)
         );
     }
 
@@ -109,9 +111,10 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Reverse all possible actions')]
     public function testReverseAllPossibleActions(): void
     {
+        $secretHandshake = new SecretHandshake();
         $this->assertEquals(
             ['jump', 'close your eyes', 'double blink', 'wink'],
-            $this->secretHandshake->commands(31)
+            $secretHandshake->commands(31)
         );
     }
 
@@ -121,6 +124,7 @@ class SecretHandshakeTest extends TestCase
     #[TestDox('Do nothing for zero')]
     public function testDoNothingForZero(): void
     {
-        $this->assertEquals([], $this->secretHandshake->commands(0b0));
+        $secretHandshake = new SecretHandshake();
+        $this->assertEquals([], $secretHandshake->commands(0b0));
     }
 }
