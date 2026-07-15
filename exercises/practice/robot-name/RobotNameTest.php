@@ -11,42 +11,38 @@ class RobotNameTest extends TestCase
         require_once 'RobotName.php';
     }
 
-    /** @var Robot $robot */
-    protected $robot = null;
-
-    public function setUp(): void
-    {
-        $this->robot = new Robot();
-    }
-
     public function testHasName(): void
     {
-        $this->assertMatchesRegularExpression('/^[a-z]{2}\d{3}$/i', $this->robot->getName());
+        $robot = new Robot();
+        $this->assertMatchesRegularExpression('/^[a-z]{2}\d{3}$/i', $robot->getName());
     }
 
     public function testNameSticks(): void
     {
-        $old = $this->robot->getName();
+        $robot = new Robot();
+        $old = $robot->getName();
 
-        $this->assertSame($this->robot->getName(), $old);
+        $this->assertSame($robot->getName(), $old);
     }
 
     public function testDifferentRobotsHaveDifferentNames(): void
     {
+        $robot = new Robot();
         $other_bot = new Robot();
 
-        $this->assertNotSame($other_bot->getName(), $this->robot->getName());
+        $this->assertNotSame($other_bot->getName(), $robot->getName());
 
         unset($other_bot);
     }
 
     public function testResetName(): void
     {
-        $name1 = $this->robot->getName();
+        $robot = new Robot();
+        $name1 = $robot->getName();
 
-        $this->robot->reset();
+        $robot->reset();
 
-        $name2 = $this->robot->getName();
+        $name2 = $robot->getName();
 
         $this->assertNotSame($name1, $name2);
 
@@ -55,19 +51,21 @@ class RobotNameTest extends TestCase
 
     public function testNamesArentRecycled(): void
     {
+        $robot = new Robot();
         $names = [];
 
         for ($i = 0; $i < 10000; $i++) {
-            $name = $this->robot->getName();
+            $name = $robot->getName();
             $this->assertArrayNotHasKey($name, $names, sprintf('Name %s reissued after Reset.', $name));
             $names[$name] = true;
-            $this->robot->reset();
+            $robot->reset();
         }
     }
 
     // This test is optional.
     public function testNameUniquenessManyRobots(): void
     {
+        $robot = new Robot();
         $names = [];
 
         for ($i = 0; $i < 10000; $i++) {
