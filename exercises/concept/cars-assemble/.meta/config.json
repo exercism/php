@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "pablo-miralles"
+  ],
+  "files": {
+    "solution": [
+      "CarsAssemble.php"
+    ],
+    "test": [
+      "CarsAssembleTest.php"
+    ],
+    "exemplar": [
+      ".meta/exemplar.php"
+    ]
+  },
+  "forked_from": [
+    "csharp/cars-assemble"
+  ],
+  "blurb": "Learn about comparisons and if statements by analyzing a car assembly line!"
+}
