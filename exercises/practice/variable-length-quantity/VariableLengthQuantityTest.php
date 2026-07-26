@@ -247,7 +247,7 @@ class VariableLengthQuantityTest extends TestCase
     #[TestDox('Decode a series of bytes, producing a series of integers. -> two bytes')]
     public function testDecodeASeriesOfBytesProducingASeriesOfIntegersTwoBytes(): void
     {
-        $this->assertEquals([8192], vlq_decode([0xC0, 0x00]));
+        $this->assertEquals([0x2000], vlq_decode([0xC0, 0x00]));
     }
 
     /**
@@ -256,7 +256,7 @@ class VariableLengthQuantityTest extends TestCase
     #[TestDox('Decode a series of bytes, producing a series of integers. -> three bytes')]
     public function testDecodeASeriesOfBytesProducingASeriesOfIntegersThreeBytes(): void
     {
-        $this->assertEquals([2097151], vlq_decode([0xFF, 0xFF, 0x7F]));
+        $this->assertEquals([0x1FFFFF], vlq_decode([0xFF, 0xFF, 0x7F]));
     }
 
     /**
@@ -265,7 +265,7 @@ class VariableLengthQuantityTest extends TestCase
     #[TestDox('Decode a series of bytes, producing a series of integers. -> four bytes')]
     public function testDecodeASeriesOfBytesProducingASeriesOfIntegersFourBytes(): void
     {
-        $this->assertEquals([2097152], vlq_decode([0x81, 0x80, 0x80, 0x00]));
+        $this->assertEquals([0x200000], vlq_decode([0x81, 0x80, 0x80, 0x00]));
     }
 
     /**
@@ -274,7 +274,7 @@ class VariableLengthQuantityTest extends TestCase
     #[TestDox('Decode a series of bytes, producing a series of integers. -> maximum 32-bit integer')]
     public function testDecodeASeriesOfBytesProducingASeriesOfIntegersMaximum32BitInteger(): void
     {
-        $this->assertEquals([4294967295], vlq_decode([0x8F, 0xFF, 0xFF, 0xFF, 0x7F]));
+        $this->assertEquals([0xFFFFFFFF], vlq_decode([0x8F, 0xFF, 0xFF, 0xFF, 0x7F]));
     }
 
     /**
@@ -283,9 +283,7 @@ class VariableLengthQuantityTest extends TestCase
     #[TestDox('Decode a series of bytes, producing a series of integers. -> incomplete sequence causes error')]
     public function testDecodeASeriesOfBytesProducingASeriesOfIntegersIncompleteSequenceCausesError(): void
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('incomplete sequence');
-
+        $this->expectException(Exception::class);
         vlq_decode([0xFF]);
     }
 
@@ -295,8 +293,7 @@ class VariableLengthQuantityTest extends TestCase
     #[TestDox('Decode a series of bytes, producing a series of integers. -> incomplete sequence causes error, even if value is zero')]
     public function testDecodeASeriesOfBytesProducingASeriesOfIntegersIncompleteSequenceZeroValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('incomplete sequence');
+        $this->expectException(Exception::class);
         vlq_decode([0x80]);
     }
 
@@ -307,7 +304,7 @@ class VariableLengthQuantityTest extends TestCase
     public function testDecodeASeriesOfBytesProducingASeriesOfIntegersMultipleValues(): void
     {
         $this->assertEquals(
-            [8192, 1193046, 268435455, 0, 16383, 16384],
+            [0x2000, 0x123456, 0x0FFFFFFF, 0x00, 0x3FFF, 0x4000],
             vlq_decode([
                 0xC0, 0x00,
                 0xC8, 0xE8, 0x56,

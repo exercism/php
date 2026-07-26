@@ -7,10 +7,6 @@ function vlq_encode(array $integers): array
     $result = [];
 
     foreach ($integers as $integer) {
-        if ($integer > PHP_INT_MAX) {
-            throw new InvalidArgumentException('The value is greater than the maximum allowed.');
-        }
-
         $bytes = [];
         do {
             $byte = 0x7f & $integer;
