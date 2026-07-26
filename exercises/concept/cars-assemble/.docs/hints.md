@@ -2,24 +2,27 @@
 
 ## General
 
-- Review the [comparison operators][comparison-operators] and [control structures][if-statement] documentation.
+- The introduction covers the comparison operators you need for this exercise.
+- You may also review the [comparison operators][comparison-operators] documentation.
 
 ## 1. Calculate the success rate
 
-- Determining the success rate can be done through a [conditional statement][if-statement].
-- Numbers can be compared using the built-in [comparison operators][comparison-operators].
+- Compare `$speed` with the boundary values from the table (`===`, `>=`, `>`, `<=`, or `<` as needed).
+- You can use a simple `if` statement to return the matching success rate.
 
 ## 2. Calculate the production rate per hour
 
-- Use the `CarsAssemble.successRate()` method you wrote earlier to determine the success rate.
-- PHP allows multiplication between integers and floating-point numbers.
-  The result will be a floating-point number when either operand is a float.
+- Reuse the `successRate()` method you wrote earlier: `$this->successRate($speed)`.
+- Multiply `221`, `$speed`, and the success rate.
+- PHP can multiply integers and floating-point numbers together; the result may be a float.
 
-## 3. Calculate the number of working items produced per minute
+## 3. Check whether the line is running
 
-- Converting a floating-point number to an integer discards the fractional part (truncation toward zero).
-- You can cast to an integer with `(int)` or use [`intval()`][intval].
+- Use a not-identical comparison (`!==`) against `0`.
+- Return the boolean result of that comparison.
+
+## 4. Compare two line speeds
+
+- The spaceship operator (`<=>`) returns `-1`, `0`, or `1` directly.
 
 [comparison-operators]: https://www.php.net/manual/en/language.operators.comparison.php
-[if-statement]: https://www.php.net/manual/en/control-structures.if.php
-[intval]: https://www.php.net/manual/en/function.intval.php

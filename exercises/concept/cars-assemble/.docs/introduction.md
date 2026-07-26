@@ -2,92 +2,60 @@
 
 ## Comparison Operators
 
-PHP has ten built in comparison operators:
+Comparison operators compare two values and usually return a boolean (`true` or `false`).
+They are commonly used to make decisions in code.
 
-| Name  | Example    | Result                                             |
-| ----- | ---------- | -------------------------------------------------- |
-| Equal | `$a == $b` | true if `$a` is equal to `$b` after type juggling. |
-| Identical | `$a === $b` | true if `$a` is equal to `$b` and the same type. |
-| Not Equal | `$a != $b` | true if `$a` is not equal to `$b` after type juggling. |
-| Not Equal | `$a <> $b` | true if `$a` is not equal to `$b` after type juggling. |
-| Not identical | `$a !== $b` | true if `$a` is not equal to `$b` or not of the same type. |
-| Less than | `$a < $b` | true if `$a` is strictly less than `$b`. |
-| Greater than | `$a > $b` | true if `$a` is strictly greater than `$b`. |
-| Less than or equal to | `$a <= $b` | true if `$a` is less than or equal to `$b`. |
-| Greater than or equal to | `$a >= $b` | true if `$a` is greater than or equal to `$b`. |
-| Spaceship | `$a <=> $b` | returns an integer less than, equal to, or greater than `0`i when `$a`. |
-
-PHP has distinct definitions that differentiate between `equal` and `identical`.
-Sometimes `identical` is also referred to as `strictly equal`.
+For learning PHP, start with **identical** comparisons and relational comparisons between numbers:
 
 ```php
 <?php
 
-// Comparisons between integer and numeric string values
-1 == "1"; // => true, equal
-1 === "1"; // => false, not identical
-
-// Comparisons between integers and floating point values
-1 == 1.0; // => true
-1 === 1.0; // => false
-
-// Comparisons between object instances
-new stdClass() == new stdClass(); // => true, properties are equal
-new stdClass() === new stdClass(); // => false, references are not identical
+5 === 5; // => true
+5 !== 0; // => true
+3 < 7;   // => true
+9 > 2;   // => true
+5 <= 5;  // => true
+4 >= 8;  // => false
 ```
 
-## If, Else, Elseif
+| Operator | Meaning |
+| --- | --- |
+| `$a === $b` | identical: equal and the same type |
+| `$a !== $b` | not identical |
+| `$a < $b` | less than |
+| `$a > $b` | greater than |
+| `$a <= $b` | less than or equal to |
+| `$a >= $b` | greater than or equal to |
 
-Conditional statements using `if`, `elseif`, and `else` are a fundamental parts of program control flow.
-The `if` statement evaluates an expression, and if `true`, will execute the code branch.
+### The spaceship operator
+
+The spaceship operator (`<=>`) also compares two values, but it returns an integer instead of a boolean:
+
+- `-1` when the left value is less than the right value
+- `0` when both values are equal
+- `1` when the left value is greater than the right value
 
 ```php
 <?php
 
-if ($expression) {
-    // .. executed if $expression is true
+3 <=> 7; // => -1
+5 <=> 5; // => 0
+9 <=> 2; // => 1
+```
+
+### Using comparisons in an `if` statement
+
+A comparison can be used as the condition of an `if` statement.
+If the comparison is `true`, the code inside the braces runs:
+
+```php
+<?php
+
+if ($value === 10) {
+    return 0.77;
 }
-```
 
-If the expression is not a boolean value, the evaluation determines the value's "truthiness" or "not falsiness".
-In PHP, the following values are considered equal to false:
-
-- boolean `false`
-- integer `0`
-- float `0.0` and `-0.0`
-- an empty array `[]`
-- an empty string `""` or a numeric string `"0"`
-- `null`
-
-All other values are considered true.
-
-### Responding to multiple conditions
-
-Following an `if` statement, you may chain multiple conditions using `elseif` and `else`.
-
-```php
-<?php
-
-if ($value === 0) {
-    // .. do something
-} elseif ($value === 1) {
-    // .. do something else
-} else {
-    // ,, do this if nothing else
-}
-```
-
-Only one conditional statement evaluated as true will be executed.
-So if multiple conditions may evaluate to true, the order they are written is important.
-
-```php
-<?php
-
-if (true) {
-    // .. always do something
-} elseif (true)
-    // .. will never be executed
-} else {
-    // .. will never be executed
+if ($value >= 5) {
+    return 0.9;
 }
 ```

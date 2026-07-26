@@ -12,7 +12,12 @@ class CarsAssemble
         throw new \BadFunctionCallException("Implement the function");
     }
 
-    public function workingItemsPerMinute($speed)
+    public function isLineRunning($speed)
+    {
+        throw new \BadFunctionCallException("Implement the function");
+    }
+
+    public function compareSpeeds($left, $right)
     {
         throw new \BadFunctionCallException("Implement the function");
     }

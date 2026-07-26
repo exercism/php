@@ -57,6 +57,17 @@ class CarsAssembleTest extends TestCase
     /**
      * @task_id 1
      */
+    #[TestDox('Success rate for speed 8')]
+    public function testSuccessRateForSpeedEight()
+    {
+        $assembly_line = new CarsAssemble();
+        $actual = $assembly_line->successRate(8);
+        $this->assertEqualsWithDelta(0.9, $actual, 0.001);
+    }
+
+    /**
+     * @task_id 1
+     */
     #[TestDox('Success rate for speed 9')]
     public function testSuccessRateForSpeedNine()
     {
@@ -84,7 +95,7 @@ class CarsAssembleTest extends TestCase
     {
         $assembly_line = new CarsAssemble();
         $actual = $assembly_line->productionRatePerHour(0);
-        $this->assertEqualsWithDelta(0.0, $actual, 0.1);
+        $this->assertEqualsWithDelta(0.0, $actual, 0.001);
     }
 
     /**
@@ -95,7 +106,7 @@ class CarsAssembleTest extends TestCase
     {
         $assembly_line = new CarsAssemble();
         $actual = $assembly_line->productionRatePerHour(1);
-        $this->assertEqualsWithDelta(221.0, $actual, 0.1);
+        $this->assertEqualsWithDelta(221.0, $actual, 0.001);
     }
 
     /**
@@ -106,18 +117,18 @@ class CarsAssembleTest extends TestCase
     {
         $assembly_line = new CarsAssemble();
         $actual = $assembly_line->productionRatePerHour(4);
-        $this->assertEqualsWithDelta(884.0, $actual, 0.1);
+        $this->assertEqualsWithDelta(884.0, $actual, 0.001);
     }
 
     /**
      * @task_id 2
      */
-    #[TestDox('Production rate per hour for speed 7')]
-    public function testProductionRatePerHourForSpeedSeven()
+    #[TestDox('Production rate per hour for speed 6')]
+    public function testProductionRatePerHourForSpeedSix()
     {
         $assembly_line = new CarsAssemble();
-        $actual = $assembly_line->productionRatePerHour(7);
-        $this->assertEqualsWithDelta(1392.3, $actual, 0.1);
+        $actual = $assembly_line->productionRatePerHour(6);
+        $this->assertEqualsWithDelta(1193.4, $actual, 0.001);
     }
 
     /**
@@ -128,7 +139,7 @@ class CarsAssembleTest extends TestCase
     {
         $assembly_line = new CarsAssemble();
         $actual = $assembly_line->productionRatePerHour(9);
-        $this->assertEqualsWithDelta(1591.2, $actual, 0.1);
+        $this->assertEqualsWithDelta(1591.2, $actual, 0.001);
     }
 
     /**
@@ -139,72 +150,66 @@ class CarsAssembleTest extends TestCase
     {
         $assembly_line = new CarsAssemble();
         $actual = $assembly_line->productionRatePerHour(10);
-        $this->assertEqualsWithDelta(1701.7, $actual, 0.1);
+        $this->assertEqualsWithDelta(1701.7, $actual, 0.001);
     }
 
     /**
      * @task_id 3
      */
-    #[TestDox('Working items per minute for speed 0')]
-    public function testWorkingItemsPerMinuteForSpeedZero()
+    #[TestDox('Line is not running at speed 0')]
+    public function testIsLineRunningForSpeedZero()
     {
         $assembly_line = new CarsAssemble();
-        $actual = $assembly_line->workingItemsPerMinute(0);
-        $this->assertSame(0, $actual);
+        $this->assertFalse($assembly_line->isLineRunning(0));
     }
 
     /**
      * @task_id 3
      */
-    #[TestDox('Working items per minute for speed 1')]
-    public function testWorkingItemsPerMinuteForSpeedOne()
+    #[TestDox('Line is running at speed 1')]
+    public function testIsLineRunningForSpeedOne()
     {
         $assembly_line = new CarsAssemble();
-        $actual = $assembly_line->workingItemsPerMinute(1);
-        $this->assertSame(3, $actual);
+        $this->assertTrue($assembly_line->isLineRunning(1));
     }
 
     /**
      * @task_id 3
      */
-    #[TestDox('Working items per minute for speed 5')]
-    public function testWorkingItemsPerMinuteForSpeedFive()
+    #[TestDox('Line is running at speed 10')]
+    public function testIsLineRunningForSpeedTen()
     {
         $assembly_line = new CarsAssemble();
-        $actual = $assembly_line->workingItemsPerMinute(5);
-        $this->assertSame(16, $actual);
+        $this->assertTrue($assembly_line->isLineRunning(10));
     }
 
     /**
-     * @task_id 3
+     * @task_id 4
      */
-    #[TestDox('Working items per minute for speed 8')]
-    public function testWorkingItemsPerMinuteForSpeedEight()
+    #[TestDox('Compare speeds when the first is smaller')]
+    public function testCompareSpeedsWhenFirstIsSmaller()
     {
         $assembly_line = new CarsAssemble();
-        $actual = $assembly_line->workingItemsPerMinute(8);
-        $this->assertSame(26, $actual);
+        $this->assertSame(-1, $assembly_line->compareSpeeds(3, 7));
     }
 
     /**
-     * @task_id 3
+     * @task_id 4
      */
-    #[TestDox('Working items per minute for speed 9')]
-    public function testWorkingItemsPerMinuteForSpeedNine()
+    #[TestDox('Compare speeds when both are equal')]
+    public function testCompareSpeedsWhenEqual()
     {
         $assembly_line = new CarsAssemble();
-        $actual = $assembly_line->workingItemsPerMinute(9);
-        $this->assertSame(26, $actual);
+        $this->assertSame(0, $assembly_line->compareSpeeds(5, 5));
     }
 
     /**
-     * @task_id 3
+     * @task_id 4
      */
-    #[TestDox('Working items per minute for speed 10')]
-    public function testWorkingItemsPerMinuteForSpeedTen()
+    #[TestDox('Compare speeds when the first is greater')]
+    public function testCompareSpeedsWhenFirstIsGreater()
     {
         $assembly_line = new CarsAssemble();
-        $actual = $assembly_line->workingItemsPerMinute(10);
-        $this->assertSame(28, $actual);
+        $this->assertSame(1, $assembly_line->compareSpeeds(9, 2));
     }
 }

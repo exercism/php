@@ -2,8 +2,6 @@
 
 class CarsAssemble
 {
-    private const CARS_PER_HOUR = 221;
-
     public function successRate($speed)
     {
         if ($speed === 10) {
@@ -18,7 +16,7 @@ class CarsAssemble
             return 0.9;
         }
 
-        if ($speed >= 1) {
+        if ($speed > 0) {
             return 1.0;
         }
 
@@ -27,11 +25,16 @@ class CarsAssemble
 
     public function productionRatePerHour($speed)
     {
-        return self::CARS_PER_HOUR * $speed * $this->successRate($speed);
+        return 221 * $speed * $this->successRate($speed);
     }
 
-    public function workingItemsPerMinute($speed)
+    public function isLineRunning($speed)
     {
-        return (int) ($this->productionRatePerHour($speed) / 60);
+        return $speed !== 0;
+    }
+
+    public function compareSpeeds($left, $right)
+    {
+        return $left <=> $right;
     }
 }

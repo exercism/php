@@ -87,14 +87,12 @@
         "name": "Cars, Assemble!",
         "uuid": "4949e5b9-c685-4380-9d70-46ae970035cf",
         "concepts": [
-          "comparison-operators",
-          "if-control-structures"
+          "comparison-operators"
         ],
         "prerequisites": [
           "booleans",
           "integers",
-          "floating-point-numbers",
-          "arithmetic-operators"
+          "floating-point-numbers"
         ],
         "status": "beta"
       },
