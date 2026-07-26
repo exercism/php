@@ -848,6 +848,14 @@
         "difficulty": 3
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "1e91fd0f-98ee-404c-ac69-fc6a012f6c1b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "2fd3d924-477d-4113-96a5-c9687776da49",

@@ -37,6 +37,7 @@ hamming
 hello-world
 high-scores
 house
+intergalactic-transmission
 isbn-verifier
 isogram
 killer-sudoku-helper
