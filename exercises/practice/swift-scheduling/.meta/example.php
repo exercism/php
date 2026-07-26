@@ -42,7 +42,7 @@ class SwiftScheduling
 
     private function convertAsap(DateTime $meetingStart): DateTime
     {
-        $meetingHour = (int) $meetingStart->format('H');
+        $meetingHour = $meetingStart->format('H');
 
         return $meetingHour < 13
             ? $meetingStart->setTime(17, 0)
@@ -52,7 +52,7 @@ class SwiftScheduling
 
     private function convertEow(DateTime $meetingStart): DateTime
     {
-        $meetingDay = (int) $meetingStart->format('w');
+        $meetingDay = (int) $meetingStart->format('N');
 
         return $meetingDay === 1 || $meetingDay === 2 || $meetingDay === 3
             ? $meetingStart->modify("friday")
@@ -63,7 +63,7 @@ class SwiftScheduling
 
     private function convertVariableM(DateTime $meetingStart, int $dueMonth): DateTime
     {
-        $meetingMonth = (int) $meetingStart->format('m');
+        $meetingMonth = $meetingStart->format('m');
 
         $meetingMonth < $dueMonth
             ? $meetingStart->setDate(
@@ -72,14 +72,14 @@ class SwiftScheduling
                 1
             )
             : $meetingStart->setDate(
-                (int) $meetingStart->format('Y') + 1,
+                $meetingStart->format('Y') + 1,
                 $dueMonth,
                 1
             );
 
-        $meetingDay = (int) $meetingStart->format('w');
+        $meetingDay = (int) $meetingStart->format('N');
 
-        return $meetingDay === 0 || $meetingDay === 6
+        return $meetingDay === 6
             ? $meetingStart->modify("first weekday")
                            ->setTime(8, 0)
             : $meetingStart->setTime(8, 0);
@@ -87,8 +87,8 @@ class SwiftScheduling
 
     private function convertVariableQ(DateTime $meetingStart, int $dueQuarter): DateTime
     {
-        $meetingMonth   = (int) $meetingStart->format('m');
-        $meetingQuarter = round(($meetingMonth + 2) / 3);
+        $meetingMonth   = $meetingStart->format('m');
+        $meetingQuarter = intdiv($meetingMonth + 2, 3);
 
         $meetingStart->setDate(
             (int) $meetingStart->format('Y'),
