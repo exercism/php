@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class RobotNameTest extends TestCase
@@ -11,12 +12,14 @@ class RobotNameTest extends TestCase
         require_once 'RobotName.php';
     }
 
+    #[TestDox('Has name')]
     public function testHasName(): void
     {
         $robot = new Robot();
         $this->assertMatchesRegularExpression('/^[a-z]{2}\d{3}$/i', $robot->getName());
     }
 
+    #[TestDox('Name sticks')]
     public function testNameSticks(): void
     {
         $robot = new Robot();
@@ -25,6 +28,7 @@ class RobotNameTest extends TestCase
         $this->assertSame($robot->getName(), $old);
     }
 
+    #[TestDox('Different robots have different names')]
     public function testDifferentRobotsHaveDifferentNames(): void
     {
         $robot = new Robot();
@@ -35,6 +39,7 @@ class RobotNameTest extends TestCase
         unset($other_bot);
     }
 
+    #[TestDox('Reset name')]
     public function testResetName(): void
     {
         $robot = new Robot();
@@ -49,6 +54,7 @@ class RobotNameTest extends TestCase
         $this->assertMatchesRegularExpression('/\w{2}\d{3}/', $name2);
     }
 
+    #[TestDox("Names aren't recycled")]
     public function testNamesArentRecycled(): void
     {
         $robot = new Robot();
@@ -63,6 +69,7 @@ class RobotNameTest extends TestCase
     }
 
     // This test is optional.
+    #[TestDox('Name uniqueness many robots')]
     public function testNameUniquenessManyRobots(): void
     {
         $robot = new Robot();
