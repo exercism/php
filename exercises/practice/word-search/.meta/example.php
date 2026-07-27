@@ -12,7 +12,6 @@ class WordSearch
 
     private int $width;
     private int $height;
-    private array $found;
 
     public function __construct(private array $grid)
     {
@@ -20,29 +19,24 @@ class WordSearch
         $this->height = count($this->grid);
     }
 
-    public function search(array $words): array
+    public function search(string $word): ?Result
     {
-        foreach ($words as $word) {
-            for ($X = 0; $X < $this->width; $X++) {
-                for ($Y = 0; $Y < $this->height; $Y++) {
-                    foreach (self::NEIGHBORHOOD as [$checkX, $checkY]) {
-                        $search = $this->find($word, $X, $Y, $checkX, $checkY);
+        for ($X = 0; $X < $this->width; $X++) {
+            for ($Y = 0; $Y < $this->height; $Y++) {
+                foreach (self::NEIGHBORHOOD as [$checkX, $checkY]) {
+                    $search = $this->find($word, $X, $Y, $checkX, $checkY);
 
-                        if (isset($search)) {
-                            $this->found[$word] = $search;
-                            continue 4;
-                        } else {
-                            $this->found[$word] = null;
-                        }
+                    if (isset($search)) {
+                        return $search;
                     }
                 }
             }
         }
 
-        return $this->found;
+        return null;
     }
 
-    private function find(string $word, int $X, int $Y, int $nextX, int $nextY): ?array
+    private function find(string $word, int $X, int $Y, int $nextX, int $nextY): ?Result
     {
         $currentX = $X;
         $currentY = $Y;
@@ -56,16 +50,10 @@ class WordSearch
             $currentY +=  $nextY;
         }
 
-        return [
-            "start" => [
-                "column" => $X + 1,
-                "row"    => $Y + 1
-            ],
-            "end"   => [
-                "column" => $currentX + 1 - $nextX,
-                "row"    => $currentY + 1 - $nextY
-            ]
-        ];
+        return new Result(
+            new Location($X + 1, $Y + 1),
+            new Location($currentX + 1 - $nextX, $currentY + 1 - $nextY)
+        );
     }
 
     private function findNextLetter(int $X, int $Y): ?string
@@ -75,5 +63,23 @@ class WordSearch
         }
 
         return $this->grid[$Y][$X];
+    }
+}
+
+class Result
+{
+    public function __construct(private Location $start, private Location $end)
+    {
+    }
+}
+
+class Location
+{
+    public function __construct(private int $column, private int $row)
+    {
+        return [
+            "column:" => $this->column,
+            "row:" => $this->row
+        ];
     }
 }

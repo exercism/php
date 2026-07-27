@@ -31,7 +31,23 @@ class WordSearch
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }
 
-    public function search(array $words): array
+    public function search(string $word): ?Result
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+}
+
+class Result
+{
+    public function __construct(Location $start, Location $end)
+    {
+        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+    }
+}
+
+class Location
+{
+    public function __construct(int $column, int $row)
     {
         throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
     }

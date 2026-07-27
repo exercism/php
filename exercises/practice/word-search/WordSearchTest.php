@@ -18,12 +18,11 @@ class WordSearchTest extends TestCase
     #[TestDox('Should accept an initial game grid and a target search word')]
     public function testShouldAcceptAnInitialGameGridAndATargetSearchWord(): void
     {
-        $wordsToSearchFor = ["clojure"];
-        $grid             = ["jefblpepre",];
-        $expected         = ["clojure" => null];
-        $wordSearch       = new WordSearch($grid);
+        $grid            = ["jefblpepre",];
+        $expectedClojure = null;
+        $wordSearch      = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
     }
 
     /**
@@ -32,17 +31,14 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate one word written left to right')]
     public function testShouldLocateOneWordWrittenLeftToRight(): void
     {
-        $wordsToSearchFor = ["clojure"];
-        $grid             = ["clojurermt"];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 1],
-                "end"   => ["column" => 7, "row" => 1]
-            ]
-        ];
+        $grid = ["clojurermt"];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 1),
+            end: new Location(column: 7, row: 1),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
     }
 
     /**
@@ -51,17 +47,14 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate the same word written left to right in a different position')]
     public function testShouldLocateTheSameWordWrittenLeftToRightInADifferentPosition(): void
     {
-        $wordsToSearchFor = ["clojure"];
-        $grid             = ["mtclojurer"];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 3, "row" => 1],
-                "end"   => ["column" => 9, "row" => 1]
-            ]
-        ];
+        $grid = ["mtclojurer"];
+        $expectedClojure = new Result(
+            start: new Location(column: 3, row: 1),
+            end: new Location(column: 9, row: 1),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
     }
 
     /**
@@ -70,17 +63,14 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate a different left to right word')]
     public function testShouldLocateADifferentLeftToRightWord(): void
     {
-        $wordsToSearchFor = ["coffee"];
-        $grid             = ["coffeelplx"];
-        $expected = [
-            "coffee" => [
-                "start" => ["column" => 1, "row" => 1],
-                "end"   => ["column" => 6, "row" => 1]
-            ]
-        ];
+        $grid = ["coffeelplx"];
+        $expectedCoffee = new Result(
+            start: new Location(column: 1, row: 1),
+            end: new Location(column: 6, row: 1),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedCoffee, $wordSearch->search("coffee"));
     }
 
     /**
@@ -89,17 +79,14 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate that different left to right word in a different position')]
     public function testShouldLocateThatDifferentLeftToRightWordInADifferentPosition(): void
     {
-        $wordsToSearchFor = ["coffee"];
-        $grid             = ["xcoffeezlp"];
-        $expected = [
-            "coffee" => [
-                "start" => ["column" => 2, "row" => 1],
-                "end"   => ["column" => 7, "row" => 1]
-            ]
-        ];
+        $grid = ["xcoffeezlp"];
+        $expectedCoffee = new Result(
+            start: new Location(column: 2, row: 1),
+            end: new Location(column: 7, row: 1),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedCoffee, $wordSearch->search("coffee"));
     }
 
     /**
@@ -108,17 +95,14 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate a left to right word in two line grid')]
     public function testShouldLocateALeftToRightWordInTwoLineGrid(): void
     {
-        $wordsToSearchFor = ["clojure"];
-        $grid             = ["jefblpepre", "tclojurerm"];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 2, "row" => 2],
-                "end"   => ["column" => 8, "row" => 2]
-            ]
-        ];
+        $grid = ["jefblpepre", "tclojurerm"];
+        $expectedClojure = new Result(
+            start: new Location(column: 2, row: 2),
+            end: new Location(column: 8, row: 2),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
     }
 
     /**
@@ -127,17 +111,14 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate a left to right word in three line grid')]
     public function testShouldLocateALeftToRightWordInThreeLineGrid(): void
     {
-        $wordsToSearchFor = ["clojure"];
-        $grid             = ["camdcimgtc", "jefblpepre", "clojurermt"];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 3],
-                "end"   => ["column" => 7, "row" => 3]
-            ]
-        ];
+        $grid = ["camdcimgtc", "jefblpepre", "clojurermt"];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 3),
+            end: new Location(column: 7, row: 3),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
     }
 
     /**
@@ -146,7 +127,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate a left to right word in ten line grid')]
     public function testShouldLocateALeftToRightWordInTenLineGrid(): void
     {
-        $wordsToSearchFor = ["clojure"];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -159,15 +139,13 @@ class WordSearchTest extends TestCase
             "jalaycalmp",
             "clojurermt"
         ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ]
-        ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
     }
 
     /**
@@ -176,7 +154,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate that left to right word in a different position in a ten line grid')]
     public function testShouldLocateThatLeftToRightWordInADifferentPositionInATenLineGrid(): void
     {
-        $wordsToSearchFor = ["clojure"];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -189,15 +166,13 @@ class WordSearchTest extends TestCase
             "clojurermt",
             "jalaycalmp"
         ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 9],
-                "end"   => ["column" => 7, "row" => 9]
-            ]
-        ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 9),
+            end: new Location(column: 7, row: 9),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
     }
 
     /**
@@ -206,7 +181,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate a different left to right word in a ten line grid')]
     public function testShouldLocateADifferentLeftToRightWordInATenLineGrid(): void
     {
-        $wordsToSearchFor = ["fortran"];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -219,15 +193,13 @@ class WordSearchTest extends TestCase
             "clojurermt",
             "jalaycalmp"
           ];
-        $expected = [
-            "fortran" => [
-                "start" => ["column" => 1, "row" => 7],
-                "end"   => ["column" => 7, "row" => 7]
-            ]
-        ];
+        $expectedFortran = new Result(
+            start: new Location(column: 1, row: 7),
+            end: new Location(column: 7, row: 7),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedFortran, $wordSearch->search("fortran"));
     }
 
     /**
@@ -236,7 +208,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate multiple words')]
     public function testShouldLocateMultipleWords(): void
     {
-        $wordsToSearchFor = ["fortran", "clojure"];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -249,19 +220,18 @@ class WordSearchTest extends TestCase
             "jalaycalmp",
             "clojurermt"
           ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "fortran" => [
-                "start" => ["column" => 1, "row" => 7],
-                "end"   => ["column" => 7, "row" => 7]
-            ]
-        ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedFortran = new Result(
+            start: new Location(column: 1, row: 7),
+            end: new Location(column: 7, row: 7),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedFortran, $wordSearch->search("fortran"));
     }
 
     /**
@@ -270,17 +240,14 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate a single word written right to left')]
     public function testShouldLocateASingleWordWrittenRightToLeft(): void
     {
-        $wordsToSearchFor = ["elixir"];
         $grid = ["rixilelhrs"];
-        $expected = [
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 1],
-                "end"   => ["column" => 1, "row" => 1]
-            ]
-        ];
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 1),
+            end: new Location(column: 1, row: 1),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
     }
 
     /**
@@ -289,7 +256,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate multiple words written in different horizontal directions')]
     public function testShouldLocateMultipleWordsWrittenInDifferentHorizontalDirections(): void
     {
-        $wordsToSearchFor = ["elixir", "clojure"];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -301,20 +267,19 @@ class WordSearchTest extends TestCase
             "alxhpburyi",
             "jalaycalmp",
             "clojurermt"
-          ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 5],
-                "end"   => ["column" => 1, "row" => 5]
-                ],
         ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 5),
+            end: new Location(column: 1, row: 5),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
     }
 
     /**
@@ -323,7 +288,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate words written top to bottom')]
     public function testShouldLocateWordsWrittenTopToBottom(): void
     {
-        $wordsToSearchFor = ["clojure", "elixir", "ecmascript"];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -335,24 +299,24 @@ class WordSearchTest extends TestCase
             "alxhpburyi",
             "jalaycalmp",
             "clojurermt"
-          ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 5],
-                "end"   => ["column" => 1, "row" => 5]
-                ],
-            "ecmascript" => [
-                "start" => ["column" => 10, "row" => 1],
-                "end"   => ["column" => 10, "row" => 10]
-                ]
         ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 5),
+            end: new Location(column: 1, row: 5),
+        );
+        $expectedEcmascript = new Result(
+            start: new Location(column: 10, row: 1),
+            end: new Location(column: 10, row: 10),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
+        $this->assertEquals($expectedEcmascript, $wordSearch->search("ecmascript"));
     }
 
     /**
@@ -361,7 +325,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate words written bottom to top')]
     public function testShouldLocateWordsWrittenBottomToTop(): void
     {
-        $wordsToSearchFor = ["clojure", "elixir", "ecmascript", "rust"];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -373,28 +336,29 @@ class WordSearchTest extends TestCase
             "alxhpburyi",
             "jalaycalmp",
             "clojurermt"
-          ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 5],
-                "end"   => ["column" => 1, "row" => 5]
-                ],
-            "ecmascript" => [
-                "start" => ["column" => 10, "row" => 1],
-                "end"   => ["column" => 10, "row" => 10]
-                ],
-            "rust" => [
-                "start" => ["column" => 9, "row" => 5],
-                "end"   => ["column" => 9, "row" => 2]
-                ]
         ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 5),
+            end: new Location(column: 1, row: 5),
+        );
+        $expectedEcmascript = new Result(
+            start: new Location(column: 10, row: 1),
+            end: new Location(column: 10, row: 10),
+        );
+        $expectedRust = new Result(
+            start: new Location(column: 9, row: 5),
+            end: new Location(column: 9, row: 2),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
+        $this->assertEquals($expectedEcmascript, $wordSearch->search("ecmascript"));
+        $this->assertEquals($expectedRust, $wordSearch->search("rust"));
     }
 
     /**
@@ -403,7 +367,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate words written top left to bottom right')]
     public function testShouldLocateWordsWrittenTopLeftToBottomRight(): void
     {
-        $wordsToSearchFor = ["clojure", "elixir", "ecmascript", "rust", "java"];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -415,33 +378,36 @@ class WordSearchTest extends TestCase
             "alxhpburyi",
             "jalaycalmp",
             "clojurermt"
-          ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 5],
-                "end"   => ["column" => 1, "row" => 5]
-                ],
-            "ecmascript" => [
-                "start" => ["column" => 10, "row" => 1],
-                "end"   => ["column" => 10, "row" => 10]
-                ],
-            "rust" => [
-                "start" => ["column" => 9, "row" => 5],
-                "end"   => ["column" => 9, "row" => 2]
-                ],
-            "java" => [
-                "start" => ["column" => 1, "row" => 1],
-                "end"   => ["column" => 4, "row" => 4]
-                ]
         ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 5),
+            end: new Location(column: 1, row: 5),
+        );
+        $expectedEcmascript = new Result(
+            start: new Location(column: 10, row: 1),
+            end: new Location(column: 10, row: 10),
+        );
+        $expectedRust = new Result(
+            start: new Location(column: 9, row: 5),
+            end: new Location(column: 9, row: 2),
+        );
+        $expectedJava = new Result(
+            start: new Location(column: 1, row: 1),
+            end: new Location(column: 4, row: 4),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
+        $this->assertEquals($expectedEcmascript, $wordSearch->search("ecmascript"));
+        $this->assertEquals($expectedRust, $wordSearch->search("rust"));
+        $this->assertEquals($expectedJava, $wordSearch->search("java"));
     }
+
 
     /**
      * uuid: c9125189-1861-4b0d-a14e-ba5dab29ca7c
@@ -449,14 +415,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate words written bottom right to top left')]
     public function testShouldLocateWordsWrittenBottomRightToTopLeft(): void
     {
-        $wordsToSearchFor = [
-            "clojure",
-            "elixir",
-            "ecmascript",
-            "rust",
-            "java",
-            "lua"
-        ];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -468,36 +426,39 @@ class WordSearchTest extends TestCase
             "alxhpburyi",
             "jalaycalmp",
             "clojurermt"
-          ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 5],
-                "end"   => ["column" => 1, "row" => 5]
-                ],
-            "ecmascript" => [
-                "start" => ["column" => 10, "row" => 1],
-                "end"   => ["column" => 10, "row" => 10]
-                ],
-            "rust" => [
-                "start" => ["column" => 9, "row" => 5],
-                "end"   => ["column" => 9, "row" => 2]
-                ],
-            "java" => [
-                "start" => ["column" => 1, "row" => 1],
-                "end"   => ["column" => 4, "row" => 4]
-                ],
-            "lua" => [
-                "start" => ["column" => 8, "row" => 9],
-                "end"   => ["column" => 6, "row" => 7]
-                ]
         ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 5),
+            end: new Location(column: 1, row: 5),
+        );
+        $expectedEcmascript = new Result(
+            start: new Location(column: 10, row: 1),
+            end: new Location(column: 10, row: 10),
+        );
+        $expectedRust = new Result(
+            start: new Location(column: 9, row: 5),
+            end: new Location(column: 9, row: 2),
+        );
+        $expectedJava = new Result(
+            start: new Location(column: 1, row: 1),
+            end: new Location(column: 4, row: 4),
+        );
+        $expectedLua = new Result(
+            start: new Location(column: 8, row: 9),
+            end: new Location(column: 6, row: 7),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
+        $this->assertEquals($expectedEcmascript, $wordSearch->search("ecmascript"));
+        $this->assertEquals($expectedRust, $wordSearch->search("rust"));
+        $this->assertEquals($expectedJava, $wordSearch->search("java"));
+        $this->assertEquals($expectedLua, $wordSearch->search("lua"));
     }
 
     /**
@@ -506,15 +467,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate words written bottom left to top right')]
     public function testShouldLocateWordsWrittenBottomLeftToTopRight(): void
     {
-        $wordsToSearchFor = [
-            "clojure",
-            "elixir",
-            "ecmascript",
-            "rust",
-            "java",
-            "lua",
-            "lisp"
-        ];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -526,40 +478,44 @@ class WordSearchTest extends TestCase
             "alxhpburyi",
             "jalaycalmp",
             "clojurermt"
-          ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 5],
-                "end"   => ["column" => 1, "row" => 5]
-                ],
-            "ecmascript" => [
-                "start" => ["column" => 10, "row" => 1],
-                "end"   => ["column" => 10, "row" => 10]
-                ],
-            "rust" => [
-                "start" => ["column" => 9, "row" => 5],
-                "end"   => ["column" => 9, "row" => 2]
-                ],
-            "java" => [
-                "start" => ["column" => 1, "row" => 1],
-                "end"   => ["column" => 4, "row" => 4]
-                ],
-            "lua" => [
-                "start" => ["column" => 8, "row" => 9],
-                "end"   => ["column" => 6, "row" => 7]
-                ],
-            "lisp" => [
-                "start" => ["column" => 3, "row" => 6],
-                "end"   => ["column" => 6, "row" => 3]
-                ]
         ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 5),
+            end: new Location(column: 1, row: 5),
+        );
+        $expectedEcmascript = new Result(
+            start: new Location(column: 10, row: 1),
+            end: new Location(column: 10, row: 10),
+        );
+        $expectedRust = new Result(
+            start: new Location(column: 9, row: 5),
+            end: new Location(column: 9, row: 2),
+        );
+        $expectedJava = new Result(
+            start: new Location(column: 1, row: 1),
+            end: new Location(column: 4, row: 4),
+        );
+        $expectedLua = new Result(
+            start: new Location(column: 8, row: 9),
+            end: new Location(column: 6, row: 7),
+        );
+        $expectedLisp = new Result(
+            start: new Location(column: 3, row: 6),
+            end: new Location(column: 6, row: 3),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
+        $this->assertEquals($expectedEcmascript, $wordSearch->search("ecmascript"));
+        $this->assertEquals($expectedRust, $wordSearch->search("rust"));
+        $this->assertEquals($expectedJava, $wordSearch->search("java"));
+        $this->assertEquals($expectedLua, $wordSearch->search("lua"));
+        $this->assertEquals($expectedLisp, $wordSearch->search("lisp"));
     }
 
     /**
@@ -568,16 +524,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should locate words written top right to bottom left')]
     public function testShouldLocateWordsWrittenTopRightToBottomLeft(): void
     {
-        $wordsToSearchFor = [
-            "clojure",
-            "elixir",
-            "ecmascript",
-            "rust",
-            "java",
-            "lua",
-            "lisp",
-            "ruby"
-        ];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -589,44 +535,49 @@ class WordSearchTest extends TestCase
             "alxhpburyi",
             "jalaycalmp",
             "clojurermt"
-          ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 5],
-                "end"   => ["column" => 1, "row" => 5]
-                ],
-            "ecmascript" => [
-                "start" => ["column" => 10, "row" => 1],
-                "end"   => ["column" => 10, "row" => 10]
-                ],
-            "rust" => [
-                "start" => ["column" => 9, "row" => 5],
-                "end"   => ["column" => 9, "row" => 2]
-                ],
-            "java" => [
-                "start" => ["column" => 1, "row" => 1],
-                "end"   => ["column" => 4, "row" => 4]
-                ],
-            "lua" => [
-                "start" => ["column" => 8, "row" => 9],
-                "end"   => ["column" => 6, "row" => 7]
-                ],
-            "lisp" => [
-                "start" => ["column" => 3, "row" => 6],
-                "end"   => ["column" => 6, "row" => 3]
-                ],
-            "ruby" => [
-                "start" => ["column" => 8, "row" => 6],
-                "end"   => ["column" => 5, "row" => 9]
-                ]
         ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 5),
+            end: new Location(column: 1, row: 5),
+        );
+        $expectedEcmascript = new Result(
+            start: new Location(column: 10, row: 1),
+            end: new Location(column: 10, row: 10),
+        );
+        $expectedRust = new Result(
+            start: new Location(column: 9, row: 5),
+            end: new Location(column: 9, row: 2),
+        );
+        $expectedJava = new Result(
+            start: new Location(column: 1, row: 1),
+            end: new Location(column: 4, row: 4),
+        );
+        $expectedLua = new Result(
+            start: new Location(column: 8, row: 9),
+            end: new Location(column: 6, row: 7),
+        );
+        $expectedLisp = new Result(
+            start: new Location(column: 3, row: 6),
+            end: new Location(column: 6, row: 3),
+        );
+        $expectedRuby = new Result(
+            start: new Location(column: 8, row: 6),
+            end: new Location(column: 5, row: 9),
+        );
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
+        $this->assertEquals($expectedEcmascript, $wordSearch->search("ecmascript"));
+        $this->assertEquals($expectedRust, $wordSearch->search("rust"));
+        $this->assertEquals($expectedJava, $wordSearch->search("java"));
+        $this->assertEquals($expectedLua, $wordSearch->search("lua"));
+        $this->assertEquals($expectedLisp, $wordSearch->search("lisp"));
+        $this->assertEquals($expectedRuby, $wordSearch->search("ruby"));
     }
 
     /**
@@ -635,17 +586,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should fail to locate a word that is not in the puzzle')]
     public function testShouldFail(): void
     {
-        $wordsToSearchFor = [
-            "clojure",
-            "elixir",
-            "ecmascript",
-            "rust",
-            "java",
-            "lua",
-            "lisp",
-            "ruby",
-            "haskell"
-        ];
         $grid = [
             "jefblpepre",
             "camdcimgtc",
@@ -658,44 +598,50 @@ class WordSearchTest extends TestCase
             "jalaycalmp",
             "clojurermt"
         ];
-        $expected = [
-            "clojure" => [
-                "start" => ["column" => 1, "row" => 10],
-                "end"   => ["column" => 7, "row" => 10]
-            ],
-            "elixir" => [
-                "start" => ["column" => 6, "row" => 5],
-                "end"   => ["column" => 1, "row" => 5]
-            ],
-            "ecmascript" => [
-                "start" => ["column" => 10, "row" => 1],
-                "end"   => ["column" => 10, "row" => 10]
-            ],
-            "rust" => [
-                "start" => ["column" => 9, "row" => 5],
-                "end"   => ["column" => 9, "row" => 2]
-            ],
-            "java" => [
-                "start" => ["column" => 1, "row" => 1],
-                "end"   => ["column" => 4, "row" => 4]
-            ],
-            "lua" => [
-                "start" => ["column" => 8, "row" => 9],
-                "end"   => ["column" => 6, "row" => 7]
-            ],
-            "lisp" => [
-                "start" => ["column" => 3, "row" => 6],
-                "end"   => ["column" => 6, "row" => 3]
-            ],
-            "ruby" => [
-                "start" => ["column" => 8, "row" => 6],
-                "end"   => ["column" => 5, "row" => 9]
-            ],
-            "haskell" => null
-        ];
+        $expectedClojure = new Result(
+            start: new Location(column: 1, row: 10),
+            end: new Location(column: 7, row: 10),
+        );
+        $expectedElixir = new Result(
+            start: new Location(column: 6, row: 5),
+            end: new Location(column: 1, row: 5),
+        );
+        $expectedEcmascript = new Result(
+            start: new Location(column: 10, row: 1),
+            end: new Location(column: 10, row: 10),
+        );
+        $expectedRust = new Result(
+            start: new Location(column: 9, row: 5),
+            end: new Location(column: 9, row: 2),
+        );
+        $expectedJava = new Result(
+            start: new Location(column: 1, row: 1),
+            end: new Location(column: 4, row: 4),
+        );
+        $expectedLua = new Result(
+            start: new Location(column: 8, row: 9),
+            end: new Location(column: 6, row: 7),
+        );
+        $expectedLisp = new Result(
+            start: new Location(column: 3, row: 6),
+            end: new Location(column: 6, row: 3),
+        );
+        $expectedRuby = new Result(
+            start: new Location(column: 8, row: 6),
+            end: new Location(column: 5, row: 9),
+        );
+        $expectedHaskell = null;
         $wordSearch = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedClojure, $wordSearch->search("clojure"));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
+        $this->assertEquals($expectedEcmascript, $wordSearch->search("ecmascript"));
+        $this->assertEquals($expectedRust, $wordSearch->search("rust"));
+        $this->assertEquals($expectedJava, $wordSearch->search("java"));
+        $this->assertEquals($expectedLua, $wordSearch->search("lua"));
+        $this->assertEquals($expectedLisp, $wordSearch->search("lisp"));
+        $this->assertEquals($expectedRuby, $wordSearch->search("ruby"));
+        $this->assertEquals($expectedHaskell, $wordSearch->search("haskell"));
     }
 
     /**
@@ -704,17 +650,17 @@ class WordSearchTest extends TestCase
     #[TestDox('Should fail to locate words that are not on horizontal, vertical, or diagonal lines')]
     public function testShouldFailToLocateWordsThatAreNotOnHorizontalVerticalOrDiagonalLines(): void
     {
-        $wordsToSearchFor = ["aef", "ced", "abf", "cbd"];
-        $grid = ["abc", "def"];
-        $expected = [
-            "aef" => null,
-            "ced" => null,
-            "abf" => null,
-            "cbd" => null
-        ];
-        $wordSearch = new WordSearch($grid);
+        $grid        = ["abc", "def"];
+        $expectedAef = null;
+        $expectedCed = null;
+        $expectedAbf = null;
+        $expectedCbd = null;
+        $wordSearch  = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedAef, $wordSearch->search("aef"));
+        $this->assertEquals($expectedCed, $wordSearch->search("ced"));
+        $this->assertEquals($expectedAbf, $wordSearch->search("abf"));
+        $this->assertEquals($expectedCbd, $wordSearch->search("cbd"));
     }
 
     /**
@@ -723,12 +669,11 @@ class WordSearchTest extends TestCase
     #[TestDox('Should not concatenate different lines to find a horizontal word')]
     public function testShouldNotConcatenateDifferentLinesToFindAHorizontalWord(): void
     {
-        $wordsToSearchFor = ["elixir"];
-        $grid = ["abceli", "xirdfg"];
-        $expected = ["elixir" => null];
-        $wordSearch = new WordSearch($grid);
+        $grid           = ["abceli", "xirdfg"];
+        $expectedElixir = null;
+        $wordSearch     = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedElixir, $wordSearch->search("elixir"));
     }
 
     /**
@@ -737,12 +682,11 @@ class WordSearchTest extends TestCase
     #[TestDox('Should not wrap around horizontally to find a word')]
     public function testShouldNotWrapAroundHorizontallyToFindAWord(): void
     {
-        $wordsToSearchFor = ["lisp"];
-        $grid = ["silabcdefp"];
-        $expected = ["lisp" => null];
-        $wordSearch = new WordSearch($grid);
+        $grid         = ["silabcdefp"];
+        $expectedLisp = null;
+        $wordSearch   = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedLisp, $wordSearch->search("lisp"));
     }
 
     /**
@@ -751,7 +695,6 @@ class WordSearchTest extends TestCase
     #[TestDox('Should not wrap around vertically to find a word')]
     public function testShouldNotWrapAroundVerticallyToFindAWord(): void
     {
-        $wordsToSearchFor = ["rust"];
         $grid = [
             "s",
             "u",
@@ -761,9 +704,9 @@ class WordSearchTest extends TestCase
             "c",
             "t"
         ];
-        $expected = ["rust" => null];
-        $wordSearch = new WordSearch($grid);
+        $expectedRust = null;
+        $wordSearch   = new WordSearch($grid);
 
-        $this->assertEquals($expected, $wordSearch->search($wordsToSearchFor));
+        $this->assertEquals($expectedRust, $wordSearch->search("rust"));
     }
 }
