@@ -37,8 +37,8 @@ Multiply the base production (`221` cars per hour at speed `1`) by the speed and
 ```php
 <?php
 
-$assembly_line = new CarsAssemble();
-$assembly_line->productionRatePerHour(6);
+$assemblyLine = new CarsAssemble();
+$assemblyLine->productionRatePerHour(6);
 // => 1193.4
 ```
 
@@ -50,11 +50,11 @@ The line is running when its speed is **not identical** to the `off` speed (`0`)
 ```php
 <?php
 
-$assembly_line = new CarsAssemble();
-$assembly_line->isLineRunning(0);
+$assemblyLine = new CarsAssemble();
+$assemblyLine->isLineRunning(0);
 // => false
 
-$assembly_line->isLineRunning(3);
+$assemblyLine->isLineRunning(3);
 // => true
 ```
 
@@ -70,13 +70,13 @@ It should return:
 ```php
 <?php
 
-$assembly_line = new CarsAssemble();
-$assembly_line->compareSpeeds(3, 7);
+$assemblyLine = new CarsAssemble();
+$assemblyLine->compareSpeeds(3, 7);
 // => -1
 
-$assembly_line->compareSpeeds(5, 5);
+$assemblyLine->compareSpeeds(5, 5);
 // => 0
 
-$assembly_line->compareSpeeds(9, 2);
+$assemblyLine->compareSpeeds(9, 2);
 // => 1
 ```
