@@ -1147,6 +1147,14 @@
         ]
       },
       {
+        "slug": "word-search",
+        "name": "Word Search",
+        "uuid": "6b215857-f382-4926-b5f8-3e61db9283d6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "alphametics",
         "name": "Alphametics",
         "uuid": "49d212c6-6fa3-4e7b-95d9-595613630566",

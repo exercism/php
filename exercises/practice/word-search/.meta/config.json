@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "resu-xuniL"
+  ],
+  "files": {
+    "solution": [
+      "Location.php",
+      "Result.php",
+      "WordSearch.php"
+    ],
+    "test": [
+      "WordSearchTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Create a program to solve a word search puzzle."
+}
