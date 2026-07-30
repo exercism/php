@@ -9,6 +9,8 @@ class WordSearchTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
+        require_once 'Location.php';
+        require_once 'Result.php';
         require_once 'WordSearch.php';
     }
 

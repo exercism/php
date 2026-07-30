@@ -24,19 +24,4 @@
 
 declare(strict_types=1);
 
-class WordSearch
-{
-    // This exercises uses additional files for data classes.
-    // In the online editor these are available as additional
-    // tabs next to this file's tab.
-
-    public function __construct(array $grid)
-    {
-        throw new \BadMethodCallException(sprintf('Implement the WordSearch %s method', __FUNCTION__));
-    }
-
-    public function search(string $word): ?Result
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-}
+// Can you make this data class immutable?

@@ -66,20 +66,16 @@ class WordSearch
     }
 }
 
-class Result
+final readonly class Result
 {
-    public function __construct(private Location $start, private Location $end)
+    public function __construct(private readonly Location $start, private readonly Location $end)
     {
     }
 }
 
-class Location
+final readonly class Location
 {
-    public function __construct(private int $column, private int $row)
+    public function __construct(private readonly int $column, private readonly int $row)
     {
-        return [
-            "column:" => $this->column,
-            "row:" => $this->row
-        ];
     }
 }

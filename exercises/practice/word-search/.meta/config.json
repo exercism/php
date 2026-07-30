@@ -4,6 +4,8 @@
   ],
   "files": {
     "solution": [
+      "Location.php",
+      "Result.php",
       "WordSearch.php"
     ],
     "test": [
