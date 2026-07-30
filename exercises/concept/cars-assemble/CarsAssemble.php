@@ -17,7 +17,7 @@ class CarsAssemble
         throw new \BadFunctionCallException("Implement the function");
     }
 
-    public function compareSpeeds($left, $right)
+    public function compareSpeeds($speedA, $speedB)
     {
         throw new \BadFunctionCallException("Implement the function");
     }

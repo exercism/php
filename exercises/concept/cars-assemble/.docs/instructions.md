@@ -24,8 +24,8 @@ Use comparisons to choose the correct rate from this table:
 ```php
 <?php
 
-$assembly_line = new CarsAssemble();
-$assembly_line->successRate(10);
+$assemblyLine = new CarsAssemble();
+$assemblyLine->successRate(10);
 // => 0.77
 ```
 
@@ -45,7 +45,7 @@ $assembly_line->productionRatePerHour(6);
 ## 3. Check whether the line is running
 
 Implement the `isLineRunning()` method to return whether the assembly line is running.
-The line is running when its speed is **not identical** to `0`.
+The line is running when its speed is **not identical** to the `off` speed (`0`).
 
 ```php
 <?php

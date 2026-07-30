@@ -3,7 +3,7 @@
 Comparison operators compare two values and usually return a boolean (`true` or `false`).
 They are commonly used to make decisions in code.
 
-For learning PHP, start with **identical** comparisons and relational comparisons between numbers:
+PHP has **identical** comparisons and relational comparisons between numbers:
 
 ```php
 <?php
@@ -19,7 +19,7 @@ For learning PHP, start with **identical** comparisons and relational comparison
 | Operator | Meaning |
 | --- | --- |
 | `$a === $b` | identical: equal and the same type |
-| `$a !== $b` | not identical |
+| `$a !== $b` | not identical: different type or not equal |
 | `$a < $b` | less than |
 | `$a > $b` | greater than |
 | `$a <= $b` | less than or equal to |

@@ -7,8 +7,9 @@
 
 ## 1. Calculate the success rate
 
-- Compare `$speed` with the boundary values from the table (`===`, `>=`, `>`, `<=`, or `<` as needed).
-- You can use a simple `if` statement to return the matching success rate.
+- Compare `$speed` with the boundary values from the table.
+- Use `identity`, `greater than`, `greater or equal`, `lower than`, `lower or equal` operators as needed.
+- You can use an `if` statement to return the matching success rate.
 
 ## 2. Calculate the production rate per hour
 

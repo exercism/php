@@ -13,10 +13,10 @@ class CarsAssembleTest extends TestCase
     /**
      * @task_id 1
      */
-    #[TestDox('Success rate for speed 0')]
+    #[TestDox('Success rate for "off" (speed 0)')]
     public function testSuccessRateForSpeedZero()
     {
-        $assembly_line = new CarsAssemble();
+        $assemblyLine = new CarsAssemble();
         $actual = $assembly_line->successRate(0);
         $this->assertEqualsWithDelta(0.0, $actual, 0.001);
     }
@@ -90,7 +90,7 @@ class CarsAssembleTest extends TestCase
     /**
      * @task_id 2
      */
-    #[TestDox('Production rate per hour for speed 0')]
+    #[TestDox('Production rate per hour for "off" (speed 0)')]
     public function testProductionRatePerHourForSpeedZero()
     {
         $assembly_line = new CarsAssemble();
@@ -156,7 +156,7 @@ class CarsAssembleTest extends TestCase
     /**
      * @task_id 3
      */
-    #[TestDox('Line is not running at speed 0')]
+    #[TestDox('Line is not running when "off" (speed 0)')]
     public function testIsLineRunningForSpeedZero()
     {
         $assembly_line = new CarsAssemble();

@@ -30,10 +30,10 @@ With `===`, both the value and the type must match.
 ```php
 <?php
 
-1 == "1";  // => true, equal after type juggling
+1 == "1";  // => true, equal after implicit conversion of string to int
 1 === "1"; // => false, not identical
 
-1 == 1.0;  // => true
+1 == 1.0;  // => true, equal after implicit conversion of int to float
 1 === 1.0; // => false
 ```
 

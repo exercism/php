@@ -16,5 +16,6 @@
   "forked_from": [
     "csharp/cars-assemble"
   ],
+  "icon": "cars-assemble",
   "blurb": "Learn about comparison operators by analyzing a car assembly line!"
 }
