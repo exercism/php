@@ -1,8 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/php:1-8.4-bookworm
-
-# The base image ships a broken yarn apt source (missing signing key) which
-# makes `apt-get update` fail; drop it since this project doesn't need node/yarn.
-RUN rm -f /etc/apt/sources.list.d/yarn.list
+FROM mcr.microsoft.com/devcontainers/php:4-8.4-bookworm
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends jq \
