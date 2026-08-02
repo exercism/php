@@ -1,0 +1,26 @@
+{
+  "name": "Exercism PHP",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "containerEnv": {
+    "XDEBUG_MODE": "off"
+  },
+  "postCreateCommand": "composer install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "recca0120.vscode-phpunit",
+        "obliviousharmony.vscode-php-codesniffer"
+      ],
+      "settings": {
+        // intelephense replaces VS Code's built-in PHP language features; leaving both
+        // enabled causes duplicate/conflicting suggestions.
+        "php.suggest.basic": false,
+        // Required for the phpcs extension to pick up this repo's phpcs.xml at all.
+        "phpCodeSniffer.standard": "Automatic"
+      }
+    }
+  }
+}

@@ -5,15 +5,25 @@ Exercism exercises in PHP
 Follow these instructions to contribute to the PHP track.
 To solve the exercises, head to the [PHP track][exercism-track-home] and check the [documentation][exercism-track-installation].
 
+## Quick Start with Dev Containers
+
+This repo includes a [dev container](.devcontainer) that provides PHP 8.4, Composer, `jq` and all other dependencies out of the box.
+Open the repo in [VS Code][vscode-devcontainers] (or [GitHub Codespaces][github-codespaces]) and select "Reopen in Container" - `composer install` runs automatically once it starts.
+
 ## Install Dependencies
 
 The following system dependencies are required:
 
 - `composer`, as recommended in the [PHP track installation docs][exercism-track-installation-composer].
 - [`bash` shell][gnu-bash].
-- PHP V8.4+ CLI.
+- PHP V8.4+ CLI, with the following extensions:
+  - `ds` (V1.x)
+  - `intl`
+  - Default modules: `Core`, `ctype`, `date`, `dom`, `fileinfo`, `filter`, `hash`, `iconv`, `json`, `libxml`, `mbstring`, `pcre`, `random`, `Reflection`, `SimpleXML`, `sodium`, `SPL`, `standard`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `zlib`
 - An active Internet connection for installing required tools / composer packages.
 - [`jq`][jq], if you change the difficulty or add a practice exercise.
+
+The [dev container](.devcontainer) already provides all of the above.
 
 Run the following command to get started with this project:
 
@@ -98,7 +108,9 @@ Run `bin/order-exercises.sh` when you set the exercise difficulty to a sensible 
 [exercism-track-home]: https://exercism.org/docs/tracks/php
 [exercism-track-installation]: https://exercism.org/docs/tracks/php/installation
 [exercism-track-installation-composer]: https://exercism.org/docs/tracks/php/installation#h-install-composer
+[github-codespaces]: https://docs.github.com/en/codespaces/overview
 [gnu-bash]: https://www.gnu.org/software/bash/
+[jq]: https://jqlang.org/
 [local-file-phpcs-config]: phpcs.xml
 [psr-12]: https://www.php-fig.org/psr/psr-12
-[jq]: https://jqlang.org/
+[vscode-devcontainers]: https://code.visualstudio.com/docs/devcontainers/containers
