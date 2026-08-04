@@ -1,0 +1,20 @@
+{
+  "name": "Exercism PHP",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "containerEnv": {
+    "XDEBUG_MODE": "off"
+  },
+  "postCreateCommand": "composer install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client"
+      ],
+      "settings": {
+        "php.suggest.basic": false
+      }
+    }
+  }
+}
