@@ -64,6 +64,7 @@ perfect-numbers
 phone-number
 pig-latin
 poker
+prime-factors
 protein-translation
 proverb
 queen-attack
@@ -103,5 +104,6 @@ two-fer
 variable-length-quantity
 wordy
 word-count
+word-search
 yacht
 zebra-puzzle
