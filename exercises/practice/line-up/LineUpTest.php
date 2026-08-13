@@ -152,6 +152,36 @@ final class LineUpTest extends TestCase
         );
     }
 
+    /** uuid: a98e2e22-ab41-4557-a7c2-efedc19c16da */
+     #[TestDox('format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11')]
+    public function testFormatExceptionalOrdinalNumeral22EndingInNdEvenThoughItIsAMultipleOf11(): void
+    {
+        $this->assertSame(
+            'Ingrid, you are the 22nd customer we serve today. Thank you!',
+            format('Ingrid', 22)
+        );
+    }
+
+    /** uuid: ab45d2fb-e0ee-4016-b605-76917584db0a */
+     #[TestDox('format exceptional ordinal numeral 33 ending in rd even though it is a multiple of 11')]
+    public function testFormatExceptionalOrdinalNumeral33EndingInRdEvenThoughItIsAMultipleOf11(): void
+    {
+        $this->assertSame(
+            'Mario, you are the 33rd customer we serve today. Thank you!',
+            format('Mario', 33)
+        );
+    }
+
+    /** uuid: c9243603-9f17-45b3-9a41-db9ebdbf08e1 */
+     #[TestDox('format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13')]
+    public function testFormatExceptionalOrdinalNumeral52EndingInNdEvenThoughItIsAMultipleOf13(): void
+    {
+        $this->assertSame(
+            'Quentin, you are the 52nd customer we serve today. Thank you!',
+            format('Quentin', 52)
+        );
+    }
+
     /** uuid: 74ee2317-0295-49d2-baf0-d56bcefa14e3 */
      #[TestDox('Format exceptional ordinal numeral 62')]
     public function testFormatExceptionalOrdinalNumeral62(): void
@@ -159,6 +189,26 @@ final class LineUpTest extends TestCase
         $this->assertSame(
             'Nayra, you are the 62nd customer we serve today. Thank you!',
             format('Nayra', 62)
+        );
+    }
+
+    /** uuid: 3f6c408c-4331-42b6-bb6c-3ad0823e568a */
+     #[TestDox('format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12')]
+    public function testFormatNonExceptionalOrdinalNumeral72EndingInNdEvenThoughItIsAMultipleOf12(): void
+    {
+        $this->assertSame(
+            'Ugo, you are the 72nd customer we serve today. Thank you!',
+            format('Ugo', 72)
+        );
+    }
+
+    /** uuid: 8db52cd9-9689-413f-a812-6c36fcfd0d07 */
+     #[TestDox('format exceptional ordinal numeral 91 ending in st even though it is a multiple of 13')]
+    public function testFormatExceptionalOrdinalNumeral91EndingInStEvenThoughItIsAMultipleOf13(): void
+    {
+        $this->assertSame(
+            'Boris, you are the 91st customer we serve today. Thank you!',
+            format('Boris', 91)
         );
     }
 
@@ -199,6 +249,16 @@ final class LineUpTest extends TestCase
         $this->assertSame(
             'Yma, you are the 123rd customer we serve today. Thank you!',
             format('Yma', 123)
+        );
+    }
+
+    /** uuid: 6792c54e-59a7-4faf-839a-c4bb61014229 */
+     #[TestDox('format large number 972 ending in nd even though it is a multiple of 12')]
+    public function testFormatLargeNumber972EndingInNdEvenThoughItIsAMultipleOf12(): void
+    {
+        $this->assertSame(
+            'Elias, you are the 972nd customer we serve today. Thank you!',
+            format('Elias', 972)
         );
     }
 }
