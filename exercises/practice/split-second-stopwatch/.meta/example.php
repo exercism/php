@@ -5,10 +5,10 @@ declare(strict_types=1);
 class SplitSecondStopwatch
 {
     public function __construct(
-        private(set) string $state = "ready",
-        private(set) int $total = 0,
-        private(set) int $currentLap = 0,
-        private(set) array $previousLaps = []
+        public string $state = "ready",
+        public int $total = 0,
+        public int $currentLap = 0,
+        public array $previousLaps = []
     ) {
     }
 
