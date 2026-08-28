@@ -978,14 +978,6 @@
         "difficulty": 3
       },
       {
-        "slug": "split-second-stopwatch",
-        "name": "Split-Second Stopwatch",
-        "uuid": "25befc0a-cd5b-44d6-9f5f-647e12208381",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "ae91650f-fe06-466a-a40a-6a24f5926fbe",
@@ -1264,6 +1256,14 @@
           "strings",
           "text_formatting"
         ]
+      },
+      {
+        "slug": "split-second-stopwatch",
+        "name": "Split-Second Stopwatch",
+        "uuid": "25befc0a-cd5b-44d6-9f5f-647e12208381",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       },
       {
         "slug": "state-of-tic-tac-toe",

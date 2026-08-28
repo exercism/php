@@ -26,43 +26,14 @@ declare(strict_types=1);
 
 class SplitSecondStopwatch
 {
+    /**
+     * In PHP 8.4 and newer you can use Asymmetric Property Visibility to enhance data encapsulation
+     * @see https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visibility-members-aviz
+     */
     public function __construct()
     {
-        throw new \BadMethodCallException(sprintf('Implement the SplitSecondStopwatch %s method', __FUNCTION__));
+        throw new \BadMethodCallException(sprintf("Please implement the SplitSecondStopwatch class!"));
     }
 
-    public function advanceTime(string $duration): void
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function getCurrentLap(): string
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function getTotal(): string
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function start(): void
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function stop(): void
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function lap(): void
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
-
-    public function reset(): void
-    {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
-    }
+    // Add methods as expected by the tests!
 }
