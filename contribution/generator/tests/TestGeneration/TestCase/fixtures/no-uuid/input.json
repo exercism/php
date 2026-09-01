@@ -1,0 +1,8 @@
+{
+    "description": "some description, containing =,-,<,> (unwanted chars)",
+    "property": "camelCasedProperty",
+    "input": {
+        "camelCasedArgumentName": "maybe any type"
+    },
+    "expected": "maybe any type"
+}

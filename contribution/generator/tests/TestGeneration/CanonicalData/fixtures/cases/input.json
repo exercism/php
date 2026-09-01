@@ -1,0 +1,8 @@
+{
+    "testClassName": "SomeTestClass",
+    "solutionFileName": "SomeSolutionFile.ext",
+    "solutionClassName": "SomeSolutionClass",
+    "cases": [
+        { "an-unknown-item": "will render as multiline comment with JSON" }
+    ]
+}

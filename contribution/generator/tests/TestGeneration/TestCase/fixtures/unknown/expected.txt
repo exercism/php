@@ -1,0 +1,1 @@
+* {"some-unknown-property":"This shall show up in DocBlock."}
