@@ -23,7 +23,7 @@ class SaveTheCowTest extends TestCase
         $saveTheCow->guess($guesses);
 
         $this->assertEquals("Ongoing", $saveTheCow->state);
-        $this->assertEquals("____", $saveTheCow->maskedWord());
+        $this->assertEquals("____", $saveTheCow->maskedWord);
         $this->assertEquals(9, $saveTheCow->remainingFailures);
     }
 
@@ -38,7 +38,7 @@ class SaveTheCowTest extends TestCase
         $saveTheCow->guess($guesses);
 
         $this->assertEquals("Lose", $saveTheCow->state);
-        $this->assertEquals("____", $saveTheCow->maskedWord());
+        $this->assertEquals("____", $saveTheCow->maskedWord);
         $this->assertEquals(0, $saveTheCow->remainingFailures);
     }
 
@@ -53,7 +53,7 @@ class SaveTheCowTest extends TestCase
         $saveTheCow->guess($guesses);
 
         $this->assertEquals("Lose", $saveTheCow->state);
-        $this->assertEquals("_oot", $saveTheCow->maskedWord());
+        $this->assertEquals("_oot", $saveTheCow->maskedWord);
         $this->assertEquals(0, $saveTheCow->remainingFailures);
     }
 
@@ -68,7 +68,7 @@ class SaveTheCowTest extends TestCase
         $saveTheCow->guess($guesses);
 
         $this->assertEquals("Ongoing", $saveTheCow->state);
-        $this->assertEquals("___t", $saveTheCow->maskedWord());
+        $this->assertEquals("___t", $saveTheCow->maskedWord);
         $this->assertEquals(9, $saveTheCow->remainingFailures);
     }
 
@@ -83,7 +83,7 @@ class SaveTheCowTest extends TestCase
         $saveTheCow->guess($guesses);
 
         $this->assertEquals("Ongoing", $saveTheCow->state);
-        $this->assertEquals("___t", $saveTheCow->maskedWord());
+        $this->assertEquals("___t", $saveTheCow->maskedWord);
         $this->assertEquals(8, $saveTheCow->remainingFailures);
     }
 
@@ -98,7 +98,7 @@ class SaveTheCowTest extends TestCase
         $saveTheCow->guess($guesses);
 
         $this->assertEquals("Ongoing", $saveTheCow->state);
-        $this->assertEquals("_oot", $saveTheCow->maskedWord());
+        $this->assertEquals("_oot", $saveTheCow->maskedWord);
         $this->assertEquals(8, $saveTheCow->remainingFailures);
     }
 
@@ -113,7 +113,7 @@ class SaveTheCowTest extends TestCase
         $saveTheCow->guess($guesses);
 
         $this->assertEquals("Win", $saveTheCow->state);
-        $this->assertEquals("loot", $saveTheCow->maskedWord());
+        $this->assertEquals("loot", $saveTheCow->maskedWord);
         $this->assertEquals(8, $saveTheCow->remainingFailures);
     }
 
@@ -128,7 +128,7 @@ class SaveTheCowTest extends TestCase
         $saveTheCow->guess($guesses);
 
         $this->assertEquals("Win", $saveTheCow->state);
-        $this->assertEquals("loot", $saveTheCow->maskedWord());
+        $this->assertEquals("loot", $saveTheCow->maskedWord);
         $this->assertEquals(0, $saveTheCow->remainingFailures);
     }
 

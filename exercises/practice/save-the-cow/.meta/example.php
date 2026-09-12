@@ -6,11 +6,11 @@ class SaveTheCow
 {
     public function __construct(
         private string $word,
-        private array $maskedWord = [],
+        public string $maskedWord = "",
         public string $state = "Ongoing",
         public int $remainingFailures = 9
     ) {
-        $this->maskedWord = str_split(str_repeat("_", strlen($word)));
+        $this->maskedWord = str_repeat("_", strlen($word));
     }
 
     public function guess(array $guesses): void
@@ -22,13 +22,13 @@ class SaveTheCow
                 throw new Exception("cannot guess after the game is lost");
             }
 
-            if (str_contains($this->word, $guess) && ! str_contains(implode("", $this->maskedWord), $guess)) {
+            if (str_contains($this->word, $guess) && ! str_contains($this->maskedWord, $guess)) {
                 for ($i = 0; $i < strlen($this->word); $i++) {
                     if ($this->word[$i] === $guess) {
                         $this->maskedWord[$i] = $guess;
                     }
                 }
-                if (! str_contains(implode("", $this->maskedWord), "_")) {
+                if (! str_contains($this->maskedWord, "_")) {
                     $this->state = "Win";
                 }
             } else {
@@ -39,10 +39,5 @@ class SaveTheCow
                 }
             }
         }
-    }
-
-    public function maskedWord(): string
-    {
-        return implode("", $this->maskedWord);
     }
 }
