@@ -978,14 +978,6 @@
         "difficulty": 3
       },
       {
-        "slug": "save-the-cow",
-        "name": "Save the Cow",
-        "uuid": "ec60632c-c682-4f72-87a7-8601c960165b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "ae91650f-fe06-466a-a40a-6a24f5926fbe",
@@ -1112,6 +1104,14 @@
           "control_flow_loops",
           "transforming"
         ]
+      },
+      {
+        "slug": "save-the-cow",
+        "name": "Save the Cow",
+        "uuid": "ec60632c-c682-4f72-87a7-8601c960165b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "scale-generator",

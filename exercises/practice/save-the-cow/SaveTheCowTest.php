@@ -20,7 +20,9 @@ class SaveTheCowTest extends TestCase
     {
         $guesses = [];
         $saveTheCow = new SaveTheCow("loot");
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
 
         $this->assertEquals("Ongoing", $saveTheCow->state);
         $this->assertEquals("____", $saveTheCow->maskedWord);
@@ -35,7 +37,9 @@ class SaveTheCowTest extends TestCase
     {
         $guesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
         $saveTheCow = new SaveTheCow("loot");
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
 
         $this->assertEquals("Lose", $saveTheCow->state);
         $this->assertEquals("____", $saveTheCow->maskedWord);
@@ -50,7 +54,9 @@ class SaveTheCowTest extends TestCase
     {
         $guesses = ["t", "o", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
         $saveTheCow = new SaveTheCow("loot");
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
 
         $this->assertEquals("Lose", $saveTheCow->state);
         $this->assertEquals("_oot", $saveTheCow->maskedWord);
@@ -65,7 +71,9 @@ class SaveTheCowTest extends TestCase
     {
         $guesses = ["t"];
         $saveTheCow = new SaveTheCow("loot");
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
 
         $this->assertEquals("Ongoing", $saveTheCow->state);
         $this->assertEquals("___t", $saveTheCow->maskedWord);
@@ -80,7 +88,9 @@ class SaveTheCowTest extends TestCase
     {
         $guesses = ["t", "t"];
         $saveTheCow = new SaveTheCow("loot");
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
 
         $this->assertEquals("Ongoing", $saveTheCow->state);
         $this->assertEquals("___t", $saveTheCow->maskedWord);
@@ -95,7 +105,9 @@ class SaveTheCowTest extends TestCase
     {
         $guesses = ["t", "t", "o"];
         $saveTheCow = new SaveTheCow("loot");
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
 
         $this->assertEquals("Ongoing", $saveTheCow->state);
         $this->assertEquals("_oot", $saveTheCow->maskedWord);
@@ -110,7 +122,9 @@ class SaveTheCowTest extends TestCase
     {
         $guesses = ["t", "t", "o", "l"];
         $saveTheCow = new SaveTheCow("loot");
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
 
         $this->assertEquals("Win", $saveTheCow->state);
         $this->assertEquals("loot", $saveTheCow->maskedWord);
@@ -125,7 +139,9 @@ class SaveTheCowTest extends TestCase
     {
         $guesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "t", "o", "l"];
         $saveTheCow = new SaveTheCow("loot");
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
 
         $this->assertEquals("Win", $saveTheCow->state);
         $this->assertEquals("loot", $saveTheCow->maskedWord);
@@ -143,7 +159,9 @@ class SaveTheCowTest extends TestCase
 
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('cannot guess after the game is lost');
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
     }
 
     /**
@@ -157,6 +175,8 @@ class SaveTheCowTest extends TestCase
 
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('cannot guess after the game is won');
-        $saveTheCow->guess($guesses);
+        foreach ($guesses as $guess) {
+            $saveTheCow->guess($guess);
+        }
     }
 }
