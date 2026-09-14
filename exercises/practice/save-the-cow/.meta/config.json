@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "resu-xuniL"
+  ],
+  "files": {
+    "solution": [
+      "SaveTheCow.php"
+    ],
+    "test": [
+      "SaveTheCowTest.php"
+    ],
+    "example": [
+      ".meta/example.php"
+    ]
+  },
+  "blurb": "Implement a word-guessing game."
+}
