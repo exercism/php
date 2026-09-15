@@ -138,9 +138,9 @@ composer global require phpunit/phpunit ^11.5
 
 Please make sure you install version 11.5 or later.
 
-## Default Modules
+## Useable Modules
 
-- [Core](https://www.php.net/manual/en/langref.php)
+- Core, standard (providing very common functions like [array](https://www.php.net/manual/en/ref.array.php) or [string](https://www.php.net/manual/en/ref.strings.php) functions)
 - [ctype](https://www.php.net/manual/en/book.ctype.php)
 - [date](https://www.php.net/manual/en/book.datetime.php)
 - [dom](https://www.php.net/manual/en/book.dom.php)
@@ -157,7 +157,6 @@ Please make sure you install version 11.5 or later.
 - [SimpleXML](https://www.php.net/manual/en/book.simplexml.php)
 - [sodium](https://www.php.net/manual/en/book.sodium.php)
 - [SPL](https://www.php.net/manual/en/book.spl.php)
-- [standard](https://www.php.net/manual/en/book.spl.php)
 - [tokenizer](https://www.php.net/manual/en/book.tokenizer.php)
 - [xml](https://www.php.net/manual/en/refs.xml.php)
 - [xmlreader](https://www.php.net/manual/en/book.xmlreader.php)
