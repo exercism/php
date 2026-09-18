@@ -1094,6 +1094,14 @@
         ]
       },
       {
+        "slug": "relative-distance",
+        "name": "Relative Distance",
+        "uuid": "d63fd448-07ec-4884-a9fd-64763be95378",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "210e1252-f92a-44b9-9916-8b27633fee0c",
@@ -1394,14 +1402,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
-      },
-      {
-        "slug": "relative-distance",
-        "name": "Relative Distance",
-        "uuid": "d63fd448-07ec-4884-a9fd-64763be95378",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
       }
     ],
     "foregone": [
