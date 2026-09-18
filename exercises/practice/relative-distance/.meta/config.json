@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "resu-xuniL"
+  ],
   "files": {
     "solution": [
       "RelativeDistance.php"
