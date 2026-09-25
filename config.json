@@ -1327,6 +1327,14 @@
         "difficulty": 6
       },
       {
+        "slug": "complex-numbers",
+        "name": "Complex Numbers",
+        "uuid": "6ae0a351-0dba-4889-b0ec-ad23483cbc48",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "flower-field",
         "name": "Flower Field",
         "uuid": "3443aa60-53d4-4483-ad96-07eba9a23b9e",
