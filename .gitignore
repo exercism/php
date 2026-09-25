@@ -8,6 +8,7 @@ bin/configlet.exe
 
 /vendor/
 composer.lock
+*.local.*
 
 # IDE Files
 .idea
