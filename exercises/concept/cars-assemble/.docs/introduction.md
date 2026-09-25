@@ -1,9 +1,11 @@
-# Comparison Operators
+# Introduction
+
+## Comparison Operators
 
 Comparison operators compare two values and usually return a boolean (`true` or `false`).
 They are commonly used to make decisions in code.
 
-PHP has **identical** comparisons and relational comparisons between numbers:
+For learning PHP, start with **identical** comparisons and relational comparisons between numbers:
 
 ```php
 <?php
@@ -19,13 +21,13 @@ PHP has **identical** comparisons and relational comparisons between numbers:
 | Operator | Meaning |
 | --- | --- |
 | `$a === $b` | identical: equal and the same type |
-| `$a !== $b` | not identical: different type or not equal |
+| `$a !== $b` | not identical |
 | `$a < $b` | less than |
 | `$a > $b` | greater than |
 | `$a <= $b` | less than or equal to |
 | `$a >= $b` | greater than or equal to |
 
-## The spaceship operator
+### The spaceship operator
 
 The spaceship operator (`<=>`) also compares two values, but it returns an integer instead of a boolean:
 
@@ -41,7 +43,7 @@ The spaceship operator (`<=>`) also compares two values, but it returns an integ
 9 <=> 2; // => 1
 ```
 
-## Using comparisons in an `if` statement
+### Using comparisons in an `if` statement
 
 A comparison can be used as the condition of an `if` statement.
 If the comparison is `true`, the code inside the braces runs:
