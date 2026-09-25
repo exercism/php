@@ -18,10 +18,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Real part -> Real part of a purely real number')]
     public function testRealPartRealPartOfAPurelyRealNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(1, 0);
+        $complexNumber = new ComplexNumbers(1, 0);
         $expected = 1;
 
-        $this->assertEquals($expected, $ComplexNumber->real);
+        $this->assertEquals($expected, $complexNumber->real);
     }
 
     /**
@@ -30,10 +30,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Real part -> Real part of a purely imaginary number')]
     public function testRealPartRealPartOfAPurelyImaginaryNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(0, 1);
+        $complexNumber = new ComplexNumbers(0, 1);
         $expected = 0;
 
-        $this->assertEquals($expected, $ComplexNumber->real);
+        $this->assertEquals($expected, $complexNumber->real);
     }
 
     /**
@@ -42,10 +42,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Real part -> Real part of a number with real and imaginary part')]
     public function testRealPartRealPartOfANumberWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber = new ComplexNumbers(1, 2);
+        $complexNumber = new ComplexNumbers(1, 2);
         $expected = 1;
 
-        $this->assertEquals($expected, $ComplexNumber->real);
+        $this->assertEquals($expected, $complexNumber->real);
     }
 
     /**
@@ -54,10 +54,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Imaginary part -> Imaginary part of a purely real number')]
     public function testImaginaryPartImaginaryPartOfAPurelyRealNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(1, 0);
+        $complexNumber = new ComplexNumbers(1, 0);
         $expected = 0;
 
-        $this->assertEquals($expected, $ComplexNumber->imaginary);
+        $this->assertEquals($expected, $complexNumber->imaginary);
     }
 
     /**
@@ -66,10 +66,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Imaginary part -> Imaginary part of a purely imaginary number')]
     public function testImaginaryPartImaginaryPartOfAPurelyImaginaryNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(0, 1);
+        $complexNumber = new ComplexNumbers(0, 1);
         $expected = 1;
 
-        $this->assertEquals($expected, $ComplexNumber->imaginary);
+        $this->assertEquals($expected, $complexNumber->imaginary);
     }
 
     /**
@@ -78,10 +78,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Imaginary part -> Imaginary part of a number with real and imaginary part')]
     public function testImaginaryPartImaginaryPartOfANumberWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber = new ComplexNumbers(1, 2);
+        $complexNumber = new ComplexNumbers(1, 2);
         $expected = 2;
 
-        $this->assertEquals($expected, $ComplexNumber->imaginary);
+        $this->assertEquals($expected, $complexNumber->imaginary);
     }
 
     /**
@@ -90,11 +90,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Imaginary unit')]
     public function testImaginaryUnit(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(0, 1);
-        $ComplexNumber2 = new ComplexNumbers(0, 1);
-        $expected = new ComplexNumbers(-1, 0);
+        $complexNumber1 = new ComplexNumbers(0, 1);
+        $complexNumber2 = new ComplexNumbers(0, 1);
+        $expected       = new ComplexNumbers(-1, 0);
 
-        $this->assertEquals($expected, $ComplexNumber1->mul($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->mul($complexNumber2));
     }
 
     /**
@@ -103,11 +103,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Addition -> Add purely real numbers')]
     public function testArithmeticAdditionAddPurelyRealNumbers(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(1, 0);
-        $ComplexNumber2 = new ComplexNumbers(2, 0);
-        $expected = new ComplexNumbers(3, 0);
+        $complexNumber1 = new ComplexNumbers(1, 0);
+        $complexNumber2 = new ComplexNumbers(2, 0);
+        $expected       = new ComplexNumbers(3, 0);
 
-        $this->assertEquals($expected, $ComplexNumber1->add($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->add($complexNumber2));
     }
 
     /**
@@ -116,11 +116,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Addition -> Add purely imaginary numbers')]
     public function testArithmeticAdditionAddPurelyImaginaryNumbers(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(0, 1);
-        $ComplexNumber2 = new ComplexNumbers(0, 2);
-        $expected = new ComplexNumbers(0, 3);
+        $complexNumber1 = new ComplexNumbers(0, 1);
+        $complexNumber2 = new ComplexNumbers(0, 2);
+        $expected       = new ComplexNumbers(0, 3);
 
-        $this->assertEquals($expected, $ComplexNumber1->add($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->add($complexNumber2));
     }
 
     /**
@@ -129,11 +129,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Addition -> Add numbers with real and imaginary part')]
     public function testArithmeticAdditionAddNumbersWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(1, 2);
-        $ComplexNumber2 = new ComplexNumbers(3, 4);
-        $expected = new ComplexNumbers(4, 6);
+        $complexNumber1 = new ComplexNumbers(1, 2);
+        $complexNumber2 = new ComplexNumbers(3, 4);
+        $expected       = new ComplexNumbers(4, 6);
 
-        $this->assertEquals($expected, $ComplexNumber1->add($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->add($complexNumber2));
     }
 
     /**
@@ -142,11 +142,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Subtraction -> Subtract purely real numbers')]
     public function testArithmeticSubtractionSubtractPurelyRealNumbers(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(1, 0);
-        $ComplexNumber2 = new ComplexNumbers(2, 0);
-        $expected = new ComplexNumbers(-1, 0);
+        $complexNumber1 = new ComplexNumbers(1, 0);
+        $complexNumber2 = new ComplexNumbers(2, 0);
+        $expected       = new ComplexNumbers(-1, 0);
 
-        $this->assertEquals($expected, $ComplexNumber1->sub($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->sub($complexNumber2));
     }
 
     /**
@@ -155,11 +155,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Subtraction -> Subtract purely imaginary numbers')]
     public function testArithmeticSubtractionSubtractPurelyImaginaryNumbers(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(0, 1);
-        $ComplexNumber2 = new ComplexNumbers(0, 2);
-        $expected = new ComplexNumbers(0, -1);
+        $complexNumber1 = new ComplexNumbers(0, 1);
+        $complexNumber2 = new ComplexNumbers(0, 2);
+        $expected       = new ComplexNumbers(0, -1);
 
-        $this->assertEquals($expected, $ComplexNumber1->sub($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->sub($complexNumber2));
     }
 
     /**
@@ -168,11 +168,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Subtraction -> Subtract numbers with real and imaginary part')]
     public function testArithmeticSubtractionSubtractNumbersWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(1, 2);
-        $ComplexNumber2 = new ComplexNumbers(3, 4);
-        $expected = new ComplexNumbers(-2, -2);
+        $complexNumber1 = new ComplexNumbers(1, 2);
+        $complexNumber2 = new ComplexNumbers(3, 4);
+        $expected       = new ComplexNumbers(-2, -2);
 
-        $this->assertEquals($expected, $ComplexNumber1->sub($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->sub($complexNumber2));
     }
 
     /**
@@ -181,11 +181,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Multiplication -> Multiply purely real numbers')]
     public function testArithmeticMultiplicationMultiplyPurelyRealNumbers(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(1, 0);
-        $ComplexNumber2 = new ComplexNumbers(2, 0);
-        $expected = new ComplexNumbers(2, 0);
+        $complexNumber1 = new ComplexNumbers(1, 0);
+        $complexNumber2 = new ComplexNumbers(2, 0);
+        $expected       = new ComplexNumbers(2, 0);
 
-        $this->assertEquals($expected, $ComplexNumber1->mul($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->mul($complexNumber2));
     }
 
     /**
@@ -194,11 +194,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Multiplication -> Multiply purely imaginary numbers')]
     public function testArithmeticMultiplicationMultiplyPurelyImaginaryNumbers(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(0, 1);
-        $ComplexNumber2 = new ComplexNumbers(0, 2);
-        $expected = new ComplexNumbers(-2, 0);
+        $complexNumber1 = new ComplexNumbers(0, 1);
+        $complexNumber2 = new ComplexNumbers(0, 2);
+        $expected       = new ComplexNumbers(-2, 0);
 
-        $this->assertEquals($expected, $ComplexNumber1->mul($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->mul($complexNumber2));
     }
 
     /**
@@ -207,11 +207,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Multiplication -> Multiply numbers with real and imaginary part')]
     public function testArithmeticMultiplicationMultiplyNumbersWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(1, 2);
-        $ComplexNumber2 = new ComplexNumbers(3, 4);
-        $expected = new ComplexNumbers(-5, 10);
+        $complexNumber1 = new ComplexNumbers(1, 2);
+        $complexNumber2 = new ComplexNumbers(3, 4);
+        $expected       = new ComplexNumbers(-5, 10);
 
-        $this->assertEquals($expected, $ComplexNumber1->mul($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->mul($complexNumber2));
     }
 
     /**
@@ -220,11 +220,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Division -> Divide purely real numbers')]
     public function testArithmeticDivisionDividePurelyRealNumbers(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(1, 0);
-        $ComplexNumber2 = new ComplexNumbers(2, 0);
-        $expected = new ComplexNumbers(0.5, 0);
+        $complexNumber1 = new ComplexNumbers(1, 0);
+        $complexNumber2 = new ComplexNumbers(2, 0);
+        $expected       = new ComplexNumbers(0.5, 0);
 
-        $this->assertEquals($expected, $ComplexNumber1->div($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->div($complexNumber2));
     }
 
     /**
@@ -233,11 +233,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Arithmetic -> Division -> Divide purely imaginary numbers')]
     public function testArithmeticDivisionDividePurelyImaginaryNumbers(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(0, 1);
-        $ComplexNumber2 = new ComplexNumbers(0, 2);
-        $expected = new ComplexNumbers(0.5, 0);
+        $complexNumber1 = new ComplexNumbers(0, 1);
+        $complexNumber2 = new ComplexNumbers(0, 2);
+        $expected       = new ComplexNumbers(0.5, 0);
 
-        $this->assertEquals($expected, $ComplexNumber1->div($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->div($complexNumber2));
     }
 
     /**
@@ -246,11 +246,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Arithmetic -> Division -> Divide numbers with real and imaginary part')]
     public function testArithmeticDivisionDivideNumbersWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber1 = new ComplexNumbers(1, 2);
-        $ComplexNumber2 = new ComplexNumbers(3, 4);
-        $expected = new ComplexNumbers(0.44, 0.08);
+        $complexNumber1 = new ComplexNumbers(1, 2);
+        $complexNumber2 = new ComplexNumbers(3, 4);
+        $expected       = new ComplexNumbers(0.44, 0.08);
 
-        $this->assertEquals($expected, $ComplexNumber1->div($ComplexNumber2));
+        $this->assertEquals($expected, $complexNumber1->div($complexNumber2));
     }
 
 
@@ -260,10 +260,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Absolute value -> Absolute value of a positive purely real number')]
     public function testAbsoluteValueAbsoluteValueOfAPositivePurelyRealNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(5, 0);
+        $complexNumber = new ComplexNumbers(5, 0);
         $expected = 5;
 
-        $this->assertEquals($expected, $ComplexNumber->abs());
+        $this->assertEquals($expected, $complexNumber->abs());
     }
 
     /**
@@ -272,10 +272,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Absolute value -> Absolute value of a negative purely real number')]
     public function testAbsoluteValueAbsoluteValueOfANegativePurelyRealNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(-5, 0);
+        $complexNumber = new ComplexNumbers(-5, 0);
         $expected = 5;
 
-        $this->assertEquals($expected, $ComplexNumber->abs());
+        $this->assertEquals($expected, $complexNumber->abs());
     }
 
     /**
@@ -284,10 +284,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Absolute value -> Absolute value of a purely imaginary number with positive imaginary part')]
     public function testAbsoluteValueAbsoluteValueOfAPurelyImaginaryNumberWithPositiveImaginaryPart(): void
     {
-        $ComplexNumber = new ComplexNumbers(0, 5);
+        $complexNumber = new ComplexNumbers(0, 5);
         $expected = 5;
 
-        $this->assertEquals($expected, $ComplexNumber->abs());
+        $this->assertEquals($expected, $complexNumber->abs());
     }
 
     /**
@@ -296,10 +296,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Absolute value -> Absolute value of a purely imaginary number with negative imaginary part')]
     public function testAbsoluteValueAbsoluteValueOfAPurelyImaginaryNumberWithNegativeImaginaryPart(): void
     {
-        $ComplexNumber = new ComplexNumbers(0, -5);
+        $complexNumber = new ComplexNumbers(0, -5);
         $expected = 5;
 
-        $this->assertEquals($expected, $ComplexNumber->abs());
+        $this->assertEquals($expected, $complexNumber->abs());
     }
 
     /**
@@ -308,10 +308,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Absolute value -> Absolute value of a number with real and imaginary part')]
     public function testAbsoluteValueAbsoluteValueOfANumberWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber = new ComplexNumbers(3, 4);
+        $complexNumber = new ComplexNumbers(3, 4);
         $expected = 5;
 
-        $this->assertEquals($expected, $ComplexNumber->abs());
+        $this->assertEquals($expected, $complexNumber->abs());
     }
 
     /**
@@ -320,10 +320,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Complex conjugate -> Conjugate a purely real number')]
     public function testComplexConjugateConjugateAPurelyRealNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(5, 0);
-        $expected = new ComplexNumbers(5, 0);
+        $complexNumber = new ComplexNumbers(5, 0);
+        $expected      = new ComplexNumbers(5, 0);
 
-        $this->assertEquals($expected, $ComplexNumber->conjugate());
+        $this->assertEquals($expected, $complexNumber->conjugate());
     }
 
     /**
@@ -332,10 +332,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Complex conjugate -> Conjugate a purely imaginary number')]
     public function testComplexConjugateConjugateAPurelyImaginaryNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(0, 5);
-        $expected = new ComplexNumbers(0, -5);
+        $complexNumber = new ComplexNumbers(0, 5);
+        $expected      = new ComplexNumbers(0, -5);
 
-        $this->assertEquals($expected, $ComplexNumber->conjugate());
+        $this->assertEquals($expected, $complexNumber->conjugate());
     }
 
     /**
@@ -344,10 +344,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox('Complex conjugate -> Conjugate a number with real and imaginary part')]
     public function testComplexConjugateConjugateANumberWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber = new ComplexNumbers(1, 1);
-        $expected = new ComplexNumbers(1, -1);
+        $complexNumber = new ComplexNumbers(1, 1);
+        $expected      = new ComplexNumbers(1, -1);
 
-        $this->assertEquals($expected, $ComplexNumber->conjugate());
+        $this->assertEquals($expected, $complexNumber->conjugate());
     }
 
     /**
@@ -356,10 +356,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Complex exponential function -> Euler's identity/formula")]
     public function testComplexExponentialFunctionEulersIdentityFormula(): void
     {
-        $ComplexNumber = new ComplexNumbers(0, M_PI);
-        $expected = new ComplexNumbers(-1, 0);
+        $complexNumber = new ComplexNumbers(0, M_PI);
+        $expected      = new ComplexNumbers(-1, 0);
 
-        $this->assertEqualsWithDelta($expected, $ComplexNumber->exp(), 1e-10);
+        $this->assertEqualsWithDelta($expected, $complexNumber->exp(), 1e-10);
     }
 
     /**
@@ -368,10 +368,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Complex exponential function -> Exponential of 0")]
     public function testComplexExponentialFunctionExponentialOf0(): void
     {
-        $ComplexNumber = new ComplexNumbers(0, 0);
-        $expected = new ComplexNumbers(1, 0);
+        $complexNumber = new ComplexNumbers(0, 0);
+        $expected      = new ComplexNumbers(1, 0);
 
-        $this->assertEquals($expected, $ComplexNumber->exp());
+        $this->assertEquals($expected, $complexNumber->exp());
     }
 
     /**
@@ -380,10 +380,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Complex exponential function -> Exponential of a purely real number")]
     public function testComplexExponentialFunctionExponentialOfAPurelyRealNumber(): void
     {
-        $ComplexNumber = new ComplexNumbers(1, 0);
-        $expected = new ComplexNumbers(M_E, 0);
+        $complexNumber = new ComplexNumbers(1, 0);
+        $expected      = new ComplexNumbers(M_E, 0);
 
-        $this->assertEquals($expected, $ComplexNumber->exp());
+        $this->assertEquals($expected, $complexNumber->exp());
     }
 
     /**
@@ -392,10 +392,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Complex exponential function -> Exponential of a number with real and imaginary part")]
     public function testComplexExponentialFunctionExponentialOfANumberWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber = new ComplexNumbers(M_LN2, M_PI);
-        $expected = new ComplexNumbers(-2, 0);
+        $complexNumber = new ComplexNumbers(M_LN2, M_PI);
+        $expected      = new ComplexNumbers(-2, 0);
 
-        $this->assertEqualsWithDelta($expected, $ComplexNumber->exp(), 1e-10);
+        $this->assertEqualsWithDelta($expected, $complexNumber->exp(), 1e-10);
     }
 
     /**
@@ -404,10 +404,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Complex exponential function -> Exponential resulting in a number with real and imaginary part")]
     public function testComplexExponentialFunctionExponentialResultingInANumberWithRealAndImaginaryPart(): void
     {
-        $ComplexNumber = new ComplexNumbers(M_LN2 / 2, M_PI_4);
-        $expected = new ComplexNumbers(1, 1);
+        $complexNumber = new ComplexNumbers(M_LN2 / 2, M_PI_4);
+        $expected      = new ComplexNumbers(1, 1);
 
-        $this->assertEqualsWithDelta($expected, $ComplexNumber->exp(), 1e-10);
+        $this->assertEqualsWithDelta($expected, $complexNumber->exp(), 1e-10);
     }
 
     /**
@@ -416,11 +416,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Operations between real numbers and complex numbers -> Add real number to complex number")]
     public function testOperationsBetweenRealNumbersAndComplexNumbersAddRealNumberToComplexNumber(): void
     {
-        $realNumber = new ComplexNumbers(5);
-        $ComplexNumber = new ComplexNumbers(1, 2);
-        $expected = new ComplexNumbers(6, 2);
+        $realNumber    = new ComplexNumbers(5);
+        $complexNumber = new ComplexNumbers(1, 2);
+        $expected      = new ComplexNumbers(6, 2);
 
-        $this->assertEquals($expected, $ComplexNumber->add($realNumber));
+        $this->assertEquals($expected, $complexNumber->add($realNumber));
     }
 
     /**
@@ -429,11 +429,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Operations between real numbers and complex numbers -> Add complex number to real number")]
     public function testOperationsBetweenRealNumbersAndComplexNumbersAddComplexNumberToRealNumber(): void
     {
-        $realNumber = new ComplexNumbers(5);
-        $ComplexNumber = new ComplexNumbers(1, 2);
-        $expected = new ComplexNumbers(6, 2);
+        $realNumber    = new ComplexNumbers(5);
+        $complexNumber = new ComplexNumbers(1, 2);
+        $expected      = new ComplexNumbers(6, 2);
 
-        $this->assertEquals($expected, $realNumber->add($ComplexNumber));
+        $this->assertEquals($expected, $realNumber->add($complexNumber));
     }
 
     /**
@@ -442,11 +442,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Operations between real numbers and complex numbers -> Subtract real number from complex number")]
     public function testOperationsBetweenRealNumbersAndComplexNumbersSubtractRealNumberFromComplexNumber(): void
     {
-        $realNumber = new ComplexNumbers(4);
-        $ComplexNumber = new ComplexNumbers(5, 7);
-        $expected = new ComplexNumbers(1, 7);
+        $realNumber    = new ComplexNumbers(4);
+        $complexNumber = new ComplexNumbers(5, 7);
+        $expected      = new ComplexNumbers(1, 7);
 
-        $this->assertEquals($expected, $ComplexNumber->sub($realNumber));
+        $this->assertEquals($expected, $complexNumber->sub($realNumber));
     }
 
     /**
@@ -455,11 +455,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Operations between real numbers and complex numbers -> Subtract complex number from real number")]
     public function testOperationsBetweenRealNumbersAndComplexNumbersSubtractComplexNumberFromRealNumber(): void
     {
-        $realNumber = new ComplexNumbers(4);
-        $ComplexNumber = new ComplexNumbers(5, 7);
-        $expected = new ComplexNumbers(-1, -7);
+        $realNumber    = new ComplexNumbers(4);
+        $complexNumber = new ComplexNumbers(5, 7);
+        $expected      = new ComplexNumbers(-1, -7);
 
-        $this->assertEquals($expected, $realNumber->sub($ComplexNumber));
+        $this->assertEquals($expected, $realNumber->sub($complexNumber));
     }
 
     /**
@@ -468,11 +468,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Operations between real numbers and complex numbers -> Multiply complex number by real number")]
     public function testOperationsBetweenRealNumbersAndComplexNumbersMultiplyComplexNumberByRealNumber(): void
     {
-        $realNumber = new ComplexNumbers(5);
-        $ComplexNumber = new ComplexNumbers(2, 5);
-        $expected = new ComplexNumbers(10, 25);
+        $realNumber    = new ComplexNumbers(5);
+        $complexNumber = new ComplexNumbers(2, 5);
+        $expected      = new ComplexNumbers(10, 25);
 
-        $this->assertEquals($expected, $ComplexNumber->mul($realNumber));
+        $this->assertEquals($expected, $complexNumber->mul($realNumber));
     }
 
     /**
@@ -481,11 +481,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Operations between real numbers and complex numbers -> Multiply real number by complex number")]
     public function testOperationsBetweenRealNumbersAndComplexNumbersMultiplyRealNumberByComplexNumber(): void
     {
-        $realNumber = new ComplexNumbers(5);
-        $ComplexNumber = new ComplexNumbers(2, 5);
-        $expected = new ComplexNumbers(10, 25);
+        $realNumber    = new ComplexNumbers(5);
+        $complexNumber = new ComplexNumbers(2, 5);
+        $expected      = new ComplexNumbers(10, 25);
 
-        $this->assertEquals($expected, $realNumber->mul($ComplexNumber));
+        $this->assertEquals($expected, $realNumber->mul($complexNumber));
     }
 
     /**
@@ -494,11 +494,11 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Operations between real numbers and complex numbers -> Divide complex number by real number")]
     public function testOperationsBetweenRealNumbersAndComplexNumbersDivideComplexNumberByRealNumber(): void
     {
-        $realNumber = new ComplexNumbers(10);
-        $ComplexNumber = new ComplexNumbers(10, 100);
-        $expected = new ComplexNumbers(1, 10);
+        $realNumber    = new ComplexNumbers(10);
+        $complexNumber = new ComplexNumbers(10, 100);
+        $expected      = new ComplexNumbers(1, 10);
 
-        $this->assertEquals($expected, $ComplexNumber->div($realNumber));
+        $this->assertEquals($expected, $complexNumber->div($realNumber));
     }
 
     /**
@@ -507,10 +507,10 @@ class ComplexNumbersTest extends TestCase
     #[TestDox("Operations between real numbers and complex numbers -> Divide real number by complex number")]
     public function testOperationsBetweenRealNumbersAndComplexNumbersDivideRealNumberByComplexNumber(): void
     {
-        $realNumber = new ComplexNumbers(5);
-        $ComplexNumber = new ComplexNumbers(1, 1);
-        $expected = new ComplexNumbers(2.5, -2.5);
+        $realNumber    = new ComplexNumbers(5);
+        $complexNumber = new ComplexNumbers(1, 1);
+        $expected      = new ComplexNumbers(2.5, -2.5);
 
-        $this->assertEquals($expected, $realNumber->div($ComplexNumber));
+        $this->assertEquals($expected, $realNumber->div($complexNumber));
     }
 }
