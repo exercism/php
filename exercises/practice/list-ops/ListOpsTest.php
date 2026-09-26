@@ -235,7 +235,7 @@ class ListOpsTest extends TestCase
     /**
      * uuid 94231515-050e-4841-943d-d4488ab4ee30
      */
-    #[TestDox('Reverse the elements of a list -> Empty list')]
+    #[TestDox('Reverse the elements of the list -> Empty list')]
     public function testReverseEmptyList()
     {
         $listOps = new ListOps();
@@ -245,17 +245,27 @@ class ListOpsTest extends TestCase
     /**
      * uuid fcc03d1e-42e0-4712-b689-d54ad761f360
      */
-    #[TestDox('Reverse the elements of a list -> Non-empty list')]
-    public function testReverseNonEmptyList()
+    #[TestDox('Reverse the elements of the list -> Non-empty even-length list')]
+    public function testReverseNonEmptyEvenLengthList()
     {
         $listOps = new ListOps();
         $this->assertEquals([7, 5, 3, 1], $listOps->reverse([1, 3, 5, 7]));
     }
 
     /**
+     * uuid 64d77184-5f74-4845-b158-545d2dd2df98
+     */
+    #[TestDox('Reverse the elements of the list -> Non-empty odd-length list')]
+    public function testReverseNonEmptyOddLengthList()
+    {
+        $listOps = new ListOps();
+        $this->assertEquals([13, 11, 9, 7, 5, 3, 1], $listOps->reverse([1, 3, 5, 7, 9, 11, 13]));
+    }
+
+    /**
      * uuid 40872990-b5b8-4cb8-9085-d91fc0d05d26
      */
-    #[TestDox('Reverse the elements of a list -> List of lists is not flattened')]
+    #[TestDox('Reverse the elements of the list -> List of lists is not flattened')]
     public function testReverseNonEmptyListIsNotFlattened()
     {
         $listOps = new ListOps();
