@@ -1,0 +1,2 @@
+    $this->expectException(\Exception::class);
+    $this->expectExceptionMessage('some expected exception message');
