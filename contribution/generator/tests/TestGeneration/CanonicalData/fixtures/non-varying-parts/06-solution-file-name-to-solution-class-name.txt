@@ -1,0 +1,6 @@
+        require_once('SomeSolutionFile.ext');
+    }
+    
+    public function setUp(): void
+    {
+        $this->subject = new SomeSolutionClass();

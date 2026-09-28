@@ -1,0 +1,6 @@
+{
+    "testClassName": "SomeTestClass",
+    "solutionFileName": "SomeSolutionFile.ext",
+    "solutionClassName": "SomeSolutionClass",
+    "exercise": "This is ignored"
+}

@@ -1,0 +1,5 @@
+{
+    "testClassName": "SomeTestClass",
+    "solutionFileName": "DifferentSolutionFile.php",
+    "solutionClassName": "SomeSolutionClass"
+}

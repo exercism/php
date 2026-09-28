@@ -1,0 +1,3 @@
+    $actual = $this->subject->camelCasedProperty(...$input);
+    
+    $this->assertSame($expected, $actual);

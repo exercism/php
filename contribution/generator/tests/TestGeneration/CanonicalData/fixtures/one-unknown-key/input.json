@@ -1,0 +1,6 @@
+{
+    "testClassName": "SomeTestClass",
+    "solutionFileName": "SomeSolutionFile.ext",
+    "solutionClassName": "SomeSolutionClass",
+    "unknown-key": "does not matter"
+}

@@ -1,0 +1,3 @@
+final class SomeTestClass extends TestCase
+{
+    private SomeSolutionClass $subject;

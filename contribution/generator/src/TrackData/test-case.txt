@@ -1,0 +1,15 @@
+
+/**
+ * %2$suuid: %5$s
+ * @testdox %6$s
+ * @test
+ */
+public function %1$s(): void
+{
+    $this->markTestSkipped('This test has not been verified yet.');
+    
+    $input = %3$s;
+    %4$s;
+    
+    $actual = $this->subject->%7$s(...$input);
+%8$s}

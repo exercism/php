@@ -1,0 +1,3 @@
+input = array (
+      'camelCasedArgumentName' => 'maybe any type',
+    );

@@ -1,0 +1,4 @@
+    $input = array (
+      'camelCasedArgumentName' => 'maybe any type',
+    );
+    $expected = 'maybe any type';

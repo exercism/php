@@ -1,0 +1,9 @@
+{
+    "testClassName": "SomeTestClass",
+    "solutionFileName": "SomeSolutionFile.ext",
+    "solutionClassName": "SomeSolutionClass",
+    "exercise": "some-exercise-slug",
+    "comments": [
+        "One line in comments"
+    ]
+}

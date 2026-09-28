@@ -1,0 +1,8 @@
+{
+    "testClassName": "SomeTestClass",
+    "solutionFileName": "SomeSolutionFile.ext",
+    "solutionClassName": "SomeSolutionClass",
+    "comments": [
+        "A line in comments"
+    ]
+}
