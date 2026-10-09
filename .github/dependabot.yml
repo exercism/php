@@ -10,7 +10,7 @@ updates:
     groups:
       github-actions:
         patterns:
-          - *
+          - "*"
 
   # Keep dependencies for Composer up-to-date
   - package-ecosystem: composer
@@ -20,7 +20,7 @@ updates:
     groups:
       composer:
         patterns:
-          - *
+          - "*"
 
   # Enable updates to the dependencies of our Dockerfile
   - package-ecosystem: docker
