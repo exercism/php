@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "pablo-miralles"
+  ],
+  "files": {
+    "solution": [
+      "CarsAssemble.php"
+    ],
+    "test": [
+      "CarsAssembleTest.php"
+    ],
+    "exemplar": [
+      ".meta/exemplar.php"
+    ]
+  },
+  "forked_from": [
+    "csharp/cars-assemble"
+  ],
+  "icon": "cars-assemble",
+  "blurb": "Learn about comparison operators by analyzing a car assembly line!"
+}
