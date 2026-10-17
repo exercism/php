@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <arg name="basepath" value="."/>
+    <arg name="cache" value=".phpcs-cache"/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="60"/>
+    <config name="installed_paths" value="vendor/doctrine/coding-standard/lib,vendor/slevomat/coding-standard"/>
+    <!-- Show progress of the run and show sniff names -->
+    <arg value="ps"/>
+
+    <!-- Include full Doctrine Coding Standard -->
+    <rule ref="Doctrine"/>
+
+    <!-- Include custom rules -->
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true" />
+            <property name="ignoreSpacingBeforeAssignments" value="false" />
+        </properties>
+    </rule>
+
+    <!-- Exclude some rules -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit.EarlyExitNotUsed">
+        <exclude name="SlevomatCodingStandard.ControlStructures.EarlyExit.EarlyExitNotUsed"/>
+    </rule>
+    <rule ref="Generic.Formatting.MultipleStatementAlignment.NotSame">
+        <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSame"/>
+    </rule>
+
+    <!-- Directories to be checked -->
+    <file>src/</file>
+    <file>tests/</file>
+</ruleset>
