@@ -1,0 +1,5 @@
+{
+    "testClassName": "DifferentTestClassName",
+    "solutionFileName": "SomeSolutionFile.ext",
+    "solutionClassName": "SomeSolutionClass"
+}

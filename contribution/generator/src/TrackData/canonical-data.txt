@@ -1,0 +1,33 @@
+<?php
+%1$s
+declare (strict_types=1);
+
+use PHPUnit\Framework\TestCase;
+
+/**
+ * %3$s- Please use `assertSame()` whenever possible. Add a comment with reason
+ *   when it is not possible.
+ * - Do not use calls with named arguments. Use them only when the
+ *   exercise requires named arguments (e.g. because the exercise is
+ *   about named arguments).
+ *   Named arguments are in the way of defining argument names the
+ *   students want (e.g. in their native language).
+ * - Add `@testdox` with a useful test title, e.g. the test case heading
+ *   from canonical data. The online editor shows that to students.
+ * - Add fail messages to assertions where helpful to tell students more
+ *   than `@testdox` says.
+ */
+final class %4$s extends TestCase
+{
+    private %6$s $subject;
+    
+    public static function setUpBeforeClass(): void
+    {
+        require_once('%5$s');
+    }
+    
+    public function setUp(): void
+    {
+        $this->subject = new %6$s();
+    }
+%2$s}

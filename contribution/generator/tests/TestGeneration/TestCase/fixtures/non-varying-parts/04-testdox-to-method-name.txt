@@ -1,0 +1,4 @@
+ * @testdox Some description
+ * @test
+ */
+public function someDescription(): void

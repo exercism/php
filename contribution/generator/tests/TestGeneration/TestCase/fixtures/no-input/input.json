@@ -1,0 +1,6 @@
+{
+    "uuid": "31a673f2-5e54-49fe-bd79-1c1dae476c9c",
+    "description": "some description, containing =,-,<,> (unwanted chars)",
+    "property": "camelCasedProperty",
+    "expected": "maybe any type"
+}
