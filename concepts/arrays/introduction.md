@@ -20,7 +20,7 @@ Each value can have a different type.
 
 ## Using Arrays
 
-Arrays can be declared as a literal (written in code, as done above) or created and manipulated as functions.
+Arrays can be declared as a literal (written in code, as done above) or created and manipulated by functions.
 Access, assign, append values using the index operator:
 
 ```php
@@ -30,3 +30,10 @@ $prime_numbers[3] = 7; // replace 6 with 7
 
 $prime_numbers[] = 11; // array now contains [2, 3, 5, 7, 11]
 ```
+
+### Performing Actions with Arrays
+
+PHP provides functions you can use to modify arrays and work with items in arrays.
+The PHP documentation offers detailed information on [array][] functions.
+
+[array]: https://www.php.net/manual/en/language.types.array.php
