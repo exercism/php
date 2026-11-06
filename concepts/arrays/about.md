@@ -65,3 +65,10 @@ foreach ($names as $index => $name) {
   echo "$index => $name";
 }
 ```
+
+### Performing Actions with Arrays
+
+PHP provides functions you can use to modify arrays and work with items in arrays.
+The PHP documentation offers detailed information on [array][] functions.
+
+[array]: https://www.php.net/manual/en/language.types.array.php
