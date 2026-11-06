@@ -1,7 +1,7 @@
 # Classes
 
-Classes are a unit of code organization in PHP.
-Code represents the behavior of an item or the behavior of a process can be grouped together as a class.
+Classes are units of code organization in PHP.
+Code that represents the behavior of an item or the behavior of a process can be grouped together as a class.
 Functions that are assigned to a class are called `methods` by convention.
 
 ```php
