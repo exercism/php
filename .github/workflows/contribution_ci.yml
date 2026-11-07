@@ -1,0 +1,46 @@
+name: Contribution continuous integration
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - contribution/**
+  push:
+    branches:
+      - main
+    paths:
+      - contribution/**
+
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-26.04
+    defaults:
+      run:
+        working-directory: ./contribution
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962
+        with:
+          php-version: '8.4'
+          tools: composer
+          coverage: pcov
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - run: composer install
+      - run: composer lint
+      - run: composer phpstan
+      - run: composer test
