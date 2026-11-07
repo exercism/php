@@ -1,0 +1,3 @@
+.phpcs-cache
+.phpunit.cache/
+vendor/

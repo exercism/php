@@ -1,0 +1,43 @@
+{
+    "name": "exercism/php",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.4",
+        "league/flysystem": "^3.36",
+        "nikic/php-parser": "^5.0",
+        "symfony/console": "7.4.*",
+        "symfony/http-client": "7.4.*"
+    },
+    "require-dev": {
+        "doctrine/coding-standard": "^14.0",
+        "league/flysystem-memory": "^3.31",
+        "phpstan/phpstan": "^2.3",
+        "phpunit/phpunit": "^13.0",
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse --configuration phpstan.neon --memory-limit=2G",
+        "test": "phpunit",
+        "lint": "phpcs",
+        "lint:fix": "phpcbf"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    }
+}
