@@ -72,10 +72,6 @@ readonly class Deprecated
         $exercises = [];
         foreach (['concept', 'practice'] as $category) {
             foreach ($this->exercises->listContents($category) as $exercise) {
-                if ($exercise->isFile()) {
-                    continue; // TODO(@homersimpsons): Move exercises/concept/bootstrap.sh to command
-                }
-
                 $exercisePath = $exercise->path();
                 $configContent = $this->exercises->read($exercisePath . '/.meta/config.json');
                 /** @var array{status?: string} $config https://exercism.org/docs/building/tracks/config-json#h-practice-exercises */

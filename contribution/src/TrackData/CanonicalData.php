@@ -16,6 +16,5 @@ class CanonicalData
         public string $exercise,
         public array $testCases = [],
         public array $comments = [],
-    ) {
-    }
+    ) {}
 }

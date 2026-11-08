@@ -9,7 +9,8 @@
         "league/flysystem": "^3.36",
         "nikic/php-parser": "^5.0",
         "symfony/console": "7.4.*",
-        "symfony/http-client": "7.4.*"
+        "symfony/http-client": "7.4.*",
+        "symfony/process": "^7.4"
     },
     "require-dev": {
         "carthage-software/mago": "^1.59.0",
