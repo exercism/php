@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use App\Command\CreateTestsCommand;
 use App\Command\Deprecated;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Local\LocalFilesystemAdapter;
@@ -20,5 +21,6 @@ $application->addCommand(
         HttpClient::createForBaseUri('https://github.com/exercism/problem-specifications'),
     ),
 );
+$application->addCommand(new CreateTestsCommand(__DIR__ . '/..'));
 
 $application->run();

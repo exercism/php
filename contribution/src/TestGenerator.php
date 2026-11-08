@@ -15,31 +15,24 @@ class TestGenerator
 {
     private BuilderFactory $builderFactory;
 
-    public function createTestsFor(
-        CanonicalData $canonicalData,
-        string $exerciseClass
-    ): string {
+    public function createTestsFor(CanonicalData $canonicalData, string $exerciseClass): string
+    {
         $this->builderFactory = new BuilderFactory();
 
-        $class = $this->builderFactory->class(
-            $exerciseClass . "Test"
-        )->makeFinal()->extend('TestCase');
-        $class->setDocComment(
-            "/**\n * " . implode("\n * ", $canonicalData->comments) . "\n */"
-        );
+        $class = $this->builderFactory
+            ->class($exerciseClass . 'Test')
+            ->makeFinal()
+            ->extend('TestCase');
+        $class->setDocComment("/**\n * " . implode("\n * ", $canonicalData->comments) . "\n */");
 
         // Include Setup Method
         $methodSetup = 'setUpBeforeClass';
-        $method = $this->builderFactory->method($methodSetup)
+        $method = $this->builderFactory
+            ->method($methodSetup)
             ->makePublic()
             ->makeStatic()
             ->setReturnType('void')
-            ->addStmt(
-                $this->builderFactory->funcCall(
-                    "require_once",
-                    [$exerciseClass . ".php"]
-                ),
-            );
+            ->addStmt($this->builderFactory->funcCall('require_once', [$exerciseClass . '.php']));
 
         $class->addStmt($method);
 
@@ -50,7 +43,8 @@ class TestGenerator
             $methodName = 'test' . str_replace(' ', '', ucwords($methodName));
 
             // $exceptionClassName = new Node\Name\FullyQualified('Exception');
-            $method = $this->builderFactory->method($methodName)
+            $method = $this->builderFactory
+                ->method($methodName)
                 ->makePublic()
                 ->setReturnType('void')
                 ->setDocComment("/** uuid: {$case->uuid} */")
@@ -58,13 +52,9 @@ class TestGenerator
                     new Node\Name(\PHPUnit\Framework\Attributes\TestDox::class),
                     [new Node\Arg(new Node\Scalar\String_($description))],
                 ))
-                ->addStmt(
-                    $this->builderFactory->funcCall(
-                        '$this->markTestIncomplete',
-                        [ 'This test has not been implemented yet.' ],
-                    )
-                )
-                ;
+                ->addStmt($this->builderFactory->funcCall('$this->markTestIncomplete', [
+                    'This test has not been implemented yet.',
+                ]));
             // if (isset($case->expected->error)) {
             //     $method->addStmt(
             //         $this->builderFactory->funcCall('$this->expectException',

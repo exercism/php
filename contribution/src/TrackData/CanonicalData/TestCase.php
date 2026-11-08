@@ -6,6 +6,11 @@ namespace App\TrackData\CanonicalData;
 
 class TestCase
 {
+    /**
+     * @param list<string> $comments
+     *
+     * @mago-expect lint:excessive-parameter-list
+     */
     public function __construct(
         public string $uuid,
         public string $description,
@@ -13,6 +18,5 @@ class TestCase
         public mixed $input,
         public mixed $expected,
         public array $comments = [],
-    ) {
-    }
+    ) {}
 }
