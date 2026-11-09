@@ -213,11 +213,11 @@ class PigLatinTest extends TestCase
 
 
     /**
-     * uuid 44616581-5ce3-4a81-82d0-40c7ab13d2cf
+     * uuid 44616581-5ce3-4a81-82d0-40c7ab13d2d1
      */
     #[TestDox('Phrases are translated -> A whole phrase')]
     public function testAWholePhrase(): void
     {
-        $this->assertEquals("ickquay astfay unray", translate("quick fast run"));
+        $this->assertEquals("ywhay oday idssquay enjoyay xraysay", translate("why do squids enjoy xrays"));
     }
 }

@@ -11,7 +11,7 @@ function translate(string $text): string
 
 function translateWord(string $text): string
 {
-    if (preg_match('/^s?qu|thr?|s?ch|rh/', $text, $match)) {
+    if (preg_match('/^s?qu|thr?|s?ch|rh|wh/', $text, $match)) {
         return sprintf("%s%say", substr($text, strlen($match[0])), $match[0]);
     }
 
