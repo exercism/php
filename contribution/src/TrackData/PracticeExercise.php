@@ -38,7 +38,7 @@ class PracticeExercise implements Exercise
         // https://github.com/exercism/problem-specifications?tab=readme-ov-file#test-data-format
         /** @var array{exercise: string, comments?: list<string>, cases: list<array{uuid: string, description: string, property: string, input: mixed, expected: mixed, comments?: list<string>}>} $canonicalData */
         $canonicalData = \json_decode(
-            $this->configlet->canonicalData($this->exerciseSlug),
+            $this->configlet->canonicalDataRaw($this->exerciseSlug),
             true,
             flags: JSON_THROW_ON_ERROR,
         );

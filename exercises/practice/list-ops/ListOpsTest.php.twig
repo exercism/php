@@ -1,0 +1,51 @@
+<?php
+
+{%- set callbacks = {
+    '(x) -> x modulo 2 == 1': 'static fn ($el) => $el % 2 === 1',
+    '(x) -> x + 1': 'static fn ($el) => $el + 1',
+    '(acc, el) -> el * acc': 'static fn ($acc, $el) => $el * $acc',
+    '(acc, el) -> el + acc': 'static fn ($acc, $el) => $el + $acc',
+    '(acc, el) -> el / acc': 'static fn ($acc, $el) => $el / $acc',
+}
+~%}
+
+declare(strict_types=1);
+
+use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\TestCase;
+
+class ListOpsTest extends TestCase
+{
+    public static function setUpBeforeClass(): void
+    {
+        require_once 'ListOps.php';
+    }
+
+    {%- for case0 in canonicalData.cases %}
+    {%- for case in case0.cases ~%}
+
+    /**
+     * uuid {{ case.uuid }}
+     */
+    #[TestDox('{{ case0.description | capitalize }} -> {{ case.description | capitalize }}')]
+    public function {{ testfn(case0.description ~ ' with ' ~ case.description) }}()
+    {
+        {%- set input = sort_input(case.input, ['function', 'list', 'list1', 'list2', 'initial']) ~%}
+        $listOps = new ListOps();
+        {%- if case.property == 'concat' ~%}
+        $lists = {{ input.lists == [] ? '[[], []]' : export(input.lists) }};
+
+        $result = $listOps->concat(...$lists);
+        {%- else -%}
+        {%- for property, value in input ~%}
+        ${{ property }} = {{ property == 'function' ? callbacks[value] : export(value) }};
+        {%- endfor ~%}
+
+        $result = $listOps->{{ case.property }}({{ input | keys | map(p => '$' ~ p) | join(', ')}});
+        {%- endif ~%}
+
+        $this->assertEquals({{ export(case.expected) }}, $result);
+    }
+    {%- endfor %}
+    {%- endfor ~%}
+}

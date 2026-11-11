@@ -26,3 +26,7 @@ It's all based on the `nikic/php-parser` and the https://github.com/exercism/pro
 for now to spare the http-requests.
 
 Let me know what you think.
+
+## `exercism:generate-tests`
+
+Generate tests from a twig template file
