@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Tests;
 
-use App\Command\GenerateTests;
-use App\Configlet;
+use App\Command\TestGenerate;
 use App\Model\CanonicalData\CanonicalData;
 use App\Model\CanonicalData\LabeledTest;
+use App\Service\Configlet;
 use League\Flysystem\Filesystem;
 use League\Flysystem\FilesystemException;
 use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 use Twig\Error\Error as TwigError;
 
-class GenerateTestsTest extends TestCase
+class TestGenerateTest extends TestCase
 {
     /**
      * @throws FilesystemException
@@ -38,7 +38,7 @@ class GenerateTestsTest extends TestCase
             new LabeledTest('uuid', 'this-Is_a test fn', 'prop', ['a' => [1, 2]], null),
         ]);
 
-        $application = new GenerateTests(new Configlet('/tmp'), $exerciseFs);
+        $application = new TestGenerate(new Configlet('/tmp', '/tmp'), $exerciseFs);
         $success = $application->generate($basePath, false, $canonicalData, new NullLogger());
 
         static::assertTrue($success);

@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\Configlet;
 use App\Model\CanonicalData\CanonicalData;
 use App\Model\CanonicalData\LabeledTest;
 use App\Model\CanonicalData\LabeledTestGroup;
 use App\Model\CanonicalData\LabeledTestItem;
+use App\Service\Configlet;
+use App\Service\PathResolver;
 use Brick\VarExporter\VarExporter;
 use InvalidArgumentException;
 use JsonException;
@@ -40,8 +41,8 @@ use function ucwords;
 
 use const JSON_THROW_ON_ERROR;
 
-#[AsCommand('exercism:generate-tests', 'Exercism PHP Test Generator')]
-class GenerateTests
+#[AsCommand('exercism:test:generate', 'Generates Test.php files from Test.php.twig templates.')]
+class TestGenerate
 {
     public function __construct(
         private Configlet $configlet,
@@ -49,6 +50,8 @@ class GenerateTests
     ) {}
 
     /**
+     * @param 'practice'|'concept' $category
+     *
      * @throws TwigError
      * @throws ParseException
      * @throws FilesystemException
@@ -66,8 +69,9 @@ class GenerateTests
     ): int {
         $logger = new ConsoleLogger($output);
         $canonicalData = $this->configlet->canonicalData($exerciseSlug);
+        $exercisePath = PathResolver::exercisePath($category, $exerciseSlug);
 
-        $success = $this->generate($category . '/' . $exerciseSlug, $check, $canonicalData, $logger);
+        $success = $this->generate($exercisePath, $check, $canonicalData, $logger);
 
         return $success ? Command::SUCCESS : Command::FAILURE;
     }

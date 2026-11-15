@@ -5,112 +5,92 @@ Exercism exercises in PHP
 Follow these instructions to contribute to the PHP track.
 To solve the exercises, head to the [PHP track][exercism-track-home] and check the [documentation][exercism-track-installation].
 
-## Quick Start with Dev Containers
+## Quick Start
 
-This repo includes a [dev container](.devcontainer) that provides PHP 8.4, Composer, `jq` and all other dependencies out of the box.
-Open the repo in [VS Code][vscode-devcontainers] (or [GitHub Codespaces][github-codespaces]) and select "Reopen in Container" - `composer install` runs automatically once it starts.
+### Dev containers
 
-## Install Dependencies
+This repo includes a [dev container](.devcontainer) that provides PHP 8.4, `composer`, `jq` and all other dependencies out of the box.
+Open the repo in [VS Code][vscode-devcontainers] (or [GitHub Codespaces][github-codespaces]) and select "Reopen in Container".
 
-The following system dependencies are required:
+### Local
 
-- `composer`, as recommended in the [PHP track installation docs][exercism-track-installation-composer].
-- [`bash` shell][gnu-bash].
-- PHP V8.4+ CLI, with the following extensions:
-  - `ds` (V1.x)
-  - `intl`
-  - Default modules: `Core`, `ctype`, `date`, `dom`, `fileinfo`, `filter`, `hash`, `iconv`, `json`, `libxml`, `mbstring`, `pcre`, `random`, `Reflection`, `SimpleXML`, `sodium`, `SPL`, `standard`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `zlib`
-- An active Internet connection for installing required tools / composer packages.
-- [`jq`][jq], if you change the difficulty or add a practice exercise.
+For a non-devcontainer setup, see `.devcontainer/` for exact setup.
 
-The [dev container](.devcontainer) already provides all of the above.
+In particular the required dependencies are: `bash`, `jq`, `php8.4`, `composer`, `ext-gmp`, `ext-ds` (v1.x), `ext-intl`.
 
-Run the following command to get started with this project:
-
+Install composer dependencies with: 
 ```shell
-composer install # Required dependencies to develop this track
+~/> composer install
+contribution/> composer install
 ```
 
-## Running Exercism resources management
+## PHP track maintenance
 
-`bin/configlet` is the official tool for managing Exercism language track repositories.
-See [Building Exercism docs][exercism-configlet].
+[`bin/configlet`][exercism-configlet] is the official tool for managing Exercism language track repositories.
 
-For convenience, you can use `composer configlet:fmt` to fix formatting issues in the Exercism track files.
-This is included in `composer ci` to run the CI checks locally.
+### Running Unit Test Suite
 
-## Running Unit Test Suite
-
-The tests are run with PHPUnit. A shell loop injecting `exemplar.php` is provided to ease testing.
-
-Execute the following command to run the tests:
+The tests are run with PHPUnit. Execute the following command to run the tests:
 
 ```shell
-composer test:run
+~/> composer tests:run # Runs whole test suite
+~/> composer tests:run -- <slug> # Runs tests for <slug> (e.g. book-store)
+~/> composer tests:run -- "b*" # Runs tests for <slug> starting with `b`
 ```
 
-This is included in `composer ci` to run the CI checks locally.
+### Code style
 
-### Run a specific test
+[`bin/configlet fmt`][exercism-configlet-fmt] checks Exercism's ressources files (json).
 
-If you want to run tests for one specific exercise, you can do it with following cli command.
+`composer lint:check` checks PHP files using a slightly [modified][local-file-phpcs-config] version of [PSR-12].
 
-```shell
-composer test:run -- exercise-name
-# e.g
-composer test:run -- book-store
-```
+Autofix (for both Exercism and PHP files) is provided with `composer format:fix`.
 
-If you want to run all starting with let's say 'b' you can run
+### Continuous Integration
 
-```shell
-composer test:run -- "b*"
-```
-
-## Running Style Checker
-
-This project uses a slightly [modified][local-file-phpcs-config] version of [PSR-12].
-Use the following commands to apply code style:
-
-```shell
-composer lint:check # Checks the files against the code style rules
-composer lint:fix # Automatically fix code style issues
-```
-
-The `lint:check` is included in `composer ci` to run the CI checks locally.
+`composer ci` invokes the above checks: [code style][h-code-style], [tests][h-unit-tests].
 
 ## Contributing
 
 - Read the documentation at [Exercism][exercism-docs].
-- Follow the [PSR-12] coding style (Exercisms PHP track uses a slightly [modified][local-file-phpcs-config] version of [PSR-12]).
+- Follow the [PSR-12] coding style (Exercism's PHP track uses a slightly [modified][local-file-phpcs-config] version of [PSR-12]).
 - Run `composer ci` to run CI checks locally before pushing.
-- CI is run on all pull requests, it must pass the required checks for merge.
-- CI is running all tests on PHP 8.1 to PHP 8.4 for Linux, Windows and MacOS.
+- CI runs on all pull requests, it must pass the required checks for merge.
+- CI runs all tests on PHP 8.2 to PHP 8.4 for Linux, Windows and MacOS.
+- [Contribution tools](./contribution/README.md) are available.
 
-## Generating new practice exercises
+### Generating new practice exercises
+
+Adding a new exercise involves multiple steps
+
+#### 1. Initialize exercism resources
 
 Use `bin/configlet create --practice-exercise <slug>` to create the exercism resources required.
 This provides you with the directories and files in `exercises/practice/<slug>`.
 Look into `tests.toml` for which test cases **not** to implement / generate and mark them with `include = false`.
 
-Test generator MVP used like this:
+#### 2. Write tests
 
-```shell
-composer -d contribution/generator install
-contribution/generator/bin/console app:create-tests '<slug>'
-composer lint:fix
-```
+Once the directory structure is created either:
+1. Use `php contribution/main.php exercism:test:bootstrap <slug>` to init a test file with tests bodies to implement.
+2. Create a `<ExerciseSlug>Test.php.twig` file and run `php contribution/main.php exercism:test:generate <slug>` to render the corresponding `<ExerciseSlug>Test.php` file.
+
+A `.meta/example.php` file is also necessary in order to validate that the implementation is correct / achievable.
+
+#### 3. Miscellaneous
 
 Run `bin/order-exercises.sh` when you set the exercise difficulty to a sensible value to order the exercises on the website accordingly.
 
+Ensures that the [test suite runs][h-unit-tests] and that the files are properly [formatted][h-code-style].
+
 [exercism-configlet]: https://exercism.org/docs/building/configlet
+[exercism-configlet-fmt]: https://exercism.org/docs/building/configlet/format
 [exercism-docs]: https://exercism.org/docs
 [exercism-track-home]: https://exercism.org/docs/tracks/php
 [exercism-track-installation]: https://exercism.org/docs/tracks/php/installation
-[exercism-track-installation-composer]: https://exercism.org/docs/tracks/php/installation#h-install-composer
 [github-codespaces]: https://docs.github.com/en/codespaces/overview
-[gnu-bash]: https://www.gnu.org/software/bash/
-[jq]: https://jqlang.org/
 [local-file-phpcs-config]: phpcs.xml
 [psr-12]: https://www.php-fig.org/psr/psr-12
 [vscode-devcontainers]: https://code.visualstudio.com/docs/devcontainers/containers
+[h-code-style]: #code-style
+[h-unit-tests]: #running-unit-test-suite

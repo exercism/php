@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Service;
 
 use App\Model\CanonicalData\CanonicalData;
 use RuntimeException;
@@ -13,6 +13,7 @@ final class Configlet
 {
     public function __construct(
         private string $configletPath,
+        private string $repositoryRoot,
     ) {}
 
     /**
@@ -34,7 +35,7 @@ final class Configlet
             'detailed',
             'info',
             '--offline',
-        ], __DIR__ . '/../../');
+        ], $this->repositoryRoot);
         try {
             $configlet->mustRun();
         } catch (ProcessRuntimeException $exception) {
