@@ -1,32 +1,19 @@
 Commands to automate some contribution part of `exercism/php`.
 
-They are all invokable with `php main.php <command>`.
+They are all invokable with `php main.php <command> <arguments>`.
 
 ## `exercism:deprecated`
 
-checks upstream deprecated exercises
+Lists upstream-deprecated exercises that are not track-deprecated yet.
 
-## `exercism:create-tests`
+Those exercises should be flagged with `"status": "deprecated"` in the PHP track.
 
-This is a small poc on how we could auto generate tests for the PHP track based on the https://github.com/exercism/problem-specifications/.
+## `exercism:test:bootstrap`
 
-How to test it:
+Bootstrap an `<ExerciseSlug>Test.php` file for argument `<exercise-slug>`.
 
-```
-git clone https://github.com/tomasnorre/exercism-tests-generation.git
-cd exercism-tests-generation
-composer install
-php main.php exercism:create-tests nucleotide-count
-vendor/bin/phpunit src/Command/NucleotideCountTest.php
-```
+Tests functions have to be implemented manually afterward.
 
-If you now make a `git status` you will see that the `src/Command/NucleotideCountTest.php` and you can now inspect the auto generated tests.
+## `exercism:test:generate`
 
-It's all based on the `nikic/php-parser` and the https://github.com/exercism/problem-specifications/ repository, I have made a local copy of that on file
-for now to spare the http-requests.
-
-Let me know what you think.
-
-## `exercism:generate-tests`
-
-Generate tests from a twig template file
+Generate `<ExerciseSlug>Test.php` files from `<ExerciseSlug>Test.php.twig` files for argument `<exercise-slug>`.

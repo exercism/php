@@ -21,7 +21,7 @@ use function sort;
 
 use const JSON_THROW_ON_ERROR;
 
-#[AsCommand('exercism:deprecated', 'This command allows you to check for deprecated exercises...')]
+#[AsCommand('exercism:deprecated', 'Lists upstream-deprecated exercises that are not track-deprecated yet.')]
 readonly class Deprecated
 {
     public function __construct(

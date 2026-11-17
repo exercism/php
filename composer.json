@@ -36,7 +36,7 @@
     ],
     "format:fix": [
         "@lint:fix",
-        "@configlet:fmt"
+        "@configlet:fmt --update --yes"
     ],
     "lint:check": "phpcs",
     "lint:fix": "phpcbf",
