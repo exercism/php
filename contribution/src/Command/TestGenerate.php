@@ -35,9 +35,6 @@ use function array_key_exists;
 use function assert;
 use function implode;
 use function json_decode;
-use function preg_replace;
-use function str_replace;
-use function ucwords;
 
 use const JSON_THROW_ON_ERROR;
 
@@ -113,12 +110,7 @@ class TestGenerate
             $value,
             VarExporter::INLINE_ARRAY,
         )));
-        $twigEnvironment->addFunction(new TwigFunction('testfn', static function (string $label) {
-            $labelSpaced = preg_replace('/[^a-zA-Z0-9]/', ' ', $label);
-            assert($labelSpaced !== null, 'preg_replace failed');
-
-            return 'test' . str_replace(' ', '', ucwords($labelSpaced));
-        }));
+        $twigEnvironment->addFunction(new TwigFunction('testfn', PathResolver::testFunctionName(...)));
         $twigEnvironment->addFunction(
             new TwigFunction(
                 'sort_input',

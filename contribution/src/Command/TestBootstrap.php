@@ -10,10 +10,13 @@ use App\Model\CanonicalData\LabeledTestGroup;
 use App\Model\CanonicalData\LabeledTestItem;
 use App\Service\Configlet;
 use App\Service\PathResolver;
+use Brick\VarExporter\ExportException;
+use Brick\VarExporter\VarExporter;
 use League\Flysystem\Filesystem;
 use League\Flysystem\FilesystemException;
 use PhpParser\Builder\Class_;
 use PhpParser\BuilderFactory;
+use PhpParser\Comment;
 use PhpParser\Node;
 use PhpParser\PrettyPrinter;
 use PHPUnit\Framework\TestCase;
@@ -36,6 +39,7 @@ class TestBootstrap
     /**
      * @throws FilesystemException
      * @throws RuntimeException
+     * @throws ExportException
      */
     public function __invoke(
         #[Argument('Exercise slug')]
@@ -51,8 +55,8 @@ class TestBootstrap
 
         $this->exercisesFilesystem->write(
             // TODO(@mk-mxp): Make '$exercise->pathToTestFile()'
-            $exercisePath . '/' . $this->inPascalCase($exerciseSlug) . 'Test.php',
-            $this->createTestsFor($canonicalData, $this->inPascalCase($exerciseSlug)),
+            $exercisePath . '/' . PathResolver::toPascalCase($exerciseSlug) . 'Test.php',
+            $this->createTestsFor($canonicalData, PathResolver::toPascalCase($exerciseSlug)),
         );
         // TODO(@mk-mxp): Make '$exercise->pathToStudentsFile()'
         // TODO(@mk-mxp): Make '$testGenerator->studentsFileFor()'
@@ -61,11 +65,9 @@ class TestBootstrap
         return Command::SUCCESS;
     }
 
-    private function inPascalCase(string $text): string
-    {
-        return \str_replace(' ', '', \ucwords(\str_replace('-', ' ', $text)));
-    }
-
+    /**
+     * @throws ExportException
+     */
     private function createTestsFor(CanonicalData $canonicalData, string $exerciseClass): string
     {
         $builderFactory = new BuilderFactory();
@@ -77,15 +79,14 @@ class TestBootstrap
         $class->setDocComment("/**\n * " . implode("\n * ", $canonicalData->comments) . "\n */");
 
         // Include Setup Method
-        $methodSetup = 'setUpBeforeClass';
-        $method = $builderFactory
-            ->method($methodSetup)
+        $methodSetUp = $builderFactory
+            ->method('setUpBeforeClass')
             ->makePublic()
             ->makeStatic()
             ->setReturnType('void')
             ->addStmt($builderFactory->funcCall('require_once', [$exerciseClass . '.php']));
 
-        $class->addStmt($method);
+        $class->addStmt($methodSetUp);
 
         $this->addCases($class, $builderFactory, $canonicalData->cases);
 
@@ -101,6 +102,7 @@ class TestBootstrap
     /**
      * @param list<LabeledTestItem> $cases
      * @return void
+     * @throws ExportException
      */
     private function addCases(Class_ $class, BuilderFactory $builderFactory, array $cases): void
     {
@@ -112,42 +114,30 @@ class TestBootstrap
             }
 
             assert($case instanceof LabeledTest, '$case is always a LabeledTest here.');
-            // Generate a method for each test case
-            $description = \ucfirst($case->description);
-            $methodName = ucfirst(str_replace('-', ' ', $description));
-            $methodName = 'test' . str_replace(' ', '', ucwords($methodName));
 
-            // $exceptionClassName = new Node\Name\FullyQualified('Exception');
-            $method = $builderFactory
-                ->method($methodName)
+            $description = \ucfirst($case->description);
+            $methodTest = $builderFactory
+                ->method(PathResolver::testFunctionName($description))
                 ->makePublic()
                 ->setReturnType('void')
                 ->setDocComment("/** uuid: {$case->uuid} */")
                 ->addAttribute(new Node\Attribute(
                     new Node\Name(\PHPUnit\Framework\Attributes\TestDox::class),
                     [new Node\Arg(new Node\Scalar\String_($description))],
-                ))
-                ->addStmt($builderFactory->funcCall('$this->markTestIncomplete', [
-                    'This test has not been implemented yet.',
-                ]));
-            // if (isset($case->expected->error)) {
-            //     $method->addStmt(
-            //         $builderFactory->funcCall('$this->expectException',
-            //         [new Node\Arg(new Node\Expr\ClassConstFetch($exceptionClassName, 'class'))]
-            //         )
-            //     )
-            //     ->addStmt($builderFactory->funcCall($case->property, [$case->input->strand ?? 'unknown']))
-            //     ;
-            // } else {
-            //     $method->addStmt(
-            //         $builderFactory->funcCall('$this->assertEquals', [
-            //             $case->expected,
-            //             $builderFactory->funcCall($case->property, [$case->input->strand ?? 'unknown'])
-            //         ])
-            //     );
-            // }
+                ));
+            $methodTestBody = new Node\Stmt\Expression($builderFactory->funcCall('$this->markTestIncomplete', [
+                'This test has not been implemented yet.',
+            ]));
+            $methodTestComment = preg_replace('/^/m', '// ', VarExporter::export([
+                'property' => $case->property,
+                'input' => $case->input,
+                'expected' => $case->expected,
+            ], VarExporter::INLINE_SCALAR_LIST | VarExporter::TRAILING_COMMA_IN_ARRAY));
+            assert($methodTestComment !== null, 'Regex pattern always match any string');
+            $methodTestBody->setAttribute('comments', [new Comment($methodTestComment)]);
+            $methodTest->addStmt($methodTestBody);
 
-            $class->addStmt($method);
+            $class->addStmt($methodTest);
         }
     }
 }

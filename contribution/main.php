@@ -6,8 +6,8 @@ declare(strict_types=1);
 require_once __DIR__ . '/vendor/autoload.php';
 
 use App\Command\Deprecated;
-use App\Command\TestGenerate;
 use App\Command\TestBootstrap;
+use App\Command\TestGenerate;
 use App\Service\Configlet;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Local\LocalFilesystemAdapter;
