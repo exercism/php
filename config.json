@@ -83,6 +83,20 @@
         "status": "beta"
       },
       {
+        "slug": "cars-assemble",
+        "name": "Cars, Assemble!",
+        "uuid": "4949e5b9-c685-4380-9d70-46ae970035cf",
+        "concepts": [
+          "comparison-operators"
+        ],
+        "prerequisites": [
+          "booleans",
+          "integers",
+          "floating-point-numbers"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "windowing-system",
         "name": "Windowing System",
         "uuid": "6f285fd2-4f55-4b65-9797-992ddd5e8a1d",
